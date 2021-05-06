@@ -4,10 +4,24 @@
 
 
 
+////EYES MAIN CHARACTER
+
+const eyes = document.querySelector('.eyes');
+
+window.addEventListener('mousemove', (evt) => {
+    const x = -(window.innerWidth / 2 - evt.pageX) / 160;
+    const y = -(window.innerHeight / 2 - evt.pageY) / 160;
+    eyes.style.transform = `translateY(${y}px) translateX(${x}px)`;
+});  
+
+
+
 //GET STORY TEXTS
 var phrase1 = document.querySelector("#phrase1");
 var phrase2 = document.querySelector("#phrase2");
 var phrase3 = document.querySelector("#phrase3");
+
+var backgroundcolor = document.querySelector("#background-color");
 
 //SET STORY TEXTS INVISIBLE
 phrase1.style.display = "none";
@@ -58,6 +72,12 @@ console.log(scrollLocation)
     phrase3.style.display = "block";
   } else{
     phrase3.style.display = "none";
+  }
+
+  if (scrollLocation > 500){
+    backgroundcolor.style.backgroundColor = "#000";
+  } else{
+    backgroundcolor.style.backgroundColor = "#fff";
   }
 
 }
