@@ -69,10 +69,9 @@ body {
   position: fixed;
   width: 1000px;
   top: calc(50vh - 300px);
-  left: calc(50vw - 400px)
+  left: calc(50vw - 400px);
+  animation: wiggle 2s 1s infinite;
 }
-
-
 
 
 
@@ -84,6 +83,23 @@ body {
   left: calc(50vw - 500px);
   top: 30vh;
   max-width: 300px;
+}
+
+#wiggle{
+  position: fixed;
+  animation: wiggle 2s infinite;
+}
+
+@keyframes wiggle { 
+  0%{
+    transform: translate(0, 0);
+  }
+  50%{
+    transform: translate(0,0.5vh);
+  }
+  100%{
+    transform: translate(0, 0);
+  }
 }
 
 .s01{
