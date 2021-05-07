@@ -93,3 +93,26 @@ body {
     transform: rotate(360deg) scaleX(1.5) scaleY(1);
   }
 }
+
+
+/* .eyes {
+  animation: close-open-eyes 10s infinite;
+}
+
+@keyframes close-open-eyes {
+  0% {
+    transform: scaleY(1);
+  }
+
+  90% {
+    transform: scaleY(1);
+  }
+
+  99% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+} */
