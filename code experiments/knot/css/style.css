@@ -1,0 +1,95 @@
+body {
+  background: white;
+  color: black;
+}
+
+.scribble {
+  position: absolute;
+  left: calc(50vw - 10vw);
+  top: 20vh;
+  max-width: 20vw;
+}
+
+.s01 {
+  opacity: 0.9;
+  animation: s1 5s infinite ease-in-out;
+}
+
+@keyframes s1 {
+  0% {
+    transform: rotate(0deg) scale(1.5);
+    top: 20vh;
+
+  }
+
+  50% {
+    transform: rotate(10deg) scale(1.7);
+    top: 16vh;
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1.5);
+    top: 20vh;
+  }
+}
+
+.s02 {
+  opacity: 0.9;
+  animation: s2 9s infinite ease-in-out;
+}
+
+@keyframes s2 {
+  0% {
+    transform: rotate(0deg) scale(1.7);
+    top: 20vh;
+  }
+
+  50% {
+    transform: rotate(-30deg) scale(2);
+    top: 16vh;
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1.7);
+    top: 20vh;
+  }
+}
+
+.s03 {
+  opacity: 0.9;
+  animation: s3 1s infinite ease-in-out;
+}
+
+@keyframes s3 {
+  0% {
+    transform: rotate(0deg) scale(1.5);
+  }
+
+  50% {
+    transform: rotate(-2deg) scale(1.5);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1.5);
+  }
+}
+
+
+.s04 {
+  opacity: 0.8;
+  animation: s4 20s infinite ease-in-out;
+}
+
+@keyframes s4 {
+  0% {
+    transform: rotate(0deg) scaleX(1.5) scaleY(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scaleX(1) scaleY(1.5);
+  }
+
+  100% {
+    transform: rotate(360deg) scaleX(1.5) scaleY(1);
+  }
+}
