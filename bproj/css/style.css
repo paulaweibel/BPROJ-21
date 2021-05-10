@@ -1,14 +1,36 @@
 body {
   font-family: sans-serif;
   display: flex;
-  /* background: #1A1A1A; */
-  /* overflow-Y: hidden; */
+  background-color: rgb(250, 250, 250);
+  overflow: hidden;
   color: rgb(250, 250, 250);
   height: 2000vh;
 }
 
 
-/* TITLE PAGE */
+/* -------------------------------- BACKGROUND -------------------------------- */
+#light-texture {
+  position: fixed;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  max-width: 200%;
+  height: 100vh;
+  animation: wiggle 2s infinite;
+}
+
+#fat-texture {
+  position: absolute;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height:100vh; */
+  animation: wiggle 2s infinite;
+}
+
+
+/* -------------------------------- TITLE PAGE -------------------------------- */
 #title-container {
   position: fixed;
   top: 0;
@@ -26,10 +48,10 @@ body {
   top: 40%;
 }
 
-.title-text{
+.title-text {
   position: absolute;
-  top:0;
-  left: 20vw;
+  top: 0;
+  left: 200px;
 }
 
 #title-button {
@@ -40,14 +62,13 @@ body {
   color: #1A1A1A;
 }
 
-.off, .on{
-  height: 70px;
+.off,
+.on {
+  height: 50px;
 }
 
 
-/*
--------------SPOTLIGHT
-*/
+/* -------------------------------- SPOTLIGHT -------------------------------- */
 
 /* :root {
   --spotlightColor: rgb(26, 26, 26);
@@ -72,25 +93,26 @@ body {
   pointer-events: none;
 } */
 
-/* MAIN CHARACTER */
+/* ----------------------------- MAIN CHARACTER ------------------------------ */
 .scribble {
   position: fixed;
   left: 60vw;
   top: 20vh;
-  max-width: 30vh;
+  width: 30vh;
 }
 
 #wiggle {
+  transform: translate(0, 0);
   position: fixed;
   animation: wiggle 2s infinite;
 }
 
 #eye-img {
   width: 30vh;
-  animation: blink 10s infinite;
+  animation: eye-blink 10s ease-in-out infinite;
 }
 
-@keyframes blink {
+@keyframes eye-blink {
   0% {
     transform: scaleY(1);
   }
@@ -123,6 +145,15 @@ body {
   }
 }
 
+@keyframes titleKnot {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-45vw, 10vh);
+  }
+}
 
 .s01 {
   /* opacity: 0.9; */
@@ -208,59 +239,54 @@ body {
   }
 }
 
-/* 
-.eyes {
-  animation: close-open-eyes 10s infinite;
-}
-
-@keyframes close-open-eyes {
-  0% {
-    max-height: 100%;
-  }
-
-  90% {
-    max-height: 0%;
-  }
-
-  99% {
-    max-height: 100%;
-  }
-
-  100% {
-    max-height: 100%;
-  }
-} */
 
 
-
-/* TEXT BUBBBLES */
+/* ------------------------------ TEXT ----------------------------- */
 .text {
-  position: fixed;
-  left: calc(50vw - 400px);
-  top: calc(50vh - 200px);
   line-height: 24px;
-  background: #fff;
-  border: 2px solid;
-  border-radius: 40px;
-  padding: 24px;
-  text-align: left;
-  color: #000;
-  min-width: 50px;
-  max-width: 300px;
+  /* border-radius: 1000px; */
+  padding: 5px;
 }
 
-.text-left:after {
+/* 
+.text-knot:after {
   content: "";
   position: absolute;
   border: 2px solid;
-  border-left: 40px solid white;
+  border-left: 40px solid #1a1a1a;
   border-right: 0px solid transparent;
   border-top: 0px solid transparent;
   border-bottom: 40px solid transparent;
   left: 30px;
   bottom: -30px;
+} */
+
+.text-knot{
+  position: fixed;
+  left: calc(10vw + 30vh + 10vw);
+  top: 40vh;
+  background: #1a1a1a;
+  text-align: left;
+  color: #fafafa;
+  max-width: 300px;
+  /* filter: drop-shadow(5px 10px #1a1a1a) */
 }
 
-/* #phrase2, #phrase3, #phrase4{
-  opacity: 0;
-} */
+
+/* ------------- OVERLAY FOR SMARTPHONE USERS -------------------- */
+#desktop-only {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  #desktop-only {
+    display: block;
+    position: fixed;
+    text-align: center;
+    padding-top: 40vh;
+    height: 100vh;
+    width: 100%;
+    background-color: #1a1a1a;
+    color: white;
+  }
+}
