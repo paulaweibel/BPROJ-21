@@ -242,10 +242,13 @@ body {
 
 
 /* ------------------------------ TEXT ----------------------------- */
-.text {
+.knot-text-container {
   line-height: 24px;
+  position: fixed;
+  left: calc(10vw + 30vh + 10vw);
+  top: 30vh;
   /* border-radius: 1000px; */
-  padding: 5px;
+  
 }
 
 /* 
@@ -262,14 +265,11 @@ body {
 } */
 
 .text-knot{
-  position: fixed;
-  left: calc(10vw + 30vh + 10vw);
-  top: 40vh;
+  padding: 10px;
   background: #1a1a1a;
   text-align: left;
   color: #fafafa;
   max-width: 300px;
-  /* filter: drop-shadow(5px 10px #1a1a1a) */
 }
 
 

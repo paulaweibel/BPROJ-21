@@ -177,14 +177,14 @@ function animation(scrollPos) {
   // ANIMATIONS BASED ON SCROLL POSITION
 
   //move Knot
-  if (scrollLocation > 50) {
+  if (scrollLocation > 400) {
     knot.style.animation = "titleKnot 2s forwards";
   } else {
     knot.style.animation = "wiggle 2s infinite";
   }
 
   //Hello, im the stress knot.
-  if (scrollLocation > 100) {
+  if (scrollLocation > 500) {
     phrase1.style.display="block";
     titleBox.style.opacity = "0";
   } else {
@@ -194,7 +194,6 @@ function animation(scrollPos) {
 
   //my job is to visit people.
   if (scrollLocation > 1000) {
-    phrase1.style.display="none";
     phrase2.style.display="block";
   } else {
     phrase2.style.display="none";
@@ -202,7 +201,6 @@ function animation(scrollPos) {
 
   //
   if (scrollLocation > 2000) {
-    phrase2.style.display="none";
     phrase3.style.display="block";
   } else {
     phrase3.style.display="none";
@@ -210,7 +208,6 @@ function animation(scrollPos) {
 
   //
   if (scrollLocation > 3000) {
-    phrase3.style.display="none";
     phrase4.style.display="block";
   } else {
     phrase4.style.display="none";
@@ -218,7 +215,10 @@ function animation(scrollPos) {
 
   //
   if (scrollLocation > 4000) {
-    phrase4.style.display="none";
+    phrase1.style.display = "none";
+    phrase2.style.display = "none";
+    phrase3.style.display = "none";
+    phrase4.style.display = "none";
     phrase5.style.display="block";
   } else {
     phrase5.style.display="none";
@@ -226,7 +226,6 @@ function animation(scrollPos) {
 
   //
   if (scrollLocation > 5000) {
-    phrase5.style.display="none";
     phrase6.style.display="block";
   } else {
     phrase6.style.display="none";
@@ -234,28 +233,16 @@ function animation(scrollPos) {
 
   //
   if (scrollLocation > 6000) {
-    phrase6.style.display="none";
+    phrase5.style.display = "none";
+    phrase6.style.display = "none";
     phrase7.style.display="block";
-  } else {
-    phrase7.style.display="none";
-  }
-
-  //
-  if (scrollLocation > 7000) {
-    phrase7.style.display="none";
     phrase8.style.display="block";
-  } else {
-    phrase8.style.display="none";
-  }
-
-  //
-  if (scrollLocation > 8000) {
-    phrase8.style.display="none";
     phrase9.style.display="block";
   } else {
-    phrase9.style.display="none";
+    phrase7.style.display="none";
+    phrase8.style.display = "none";
+    phrase9.style.display = "none";
   }
-
 
 }
 
