@@ -21,10 +21,14 @@ var body = document.querySelector("#body")
 var whereAmI = localStorage.getItem('scrollMemory');
 console.log("I am at: " + whereAmI)
 
-var titleBox = document.querySelector("#title-container")
-var title = document.querySelector("#title")
-var eyeImg = document.querySelector("#eye-img")
-var knot = document.querySelector("#wiggle")
+var titleBox = document.querySelector("#title-container");
+var title = document.querySelector("#title");
+var eyeImg = document.querySelector("#eye-img");
+var knot = document.querySelector("#wiggle");
+var spotlight = document.querySelector("#spotlight");
+
+// SCENES
+var scene1 = document.querySelector("#scene1");
 
 //GET STORY TEXTS
 var phrase1 = document.querySelector("#phrase1");
@@ -34,9 +38,13 @@ var phrase4 = document.querySelector("#phrase4");
 var phrase5 = document.querySelector("#phrase5");
 var phrase6 = document.querySelector("#phrase6");
 var phrase7 = document.querySelector("#phrase7");
+
+var helpYes = document.querySelector("#help-yes");
+var helpNo = document.querySelector("#help-no");
+
 var phrase8 = document.querySelector("#phrase8");
-var phrase9 = document.querySelector("#phrase9");
-var phrase10 = document.querySelector("#phrase10");
+
+
 
 
 //SET STORY TEXTS INVISIBLE
@@ -48,8 +56,10 @@ phrase5.style.display = "none";
 phrase6.style.display = "none";
 phrase7.style.display = "none";
 phrase8.style.display = "none";
-phrase9.style.display = "none";
-phrase10.style.display = "none";
+helpYes.style.display = "none";
+helpNo.style.display = "none";
+
+spotlight.style.display = "none";
 
 //////////////////////////////////////////////
 
@@ -109,22 +119,22 @@ window.onload = function checkPosition() {
 
 //SPOTLIGHT!!!///////////////////////////////////////////////
 
-// var moveflag = true;
+var moveflag = true;
 
-// window.addEventListener("mousemove", (e) => {
-//   if (moveflag == true) {
-//     spotlightMove(e);
-//   }
-// });
-// function spotlightMove(e) {
-//   let string =
-//     "radial-gradient(circle at " +
-//     (e.pageX / window.innerWidth) * 100 +
-//     "% " +
-//     (e.pageY / window.innerHeight) * 100 +
-//     "%,transparent var(--spotlightTransparent),var(--spotlightColor) var(--spotlightSize))";
-//   document.getElementById("spotlight").style.backgroundImage = string;
-// }
+window.addEventListener("mousemove", (e) => {
+  if (moveflag == true) {
+    spotlightMove(e);
+  }
+});
+function spotlightMove(e) {
+  let string =
+    "radial-gradient(circle at " +
+    (e.pageX / window.innerWidth) * 100 +
+    "% " +
+    (e.pageY / window.innerHeight ) * 100+
+    "%,transparent var(--spotlightTransparent),var(--spotlightColor) var(--spotlightSize))";
+  document.getElementById("spotlight").style.backgroundImage = string;
+}
 
 
 
@@ -134,36 +144,41 @@ window.onload = function checkPosition() {
 //FAKE INTERACTIONS
 var trigger2 = 0;
 
-phrase2.addEventListener('click', function () {
+helpNo.addEventListener('click', function () {
   trigger2 = trigger2 + 1;
   console.log("trigger count: " + trigger2)
   if (trigger2 == 1) {
-    phrase2.style.transform = "translate(0,-100px)";
-    phrase2.style.opacity = "0.7";
+    helpNo.style.transform = "translate(0, 100px)";
+    helpNo.style.opacity = "0.7";
   }
   if (trigger2 == 2) {
-    phrase2.style.transform = "translate(-100px,-100px)";
-    phrase2.style.opacity = "0.4";
+    helpNo.style.transform = "translate(300px, 100px)";
+    helpNo.style.opacity = "0.4";
   }
   if (trigger2 == 3) {
-    phrase2.style.transform = "translate(-100px,-200px)";
-    phrase2.style.opacity = "0.2";
+    helpNo.style.transform = "translate(100px, 300px)";
+    helpNo.style.opacity = "0.2";
   }
   if (trigger2 == 4) {
-    phrase2.style.transform = "translate(-200px,-200px)";
-    phrase2.style.opacity = "0";
+    helpNo.style.transform = "translate(300px, 300px)";
+    helpNo.style.opacity = "0";
   }
 });
 
 
-
 //// real interaction
-phrase3.addEventListener('click', function () {
-  console.log("clicked");
-  phrase1.style.display = "none";
-  phrase2.style.display = "none";
-  phrase3.style.display = "none";
-  phrase4.style.display = "block";
+helpYes.addEventListener('click', function () {
+  console.log("helpYes");
+  phrase8.style.display="block";
+  phrase7.style.display="none";
+  helpYes.style.display="none";
+  helpNo.style.display="none";
+  body.style.overflow="hidden";
+  titleBox.style.display="none";
+  window.scrollTo(0, 0);
+  spotlight.style.display="block";
+  scene1.style.display="block";
+  knot.style.animation="scene1Knot 1s forwards"
 });
 
 
@@ -236,12 +251,23 @@ function animation(scrollPos) {
     phrase5.style.display = "none";
     phrase6.style.display = "none";
     phrase7.style.display="block";
-    phrase8.style.display="block";
-    phrase9.style.display="block";
+    helpYes.style.display="block";
+    helpNo.style.display="block";
+    body.style.overflow="hidden";
   } else {
     phrase7.style.display="none";
-    phrase8.style.display = "none";
-    phrase9.style.display = "none";
+    helpYes.style.display = "none";
+    helpNo.style.display = "none";
+    body.style.overflow="visible";
+  }
+
+  // 
+  if (scrollLocation > 7000) {
+    phrase7.style.display="none";
+    helpYes.style.display="none";
+    helpNo.style.display="none";
+  } else {
+    phrase8.style.display="none";
   }
 
 }
@@ -300,18 +326,6 @@ new TypeIt("#phrase7", {
 }).go()
 
 new TypeIt("#phrase8", {
-  cursor: false,
-  speed: textspeed,
-  waitUntilVisible: true,
-}).go()
-
-new TypeIt("#phrase9", {
-  cursor: false,
-  speed: textspeed,
-  waitUntilVisible: true,
-}).go()
-
-new TypeIt("#phrase10", {
   cursor: false,
   speed: textspeed,
   waitUntilVisible: true,
