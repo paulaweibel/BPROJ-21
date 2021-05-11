@@ -11,7 +11,7 @@ body {
 /* -------------------------------- BACKGROUND -------------------------------- */
 #light-texture {
   position: fixed;
-  opacity: 0.1;
+  opacity: 1;
   top: 0;
   left: 0;
   max-width: 200%;
@@ -21,7 +21,7 @@ body {
 
 #fat-texture {
   position: absolute;
-  opacity: 1;
+  opacity: 0;
   top: 0;
   left: 0;
   width: 100%;
