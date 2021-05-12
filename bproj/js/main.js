@@ -9,9 +9,10 @@ var h = window.innerHeight;
 const eyes = document.querySelector('.eyes');
 window.addEventListener('mousemove', (evt) => {
   const x = -(window.innerWidth / 2 - evt.pageX) / 160;
-  const y = -(window.outerHeight / 2) / 160;
+  const y = -(window.innerHeight / 2 - evt.pageY + scrollLocation) / 160;
   eyes.style.transform = `translateY(${y}px) translateX(${x}px)`;
 });
+
 
 
 
@@ -26,6 +27,9 @@ var title = document.querySelector("#title");
 var eyeImg = document.querySelector("#eye-img");
 var knot = document.querySelector("#wiggle");
 var spotlight = document.querySelector("#spotlight");
+
+// INTRO
+var bubble = document.querySelector("#speechbubble");
 
 // SCENES
 var scene1 = document.querySelector("#scene1");
@@ -60,6 +64,7 @@ helpYes.style.display = "none";
 helpNo.style.display = "none";
 
 spotlight.style.display = "none";
+bubble.style.display = "none";
 
 //////////////////////////////////////////////
 
@@ -104,6 +109,7 @@ document.addEventListener('scroll', function (e) {
 
 
 
+
 // LOCK SCROLLING
 window.onload = function checkPosition() {
   if (whereAmI <= 1) {
@@ -111,13 +117,16 @@ window.onload = function checkPosition() {
     titleBox.style.backgroundColor = "#1a1a1a";
   } else {
     body.style.overflow = "visible";
+    storage.clear();
   }
 }
 
 
 
 
-//SPOTLIGHT!!!///////////////////////////////////////////////
+
+
+//SPOTLIGHT!!!/////////////////////////////////////////////////////////////////////////////////////
 
 var moveflag = true;
 
@@ -126,60 +135,19 @@ window.addEventListener("mousemove", (e) => {
     spotlightMove(e);
   }
 });
+
 function spotlightMove(e) {
+  var verschoben = e.pageY - 10000;
   let string =
     "radial-gradient(circle at " +
     (e.pageX / window.innerWidth) * 100 +
     "% " +
-    (e.pageY / window.innerHeight ) * 100+
+    (verschoben / window.innerHeight ) * 100+
     "%,transparent var(--spotlightTransparent),var(--spotlightColor) var(--spotlightSize))";
   document.getElementById("spotlight").style.backgroundImage = string;
 }
 
 
-
-///Story Interactions
-
-
-//FAKE INTERACTIONS
-var trigger2 = 0;
-
-helpNo.addEventListener('click', function () {
-  trigger2 = trigger2 + 1;
-  console.log("trigger count: " + trigger2)
-  if (trigger2 == 1) {
-    helpNo.style.transform = "translate(0, 100px)";
-    helpNo.style.opacity = "0.7";
-  }
-  if (trigger2 == 2) {
-    helpNo.style.transform = "translate(300px, 100px)";
-    helpNo.style.opacity = "0.4";
-  }
-  if (trigger2 == 3) {
-    helpNo.style.transform = "translate(100px, 300px)";
-    helpNo.style.opacity = "0.2";
-  }
-  if (trigger2 == 4) {
-    helpNo.style.transform = "translate(300px, 300px)";
-    helpNo.style.opacity = "0";
-  }
-});
-
-
-//// real interaction
-helpYes.addEventListener('click', function () {
-  console.log("helpYes");
-  phrase8.style.display="block";
-  phrase7.style.display="none";
-  helpYes.style.display="none";
-  helpNo.style.display="none";
-  body.style.overflow="hidden";
-  titleBox.style.display="none";
-  window.scrollTo(0, 0);
-  spotlight.style.display="block";
-  scene1.style.display="block";
-  knot.style.animation="scene1Knot 1s forwards"
-});
 
 
 
@@ -192,10 +160,12 @@ function animation(scrollPos) {
   // ANIMATIONS BASED ON SCROLL POSITION
 
   //move Knot
-  if (scrollLocation > 400) {
+  if (scrollLocation > 500 && scrollLocation < 9000) {
     knot.style.animation = "titleKnot 2s forwards";
+    bubble.style.display = "block"
   } else {
     knot.style.animation = "wiggle 2s infinite";
+    bubble.style.display = "none";
   }
 
   //Hello, im the stress knot.
@@ -273,6 +243,51 @@ function animation(scrollPos) {
 }
 
 
+///Story Interactions
+
+
+//FAKE INTERACTIONS
+var trigger2 = 0;
+
+helpNo.addEventListener('click', function () {
+  trigger2 = trigger2 + 1;
+  console.log("trigger count: " + trigger2)
+  if (trigger2 == 1) {
+    helpNo.style.transform = "translate(0, 100px)";
+    helpNo.style.opacity = "0.7";
+  }
+  if (trigger2 == 2) {
+    helpNo.style.transform = "translate(300px, 100px)";
+    helpNo.style.opacity = "0.4";
+  }
+  if (trigger2 == 3) {
+    helpNo.style.transform = "translate(100px, 300px)";
+    helpNo.style.opacity = "0.2";
+  }
+  if (trigger2 == 4) {
+    helpNo.style.transform = "translate(300px, 300px)";
+    helpNo.style.opacity = "0";
+  }
+});
+
+
+//// real interaction CHANGE TO FIRST SCENE
+helpYes.addEventListener('click', function () {
+  console.log("helpYes");
+  phrase8.style.display="block";
+  phrase7.style.display="none";
+  helpYes.style.display="none";
+  helpNo.style.display="none";
+  body.style.overflow="hidden";
+  window.scrollTo(0, 10000);
+  spotlight.style.display="block";
+  scene1.style.display="block";
+  knot.style.animation="scene1Knot 1s forwards";
+  bubble.style.backgroundColor="red";
+  // console.log("now is the moment")
+  // console.log(bubble.style.display)
+});
+
 
 
 
@@ -283,7 +298,7 @@ function animation(scrollPos) {
 var textspeed = 30;
 
 new TypeIt("#phrase1", {
-  // startDelay: 1000,
+  startDelay: 1000,
   cursor: false,
   speed: textspeed,
   waitUntilVisible: true,
