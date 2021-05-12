@@ -1,23 +1,53 @@
 ////
 
 //script für beste website
+
+
+////      LOADING BAR     /////////////////////////////////////////////////////
+
+let progress = document.getElementById("progress");
+let all = document.getElementById("all");
+
+var queue = new createjs.LoadQueue(false);
+
+queue.on("progress", event =>{
+  let progress = Math.floor(event.progress * 100);
+  this.progress.style.width = progress+"%";
+  if ( progress == 100){
+    console.log("all done");
+    document.querySelector("body").style.background = "#fafafa";
+  }
+})
+
+queue.on("complete", event =>{
+  all.classList.add("fadeIn");
+  setTimeout(() => {
+    progress.classList.add("fadeOut");
+  },500)
+})
+
+queue.on("fileload", handleFileComplete);
+queue.loadFile("./img/background.png");
+// queue.loadFile("https://s3.amazonaws.com/coursetro/stuff/adventure-alpine-alps-714258.jpg");
+// queue.loadFile("https://s3.amazonaws.com/coursetro/stuff/adventure-alpine-alps-714258.jpg");
+
+
+function handleFileComplete(event){
+  var item = event.item;
+  var type = item.type;
+
+  if (type == createjs.Types.IMAGE){
+    all.appendChild(event.result);
+  }
+
+}
+
+
+// GLOBAL VARIABLES //////////////////////////////////////////////////////////////////////////
+var body = document.querySelector("#body")
+
 var w = window.innerWidth;
 var h = window.innerHeight;
-
-
-////EYES MAIN CHARACTER
-const eyes = document.querySelector('.eyes');
-window.addEventListener('mousemove', (evt) => {
-  const x = -(window.innerWidth / 2 - evt.pageX) / 160;
-  const y = -(window.innerHeight / 2 - evt.pageY + scrollLocation) / 160;
-  eyes.style.transform = `translateY(${y}px) translateX(${x}px)`;
-});
-
-
-
-
-// GLOBAL VARIABLES
-var body = document.querySelector("#body")
 
 var whereAmI = localStorage.getItem('scrollMemory');
 console.log("I am at: " + whereAmI)
@@ -39,15 +69,13 @@ var phrase1 = document.querySelector("#phrase1");
 var phrase2 = document.querySelector("#phrase2");
 var phrase3 = document.querySelector("#phrase3");
 var phrase4 = document.querySelector("#phrase4");
-var phrase5 = document.querySelector("#phrase5");
-var phrase6 = document.querySelector("#phrase6");
-var phrase7 = document.querySelector("#phrase7");
+// var phrase5 = document.querySelector("#phrase5");
+// var phrase6 = document.querySelector("#phrase6");
+// var phrase7 = document.querySelector("#phrase7");
+// var phrase8 = document.querySelector("#phrase8");
 
 var helpYes = document.querySelector("#help-yes");
 var helpNo = document.querySelector("#help-no");
-
-var phrase8 = document.querySelector("#phrase8");
-
 
 
 
@@ -56,19 +84,32 @@ phrase1.style.display = "none";
 phrase2.style.display = "none";
 phrase3.style.display = "none";
 phrase4.style.display = "none";
-phrase5.style.display = "none";
-phrase6.style.display = "none";
-phrase7.style.display = "none";
-phrase8.style.display = "none";
+
 helpYes.style.display = "none";
 helpNo.style.display = "none";
+
+// phrase5.style.display = "none";
+// phrase6.style.display = "none";
+// phrase7.style.display = "none";
+// phrase8.style.display = "none";
 
 spotlight.style.display = "none";
 bubble.style.display = "none";
 
-//////////////////////////////////////////////
 
-//// TITLE
+
+////EYES MAIN CHARACTER   /////////////////////////////////////////////////////////////////////
+
+const eyes = document.querySelector('.eyes');
+window.addEventListener('mousemove', (evt) => {
+  const x = -(window.innerWidth / 2 - evt.pageX) / 160;
+  const y = -(window.innerHeight / 2 - evt.pageY + scrollLocation) / 160;
+  eyes.style.transform = `translateY(${y}px) translateX(${x}px)`;
+});
+
+
+
+//// TITLE /////////////////////////////////////////////////////////////////////////////
 
 var titleButton = document.querySelector("#title-button");
 var visible = 1;
@@ -79,17 +120,17 @@ titleButton.addEventListener('click', function () {
     visible = 0;
     body.style.overflow = "visible";
     titleBox.style.backgroundColor = "transparent";
-    titleButton.innerHTML = "<img id=title-button-on class=on src=img/on.png>"
+    // titleButton.innerHTML = "<img id=title-button-on class=on src=img/on.png>"
 
   } else {
     visible = 3;
     body.style.overflow = "hidden";
-    titleButton.innerHTML = "<img id=title-button-off class=off src=img/off.png>";
+    // titleButton.innerHTML = "<img id=title-button-off class=off src=img/off.png>";
     titleBox.style.backgroundColor = "#1a1a1a";
   }
 });
 
-//ScrollLocation (lastKnownScrollPosition)
+//ScrollLocation (lastKnownScrollPosition) ////////////////////////////////////////////////
 let scrollLocation = 0;
 let ticking = false;
 
@@ -108,10 +149,10 @@ document.addEventListener('scroll', function (e) {
 });
 
 
-
-
 // LOCK SCROLLING
 window.onload = function checkPosition() {
+  console.log("hello")
+  // loadImage();
   if (whereAmI <= 1) {
     body.style.overflow = "hidden";
     titleBox.style.backgroundColor = "#1a1a1a";
@@ -121,8 +162,16 @@ window.onload = function checkPosition() {
   }
 }
 
+// function loadImage() {
+//   var preload = new createjs.LoadQueue();
+//   preload.addEventListener("fileload", handleFileComplete);
+//   // preload.loadFile("img/");
+//   console.log("yeah")
+// }
 
-
+// function handleFileComplete(event) {
+//   document.body.appendChild(event.result);
+// }
 
 
 
@@ -160,7 +209,7 @@ function animation(scrollPos) {
   // ANIMATIONS BASED ON SCROLL POSITION
 
   //move Knot
-  if (scrollLocation > 500 && scrollLocation < 9000) {
+  if (scrollLocation > 100 && scrollLocation < 9000) {
     knot.style.animation = "titleKnot 2s forwards";
     bubble.style.display = "block"
   } else {
@@ -169,7 +218,7 @@ function animation(scrollPos) {
   }
 
   //Hello, im the stress knot.
-  if (scrollLocation > 500) {
+  if (scrollLocation > 100) {
     phrase1.style.display="block";
     titleBox.style.opacity = "0";
   } else {
@@ -178,54 +227,30 @@ function animation(scrollPos) {
   }
 
   //my job is to visit people.
-  if (scrollLocation > 1000) {
+  if (scrollLocation > 1500) {
+    phrase1.style.display = "none";
     phrase2.style.display="block";
   } else {
     phrase2.style.display="none";
   }
 
   //
-  if (scrollLocation > 2000) {
+  if (scrollLocation > 2500) {
+    phrase2.style.display = "none";
     phrase3.style.display="block";
   } else {
     phrase3.style.display="none";
   }
 
   //
-  if (scrollLocation > 3000) {
-    phrase4.style.display="block";
-  } else {
-    phrase4.style.display="none";
-  }
-
-  //
-  if (scrollLocation > 4000) {
-    phrase1.style.display = "none";
-    phrase2.style.display = "none";
+  if (scrollLocation > 3500) {
     phrase3.style.display = "none";
-    phrase4.style.display = "none";
-    phrase5.style.display="block";
-  } else {
-    phrase5.style.display="none";
-  }
-
-  //
-  if (scrollLocation > 5000) {
-    phrase6.style.display="block";
-  } else {
-    phrase6.style.display="none";
-  }
-
-  //
-  if (scrollLocation > 6000) {
-    phrase5.style.display = "none";
-    phrase6.style.display = "none";
-    phrase7.style.display="block";
+    phrase4.style.display="block";
     helpYes.style.display="block";
     helpNo.style.display="block";
     body.style.overflow="hidden";
   } else {
-    phrase7.style.display="none";
+    
     helpYes.style.display = "none";
     helpNo.style.display = "none";
     body.style.overflow="visible";
@@ -233,11 +258,10 @@ function animation(scrollPos) {
 
   // 
   if (scrollLocation > 7000) {
-    phrase7.style.display="none";
+    phrase4.style.display="none";
     helpYes.style.display="none";
     helpNo.style.display="none";
   } else {
-    phrase8.style.display="none";
   }
 
 }
@@ -274,8 +298,7 @@ helpNo.addEventListener('click', function () {
 //// real interaction CHANGE TO FIRST SCENE
 helpYes.addEventListener('click', function () {
   console.log("helpYes");
-  phrase8.style.display="block";
-  phrase7.style.display="none";
+  phrase4.style.display="none";
   helpYes.style.display="none";
   helpNo.style.display="none";
   body.style.overflow="hidden";
@@ -283,9 +306,6 @@ helpYes.addEventListener('click', function () {
   spotlight.style.display="block";
   scene1.style.display="block";
   knot.style.animation="scene1Knot 1s forwards";
-  bubble.style.backgroundColor="red";
-  // console.log("now is the moment")
-  // console.log(bubble.style.display)
 });
 
 
@@ -295,7 +315,7 @@ helpYes.addEventListener('click', function () {
 
 // TYPING ANIMATIONS FOR ALLL THE TEXTS:
 
-var textspeed = 30;
+var textspeed = 20;
 
 new TypeIt("#phrase1", {
   startDelay: 1000,
@@ -322,26 +342,43 @@ new TypeIt("#phrase4", {
   waitUntilVisible: true,
 }).go()
 
-new TypeIt("#phrase5", {
+
+new TypeIt("#help-yes", {
+  startDelay: 1500,
   cursor: false,
-  speed: textspeed,
+  speed: 10,
   waitUntilVisible: true,
 }).go()
 
-new TypeIt("#phrase6", {
+new TypeIt("#help-no", {
+  startDelay: 1700,
   cursor: false,
-  speed: textspeed,
+  speed: 10,
   waitUntilVisible: true,
 }).go()
 
-new TypeIt("#phrase7", {
-  cursor: false,
-  speed: textspeed,
-  waitUntilVisible: true,
-}).go()
 
-new TypeIt("#phrase8", {
-  cursor: false,
-  speed: textspeed,
-  waitUntilVisible: true,
-}).go()
+
+// new TypeIt("#phrase5", {
+//   cursor: false,
+//   speed: textspeed,
+//   waitUntilVisible: true,
+// }).go()
+
+// new TypeIt("#phrase6", {
+//   cursor: false,
+//   speed: textspeed,
+//   waitUntilVisible: true,
+// }).go()
+
+// new TypeIt("#phrase7", {
+//   cursor: false,
+//   speed: textspeed,
+//   waitUntilVisible: true,
+// }).go()
+
+// new TypeIt("#phrase8", {
+//   cursor: false,
+//   speed: textspeed,
+//   waitUntilVisible: true,
+// }).go()

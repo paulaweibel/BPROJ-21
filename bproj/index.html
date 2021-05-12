@@ -9,30 +9,28 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="icon" href="img/knot-layer4.png">
     <script src="./js/typeit.min.js"></script>
+    <!-- <script src="./js/preloadjs.min.js"></script> -->
 </head>
 
 <body id="body">
-    <div class="all">
+
+
+
+    <div id="all">
         <!-- BACKGROUND -->
         <img id="light-texture" src="img/background.png">
 
-
-
-
         <!-- TITLE -->
         <div id="title-container">
-            <img id="fat-texture" src="img/background-scribble-r.png">
+            <!-- <img id="fat-texture" src="img/background-scribble-r.png"> -->
             <h1 id="title">
                 <img class="title-text" id="title0" src="img/title.png">
             </h1>
-            <div id="title-button">
-                <img id="title-button-off" class="off" src="img/off.png">
-            </div>
         </div>
 
         <!-- SCENE -->
         <div id="scene1">
-            <img id="scene-1-1" class="scene" src="img/scene-1.png">
+            <img id="scene-1-1" class="scene" src="img/SCENE-06.png">
             <img id="person-1-1" class="scene" src="img/person-1.png">
         </div>
 
@@ -62,25 +60,27 @@
         </div>
 
 
-        
+
         <!-- KNOT TEXT -->
         <div class="knot-text-container">
-            
-            <p id="phrase1" class="text text-knot">Hello, I'm stress-knot, a stress-causing ego. <br>You don't usually see me, but I decided to make an exception this
-                time.</p>
-            <p id="phrase2" class="text text-knot"></p>
-            <p id="phrase3" class="text text-knot"></p>
-            <p id="phrase4" class="text text-knot"></p>
-            <p id="phrase5" class="text text-knot">My job is to visit people from time to time and increase their stress
-                level.  I know what you're thinking, but someone has to do this job, and
-                somehow I have to make a living too ... so please don't judge me! <br> Stress has many shades. <br>It is my responsibility to create
+
+            <p id="phrase1" class="text text-knot">Hello, I'm stress-knot, a stress-causing ego. <br> You don't usually
+                see me, but I decided to make an exception this time.</p>
+            <p id="phrase2" class="text text-knot">My job is to visit people from time to time and increase their stress
+                level. I know what you're thinking, but someone has to do this job, and
+                somehow I have to make a living too ... so please don't judge me!</p>
+            <p id="phrase3" class="text text-knot">Stress has many shades. <br>It is my responsibility to create
                 different stressful situations for each individual I encounter on my path, by finding their weaknesses.
             </p>
-            <p id="phrase6" class="text text-knot">Follow me, I'll show you what I mean! </p>
-            <p id="phrase7" class="text text-knot">Maybe you can help me on my way? </p>
-            <p id="help-yes" class="text text-knot button">yes</p>
-            <p id="help-no" class="text text-knot button">no</p>
-            <p id="phrase8" class="text text-knot"></p>
+            <p id="phrase4" class="text text-knot">Follow me, maybe you can help me on my way? </p>
+            <p id="help-yes" class="text text-knot button help-button">YES</p>
+            <p id="help-no" class="text text-knot button help-button">NO</p>
+            <!-- <p id="phrase5" class="text text-knot"> <br>
+            </p>
+            <p id="phrase6" class="text text-knot"></p>
+            <p id="phrase7" class="text text-knot"></p>
+
+            <p id="phrase8" class="text text-knot"></p> -->
         </div>
 
 
@@ -91,7 +91,16 @@
         </div>
 
 
+        <div id="title-button">
+            <img id="title-button" src="img/title-rope.png">
+            <!-- <img id="title-button-off" class="off" src="img/off.png"> -->
+        </div>
+
     </div>
+
+
+    <!-- Progressbar -->
+    <div id="progress"></div>
 
     <!-- NO MOBILE VERSION -->
     <div id="desktop-only">Hello, and welcome to our project!<br><br>To see the project please turn your smartphone 90°.
@@ -100,7 +109,7 @@
 
 
 
-
+    <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 
