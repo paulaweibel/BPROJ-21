@@ -9,17 +9,19 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="icon" href="img/knot-layer4.png">
     <script src="./js/typeit.min.js"></script>
+    <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
     <!-- <script src="./js/preloadjs.min.js"></script> -->
 </head>
 
 <body id="body">
 
-
+    <!-- Progressbar ------------------------------------------------------------->
+    <div id="progress"></div>
 
     <div id="all">
 
         <!-- BACKGROUND --------------------------------------------------------->
-        <img id="light-texture" src="img/background.png">
+        <img onload="alarm()" id="light-texture" src="img/background.png">
 
         <!-- TITLE -------------------------------------------------------------->
         <div id="title-container">
@@ -32,21 +34,37 @@
             </div>
         </div>
 
-        <!-- ILLUSTRATIONS ------------------------------------------------------------->
+
+
+
+        <!-- ASSETS ------------------------------------------------------------------------------>
         <div id="asset-container">
-            <!-- <img id="scene-1-1" class="scene" src="img/SCENE-06.png"> -->
-            <img id="valentino-1" class="scene" src="img/valentino-1.png">
+
+            <div id="valentino" onclick="idValentino()">
+                <img id="valentino-1" class="asset id" src="img/valentino-1.png">
+            </div>
+
         </div>
 
 
 
-        
+
 
         <!-- SPOTLIGHT ------------------------------------------------------------->
         <div id="spotlight" class="light"></div>
 
         <!-- SPEECHBUBBLE ------------------------------------------------------------->
         <img id="speechbubble" src="img/speech-bubble.png">
+
+        <div id="enter">
+            Here we are, the first person of the day. 
+            <img onclick="startStory()" src="img/enter.png">
+        </div>
+
+        <div id="runValentino">
+            ruuuuuuuUuuun
+            <img onclick="runBus()" src="img/enter.png">
+        </div>
 
 
         <!-- MAIN CHARACTER ------------------------------------------------------------->
@@ -58,14 +76,12 @@
             <div class="scribble eyes">
                 <img id="eye-img" src="img/eyes-long.png">
             </div>
-
         </div>
 
 
 
         <!-- KNOT TEXT ------------------------------------------------------------->
-        <div class="knot-text-container">
-
+        <div id="intro" class="knot-text-container">
             <p id="phrase1" class="text text-knot">Hello, I'm stress-knot, a stress-causing ego. <br> You don't usually
                 see me, but I decided to make an exception this time.</p>
             <p id="phrase2" class="text text-knot">My job is to visit people from time to time and increase their stress
@@ -81,7 +97,6 @@
             </p>
             <p id="phrase6" class="text text-knot"></p>
             <p id="phrase7" class="text text-knot"></p>
-
             <p id="phrase8" class="text text-knot"></p> -->
         </div>
 
@@ -100,18 +115,17 @@
 
     </div>
 
+    <!-- id's of characters -->
+    <div id="id-valentino" class="id-card" onclick="hideId()">ID CARD</div>
+    <div id="id-lawrence" class="id-card" onclick="hideId()">ID CARD</div>
+    <div id="id-mercy" class="id-card" onclick="hideId()">ID CARD</div>
+    <div id="id-barbara" class="id-card" onclick="hideId()">ID CARD</div>
 
-    <!-- Progressbar ------------------------------------------------------------->
-    <div id="progress"></div>
 
     <!-- NO MOBILE VERSION ------------------------------------------------------------->
     <div id="desktop-only">Hello, and welcome to our project!<br><br>To see the project please turn your smartphone 90°.
     </div>
 
-
-
-
-    <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 
