@@ -1,7 +1,7 @@
-
+/* 
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Schoolbell&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap');
 
 html {
@@ -17,17 +17,18 @@ body {
   overflow: hidden;
   color: rgb(250, 250, 250);
   height: 2000vh;
+  /* scrollbar-width: none; */
 }
 
 /* -------------------------------- ALL CONTENT -------------------------------- */
 
-#all{
+#all {
   opacity: 0;
 }
 
 /* -------------------------------- PROGRESS BAR -------------------------------- */
 
-#progress{
+#progress {
   height: 2px;
   background: red;
   position: fixed;
@@ -37,12 +38,12 @@ body {
   transition: width 0.1s ease;
 }
 
-.fadeOut{
+.fadeOut {
   opacity: 0 !important;
   transition: opacity 2s;
 }
 
-.fadeIn{
+.fadeIn {
   opacity: 1 !important;
   transition: opacity 1s 1.5s;
 }
@@ -72,13 +73,13 @@ body {
 /* -------------------------------- TITLE PAGE -------------------------------- */
 #title-container {
   position: fixed;
-  top: 0;
+  top: 0px;
   background: #1A1A1A;
   height: 100vh;
   width: 100%;
   text-align: center;
   font-size: 3em;
-  transition: 0.1s all;
+  /* transition: background-color 0.2s; */
 }
 
 
@@ -86,7 +87,7 @@ body {
   position: absolute;
   color: rgb(46, 46, 46);
   top: 40%;
-  
+
 }
 
 .title-text {
@@ -104,25 +105,60 @@ body {
   height: 40vh;
   left: 50vw;
   color: #1A1A1A;
+
+}
+
+#title-button:hover {
+  top: 0;
   transition: 0.2s;
 }
 
-#title-button:hover{
-  top:0;
+
+
+/* transitions */
+.titleUp {
+  margin-top: -150vh !important;
+  transition: margin-top 1s  ease-in-out;
 }
-.off,
-.on {
-  height: 50px;
+
+.ropeUp {
+  margin-top: -150vh !important;
+  transition: margin-top 1s 0.1s ease-in-out;
 }
+
+/* about */
+#about-container {
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  width: 3em;
+  text-align: right;
+  font-size: 0.5em;
+  color: #01a1a1;
+  opacity: 0.5;
+}
+
+#about-container:hover {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
 
 
 /* -------------------------------- SCENE -------------------------------- */
 
-#scene1{
-  display: none;
+#asset-container {
+  /* display: none; */
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+#valentino-1 {
   position: absolute;
   top: 10000px;
-  height: 100%;
+  width: 100px;
 }
 
 
@@ -130,17 +166,22 @@ body {
 
 /* -------------------------------- BUTTONS -------------------------------- */
 
-.button:hover{
+.button:hover {
   cursor: pointer;
 }
 
-.help-button{
-  margin-left:20px;
+.help-button {
+  margin-left: 20px;
 }
 
-.help-button:hover{
+.help-button:hover {
   letter-spacing: 5px;
-  margin-left:15px;
+  margin-left: 15px;
+}
+
+.off,
+.on {
+  height: 50px;
 }
 
 /* 
@@ -158,7 +199,7 @@ body {
 :root {
   --spotlightColor: rgb(26, 26, 26);
   --spotlightSize: 200px;
-  --spotlightTransparent: 200px; 
+  --spotlightTransparent: 200px;
 }
 
 
@@ -166,11 +207,9 @@ body {
 #spotlight {
   /* z-index: 5; */
   position: absolute;
-  background-image: radial-gradient(
-    circle at -20% -20%,
-    transparent var(--spotlightTransparent),
-    var(--spotlightColor) var(--spotlightSize)
-  );
+  background-image: radial-gradient(circle at -20% -20%,
+      transparent var(--spotlightTransparent),
+      var(--spotlightColor) var(--spotlightSize));
   height: 100vh;
   width: 100%;
   top: 10000px;
@@ -241,6 +280,7 @@ body {
     transform: translate(-45vw, 10vh);
   }
 }
+
 
 @keyframes scene1Knot {
   0% {
@@ -340,7 +380,7 @@ body {
 
 /* ------------------------------ TEXT ----------------------------- */
 
-#speechbubble{
+#speechbubble {
   display: none;
   position: fixed;
   max-width: 500px;
@@ -351,10 +391,11 @@ body {
 }
 
 @keyframes bubbleGrow {
-  0%{
+  0% {
     transform: scale(0);
   }
-  100%{
+
+  100% {
     transform: scale(1);
   }
 }
@@ -382,7 +423,7 @@ body {
   bottom: -30px;
 } */
 
-.text-knot{
+.text-knot {
   padding: 10px;
   text-align: left;
   color: #1a1a1a;

@@ -37,7 +37,7 @@ function handleFileComplete(event){
   var type = item.type;
 
   if (type == createjs.Types.IMAGE){
-    all.appendChild(event.result);
+    // all.appendChild(event.result);
   }
 
 }
@@ -54,6 +54,7 @@ console.log("I am at: " + whereAmI)
 
 var titleBox = document.querySelector("#title-container");
 var title = document.querySelector("#title");
+var titleButton = document.querySelector("#title-button");
 var eyeImg = document.querySelector("#eye-img");
 var knot = document.querySelector("#wiggle");
 var spotlight = document.querySelector("#spotlight");
@@ -62,7 +63,7 @@ var spotlight = document.querySelector("#spotlight");
 var bubble = document.querySelector("#speechbubble");
 
 // SCENES
-var scene1 = document.querySelector("#scene1");
+// var scene1 = document.querySelector("#scene1");
 
 //GET STORY TEXTS
 var phrase1 = document.querySelector("#phrase1");
@@ -111,7 +112,7 @@ window.addEventListener('mousemove', (evt) => {
 
 //// TITLE /////////////////////////////////////////////////////////////////////////////
 
-var titleButton = document.querySelector("#title-button");
+
 var visible = 1;
 var startControll = 1;
 
@@ -120,12 +121,10 @@ titleButton.addEventListener('click', function () {
     visible = 0;
     body.style.overflow = "visible";
     titleBox.style.backgroundColor = "transparent";
-    // titleButton.innerHTML = "<img id=title-button-on class=on src=img/on.png>"
 
   } else {
     visible = 3;
     body.style.overflow = "hidden";
-    // titleButton.innerHTML = "<img id=title-button-off class=off src=img/off.png>";
     titleBox.style.backgroundColor = "#1a1a1a";
   }
 });
@@ -152,26 +151,18 @@ document.addEventListener('scroll', function (e) {
 // LOCK SCROLLING
 window.onload = function checkPosition() {
   console.log("hello")
-  // loadImage();
-  if (whereAmI <= 1) {
-    body.style.overflow = "hidden";
-    titleBox.style.backgroundColor = "#1a1a1a";
-  } else {
-    body.style.overflow = "visible";
-    storage.clear();
-  }
+  scrollTo(0,0);
+  body.style.overflow = "hidden";
+
+  // if (whereAmI <= 1) {
+  //   body.style.overflow = "hidden";
+  //   titleBox.style.backgroundColor = "#1a1a1a";
+  // } else {
+  //   body.style.overflow = "visible";
+  //   storage.clear();
+  // }
+
 }
-
-// function loadImage() {
-//   var preload = new createjs.LoadQueue();
-//   preload.addEventListener("fileload", handleFileComplete);
-//   // preload.loadFile("img/");
-//   console.log("yeah")
-// }
-
-// function handleFileComplete(event) {
-//   document.body.appendChild(event.result);
-// }
 
 
 
@@ -212,17 +203,22 @@ function animation(scrollPos) {
   if (scrollLocation > 100 && scrollLocation < 9000) {
     knot.style.animation = "titleKnot 2s forwards";
     bubble.style.display = "block"
+    titleBox.classList.add("titleUp");
+    titleButton.classList.add("ropeUp");
   } else {
     knot.style.animation = "wiggle 2s infinite";
+    titleBox.classList.remove("titleUp");
+    titleButton.classList.remove("ropeUp");
     bubble.style.display = "none";
   }
 
   //Hello, im the stress knot.
   if (scrollLocation > 100) {
+    
+    
     phrase1.style.display="block";
-    titleBox.style.opacity = "0";
   } else {
-    titleBox.style.opacity = "1";
+    
     phrase1.style.display="none";
   }
 
@@ -304,7 +300,7 @@ helpYes.addEventListener('click', function () {
   body.style.overflow="hidden";
   window.scrollTo(0, 10000);
   spotlight.style.display="block";
-  scene1.style.display="block";
+  // scene1.style.display="block";
   knot.style.animation="scene1Knot 1s forwards";
 });
 
