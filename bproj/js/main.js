@@ -111,6 +111,8 @@ phrase4.style.display = "none";
 // phrase7.style.display = "none";
 // phrase8.style.display = "none";
 spotlight.style.display = "none";
+helpYes.style.display = "block";
+helpNo.style.display = "block";
 
 
 
