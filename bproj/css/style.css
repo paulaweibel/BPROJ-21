@@ -114,14 +114,9 @@ body {
   transition: margin-top 1s ease-in-out, all 1s;
 }
 
-#title-button:hover{
-  animation: hi 0.3s;
-}
-
-@keyframes hi {
-  0%{transform: rotate(0);}
-  50%{transform: rotate(-5deg);}
-  100%{transform: rotate(0);}
+#title-button:hover {
+  transform: scale(1.1) translate(-5px, -5px);
+  transition: 0.2s;
 }
 
 /* TITLE DARK BACKGROUND ---- */
