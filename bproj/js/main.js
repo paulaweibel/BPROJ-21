@@ -96,6 +96,7 @@ var phrase4 = document.querySelector("#phrase4");
 // var phrase8 = document.querySelector("#phrase8");
 var helpYes = document.querySelector("#help-yes");
 var helpNo = document.querySelector("#help-no");
+var helpButtons = document.querySelector("#help-button");
 
 
 
@@ -111,8 +112,6 @@ phrase4.style.display = "none";
 // phrase7.style.display = "none";
 // phrase8.style.display = "none";
 spotlight.style.display = "none";
-helpYes.style.display = "block";
-helpNo.style.display = "block"; 
 
 
 
@@ -159,14 +158,13 @@ titleButton.addEventListener('click', function () {
     visible = 0;
     body.style.overflow = "visible";
     document.querySelector("body").style.background = "#fafafa";
-    document.querySelector("#curtain-right").classList.add("openRight");
-    document.querySelector("#curtain-left").classList.add("openLeft");
-
+    document.querySelector("#title-dark").classList.add("titleBright");
+    knot.classList.add("knotTitle");
   } else {
     visible = 3;
     body.style.overflow = "hidden";
-    document.querySelector("#curtain-right").classList.remove("openRight");
-    document.querySelector("#curtain-left").classList.remove("openLeft");
+    document.querySelector("#title-dark").classList.remove("titleBright");
+    knot.classList.remove("knotTitle");
   }
 });
 
@@ -206,19 +204,20 @@ function animation(scrollPos) {
   //move Knot
   if (scrollLocation > 100 && scrollLocation <= 4000) {
     intro.style.display = "block";
-    knot.classList.add("knotLeft");
+    knot.classList.add("knotIntro");
+    bubble.style.display="block";
     bubble.classList.add("bubbleGrow");
     titleBox.classList.add("titleUp");
     titleButton.classList.add("ropeUp");
   } else {
-    knot.classList.remove("knotLeft");
+    knot.classList.remove("knotIntro");
     titleBox.classList.remove("titleUp");
     titleButton.classList.remove("ropeUp");
     bubble.classList.remove("bubbleGrow");
   }
 
   if (scrollLocation > 100){
-    knot.classList.add("knotLeft");
+    knot.classList.add("knotIntro");
   }
 
   //Hello, im the stress knot.
@@ -240,6 +239,7 @@ function animation(scrollPos) {
   if (scrollLocation > 2500) {
     phrase2.style.display = "none";
     phrase3.style.display = "block";
+    helpButtons.style.display = "block";
   } else {
     phrase3.style.display = "none";
   }
@@ -248,9 +248,10 @@ function animation(scrollPos) {
   if (scrollLocation > 3500 && scrollLocation < 4000) {
     phrase3.style.display = "none";
     phrase4.style.display = "block";
+    
     helpYes.classList.add("helpUp");
     helpNo.classList.add("helpUp");
-    // helpNo.style.display = "block";
+    
     body.style.overflow = "hidden";
   } else {
     phrase4.style.display = "none";
@@ -314,7 +315,7 @@ helpNo.addEventListener('click', function () {
 helpYes.addEventListener('click', function () {
   console.log("helpYes");
   intro.style.display = "none";
-  knot.classList.add("knotLeft");
+  knot.classList.add("knotIntro");
   body.style.overflow = "hidden";
   window.scrollTo(0, 10000);
   spotlight.style.display = "block";
@@ -340,7 +341,7 @@ function runBus() {
   document.querySelector("#runValentino").style.display = "none";
   document.querySelector("#horizontal-scroll").style.display = "block";
   spotlight.style.display = "none";
-  knot.classList.remove("knotLeft");
+  knot.classList.remove("knotIntro");
   document.querySelector("#valentino").style.display = "none";
   body.style.overflow = "HIDDEN";
   body.style.overflowX = "hidden";
