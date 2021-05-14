@@ -119,15 +119,15 @@ body {
 #title-button {
   position: fixed;
   cursor: pointer;
-  top: -10px;
-  height: 40vh;
-  left: 30vw;
+  top: 200px;
+  height: 15vh;
+  left: 29vw;
   color: var(--schwarz);
   transition: margin-top 1s 0.1s ease-in-out, all 0.5s;
 }
 
 #title-button:hover {
-  top: 0;
+  transform: scale(1.1) translate(-5px, -5px);
   transition: 0.2s;
 }
 
@@ -176,7 +176,9 @@ body {
 }
 
 .openRight {
-  transform: translate(70vw, 0) /*rotate(-60deg)*/ !important;
+  transform: translate(70vw, 0)
+    /*rotate(-60deg)*/
+     !important;
   /* border-radius: 50px !important; */
 }
 
@@ -218,18 +220,18 @@ body {
   padding: 1vh;
   left: calc(23vw + 30vh);
   width: 15vh;
-  height:calc(3em);  
+  height: calc(3em);
   text-align: center;
   transition: margin-bottom 1s 0.5s ease, transform 0.1s;
   background-color: var(--schwarz);
 }
 
-#help-no{
+#help-no {
   display: none;
   margin-left: 20vh;
 }
 
-#help-yes{
+#help-yes {
   display: none;
 }
 
@@ -363,15 +365,15 @@ body {
 
 @keyframes s1 {
   0% {
-    transform: rotate(0deg) scale(1.5) translate(0,0vh);
+    transform: rotate(0deg) scale(1.5) translate(0, 0vh);
   }
 
   50% {
-    transform: rotate(10deg) scale(1.7) translate(0,-2vh);
+    transform: rotate(10deg) scale(1.7) translate(0, -2vh);
   }
 
   100% {
-    transform: rotate(0deg) scale(1.5) translate(0,0vh);
+    transform: rotate(0deg) scale(1.5) translate(0, 0vh);
   }
 }
 
@@ -381,7 +383,7 @@ body {
 
 @keyframes s2 {
   0% {
-    transform: rotate(0deg) scale(1.7) translate(0,0vh);
+    transform: rotate(0deg) scale(1.7) translate(0, 0vh);
   }
 
   50% {
@@ -389,7 +391,7 @@ body {
   }
 
   100% {
-    transform: rotate(0deg) scale(1.7) translate(0,0vh);
+    transform: rotate(0deg) scale(1.7) translate(0, 0vh);
   }
 }
 
