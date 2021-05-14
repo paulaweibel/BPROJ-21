@@ -13,7 +13,7 @@ body {
   font-weight: 700;
   font-size: 1.1em;
   display: flex;
-  background-color: rgb(250, 250, 250);
+  background-color: #1A1A1A;
   overflow: hidden;
   color: rgb(250, 250, 250);
   height: 2000vh;
@@ -26,12 +26,23 @@ body {
   opacity: 0;
 }
 
+#navigation{
+  position: fixed;
+
+  bottom: 0;
+  left: 0;
+  
+}
+
+.blu{color:aquamarine;  cursor: pointer;}
+
 /* -------------------------------- PROGRESS BAR -------------------------------- */
 
 #progress {
-  height: 2px;
-  background: red;
+  height: 5px;
+  background: #fafafa;
   position: fixed;
+  left: 25%;
   top: 50%;
   opacity: 1;
   z-index: 2;
@@ -74,47 +85,40 @@ body {
 #title-container {
   position: fixed;
   top: 0px;
-  background: #1A1A1A;
   height: 100vh;
   width: 100%;
   text-align: center;
   font-size: 3em;
   transition: margin-top 1s  ease-in-out;
-  
 }
-
 
 #title {
   position: absolute;
   color: rgb(46, 46, 46);
   top: 40%;
-
 }
 
 .title-text {
   position: absolute;
   top: 0;
   left: calc(50vw - 30vh);
-  /* width: 800px; */
   height: 60vh;
 }
 
 #title-button {
   position: fixed;
   cursor: pointer;
-  top: -20px;
+  top: -80px;
   height: 40vh;
-  left: 50vw;
+  left: calc(50vw - 2.5vh);
   color: #1A1A1A;
-  transition: margin-top 1s 0.1s ease-in-out;
+  transition: margin-top 1s 0.1s ease-in-out, all 1s;
 }
 
 #title-button:hover {
   top: 0;
-  transition: 0.2s;
+  transition: 0.3s;
 }
-
-
 
 /* transitions */
 .titleUp {
@@ -124,6 +128,47 @@ body {
 .ropeUp {
   margin-top: -110vh !important;
 }
+
+
+/* CURTAINS --------------------------- */
+.curtain{
+  background-color: #1a1a1a;
+  /* background-color: red; */
+  border-radius: 0px;
+  transition: transform 1.5s ease-in-out;
+}
+
+#curtain-left{
+  position: absolute;
+  top: 0vh;
+  left: -50vw;
+  height: 150vh;
+  width: 100vw;
+  transform-origin: top right;
+  transform: translate(0,0) rotate(0);
+  
+}
+
+#curtain-right{
+  position: absolute;
+  right:-50vw;
+  top: 0vh;
+  height:150vh;
+  width: 100vw;
+  transform-origin: top left;
+  transform: translate(0,0) rotate(0);
+}
+
+.openLeft{
+  transform: translate(-25vw,0) rotate(30deg) !important;
+  /* border-radius: 50px !important; */
+}
+
+.openRight{
+  transform: translate(25vw,0) rotate(-30deg)!important;
+  /* border-radius: 50px !important; */
+}
+
 
 /* about -------------------------------- */
 #about-container {
@@ -144,9 +189,6 @@ body {
   opacity: 1;
   /* transition: opacity 0.2s; */
 }
-
-
-
 
 
 
@@ -370,8 +412,9 @@ body {
   }
 }
 
-
-/* -------------------------------- STORIES -------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+/* ---- STORIES ----------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
 
 #asset-container {
   display: none;
@@ -399,6 +442,8 @@ body {
   top: 30vh;
 }
 
+
+/* VALENTINO  ----------------------------------------------------------------------------------------------------------- */
 #runValentino {
   cursor: pointer;
   display: none;
@@ -418,9 +463,19 @@ body {
   top: 30vh;
 }
 
+#horizontal-scroll{
+  display: none;
+  background-color: red;
+  position: absolute;
+  top: calc(10000px + 80vh);
+  left:0;
+  height: 20vh;
+  width: 200vw;
+}
 
 
 
+/* ----------------------------------------------- */
 /* IDS OF CHARACTERS ----------------------------- */
 
 .id-card{
@@ -448,26 +503,21 @@ body {
 
 
 
-/* ------------------------------ TEXT ----------------------------- */
+/* ----------------------------------------------- */
+/* ------------ TEXT ----------------------------- */
 
 #speechbubble {
-  display: none;
   position: fixed;
   max-width: 500px;
   left: calc(23vw + 30vh - 100PX);
   top: calc(20vh - 50PX);
   transform-origin: bottom left;
-  animation: bubbleGrow 1s forwards ease-in-out;
+  transform: scale(0);
+  transition: transform 0.5s;
 }
 
-@keyframes bubbleGrow {
-  0% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+.bubbleGrow {
+    transform: scale(1) !important;
 }
 
 .knot-text-container {
@@ -475,23 +525,7 @@ body {
   position: fixed;
   left: calc(23vw + 30vh);
   top: 20vh;
-  /* background-color: #fafafa; */
-  /* border: 5px solid rgba(0, 0, 0, 0);  */
-  /* outline: 5px solid #1a1a1a; */
 }
-
-/* 
-.text-knot:after {
-  content: "";
-  position: absolute;
-  border: 2px solid;
-  border-left: 40px solid #1a1a1a;
-  border-right: 0px solid transparent;
-  border-top: 0px solid transparent;
-  border-bottom: 40px solid transparent;
-  left: 30px;
-  bottom: -30px;
-} */
 
 .text-knot {
   padding: 10px;

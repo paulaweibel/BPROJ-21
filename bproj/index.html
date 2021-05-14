@@ -9,8 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="icon" href="img/knot-layer4.png">
     <script src="./js/typeit.min.js"></script>
-    <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
-    <!-- <script src="./js/preloadjs.min.js"></script> -->
+    <script src="./js/preloadjs.min.js"></script>
 </head>
 
 <body id="body">
@@ -25,6 +24,10 @@
 
         <!-- TITLE -------------------------------------------------------------->
         <div id="title-container">
+            <div class="curtains">
+                <div id="curtain-right" class="curtain"></div>
+                <div id="curtain-left" class="curtain"></div>
+            </div>
             <!-- <img id="fat-texture" src="img/background-scribble-r.png"> -->
             <h1 id="title">
                 <img class="title-text" id="title0" src="img/title.png">
@@ -39,11 +42,12 @@
 
         <!-- ASSETS ------------------------------------------------------------------------------>
         <div id="asset-container">
-
-            <div id="valentino" onclick="idValentino()">
-                <img id="valentino-1" class="asset id" src="img/valentino-1.png">
+            <div id="valentino-story">
+                <div id="valentino" onclick="idValentino()">
+                    <img id="valentino-1" class="asset id" src="img/valentino-1.png">
+                </div>
+                <div id="horizontal-scroll"></div>
             </div>
-
         </div>
 
 
@@ -57,13 +61,13 @@
         <img id="speechbubble" src="img/speech-bubble.png">
 
         <div id="enter">
-            Here we are, the first person of the day. 
+            Here we are, the first person of the day.
             <img onclick="startStory()" src="img/enter.png">
         </div>
 
         <div id="runValentino">
             ruuuuuuuUuuun
-            <img onclick="runBus()" src="img/enter.png">
+            <img onclick="runBus()" src="img/exit.png">
         </div>
 
 
@@ -121,6 +125,12 @@
     <div id="id-mercy" class="id-card" onclick="hideId()">ID CARD</div>
     <div id="id-barbara" class="id-card" onclick="hideId()">ID CARD</div>
 
+    <div id="navigation">
+        (temporary navigation)
+        <div class="blu" onclick="goHome()">home</div>
+        <div class="blu" onclick="goValentino()">valentino</div>
+        <div class="blu" onclick="goLawrence()">lawrence</div>
+    </div>
 
     <!-- NO MOBILE VERSION ------------------------------------------------------------->
     <div id="desktop-only">Hello, and welcome to our project!<br><br>To see the project please turn your smartphone 90°.

@@ -1,5 +1,21 @@
 //script für beste website
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////// NAVIGATE ////////////////////////////////////////////////////////////////////
+
+function goHome(){
+  window.scrollTo(0,0);
+}
+
+function goValentino(){
+  window.scrollTo(0,10000);
+}
+
+function goLawrence(){
+  window.scrollTo(0,15000);
+}
+
 ////LOADING BAR /////////////////////////////////////////////////////
 
 function alarm() {
@@ -14,24 +30,24 @@ let all = document.getElementById("all");
 var queue = new createjs.LoadQueue(false);
 
 queue.on("progress", event => {
-  let progress = Math.floor(event.progress * 100);
+  let progress = Math.floor(event.progress * 50);
   this.progress.style.width = progress + "%";
-  if (progress == 100) {
-      console.log("all done");
-      document.querySelector("body").style.background = "#fafafa";
+  if (progress == 50) {
+    console.log("all done");
+
   }
 })
 
 queue.on("complete", event => {
   all.classList.add("fadeIn");
   setTimeout(() => {
-      progress.classList.add("fadeOut");
+    progress.classList.add("fadeOut");
   }, 500)
 })
 
 queue.on("fileload", handleFileComplete);
-// queue.loadFile("./img/background.png");
-queue.loadFile("https://s3.amazonaws.com/coursetro/stuff/adventure-alpine-alps-714258.jpg");
+queue.loadFile("./img/background.png");
+// queue.loadFile("https://s3.amazonaws.com/coursetro/stuff/adventure-alpine-alps-714258.jpg");
 // queue.loadFile("https://s3.amazonaws.com/coursetro/stuff/adventure-alpine-alps-714258.jpg");
 
 
@@ -40,7 +56,7 @@ function handleFileComplete(event) {
   var type = item.type;
 
   if (type == createjs.Types.IMAGE) {
-      // all.appendChild(event.result);
+    // all.appendChild(event.result);
   }
 
 }
@@ -95,7 +111,6 @@ helpNo.style.display = "none";
 // phrase7.style.display = "none";
 // phrase8.style.display = "none";
 spotlight.style.display = "none";
-bubble.style.display = "none";
 
 
 
@@ -126,7 +141,7 @@ document.addEventListener('scroll', function (e) {
   }
 });
 
-// LOCK SCROLLING
+// ON LOAD /////////////////////////////////////////////
 window.onload = function checkPosition() {
   window.scrollTo(0, 0);
   body.style.overflow = "hidden";
@@ -141,12 +156,15 @@ titleButton.addEventListener('click', function () {
   if (visible === 1 || visible === 3) {
     visible = 0;
     body.style.overflow = "visible";
-    titleBox.style.backgroundColor = "transparent";
+    document.querySelector("body").style.background = "#fafafa";
+    document.querySelector("#curtain-right").classList.add("openRight");
+    document.querySelector("#curtain-left").classList.add("openLeft");
 
   } else {
     visible = 3;
     body.style.overflow = "hidden";
-    titleBox.style.backgroundColor = "#1a1a1a";
+    document.querySelector("#curtain-right").classList.remove("openRight");
+    document.querySelector("#curtain-left").classList.remove("openLeft");
   }
 });
 
@@ -184,17 +202,21 @@ function animation(scrollPos) {
   // ANIMATIONS BASED ON SCROLL POSITION
 
   //move Knot
-  if (scrollLocation > 100) {
+  if (scrollLocation > 100 && scrollLocation <= 4000) {
     intro.style.display = "block";
     knot.classList.add("knotLeft");
-    bubble.style.display = "block";
+    bubble.classList.add("bubbleGrow");
     titleBox.classList.add("titleUp");
     titleButton.classList.add("ropeUp");
   } else {
     knot.classList.remove("knotLeft");
     titleBox.classList.remove("titleUp");
     titleButton.classList.remove("ropeUp");
-    bubble.style.display = "none";
+    bubble.classList.remove("bubbleGrow");
+  }
+
+  if (scrollLocation > 100){
+    knot.classList.add("knotLeft");
   }
 
   //Hello, im the stress knot.
@@ -221,7 +243,7 @@ function animation(scrollPos) {
   }
 
   //
-  if (scrollLocation > 3500 && scrollLocation < 4500) {
+  if (scrollLocation > 3500 && scrollLocation < 4000) {
     phrase3.style.display = "none";
     phrase4.style.display = "block";
     helpYes.style.display = "block";
@@ -232,27 +254,26 @@ function animation(scrollPos) {
     helpYes.style.display = "none";
     helpNo.style.display = "none";
     // body.style.overflow = "visible";
-    
+
   }
 
   // 
-  if (scrollLocation > 6000) {
-    bubble.style.display = "none";
+  if (scrollLocation > 4000) {
     intro.style.display = "none";
     titleBox.style.display = "none";
     titleButton.style.display = "none";
   } else {
-    intro.style.diplay ="block"
+    intro.style.diplay = "block"
     titleBox.style.display = "block";
     titleButton.style.display = "block";
   }
 
-  if(scrollLocation <= 10000 && scrollLocation > 9500){
-    assets.style.display="block";
-    document.querySelector("#enter").style.display="block";
-  } else{
-    assets.style.display="none";
-    document.querySelector("#enter").style.display="none";
+  if (scrollLocation <= 10000 && scrollLocation > 9500) {
+    assets.style.display = "block";
+    document.querySelector("#enter").style.display = "block";
+  } else {
+    assets.style.display = "none";
+    document.querySelector("#enter").style.display = "none";
   }
 
 }
@@ -290,44 +311,45 @@ helpNo.addEventListener('click', function () {
 helpYes.addEventListener('click', function () {
   console.log("helpYes");
   intro.style.display = "none";
-  bubble.style.display = "none";
+  knot.classList.add("knotLeft");
   body.style.overflow = "hidden";
   window.scrollTo(0, 10000);
   spotlight.style.display = "block";
-  // knot.style.animation = "scene1Knot 1s forwards";
 });
 
 
-function startStory(){
-  document.querySelector("#enter").style.display="none";
-  document.querySelector("#valentino").style.display="block";
-  document.querySelector("#runValentino").style.display="block";
+function startStory() {
+  document.querySelector("#enter").style.display = "none";
+  document.querySelector("#valentino").style.display = "block";
+  document.querySelector("#runValentino").style.display = "block";
+  bubble.classList.add("bubbleGrow");
   moveflag = true;
   // body.style.overflow = "visible";
 }
 
-function idValentino(){
-  document.querySelector("#id-valentino").style.display="block";
+function idValentino() {
+  document.querySelector("#id-valentino").style.display = "block";
   console.log("ID VALENTINO")
 }
 
 
-function runBus(){
-  document.querySelector("#runValentino").style.display="none";
-  spotlight.style.display="none";
+function runBus() {
+  document.querySelector("#runValentino").style.display = "none";
+  document.querySelector("#horizontal-scroll").style.display = "block";
+  spotlight.style.display = "none";
   knot.classList.remove("knotLeft");
-  document.querySelector("#valentino").style.display="none";
-  body.style.overflow = "visible";
+  document.querySelector("#valentino").style.display = "none";
+  body.style.overflow = "HIDDEN";
+  body.style.overflowX = "hidden";
   body.style.overflowX = "visible";
 }
 
 
-function hideId(){
-  document.querySelector("#id-valentino").style.display="none";
-  document.querySelector("#id-lawrence").style.display="none";
-  document.querySelector("#id-mercy").style.display="none";
-  document.querySelector("#id-barbara").style.display="none";
-
+function hideId() {
+  document.querySelector("#id-valentino").style.display = "none";
+  document.querySelector("#id-lawrence").style.display = "none";
+  document.querySelector("#id-mercy").style.display = "none";
+  document.querySelector("#id-barbara").style.display = "none";
   console.log("hide ID")
 }
 
@@ -400,3 +422,6 @@ new TypeIt("#help-no", {
 //   speed: textspeed,
 //   waitUntilVisible: true,
 // }).go()
+
+
+
