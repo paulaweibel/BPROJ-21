@@ -73,7 +73,7 @@ body {
 /* -------------------------------- BACKGROUND -------------------------------- */
 #light-texture {
   position: fixed;
-  opacity: 1;
+  opacity: 0.1;
   top: 0;
   left: 0;
   width: 1900px;
@@ -123,12 +123,12 @@ body {
   height: 40vh;
   left: 30vw;
   color: var(--schwarz);
-  transition: margin-top 1s 0.1s ease-in-out, all 1s;
+  transition: margin-top 1s 0.1s ease-in-out, all 0.5s;
 }
 
 #title-button:hover {
   top: 0;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 /* transitions */
@@ -145,23 +145,24 @@ body {
 .curtain {
   background-color: var(--schwarz);
   border-radius: 0px;
-  transition: transform 1.5s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
 }
 
 #curtain-left {
   position: absolute;
   top: 0vh;
-  left: -50vw;
-  height: 150vh;
+  left: 0vw;
+  height: 100vh;
   width: 100vw;
   transform-origin: top right;
+  opacity: 1;
   transform: translate(0, 0) rotate(0);
-
 }
 
 #curtain-right {
+  display: none;
   position: absolute;
-  right: -50vw;
+  right: -35vw;
   top: 0vh;
   height: 150vh;
   width: 100vw;
@@ -170,12 +171,12 @@ body {
 }
 
 .openLeft {
-  transform: translate(-25vw, 0) rotate(30deg) !important;
+  opacity: 0 !important;
   /* border-radius: 50px !important; */
 }
 
 .openRight {
-  transform: translate(25vw, 0) rotate(-30deg) !important;
+  transform: translate(70vw, 0) /*rotate(-60deg)*/ !important;
   /* border-radius: 50px !important; */
 }
 
@@ -219,7 +220,7 @@ body {
   width: 15vh;
   height:calc(3em);  
   text-align: center;
-  transition: margin-bottom 1s 0.5s ease, transform 0.2s;
+  transition: margin-bottom 1s 0.5s ease, transform 0.1s;
   background-color: var(--schwarz);
 }
 
@@ -274,10 +275,10 @@ body {
 
 
 /* ----------------------------- MAIN CHARACTER ------------------------------ */
-.scribble {
+.knot {
   position: fixed;
   left: 60vw;
-  top: 40vh;
+  top: 50vh;
   width: 30vh;
 }
 
@@ -294,10 +295,12 @@ body {
   animation: eye-blink 10s ease-in-out infinite;
 }
 
+
+
+/* MOVE KNOT AFTER TITLE */
 .knotLeft {
   margin-left: -45vw !important;
-  margin-top: 10vh !important;
-  /* transform: translate(-45vw, 10vh) !important; */
+  margin-top: -10vh !important;
 }
 
 @keyframes eye-blink {
@@ -355,47 +358,38 @@ body {
 }
 
 .s01 {
-  /* opacity: 0.9; */
   animation: s1 5s infinite ease-in-out;
 }
 
 @keyframes s1 {
   0% {
-    transform: rotate(0deg) scale(1.5);
-    /* top: 20vh; */
-
+    transform: rotate(0deg) scale(1.5) translate(0,0vh);
   }
 
   50% {
-    transform: rotate(10deg) scale(1.7);
-    /* top: 16vh; */
+    transform: rotate(10deg) scale(1.7) translate(0,-2vh);
   }
 
   100% {
-    transform: rotate(0deg) scale(1.5);
-    /* top: 20vh; */
+    transform: rotate(0deg) scale(1.5) translate(0,0vh);
   }
 }
 
 .s02 {
-  /* opacity: 0.9; */
   animation: s2 9s infinite ease-in-out;
 }
 
 @keyframes s2 {
   0% {
-    transform: rotate(0deg) scale(1.7);
-    /* top: 20vh; */
+    transform: rotate(0deg) scale(1.7) translate(0,0vh);
   }
 
   50% {
-    transform: rotate(-30deg) scale(2);
-    /* top: 16vh; */
+    transform: rotate(-30deg) scale(2) translate(0, 2vh);
   }
 
   100% {
-    transform: rotate(0deg) scale(1.7);
-    /* top: 20vh; */
+    transform: rotate(0deg) scale(1.7) translate(0,0vh);
   }
 }
 
