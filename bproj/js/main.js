@@ -104,8 +104,8 @@ phrase1.style.display = "none";
 phrase2.style.display = "none";
 phrase3.style.display = "none";
 phrase4.style.display = "none";
-helpYes.style.display = "none";
-helpNo.style.display = "none";
+// helpYes.style.display = "none";
+// helpNo.style.display = "none";
 // phrase5.style.display = "none";
 // phrase6.style.display = "none";
 // phrase7.style.display = "none";
@@ -246,13 +246,14 @@ function animation(scrollPos) {
   if (scrollLocation > 3500 && scrollLocation < 4000) {
     phrase3.style.display = "none";
     phrase4.style.display = "block";
-    helpYes.style.display = "block";
-    helpNo.style.display = "block";
+    helpYes.classList.add("helpUp");
+    helpNo.classList.add("helpUp");
+    // helpNo.style.display = "block";
     body.style.overflow = "hidden";
   } else {
     phrase4.style.display = "none";
-    helpYes.style.display = "none";
-    helpNo.style.display = "none";
+    helpYes.classList.remove("helpUp");
+    helpNo.classList.remove("helpUp");
     // body.style.overflow = "visible";
 
   }
@@ -383,19 +384,19 @@ new TypeIt("#phrase4", {
 }).go()
 
 
-new TypeIt("#help-yes", {
-  startDelay: 1500,
-  cursor: false,
-  speed: 10,
-  waitUntilVisible: true,
-}).go()
+// new TypeIt("#help-yes", {
+//   startDelay: 1500,
+//   cursor: false,
+//   speed: 10,
+//   waitUntilVisible: true,
+// }).go()
 
-new TypeIt("#help-no", {
-  startDelay: 1700,
-  cursor: false,
-  speed: 10,
-  waitUntilVisible: true,
-}).go()
+// new TypeIt("#help-no", {
+//   startDelay: 1700,
+//   cursor: false,
+//   speed: 10,
+//   waitUntilVisible: true,
+// }).go()
 
 
 
