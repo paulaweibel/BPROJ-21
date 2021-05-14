@@ -7,7 +7,7 @@
 
 
 :root {
-  --weiss: #fafafa;
+  --weiss: #FAFAFA;
   --schwarz: #0C0C0C;
 }
 
@@ -107,16 +107,16 @@ body {
 #title-button {
   position: fixed;
   cursor: pointer;
-  top: 20%;
-  height: 18vh;
+  top: 21%;
+  height: 17vh;
   left: 25vw;
   color: var(--schwarz);
   transition: margin-top 1s ease-in-out, all 1s;
 }
 
 #title-button:hover {
-  transform: scale(1.1) translate(-5px, -5px);
-  transition: 0.2s;
+  transform: scale(1.1) translate(-10px, -5px) rotate(-1deg);
+  transition: 0.5s;
 }
 
 /* TITLE DARK BACKGROUND ---- */
@@ -140,6 +140,7 @@ body {
 .titleUp {
   margin-top: -110vh !important;
 }
+
 .ropeUp {
   margin-top: -110vh !important;
 }
@@ -173,12 +174,12 @@ body {
 }
 
 /* both */
-#help-button{
+#help-button {
   display: none;
 }
 
 /* each */
-.help-button{
+.help-button {
   POSITION: FIXED;
   font-size: 1.5em;
   line-height: 1.5em;
