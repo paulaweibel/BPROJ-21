@@ -120,7 +120,7 @@ body {
 
 @keyframes hi {
   0%{transform: rotate(0);}
-  50%{transform: rotate(5deg);}
+  50%{transform: rotate(-5deg);}
   100%{transform: rotate(0);}
 }
 
