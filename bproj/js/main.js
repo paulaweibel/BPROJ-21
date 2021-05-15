@@ -1,8 +1,8 @@
 //script für beste website
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////// NAVIGATE ////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+//////// NAVIGATE //////////////////////////////////////////////
 
 function goHome(){
   window.scrollTo(0,0);
@@ -16,16 +16,17 @@ function goLawrence(){
   window.scrollTo(0,15000);
 }
 
-////LOADING BAR /////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+///// LOADING BAR //////////////////////////////////////////////
 
 function alarm() {
   console.log("background is loaded")
 }
 
-
 //PRELOAD JS
 let progress = document.getElementById("progress");
 let all = document.getElementById("all");
+let hi = document.querySelector("#title-button");
 
 var queue = new createjs.LoadQueue(false);
 
@@ -34,12 +35,17 @@ queue.on("progress", event => {
   this.progress.style.width = progress + "%";
   if (progress == 50) {
     console.log("all done");
-
   }
 })
 
 queue.on("complete", event => {
+  //show eyes
   all.classList.add("fadeIn");
+  //show hi after 3500 ms
+  setTimeout(() => {
+    hi.classList.remove("hi-animation");
+  }, 3500)
+  //remove progress bar
   setTimeout(() => {
     progress.classList.add("fadeOut");
   }, 500)
@@ -47,8 +53,6 @@ queue.on("complete", event => {
 
 queue.on("fileload", handleFileComplete);
 queue.loadFile("./img/background.png");
-// queue.loadFile("https://s3.amazonaws.com/coursetro/stuff/adventure-alpine-alps-714258.jpg");
-// queue.loadFile("https://s3.amazonaws.com/coursetro/stuff/adventure-alpine-alps-714258.jpg");
 
 
 function handleFileComplete(event) {
@@ -58,11 +62,11 @@ function handleFileComplete(event) {
   if (type == createjs.Types.IMAGE) {
     // all.appendChild(event.result);
   }
-
 }
 
+////////////////////////////////////////////////////////////////
+//// GLOBAL VARIABLES //////////////////////////////////////////
 
-// GLOBAL VARIABLES //////////////////////////////////////////////////////////////////////////
 var body = document.querySelector("#body")
 
 var w = window.innerWidth;
@@ -75,8 +79,7 @@ console.log("I am at: " + whereAmI)
 // INTRO
 var intro = document.querySelector("#intro");
 var titleBox = document.querySelector("#title-container");
-var title = document.querySelector("#title");
-var titleButton = document.querySelector("#title-button");
+var titleButton = document.querySelector("#title-button-container");
 var knot = document.querySelector("#wiggle");
 var bubble = document.querySelector("#speechbubble");
 var eyeImg = document.querySelector("#eye-img");
@@ -105,8 +108,6 @@ phrase1.style.display = "none";
 phrase2.style.display = "none";
 phrase3.style.display = "none";
 phrase4.style.display = "none";
-// helpYes.style.display = "none";
-// helpNo.style.display = "none";
 // phrase5.style.display = "none";
 // phrase6.style.display = "none";
 // phrase7.style.display = "none";
@@ -114,8 +115,8 @@ phrase4.style.display = "none";
 spotlight.style.display = "none";
 
 
-
-////EYES MAIN CHARACTER   /////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////EYES MAIN CHARACTER   //////////////////////////////////////
 
 const eyes = document.querySelector('.eyes');
 window.addEventListener('mousemove', (evt) => {
@@ -124,8 +125,9 @@ window.addEventListener('mousemove', (evt) => {
   eyes.style.transform = `translateY(${y}px) translateX(${x}px)`;
 });
 
+////////////////////////////////////////////////////////////////
+// SCROLL MEMORY ///////////////////////////////////////////////
 
-//ScrollLocation (lastKnownScrollPosition) ////////////////////////////////////////////////
 let scrollLocation = 0;
 let ticking = false;
 
@@ -142,13 +144,21 @@ document.addEventListener('scroll', function (e) {
   }
 });
 
-// ON LOAD /////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+// SIDE RELOAD /////////////////////////////////////////////////
+
 window.onload = function checkPosition() {
   window.scrollTo(0, 0);
   body.style.overflow = "hidden";
 }
 
-//// TITLE /////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// STORY START /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////
+//// TITLE /////////////////////////////////////////////////////
 
 var visible = 1;
 var startControll = 1;
@@ -168,8 +178,8 @@ titleButton.addEventListener('click', function () {
   }
 });
 
-
-//SPOTLIGHT!!!/////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+//SPOTLIGHT!!!//////////////////////////////////////////////////
 
 var moveflag = false;
 
@@ -190,12 +200,9 @@ function spotlightMove(e) {
   document.getElementById("spotlight").style.backgroundImage = string;
 }
 
+////////////////////////////////////////////////////////////////
+// TRIGGERS ON SCROLL POSITIONS ////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// STORY START /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// function for animations to scroll position
 function animation(scrollPos) {
   console.log(scrollLocation)
 
@@ -205,8 +212,8 @@ function animation(scrollPos) {
   if (scrollLocation > 100 && scrollLocation <= 4000) {
     intro.style.display = "block";
     knot.classList.add("knotIntro");
-    bubble.style.display="block";
     bubble.classList.add("bubbleGrow");
+    bubble.style.display="block";
     titleBox.classList.add("titleUp");
     titleButton.classList.add("ropeUp");
   } else {
@@ -248,17 +255,14 @@ function animation(scrollPos) {
   if (scrollLocation > 3500 && scrollLocation < 4000) {
     phrase3.style.display = "none";
     phrase4.style.display = "block";
-    
     helpYes.classList.add("helpUp");
     helpNo.classList.add("helpUp");
-    
     body.style.overflow = "hidden";
   } else {
     phrase4.style.display = "none";
     helpYes.classList.remove("helpUp");
     helpNo.classList.remove("helpUp");
     // body.style.overflow = "visible";
-
   }
 
   // 
@@ -279,11 +283,10 @@ function animation(scrollPos) {
     assets.style.display = "none";
     document.querySelector("#enter").style.display = "none";
   }
-
 }
 
-
-///Story Interactions //////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+///Story Interactions //////////////////////////////////////////
 
 
 //FAKE INTERACTIONS
@@ -357,7 +360,8 @@ function hideId() {
   console.log("hide ID")
 }
 
-// TYPING ANIMATIONS FOR ALLL THE TEXTS: //////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+// TYPING ANIMATIONS FOR ALLL THE TEXTS: ///////////////////////
 
 var textspeed = 20;
 
@@ -400,8 +404,6 @@ new TypeIt("#phrase4", {
 //   speed: 10,
 //   waitUntilVisible: true,
 // }).go()
-
-
 
 // new TypeIt("#phrase5", {
 //   cursor: false,

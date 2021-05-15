@@ -1,19 +1,10 @@
-/* 
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Schoolbell&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap');
+/* FONTS ---------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 
-
+/* GLOBAL COLORS */
 :root {
   --weiss: #FAFAFA;
   --schwarz: #0C0C0C;
-}
-
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -28,6 +19,23 @@ body {
   cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAErAAABKwFWy3+7AAAEj0lEQVRIib1We0xbVRj/6GPYCrV7ZH+cO+jtizJxyGPAVkcHgzEfY6BhgxmWEEN8MJmbmYkYsmiIUf/aFjWbG3EsiJvRKcjDbDEZj8imCJaxEeUhrOTCdJBNWm+5t49jTpOSlnsrrAq/5Nfknn7n/O73O9/57gHzVrOj8dLXmRhjWElKDFqd88rlK53W3r4KWEmkJCf3dXf9gF8ufxEX7M6/iBBSr0TmkGWxmMtKD3B3pu7gvNydmKbpeysh7vuxbMu0EWHCgt178Mb4jX8ghPaKTfi/KCG7KpVJa+vP1cHadWvhq28uQf7Tz6yXy+UNFEVlLduu+zPIyd7xl8vlwn5+dOIksZ3X6/XvL1vGBHK5/Or17mvzL/TSwQooL3tB7vV634g3mWwURR2mKIoWvHmYiPBtNAAU5u9JVDyk6Km/0LAqcKmhX4fgrao3oaev1/esVCrHvV7v8NzcXDcAtDMM0x6O9LwwwVO7nhw5fvyE3hBnEASODI3Ad60tMDQ0DNaBfrBNTPjGZTIpr1Aob9rt9g8BwMowjFUweTHhHdnZx2KpDe/U1p0TBIrhcmsbWK390PNzD8zOzsLEJONmWVamUqkm3W63jWXZegAYFHMlSJgge3vWbE1NTfQW81YRqcVx9PARsNsdcHvCBr+PjwHHcb45SoXC5vZ4JnieryXOCITzcnI7tLTW8vEnp8ISXghSsB1X26GxuQkmp6ZAKpW6PB5PnmRhoFKprBwZGxUsEC6Ic2r1IzA9MwMSicTt8Xj2+awXO2OJmxJnvrz4BQ481+GQdELyDUAIYa1WexshRAvOcSBiYzac7eroFIwvFTPTM1BctA8ytmTAt20tEBkZeZrjuMcZhhmfX0IsY8LkpGT+07O1D5zphfrPsMlk8mc5FpilaOdaiHVr1lz76fqPgvHFoF69Glw8DxGSCJ7juANBWQYgpPAcx1X/OX3XZ9uDIHdXHpyvOw/Yi1fJZLLvQ35oxGzwM84Y53i7+pjAzqWwrbmFWO23/JTo9zgUi4v2Vj9hNv+rEKlay7ZMnLY5DXd1dAb9R6o6PS3NJ07T9G+B+x1S1E+NRuNtaWwSCJKx1JRUbDAYPDRNTz+WkHAvIz3dJ7Yw9rVXK33iMTExLEIoaUnC2Zbt1tKS/fOL3Bq4hZ8rKMQJjyZ4DHrDfYTQDYRQIULoF6PRyO3MyREIExI3iLhGoyG3G3XI4vLDwbIN1oEBX5EdPfI6HDpUCTduDnB2x+wI62RPMgyTyDBMI2nzTqdzcHh0FFe+clCwDulgRQXPgsvlWg8AzYJeLYZ4k4lVKh9WsE7WxXPcFMfzbQBQxTDM/cBwiqLUMpms3+12x37w7ntQUvp80GqkbxfvLwGFQtErsFaMpMhSk1MGEUKtCKFNYjF+Ett1Ot1dnU4XVGzkCq3RaAjnEEJlgomhGKoDiREhVGU0Gv/enJrqK7ba02ewXq/3F1cxiVmS1eGAoqjPVSpVUXRUtJyZZEgnc2AvzvTfUBYtrv+ACqfT2UREo6Oi2rEXxwRei5YtYwKKopIAoBwAqoMKEQD+ARNmoh2A/6a3AAAAAElFTkSuQmCC'), auto;
 }
 
+/* NORMAL FONT */
+p {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em;
+}
+
+/* BOLD FONT */
+b {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* -------------------------------- ALL CONTENT -------------------------------- */
 
 #all {
@@ -35,16 +43,11 @@ body {
 }
 
 #navigation {
+  color: grey;
   position: fixed;
   opacity: 0.5;
   bottom: 0;
   left: 0;
-
-}
-
-.blu {
-  color: grey;
-  cursor: pointer;
 }
 
 /* -------------------------------- PROGRESS BAR -------------------------------- */
@@ -70,7 +73,7 @@ body {
   transition: opacity 1s 1.5s;
 }
 
-/* -------------------------------- BACKGROUND -------------------------------- */
+/* -------------------------------- SCRIBBLE BACKGROUND -------------------------------- */
 #light-texture {
   position: fixed;
   opacity: 0;
@@ -81,6 +84,7 @@ body {
 }
 
 /* -------------------------------- TITLE PAGE -------------------------------- */
+/* TITLE PAGE */
 #title-container {
   position: fixed;
   top: 0px;
@@ -91,32 +95,44 @@ body {
   transition: margin-top 0.5s 0.1s ease-in-out;
 }
 
-#title {
-  position: absolute;
-  color: var(--schwarz);
-  top: 25%;
-}
-
+/* DDEN WORRIES */
 #title-text {
   position: absolute;
-  top: 0;
+  top: 25%;
   left: calc(25vw - 10vh);
   width: 60vh;
 }
 
-#title-button {
+/* HI CONTAINER */
+#title-button-container {
   position: fixed;
+  top: 0px;
+  height: 100vh;
+  width: 100%;
+  transition: margin-top 1s ease-in-out;
+}
+
+/* "HI" */
+#title-button {
+  position: absolute;
   cursor: pointer;
   top: 21%;
   height: 17vh;
   left: 25vw;
   color: var(--schwarz);
-  transition: margin-top 1s ease-in-out, all 1s;
+  transition: transform 0.5s, all 1s;
 }
 
 #title-button:hover {
   transform: scale(1.1) translate(-10px, -5px) rotate(-1deg);
   transition: 0.5s;
+}
+
+/* "Hi" SPEECHBUBBLE ANIMATION AT BEGINNING */
+.hi-animation {
+  margin-left: 35vw !important;
+  margin-top: 45vh !important;
+  height: 0vh !important;
 }
 
 /* TITLE DARK BACKGROUND ---- */
@@ -131,7 +147,7 @@ body {
   transition: opacity 0.1s ease-in-out;
 }
 
-/* white theme */
+/* HIDE DARK THEME */
 .titleBright {
   opacity: 0 !important;
 }
@@ -146,7 +162,7 @@ body {
 }
 
 
-/* about -------------------------------- */
+/* ABOUT -------------------------------- */
 #about-container {
   cursor: pointer;
   position: absolute;
@@ -166,19 +182,18 @@ body {
 }
 
 
-
 /* -------------------------------- BUTTONS -------------------------------- */
 
 .button:hover {
   cursor: pointer;
 }
 
-/* both */
+/* INTRO: YES & NO, BUTTON CONTAINER */
 #help-button {
   display: none;
 }
 
-/* each */
+/* INTRO: YES & NO BUTTON */
 .help-button {
   POSITION: FIXED;
   font-size: 1.5em;
@@ -201,7 +216,7 @@ body {
   transform: scale(1.1);
 }
 
-/* transition */
+/* INTRO-BUTTON TRANSITION */
 .helpUp {
   margin-bottom: 30vh;
 }
@@ -221,10 +236,7 @@ body {
   --spotlightTransparent: 150px;
 }
 
-
-
 #spotlight {
-  /* z-index: 5; */
   position: fixed;
   background-image: radial-gradient(circle at -20% -20%,
       transparent var(--spotlightTransparent),
@@ -237,7 +249,7 @@ body {
 }
 
 
-
+/* --------------------------------------------------------------------------- */
 /* ----------------------------- MAIN CHARACTER ------------------------------ */
 /* ALL KNOT LAYERS */
 .knot {
@@ -260,7 +272,6 @@ body {
   width: 30vh;
   animation: eye-blink 10s ease-in-out infinite;
 }
-
 
 /* KNOT MOVE BC TITLE-BUTTON */
 .knotTitle {
@@ -286,14 +297,9 @@ body {
   width: 100%;
 }
 
-.id {
-  cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAErAAABKwFWy3+7AAAETklEQVRIicVXfUxbVRT/QfkoUAlkIzP32D7I2sI6UeIAhwljEwc4NBKFwZzObUYXTXTOLMYt/uFfui0qGKNzJu7LZI1mJnUUAn8oc2zLcJjoWMuCzmHkjpIBU0bS7r0+nnkvLUJfGeVj8ZecvLxzz8c959x7z71xiqLg/0DCVJ9EVABgB4AkAH8BOA3gF87534s9t/iI/z2c81cAXADwEIBTAJxE1ElEG3TaC8BkqkPRugE0A3gCwCUAhaGsDAMwAugF0MY5b1rMiPsB/AHgBwDLAKgRZgFIB2AHkBb65uqsLMRxqI4/A/gAQDDEjgtFLIcmkArAorMyDyREqJTNYNgA4AaACQD7dKMLcUxE9QD+0Un8hwwAz3POO3Uj88DUGq8GcE3dPpFmEhMTxwB4OecnF8MpIhx/D0AM8Ua1OsdByhaykZmRmZ6WmnYvEWXoLMwX6nYKE2MsmzFWqn7DvEdKSm76Bn1KUWGhYl2+fJAxlj9VZ740q2JVRaXr6xNORZIkpf6ZOkUQhABjrCCa7FxoVmE1+obajbdVxyptbtikMMaUvLy8w4yxtdF0YqHII1MHznm/P+D3jgyPaENHvzqO7Vu2IikxcRuADiJSrFZrNxG9S0SbiShbZyQKYupOZaVrXrbb7IcOfvH5NP6xL4/A5/PhYvdF9Hg9CAQCMBqN46Y0k1cURc/YrbFToSbTH2kz5rZYVrpm9K3duzMrq2fuFX1X+nDt6u9oa2vH+a4L8A35JsfuMZl+lYLBjkAg8KeauJgdP15Z5bJbbU99+HGjbmwmqOXp7uqCy+XCJY8HA3wgLLlr1hqH4VixYueZc2cnwrWOBUuWLoGaoZqaGgyPDGsaRqOxSetuc1mJxUVFvvDWioXOd55T1j9aru2C+8zm24yxmrCtmCNWkbU0a7/T6dTxo+HAe+9j03PP4spvfXKKMeXAhCwv45y7wqJzcuxubWkcuH7dry6i2WC12ZCQkID4+Hi/P+B3Rl6f5uRYhSkt9WxT40c6fiSerqvFrtdehyRJJoPB8BMRbZ0mEq2Wd6I3d74hOBwO2dPjmVZn9Tyvr61TCh54UCkuKtb+VX7nj2eUlY6VWp1zcnIOMsYyYjoyo1HhqlVD27a8MOn0nbf3KiUPr1YsFotsNpt9FsEiV66vmDapqopKzXmu3d4x58UVhhQMtnt6e9He0oqK8sfwzbcn5cEh30gwGHTLstwwIU/09Xgu49Cnn2ka6rZqbnGjvGwdbo2PryWiI1EjioUEQQjm35+v5Obm3rBYzB1TG4aaTkEQ+tUI3a7vJiNvbXZrUdtstp55vySerK7ed9nrXSeKonol/iRy1RJRTXJy8mEAmcePHoMh3oDtL70Iv98vSpK0Y0FPGPVGcqdXBhHtSU9P35uakmoavTkKWZb9sixv4JyfvutvJyI6kZSUtBHAVVEU6znn2p0u8np7N/CqKIpqR9o/mR0A/wJOKHxMEu9a9gAAAABJRU5ErkJggg=='), auto;
-}
-
 .asset {
   max-height: 100%;
 }
-
 
 /* ENTER STORY */
 #enter {
@@ -305,15 +311,15 @@ body {
   top: 30vh;
 }
 
-
-/* VALENTINO  ----------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+/* VALENTINO  ------------------------------------------------------------------------------- */
 #runValentino {
   cursor: pointer;
   display: none;
   position: fixed;
-  left: calc(50vw);
+  left: 0vw;
   width: 100px;
-  top: 80vh;
+  top: 20vh;
 }
 
 
@@ -351,6 +357,10 @@ body {
   background-color: #fafafa;
 }
 
+.id {
+  cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAErAAABKwFWy3+7AAAETklEQVRIicVXfUxbVRT/QfkoUAlkIzP32D7I2sI6UeIAhwljEwc4NBKFwZzObUYXTXTOLMYt/uFfui0qGKNzJu7LZI1mJnUUAn8oc2zLcJjoWMuCzmHkjpIBU0bS7r0+nnkvLUJfGeVj8ZecvLxzz8c959x7z71xiqLg/0DCVJ9EVABgB4AkAH8BOA3gF87534s9t/iI/z2c81cAXADwEIBTAJxE1ElEG3TaC8BkqkPRugE0A3gCwCUAhaGsDAMwAugF0MY5b1rMiPsB/AHgBwDLAKgRZgFIB2AHkBb65uqsLMRxqI4/A/gAQDDEjgtFLIcmkArAorMyDyREqJTNYNgA4AaACQD7dKMLcUxE9QD+0Un8hwwAz3POO3Uj88DUGq8GcE3dPpFmEhMTxwB4OecnF8MpIhx/D0AM8Ua1OsdByhaykZmRmZ6WmnYvEWXoLMwX6nYKE2MsmzFWqn7DvEdKSm76Bn1KUWGhYl2+fJAxlj9VZ740q2JVRaXr6xNORZIkpf6ZOkUQhABjrCCa7FxoVmE1+obajbdVxyptbtikMMaUvLy8w4yxtdF0YqHII1MHznm/P+D3jgyPaENHvzqO7Vu2IikxcRuADiJSrFZrNxG9S0SbiShbZyQKYupOZaVrXrbb7IcOfvH5NP6xL4/A5/PhYvdF9Hg9CAQCMBqN46Y0k1cURc/YrbFToSbTH2kz5rZYVrpm9K3duzMrq2fuFX1X+nDt6u9oa2vH+a4L8A35JsfuMZl+lYLBjkAg8KeauJgdP15Z5bJbbU99+HGjbmwmqOXp7uqCy+XCJY8HA3wgLLlr1hqH4VixYueZc2cnwrWOBUuWLoGaoZqaGgyPDGsaRqOxSetuc1mJxUVFvvDWioXOd55T1j9aru2C+8zm24yxmrCtmCNWkbU0a7/T6dTxo+HAe+9j03PP4spvfXKKMeXAhCwv45y7wqJzcuxubWkcuH7dry6i2WC12ZCQkID4+Hi/P+B3Rl6f5uRYhSkt9WxT40c6fiSerqvFrtdehyRJJoPB8BMRbZ0mEq2Wd6I3d74hOBwO2dPjmVZn9Tyvr61TCh54UCkuKtb+VX7nj2eUlY6VWp1zcnIOMsYyYjoyo1HhqlVD27a8MOn0nbf3KiUPr1YsFotsNpt9FsEiV66vmDapqopKzXmu3d4x58UVhhQMtnt6e9He0oqK8sfwzbcn5cEh30gwGHTLstwwIU/09Xgu49Cnn2ka6rZqbnGjvGwdbo2PryWiI1EjioUEQQjm35+v5Obm3rBYzB1TG4aaTkEQ+tUI3a7vJiNvbXZrUdtstp55vySerK7ed9nrXSeKonol/iRy1RJRTXJy8mEAmcePHoMh3oDtL70Iv98vSpK0Y0FPGPVGcqdXBhHtSU9P35uakmoavTkKWZb9sixv4JyfvutvJyI6kZSUtBHAVVEU6znn2p0u8np7N/CqKIpqR9o/mR0A/wJOKHxMEu9a9gAAAABJRU5ErkJggg=='), auto;
+}
+
 #id-valentino {
   display: none;
 }
@@ -375,7 +385,7 @@ body {
 #speechbubble {
   display: none;
   position: fixed;
-  max-width: 500px;
+  width: 500px;
   left: calc(23vw + 30vh - 100PX);
   top: calc(20vh - 50PX);
   transform-origin: bottom left;
@@ -383,22 +393,22 @@ body {
   transition: transform 0.5s;
 }
 
+#speechbubble-img {
+  max-width: 100%;
+}
+
+
 .bubbleGrow {
   transform: scale(1) !important;
 }
 
+/* BOX FÜR SPEECHBUBBLE-TEXT */
 .knot-text-container {
-  line-height: 24px;
   position: fixed;
-  left: calc(23vw + 30vh);
-  top: 20vh;
-}
-
-.text-knot {
-  padding: 10px;
-  text-align: left;
+  left: 80px;
+  top: 80px;
   color: var(--schwarz);
-  max-width: 300px;
+  max-width: 370px;
   z-index: 3;
 }
 
@@ -419,7 +429,8 @@ body {
 
 
 
-/* ------ KNOT CONSTANT ANIMATIONS ------------------------------ */
+
+/* ------ MAIN CHARACTER CONSTANT ANIMATIONS ------------------------------ */
 
 @keyframes eye-blink {
   0% {

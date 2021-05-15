@@ -14,26 +14,25 @@
 
 <body id="body">
 
-    <!-- Progressbar ------------------------------------------------------------->
+    <!-- PROGRESS BAR ------------------------------>
     <div id="progress"></div>
 
+    <!-- CONTENT ----------------------------------->
     <div id="all">
 
-        <!-- BACKGROUND --------------------------------------------------------->
+        <!-- BACKGROUND --------------->
         <img onload="alarm()" id="light-texture" src="img/background.png">
 
-        <!-- TITLE -------------------------------------------------------------->
+        <!-- TITLE -------------------->
         <div id="title-container">
             <div id="title-dark"></div>
-            <h1 id="title">
-                <img id="title-text" src="img/title/title.png">
-            </h1>
+            <img id="title-text" src="img/title/title.png">
             <div id="about-container">
-                <h2 id="about">about</h2>
+                <h2 id="about">ABOUT</h2>
             </div>
         </div>
 
-        <!-- ASSETS ------------------------------------------------------------------------------>
+        <!-- ASSETS -------------------->
         <div id="asset-container">
             <div id="valentino-story">
                 <div id="valentino" onclick="idValentino()">
@@ -44,24 +43,40 @@
         </div>
 
 
-        <!-- SPOTLIGHT ------------------------------------------------------------->
+        <!-- SPOTLIGHT ----------------->
         <div id="spotlight" class="light"></div>
 
-        <!-- SPEECHBUBBLE ------------------------------------------------------------->
-        <img id="speechbubble" src="img/speech-bubble.png">
+        <!-- SPEECH BUBBLE ------------->
+        <div id="speechbubble">
+            <img id="speechbubble-img" src="img/speech-bubble.png">
 
+            <!-- TEXT -->
+            <div id="intro" class="knot-text-container">
+                <p id="phrase1"><b>Hello, I'm stress-knot.</b><br> A stress-causing ego. You don't
+                    usually see me, but I decided to make an exception this time.</p>
+                <p id="phrase2">My job is to visit people from time to time and increase their
+                    stress level. I know what you're thinking, but someone has to do this job, and
+                    somehow I have to make a living too ... so please don't judge me!</p>
+                <p id="phrase3"><b>Stress has many shades.</b> <br>It is my responsibility to
+                    create different stressful situations for each individual I encounter on my path, by finding their
+                    weaknesses.</p>
+                <b id="phrase4"><br>Would you like to be my assistant? </b>
+            </div>
+        </div>
+
+        <!-- OTHER STORY CONTENT (NOT ORGANIZED YET) -->
         <div id="enter">
             <b>Very nice of you!</b>
             <img onclick="startStory()" src="img/enter.png">
         </div>
 
         <div id="runValentino">
-            Welcome Here we are, the first person of the day.
-            ruuuuuuuUuuun
+            <b>Welcome Here we are, the first person of the day.
+                ruuuuuuuUuuun</b>
             <img onclick="runBus()" src="img/exit.png">
         </div>
 
-        <!-- MAIN CHARACTER ------------------------------------------------------------->
+        <!-- MAIN CHARACTER ------------------->
         <div id="wiggle">
             <img class="knot s01" src="img/knot-layer1.png">
             <img class="knot s02" src="img/knot-layer2.png">
@@ -72,54 +87,29 @@
             </div>
         </div>
 
-        <!-- KNOT TEXT ------------------------------------------------------------->
-        <div id="intro" class="knot-text-container">
-            <p id="phrase1" class="text text-knot">Hello, I'm stress-knot, a stress-causing ego. <br> You don't usually
-                see me, but I decided to make an exception this time.</p>
-            <p id="phrase2" class="text text-knot">My job is to visit people from time to time and increase their stress
-                level. I know what you're thinking, but someone has to do this job, and
-                somehow I have to make a living too ... so please don't judge me!</p>
-            <p id="phrase3" class="text text-knot">Stress has many shades. <br>It is my responsibility to create
-                different stressful situations for each individual I encounter on my path, by finding their weaknesses.
-            </p>
-            <p id="phrase4" class="text text-knot"><br><br>Would you like to be my assistant? </p>
-
-            <!-- <p id="phrase5" class="text text-knot"> <br>
-            </p>
-            <p id="phrase6" class="text text-knot"></p>
-            <p id="phrase7" class="text text-knot"></p>
-            <p id="phrase8" class="text text-knot"></p> -->
-        </div>
-
-        <!-- NORMAL TEXT ------------------------------------------------------------->
-        <div class="platzhalter">
-            scroll to see dialogue
-        </div>
-
-        <!------ BUTTONS ------------------------------------------------------------->
+        <!------ BUTTONS ---------------->
         <div id="title-button-container">
-            <img id="title-button" src="img/title/hi-title.png">
-            <!-- <img id="title-button-off" class="off" src="img/off.png"> -->
+            <img id="title-button" class="hi-animation" src="img/title/hi-title.png">
         </div>
+
         <div id="help-button">
             <div id="help-yes" class="button help-button">YES <br>I'd love to!</div>
             <div id="help-no" class="button help-button">NO <br>thank you!</div>
         </div>
 
-
+        <!-- CHARACTERS ID-PAGES ----->
+        <div id="id-valentino" class="id-card" onclick="hideId()">ID CARD</div>
+        <div id="id-lawrence" class="id-card" onclick="hideId()">ID CARD</div>
+        <div id="id-mercy" class="id-card" onclick="hideId()">ID CARD</div>
+        <div id="id-barbara" class="id-card" onclick="hideId()">ID CARD</div>
     </div>
 
-    <!-- id's of characters -->
-    <div id="id-valentino" class="id-card" onclick="hideId()">ID CARD</div>
-    <div id="id-lawrence" class="id-card" onclick="hideId()">ID CARD</div>
-    <div id="id-mercy" class="id-card" onclick="hideId()">ID CARD</div>
-    <div id="id-barbara" class="id-card" onclick="hideId()">ID CARD</div>
-
+    <!-- NAVIGATE -->
     <div id="navigation">
-        (temporary navigation)
-        <div class="blu" onclick="goHome()">home</div>
-        <div class="blu" onclick="goValentino()">valentino</div>
-        <div class="blu" onclick="goLawrence()">lawrence</div>
+        (temporary navigation)<br>
+        <a class="blu" onclick="goHome()">home</a>
+        <a class="blu" onclick="goValentino()">valentino</a>
+        <a class="blu" onclick="goLawrence()">lawrence</a>
     </div>
 
     <!-- NO MOBILE VERSION ------------------------------------------------------------->
