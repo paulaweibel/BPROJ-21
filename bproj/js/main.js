@@ -4,16 +4,16 @@
 ////////////////////////////////////////////////////////////////
 //////// NAVIGATE //////////////////////////////////////////////
 
-function goHome(){
-  window.scrollTo(0,0);
+function goHome() {
+  window.scrollTo(0, 0);
 }
 
-function goValentino(){
-  window.scrollTo(0,10000);
+function goValentino() {
+  window.scrollTo(0, 10000);
 }
 
-function goLawrence(){
-  window.scrollTo(0,15000);
+function goLawrence() {
+  window.scrollTo(0, 15000);
 }
 
 ////////////////////////////////////////////////////////////////
@@ -212,19 +212,20 @@ function animation(scrollPos) {
   if (scrollLocation > 100 && scrollLocation <= 4000) {
     intro.style.display = "block";
     knot.classList.add("knotIntro");
-    bubble.classList.add("bubbleGrow");
-    bubble.style.display="block";
     titleBox.classList.add("titleUp");
     titleButton.classList.add("ropeUp");
   } else {
     knot.classList.remove("knotIntro");
     titleBox.classList.remove("titleUp");
     titleButton.classList.remove("ropeUp");
-    bubble.classList.remove("bubbleGrow");
   }
 
-  if (scrollLocation > 100){
+  if (scrollLocation > 100) {
     knot.classList.add("knotIntro");
+    bubble.classList.add("bubbleGrow");
+    bubble.style.display = "block";
+  } else {
+    bubble.classList.remove("bubbleGrow");
   }
 
   //Hello, im the stress knot.
@@ -270,15 +271,18 @@ function animation(scrollPos) {
     intro.style.display = "none";
     titleBox.style.display = "none";
     titleButton.style.display = "none";
+    document.querySelector("#speechbubble-white").classList.add("hide");
   } else {
     intro.style.diplay = "block"
     titleBox.style.display = "block";
     titleButton.style.display = "block";
+    document.querySelector("#speechbubble-white").classList.remove("hide");
   }
 
   if (scrollLocation <= 10000 && scrollLocation > 9500) {
     assets.style.display = "block";
     document.querySelector("#enter").style.display = "block";
+
   } else {
     assets.style.display = "none";
     document.querySelector("#enter").style.display = "none";
@@ -328,15 +332,10 @@ helpYes.addEventListener('click', function () {
 function startStory() {
   document.querySelector("#enter").style.display = "none";
   document.querySelector("#valentino").style.display = "block";
-  document.querySelector("#runValentino").style.display = "block";
+  document.querySelector("#text-valentino").style.display = "block";
   bubble.classList.add("bubbleGrow");
   moveflag = true;
   // body.style.overflow = "visible";
-}
-
-function idValentino() {
-  document.querySelector("#id-valentino").style.display = "block";
-  console.log("ID VALENTINO")
 }
 
 
@@ -351,6 +350,29 @@ function runBus() {
   body.style.overflowX = "visible";
 }
 
+
+////////////////////////////////////////////////////////////////
+// ID's ////////////////////////////////////////////////////////
+
+function idValentino() {
+  document.querySelector("#id-valentino").style.display = "block";
+  console.log("ID VALENTINO")
+}
+
+function idLawrence() {
+  document.querySelector("#id-lawrence").style.display = "block";
+  console.log("ID Lawrence")
+}
+
+function idMercy() {
+  document.querySelector("#id-mercy").style.display = "block";
+  console.log("ID Mercy")
+}
+
+function idBarbara() {
+  document.querySelector("#id-barbara").style.display = "block";
+  console.log("ID Barbara")
+}
 
 function hideId() {
   document.querySelector("#id-valentino").style.display = "none";
@@ -428,6 +450,3 @@ new TypeIt("#phrase4", {
 //   speed: textspeed,
 //   waitUntilVisible: true,
 // }).go()
-
-
-

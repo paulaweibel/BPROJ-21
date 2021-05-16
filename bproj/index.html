@@ -34,12 +34,36 @@
 
         <!-- ASSETS -------------------->
         <div id="asset-container">
-            <div id="valentino-story">
+
+            <!-- VALENTINO ASSETS -->
+            <div id="valentino-asset">
                 <div id="valentino" onclick="idValentino()">
                     <img id="valentino-1" class="asset id" src="img/valentino-1.png">
                 </div>
                 <div id="horizontal-scroll"></div>
             </div>
+
+            <!-- LAWRENCE ASSETS (EMPTY)-->
+            <div id="lawrence-asset">
+                <div id="lawrence" onclick="idLawrence()">
+                    <img id="lawrence-1" class="asset id" src="">
+                </div>
+            </div>
+
+            <!-- MERCY ASSETS (EMPTY) -->
+            <div id="mercy-asset">
+                <div id="mercy" onclick="idMercy()">
+                    <img id="mercy-1" class="asset id" src="">
+                </div>
+            </div>
+
+            <!-- BARBARA ASSETS (EMPTY) -->
+            <div id="barbara-asset">
+                <div id="barbara" onclick="idBarbara()">
+                    <img id="barbara-1" class="asset id" src="">
+                </div>
+            </div>
+
         </div>
 
 
@@ -48,9 +72,9 @@
 
         <!-- SPEECH BUBBLE ------------->
         <div id="speechbubble">
-            <img id="speechbubble-img" src="img/speech-bubble.png">
+            <img id="speechbubble-white" src="img/speech-bubble.png">
 
-            <!-- TEXT -->
+            <!-- INTRO TEXT -->
             <div id="intro" class="knot-text-container">
                 <p id="phrase1"><b>Hello, I'm stress-knot.</b><br> A stress-causing ego. You don't
                     usually see me, but I decided to make an exception this time.</p>
@@ -62,28 +86,42 @@
                     weaknesses.</p>
                 <b id="phrase4"><br>Would you like to be my assistant? </b>
             </div>
-        </div>
 
-        <!-- OTHER STORY CONTENT (NOT ORGANIZED YET) -->
-        <div id="enter">
-            <b>Very nice of you!</b>
-            <img onclick="startStory()" src="img/enter.png">
-        </div>
+            <!-- ENTER FIRST STORY -->
+            <div id="enter">
+                <b>Very nice of you!</b>
+                <p>Let's visit my first stress client together.</p>
+                <img onclick="startStory()" src="img/enter.png">
+            </div>
 
-        <div id="runValentino">
-            <b>Welcome Here we are, the first person of the day.
-                ruuuuuuuUuuun</b>
-            <img onclick="runBus()" src="img/exit.png">
+            <!-- VALENTINO: SLEEPING -->
+            <div id="text-valentino">
+                <!-- Sleeping VALENTINO -->
+                <div id="sleepValentino">
+                    <p>(snooze/deactivate alarms)</p>
+                    <B>..you lazy sloth!</B>
+                </div>
+
+                <!-- VALENTINO: RUNNING -->
+                <div id="runValentino">
+                    <br><br><b>leave the house:</b><br>
+                    <img onclick="runBus()" src="img/exit.png">
+                </div>
+
+                <!-- LAWRENCE: BUS -->
+
+
+            </div>
         </div>
 
         <!-- MAIN CHARACTER ------------------->
         <div id="wiggle">
-            <img class="knot s01" src="img/knot-layer1.png">
-            <img class="knot s02" src="img/knot-layer2.png">
-            <img class="knot s03" src="img/knot-layer3.png">
-            <img class="knot s04" src="img/knot-layer4.png">
+            <img class="knot layer1" src="img/knot-images/knot1.png">
+            <img class="knot layer2" src="img/knot-images/knot2.png">
+            <img class="knot layer3" src="img/knot-images/knot3.png">
+            <img class="knot layer4" src="img/knot-images/knot4.png">
             <div class="knot eyes">
-                <img id="eye-img" src="img/eyes-long.png">
+                <img id="eye-img" src="img/knot-images/eyes.png">
             </div>
         </div>
 
