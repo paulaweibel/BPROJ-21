@@ -323,10 +323,10 @@ html {
 
 .id-card {
   position: fixed;
-  top: 10vh;
+  top: calc(50vh - 15vw);
   left: 30vw;
   width: 40vw;
-  height: 80vh;
+  /* height: 80vh; */
   /* background-color: #fafafa; */
 }
 

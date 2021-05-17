@@ -9,7 +9,7 @@ function goHome() {
 }
 
 function goValentino() {
-  window.scrollTo(0, 10000);
+  window.scrollTo(0, 3700);
 }
 
 function goLawrence() {
@@ -90,6 +90,7 @@ var about = document.querySelector("#about-content");
 // SCENES
 var assets = document.querySelector("#asset-container");
 var spotlight = document.querySelector("#spotlight");
+var horizontal = document.querySelector(".horizontal-scroll");
 
 //GET STORY TEXTS
 var phrase1 = document.querySelector("#phrase1");
@@ -116,6 +117,8 @@ phrase4.style.display = "none";
 // phrase7.style.display = "none";
 // phrase8.style.display = "none";
 spotlight.style.display = "none";
+
+
 
 
 
@@ -151,8 +154,8 @@ function hideAbout() {
 
 const eyes = document.querySelector('.eyes');
 window.addEventListener('mousemove', (evt) => {
-  const x = -(window.innerWidth / 2 - evt.pageX) / 160;
-  const y = -(window.innerHeight / 2 - evt.pageY + scrollLocation) / 160;
+  const x = -(window.innerWidth / 2 - evt.pageX) / 100;
+  const y = -(window.innerHeight / 2 - evt.pageY + scrollLocation) / 100;
   eyes.style.transform = `translateY(${y}px) translateX(${x}px)`;
 });
 
@@ -160,12 +163,14 @@ window.addEventListener('mousemove', (evt) => {
 // SCROLL MEMORY ///////////////////////////////////////////////
 
 let scrollLocation = 0;
+let sLeft = 0;
 let ticking = false;
 
 //updating scroll position
 document.addEventListener('scroll', function (e) {
   localStorage.setItem("scrollMemory", scrollLocation);
   scrollLocation = window.scrollY;
+  sLeft = window.scrollX;
   if (!ticking) {
     window.requestAnimationFrame(function () {
       animation(scrollLocation);
@@ -235,8 +240,6 @@ function spotlightMove(e) {
 // TRIGGERS ON SCROLL POSITIONS ////////////////////////////////
 
 function animation(scrollPos) {
-  console.log(scrollLocation)
-
   // ANIMATIONS BASED ON SCROLL POSITION
 
   //move Knot
@@ -320,6 +323,25 @@ function animation(scrollPos) {
     assets.style.display = "none";
     document.querySelector("#enter").style.display = "none";
   }
+
+
+  // horizontal scroll valentino
+  if (sLeft > window.innerWidth){
+    document.querySelector("#valentino-6").style.display="block";
+    document.querySelector("#valentino-5").style.display="none";
+  } else{
+    document.querySelector("#valentino-5").style.display="block";
+    document.querySelector("#valentino-6").style.display="none";
+  }
+
+  if (sLeft > 2 * window.innerWidth){
+    console.log("zweite chanse")
+  } 
+
+  if (sLeft > 3 * window.innerWidth){
+    console.log("dritte chanse")
+  } 
+
 }
 
 ////////////////////////////////////////////////////////////////
@@ -388,11 +410,13 @@ function showValentino4(){
 
 function runBus() {
   document.querySelector("#runValentino").style.display = "none";
-  document.querySelector("#horizontal-scroll").style.display = "block";
+  document.querySelector("#valentino-running").style.display = "block";
+  // document.querySelector('#valentino-5')
+  document.querySelector("#horizontal-scroll-container").style.display = "block";
   spotlight.style.display = "none";
   knot.classList.remove("knotIntro");
-  document.querySelector("#valentino").style.display = "none";
-  body.style.overflow = "HIDDEN";
+  document.querySelector("#valentino-1").style.display = "none";
+  body.style.overflow = "hidden";
   body.style.overflowX = "hidden";
   body.style.overflowX = "visible";
 }
