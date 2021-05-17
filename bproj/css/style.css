@@ -185,15 +185,19 @@ html {
 #about-content {
   display: none;
   position: absolute;
-  padding-top: 20vh;
+  padding-top: 15vh;
   opacity: 0;
   top: -100vh;
   left: 0;
-  height: 80vh;
+  height: 85vh;
   width: 100%;
   color: var(--white);
   background-color: var(--schwarz);
   transition: opacity 1s;
+}
+
+#about-eyes{
+  width: 70px;
 }
 
 #about-back{
@@ -209,7 +213,6 @@ html {
 }
 
 .showAbout{
-  /* top: 0vh !important; */
   opacity: 1 !important;
 }
 
