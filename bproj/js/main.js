@@ -369,6 +369,20 @@ function startStory() {
   // body.style.overflow = "visible";
 }
 
+function showValentino2(){
+  valentino1.style.display="none";
+  valentino2.style.display="block";
+}
+
+function showValentino3(){
+  valentino2.style.display="none";
+  valentino3.style.display="block";
+}
+
+function showValentino4(){
+  valentino3.style.display="none";
+  valentino4.style.display="block";
+}
 
 function runBus() {
   document.querySelector("#runValentino").style.display = "none";

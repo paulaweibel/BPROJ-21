@@ -16,7 +16,19 @@ body {
   color: var(--weiss);
   overflow: hidden;
   height: 2000vh;
-  cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAErAAABKwFWy3+7AAAEj0lEQVRIib1We0xbVRj/6GPYCrV7ZH+cO+jtizJxyGPAVkcHgzEfY6BhgxmWEEN8MJmbmYkYsmiIUf/aFjWbG3EsiJvRKcjDbDEZj8imCJaxEeUhrOTCdJBNWm+5t49jTpOSlnsrrAq/5Nfknn7n/O73O9/57gHzVrOj8dLXmRhjWElKDFqd88rlK53W3r4KWEmkJCf3dXf9gF8ufxEX7M6/iBBSr0TmkGWxmMtKD3B3pu7gvNydmKbpeysh7vuxbMu0EWHCgt178Mb4jX8ghPaKTfi/KCG7KpVJa+vP1cHadWvhq28uQf7Tz6yXy+UNFEVlLduu+zPIyd7xl8vlwn5+dOIksZ3X6/XvL1vGBHK5/Or17mvzL/TSwQooL3tB7vV634g3mWwURR2mKIoWvHmYiPBtNAAU5u9JVDyk6Km/0LAqcKmhX4fgrao3oaev1/esVCrHvV7v8NzcXDcAtDMM0x6O9LwwwVO7nhw5fvyE3hBnEASODI3Ad60tMDQ0DNaBfrBNTPjGZTIpr1Aob9rt9g8BwMowjFUweTHhHdnZx2KpDe/U1p0TBIrhcmsbWK390PNzD8zOzsLEJONmWVamUqkm3W63jWXZegAYFHMlSJgge3vWbE1NTfQW81YRqcVx9PARsNsdcHvCBr+PjwHHcb45SoXC5vZ4JnieryXOCITzcnI7tLTW8vEnp8ISXghSsB1X26GxuQkmp6ZAKpW6PB5PnmRhoFKprBwZGxUsEC6Ic2r1IzA9MwMSicTt8Xj2+awXO2OJmxJnvrz4BQ481+GQdELyDUAIYa1WexshRAvOcSBiYzac7eroFIwvFTPTM1BctA8ytmTAt20tEBkZeZrjuMcZhhmfX0IsY8LkpGT+07O1D5zphfrPsMlk8mc5FpilaOdaiHVr1lz76fqPgvHFoF69Glw8DxGSCJ7juANBWQYgpPAcx1X/OX3XZ9uDIHdXHpyvOw/Yi1fJZLLvQ35oxGzwM84Y53i7+pjAzqWwrbmFWO23/JTo9zgUi4v2Vj9hNv+rEKlay7ZMnLY5DXd1dAb9R6o6PS3NJ07T9G+B+x1S1E+NRuNtaWwSCJKx1JRUbDAYPDRNTz+WkHAvIz3dJ7Yw9rVXK33iMTExLEIoaUnC2Zbt1tKS/fOL3Bq4hZ8rKMQJjyZ4DHrDfYTQDYRQIULoF6PRyO3MyREIExI3iLhGoyG3G3XI4vLDwbIN1oEBX5EdPfI6HDpUCTduDnB2x+wI62RPMgyTyDBMI2nzTqdzcHh0FFe+clCwDulgRQXPgsvlWg8AzYJeLYZ4k4lVKh9WsE7WxXPcFMfzbQBQxTDM/cBwiqLUMpms3+12x37w7ntQUvp80GqkbxfvLwGFQtErsFaMpMhSk1MGEUKtCKFNYjF+Ett1Ot1dnU4XVGzkCq3RaAjnEEJlgomhGKoDiREhVGU0Gv/enJrqK7ba02ewXq/3F1cxiVmS1eGAoqjPVSpVUXRUtJyZZEgnc2AvzvTfUBYtrv+ACqfT2UREo6Oi2rEXxwRei5YtYwKKopIAoBwAqoMKEQD+ARNmoh2A/6a3AAAAAElFTkSuQmCC'), auto;
+}
+
+/* MOUSE CURSORS ------- */
+#body{
+  cursor: url('cursor-0.png'), auto;
+}
+
+.button:hover {
+  cursor: url('cursor-1.png'), pointer;
+}
+
+.id {
+  cursor: url('cursor-2.png'), pointer;
 }
 
 /* BOLD FONT */
@@ -31,8 +43,6 @@ p {
   font-weight: 400;
   line-height: 1.5em;
 }
-
-
 
 html {
   scroll-behavior: smooth;
@@ -52,8 +62,8 @@ html {
   left: 0;
 }
 
-/* -------------------------------- PROGRESS BAR -------------------------------- */
 
+/* -------------------------------- PROGRESS BAR -------------------------------- */
 #progress {
   height: 5px;
   background: #fafafa;
@@ -116,7 +126,6 @@ html {
 /* "HI" */
 #title-button {
   position: absolute;
-  cursor: pointer;
   top: 21%;
   height: 17vh;
   left: 25vw;
@@ -165,7 +174,6 @@ html {
 
 /* ABOUT -------------------------------- */
 .about-menu {
-  cursor: pointer;
   position: absolute;
   right: 0;
   margin-right: 30px;
@@ -218,11 +226,30 @@ html {
 
 
 
-/* -------------------------------- BUTTONS -------------------------------- */
 
-.button:hover {
-  cursor: pointer;
+
+/* -------------------------------- SPOTLIGHT -------------------------------- */
+
+:root {
+  --spotlightColor: var(--schwarz);
+  --spotlightSize: 150px;
+  --spotlightTransparent: 150px;
 }
+
+#spotlight {
+  position: fixed;
+  background-image: radial-gradient(circle at -20% -20%,
+      transparent var(--spotlightTransparent),
+      var(--spotlightColor) var(--spotlightSize));
+  height: 100vh;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+}
+
+
+/* -------------------------------- BUTTONS -------------------------------- */
 
 /* INTRO: YES & NO, BUTTON CONTAINER */
 #help-button {
@@ -264,143 +291,6 @@ html {
 }
 
 
-/* -------------------------------- SPOTLIGHT -------------------------------- */
-
-:root {
-  --spotlightColor: var(--schwarz);
-  --spotlightSize: 150px;
-  --spotlightTransparent: 150px;
-}
-
-#spotlight {
-  position: fixed;
-  background-image: radial-gradient(circle at -20% -20%,
-      transparent var(--spotlightTransparent),
-      var(--spotlightColor) var(--spotlightSize));
-  height: 100vh;
-  width: 100%;
-  top: 0px;
-  left: 0px;
-  pointer-events: none;
-}
-
-
-/* --------------------------------------------------------------------------- */
-/* ----------------------------- MAIN CHARACTER ------------------------------ */
-/* KNOT CHARACTER */
-.knot {
-  position: fixed;
-  left: 60vw;
-  top: 50vh;
-  width: 30vh;
-}
-
-.layer1 {
-  opacity: 1;
-  animation: knot1 12s infinite ease-in-out;
-}
-
-.layer2 {
-  opacity: 1;
-  animation: knot2 25s infinite linear;
-}
-
-.layer3 {
-  opacity: 0.9;
-  animation: knot3 9s infinite ease-in-out;
-}
-
-.layer4 {
-  opacity: 0.8;
-  animation: knot4 5s infinite ease-in-out;
-}
-
-/* KNOT LAYERS ANIMATIONS */
-@keyframes knot1 {
-  0% {
-    transform: rotate(0deg) scale(1) translate(0px, 0);
-  }
-
-  50% {
-    transform: rotate(5deg) scale(1.2) translate(0px, -5px);
-  }
-
-  100% {
-    transform: rotate(0deg) scale(1) translate(0px, 0);
-  }
-}
-
-@keyframes knot2 {
-  0% {
-    transform: scaleX(1) scaleY(1) rotate(0deg);
-  }
-
-  50% {
-    transform: scaleX(1.1) scaleY(1.2) rotate(180deg);
-  }
-
-  100% {
-    transform: scaleX(1) scaleY(1) rotate(360deg);
-  }
-}
-
-
-@keyframes knot3 {
-  0% {
-    transform: rotate(0deg) scaleY(1) translate(5px, 0px);
-  }
-
-  50% {
-    transform: rotate(-10deg) scaleY(1.3) translate(0px, -5px);
-  }
-
-  100% {
-    transform: rotate(0deg) scaleY(1) translate(5px, 0px);
-    ;
-  }
-}
-
-
-@keyframes knot4 {
-  0% {
-    transform: scale(1.1) rotate(0deg) translate(0px, 0px);
-  }
-
-  50% {
-    transform: scale(1.2) rotate(-10deg) translate(0px, 10px);
-  }
-
-  100% {
-    transform: scale(1.1) rotate(0deg) translate(0px, 0px);
-  }
-}
-
-/* KNOT WIGGLE CONTAINER */
-#wiggle {
-  position: fixed;
-  animation: wiggle 2s infinite;
-  margin-left: 0px;
-  transition: margin 2s;
-}
-
-/* EYES */
-#eye-img {
-  width: 30vh;
-  animation: eye-blink 10s ease-in-out infinite;
-}
-
-/* KNOT MOVE BC TITLE-BUTTON */
-.knotTitle {
-  margin-left: -5vw !important;
-  margin-top: -5vh !important;
-}
-
-/* KNOT MOVE TO INTRO-START */
-.knotIntro {
-  margin-left: -40vw !important;
-  margin-top: 0vh !important;
-}
-
 
 /* ------------------------------------------------------------------------------------------ */
 /* ---- STORIES ----------------------------------------------------------------------------- */
@@ -419,43 +309,11 @@ html {
 
 /* ENTER STORY */
 #enter {
-  cursor: pointer;
   display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 40vh;
-}
-
-/* ------------------------------------------------------------------------------------------ */
-/* VALENTINO  ------------------------------------------------------------------------------- */
-#text-valentino {
-  cursor: pointer;
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0vw;
-  width: 40vh;
-}
-
-
-/* VALENTINO STORY */
-#valentino {
-  display: none;
-  position: fixed;
-  left: calc(45vw);
-  height: 40vh;
-  top: 30vh;
-}
-
-#horizontal-scroll {
-  display: none;
-  background-color: var(--schwarz);
-  position: absolute;
-  top: calc(10000px + 80vh);
-  left: 0;
-  height: 20vh;
-  width: 200vw;
 }
 
 
@@ -464,17 +322,12 @@ html {
 /* IDS OF CHARACTERS ----------------------------- */
 
 .id-card {
-  cursor: pointer;
   position: fixed;
   top: 10vh;
   left: 30vw;
   width: 40vw;
   height: 80vh;
   background-color: #fafafa;
-}
-
-.id {
-  cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAErAAABKwFWy3+7AAAETklEQVRIicVXfUxbVRT/QfkoUAlkIzP32D7I2sI6UeIAhwljEwc4NBKFwZzObUYXTXTOLMYt/uFfui0qGKNzJu7LZI1mJnUUAn8oc2zLcJjoWMuCzmHkjpIBU0bS7r0+nnkvLUJfGeVj8ZecvLxzz8c959x7z71xiqLg/0DCVJ9EVABgB4AkAH8BOA3gF87534s9t/iI/z2c81cAXADwEIBTAJxE1ElEG3TaC8BkqkPRugE0A3gCwCUAhaGsDAMwAugF0MY5b1rMiPsB/AHgBwDLAKgRZgFIB2AHkBb65uqsLMRxqI4/A/gAQDDEjgtFLIcmkArAorMyDyREqJTNYNgA4AaACQD7dKMLcUxE9QD+0Un8hwwAz3POO3Uj88DUGq8GcE3dPpFmEhMTxwB4OecnF8MpIhx/D0AM8Ua1OsdByhaykZmRmZ6WmnYvEWXoLMwX6nYKE2MsmzFWqn7DvEdKSm76Bn1KUWGhYl2+fJAxlj9VZ740q2JVRaXr6xNORZIkpf6ZOkUQhABjrCCa7FxoVmE1+obajbdVxyptbtikMMaUvLy8w4yxtdF0YqHII1MHznm/P+D3jgyPaENHvzqO7Vu2IikxcRuADiJSrFZrNxG9S0SbiShbZyQKYupOZaVrXrbb7IcOfvH5NP6xL4/A5/PhYvdF9Hg9CAQCMBqN46Y0k1cURc/YrbFToSbTH2kz5rZYVrpm9K3duzMrq2fuFX1X+nDt6u9oa2vH+a4L8A35JsfuMZl+lYLBjkAg8KeauJgdP15Z5bJbbU99+HGjbmwmqOXp7uqCy+XCJY8HA3wgLLlr1hqH4VixYueZc2cnwrWOBUuWLoGaoZqaGgyPDGsaRqOxSetuc1mJxUVFvvDWioXOd55T1j9aru2C+8zm24yxmrCtmCNWkbU0a7/T6dTxo+HAe+9j03PP4spvfXKKMeXAhCwv45y7wqJzcuxubWkcuH7dry6i2WC12ZCQkID4+Hi/P+B3Rl6f5uRYhSkt9WxT40c6fiSerqvFrtdehyRJJoPB8BMRbZ0mEq2Wd6I3d74hOBwO2dPjmVZn9Tyvr61TCh54UCkuKtb+VX7nj2eUlY6VWp1zcnIOMsYyYjoyo1HhqlVD27a8MOn0nbf3KiUPr1YsFotsNpt9FsEiV66vmDapqopKzXmu3d4x58UVhhQMtnt6e9He0oqK8sfwzbcn5cEh30gwGHTLstwwIU/09Xgu49Cnn2ka6rZqbnGjvGwdbo2PryWiI1EjioUEQQjm35+v5Obm3rBYzB1TG4aaTkEQ+tUI3a7vJiNvbXZrUdtstp55vySerK7ed9nrXSeKonol/iRy1RJRTXJy8mEAmcePHoMh3oDtL70Iv98vSpK0Y0FPGPVGcqdXBhHtSU9P35uakmoavTkKWZb9sixv4JyfvutvJyI6kZSUtBHAVVEU6znn2p0u8np7N/CqKIpqR9o/mR0A/wJOKHxMEu9a9gAAAABJRU5ErkJggg=='), auto;
 }
 
 #id-valentino {
@@ -542,39 +395,6 @@ html {
 
 
 
-/* ------ MAIN CHARACTER CONSTANT ANIMATIONS ------------------------------ */
-
-@keyframes eye-blink {
-  0% {
-    transform: scaleY(1);
-  }
-
-  95% {
-    transform: scaleY(1);
-  }
-
-  96% {
-    transform: scaleY(0);
-  }
-
-  100% {
-    transform: scaleY(1);
-  }
-}
-
-@keyframes wiggle {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate(0, 0.5vh);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-}
 
 
 /* ------------- OVERLAY FOR SMARTPHONE USERS -------------------- */

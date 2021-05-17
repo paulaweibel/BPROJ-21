@@ -7,6 +7,11 @@
     <title>hidden worries</title>
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/0-knot.css">
+    <link rel="stylesheet" type="text/css" href="./css/1-valentino.css">
+    <link rel="stylesheet" type="text/css" href="./css/2-lawrence.css">
+    <link rel="stylesheet" type="text/css" href="./css/3-mercy.css">
+    <link rel="stylesheet" type="text/css" href="./css/4-barbara.css">
     <link rel="icon" href="img/knot-images/round-icon.png">
     <script src="./js/typeit.min.js"></script>
     <script src="./js/preloadjs.min.js"></script>
@@ -23,12 +28,14 @@
         <!-- BACKGROUND --------------->
         <img onload="alarm()" id="light-texture" src="img/background.png">
 
-        <!-- TITLE -------------------->
+        <!-- TITLE & ABOUT PAGE -------------------->
         <div id="title-container">
             <div id="title-dark"></div>
             <img id="title-text" src="img/title/title.png">
+
+            <!-- ABOUT -------------------->
             <div id="about-container">
-                <div class="about-menu">
+                <div class="about-menu button">
                     <h2 id="about" onclick="showAbout()">ABOUT</h2>
                 </div>
             </div>
@@ -57,8 +64,15 @@
 
             <!-- VALENTINO ASSETS -->
             <div id="valentino-asset">
-                <div id="valentino" onclick="idValentino()">
-                    <img id="valentino-1" class="asset id" src="img/valentino-1.png">
+                <div id="valentino">
+                    <img id="valentino-1" class="valentino-bed id" onclick="idValentino()"
+                        src="img/1-valentino/valentino-bed-1.png">
+                    <img id="valentino-2" class="valentino-bed id" onclick="idValentino()"
+                        src="img/1-valentino/valentino-bed-2.png">
+                    <img id="valentino-3" class="valentino-bed id" onclick="idValentino()"
+                        src="img/1-valentino/valentino-bed-3.png">
+                    <img id="valentino-4" class="valentino-bed id" onclick="idValentino()"
+                        src="img/1-valentino/valentino-bed-4.png">
                 </div>
                 <div id="horizontal-scroll"></div>
             </div>
@@ -111,7 +125,7 @@
             <div id="enter">
                 <b>Very nice of you!</b>
                 <p>Let's visit my first stress client together.</p>
-                <img onclick="startStory()" src="img/enter.png">
+                <img class="button" onclick="startStory()" src="img/enter.png">
             </div>
 
             <!-- VALENTINO: SLEEPING -->
@@ -125,7 +139,7 @@
                 <!-- VALENTINO: RUNNING -->
                 <div id="runValentino">
                     <br><br><b>leave the house:</b><br>
-                    <img onclick="runBus()" src="img/exit.png">
+                    <img class="button" onclick="runBus()" src="img/exit.png">
                 </div>
 
                 <!-- LAWRENCE: BUS -->
@@ -147,19 +161,22 @@
 
         <!------ BUTTONS ---------------->
         <div id="title-button-container">
-            <img id="title-button" class="hi-animation" src="img/title/hi-title.png">
+            <img id="title-button" class="hi-animation button" src="img/title/hi-title.png">
         </div>
 
         <div id="help-button">
             <div id="help-yes" class="button help-button">YES <br>I'd love to!</div>
             <div id="help-no" class="button help-button">NO <br>thank you!</div>
         </div>
+        <div>
+            <img id="valentino-handy" class="valentino-bed button" src="img/1-valentino/white-phone-screen.png">
+        </div>
 
         <!-- CHARACTERS ID-PAGES ----->
-        <div id="id-valentino" class="id-card" onclick="hideId()">ID CARD</div>
-        <div id="id-lawrence" class="id-card" onclick="hideId()">ID CARD</div>
-        <div id="id-mercy" class="id-card" onclick="hideId()">ID CARD</div>
-        <div id="id-barbara" class="id-card" onclick="hideId()">ID CARD</div>
+        <div id="id-valentino" class="id-card button" onclick="hideId()">ID CARD</div>
+        <div id="id-lawrence" class="id-card button" onclick="hideId()">ID CARD</div>
+        <div id="id-mercy" class="id-card button" onclick="hideId()">ID CARD</div>
+        <div id="id-barbara" class="id-card button" onclick="hideId()">ID CARD</div>
     </div>
 
     <!-- NAVIGATE -->

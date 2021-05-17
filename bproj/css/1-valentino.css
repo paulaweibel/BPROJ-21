@@ -1,0 +1,65 @@
+/* ------------------------------------------------------------------------------------------ */
+/* VALENTINO  ------------------------------------------------------------------------------- */
+
+#text-valentino {
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0vw;
+    width: 40vh;
+}
+
+/* VALENTINO STORY */
+#valentino {
+    display: none;
+    position: fixed;
+    left: calc(50vw - 10vh);
+    top: 30vh;
+    background-color: red;
+}
+
+.valentino-bed {
+    position: fixed;
+    max-height: 45vh;
+}
+
+#valentino-handy{
+    left: calc(50vw - 6.3vh);
+    top: 56.4vh;
+    height: 1.9vh;
+}
+
+#valentino-1 {
+    display: block;
+}
+
+#valentino-2 {
+    display: none;
+}
+
+#valentino-3 {
+    display: none;
+}
+
+#valentino-4 {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+#horizontal-scroll {
+    display: none;
+    background-color: var(--schwarz);
+    position: absolute;
+    top: calc(10000px + 80vh);
+    left: 0;
+    height: 20vh;
+    width: 200vw;
+}
