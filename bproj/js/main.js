@@ -84,6 +84,9 @@ var knot = document.querySelector("#wiggle");
 var bubble = document.querySelector("#speechbubble");
 var eyeImg = document.querySelector("#eye-img");
 
+//MENU
+var about = document.querySelector("#about-content");
+
 // SCENES
 var assets = document.querySelector("#asset-container");
 var spotlight = document.querySelector("#spotlight");
@@ -114,6 +117,34 @@ phrase4.style.display = "none";
 // phrase8.style.display = "none";
 spotlight.style.display = "none";
 
+
+
+
+////////////////////////////////////////////////////////////////
+//// ABOUT MENU  //////////////////////////////////////////////
+
+function showAbout() {
+  about.style.display="block";
+  document.querySelector("#title-dark").style.display="none";
+  body.style.backgroundColor="var(--schwarz)";
+  about.style.top="0";
+  
+  setTimeout(() => {
+    about.classList.add("showAbout");
+  }, 200)
+  titleButton.style.opacity="0";
+  knot.style.opacity="0";
+}
+
+function hideAbout() {
+  about.style.display="none";
+  about.style.top="-100vh";
+  about.classList.remove("showAbout");
+  document.querySelector("#title-dark").style.display="block";
+  body.style.backgroundColor="var(--weiss)";
+  titleButton.style.opacity="1";
+  knot.style.opacity="1";
+}
 
 ////////////////////////////////////////////////////////////////
 ////EYES MAIN CHARACTER   //////////////////////////////////////
