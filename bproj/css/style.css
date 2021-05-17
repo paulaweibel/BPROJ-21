@@ -16,6 +16,10 @@ body {
   color: var(--weiss);
   overflow: hidden;
   height: 2000vh;
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 }
 
 /* MOUSE CURSORS ------- */
@@ -29,6 +33,18 @@ body {
 
 .id {
   cursor: url('cursor-2.png'), pointer;
+=======
+  cursor: url('cursor.png'), pointer;
+>>>>>>> Stashed changes
+=======
+  cursor: url('cursor.png'), pointer;
+>>>>>>> Stashed changes
+=======
+  cursor: url('cursor.png'), pointer;
+>>>>>>> Stashed changes
+=======
+  cursor: url('cursor.png'), pointer;
+>>>>>>> Stashed changes
 }
 
 /* BOLD FONT */
@@ -62,7 +78,19 @@ html {
   left: 0;
 }
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 /* -------------------------------- PROGRESS BAR -------------------------------- */
 #progress {
   height: 5px;
@@ -291,6 +319,31 @@ html {
 }
 
 
+<<<<<<< Updated upstream
+=======
+/* -------------------------------- SPOTLIGHT -------------------------------- */
+
+:root {
+  --spotlightColor: var(--schwarz);
+  --spotlightSize: 150px;
+  --spotlightTransparent: 150px;
+}
+
+#spotlight {
+  position: fixed;
+  background-image: radial-gradient(circle at -20% -20%,
+      transparent var(--spotlightTransparent),
+      var(--spotlightColor) var(--spotlightSize));
+  height: 100vh;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+}
+
+
+
+>>>>>>> Stashed changes
 
 /* ------------------------------------------------------------------------------------------ */
 /* ---- STORIES ----------------------------------------------------------------------------- */
