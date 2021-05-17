@@ -127,26 +127,26 @@ spotlight.style.display = "none";
 //// ABOUT MENU  //////////////////////////////////////////////
 
 function showAbout() {
-  about.style.display="block";
-  document.querySelector("#title-dark").style.display="none";
-  body.style.backgroundColor="var(--schwarz)";
-  about.style.top="0";
-  
+  about.style.display = "block";
+  document.querySelector("#title-dark").style.display = "none";
+  body.style.backgroundColor = "var(--schwarz)";
+  about.style.top = "0";
+
   setTimeout(() => {
     about.classList.add("showAbout");
   }, 200)
-  titleButton.style.opacity="0";
-  knot.style.opacity="0";
+  titleButton.style.opacity = "0";
+  knot.style.opacity = "0";
 }
 
 function hideAbout() {
-  about.style.display="none";
-  about.style.top="-100vh";
+  about.style.display = "none";
+  about.style.top = "-100vh";
   about.classList.remove("showAbout");
-  document.querySelector("#title-dark").style.display="block";
-  body.style.backgroundColor="var(--weiss)";
-  titleButton.style.opacity="1";
-  knot.style.opacity="1";
+  document.querySelector("#title-dark").style.display = "block";
+  body.style.backgroundColor = "var(--weiss)";
+  titleButton.style.opacity = "1";
+  knot.style.opacity = "1";
 }
 
 ////////////////////////////////////////////////////////////////
@@ -306,13 +306,13 @@ function animation(scrollPos) {
     titleBox.style.display = "none";
     titleButton.style.display = "none";
     document.querySelector("#speechbubble-white").classList.add("hide");
-    document.querySelector("#speechbubble-white").style.display="none";
+    document.querySelector("#speechbubble-white").style.display = "none";
   } else {
     intro.style.diplay = "block"
     titleBox.style.display = "block";
     titleButton.style.display = "block";
     document.querySelector("#speechbubble-white").classList.remove("hide");
-    document.querySelector("#speechbubble-white").style.display="block";
+    document.querySelector("#speechbubble-white").style.display = "block";
   }
 
   if (scrollLocation <= 10000 && scrollLocation > 9500) {
@@ -326,21 +326,37 @@ function animation(scrollPos) {
 
 
   // horizontal scroll valentino
-  if (sLeft > window.innerWidth){
-    document.querySelector("#valentino-6").style.display="block";
-    document.querySelector("#valentino-5").style.display="none";
-  } else{
-    document.querySelector("#valentino-5").style.display="block";
-    document.querySelector("#valentino-6").style.display="none";
+  if (sLeft >= 100) {
+    document.querySelector("#bus-outside").classList.add("driveLeft");
+  } else {
+    document.querySelector("#bus-outside").classList.remove("driveLeft");
   }
 
-  if (sLeft > 2 * window.innerWidth){
-    console.log("zweite chanse")
-  } 
+  if (sLeft > 1.5 * window.innerWidth) {
+    document.querySelector("#valentino-6").style.display = "block";
+    document.querySelector("#valentino-5").style.display = "none";
+  } else {
+    document.querySelector("#valentino-5").style.display = "block";
+    document.querySelector("#valentino-6").style.display = "none";
+  }
 
-  if (sLeft > 3 * window.innerWidth){
-    console.log("dritte chanse")
-  } 
+  if (sLeft > 2.5 * window.innerWidth) {
+    document.querySelector("#valentino-6").classList.add("valentinoMiddle");
+    document.querySelector("#valentino-5").classList.add("valentinoMiddle");
+  } else{
+    document.querySelector("#valentino-6").classList.remove("valentinoMiddle");
+    document.querySelector("#valentino-5").classList.remove("valentinoMiddle");
+  }
+
+  if (sLeft > 2.8 * window.innerWidth) {
+    document.querySelector("#valentino-5").classList.add("valentinoLeaves");
+    document.querySelector("#valentino-6").classList.add("valentinoLeaves");
+    document.querySelector("#bus-outside").classList.add("driveAway");
+  } else{
+    document.querySelector("#valentino-5").classList.remove("valentinoLeaves");
+    document.querySelector("#valentino-6").classList.remove("valentinoLeaves");
+    document.querySelector("#bus-outside").classList.remove("driveAway");
+  }
 
 }
 
@@ -381,41 +397,51 @@ helpYes.addEventListener('click', function () {
   body.style.overflow = "hidden";
   window.scrollTo(0, 10000);
   spotlight.style.display = "block";
+  document.querySelector("#text-valentino").style.display = "block";
 });
 
 
 function startStory() {
   document.querySelector("#enter").style.display = "none";
   document.querySelector("#valentino").style.display = "block";
-  document.querySelector("#text-valentino").style.display = "block";
+  document.querySelector("#valentino-text1").style.display = "block";
+  document.querySelector("#valentino-text2").style.display = "block";
   bubble.classList.add("bubbleGrow");
+  knot.classList.add("knotValentino");
   moveflag = true;
   // body.style.overflow = "visible";
 }
 
-function showValentino2(){
-  valentino1.style.display="none";
-  valentino2.style.display="block";
+function showValentino2() {
+  valentino1.style.display = "none";
+  valentino2.style.display = "block";
 }
 
-function showValentino3(){
-  valentino2.style.display="none";
-  valentino3.style.display="block";
+function showValentino3() {
+  valentino2.style.display = "none";
+  valentino3.style.display = "block";
 }
 
-function showValentino4(){
-  valentino3.style.display="none";
-  valentino4.style.display="block";
+function showValentino4() {
+  valentino3.style.display = "none";
+  valentino4.style.display = "block";
 }
 
 function runBus() {
-  document.querySelector("#runValentino").style.display = "none";
-  document.querySelector("#valentino-running").style.display = "block";
-  // document.querySelector('#valentino-5')
-  document.querySelector("#horizontal-scroll-container").style.display = "block";
   spotlight.style.display = "none";
+  knot.style.display = "none";
+  knot.classList.remove("knotValentino");
   knot.classList.remove("knotIntro");
+  document.querySelector("#valentino-text1").style.display = "none";
+  document.querySelector("#valentino-text2").style.display = "none";
+  document.querySelector("#text-valentino").style.display = "none";
   document.querySelector("#valentino-1").style.display = "none";
+
+  document.querySelector("#valentino-running").style.display = "block";
+  document.querySelector("#horizontal-scroll-container").style.display = "block";
+  document.querySelector(".bus-container").style.display = "block";
+
+  // vertical scroll
   body.style.overflow = "hidden";
   body.style.overflowX = "hidden";
   body.style.overflowX = "visible";

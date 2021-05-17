@@ -27,7 +27,7 @@
     position: fixed;
     margin-left: -40vw;
     max-height: 45vh;
-    transition: margin-left 1s;
+    transition: margin-left 3s;
 }
 
 /* (invisible cursor-change-box on Valentinos Head) */
@@ -69,10 +69,22 @@
 }
 
 #valentino-6 {
+    transition: margin-left 3s;
     display: none;
 }
 
-#valentino-running{
+#valentino-running {
+    display: none;
+}
+
+
+/* TEXT */
+
+#valentino-text1 {
+    display: none;
+}
+
+#valentino-text2 {
     display: none;
 }
 
@@ -95,3 +107,40 @@
     max-height: 50%;
 }
 
+#bus-stop {
+    right: 0;
+}
+
+.bus-container {
+    display: none;
+    position: absolute;
+    top: calc(10000px + 25vh);
+    left:0;
+    width: 400vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#bus-outside {
+    position: absolute;
+    top: 0;
+    margin-left: -200vh;
+    max-height: 80%;
+    transition: margin-left 5s;
+}
+
+.driveLeft {
+    margin-left: 300vw !important;
+}
+
+.driveAway{
+    margin-left: 500vw !important;
+}
+
+.valentinoMiddle{
+    margin-left: -20vw !important;
+}
+
+.valentinoLeaves{
+    margin-left: 80vw !important;
+}

@@ -64,8 +64,8 @@
 
             <!-- BACKGROUNDS -->
             <div id="horizontal-scroll-container">
-                <img class="horizontal-scroll-background" src="img/Locations/city.png">
-                <img class="horizontal-scroll-background" src="img/Locations/bus-stop.png">
+                <img id="house-valentino" class="horizontal-scroll-background" src="img/Locations/house-valentino1.png">
+                <img id="bus-stop" class="horizontal-scroll-background" src="img/Locations/bus-stop.png">
             </div>
 
             <!-- VALENTINO ASSETS -->
@@ -127,23 +127,24 @@
                 <b id="phrase4"><br>Would you like to be my assistant? </b>
             </div>
 
-            <!-- ENTER FIRST STORY -->
-            <div id="enter">
-                <b>Very nice of you!</b>
-                <p>Let's visit my first stress client together.</p>
-                <img class="button" onclick="startStory()" src="img/enter.png">
-            </div>
+
 
             <!-- VALENTINO: SLEEPING -->
             <div id="text-valentino">
+                <!-- ENTER FIRST STORY -->
+                <div id="enter">
+                    <b>Very nice of you!</b>
+                    <p>Let's visit my first stress client together.</p>
+                    <img class="button" onclick="startStory()" src="img/enter.png">
+                </div>
                 <!-- Sleeping VALENTINO -->
-                <div id="sleepValentino">
+                <div id="valentino-text1">
                     <p>(snooze/deactivate alarms)</p>
                     <B>..you lazy sloth!</B>
                 </div>
 
                 <!-- VALENTINO: RUNNING -->
-                <div id="runValentino">
+                <div id="valentino-text2">
                     <br><br><b>leave the house:</b><br>
                     <img class="button" onclick="runBus()" src="img/exit.png">
                 </div>
@@ -177,6 +178,12 @@
         <div>
             <img id="valentino-handy" class="valentino-bed button" src="img/1-valentino/white-phone-screen.png">
         </div>
+
+        <!-- FOREGROUND OBJECTS -->
+        <div class="bus-container">
+            <img id="bus-outside" src="img/Locations/bus.png">
+        </div>
+       
 
         <!-- CHARACTERS ID-PAGES ----->
         <div id="id-valentino" class="id-card id" onclick="hideId()">

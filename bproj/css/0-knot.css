@@ -55,6 +55,12 @@
     margin-top: 0vh !important;
 }
 
+/* KNOT MOVE TO INTRO-START */
+.knotValentino {
+    margin-left: -80vh !important;
+    margin-top: -50vh !important;
+}
+
 /* ------ MAIN CHARACTER CONSTANT ANIMATIONS ------------------------------ */
 
 @keyframes eye-blink {
