@@ -327,7 +327,11 @@ html {
   left: 30vw;
   width: 40vw;
   height: 80vh;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
+}
+
+.id-picture{
+  max-width: 100%;
 }
 
 #id-valentino {

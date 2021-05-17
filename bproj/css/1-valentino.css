@@ -24,7 +24,17 @@
     max-height: 45vh;
 }
 
+/* (invisible cursor-change-box on Valentinos Head) */
+#valentino-bed-id{
+    position: absolute;
+    top: 5vh;
+    left: 15vh;
+    height: 20vh;
+    width: 20vh;
+}
+
 #valentino-handy{
+    display: none;
     left: calc(50vw - 6.3vh);
     top: 56.4vh;
     height: 1.9vh;

@@ -303,11 +303,13 @@ function animation(scrollPos) {
     titleBox.style.display = "none";
     titleButton.style.display = "none";
     document.querySelector("#speechbubble-white").classList.add("hide");
+    document.querySelector("#speechbubble-white").style.display="none";
   } else {
     intro.style.diplay = "block"
     titleBox.style.display = "block";
     titleButton.style.display = "block";
     document.querySelector("#speechbubble-white").classList.remove("hide");
+    document.querySelector("#speechbubble-white").style.display="block";
   }
 
   if (scrollLocation <= 10000 && scrollLocation > 9500) {
