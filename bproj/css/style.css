@@ -17,6 +17,7 @@ body {
   overflow: hidden;
   height: 2000vh;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 }
 
 /* MOUSE CURSORS ------- */
@@ -30,6 +31,9 @@ body {
 
 .id {
   cursor: url('cursor-2.png'), pointer;
+=======
+  cursor: url('cursor.png'), pointer;
+>>>>>>> Stashed changes
 =======
   cursor: url('cursor.png'), pointer;
 >>>>>>> Stashed changes
@@ -67,7 +71,10 @@ html {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 /* -------------------------------- PROGRESS BAR -------------------------------- */
