@@ -45,10 +45,6 @@ p {
   line-height: 1.5em;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* -------------------------------- ALL CONTENT -------------------------------- */
 
 #all {
