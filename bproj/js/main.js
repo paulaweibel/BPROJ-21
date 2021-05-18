@@ -313,7 +313,33 @@ function runBus() {
   body.style.overflow = "hidden";
   body.style.overflowX = "hidden";
   body.style.overflowX = "visible";
+
+
+  // HORIZONTALES SCROLLEN
+  // http://www.dte.web.id/2013/02/event-mouse-wheel.html
+
+  (function () {
+    function scrollHorizontally(e) {
+      e = window.event || e;
+      var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+      console.log(delta);
+      document.documentElement.scrollLeft -= (delta * 40); // Multiplied by 40
+      document.body.scrollLeft -= (delta * 40); // Multiplied by 40
+      e.preventDefault();
+    }
+    if (window.addEventListener) {
+      // IE9, Chrome, Safari, Opera
+      window.addEventListener("mousewheel", scrollHorizontally, false);
+      // Firefox
+      window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
+    } else {
+      // IE 6/7/8
+      window.attachEvent("onmousewheel", scrollHorizontally);
+    }
+  })();
 }
+
+
 
 ////////////////////////////////////////////////////////////////
 // TRIGGERS ON SCROLL POSITIONS ////////////////////////////////
@@ -470,6 +496,7 @@ function hideId() {
   document.querySelector("#id-barbara").style.display = "none";
   console.log("hide ID")
 }
+
 
 ////////////////////////////////////////////////////////////////
 // TYPING ANIMATIONS FOR ALLL THE TEXTS: ///////////////////////
