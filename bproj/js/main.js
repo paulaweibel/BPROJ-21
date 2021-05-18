@@ -248,18 +248,22 @@ function animation(scrollPos) {
     knot.classList.add("knotIntro");
     titleBox.classList.add("titleUp");
     titleButton.classList.add("ropeUp");
+    
   } else {
     knot.classList.remove("knotIntro");
     titleBox.classList.remove("titleUp");
     titleButton.classList.remove("ropeUp");
+    
   }
 
   if (scrollLocation > 100) {
     knot.classList.add("knotIntro");
     bubble.classList.add("bubbleGrow");
     bubble.style.display = "block";
+    document.getElementById("scroll-icon").classList.add("scroll-icon-after");
   } else {
     bubble.classList.remove("bubbleGrow");
+    document.getElementById("scroll-icon").classList.remove("scroll-icon-after");
   }
 
   //Hello, im the stress knot.

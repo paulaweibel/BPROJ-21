@@ -147,26 +147,31 @@ html {
 
 /* SCROLL ARROW */
 #scroll-icon {
-  position: absolute;
-  /* top: 88%; */
+  position: fixed;
+  opacity: 1;
   bottom: 10vh;
   left: 48vw;
   width: 3vh;
+  transition: opacity 1s;
   animation: scroll 1.5s infinite ease-in-out;
 }
 
 @keyframes scroll {
   0% {
-    bottom: 5vh;
+    bottom: 10vh;
   }
 
   50% {
-    bottom: 6vh;
+    bottom: 11vh;
   }
 
   100% {
-    bottom: 5vh;
+    bottom: 10vh;
   }
+}
+
+.scroll-icon-after{
+  opacity: 0.2 !important;
 }
 
 /* TITLE DARK BACKGROUND ---- */
