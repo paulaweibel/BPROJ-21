@@ -149,7 +149,7 @@ html {
 #scroll-icon {
   position: fixed;
   opacity: 1;
-  bottom: 10vh;
+  bottom: 5vh;
   left: 48vw;
   width: 3vh;
   transition: opacity 1s;
@@ -158,20 +158,20 @@ html {
 
 @keyframes scroll {
   0% {
-    bottom: 10vh;
+    bottom: 5vh;
   }
 
   50% {
-    bottom: 11vh;
+    bottom: 6vh;
   }
 
   100% {
-    bottom: 10vh;
+    bottom: 5vh;
   }
 }
 
 .scroll-icon-after{
-  opacity: 0.2 !important;
+  opacity: 0.15 !important;
 }
 
 /* TITLE DARK BACKGROUND ---- */
