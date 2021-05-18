@@ -277,24 +277,30 @@ html {
 /* INTRO: YES & NO BUTTON */
 .help-button {
   POSITION: FIXED;
-  font-size: 1.5em;
-  line-height: 1.5em;
+  /* font-size: 1.5em;
+  line-height: 1.5em; */
   bottom: 0;
   margin-bottom: -30vh;
-  padding: 1vh;
+  /* padding: 1vh; */
   left: calc(23vw + 30vh);
   width: 15vh;
-  text-align: center;
+  /* text-align: center; */
   transition: margin-bottom 1s 0.5s ease, transform 0.1s;
-  background-color: var(--schwarz);
+  /* background-color: var(--schwarz); */
 }
 
 #help-no {
   margin-left: 20vh;
 }
 
+#help-no:hover {
+  transition: opacity 0.2s 0.2s, transform 0.2s;
+  transform: scale(0.7);
+  opacity:0;
+}
+
 .help-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.5);
 }
 
 /* INTRO-BUTTON TRANSITION */
@@ -385,7 +391,9 @@ html {
 }
 
 #speechbubble-white {
-  max-width: 100%;
+  transform: scale(0);
+  width: 500px;
+  transition: transform 0.5s;
 }
 
 

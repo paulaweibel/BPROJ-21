@@ -107,6 +107,10 @@
     max-height: 50%;
 }
 
+#house-valentino{
+    left:0;
+}
+
 #bus-stop {
     right: 0;
 }
@@ -124,6 +128,7 @@
 #bus-outside {
     position: absolute;
     top: 0;
+    left: 0;
     margin-left: -200vh;
     max-height: 80%;
     transition: margin-left 5s;

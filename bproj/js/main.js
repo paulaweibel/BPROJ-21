@@ -80,15 +80,13 @@ console.log("I am at: " + whereAmI)
 var intro = document.querySelector("#intro");
 var titleBox = document.querySelector("#title-container");
 var titleButton = document.querySelector("#title-button-container");
+var about = document.querySelector("#about-content");
+
+// ASSETS
+var assets = document.querySelector("#asset-container");
 var knot = document.querySelector("#wiggle");
 var bubble = document.querySelector("#speechbubble");
 var eyeImg = document.querySelector("#eye-img");
-
-//MENU
-var about = document.querySelector("#about-content");
-
-// SCENES
-var assets = document.querySelector("#asset-container");
 var spotlight = document.querySelector("#spotlight");
 var horizontal = document.querySelector(".horizontal-scroll");
 
@@ -97,25 +95,17 @@ var phrase1 = document.querySelector("#phrase1");
 var phrase2 = document.querySelector("#phrase2");
 var phrase3 = document.querySelector("#phrase3");
 var phrase4 = document.querySelector("#phrase4");
-// var phrase5 = document.querySelector("#phrase5");
-// var phrase6 = document.querySelector("#phrase6");
-// var phrase7 = document.querySelector("#phrase7");
-// var phrase8 = document.querySelector("#phrase8");
+
 var helpYes = document.querySelector("#help-yes");
 var helpNo = document.querySelector("#help-no");
 var helpButtons = document.querySelector("#help-button");
 
-
-
-//SET STORY TEXTS INVISIBLE
+// TEXT & SPOTLIGHT INVISIBLE
 phrase1.style.display = "none";
 phrase2.style.display = "none";
 phrase3.style.display = "none";
 phrase4.style.display = "none";
-// phrase5.style.display = "none";
-// phrase6.style.display = "none";
-// phrase7.style.display = "none";
-// phrase8.style.display = "none";
+
 spotlight.style.display = "none";
 
 
@@ -188,32 +178,6 @@ window.onload = function checkPosition() {
   body.style.overflow = "hidden";
 }
 
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// STORY START /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////////////
-//// TITLE /////////////////////////////////////////////////////
-
-var visible = 1;
-var startControll = 1;
-
-titleButton.addEventListener('click', function () {
-  if (visible === 1 || visible === 3) {
-    visible = 0;
-    body.style.overflow = "visible";
-    document.querySelector("body").style.background = "#fafafa";
-    document.querySelector("#title-dark").classList.add("titleBright");
-    knot.classList.add("knotTitle");
-  } else {
-    visible = 3;
-    body.style.overflow = "hidden";
-    document.querySelector("#title-dark").classList.remove("titleBright");
-    knot.classList.remove("knotTitle");
-  }
-});
-
 ////////////////////////////////////////////////////////////////
 //SPOTLIGHT!!!//////////////////////////////////////////////////
 
@@ -236,141 +200,39 @@ function spotlightMove(e) {
   document.getElementById("spotlight").style.backgroundImage = string;
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// STORY START /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 ////////////////////////////////////////////////////////////////
-// TRIGGERS ON SCROLL POSITIONS ////////////////////////////////
+//// TITLE /////////////////////////////////////////////////////
 
-function animation(scrollPos) {
-  // ANIMATIONS BASED ON SCROLL POSITION
+var visible = 1;
+var startControll = 1;
 
-  //move Knot
-  if (scrollLocation > 100 && scrollLocation <= 4000) {
-    intro.style.display = "block";
-    knot.classList.add("knotIntro");
-    titleBox.classList.add("titleUp");
-    titleButton.classList.add("ropeUp");
-    
+// CHANGE BETWEEN BLACK AND WHITE TITLE
+titleButton.addEventListener('click', function () {
+  if (visible === 1 || visible === 3) {
+    visible = 0;
+    body.style.overflow = "visible";
+    document.querySelector("body").style.background = "#fafafa";
+    document.querySelector("#title-dark").classList.add("titleBright");
+    knot.classList.add("knotTitle");
   } else {
-    knot.classList.remove("knotIntro");
-    titleBox.classList.remove("titleUp");
-    titleButton.classList.remove("ropeUp");
-    
-  }
-
-  if (scrollLocation > 100) {
-    knot.classList.add("knotIntro");
-    bubble.classList.add("bubbleGrow");
-    bubble.style.display = "block";
-    document.getElementById("scroll-icon").classList.add("scroll-icon-after");
-  } else {
-    bubble.classList.remove("bubbleGrow");
-    document.getElementById("scroll-icon").classList.remove("scroll-icon-after");
-  }
-
-  //Hello, im the stress knot.
-  if (scrollLocation > 100) {
-    phrase1.style.display = "block";
-  } else {
-    phrase1.style.display = "none";
-  }
-
-  //my job is to visit people.
-  if (scrollLocation > 1500) {
-    phrase1.style.display = "none";
-    phrase2.style.display = "block";
-  } else {
-    phrase2.style.display = "none";
-  }
-
-  //
-  if (scrollLocation > 2500) {
-    phrase2.style.display = "none";
-    phrase3.style.display = "block";
-    helpButtons.style.display = "block";
-  } else {
-    phrase3.style.display = "none";
-  }
-
-  //
-  if (scrollLocation > 3500 && scrollLocation < 4000) {
-    phrase3.style.display = "none";
-    phrase4.style.display = "block";
-    helpYes.classList.add("helpUp");
-    helpNo.classList.add("helpUp");
+    visible = 3;
     body.style.overflow = "hidden";
-  } else {
-    phrase4.style.display = "none";
-    helpYes.classList.remove("helpUp");
-    helpNo.classList.remove("helpUp");
-    // body.style.overflow = "visible";
+    document.querySelector("#title-dark").classList.remove("titleBright");
+    knot.classList.remove("knotTitle");
   }
-
-  // 
-  if (scrollLocation > 4000) {
-    intro.style.display = "none";
-    titleBox.style.display = "none";
-    titleButton.style.display = "none";
-    document.querySelector("#speechbubble-white").classList.add("hide");
-    document.querySelector("#speechbubble-white").style.display = "none";
-  } else {
-    intro.style.diplay = "block"
-    titleBox.style.display = "block";
-    titleButton.style.display = "block";
-    document.querySelector("#speechbubble-white").classList.remove("hide");
-    document.querySelector("#speechbubble-white").style.display = "block";
-  }
-
-  if (scrollLocation <= 10000 && scrollLocation > 9500) {
-    assets.style.display = "block";
-    document.querySelector("#enter").style.display = "block";
-
-  } else {
-    assets.style.display = "none";
-    document.querySelector("#enter").style.display = "none";
-  }
-
-
-  // horizontal scroll valentino
-  if (sLeft >= 100) {
-    document.querySelector("#bus-outside").classList.add("driveLeft");
-  } else {
-    document.querySelector("#bus-outside").classList.remove("driveLeft");
-  }
-
-  if (sLeft > 1.5 * window.innerWidth) {
-    document.querySelector("#valentino-6").style.display = "block";
-    document.querySelector("#valentino-5").style.display = "none";
-  } else {
-    document.querySelector("#valentino-5").style.display = "block";
-    document.querySelector("#valentino-6").style.display = "none";
-  }
-
-  if (sLeft > 2.5 * window.innerWidth) {
-    document.querySelector("#valentino-6").classList.add("valentinoMiddle");
-    document.querySelector("#valentino-5").classList.add("valentinoMiddle");
-  } else {
-    document.querySelector("#valentino-6").classList.remove("valentinoMiddle");
-    document.querySelector("#valentino-5").classList.remove("valentinoMiddle");
-  }
-
-  if (sLeft > 2.8 * window.innerWidth) {
-    document.querySelector("#valentino-5").classList.add("valentinoLeaves");
-    document.querySelector("#valentino-6").classList.add("valentinoLeaves");
-    document.querySelector("#bus-outside").classList.add("driveAway");
-  } else {
-    document.querySelector("#valentino-5").classList.remove("valentinoLeaves");
-    document.querySelector("#valentino-6").classList.remove("valentinoLeaves");
-    document.querySelector("#bus-outside").classList.remove("driveAway");
-  }
-
-}
+});
 
 ////////////////////////////////////////////////////////////////
-///Story Interactions //////////////////////////////////////////
+/// SPECIAL EVENTS ON CLICK ////////////////////////////////////
 
-
-//FAKE INTERACTIONS
+// INTRO ///
+//// "WOULD YOU LIKE TO BE MY ASSISTENT?" (NO)
 var trigger2 = 0;
-
 helpNo.addEventListener('click', function () {
   trigger2 = trigger2 + 1;
   console.log("trigger count: " + trigger2)
@@ -392,8 +254,7 @@ helpNo.addEventListener('click', function () {
   }
 });
 
-
-//// real interaction CHANGE TO FIRST SCENE
+//// "WOULD YOU LIKE TO BE MY ASSISTENT?" (YES)
 helpYes.addEventListener('click', function () {
   console.log("helpYes");
   intro.style.display = "none";
@@ -405,6 +266,8 @@ helpYes.addEventListener('click', function () {
 });
 
 
+
+//// ENTER STORY / SPOTLIGHT
 function startStory() {
   document.querySelector("#enter").style.display = "none";
   document.querySelector("#valentino").style.display = "block";
@@ -413,9 +276,9 @@ function startStory() {
   bubble.classList.add("bubbleGrow");
   knot.classList.add("knotValentino");
   moveflag = true;
-  // body.style.overflow = "visible";
 }
 
+// CHANGE VALENTINI 1-4 IN BED on some event
 function showValentino2() {
   valentino1.style.display = "none";
   valentino2.style.display = "block";
@@ -431,6 +294,7 @@ function showValentino4() {
   valentino4.style.display = "block";
 }
 
+// CHANGE TO HORIZONTAL SCROLL
 function runBus() {
   spotlight.style.display = "none";
   knot.style.display = "none";
@@ -449,6 +313,130 @@ function runBus() {
   body.style.overflow = "hidden";
   body.style.overflowX = "hidden";
   body.style.overflowX = "visible";
+}
+
+////////////////////////////////////////////////////////////////
+// TRIGGERS ON SCROLL POSITIONS ////////////////////////////////
+
+function animation(scrollPos) {
+  // ANIMATIONS BASED ON SCROLL POSITION
+
+  // 100 PX, START (MOVE TITLE)
+  if (scrollLocation > 100 && scrollLocation <= 4000) {
+    intro.style.display = "block";
+    titleBox.classList.add("titleUp");
+    titleButton.classList.add("ropeUp");
+  } else {
+    titleBox.classList.remove("titleUp");
+    titleButton.classList.remove("ropeUp");
+  }
+
+  // 100 PX, "HELLO I'M STRESS KNOT" (MOVE KNOT, ADD SPEECHBUBBLE, REMOVE SCROLL ARROW)
+  if (scrollLocation > 100) {
+    knot.classList.add("knotIntro");
+    bubble.classList.add("bubbleGrow");
+    document.getElementById("speechbubble-white").classList.add("bubbleGrow");
+    bubble.style.display = "block";
+    document.getElementById("scroll-icon").classList.add("scroll-icon-after");
+    phrase1.style.display = "block";
+  } else {
+    knot.classList.remove("knotIntro");
+    bubble.classList.remove("bubbleGrow");
+    document.getElementById("speechbubble-white").classList.remove("bubbleGrow");
+    document.getElementById("scroll-icon").classList.remove("scroll-icon-after");
+    phrase1.style.display = "none";
+  }
+
+  // 1500 PX "my job is to visit people.""
+  if (scrollLocation > 1500) {
+    phrase1.style.display = "none";
+    phrase2.style.display = "block";
+  } else {
+    phrase2.style.display = "none";
+  }
+
+  // 2500 PX "stress has many shades"
+  if (scrollLocation > 2500) {
+    phrase2.style.display = "none";
+    phrase3.style.display = "block";
+    helpButtons.style.display = "block";
+  } else {
+    phrase3.style.display = "none";
+  }
+
+  // 3500 PX "do you wanna help me?"
+  if (scrollLocation > 3500 && scrollLocation < 4000) {
+    phrase3.style.display = "none";
+    phrase4.style.display = "block";
+    helpYes.classList.add("helpUp");
+    helpNo.classList.add("helpUp");
+    body.style.overflow = "hidden";
+  } else {
+    phrase4.style.display = "none";
+    helpYes.classList.remove("helpUp");
+    helpNo.classList.remove("helpUp");
+    // body.style.overflow = "visible";
+  }
+
+  // setting INTRO and SPEECHBUBBLE invisible while scrolling to Storystart
+  if (scrollLocation > 4000) {
+    intro.style.display = "none";
+    titleBox.style.display = "none";
+    titleButton.style.display = "none";
+    document.querySelector("#speechbubble-white").classList.add("hide");
+    document.querySelector("#speechbubble-white").style.display = "none";
+  } else {
+    intro.style.diplay = "block"
+    titleBox.style.display = "block";
+    titleButton.style.display = "block";
+    document.querySelector("#speechbubble-white").classList.remove("hide");
+    document.querySelector("#speechbubble-white").style.display = "block";
+  }
+
+  // 10000PX, STORY ENTER, ASSETS VISIBLE
+  if (scrollLocation <= 10000 && scrollLocation > 9500) {
+    assets.style.display = "block";
+    document.querySelector("#enter").style.display = "block";
+  } else {
+    assets.style.display = "none";
+    document.querySelector("#enter").style.display = "none";
+  }
+
+  // 1. horizontal scroll valentino  
+  if (sLeft >= 100) {
+    document.querySelector("#bus-outside").classList.add("driveLeft");
+  } else {
+    document.querySelector("#bus-outside").classList.remove("driveLeft");
+  }
+
+  // 2. horizontal scroll valentino  
+  if (sLeft > 1.5 * window.innerWidth) {
+    document.querySelector("#valentino-6").style.display = "block";
+    document.querySelector("#valentino-5").style.display = "none";
+  } else {
+    document.querySelector("#valentino-5").style.display = "block";
+    document.querySelector("#valentino-6").style.display = "none";
+  }
+
+  // 3. horizontal scroll valentino  
+  if (sLeft > 2.5 * window.innerWidth) {
+    document.querySelector("#valentino-6").classList.add("valentinoMiddle");
+    document.querySelector("#valentino-5").classList.add("valentinoMiddle");
+  } else {
+    document.querySelector("#valentino-6").classList.remove("valentinoMiddle");
+    document.querySelector("#valentino-5").classList.remove("valentinoMiddle");
+  }
+
+  // 4. horizontal scroll valentino  
+  if (sLeft > 2.8 * window.innerWidth) {
+    document.querySelector("#valentino-5").classList.add("valentinoLeaves");
+    document.querySelector("#valentino-6").classList.add("valentinoLeaves");
+    document.querySelector("#bus-outside").classList.add("driveAway");
+  } else {
+    document.querySelector("#valentino-5").classList.remove("valentinoLeaves");
+    document.querySelector("#valentino-6").classList.remove("valentinoLeaves");
+    document.querySelector("#bus-outside").classList.remove("driveAway");
+  }
 }
 
 
