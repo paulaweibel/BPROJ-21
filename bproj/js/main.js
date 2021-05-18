@@ -343,7 +343,7 @@ function animation(scrollPos) {
   if (sLeft > 2.5 * window.innerWidth) {
     document.querySelector("#valentino-6").classList.add("valentinoMiddle");
     document.querySelector("#valentino-5").classList.add("valentinoMiddle");
-  } else{
+  } else {
     document.querySelector("#valentino-6").classList.remove("valentinoMiddle");
     document.querySelector("#valentino-5").classList.remove("valentinoMiddle");
   }
@@ -352,7 +352,7 @@ function animation(scrollPos) {
     document.querySelector("#valentino-5").classList.add("valentinoLeaves");
     document.querySelector("#valentino-6").classList.add("valentinoLeaves");
     document.querySelector("#bus-outside").classList.add("driveAway");
-  } else{
+  } else {
     document.querySelector("#valentino-5").classList.remove("valentinoLeaves");
     document.querySelector("#valentino-6").classList.remove("valentinoLeaves");
     document.querySelector("#bus-outside").classList.remove("driveAway");

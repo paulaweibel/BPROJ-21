@@ -32,175 +32,179 @@
         <div id="title-container">
             <div id="title-dark"></div>
             <img id="title-text" src="img/title/title.png">
+        </div>
 
-            <!-- ABOUT -------------------->
-            <div id="about-container">
-                <div class="about-menu button">
-                    <h2 id="about" onclick="showAbout()">ABOUT</h2>
+        <!-- SCROLL ICON -------------------->
+        <div> <img id="scroll-icon" src="img/icons&buttons/scroll-icon.png"> </div>
+
+        <!-- ABOUT -------------------->
+        <div id="about-container">
+            <div class="about-menu button">
+                <h2 id="about" onclick="showAbout()">ABOUT</h2>
+            </div>
+        </div>
+        <div id="about-content">
+            <div class="about-menu">
+                <h2>ABOUT</h2>
+            </div>
+            <img id="about-eyes" src="img/knot-images/round-icon.png">
+            <br><br><br><br><br><br>
+            <p>ABOUT</p>
+            <br>
+            <b> "HIDDEN WORRIES"</b>
+            <br><br><br>
+            <p>What if you were responsible for producing stress? <br>Follow the story and witness the daily
+                routine of Knot, a working stress-producer. </p>
+            <br><br><br>
+            Reading time about ... Minutes
+            <br><br><br>
+
+            <p>Giada Rastelli & Paula Weibel</p>
+            <P>Bachelorproject, 2021</p>
+            <br><br><br><br>
+            <B id="about-back" class="button" onclick="hideAbout()"> - BACK - </BACK></B>
+        </div>
+    </div>
+
+    <!-- ASSETS -------------------->
+    <div id="asset-container">
+
+        <!-- BACKGROUNDS -->
+        <div id="horizontal-scroll-container">
+            <img id="house-valentino" class="horizontal-scroll-background" src="img/Locations/house-valentino1.png">
+            <img id="bus-stop" class="horizontal-scroll-background" src="img/Locations/bus-stop.png">
+        </div>
+
+        <!-- VALENTINO ASSETS -->
+        <div id="valentino-asset">
+            <div id="valentino">
+                <img id="valentino-1" class="valentino-bed" src="img/1-valentino/valentino-bed-1.png">
+                <img id="valentino-2" class="valentino-bed" src="img/1-valentino/valentino-bed-2.png">
+                <img id="valentino-3" class="valentino-bed" src="img/1-valentino/valentino-bed-3.png">
+                <img id="valentino-4" class="valentino-bed" src="img/1-valentino/valentino-bed-4.png">
+                <div id="valentino-bed-id" class="id" onclick="idValentino()"></div>
+                <div id="valentino-running">
+                    <img id="valentino-5" class="valentino-run" src="img/1-valentino/valentino-run-1.png">
+                    <img id="valentino-6" class="valentino-run" src="img/1-valentino/valentino-run-2.png">
                 </div>
             </div>
-            <div id="about-content">
-                <div class="about-menu">
-                    <h2>ABOUT</h2>
-                </div>
-                <img id="about-eyes" src="img/knot-images/round-icon.png">
-                <br><br><br><br><br><br>
-                <p>ABOUT</p>
-                <br>
-                <b> "HIDDEN WORRIES"</b>
-                <br><br><br>
-                <p>What if you were responsible for producing stress? <br>Follow the story and witness the daily
-                    routine of Knot, a working stress-producer. </p>
-                <br><br><br>
-                Reading time about ... Minutes
-                <br><br><br>
+        </div>
 
-                <p>Giada Rastelli & Paula Weibel</p>
-                <P>Bachelorproject, 2021</p>
-                <br><br><br><br>
-                <B id="about-back" class="button" onclick="hideAbout()"> - BACK - </BACK></B>
+        <!-- LAWRENCE ASSETS (EMPTY)-->
+        <div id="lawrence-asset">
+            <div id="lawrence" onclick="idLawrence()">
+                <img id="lawrence-1" class="asset id" src="">
             </div>
         </div>
 
-        <!-- ASSETS -------------------->
-        <div id="asset-container">
-
-            <!-- BACKGROUNDS -->
-            <div id="horizontal-scroll-container">
-                <img id="house-valentino" class="horizontal-scroll-background" src="img/Locations/house-valentino1.png">
-                <img id="bus-stop" class="horizontal-scroll-background" src="img/Locations/bus-stop.png">
-            </div>
-
-            <!-- VALENTINO ASSETS -->
-            <div id="valentino-asset">
-                <div id="valentino">
-                    <img id="valentino-1" class="valentino-bed" src="img/1-valentino/valentino-bed-1.png">
-                    <img id="valentino-2" class="valentino-bed" src="img/1-valentino/valentino-bed-2.png">
-                    <img id="valentino-3" class="valentino-bed" src="img/1-valentino/valentino-bed-3.png">
-                    <img id="valentino-4" class="valentino-bed" src="img/1-valentino/valentino-bed-4.png">
-                    <div id="valentino-bed-id" class="id" onclick="idValentino()"></div>
-                    <div id="valentino-running">
-                        <img id="valentino-5" class="valentino-run" src="img/1-valentino/valentino-run-1.png">
-                        <img id="valentino-6" class="valentino-run" src="img/1-valentino/valentino-run-2.png">
-                    </div>
-                </div>
-            </div>
-
-            <!-- LAWRENCE ASSETS (EMPTY)-->
-            <div id="lawrence-asset">
-                <div id="lawrence" onclick="idLawrence()">
-                    <img id="lawrence-1" class="asset id" src="">
-                </div>
-            </div>
-
-            <!-- MERCY ASSETS (EMPTY) -->
-            <div id="mercy-asset">
-                <div id="mercy" onclick="idMercy()">
-                    <img id="mercy-1" class="asset id" src="">
-                </div>
-            </div>
-
-            <!-- BARBARA ASSETS (EMPTY) -->
-            <div id="barbara-asset">
-                <div id="barbara" onclick="idBarbara()">
-                    <img id="barbara-1" class="asset id" src="">
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- SPOTLIGHT ----------------->
-        <div id="spotlight" class="light"></div>
-
-        <!-- SPEECH BUBBLE ------------->
-        <div id="speechbubble">
-            <img id="speechbubble-white" src="img/speech-bubble.png">
-
-            <!-- INTRO TEXT -->
-            <div id="intro" class="knot-text-container">
-                <p id="phrase1"><b>Hello, I'm stress-knot.</b><br> A stress-causing ego. You don't
-                    usually see me, but I decided to make an exception this time.</p>
-                <p id="phrase2">My job is to visit people from time to time and increase their
-                    stress level. I know what you're thinking, but someone has to do this job, and
-                    somehow I have to make a living too ... so please don't judge me!</p>
-                <p id="phrase3"><b>Stress has many shades.</b> <br>It is my responsibility to
-                    create different stressful situations for each individual I encounter on my path, by finding their
-                    weaknesses.</p>
-                <b id="phrase4"><br>Would you like to be my assistant? </b>
-            </div>
-
-
-
-            <!-- VALENTINO: SLEEPING -->
-            <div id="text-valentino">
-                <!-- ENTER FIRST STORY -->
-                <div id="enter">
-                    <b>Very nice of you!</b>
-                    <p>Let's visit my first stress client together.</p>
-                    <img class="button" onclick="startStory()" src="img/enter.png">
-                </div>
-                <!-- Sleeping VALENTINO -->
-                <div id="valentino-text1">
-                    <p>(snooze/deactivate alarms)</p>
-                    <B>..you lazy sloth!</B>
-                </div>
-
-                <!-- VALENTINO: RUNNING -->
-                <div id="valentino-text2">
-                    <br><br><b>leave the house:</b><br>
-                    <img class="button" onclick="runBus()" src="img/exit.png">
-                </div>
-
-                <!-- LAWRENCE: BUS -->
-
-
+        <!-- MERCY ASSETS (EMPTY) -->
+        <div id="mercy-asset">
+            <div id="mercy" onclick="idMercy()">
+                <img id="mercy-1" class="asset id" src="">
             </div>
         </div>
 
-        <!-- MAIN CHARACTER ------------------->
-        <div id="wiggle">
-            <img class="knot layer1" src="img/knot-images/knot1.png">
-            <img class="knot layer2" src="img/knot-images/knot2.png">
-            <img class="knot layer3" src="img/knot-images/knot3.png">
-            <img class="knot layer4" src="img/knot-images/knot4.png">
-            <div class="knot eyes">
-                <img id="eye-img" src="img/knot-images/eyes.png">
+        <!-- BARBARA ASSETS (EMPTY) -->
+        <div id="barbara-asset">
+            <div id="barbara" onclick="idBarbara()">
+                <img id="barbara-1" class="asset id" src="">
             </div>
         </div>
 
-        <!------ BUTTONS ---------------->
-        <div id="title-button-container">
-            <img id="title-button" class="hi-animation button" src="img/title/hi-title.png">
-        </div>
-
-        <div id="help-button">
-            <div id="help-yes" class="button help-button">YES <br>I'd love to!</div>
-            <div id="help-no" class="button help-button">NO <br>thank you!</div>
-        </div>
-        <div>
-            <img id="valentino-handy" class="valentino-bed button" src="img/1-valentino/white-phone-screen.png">
-        </div>
-
-        <!-- FOREGROUND OBJECTS -->
-        <div class="bus-container">
-            <img id="bus-outside" src="img/Locations/bus.png">
-        </div>
+    </div>
 
 
-        <!-- CHARACTERS ID-PAGES ----->
-        <div id="id-valentino" class="id-card id" onclick="hideId()">
-            <img class="id-picture" src="img/ID-Cards/ID-Valentino.png">
+    <!-- SPOTLIGHT ----------------->
+    <div id="spotlight" class="light"></div>
+
+    <!-- SPEECH BUBBLE ------------->
+    <div id="speechbubble">
+        <img id="speechbubble-white" src="img/speech-bubble.png">
+
+        <!-- INTRO TEXT -->
+        <div id="intro" class="knot-text-container">
+            <p id="phrase1"><b>Hello, I'm stress-knot.</b><br> A stress-causing ego. You don't
+                usually see me, but I decided to make an exception this time.</p>
+            <p id="phrase2">My job is to visit people from time to time and increase their
+                stress level. I know what you're thinking, but someone has to do this job, and
+                somehow I have to make a living too ... so please don't judge me!</p>
+            <p id="phrase3"><b>Stress has many shades.</b> <br>It is my responsibility to
+                create different stressful situations for each individual I encounter on my path, by finding their
+                weaknesses.</p>
+            <b id="phrase4"><br>Would you like to be my assistant? </b>
         </div>
-        <div id="id-lawrence" class="id-card id" onclick="hideId()">
-            <img class="id-picture" src="img/ID-Cards/ID-Lawrence.png">
+
+
+
+        <!-- VALENTINO: SLEEPING -->
+        <div id="text-valentino">
+            <!-- ENTER FIRST STORY -->
+            <div id="enter">
+                <b>Very nice of you!</b>
+                <p>Let's visit my first stress client together.</p>
+                <img class="button" onclick="startStory()" src="img/enter.png">
+            </div>
+            <!-- Sleeping VALENTINO -->
+            <div id="valentino-text1">
+                <p>(snooze/deactivate alarms)</p>
+                <B>..you lazy sloth!</B>
+            </div>
+
+            <!-- VALENTINO: RUNNING -->
+            <div id="valentino-text2">
+                <br><br><b>leave the house:</b><br>
+                <img class="button" onclick="runBus()" src="img/exit.png">
+            </div>
+
+            <!-- LAWRENCE: BUS -->
+
+
         </div>
-        <div id="id-mercy" class="id-card id" onclick="hideId()">
-            <img class="id-picture" src="img/ID-Cards/ID-Mercy.png">
+    </div>
+
+    <!-- MAIN CHARACTER ------------------->
+    <div id="wiggle">
+        <img class="knot layer1" src="img/knot-images/knot1.png">
+        <img class="knot layer2" src="img/knot-images/knot2.png">
+        <img class="knot layer3" src="img/knot-images/knot3.png">
+        <img class="knot layer4" src="img/knot-images/knot4.png">
+        <div class="knot eyes">
+            <img id="eye-img" src="img/knot-images/eyes.png">
         </div>
-        <div id="id-barbara" class="id-card id" onclick="hideId()">
-            <img class="id-picture" src="img/ID-Cards/ID-Barbara.png">
-        </div>
+    </div>
+
+    <!------ BUTTONS ---------------->
+    <div id="title-button-container">
+        <img id="title-button" class="hi-animation button" src="img/title/hi-title.png">
+    </div>
+
+    <div id="help-button">
+        <div id="help-yes" class="button help-button">YES <br>I'd love to!</div>
+        <div id="help-no" class="button help-button">NO <br>thank you!</div>
+    </div>
+    <div>
+        <img id="valentino-handy" class="valentino-bed button" src="img/1-valentino/white-phone-screen.png">
+    </div>
+
+    <!-- FOREGROUND OBJECTS -->
+    <div class="bus-container">
+        <img id="bus-outside" src="img/Locations/bus.png">
+    </div>
+
+
+    <!-- CHARACTERS ID-PAGES ----->
+    <div id="id-valentino" class="id-card id" onclick="hideId()">
+        <img class="id-picture" src="img/ID-Cards/ID-Valentino.png">
+    </div>
+    <div id="id-lawrence" class="id-card id" onclick="hideId()">
+        <img class="id-picture" src="img/ID-Cards/ID-Lawrence.png">
+    </div>
+    <div id="id-mercy" class="id-card id" onclick="hideId()">
+        <img class="id-picture" src="img/ID-Cards/ID-Mercy.png">
+    </div>
+    <div id="id-barbara" class="id-card id" onclick="hideId()">
+        <img class="id-picture" src="img/ID-Cards/ID-Barbara.png">
+    </div>
     </div>
 
     <!-- NAVIGATE -->
@@ -212,7 +216,8 @@
     </div>
 
     <!-- NO MOBILE VERSION ------------------------------------------------------------->
-    <div id="desktop-only">Hello mobile user! <br><br> Please turn your phone ⤸ to see the project
+    <!-- eyes: ⬮ ⬮ -->
+    <div id="desktop-only">Hello mobile user! <br> <br> To see the project rotate your device ⟳
     </div>
 
     <script src="./js/main.js"></script>

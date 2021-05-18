@@ -19,7 +19,7 @@ body {
 }
 
 /* MOUSE CURSORS ------- */
-#body{
+#body {
   cursor: url('cursor-0.png'), auto;
 }
 
@@ -145,6 +145,30 @@ html {
   height: 0vh !important;
 }
 
+/* SCROLL ARROW */
+#scroll-icon {
+  position: absolute;
+  top: 85%;
+  left: 48vw;
+  width: 3vh;
+  animation: scroll 2s infinite ease-in-out;
+}
+
+@keyframes scroll {
+  0% {
+    top: 85%
+  }
+
+  50% {
+    top: 86%
+  }
+
+  100% {
+    top: 85%
+  }
+}
+
+
 /* TITLE DARK BACKGROUND ---- */
 #title-dark {
   position: absolute;
@@ -204,11 +228,11 @@ html {
   transition: opacity 1s;
 }
 
-#about-eyes{
+#about-eyes {
   width: 70px;
 }
 
-#about-back{
+#about-back {
   opacity: 0.8;
   background-color: var(--weiss);
   color: var(--schwarz);
@@ -216,11 +240,11 @@ html {
   transition: opacity 0.2s;
 }
 
-#about-back:hover{
+#about-back:hover {
   opacity: 1;
 }
 
-.showAbout{
+.showAbout {
   opacity: 1 !important;
 }
 
@@ -330,7 +354,7 @@ html {
   /* background-color: #fafafa; */
 }
 
-.id-picture{
+.id-picture {
   max-width: 100%;
 }
 
