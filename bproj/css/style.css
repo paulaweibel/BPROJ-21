@@ -148,26 +148,26 @@ html {
 /* SCROLL ARROW */
 #scroll-icon {
   position: absolute;
-  top: 85%;
+  /* top: 88%; */
+  bottom: 10vh;
   left: 48vw;
   width: 3vh;
-  animation: scroll 2s infinite ease-in-out;
+  animation: scroll 1.5s infinite ease-in-out;
 }
 
 @keyframes scroll {
   0% {
-    top: 85%
+    bottom: 5vh;
   }
 
   50% {
-    top: 86%
+    bottom: 6vh;
   }
 
   100% {
-    top: 85%
+    bottom: 5vh;
   }
 }
-
 
 /* TITLE DARK BACKGROUND ---- */
 #title-dark {
