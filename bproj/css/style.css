@@ -21,11 +21,11 @@ body {
 
 /* MOUSE CURSORS ------- */
 #body {
-  cursor: url('cursor-0.png'), auto;
+  cursor: url('cursor-1.png'), auto;
 }
 
 .button:hover {
-  cursor: url('cursor-1.png'), pointer;
+  cursor: url('cursor-0.png'), pointer;
 }
 
 .id {
@@ -236,18 +236,6 @@ html {
 
 #about-eyes {
   width: 70px;
-}
-
-#about-back {
-  opacity: 0.8;
-  background-color: var(--weiss);
-  color: var(--schwarz);
-  font-size: 1.3em;
-  transition: opacity 0.2s;
-}
-
-#about-back:hover {
-  opacity: 1;
 }
 
 .showAbout {
