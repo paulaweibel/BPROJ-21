@@ -23,7 +23,7 @@
     <div id="progress"></div>
 
     <!-- CONTENT ----------------------------------->
-    <div id="all">
+    <div id="start-page">
 
         <!-- BACKGROUND --------------->
         <img onload="alarm()" id="light-texture" src="img/background.png">
@@ -116,25 +116,8 @@
     <!-- SPOTLIGHT ----------------->
     <div id="spotlight" class="light"></div>
 
-    <!-- SPEECH BUBBLE ------------->
-    <div id="speechbubble">
-        <img id="speechbubble-white" src="img/objects-icons/speechbubble-big.png">
-
-        <!-- INTRO TEXT -->
-        <div id="intro" class="knot-text-container">
-            <p id="phrase1"><b>Hello, I'm stress-knot.</b><br> A stress-causing ego. You don't
-                usually see me, but I decided to make an exception this time.</p>
-            <p id="phrase2">My job is to visit people from time to time and increase their
-                stress level. I know what you're thinking, but someone has to do this job, and
-                somehow I have to make a living too ... so please don't judge me!</p>
-            <p id="phrase3"><b>Stress has many shades.</b> <br>It is my responsibility to
-                create different stressful situations for each individual I encounter on my path, by finding their
-                weaknesses.</p>
-            <b id="phrase4"><br>Would you like to be my assistant? </b>
-        </div>
-
-
-
+    <!-- SPEECH BUBBLE PERSONS (kommt noch an anderen ort)------------->
+    <div id="storytext">
         <!-- VALENTINO: SLEEPING -->
         <div id="text-valentino">
             <!-- ENTER FIRST STORY -->
@@ -148,27 +131,41 @@
                 <p>(snooze/deactivate alarms)</p>
                 <B>..you lazy sloth!</B>
             </div>
-
             <!-- VALENTINO: RUNNING -->
             <div id="valentino-text2">
                 <br><br><b>leave the house:</b><br>
                 <img class="button" onclick="runBus()" src="img/objects-icons/yes-icon.png">
             </div>
-
             <!-- LAWRENCE: BUS -->
-
-
         </div>
     </div>
 
     <!-- MAIN CHARACTER ------------------->
-    <div id="wiggle">
+    <div id="wiggle" class="knotStart">
         <img class="knot layer1" src="img/knot-images/knot1.png">
         <img class="knot layer2" src="img/knot-images/knot2.png">
         <img class="knot layer3" src="img/knot-images/knot3.png">
         <img class="knot layer4" src="img/knot-images/knot4.png">
         <div class="knot eyes">
             <img id="eye-img" src="img/knot-images/eyes.png">
+        </div>
+
+        <!-- KNOT TEXT -->
+        <div id="knot-text">
+            <!-- SPEECHBUBBLES -->
+            <img id="speechbubble-big-right" src="img/objects-icons/speechbubble-big.png">
+            <!-- INTRO TEXT -->
+            <div id="intro" class="knot-text-container">
+                <p id="phrase1" class="speech-right"><b>Hello, I'm stress-knot.</b><br> A stress-causing ego. You don't
+                    usually see me, but I decided to make an exception this time.</p>
+                <p id="phrase2">My job is to visit people from time to time and increase their
+                    stress level. I know what you're thinking, but someone has to do this job, and
+                    somehow I have to make a living too ... so please don't judge me!</p>
+                <p id="phrase3"><b>Stress has many shades.</b> <br>It is my responsibility to
+                    create different stressful situations for each individual I encounter on my path, by finding their
+                    weaknesses.</p>
+                <b id="phrase4"><br>Would you like to be my assistant? </b>
+            </div>
         </div>
     </div>
 

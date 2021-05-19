@@ -25,7 +25,7 @@ function alarm() {
 
 //PRELOAD JS
 let progress = document.getElementById("progress");
-let all = document.getElementById("all");
+let startPage = document.getElementById("start-page");
 let hi = document.querySelector("#title-button");
 
 var queue = new createjs.LoadQueue(false);
@@ -40,7 +40,7 @@ queue.on("progress", event => {
 
 queue.on("complete", event => {
   //show eyes
-  all.classList.add("fadeIn");
+  startPage.classList.add("fadeIn");
   //show hi after 3500 ms
   setTimeout(() => {
     hi.classList.remove("hi-animation");
@@ -85,7 +85,7 @@ var about = document.querySelector("#about-content");
 // ASSETS
 var assets = document.querySelector("#asset-container");
 var knot = document.querySelector("#wiggle");
-var bubble = document.querySelector("#speechbubble");
+var storytext = document.querySelector("#storytext");
 var eyeImg = document.querySelector("#eye-img");
 var spotlight = document.querySelector("#spotlight");
 var horizontal = document.querySelector(".horizontal-scroll");
@@ -109,35 +109,6 @@ phrase4.style.display = "none";
 spotlight.style.display = "none";
 
 
-
-
-
-
-////////////////////////////////////////////////////////////////
-//// ABOUT MENU  //////////////////////////////////////////////
-
-function showAbout() {
-  about.style.display = "block";
-  document.querySelector("#title-dark").style.display = "none";
-  body.style.backgroundColor = "var(--schwarz)";
-  about.style.top = "0";
-
-  setTimeout(() => {
-    about.classList.add("showAbout");
-  }, 200)
-  titleButton.style.opacity = "0";
-  knot.style.opacity = "0";
-}
-
-function hideAbout() {
-  about.style.display = "none";
-  about.style.top = "-100vh";
-  about.classList.remove("showAbout");
-  document.querySelector("#title-dark").style.display = "block";
-  body.style.backgroundColor = "var(--weiss)";
-  titleButton.style.opacity = "1";
-  knot.style.opacity = "1";
-}
 
 ////////////////////////////////////////////////////////////////
 ////EYES MAIN CHARACTER   //////////////////////////////////////
@@ -201,12 +172,42 @@ function spotlightMove(e) {
 }
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// STORY START /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// WEBSITE START ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////
-//// TITLE /////////////////////////////////////////////////////
+
+////////////////////////////////
+//// ABOUT MENU  ///////////////
+
+// when "about" is clicked inside title-container
+function showAbout() {
+  // set overlaying objects invisible
+  titleButton.style.opacity = "0";
+  titleBox.style.opacity = "0";
+  knot.style.opacity = "0";
+  //smooth fade-in
+  about.style.display = "block";
+  setTimeout(() => {
+    about.classList.add("showAbout");
+  }, 400)
+}
+
+// when "about" is clicked inside about-container
+function hideAbout() {
+  // smooth fade-out
+  about.classList.remove("showAbout");
+  setTimeout(() => {
+    about.style.display = "none";
+    // set overlaying objects visible
+    titleButton.style.opacity = "1";
+    titleBox.style.opacity = "1";
+    knot.style.opacity = "1";
+  }, 400)
+}
+
+////////////////////////////////
+//// TITLE /////////////////////
 
 var visible = 1;
 var startControll = 1;
@@ -218,17 +219,21 @@ titleButton.addEventListener('click', function () {
     body.style.overflow = "visible";
     document.querySelector("body").style.background = "#fafafa";
     document.querySelector("#title-dark").classList.add("titleBright");
+    document.querySelector("#about-content").classList.add("whiteAbout");
     knot.classList.add("knotTitle");
   } else {
     visible = 3;
     body.style.overflow = "hidden";
+    document.querySelector("body").style.background = "#0c0c0c";
     document.querySelector("#title-dark").classList.remove("titleBright");
+    document.querySelector("#about-content").classList.remove("whiteAbout");
     knot.classList.remove("knotTitle");
   }
 });
 
-////////////////////////////////////////////////////////////////
-/// SPECIAL EVENTS ON CLICK ////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// STORY START ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // INTRO ///
 //// "WOULD YOU LIKE TO BE MY ASSISTENT?" (NO)
@@ -266,19 +271,19 @@ helpYes.addEventListener('click', function () {
 });
 
 
-
 //// ENTER STORY / SPOTLIGHT
 function startStory() {
   document.querySelector("#enter").style.display = "none";
+  //make valentino visible
   document.querySelector("#valentino").style.display = "block";
   document.querySelector("#valentino-text1").style.display = "block";
   document.querySelector("#valentino-text2").style.display = "block";
-  bubble.classList.add("bubbleGrow");
+  storytext.classList.add("bubbleGrow");
   knot.classList.add("knotValentino");
   moveflag = true;
 }
 
-// CHANGE VALENTINI 1-4 IN BED on some event
+// CHANGE VALENTINI 1-4 IN BED on some event (not built-in yet)
 function showValentino2() {
   valentino1.style.display = "none";
   valentino2.style.display = "block";
@@ -339,10 +344,8 @@ function runBus() {
   })();
 }
 
-
-
-////////////////////////////////////////////////////////////////
-// TRIGGERS ON SCROLL POSITIONS ////////////////////////////////
+////////////////////////////////
+// TRIGGERS ON SCROLL POSITIONS 
 
 function animation(scrollPos) {
   // ANIMATIONS BASED ON SCROLL POSITION
@@ -360,15 +363,15 @@ function animation(scrollPos) {
   // 100 PX, "HELLO I'M STRESS KNOT" (MOVE KNOT, ADD SPEECHBUBBLE, REMOVE SCROLL ARROW)
   if (scrollLocation > 100) {
     knot.classList.add("knotIntro");
-    bubble.classList.add("bubbleGrow");
-    document.getElementById("speechbubble-white").classList.add("bubbleGrow");
-    bubble.style.display = "block";
+    storytext.style.display = "block";
+    storytext.classList.add("bubbleGrow");
+    document.getElementById("speechbubble-big-right").classList.add("bubbleGrow");
     document.getElementById("scroll-icon").classList.add("scroll-icon-after");
     phrase1.style.display = "block";
   } else {
     knot.classList.remove("knotIntro");
-    bubble.classList.remove("bubbleGrow");
-    document.getElementById("speechbubble-white").classList.remove("bubbleGrow");
+    storytext.classList.remove("bubbleGrow");
+    document.getElementById("speechbubble-big-right").classList.remove("bubbleGrow");
     document.getElementById("scroll-icon").classList.remove("scroll-icon-after");
     phrase1.style.display = "none";
   }
@@ -409,14 +412,14 @@ function animation(scrollPos) {
     intro.style.display = "none";
     titleBox.style.display = "none";
     titleButton.style.display = "none";
-    document.querySelector("#speechbubble-white").classList.add("hide");
-    document.querySelector("#speechbubble-white").style.display = "none";
+    document.querySelector("#speechbubble-big-right").classList.add("hide");
+    document.querySelector("#speechbubble-big-right").style.display = "none";
   } else {
     intro.style.diplay = "block"
     titleBox.style.display = "block";
     titleButton.style.display = "block";
-    document.querySelector("#speechbubble-white").classList.remove("hide");
-    document.querySelector("#speechbubble-white").style.display = "block";
+    document.querySelector("#speechbubble-big-right").classList.remove("hide");
+    document.querySelector("#speechbubble-big-right").style.display = "block";
   }
 
   // 10000PX, STORY ENTER, ASSETS VISIBLE
