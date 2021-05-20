@@ -33,7 +33,6 @@
 #wiggle {
     position: fixed;
     animation: wiggle 2s infinite;
-    margin-left: 0px;
     transition: margin 2s, opacity 0.4s;
 }
 
@@ -56,46 +55,76 @@
 
 /* KNOT MOVE TO INTRO-START */
 .knotIntro {
-    margin-left: 25vw !important;
+    margin-left: 10vw !important;
     margin-top: 40vh !important;
 }
 
 /* KNOT MOVE TO INTRO-START */
 .knotValentino {
-    margin-left: 40vw !important;
-    margin-top: 10vh !important;
+    margin-left: 80vw !important;
+    margin-top: 20vh !important;
 }
 
 
 /* ------ MAIN CHARACTER TEXT------------------------------ */
 
-#knot-text {
+#knot-talking-right {
+    /* display: none; */
     position: fixed;
     top: -10vh;
     left: 20vh;
+    transform-origin: left bottom;
+    transform: scale(0);
+    transition: transform 1s;
+    /* width: 40vh; */
+}
+
+#knot-talking-left {
+    position: fixed;
+    top: -10vh;
+    left: -40vh;
+    width: 40vh;
 }
 
 #speechbubble-big-right {
+    transform-origin: left bottom;
     transform: scale(0);
     width: 50vh;
-    transition: transform 0.5s;
+    transition: transform 1s;
 }
 
+#speechbubble-big-left {
+    transform-origin: right bottom;
+    transform: scale(0);
+    width: 50vh;
+    transition: transform 1s;
+}
 
 .bubbleGrow {
     transform: scale(1) !important;
 }
 
 /* BOX FÜR SPEECHBUBBLE-TEXT */
-.knot-text-container {
+.phrase-right {
     position: absolute;
     top: 0;
-    width:40vh;
+    width: 40vh;
     max-height: 15vh;
     padding-top: 6vh;
-    padding-left:5vh;
+    padding-left: 5vh;
     color: var(--schwarz);
 }
+
+.phrase-left{
+    position: absolute;
+    top: 0;
+    width: 40vh;
+    max-height: 15vh;
+    padding-top: 6vh;
+    padding-left: 5vh;
+    color: var(--schwarz);
+}
+
 
 .hide {
     opacity: 0 !important;
@@ -103,6 +132,20 @@
 
 .show {
     opacity: 1 !important;
+}
+
+
+/* Single Sentences */
+.phrase {
+    display: none;
+}
+
+#phrase1 {
+    display: block;
+}
+
+#phrase5{
+color: var(--weiss);
 }
 
 

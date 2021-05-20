@@ -5,7 +5,9 @@
 //////// NAVIGATE //////////////////////////////////////////////
 
 function goHome() {
+  body.style.overflow = "block";
   window.scrollTo(0, 0);
+  currentScene = 0;
 }
 
 function goValentino() {
@@ -72,8 +74,8 @@ var body = document.querySelector("#body")
 var w = window.innerWidth;
 var h = window.innerHeight;
 
-var whereAmI = localStorage.getItem('scrollMemory');
-console.log("I am at: " + whereAmI)
+// var whereAmI = localStorage.getItem('scrollMemory');
+
 
 
 // INTRO
@@ -85,7 +87,6 @@ var about = document.querySelector("#about-content");
 // ASSETS
 var assets = document.querySelector("#asset-container");
 var knot = document.querySelector("#wiggle");
-var storytext = document.querySelector("#storytext");
 var eyeImg = document.querySelector("#eye-img");
 var spotlight = document.querySelector("#spotlight");
 var horizontal = document.querySelector(".horizontal-scroll");
@@ -100,13 +101,9 @@ var helpYes = document.querySelector("#help-yes");
 var helpNo = document.querySelector("#help-no");
 var helpButtons = document.querySelector("#help-button");
 
-// TEXT & SPOTLIGHT INVISIBLE
-phrase1.style.display = "none";
-phrase2.style.display = "none";
-phrase3.style.display = "none";
-phrase4.style.display = "none";
+var currentScene = 0;
 
-spotlight.style.display = "none";
+
 
 
 
@@ -145,8 +142,10 @@ document.addEventListener('scroll', function (e) {
 // SIDE RELOAD /////////////////////////////////////////////////
 
 window.onload = function checkPosition() {
+  currentScene = 0;
+  console.log("it should scroll to 0")
   window.scrollTo(0, 0);
-  body.style.overflow = "hidden";
+  body.style.backgroundColor = "var(--weiss)"
 }
 
 ////////////////////////////////////////////////////////////////
@@ -220,8 +219,8 @@ titleButton.addEventListener('click', function () {
     document.querySelector("body").style.background = "#fafafa";
     document.querySelector("#title-dark").classList.add("titleBright");
     document.querySelector("#about-content").classList.add("whiteAbout");
-    document.querySelector("#about-button").style.color="var(--schwarz)";
-    document.querySelector("#about").style.color="var(--schwarz)";
+    document.querySelector("#about-button").style.color = "var(--schwarz)";
+    document.querySelector("#about").style.color = "var(--schwarz)";
     knot.classList.add("knotTitle");
   } else {
     visible = 3;
@@ -229,8 +228,8 @@ titleButton.addEventListener('click', function () {
     document.querySelector("body").style.background = "#0c0c0c";
     document.querySelector("#title-dark").classList.remove("titleBright");
     document.querySelector("#about-content").classList.remove("whiteAbout");
-    document.querySelector("#about-button").style.color="var(--weiss)"
-    document.querySelector("#about").style.color="var(--weiss)";
+    document.querySelector("#about-button").style.color = "var(--weiss)"
+    document.querySelector("#about").style.color = "var(--weiss)";
     knot.classList.remove("knotTitle");
   }
 });
@@ -242,184 +241,73 @@ titleButton.addEventListener('click', function () {
 // INTRO ///
 //// "WOULD YOU LIKE TO BE MY ASSISTENT?" (NO)
 var trigger2 = 0;
-helpNo.addEventListener('click', function () {
+helpNo.addEventListener('mouseenter', function () {
   trigger2 = trigger2 + 1;
   console.log("trigger count: " + trigger2)
-  if (trigger2 == 1) {
-    helpNo.style.transform = "translate(0, 100px)";
-    helpNo.style.opacity = "0.7";
-  }
-  if (trigger2 == 2) {
-    helpNo.style.transform = "translate(300px, 100px)";
-    helpNo.style.opacity = "0.4";
-  }
-  if (trigger2 == 3) {
-    helpNo.style.transform = "translate(100px, 300px)";
-    helpNo.style.opacity = "0.2";
-  }
-  if (trigger2 == 4) {
-    helpNo.style.transform = "translate(300px, 300px)";
-    helpNo.style.opacity = "0";
-  }
+  helpYes.style.marginLeft = "20vh";
+});
+
+helpNo.addEventListener('mouseleave', function () {
+  helpYes.style.marginLeft = "0vh";
+});
+
+helpYes.addEventListener('mouseleave', function () {
+  console.log("guac")
 });
 
 //// "WOULD YOU LIKE TO BE MY ASSISTENT?" (YES)
-helpYes.addEventListener('click', function () {
+helpButtons.addEventListener('click', function () {
   console.log("helpYes");
   intro.style.display = "none";
-  knot.classList.add("knotIntro");
+  helpButtons.style.display = "none";
   body.style.overflow = "hidden";
+  body.style.height = "10000vh";
   window.scrollTo(0, 10000);
   spotlight.style.display = "block";
-  document.querySelector("#text-valentino").style.display = "block";
+  currentScene = 5;
 });
 
 
-//// ENTER STORY / SPOTLIGHT
-function startStory() {
-  document.querySelector("#enter").style.display = "none";
-  //make valentino visible
-  document.querySelector("#valentino").style.display = "block";
-  document.querySelector("#valentino-text1").style.display = "block";
-  document.querySelector("#valentino-text2").style.display = "block";
-  storytext.classList.add("bubbleGrow");
-  knot.classList.add("knotValentino");
-  moveflag = true;
-}
-
-// CHANGE VALENTINI 1-4 IN BED on some event (not built-in yet)
-function showValentino2() {
-  valentino1.style.display = "none";
-  valentino2.style.display = "block";
-}
-
-function showValentino3() {
-  valentino2.style.display = "none";
-  valentino3.style.display = "block";
-}
-
-function showValentino4() {
-  valentino3.style.display = "none";
-  valentino4.style.display = "block";
-}
-
-// CHANGE TO HORIZONTAL SCROLL
-function runBus() {
-  spotlight.style.display = "none";
-  knot.style.display = "none";
-  knot.classList.remove("knotValentino");
-  knot.classList.remove("knotIntro");
-  document.querySelector("#valentino-text1").style.display = "none";
-  document.querySelector("#valentino-text2").style.display = "none";
-  document.querySelector("#text-valentino").style.display = "none";
-  document.querySelector("#valentino-1").style.display = "none";
-
-  document.querySelector("#valentino-running").style.display = "block";
-  document.querySelector("#horizontal-scroll-container").style.display = "block";
-  document.querySelector(".bus-container").style.display = "block";
-
-  // vertical scroll
-  body.style.overflow = "hidden";
-  body.style.overflowX = "hidden";
-  body.style.overflowX = "visible";
-
-
-  // HORIZONTALES SCROLLEN
-  // http://www.dte.web.id/2013/02/event-mouse-wheel.html
-
-  (function () {
-    function scrollHorizontally(e) {
-      e = window.event || e;
-      var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-      console.log(delta);
-      document.documentElement.scrollLeft -= (delta * 30); // Multiplied by 40
-      document.body.scrollLeft -= (delta * 30); // Multiplied by 40
-      e.preventDefault();
-    }
-    if (window.addEventListener) {
-      // IE9, Chrome, Safari, Opera
-      window.addEventListener("mousewheel", scrollHorizontally, false);
-      // Firefox
-      window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
-    } else {
-      // IE 6/7/8
-      window.attachEvent("onmousewheel", scrollHorizontally);
-    }
-  })();
-}
 
 ////////////////////////////////
 // TRIGGERS ON SCROLL POSITIONS 
 
 function animation(scrollPos) {
   // ANIMATIONS BASED ON SCROLL POSITION
-
-  // 100 PX, START (MOVE TITLE)
-  if (scrollLocation > 100 && scrollLocation <= 4000) {
-    intro.style.display = "block";
-    titleBox.classList.add("titleUp");
-    titleButton.classList.add("ropeUp");
-  } else {
+  if (scrollLocation < 100) {
+    intro.style.display = "none";
     titleBox.classList.remove("titleUp");
     titleButton.classList.remove("ropeUp");
+    knot.className = '';
+    knot.classList.add("knotStart");
+    document.getElementById("knot-talking-right").classList.remove("bubbleGrow");
+    document.getElementById("speechbubble-big-right").classList.remove("bubbleGrow");
+    document.getElementById("scroll-icon").classList.remove("scroll-icon-after");
+    currentScene = 0;
   }
 
   // 100 PX, "HELLO I'M STRESS KNOT" (MOVE KNOT, ADD SPEECHBUBBLE, REMOVE SCROLL ARROW)
   if (scrollLocation > 100) {
+    intro.style.display = "block";
+    titleBox.classList.add("titleUp");
+    titleButton.classList.add("ropeUp");
     knot.classList.add("knotIntro");
-    storytext.style.display = "block";
-    storytext.classList.add("bubbleGrow");
+    document.getElementById("knot-talking-right").classList.add("bubbleGrow");
     document.getElementById("speechbubble-big-right").classList.add("bubbleGrow");
     document.getElementById("scroll-icon").classList.add("scroll-icon-after");
-    phrase1.style.display = "block";
-  } else {
-    knot.classList.remove("knotIntro");
-    storytext.classList.remove("bubbleGrow");
-    document.getElementById("speechbubble-big-right").classList.remove("bubbleGrow");
-    document.getElementById("scroll-icon").classList.remove("scroll-icon-after");
-    phrase1.style.display = "none";
+    document.getElementById("knot-text").style.display = "block";
+    currentScene = 1;
   }
 
-  // 1500 PX "my job is to visit people.""
-  if (scrollLocation > 1500) {
-    phrase1.style.display = "none";
-    phrase2.style.display = "block";
-  } else {
-    phrase2.style.display = "none";
-  }
-
-  // 2500 PX "stress has many shades"
-  if (scrollLocation > 2500) {
-    phrase2.style.display = "none";
-    phrase3.style.display = "block";
-    helpButtons.style.display = "block";
-  } else {
-    phrase3.style.display = "none";
-  }
-
-  // 3500 PX "do you wanna help me?"
-  if (scrollLocation > 3500 && scrollLocation < 4000) {
-    phrase3.style.display = "none";
-    phrase4.style.display = "block";
-    helpYes.classList.add("helpUp");
-    helpNo.classList.add("helpUp");
-    body.style.overflow = "hidden";
-  } else {
-    phrase4.style.display = "none";
-    helpYes.classList.remove("helpUp");
-    helpNo.classList.remove("helpUp");
-    // body.style.overflow = "visible";
-  }
 
   // setting INTRO and SPEECHBUBBLE invisible while scrolling to Storystart
   if (scrollLocation > 4000) {
-    intro.style.display = "none";
     titleBox.style.display = "none";
     titleButton.style.display = "none";
     document.querySelector("#speechbubble-big-right").classList.add("hide");
     document.querySelector("#speechbubble-big-right").style.display = "none";
+    helpButtons.style.display = "none";
   } else {
-    intro.style.diplay = "block"
     titleBox.style.display = "block";
     titleButton.style.display = "block";
     document.querySelector("#speechbubble-big-right").classList.remove("hide");
@@ -429,10 +317,8 @@ function animation(scrollPos) {
   // 10000PX, STORY ENTER, ASSETS VISIBLE
   if (scrollLocation <= 10000 && scrollLocation > 9500) {
     assets.style.display = "block";
-    document.querySelector("#enter").style.display = "block";
   } else {
     assets.style.display = "none";
-    document.querySelector("#enter").style.display = "none";
   }
 
   // 1. horizontal scroll valentino  
@@ -470,6 +356,154 @@ function animation(scrollPos) {
     document.querySelector("#valentino-6").classList.remove("valentinoLeaves");
     document.querySelector("#bus-outside").classList.remove("driveAway");
   }
+}
+
+////////////////////////////////
+// SCENE CHANGES !!!!!
+
+// SCENE 1 IS BY SCROLL (hello i'm knot)
+body.addEventListener('click', function () {
+  console.log(currentScene);
+  console.log("I am at: " + scrollY)
+  // SCENE 2 you dont usally see me"
+  if (currentScene == 1) {
+    phrase1.style.display = "none";
+    phrase2.style.display = "block";
+    setTimeout(() => {
+      currentScene = 2;
+    }, 500)
+  }
+  // SCENE 3 (it is my responsibility to…)
+  if (currentScene == 2) {
+    phrase1.style.display = "none";
+    phrase2.style.display = "none";
+    phrase3.style.display = "block";
+    helpButtons.style.display = "block";
+    setTimeout(() => {
+      currentScene = 3;
+    }, 500)
+  }
+  // SCENE 4 (do you wanna help me?)
+  if (currentScene == 3) {
+    phrase1.style.display = "none";
+    phrase2.style.display = "none";
+    phrase3.style.display = "none";
+    phrase4.style.display = "block";
+    helpYes.classList.add("helpUp");
+    helpNo.classList.add("helpUp");
+    setTimeout(() => {
+      currentScene = 4;
+    }, 500)
+  }
+  // SCENE 5 (Here we are, the first person of the day.)
+  if (currentScene == 5) {
+    phrase4.style.display = "none";
+    phrase5.style.display = "block";
+    assets.style.display = "block";
+    setTimeout(() => {
+      currentScene = 6;
+    }, 500)
+  }
+  // SCENE 6 (let’s see what we have here)
+  if (currentScene == 6) {
+    phrase5.style.display = "none";
+    phrase6.style.display = "block";
+    //make valentino visible
+    document.querySelector("#valentino").style.display = "block";
+    document.querySelector("#speechbubble-big-left").classList.add("bubbleGrow");
+    knot.classList.add("knotValentino");
+    moveflag = true;
+    setTimeout(() => {
+      currentScene = 7;
+    }, 500)
+  }
+  // SCENE 8 (What can I do for him? …. Mhhhh…)
+  if (currentScene == 8) {
+    phrase6.style.display = "none";
+    phrase7.style.display = "none";
+    phrase8.style.display = "block";
+    document.querySelector("#valentino-2").style.display = "block";
+    document.querySelector("#valentino-phone-screen").style.display = "block";
+    document.querySelector("#valentino-1").style.display = "none";
+  }
+});
+
+// SCENE 7 (Valentin ID was clicked)
+function scene7() {
+  phrase6.style.display = "none";
+  phrase7.style.display = "block";
+  document.querySelector("#valentino-info").style.display = "none";
+  phrase6.style.display = "none";
+  setTimeout(() => {
+    currentScene = 8;
+  }, 500)
+}
+
+// SCENE 9 (white Phone was clicked)
+function scene9(){
+  console.log("yes");
+}
+
+
+
+
+// CHANGE VALENTINI 1-4 IN BED on some event (not built-in yet)
+function showValentino2() {
+  valentino1.style.display = "none";
+  valentino2.style.display = "block";
+}
+
+function showValentino3() {
+  valentino2.style.display = "none";
+  valentino3.style.display = "block";
+}
+
+function showValentino4() {
+  valentino3.style.display = "none";
+  valentino4.style.display = "block";
+}
+
+// CHANGE TO HORIZONTAL SCROLL
+function runBus() {
+  spotlight.style.display = "none";
+  knot.style.display = "none";
+  knot.classList.remove("knotValentino");
+  knot.classList.remove("knotIntro");
+  document.querySelector("#text-valentino").style.display = "none";
+  document.querySelector("#valentino-1").style.display = "none";
+
+  document.querySelector("#valentino-running").style.display = "block";
+  document.querySelector("#horizontal-scroll-container").style.display = "block";
+  document.querySelector(".bus-container").style.display = "block";
+
+  // vertical scroll
+  body.style.overflow = "hidden";
+  body.style.overflowX = "hidden";
+  body.style.overflowX = "visible";
+
+
+  // HORIZONTALES SCROLLEN
+  // http://www.dte.web.id/2013/02/event-mouse-wheel.html
+
+  (function () {
+    function scrollHorizontally(e) {
+      e = window.event || e;
+      var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+      console.log(delta);
+      document.documentElement.scrollLeft -= (delta * 30); // Multiplied by 40
+      document.body.scrollLeft -= (delta * 30); // Multiplied by 40
+      e.preventDefault();
+    }
+    if (window.addEventListener) {
+      // IE9, Chrome, Safari, Opera
+      window.addEventListener("mousewheel", scrollHorizontally, false);
+      // Firefox
+      window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
+    } else {
+      // IE 6/7/8
+      window.attachEvent("onmousewheel", scrollHorizontally);
+    }
+  })();
 }
 
 
@@ -511,20 +545,27 @@ function hideId() {
 var textspeed = 20;
 
 new TypeIt("#phrase1", {
-  startDelay: 1000,
-  cursor: false,
-  speed: textspeed,
-  waitUntilVisible: true,
-}).go()
+    startDelay: 1000,
+    strings: ["…"],
+    cursor: false,
+    speed: textspeed,
+    waitUntilVisible: true,
+  }).pause(5000)
+  .type("please click…")
+  .go();
+
+// A stress-causing ego.
 
 new TypeIt("#phrase2", {
   cursor: false,
+  strings: ["…"],
   speed: textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase3", {
   cursor: false,
+  strings: ["…"],
   speed: textspeed,
   waitUntilVisible: true,
 }).go()
@@ -550,17 +591,19 @@ new TypeIt("#phrase4", {
 //   waitUntilVisible: true,
 // }).go()
 
-// new TypeIt("#phrase5", {
-//   cursor: false,
-//   speed: textspeed,
-//   waitUntilVisible: true,
-// }).go()
+new TypeIt("#phrase5", {
+  startDelay: 1000,
+  cursor: false,
+  speed: textspeed,
+  waitUntilVisible: true,
+}).go()
 
-// new TypeIt("#phrase6", {
-//   cursor: false,
-//   speed: textspeed,
-//   waitUntilVisible: true,
-// }).go()
+new TypeIt("#phrase6", {
+  startDelay: 1000,
+  cursor: false,
+  speed: textspeed,
+  waitUntilVisible: true,
+}).go()
 
 // new TypeIt("#phrase7", {
 //   cursor: false,

@@ -18,52 +18,23 @@
 </head>
 
 <body id="body">
-
     <!-- PROGRESS BAR ------------------------------>
     <div id="progress"></div>
 
-    <!-- CONTENT ----------------------------------->
+    <!-- BACKGROUND --------------->
+    <img onload="alarm()" id="light-texture" src="img/background.png">
+
+    <!-- TITLE PAGE -------------------------------->
     <div id="start-page">
-
-        <!-- BACKGROUND --------------->
-        <img onload="alarm()" id="light-texture" src="img/background.png">
-
-        <!-- TITLE & ABOUT PAGE -------------------->
         <div id="title-container">
             <div id="title-dark"></div>
             <img id="title-text" src="img/title/title-shadow.png">
         </div>
-
         <!-- SCROLL ICON -------------------->
         <div> <img id="scroll-icon" src="img/objects-icons/scroll-icon.png"> </div>
-
-        <!-- ABOUT -------------------->
-        <div id="about-container">
-            <div class="about-menu button">
-                <h2 id="about" onclick="showAbout()">about</h2>
-            </div>
-        </div>
-        <div id="about-content">
-            <div class="about-menu button">
-                <h2 id="about-button" class="whiteText" onclick="hideAbout()">about</h2>
-            </div>
-            <img id="about-eyes" src="img/knot-images/round-icon.png">
-            <br><br><br><br><br><br>
-            <p>about</p>
-            <br>
-            <b> "HIDDEN WORRIES"</b>
-            <br><br><br>
-            <p> What if you were responsible for increasing stress in people?
-                <br>Follow this short story and be Knot's personal assistant, a professional stress maker. </p>
-            <br><br><br>
-            Reading time about ... Minutes
-            <br><br><br>
-
-            Credits
-            <p>Giada Rastelli & Paula Weibel</p>
-            <P>Bachelorproject, 2021</p>
-        </div>
     </div>
+
+    
 
     <!-- ASSETS -------------------->
     <div id="asset-container">
@@ -77,15 +48,20 @@
         <!-- VALENTINO ASSETS -->
         <div id="valentino-asset">
             <div id="valentino">
+                <img id="line-floor-valentino" class="valentino-bed" src="img/1-valentino/line-floor-valentino.png">
                 <img id="valentino-1" class="valentino-bed" src="img/1-valentino/valentino-bed-1.png">
                 <img id="valentino-2" class="valentino-bed" src="img/1-valentino/valentino-bed-2.png">
                 <img id="valentino-3" class="valentino-bed" src="img/1-valentino/valentino-bed-3.png">
                 <img id="valentino-4" class="valentino-bed" src="img/1-valentino/valentino-bed-4.png">
-                <div id="valentino-bed-id" class="id" onclick="idValentino()"></div>
+                <img id="valentino-info" class="id" onclick="idValentino()" src="img/objects-icons/info-icon.png">
                 <div id="valentino-running">
                     <img id="valentino-5" class="valentino-run" src="img/1-valentino/valentino-run-1.png">
                     <img id="valentino-6" class="valentino-run" src="img/1-valentino/valentino-run-2.png">
                 </div>
+            </div>
+
+            <div id="text-valentino">
+                guac
             </div>
         </div>
 
@@ -119,25 +95,7 @@
     <!-- SPEECH BUBBLE PERSONS (kommt noch an anderen ort)------------->
     <div id="storytext">
         <!-- VALENTINO: SLEEPING -->
-        <div id="text-valentino">
-            <!-- ENTER FIRST STORY -->
-            <div id="enter">
-                <b>Very nice of you!</b>
-                <p>Let's visit my first stress client together.</p>
-                <img class="button" onclick="startStory()" src="img/objects-icons/yes-icon.png">
-            </div>
-            <!-- Sleeping VALENTINO -->
-            <div id="valentino-text1">
-                <p>(snooze/deactivate alarms)</p>
-                <B>..you lazy sloth!</B>
-            </div>
-            <!-- VALENTINO: RUNNING -->
-            <div id="valentino-text2">
-                <br><br><b>leave the house:</b><br>
-                <img class="button" onclick="runBus()" src="img/objects-icons/yes-icon.png">
-            </div>
-            <!-- LAWRENCE: BUS -->
-        </div>
+
     </div>
 
     <!-- MAIN CHARACTER ------------------->
@@ -152,20 +110,32 @@
 
         <!-- KNOT TEXT -->
         <div id="knot-text">
-            <!-- SPEECHBUBBLES -->
-            <img id="speechbubble-big-right" src="img/objects-icons/speechbubble-big.png">
-            <!-- INTRO TEXT -->
-            <div id="intro" class="knot-text-container">
-                <p id="phrase1" class="speech-right"><b>Hello, I'm stress-knot.</b><br> A stress-causing ego. You don't
-                    usually see me, but I decided to make an exception this time.</p>
-                <p id="phrase2">My job is to visit people from time to time and increase their
-                    stress level. I know what you're thinking, but someone has to do this job, and
-                    somehow I have to make a living too ... so please don't judge me!</p>
-                <p id="phrase3"><b>Stress has many shades.</b> <br>It is my responsibility to
-                    create different stressful situations for each individual I encounter on my path, by finding their
-                    weaknesses.</p>
-                <b id="phrase4">Would you like to be my assistant? </b>
+            <!-- SPEECHBUBBLES ON RIGHT-->
+            <div id="knot-talking-right">
+                <img id="speechbubble-big-right" src="img/objects-icons/speechbubble-big-right.png">
+                <!-- INTRO -->
+                <div id="intro" class="knot-text-intro">
+                    <p id="phrase1" class="phrase phrase-right"><b>Hello, I'm Knot.<br>A stress causing ego.</b></p>
+                    <p id="phrase2" class="phrase phrase-right"><br>You don't usually see me, but I decided to make an
+                        exception
+                        this time.</p>
+                    <p id="phrase3" class="phrase phrase-right"><br>It is my responsibilty to create different stressful
+                        situations for each individual.</p>
+                    <b id="phrase4" class="phrase phrase-right">Would you like to be my assistant? </b>
+                </div>
+                <div class="knot-text-valentino">
+                    <b id="phrase5" class="phrase phrase-right">Here we are, the first person of the day.</b>
+                </div>
             </div>
+            <!-- SPEECHBUBBLES ON LEFT-->
+            <div id="knot-talking-left">
+                <img id="speechbubble-big-left" src="img/objects-icons/speechbubble-big-left.png">
+                <!-- SCENE 1 -->
+                <b id="phrase6" class="phrase phrase-left">Let’s see what we have here.</b>
+                <p id="phrase7" class="phrase phrase-left">What can I do for him? …. Mhhhh…</p>
+                <b id="phrase8" class="phrase phrase-left">Ah! Let’s deactivate the other alarms. </b>
+            </div>
+
         </div>
     </div>
 
@@ -176,12 +146,14 @@
 
     <div id="help-button">
         <img id="help-yes" class="button help-button" src="img/objects-icons/yes-icon.png">
-        <!-- <div id="help-yes" class="button help-button">YES <br>I'd love to!</div> -->
         <img id="help-no" class="button help-button" src="img/objects-icons/no-icon.png">
+
+        <!-- <div id="help-yes" class="button help-button">YES <br>I'd love to!</div> -->
+
         <!-- <div id="help-no" class="button help-button">NO <br>thank you!</div> -->
     </div>
     <div>
-        <img id="valentino-handy" class="valentino-bed button" src="img/1-valentino/white-phone-screen.png">
+        <img id="valentino-phone-screen" class="valentino-bed button" onclick="scene9()" src="img/1-valentino/white-phone-screen.png">
     </div>
 
     <!-- FOREGROUND OBJECTS -->
@@ -191,18 +163,22 @@
 
 
     <!-- CHARACTERS ID-PAGES ----->
-    <div id="id-valentino" class="id-card id" onclick="hideId()">
+
+    <div id="id-valentino" class="id-card id" onclick="hideId(); scene7()">
+        <div class="id-blur bright"></div>
         <img class="id-picture" src="img/ID-Cards/ID-Valentino.png">
     </div>
     <div id="id-lawrence" class="id-card id" onclick="hideId()">
+        <div class="id-blur-bright"></div>
         <img class="id-picture" src="img/ID-Cards/ID-Lawrence.png">
     </div>
     <div id="id-mercy" class="id-card id" onclick="hideId()">
+        <div class="id-blur"></div>
         <img class="id-picture" src="img/ID-Cards/ID-Mercy.png">
     </div>
     <div id="id-barbara" class="id-card id" onclick="hideId()">
+        <div class="id-blur"></div>
         <img class="id-picture" src="img/ID-Cards/ID-Barbara.png">
-    </div>
     </div>
 
     <!-- NAVIGATE -->
@@ -211,6 +187,33 @@
         <a class="blu" onclick="goHome()">home</a>
         <a class="blu" onclick="goValentino()">valentino</a>
         <a class="blu" onclick="goLawrence()">lawrence</a>
+    </div>
+
+    <!-- ABOUT -------------------->
+    <div id="about-container">
+        <div class="about-menu button">
+            <h2 id="about" onclick="showAbout()">about</h2>
+        </div>
+    </div>
+    <div id="about-content">
+        <div class="about-menu button">
+            <h2 id="about-button" class="whiteText" onclick="hideAbout()">about</h2>
+        </div>
+        <img id="about-eyes" src="img/knot-images/round-icon.png">
+        <br><br><br><br><br><br>
+        <p>about</p>
+        <br>
+        <b> "HIDDEN WORRIES"</b>
+        <br><br><br>
+        <p> What if you were responsible for increasing stress in people?
+            <br>Follow this short story and be Knot's personal assistant, a professional stress maker. </p>
+        <br><br><br>
+        Reading time about ... Minutes
+        <br><br><br>
+
+        Credits
+        <p>Giada Rastelli & Paula Weibel</p>
+        <P>Bachelorproject, 2021</p>
     </div>
 
     <!-- NO MOBILE VERSION ------------------------------------------------------------->

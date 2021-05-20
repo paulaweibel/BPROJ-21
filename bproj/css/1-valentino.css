@@ -14,7 +14,7 @@
 #valentino {
     display: none;
     position: fixed;
-    left: calc(50vw - 10vh);
+    left: 30vw;
     top: 30vh;
 }
 
@@ -31,19 +31,19 @@
 }
 
 /* (invisible cursor-change-box on Valentinos Head) */
-#valentino-bed-id {
+#valentino-info {
     position: absolute;
-    top: 5vh;
-    left: 15vh;
-    height: 20vh;
-    width: 20vh;
+    top: 10vh;
+    left: 20vh;
+    height: 5vh;
+    width:5vh;
 }
 
-#valentino-handy {
+#valentino-phone-screen {
     display: none;
-    left: calc(50vw - 6.3vh);
+    left: calc(30vw + 4vh);
     top: 56.4vh;
-    height: 1.9vh;
+    height: 1.8vh;
 }
 
 
