@@ -190,10 +190,6 @@ p {
   opacity: 0 !important;
 }
 
-.titleDarkWhileAbout{
-  opacity: 1 !important;
-}
-
 /* TITLE GOES UP ON SCROLL */
 .titleUp {
   margin-top: -110vh !important;
@@ -213,13 +209,12 @@ p {
   width: 3em;
   text-align: right;
   font-size: 1.5em;
-  color: grey;
-  opacity: 0.8;
-  transition: opacity 1s;
+  color: var(--weiss);
+  transition: opacity 1s, transform 0.1s;
 }
 
 .about-menu:hover {
-  opacity: 1;
+transform: scale(1.05);
 }
 
 #about-content {
@@ -393,8 +388,6 @@ p {
   transform: scale(0);
   transition: transform 0.5s;
 }
-
-
 
 
 /* ------------- OVERLAY FOR SMARTPHONE USERS -------------------- */

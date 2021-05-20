@@ -92,7 +92,6 @@
     top: 0;
     width:40vh;
     max-height: 15vh;
-    overflow: hidden;
     padding-top: 6vh;
     padding-left:5vh;
     color: var(--schwarz);
@@ -105,11 +104,6 @@
 .show {
     opacity: 1 !important;
 }
-
-
-
-
-
 
 
 

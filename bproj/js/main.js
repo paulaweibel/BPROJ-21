@@ -220,6 +220,8 @@ titleButton.addEventListener('click', function () {
     document.querySelector("body").style.background = "#fafafa";
     document.querySelector("#title-dark").classList.add("titleBright");
     document.querySelector("#about-content").classList.add("whiteAbout");
+    document.querySelector("#about-button").style.color="var(--schwarz)";
+    document.querySelector("#about").style.color="var(--schwarz)";
     knot.classList.add("knotTitle");
   } else {
     visible = 3;
@@ -227,6 +229,8 @@ titleButton.addEventListener('click', function () {
     document.querySelector("body").style.background = "#0c0c0c";
     document.querySelector("#title-dark").classList.remove("titleBright");
     document.querySelector("#about-content").classList.remove("whiteAbout");
+    document.querySelector("#about-button").style.color="var(--weiss)"
+    document.querySelector("#about").style.color="var(--weiss)";
     knot.classList.remove("knotTitle");
   }
 });
