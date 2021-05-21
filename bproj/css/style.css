@@ -1,5 +1,13 @@
 /* FONTS ---------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Over+the+Rainbow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+
+
 
 /* GLOBAL COLORS */
 :root {
@@ -8,9 +16,16 @@
 }
 
 body {
-  font-family: 'Kalam', cursive;
+
+  font-family: 'Architects Daughter', cursive;
+  /* font-family: 'Over the Rainbow', cursive;
+  font-family: 'Give You Glory', cursive;
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-family: 'Coming Soon', cursive;
+  font-family: 'Walter Turncoat', cursive; */
+
   font-weight: 400;
-  font-size: 1em;
+  font-size: 16px;
   display: flex;
   /* text-align: center; */
   background-color: var(--schwarz);
