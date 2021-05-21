@@ -29,22 +29,40 @@
 }
 
 
-#trumper-container {
+#trumpet-container {
     display: none;
 }
 
-.trumper {
+.trumpet {
     position: absolute;
     height: 10vh;
     left: 17vh;
     top: 14vh;
+    animation: trumpet-animation 1.5s infinite ease-in-out;
 }
+
+@keyframes trumpet-animation {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(20px, 0) rotate(2deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+}
+
+
 
 
 /* KNOT WIGGLE CONTAINER */
 #wiggle {
     position: fixed;
-    animation: wiggle 2s infinite;
+    animation: wiggle 5s infinite ease-in-out;
     transition: margin 2s, opacity 0.4s;
 }
 
@@ -88,7 +106,7 @@
     margin-top: 30vh !important;
 }
 
-.knotTrumper {
+.knotTrumpet {
     margin-left: 10vw !important;
     margin-top: 20vh !important;
 }

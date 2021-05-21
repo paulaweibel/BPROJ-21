@@ -26,24 +26,26 @@
 /* INFO ICON */
 #valentino-info {
     position: absolute;
-    top: 10vh;
+    top: 9vh;
     left: 20vh;
     height: 5vh;
     width: 5vh;
-    animation: info-icon 1s infinite ease-in-out;
+    animation: info-icon 1.5s infinite ease-in-out;
 }
 
 @keyframes info-icon {
-    0%{
-        opacity: 1;
+    0% {
+        transform: translate(0, 0);
     }
-    50%{
-        opacity: 0.5;
+
+    50% {
+        transform: translate(0, 1vh);
     }
-    100%{
-        opacity: 1;
+
+    100% {
+        transform: translate(0, 0);
     }
-    
+
 }
 
 /* PHONE SCREEN */
@@ -53,6 +55,21 @@
     top: 56.4vh;
     height: 1.8vh;
     transition: opacity 0.5s;
+    animation: phone-blinking 0.7s infinite;
+}
+
+@keyframes phone-blinking {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 /* ALARM TOGGLES */
@@ -95,7 +112,7 @@
     color: var(--schwarz);
 }
 
-.toggle-off{
+.toggle-off {
     display: none;
 }
 

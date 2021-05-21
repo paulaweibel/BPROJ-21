@@ -46,7 +46,7 @@ queue.on("complete", event => {
   //show hi after 3500 ms
   setTimeout(() => {
     hi.classList.remove("hi-animation");
-  }, 3500)
+  }, 1500)
   //remove progress bar
   setTimeout(() => {
     progress.classList.add("fadeOut");
@@ -516,12 +516,12 @@ function countToggle() {
     // hide one hour later
     setTimeout(() => {
       document.querySelector("#one-hour-later").style.opacity = "0";
-      document.querySelector("#trumper-container").style.display = "block";
-      knot.classList.add("knotTrumper");
+      document.querySelector("#trumpet-container").style.display = "block";
+      knot.classList.add("knotTrumpet");
       knot.style.opacity = "1";
     }, 8000)
 
-    // trumper!!!!
+    // trumpet!!!!
     setTimeout(() => {
       phrase10.style.display = "none";
       phrase11.style.display = "block";
