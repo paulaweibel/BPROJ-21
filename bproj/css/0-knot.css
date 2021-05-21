@@ -29,6 +29,18 @@
 }
 
 
+#trumper-container {
+    display: none;
+}
+
+.trumper {
+    position: absolute;
+    height: 10vh;
+    left: 17vh;
+    top: 14vh;
+}
+
+
 /* KNOT WIGGLE CONTAINER */
 #wiggle {
     position: fixed;
@@ -59,9 +71,25 @@
     margin-top: 40vh !important;
 }
 
-/* KNOT MOVE TO INTRO-START */
-.knotValentino {
+/* KNOT ABOVE VALENTINO */
+.knotValentinoObserve {
     margin-left: 80vw !important;
+    margin-top: 20vh !important;
+}
+
+/* KNOT OUT OF VALENTINO SCREEN */
+.knotValentinoDisappear {
+    margin-left: 120vw !important;
+    margin-top: 20vh !important;
+}
+
+.knotValentinoAppear {
+    margin-left: 50vw !important;
+    margin-top: 30vh !important;
+}
+
+.knotTrumper {
+    margin-left: 10vw !important;
     margin-top: 20vh !important;
 }
 
@@ -69,14 +97,12 @@
 /* ------ MAIN CHARACTER TEXT------------------------------ */
 
 #knot-talking-right {
-    /* display: none; */
     position: fixed;
     top: -10vh;
     left: 20vh;
     transform-origin: left bottom;
     transform: scale(0);
     transition: transform 1s;
-    /* width: 40vh; */
 }
 
 #knot-talking-left {
@@ -84,6 +110,9 @@
     top: -10vh;
     left: -40vh;
     width: 40vh;
+    transform-origin: right bottom;
+    transform: scale(0);
+    transition: transform 1s;
 }
 
 #speechbubble-big-right {
@@ -115,7 +144,7 @@
     color: var(--schwarz);
 }
 
-.phrase-left{
+.phrase-left {
     position: absolute;
     top: 0;
     width: 40vh;
@@ -144,8 +173,8 @@
     display: block;
 }
 
-#phrase5{
-color: var(--weiss);
+#phrase5 {
+    color: var(--weiss);
 }
 
 

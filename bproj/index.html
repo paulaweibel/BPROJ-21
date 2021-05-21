@@ -34,7 +34,7 @@
         <div> <img id="scroll-icon" src="img/objects-icons/scroll-icon.png"> </div>
     </div>
 
-    
+
 
     <!-- ASSETS -------------------->
     <div id="asset-container">
@@ -52,17 +52,45 @@
                 <img id="valentino-1" class="valentino-bed" src="img/1-valentino/valentino-bed-1.png">
                 <img id="valentino-2" class="valentino-bed" src="img/1-valentino/valentino-bed-2.png">
                 <img id="valentino-3" class="valentino-bed" src="img/1-valentino/valentino-bed-3.png">
-                <img id="valentino-4" class="valentino-bed" src="img/1-valentino/valentino-bed-4.png">
+                <img id="valentino-4" class="valentino-bed button" onclick="runBus()"
+                    src="img/1-valentino/valentino-bed-4.png">
                 <img id="valentino-info" class="id" onclick="idValentino()" src="img/objects-icons/info-icon.png">
                 <div id="valentino-running">
                     <img id="valentino-5" class="valentino-run" src="img/1-valentino/valentino-run-1.png">
                     <img id="valentino-6" class="valentino-run" src="img/1-valentino/valentino-run-2.png">
                 </div>
+
+                <div id="valentino-toggles">
+                    <div id="toggle1">
+                        <b>6:00</b>
+                        <img id="toggle1-on" class="toggle toggle1 button" onclick="toggle1(); countToggle()"
+                            src="img/objects-icons/on.png">
+                        <img id="toggle1-off" class="toggle toggle1 button toggle-off" src="img/objects-icons/off.png">
+                    </div>
+                    <div id="toggle2">
+                        <b>6:05</b>
+                        <img id="toggle2-on" class="toggle toggle2 button" onclick="toggle2(); countToggle()"
+                            src="img/objects-icons/on.png">
+                        <img id="toggle2-off" class="toggle toggle2 button toggle-off" src="img/objects-icons/off.png">
+                    </div>
+                    <div id="toggle3">
+                        <b>6:10</b>
+                        <img id="toggle3-on" class="toggle toggle3 button" onclick="toggle3(); countToggle()"
+                            src="img/objects-icons/on.png">
+                        <img id="toggle3-off" class="toggle toggle3 button toggle-off" src="img/objects-icons/off.png">
+                    </div>
+                    <div id="toggle4">
+                        <b>6:15</b>
+                        <img id="toggle4-on" class="toggle toggle4 button" onclick="toggle4(); countToggle()"
+                            src="img/objects-icons/on.png">
+                        <img id="toggle4-off" class="toggle toggle4 button toggle-off" src="img/objects-icons/off.png">
+                    </div>
+                </div>
+
+                <div id="text-valentino"></div>
             </div>
 
-            <div id="text-valentino">
-                guac
-            </div>
+
         </div>
 
         <!-- LAWRENCE ASSETS (EMPTY)-->
@@ -107,6 +135,10 @@
         <div class="knot eyes">
             <img id="eye-img" src="img/knot-images/eyes.png">
         </div>
+        <div id="trumper-container">
+            <img class="trumper" src="img/knot-images/trumper.png">
+            <img class="trumper" src="img/knot-images/trumper2.png">
+        </div>
 
         <!-- KNOT TEXT -->
         <div id="knot-text">
@@ -125,6 +157,7 @@
                 </div>
                 <div class="knot-text-valentino">
                     <b id="phrase5" class="phrase phrase-right">Here we are, the first person of the day.</b>
+                    <b id="phrase11" class="phrase phrase-right">WAKE UPPP <br>!!!!!!!!!!!!</b>
                 </div>
             </div>
             <!-- SPEECHBUBBLES ON LEFT-->
@@ -133,7 +166,8 @@
                 <!-- SCENE 1 -->
                 <b id="phrase6" class="phrase phrase-left">Let’s see what we have here.</b>
                 <p id="phrase7" class="phrase phrase-left">What can I do for him? …. Mhhhh…</p>
-                <b id="phrase8" class="phrase phrase-left">Ah! Let’s deactivate the other alarms. </b>
+                <b id="phrase8" class="phrase phrase-left">Ah! Let’s deactivate the other alarms.</b>
+                <b id="phrase9" class="phrase phrase-left">keep on sleeping, you still have plenty of time…</b>
             </div>
 
         </div>
@@ -147,18 +181,18 @@
     <div id="help-button">
         <img id="help-yes" class="button help-button" src="img/objects-icons/yes-icon.png">
         <img id="help-no" class="button help-button" src="img/objects-icons/no-icon.png">
-
-        <!-- <div id="help-yes" class="button help-button">YES <br>I'd love to!</div> -->
-
-        <!-- <div id="help-no" class="button help-button">NO <br>thank you!</div> -->
-    </div>
-    <div>
-        <img id="valentino-phone-screen" class="valentino-bed button" onclick="scene9()" src="img/1-valentino/white-phone-screen.png">
     </div>
 
     <!-- FOREGROUND OBJECTS -->
+    <img id="valentino-phone-screen" class="valentino-bed button" onclick="scene9()"
+        src="img/1-valentino/white-phone-screen.png">
+
     <div class="bus-container">
         <img id="bus-outside" src="img/Locations/bus.png">
+    </div>
+
+    <div id="one-hour-later">
+        <b id="phrase10" class="phrase">one hour later</b>
     </div>
 
 

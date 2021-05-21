@@ -96,13 +96,21 @@ var phrase1 = document.querySelector("#phrase1");
 var phrase2 = document.querySelector("#phrase2");
 var phrase3 = document.querySelector("#phrase3");
 var phrase4 = document.querySelector("#phrase4");
+var phrase5 = document.querySelector("#phrase5");
+var phrase6 = document.querySelector("#phrase6");
+var phrase7 = document.querySelector("#phrase7");
+var phrase8 = document.querySelector("#phrase8");
+var phrase9 = document.querySelector("#phrase9");
+var phrase10 = document.querySelector("#phrase10");
+var phrase11 = document.querySelector("#phrase11");
+
 
 var helpYes = document.querySelector("#help-yes");
 var helpNo = document.querySelector("#help-no");
 var helpButtons = document.querySelector("#help-button");
 
 var currentScene = 0;
-
+var toggleCount = 0;
 
 
 
@@ -238,36 +246,6 @@ titleButton.addEventListener('click', function () {
 // STORY START ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// INTRO ///
-//// "WOULD YOU LIKE TO BE MY ASSISTENT?" (NO)
-var trigger2 = 0;
-helpNo.addEventListener('mouseenter', function () {
-  trigger2 = trigger2 + 1;
-  console.log("trigger count: " + trigger2)
-  helpYes.style.marginLeft = "20vh";
-});
-
-helpNo.addEventListener('mouseleave', function () {
-  helpYes.style.marginLeft = "0vh";
-});
-
-helpYes.addEventListener('mouseleave', function () {
-  console.log("guac")
-});
-
-//// "WOULD YOU LIKE TO BE MY ASSISTENT?" (YES)
-helpButtons.addEventListener('click', function () {
-  console.log("helpYes");
-  intro.style.display = "none";
-  helpButtons.style.display = "none";
-  body.style.overflow = "hidden";
-  body.style.height = "10000vh";
-  window.scrollTo(0, 10000);
-  spotlight.style.display = "block";
-  currentScene = 5;
-});
-
-
 
 ////////////////////////////////
 // TRIGGERS ON SCROLL POSITIONS 
@@ -304,14 +282,12 @@ function animation(scrollPos) {
   if (scrollLocation > 4000) {
     titleBox.style.display = "none";
     titleButton.style.display = "none";
-    document.querySelector("#speechbubble-big-right").classList.add("hide");
-    document.querySelector("#speechbubble-big-right").style.display = "none";
+    document.querySelector("#speechbubble-big-right").classList.remove("bubbleGrow");
     helpButtons.style.display = "none";
   } else {
     titleBox.style.display = "block";
     titleButton.style.display = "block";
-    document.querySelector("#speechbubble-big-right").classList.remove("hide");
-    document.querySelector("#speechbubble-big-right").style.display = "block";
+    document.querySelector("#speechbubble-big-right").classList.add("bubbleGrow");
   }
 
   // 10000PX, STORY ENTER, ASSETS VISIBLE
@@ -359,12 +335,14 @@ function animation(scrollPos) {
 }
 
 ////////////////////////////////
-// SCENE CHANGES !!!!!
+// GENERAL SCENE CHANGES
 
+
+// KNOT INTRO
 // SCENE 1 IS BY SCROLL (hello i'm knot)
 body.addEventListener('click', function () {
-  console.log(currentScene);
-  console.log("I am at: " + scrollY)
+  console.log("Scene: " + currentScene + ", I am at: " + scrollY);
+
   // SCENE 2 you dont usally see me"
   if (currentScene == 1) {
     phrase1.style.display = "none";
@@ -395,6 +373,7 @@ body.addEventListener('click', function () {
       currentScene = 4;
     }, 500)
   }
+  // VALENTINO
   // SCENE 5 (Here we are, the first person of the day.)
   if (currentScene == 5) {
     phrase4.style.display = "none";
@@ -407,13 +386,14 @@ body.addEventListener('click', function () {
   // SCENE 6 (let’s see what we have here)
   if (currentScene == 6) {
     phrase5.style.display = "none";
-    phrase6.style.display = "block";
     //make valentino visible
     document.querySelector("#valentino").style.display = "block";
-    document.querySelector("#speechbubble-big-left").classList.add("bubbleGrow");
-    knot.classList.add("knotValentino");
+    knot.classList.add("knotValentinoObserve");
     moveflag = true;
     setTimeout(() => {
+      phrase6.style.display = "block";
+      document.querySelector("#knot-talking-left").classList.add("bubbleGrow");
+      document.querySelector("#speechbubble-big-left").classList.add("bubbleGrow");
       currentScene = 7;
     }, 500)
   }
@@ -428,7 +408,36 @@ body.addEventListener('click', function () {
   }
 });
 
-// SCENE 7 (Valentin ID was clicked)
+
+////////////////////////////////
+//BUTTONS ////////////////////////////////
+
+// SCENE 4 
+// "WOULD YOU LIKE TO BE MY ASSISTENT?"
+var trigger2 = 0;
+//// (NO)
+helpNo.addEventListener('mouseenter', function () {
+  trigger2 = trigger2 + 1;
+  console.log("trigger count: " + trigger2)
+  helpYes.style.marginLeft = "20vh";
+});
+helpNo.addEventListener('mouseleave', function () {
+  helpYes.style.marginLeft = "0vh";
+});
+
+//// (YES)
+helpButtons.addEventListener('click', function () {
+  console.log("helpYes");
+  intro.style.display = "none";
+  helpButtons.style.display = "none";
+  body.style.overflow = "hidden";
+  body.style.height = "10000vh";
+  window.scrollTo(0, 10000);
+  spotlight.style.display = "block";
+  currentScene = 5;
+});
+
+// SCENE 7 (Valentino ID was clicked)
 function scene7() {
   phrase6.style.display = "none";
   phrase7.style.display = "block";
@@ -440,10 +449,90 @@ function scene7() {
 }
 
 // SCENE 9 (white Phone was clicked)
-function scene9(){
+function scene9() {
   console.log("yes");
+  phrase8.style.opacity = "0";
+  document.querySelector("#knot-talking-left").classList.remove("bubbleGrow");
+  document.querySelector("#speechbubble-big-left").classList.remove("bubbleGrow");
+  document.querySelector("#valentino-toggles").style.display = "block";
+  knot.classList.add("knotValentinoDisappear");
+  toggleCount = 0;
 }
 
+// SCENE 10 (DEACTIVATING THE TOGGLES)
+function toggle1() {
+  document.querySelector("#toggle1-off").classList.remove("toggle-off");
+}
+
+function toggle2() {
+  document.querySelector("#toggle2-off").classList.remove("toggle-off");
+}
+
+function toggle3() {
+  document.querySelector("#toggle3-off").classList.remove("toggle-off");
+}
+
+function toggle4() {
+  document.querySelector("#toggle4-off").classList.remove("toggle-off");
+}
+
+// all toggles off? -> ANIMATED CHANGE TO SCENE 11
+function countToggle() {
+  toggleCount = toggleCount + 1;
+  if (toggleCount == 4) {
+    phrase9.style.display = "block";
+    document.querySelector("#valentino-toggles").style.display = "none";
+    document.querySelector("#valentino-phone-screen").style.opacity = "0";
+    document.querySelector("#valentino-2").style.display = "none";
+    document.querySelector("#valentino-3").style.display = "block";
+
+    // smooth fade-out phonescreen
+    setTimeout(() => {
+      document.querySelector("#valentino-phone-screen").style.display = "none";
+    }, 500)
+    knot.classList.add("knotValentinoAppear");
+
+    // speechbubble "sleep on"
+    setTimeout(() => {
+      document.querySelector("#knot-talking-left").classList.add("bubbleGrow");
+      document.querySelector("#speechbubble-big-left").classList.add("bubbleGrow");
+    }, 2000)
+
+    // go to black
+    setTimeout(() => {
+      document.querySelector("#knot-talking-left").classList.remove("bubbleGrow");
+      document.querySelector("#speechbubble-big-left").classList.remove("bubbleGrow");
+      knot.style.opacity = "0";
+      console.log = "one hour later";
+    }, 5000)
+
+    // show one hour later
+    setTimeout(() => {
+      phrase9.style.display = "none";
+      phrase10.style.display = "block";
+      document.querySelector("#one-hour-later").style.display = "block";
+    }, 5500)
+
+    // hide one hour later
+    setTimeout(() => {
+      document.querySelector("#one-hour-later").style.opacity = "0";
+      document.querySelector("#trumper-container").style.display = "block";
+      knot.classList.add("knotTrumper");
+      knot.style.opacity = "1";
+    }, 8000)
+
+    // trumper!!!!
+    setTimeout(() => {
+      phrase10.style.display = "none";
+      phrase11.style.display = "block";
+      document.querySelector("#knot-talking-right").classList.add("bubbleGrow");
+      document.querySelector("#speechbubble-big-right").classList.add("bubbleGrow");
+      document.querySelector("#valentino-4").style.display = "block";
+      document.querySelector("#valentino-3").style.display = "none";
+      currentScene = 11;
+    }, 8500)
+  }
+}
 
 
 
@@ -467,8 +556,6 @@ function showValentino4() {
 function runBus() {
   spotlight.style.display = "none";
   knot.style.display = "none";
-  knot.classList.remove("knotValentino");
-  knot.classList.remove("knotIntro");
   document.querySelector("#text-valentino").style.display = "none";
   document.querySelector("#valentino-1").style.display = "none";
 
@@ -554,8 +641,6 @@ new TypeIt("#phrase1", {
   .type("please click…")
   .go();
 
-// A stress-causing ego.
-
 new TypeIt("#phrase2", {
   cursor: false,
   strings: ["…"],
@@ -576,21 +661,6 @@ new TypeIt("#phrase4", {
   waitUntilVisible: true,
 }).go()
 
-
-// new TypeIt("#help-yes", {
-//   startDelay: 1500,
-//   cursor: false,
-//   speed: 10,
-//   waitUntilVisible: true,
-// }).go()
-
-// new TypeIt("#help-no", {
-//   startDelay: 1700,
-//   cursor: false,
-//   speed: 10,
-//   waitUntilVisible: true,
-// }).go()
-
 new TypeIt("#phrase5", {
   startDelay: 1000,
   cursor: false,
@@ -605,14 +675,33 @@ new TypeIt("#phrase6", {
   waitUntilVisible: true,
 }).go()
 
-// new TypeIt("#phrase7", {
-//   cursor: false,
-//   speed: textspeed,
-//   waitUntilVisible: true,
-// }).go()
+new TypeIt("#phrase7", {
+  cursor: false,
+  strings: ["…"],
+  speed: textspeed,
+  waitUntilVisible: true,
+}).go()
 
-// new TypeIt("#phrase8", {
-//   cursor: false,
-//   speed: textspeed,
-//   waitUntilVisible: true,
-// }).go()
+new TypeIt("#phrase8", {
+  cursor: false,
+  speed: textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase9", {
+  cursor: false,
+  speed: textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase10", {
+  cursor: false,
+  speed: textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase11", {
+  cursor: false,
+  speed: textspeed,
+  waitUntilVisible: true,
+}).go()
