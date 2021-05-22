@@ -187,12 +187,21 @@
 }
 
 #street-line {
-    left: 50vw;
-    top: 40vh;
+    left: 70vh;
+    top: calc(50vh - 4vw);
+    width: calc(400vw - 170vh);
 }
 
 #bus-stop {
-    right: 0;
+    top: 10vh;
+    max-height: 40%;
+    right: 20vh;
+}
+
+#lawri {
+    max-height: 40%;
+    top: 20vh;
+    right: 60vh;
 }
 
 .bus-container {
