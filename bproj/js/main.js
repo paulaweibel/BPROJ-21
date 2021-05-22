@@ -317,9 +317,9 @@ function animation(scrollPos) {
   // 2. horizontal scroll valentino  
   if (sLeft > 1.5 * window.innerWidth) {
     character.valentino6.style.display = "block";
-    character.valentino5.style.display = "none";
+    character.valentino5.style.opacity = "0";
   } else {
-    character.valentino5.style.display = "block";
+    character.valentino5.style.opacity = "1";
     character.valentino6.style.display = "none";
   }
 
@@ -423,12 +423,10 @@ domElement.body.addEventListener('click', function () {
     domElement.body.style.overflowX = "visible";
     setTimeout(() => {
       variable.currentScene = 11;
+      scene11();
     }, 200)
   }
 
-  if (variable.currentScene === 11) {
-
-  }
 
   console.log("Scene: " + variable.currentScene + ", I am at: " + scrollY);
 });
@@ -568,26 +566,28 @@ function countToggle() {
   }
 }
 
-// CHANGE TO HORIZONTAL SCROLL
-(function () {
-  function scrollHorizontally(e) {
-    e = window.event || e;
-    var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-    console.log(delta);
-    document.documentElement.scrollLeft -= (delta * 30); // Multiplied by 40
-    document.body.scrollLeft -= (delta * 30); // Multiplied by 40
-    e.preventDefault();
-  }
-  if (window.addEventListener) {
-    // IE9, Chrome, Safari, Opera
-    window.addEventListener("mousewheel", scrollHorizontally, false);
-    // Firefox
-    window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
-  } else {
-    // IE 6/7/8
-    window.attachEvent("onmousewheel", scrollHorizontally);
-  }
-})();
+// SCENE 11 CHANGE TO HORIZONTAL SCROLL
+function scene11() {
+  (function () {
+    function scrollHorizontally(e) {
+      e = window.event || e;
+      var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+      console.log(delta);
+      document.documentElement.scrollLeft -= (delta * 30); // Multiplied by 40
+      document.body.scrollLeft -= (delta * 30); // Multiplied by 40
+      e.preventDefault();
+    }
+    if (window.addEventListener) {
+      // IE9, Chrome, Safari, Opera
+      window.addEventListener("mousewheel", scrollHorizontally, false);
+      // Firefox
+      window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
+    } else {
+      // IE 6/7/8
+      window.attachEvent("onmousewheel", scrollHorizontally);
+    }
+  })();
+}
 
 
 
