@@ -7,7 +7,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 
-
+@font-face {
+  font-family: 'Providence';
+  src: url('Providence-Sans.otf');
+}
 
 /* GLOBAL COLORS */
 :root {
@@ -16,14 +19,15 @@
 }
 
 body {
+  /* font-family: 'Architects Daughter', cursive; */
+  /* font-family: 'Over the Rainbow', cursive; */
+  /* font-family: 'Give You Glory', cursive; */
+  /* font-family: 'Waiting for the Sunrise', cursive; */
+  /* font-family: 'Coming Soon', cursive;  */
+  /* font-family: 'Walter Turncoat', cursive;  */
+  font-family: 'Providence', cursive;
 
-  font-family: 'Architects Daughter', cursive;
-  /* font-family: 'Over the Rainbow', cursive;
-  font-family: 'Give You Glory', cursive;
-  font-family: 'Waiting for the Sunrise', cursive;
-  font-family: 'Coming Soon', cursive;
-  font-family: 'Walter Turncoat', cursive; */
-
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 16px;
   display: flex;
