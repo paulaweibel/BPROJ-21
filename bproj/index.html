@@ -42,6 +42,7 @@
         <!-- BACKGROUNDS -->
         <div id="horizontal-scroll-container">
             <img id="house-valentino" class="horizontal-scroll-background" src="img/Locations/house-valentino.png">
+            <img id="street-line" class="horizontal-scroll-background" src="img/1-valentino/line-street-valentino.png">
             <img id="bus-stop" class="horizontal-scroll-background" src="img/Locations/bus-stop.png">
         </div>
 
@@ -52,51 +53,40 @@
                 <img id="valentino-1" class="valentino-bed" src="img/1-valentino/valentino-bed-1.png">
                 <img id="valentino-2" class="valentino-bed" src="img/1-valentino/valentino-bed-2.png">
                 <img id="valentino-3" class="valentino-bed" src="img/1-valentino/valentino-bed-3.png">
-                <img id="valentino-4" class="valentino-bed button" onclick="runBus()"
-                    src="img/1-valentino/valentino-bed-4.png">
+                <img id="valentino-4" class="valentino-bed button" src="img/1-valentino/valentino-bed-4.png">
                 <img id="valentino-info" class="id" onclick="idValentino()" src="img/objects-icons/info-icon.png">
-                <div id="valentino-running">
-                    <img id="valentino-5" class="valentino-run" src="img/1-valentino/valentino-run-1.png">
-                    <img id="valentino-6" class="valentino-run" src="img/1-valentino/valentino-run-2.png">
-                </div>
-
                 <div id="valentino-toggles">
                     <div id="toggle1">
-                        <b>6:00</b>
-                        <img id="toggle1-on" class="toggle toggle1 button" onclick="toggle1(); countToggle()"
-                            src="img/objects-icons/on.png">
-                        <img id="toggle1-off" class="toggle toggle1 button toggle-off" src="img/objects-icons/off.png">
+                        6:00
+                        <img class="toggle button" onclick="toggle1(); countToggle()" src="img/objects-icons/on.png">
+                        <img id="toggle1-off" class="toggle button toggle-off" src="img/objects-icons/off.png">
                     </div>
                     <div id="toggle2">
-                        <b>6:05</b>
-                        <img id="toggle2-on" class="toggle toggle2 button" onclick="toggle2(); countToggle()"
-                            src="img/objects-icons/on.png">
-                        <img id="toggle2-off" class="toggle toggle2 button toggle-off" src="img/objects-icons/off.png">
+                        6:05
+                        <img class="toggle button" onclick="toggle2(); countToggle()" src="img/objects-icons/on.png">
+                        <img id="toggle2-off" class="toggle button toggle-off" src="img/objects-icons/off.png">
                     </div>
                     <div id="toggle3">
-                        <b>6:10</b>
-                        <img id="toggle3-on" class="toggle toggle3 button" onclick="toggle3(); countToggle()"
-                            src="img/objects-icons/on.png">
-                        <img id="toggle3-off" class="toggle toggle3 button toggle-off" src="img/objects-icons/off.png">
+                        6:13
+                        <img class="toggle button" onclick="toggle3(); countToggle()" src="img/objects-icons/on.png">
+                        <img id="toggle3-off" class="toggle button toggle-off" src="img/objects-icons/off.png">
                     </div>
                     <div id="toggle4">
-                        <b>6:15</b>
-                        <img id="toggle4-on" class="toggle toggle4 button" onclick="toggle4(); countToggle()"
-                            src="img/objects-icons/on.png">
-                        <img id="toggle4-off" class="toggle toggle4 button toggle-off" src="img/objects-icons/off.png">
+                        6:07
+                        <img class="toggle button" onclick="toggle4(); countToggle()" src="img/objects-icons/on.png">
+                        <img id="toggle4-off" class="toggle button toggle-off" src="img/objects-icons/off.png">
                     </div>
                 </div>
-
+                <img id="valentino-5" class="valentino-run" src="img/1-valentino/valentino-run-1.png">
+                <img id="valentino-6" class="valentino-run" src="img/1-valentino/valentino-run-2.png">
                 <div id="text-valentino"></div>
             </div>
-
-
         </div>
 
         <!-- LAWRENCE ASSETS (EMPTY)-->
         <div id="lawrence-asset">
             <div id="lawrence" onclick="idLawrence()">
-                <img id="lawrence-1" class="asset id" src="">
+                <img id="lawrence-1" class="" src="img/2-lawrence/1-lawrence.png">
             </div>
         </div>
 
@@ -165,8 +155,8 @@
                 <img id="speechbubble-big-left" src="img/objects-icons/speechbubble-big-left.png">
                 <!-- SCENE 1 -->
                 <b id="phrase6" class="phrase phrase-left">Let’s see what we have here.</b>
-                <p id="phrase7" class="phrase phrase-left">What can I do for him? …. Mhhhh…</p>
-                <b id="phrase8" class="phrase phrase-left">Ah! Let’s deactivate the other alarms.</b>
+                <p id="phrase7" class="phrase phrase-left">What can we do for him? …. Mhhhh…</p>
+                <b id="phrase8" class="phrase phrase-left">Please deactivate the other alarms.</b>
                 <b id="phrase9" class="phrase phrase-left">keep on sleeping, you still have plenty of time…</b>
             </div>
 
@@ -184,7 +174,7 @@
     </div>
 
     <!-- FOREGROUND OBJECTS -->
-    <img id="valentino-phone-screen" class="valentino-bed button" onclick="scene9()"
+    <img id="valentino-phone-screen" class="valentino-bed button" onclick="scene8()"
         src="img/1-valentino/white-phone-screen.png">
 
     <div class="bus-container">

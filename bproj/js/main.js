@@ -1,13 +1,82 @@
-//script für beste website
+//HIDDEN WORRIES OF JAVASCRIPT
 
+////////////////////////////////////////////////////////////////
+//// GLOBAL VARIABLES //////////////////////////////////////////
+
+let variable = {
+  currentScene: 0,
+  toggleCount: 0,
+  moveflag: false,
+  visible: 1,
+  textspeed: 20,
+}
+
+let domElement = {
+  body: document.querySelector("#body"),
+  intro: document.querySelector("#intro"),
+  titleBox: document.querySelector("#title-container"),
+  titleButton: document.querySelector("#title-button-container"),
+  scrollIcon: document.querySelector("#scroll-icon"),
+  about: document.querySelector("#about-content"),
+  assets: document.querySelector("#asset-container"),
+  knotTalkingRight: document.querySelector("#knot-talking-right"),
+  bubbleRight: document.querySelector("#speechbubble-big-right"),
+  knotTalkingLeft: document.querySelector("#knot-talking-left"),
+  bubbleLeft: document.querySelector("#speechbubble-big-left"),
+  helpYes: document.querySelector("#help-yes"),
+  helpNo: document.querySelector("#help-no"),
+  helpButtons: document.querySelector("#help-button"),
+  spotlight: document.querySelector("#spotlight"),
+}
+
+let character = {
+  knot: document.querySelector("#wiggle"),
+  valentino: document.querySelector("#valentino"),
+  valentino1: document.querySelector("#valentino-1"),
+  valentino2: document.querySelector("#valentino-2"),
+  valentino3: document.querySelector("#valentino-3"),
+  valentino4: document.querySelector("#valentino-4"),
+  valentino5: document.querySelector("#valentino-5"),
+  valentino6: document.querySelector("#valentino-6"),
+}
+
+let scene = {
+  whitePhoneScreen: document.querySelector("#valentino-phone-screen"),
+  alarmToggles: document.querySelector("#valentino-toggles"),
+  busOutside: document.querySelector("#bus-outside"),
+}
+
+let text = {
+  knotText: document.querySelector("#knot-text"),
+  phrase1: document.querySelector("#phrase1"),
+  phrase2: document.querySelector("#phrase2"),
+  phrase3: document.querySelector("#phrase3"),
+  phrase4: document.querySelector("#phrase4"),
+  phrase5: document.querySelector("#phrase5"),
+  phrase6: document.querySelector("#phrase6"),
+  phrase7: document.querySelector("#phrase7"),
+  phrase8: document.querySelector("#phrase8"),
+  phrase9: document.querySelector("#phrase9"),
+  phrase10: document.querySelector("#phrase10"),
+  phrase11: document.querySelector("#phrase11"),
+}
+
+////////////////////////////////////////////////////////////////
+// SIDE RELOAD /////////////////////////////////////////////////
+
+window.onload = function checkPosition() {
+  variable.currentScene = 0;
+  console.log("it should scroll to 0")
+  window.scrollTo(0, 0);
+}
 
 ////////////////////////////////////////////////////////////////
 //////// NAVIGATE //////////////////////////////////////////////
 
 function goHome() {
-  body.style.overflow = "block";
+  domElement.body.style.overflow = "block";
   window.scrollTo(0, 0);
-  currentScene = 0;
+  variable.currentScene = 0;
 }
 
 function goValentino() {
@@ -67,55 +136,6 @@ function handleFileComplete(event) {
 }
 
 ////////////////////////////////////////////////////////////////
-//// GLOBAL VARIABLES //////////////////////////////////////////
-
-var body = document.querySelector("#body")
-
-var w = window.innerWidth;
-var h = window.innerHeight;
-
-// var whereAmI = localStorage.getItem('scrollMemory');
-
-
-
-// INTRO
-var intro = document.querySelector("#intro");
-var titleBox = document.querySelector("#title-container");
-var titleButton = document.querySelector("#title-button-container");
-var about = document.querySelector("#about-content");
-
-// ASSETS
-var assets = document.querySelector("#asset-container");
-var knot = document.querySelector("#wiggle");
-var eyeImg = document.querySelector("#eye-img");
-var spotlight = document.querySelector("#spotlight");
-var horizontal = document.querySelector(".horizontal-scroll");
-
-//GET STORY TEXTS
-var phrase1 = document.querySelector("#phrase1");
-var phrase2 = document.querySelector("#phrase2");
-var phrase3 = document.querySelector("#phrase3");
-var phrase4 = document.querySelector("#phrase4");
-var phrase5 = document.querySelector("#phrase5");
-var phrase6 = document.querySelector("#phrase6");
-var phrase7 = document.querySelector("#phrase7");
-var phrase8 = document.querySelector("#phrase8");
-var phrase9 = document.querySelector("#phrase9");
-var phrase10 = document.querySelector("#phrase10");
-var phrase11 = document.querySelector("#phrase11");
-
-
-var helpYes = document.querySelector("#help-yes");
-var helpNo = document.querySelector("#help-no");
-var helpButtons = document.querySelector("#help-button");
-
-var currentScene = 0;
-var toggleCount = 0;
-
-
-
-
-////////////////////////////////////////////////////////////////
 ////EYES MAIN CHARACTER   //////////////////////////////////////
 
 const eyes = document.querySelector('.eyes');
@@ -147,22 +167,10 @@ document.addEventListener('scroll', function (e) {
 });
 
 ////////////////////////////////////////////////////////////////
-// SIDE RELOAD /////////////////////////////////////////////////
-
-window.onload = function checkPosition() {
-  currentScene = 0;
-  console.log("it should scroll to 0")
-  window.scrollTo(0, 0);
-  body.style.backgroundColor = "var(--weiss)"
-}
-
-////////////////////////////////////////////////////////////////
 //SPOTLIGHT!!!//////////////////////////////////////////////////
 
-var moveflag = false;
-
 window.addEventListener("mousemove", (e) => {
-  if (moveflag == true) {
+  if (variable.moveflag == true) {
     spotlightMove(e);
   }
 });
@@ -175,14 +183,12 @@ function spotlightMove(e) {
     "% " +
     (verschoben / window.innerHeight) * 100 +
     "%,transparent var(--spotlightTransparent),var(--spotlightColor) var(--spotlightSize))";
-  document.getElementById("spotlight").style.backgroundImage = string;
+  domElement.spotlight.style.backgroundImage = string;
 }
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // WEBSITE START ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 ////////////////////////////////
 //// ABOUT MENU  ///////////////
@@ -190,55 +196,52 @@ function spotlightMove(e) {
 // when "about" is clicked inside title-container
 function showAbout() {
   // set overlaying objects invisible
-  titleButton.style.opacity = "0";
-  titleBox.style.opacity = "0";
-  knot.style.opacity = "0";
+  domElement.titleButton.style.opacity = "0";
+  domElement.titleBox.style.opacity = "0";
+  character.knot.style.opacity = "0";
   //smooth fade-in
-  about.style.display = "block";
+  domElement.about.style.display = "block";
   setTimeout(() => {
-    about.classList.add("showAbout");
+    domElement.about.classList.add("showAbout");
   }, 400)
 }
 
 // when "about" is clicked inside about-container
 function hideAbout() {
   // smooth fade-out
-  about.classList.remove("showAbout");
+  domElement.about.classList.remove("showAbout");
   setTimeout(() => {
-    about.style.display = "none";
+    domElement.about.style.display = "none";
     // set overlaying objects visible
-    titleButton.style.opacity = "1";
-    titleBox.style.opacity = "1";
-    knot.style.opacity = "1";
+    domElement.titleButton.style.opacity = "1";
+    domElement.titleBox.style.opacity = "1";
+    character.knot.style.opacity = "1";
   }, 400)
 }
 
 ////////////////////////////////
 //// TITLE /////////////////////
 
-var visible = 1;
-var startControll = 1;
-
 // CHANGE BETWEEN BLACK AND WHITE TITLE
-titleButton.addEventListener('click', function () {
-  if (visible === 1 || visible === 3) {
-    visible = 0;
-    body.style.overflow = "visible";
-    document.querySelector("body").style.background = "#fafafa";
+domElement.titleButton.addEventListener('click', function () {
+  if (variable.visible === 1 || variable.visible === 3) {
+    variable.visible = 0;
+    domElement.body.style.overflow = "visible";
+    domElement.body.style.background = "#fafafa";
     document.querySelector("#title-dark").classList.add("titleBright");
     document.querySelector("#about-content").classList.add("whiteAbout");
     document.querySelector("#about-button").style.color = "var(--schwarz)";
-    document.querySelector("#about").style.color = "var(--schwarz)";
-    knot.classList.add("knotTitle");
+    domElement.about.style.color = "var(--schwarz)";
+    character.knot.classList.add("knotTitle");
   } else {
-    visible = 3;
-    body.style.overflow = "hidden";
-    document.querySelector("body").style.background = "#0c0c0c";
+    variable.visible = 3;
+    domElement.body.style.overflow = "hidden";
+    domElement.body.style.background = "#0c0c0c";
     document.querySelector("#title-dark").classList.remove("titleBright");
     document.querySelector("#about-content").classList.remove("whiteAbout");
     document.querySelector("#about-button").style.color = "var(--weiss)"
-    document.querySelector("#about").style.color = "var(--weiss)";
-    knot.classList.remove("knotTitle");
+    domElement.about.style.color = "var(--weiss)";
+    character.knot.classList.remove("knotTitle");
   }
 });
 
@@ -253,86 +256,95 @@ titleButton.addEventListener('click', function () {
 function animation(scrollPos) {
   // ANIMATIONS BASED ON SCROLL POSITION
   if (scrollLocation < 100) {
-    intro.style.display = "none";
-    titleBox.classList.remove("titleUp");
-    titleButton.classList.remove("ropeUp");
-    knot.className = '';
-    knot.classList.add("knotStart");
-    document.getElementById("knot-talking-right").classList.remove("bubbleGrow");
-    document.getElementById("speechbubble-big-right").classList.remove("bubbleGrow");
-    document.getElementById("scroll-icon").classList.remove("scroll-icon-after");
-    currentScene = 0;
+    domElement.intro.style.display = "none";
+    domElement.titleBox.classList.remove("titleUp");
+    domElement.titleButton.classList.remove("ropeUp");
+    character.knot.className = '';
+    character.knot.classList.add("knotStart");
+    domElement.knotTalkingRight.classList.remove("bubbleGrow");
+    domElement.bubbleRight.classList.remove("bubbleGrow");
+    domElement.scrollIcon.classList.remove("scroll-icon-after");
+    variable.currentScene = 0;
   }
 
   // 100 PX, "HELLO I'M STRESS KNOT" (MOVE KNOT, ADD SPEECHBUBBLE, REMOVE SCROLL ARROW)
   if (scrollLocation > 100) {
-    intro.style.display = "block";
-    titleBox.classList.add("titleUp");
-    titleButton.classList.add("ropeUp");
-    knot.classList.add("knotIntro");
-    document.getElementById("knot-talking-right").classList.add("bubbleGrow");
-    document.getElementById("speechbubble-big-right").classList.add("bubbleGrow");
-    document.getElementById("scroll-icon").classList.add("scroll-icon-after");
-    document.getElementById("knot-text").style.display = "block";
-    currentScene = 1;
+    domElement.intro.style.display = "block";
+    domElement.titleBox.classList.add("titleUp");
+    domElement.titleButton.classList.add("ropeUp");
+    domElement.bubbleRight.classList.add("bubbleGrow");
+    domElement.scrollIcon.classList.add("scroll-icon-after");
+    character.knot.classList.add("knotIntro");
+    domElement.knotTalkingRight.classList.add("bubbleGrow");
+    text.knotText.style.display = "block";
+    variable.currentScene = 1;
   }
 
 
   // setting INTRO and SPEECHBUBBLE invisible while scrolling to Storystart
   if (scrollLocation > 4000) {
-    titleBox.style.display = "none";
-    titleButton.style.display = "none";
-    document.querySelector("#speechbubble-big-right").classList.remove("bubbleGrow");
-    helpButtons.style.display = "none";
+    domElement.titleBox.style.display = "none";
+    domElement.titleButton.style.display = "none";
+    domElement.bubbleRight.classList.remove("bubbleGrow");
+    domElement.helpButtons.style.display = "none";
   } else {
-    titleBox.style.display = "block";
-    titleButton.style.display = "block";
-    document.querySelector("#speechbubble-big-right").classList.add("bubbleGrow");
+    domElement.titleBox.style.display = "block";
+    domElement.titleButton.style.display = "block";
+    domElement.bubbleRight.classList.add("bubbleGrow");
   }
 
-  // 10000PX, STORY ENTER, ASSETS VISIBLE
+  // 10000PX, STORY ENTER, domElement.assets VISIBLE
   if (scrollLocation <= 10000 && scrollLocation > 9500) {
-    assets.style.display = "block";
+    domElement.assets.style.display = "block";
   } else {
-    assets.style.display = "none";
+    domElement.assets.style.display = "none";
   }
 
   // 1. horizontal scroll valentino  
-  if (sLeft >= 100) {
-    document.querySelector("#bus-outside").classList.add("driveLeft");
+  if (sLeft > 1) {
+    console.log("jetzt gehts los")
   } else {
-    document.querySelector("#bus-outside").classList.remove("driveLeft");
+    character.valentino6.style.display = "none";
+    character.valentino6.classList = "valentino-run";
+    character.valentino5.classList = "valentino-run";
+    scene.busOutside.classList = "";
   }
-
+  if (sLeft > 1 * window.innerWidth) {
+    scene.busOutside.classList.add("driveLeft");
+  } else {
+    scene.busOutside.classList = "";
+  }
   // 2. horizontal scroll valentino  
   if (sLeft > 1.5 * window.innerWidth) {
-    document.querySelector("#valentino-6").style.display = "block";
-    document.querySelector("#valentino-5").style.display = "none";
+    character.valentino6.style.display = "block";
+    character.valentino5.style.display = "none";
   } else {
-    document.querySelector("#valentino-5").style.display = "block";
-    document.querySelector("#valentino-6").style.display = "none";
+    character.valentino5.style.display = "block";
+    character.valentino6.style.display = "none";
   }
 
   // 3. horizontal scroll valentino  
   if (sLeft > 2.5 * window.innerWidth) {
-    document.querySelector("#valentino-6").classList.add("valentinoMiddle");
-    document.querySelector("#valentino-5").classList.add("valentinoMiddle");
+    character.valentino6.classList.add("valentinoMiddle");
+    character.valentino5.classList.add("valentinoMiddle");
   } else {
-    document.querySelector("#valentino-6").classList.remove("valentinoMiddle");
-    document.querySelector("#valentino-5").classList.remove("valentinoMiddle");
+    character.valentino6.classList.remove("valentinoMiddle");
+    character.valentino5.classList.remove("valentinoMiddle");
   }
 
   // 4. horizontal scroll valentino  
   if (sLeft > 2.8 * window.innerWidth) {
-    document.querySelector("#valentino-5").classList.add("valentinoLeaves");
-    document.querySelector("#valentino-6").classList.add("valentinoLeaves");
-    document.querySelector("#bus-outside").classList.add("driveAway");
+    character.valentino5.classList.add("valentinoLeaves");
+    character.valentino6.classList.add("valentinoLeaves");
+    scene.busOutside.classList.add("driveAway");
   } else {
-    document.querySelector("#valentino-5").classList.remove("valentinoLeaves");
-    document.querySelector("#valentino-6").classList.remove("valentinoLeaves");
-    document.querySelector("#bus-outside").classList.remove("driveAway");
+    character.valentino5.classList.remove("valentinoLeaves");
+    character.valentino6.classList.remove("valentinoLeaves");
+    scene.busOutside.classList.remove("driveAway");
   }
+
 }
+
 
 ////////////////////////////////
 // GENERAL SCENE CHANGES
@@ -340,126 +352,145 @@ function animation(scrollPos) {
 
 // KNOT INTRO
 // SCENE 1 IS BY SCROLL (hello i'm knot)
-body.addEventListener('click', function () {
-  console.log("Scene: " + currentScene + ", I am at: " + scrollY);
-
+domElement.body.addEventListener('click', function () {
   // SCENE 2 you dont usally see me"
-  if (currentScene == 1) {
-    phrase1.style.display = "none";
-    phrase2.style.display = "block";
+  if (variable.currentScene === 1) {
+    text.phrase1.style.display = "none";
+    text.phrase2.style.display = "block";
     setTimeout(() => {
-      currentScene = 2;
+      variable.currentScene = 2;
     }, 500)
   }
   // SCENE 3 (it is my responsibility to…)
-  if (currentScene == 2) {
-    phrase1.style.display = "none";
-    phrase2.style.display = "none";
-    phrase3.style.display = "block";
-    helpButtons.style.display = "block";
+  if (variable.currentScene === 2) {
+    text.phrase1.style.display = "none";
+    text.phrase2.style.display = "none";
+    text.phrase3.style.display = "block";
+    domElement.helpButtons.style.display = "block";
     setTimeout(() => {
-      currentScene = 3;
+      variable.currentScene = 3;
     }, 500)
   }
   // SCENE 4 (do you wanna help me?)
-  if (currentScene == 3) {
-    phrase1.style.display = "none";
-    phrase2.style.display = "none";
-    phrase3.style.display = "none";
+  if (variable.currentScene === 3) {
+    text.phrase1.style.display = "none";
+    text.phrase2.style.display = "none";
+    text.phrase3.style.display = "none";
     phrase4.style.display = "block";
-    helpYes.classList.add("helpUp");
-    helpNo.classList.add("helpUp");
+    domElement.helpYes.classList.add("helpUp");
+    domElement.helpNo.classList.add("helpUp");
     setTimeout(() => {
-      currentScene = 4;
+      variable.currentScene = 4;
     }, 500)
   }
   // VALENTINO
   // SCENE 5 (Here we are, the first person of the day.)
-  if (currentScene == 5) {
-    phrase4.style.display = "none";
-    phrase5.style.display = "block";
-    assets.style.display = "block";
+  if (variable.currentScene === 5) {
+    text.phrase4.style.display = "none";
+    text.phrase5.style.display = "block";
+    domElement.assets.style.display = "block";
     setTimeout(() => {
-      currentScene = 6;
+      variable.currentScene = 6;
     }, 500)
   }
   // SCENE 6 (let’s see what we have here)
-  if (currentScene == 6) {
-    phrase5.style.display = "none";
+  if (variable.currentScene === 6) {
+    text.phrase5.style.display = "none";
     //make valentino visible
-    document.querySelector("#valentino").style.display = "block";
-    knot.classList.add("knotValentinoObserve");
-    moveflag = true;
+    character.valentino.style.display = "block";
+    character.knot.classList.add("knotValentinoObserve");
+    variable.moveflag = true;
     setTimeout(() => {
-      phrase6.style.display = "block";
-      document.querySelector("#knot-talking-left").classList.add("bubbleGrow");
-      document.querySelector("#speechbubble-big-left").classList.add("bubbleGrow");
-      currentScene = 7;
+      text.phrase6.style.display = "block";
+      domElement.knotTalkingLeft.classList.add("bubbleGrow");
+      domElement.bubbleLeft.classList.add("bubbleGrow");
+      variable.currentScene = 7;
     }, 500)
   }
-  // SCENE 8 (What can I do for him? …. Mhhhh…)
-  if (currentScene == 8) {
-    phrase6.style.display = "none";
-    phrase7.style.display = "none";
-    phrase8.style.display = "block";
-    document.querySelector("#valentino-2").style.display = "block";
-    document.querySelector("#valentino-phone-screen").style.display = "block";
-    document.querySelector("#valentino-1").style.display = "none";
-  }
-});
 
+  // SCENE 10 run Valentino!! 
+  if (variable.currentScene === 10) {
+    domElement.spotlight.style.display = "none";
+    character.knot.style.display = "none";
+    character.valentino4.style.display = "none";
+    character.valentino5.style.display = "block";
+    document.querySelector("#line-floor-valentino").style.display = "none";
+    document.querySelector("#horizontal-scroll-container").style.display = "block";
+    document.querySelector(".bus-container").style.display = "block";
+    // horizontaler scroll
+    domElement.body.style.overflow = "hidden";
+    domElement.body.style.overflowX = "hidden";
+    domElement.body.style.overflowX = "visible";
+    setTimeout(() => {
+      variable.currentScene = 11;
+    }, 200)
+  }
+
+  if (variable.currentScene === 11) {
+
+  }
+
+  console.log("Scene: " + variable.currentScene + ", I am at: " + scrollY);
+});
 
 ////////////////////////////////
 //BUTTONS ////////////////////////////////
 
 // SCENE 4 
 // "WOULD YOU LIKE TO BE MY ASSISTENT?"
-var trigger2 = 0;
+
 //// (NO)
-helpNo.addEventListener('mouseenter', function () {
-  trigger2 = trigger2 + 1;
-  console.log("trigger count: " + trigger2)
-  helpYes.style.marginLeft = "20vh";
+domElement.helpNo.addEventListener('mouseenter', function () {
+  domElement.helpYes.style.marginLeft = "20vh";
 });
-helpNo.addEventListener('mouseleave', function () {
-  helpYes.style.marginLeft = "0vh";
+domElement.helpNo.addEventListener('mouseleave', function () {
+  domElement.helpYes.style.marginLeft = "0vh";
 });
 
 //// (YES)
-helpButtons.addEventListener('click', function () {
+domElement.helpButtons.addEventListener('click', function () {
   console.log("helpYes");
-  intro.style.display = "none";
-  helpButtons.style.display = "none";
-  body.style.overflow = "hidden";
-  body.style.height = "10000vh";
+  domElement.intro.style.display = "none";
+  domElement.helpButtons.style.display = "none";
+  domElement.body.style.overflow = "hidden";
+  domElement.body.style.height = "10000vh";
   window.scrollTo(0, 10000);
-  spotlight.style.display = "block";
-  currentScene = 5;
+  domElement.spotlight.style.display = "block";
+  variable.currentScene = 5;
 });
 
 // SCENE 7 (Valentino ID was clicked)
 function scene7() {
-  phrase6.style.display = "none";
-  phrase7.style.display = "block";
+  text.phrase6.style.display = "none";
+  text.phrase7.style.display = "block";
+  scene.whitePhoneScreen.style.display = "block";
+  character.valentino2.style.display = "block";
+  character.valentino1.style.display = "none";
   document.querySelector("#valentino-info").style.display = "none";
-  phrase6.style.display = "none";
   setTimeout(() => {
-    currentScene = 8;
+    variable.currentScene = 8;
   }, 500)
 }
 
-// SCENE 9 (white Phone was clicked)
-function scene9() {
-  console.log("yes");
-  phrase8.style.opacity = "0";
-  document.querySelector("#knot-talking-left").classList.remove("bubbleGrow");
-  document.querySelector("#speechbubble-big-left").classList.remove("bubbleGrow");
-  document.querySelector("#valentino-toggles").style.display = "block";
-  knot.classList.add("knotValentinoDisappear");
-  toggleCount = 0;
+// SCENE 8 (white Phone was clicked) PLEASE DEACTIVATE THE OTHER ALARMS
+function scene8() {
+  text.phrase6.style.display = "none";
+  text.phrase7.style.display = "none";
+  text.phrase8.style.display = "block";
+  scene.alarmToggles.style.display = "block";
+  variable.toggleCount = 0;
+  setTimeout(() => {
+    variable.currentScene = 9;
+  }, 500)
+  setTimeout(() => {
+    text.phrase8.style.opacity = "0";
+    domElement.knotTalkingLeft.classList.remove("bubbleGrow");
+    domElement.bubbleLeft.classList.remove("bubbleGrow");
+    character.knot.classList.add("knotValentinoDisappear");
+  }, 2500)
 }
 
-// SCENE 10 (DEACTIVATING THE TOGGLES)
+// SCENE 9 (DEACTIVATING THE TOGGLES)
 function toggle1() {
   document.querySelector("#toggle1-off").classList.remove("toggle-off");
 }
@@ -476,122 +507,89 @@ function toggle4() {
   document.querySelector("#toggle4-off").classList.remove("toggle-off");
 }
 
-// all toggles off? -> ANIMATED CHANGE TO SCENE 11
+// all toggles off? -> ANIMATED CHANGE TO SCENE 10
 function countToggle() {
-  toggleCount = toggleCount + 1;
-  if (toggleCount == 4) {
-    phrase9.style.display = "block";
-    document.querySelector("#valentino-toggles").style.display = "none";
-    document.querySelector("#valentino-phone-screen").style.opacity = "0";
-    document.querySelector("#valentino-2").style.display = "none";
-    document.querySelector("#valentino-3").style.display = "block";
+  variable.toggleCount = variable.toggleCount + 1;
+  if (variable.toggleCount === 4) {
+    text.phrase9.style.display = "block";
+    scene.alarmToggles.style.display = "none";
+    scene.whitePhoneScreen.style.opacity = "0";
+    character.valentino2.style.display = "none";
+    character.valentino3.style.display = "block";
 
     // smooth fade-out phonescreen
     setTimeout(() => {
-      document.querySelector("#valentino-phone-screen").style.display = "none";
+      scene.whitePhoneScreen.style.display = "none";
     }, 500)
-    knot.classList.add("knotValentinoAppear");
+    character.knot.classList.add("knotValentinoAppear");
 
     // speechbubble "sleep on"
     setTimeout(() => {
-      document.querySelector("#knot-talking-left").classList.add("bubbleGrow");
-      document.querySelector("#speechbubble-big-left").classList.add("bubbleGrow");
+      domElement.knotTalkingLeft.classList.add("bubbleGrow");
+      domElement.bubbleLeft.classList.add("bubbleGrow");
     }, 2000)
 
     // go to black
     setTimeout(() => {
-      document.querySelector("#knot-talking-left").classList.remove("bubbleGrow");
-      document.querySelector("#speechbubble-big-left").classList.remove("bubbleGrow");
-      knot.style.opacity = "0";
-      console.log = "one hour later";
+      domElement.knotTalkingLeft.classList.remove("bubbleGrow");
+      domElement.bubbleLeft.classList.remove("bubbleGrow");
+      character.knot.style.opacity = "0";
+      console.log("one hour later");
     }, 5000)
 
     // show one hour later
     setTimeout(() => {
-      phrase9.style.display = "none";
-      phrase10.style.display = "block";
       document.querySelector("#one-hour-later").style.display = "block";
+      text.phrase9.style.display = "none";
+      text.phrase10.style.display = "block";
     }, 5500)
 
     // hide one hour later
     setTimeout(() => {
       document.querySelector("#one-hour-later").style.opacity = "0";
       document.querySelector("#trumpet-container").style.display = "block";
-      knot.classList.add("knotTrumpet");
-      knot.style.opacity = "1";
+      character.knot.classList.add("knotTrumpet");
+      character.knot.style.opacity = "1";
     }, 8000)
 
     // trumpet!!!!
     setTimeout(() => {
-      phrase10.style.display = "none";
-      phrase11.style.display = "block";
-      document.querySelector("#knot-talking-right").classList.add("bubbleGrow");
-      document.querySelector("#speechbubble-big-right").classList.add("bubbleGrow");
-      document.querySelector("#valentino-4").style.display = "block";
-      document.querySelector("#valentino-3").style.display = "none";
-      currentScene = 11;
+      variable.currentScene = 10;
+      text.phrase10.style.display = "none";
+      text.phrase11.style.display = "block";
+      document.querySelector("#one-hour-later").style.display = "none";
+      domElement.spotlight.style.setProperty('--spotlightSize', '500px');
+      domElement.spotlight.style.setProperty('--spotlightTransparent', '500px');
+      domElement.knotTalkingRight.classList.add("bubbleGrow");
+      domElement.bubbleRight.classList.add("bubbleGrow");
+      character.valentino4.style.display = "block";
+      character.valentino3.style.display = "none";
     }, 8500)
   }
 }
 
-
-
-// CHANGE VALENTINI 1-4 IN BED on some event (not built-in yet)
-function showValentino2() {
-  valentino1.style.display = "none";
-  valentino2.style.display = "block";
-}
-
-function showValentino3() {
-  valentino2.style.display = "none";
-  valentino3.style.display = "block";
-}
-
-function showValentino4() {
-  valentino3.style.display = "none";
-  valentino4.style.display = "block";
-}
-
 // CHANGE TO HORIZONTAL SCROLL
-function runBus() {
-  spotlight.style.display = "none";
-  knot.style.display = "none";
-  document.querySelector("#text-valentino").style.display = "none";
-  document.querySelector("#valentino-1").style.display = "none";
+(function () {
+  function scrollHorizontally(e) {
+    e = window.event || e;
+    var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+    console.log(delta);
+    document.documentElement.scrollLeft -= (delta * 30); // Multiplied by 40
+    document.body.scrollLeft -= (delta * 30); // Multiplied by 40
+    e.preventDefault();
+  }
+  if (window.addEventListener) {
+    // IE9, Chrome, Safari, Opera
+    window.addEventListener("mousewheel", scrollHorizontally, false);
+    // Firefox
+    window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
+  } else {
+    // IE 6/7/8
+    window.attachEvent("onmousewheel", scrollHorizontally);
+  }
+})();
 
-  document.querySelector("#valentino-running").style.display = "block";
-  document.querySelector("#horizontal-scroll-container").style.display = "block";
-  document.querySelector(".bus-container").style.display = "block";
 
-  // vertical scroll
-  body.style.overflow = "hidden";
-  body.style.overflowX = "hidden";
-  body.style.overflowX = "visible";
-
-
-  // HORIZONTALES SCROLLEN
-  // http://www.dte.web.id/2013/02/event-mouse-wheel.html
-
-  (function () {
-    function scrollHorizontally(e) {
-      e = window.event || e;
-      var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-      console.log(delta);
-      document.documentElement.scrollLeft -= (delta * 30); // Multiplied by 40
-      document.body.scrollLeft -= (delta * 30); // Multiplied by 40
-      e.preventDefault();
-    }
-    if (window.addEventListener) {
-      // IE9, Chrome, Safari, Opera
-      window.addEventListener("mousewheel", scrollHorizontally, false);
-      // Firefox
-      window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
-    } else {
-      // IE 6/7/8
-      window.attachEvent("onmousewheel", scrollHorizontally);
-    }
-  })();
-}
 
 
 ////////////////////////////////////////////////////////////////
@@ -629,13 +627,13 @@ function hideId() {
 ////////////////////////////////////////////////////////////////
 // TYPING ANIMATIONS FOR ALLL THE TEXTS: ///////////////////////
 
-var textspeed = 20;
+
 
 new TypeIt("#phrase1", {
     startDelay: 1000,
     strings: ["…"],
     cursor: false,
-    speed: textspeed,
+    speed: variable.textspeed,
     waitUntilVisible: true,
   }).pause(5000)
   .type("please click…")
@@ -644,64 +642,64 @@ new TypeIt("#phrase1", {
 new TypeIt("#phrase2", {
   cursor: false,
   strings: ["…"],
-  speed: textspeed,
+  speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase3", {
   cursor: false,
   strings: ["…"],
-  speed: textspeed,
+  speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase4", {
   cursor: false,
-  speed: textspeed,
+  speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase5", {
   startDelay: 1000,
   cursor: false,
-  speed: textspeed,
+  speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase6", {
   startDelay: 1000,
   cursor: false,
-  speed: textspeed,
+  speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase7", {
   cursor: false,
   strings: ["…"],
-  speed: textspeed,
+  speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase8", {
   cursor: false,
-  speed: textspeed,
+  speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase9", {
   cursor: false,
-  speed: textspeed,
+  speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase10", {
   cursor: false,
-  speed: textspeed,
+  speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase11", {
   cursor: false,
-  speed: textspeed,
+  speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
