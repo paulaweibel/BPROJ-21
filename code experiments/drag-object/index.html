@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Drag Multiple Elements</title>
+  <style>
+    #window-fix {
+      position: fixed;
+      width: 100%;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      touch-action: none;
+    }
+
+    #window-move {
+      width: 100%;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      touch-action: none;
+    }
+
+    .window1 {
+      max-width: 320px;
+      touch-action: none;
+      user-select: none;
+      position: relative;
+    }
+
+    .open-me{
+      position: relative;
+      left: 300px;
+    }
+
+    .open-me:hover {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="window-fix">
+    <div><img class="window1" src="window-2.png"></div>
+  </div>
+
+  <div id="window-move">
+    <div class="open-me"><img class="window1" src="window-1.png"></div>
+  </div>
+
+  <script>
+    var container = document.querySelector("#window-move");
+    var activeItem = null;
+
+    var active = false;
+
+    container.addEventListener("touchstart", dragStart, false);
+    container.addEventListener("touchend", dragEnd, false);
+    container.addEventListener("touchmove", drag, false);
+
+    container.addEventListener("mousedown", dragStart, false);
+    container.addEventListener("mouseup", dragEnd, false);
+    container.addEventListener("mousemove", drag, false);
+
+    function dragStart(e) {
+
+      if (e.target !== e.currentTarget) {
+        active = true;
+
+        // this is the item we are interacting with
+        activeItem = e.target;
+
+        if (activeItem !== null) {
+          if (!activeItem.xOffset) {
+            activeItem.xOffset = 0;
+          }
+
+          if (e.type === "touchstart") {
+            activeItem.initialX = e.touches[0].clientX - activeItem.xOffset;
+          } else {
+            console.log("doing something!");
+            activeItem.initialX = e.clientX - activeItem.xOffset;
+          }
+        }
+      }
+    }
+
+    function dragEnd(e) {
+      if (activeItem !== null) {
+        activeItem.initialX = activeItem.currentX;
+      }
+
+      active = false;
+      activeItem = null;
+    }
+
+    function drag(e) {
+      if (active) {
+        e.preventDefault();
+        if (e.type === "touchmove") {
+          activeItem.currentX = e.touches[0].clientX - activeItem.initialX;
+        } else {
+          activeItem.currentX = e.clientX - activeItem.initialX;
+        }
+        activeItem.xOffset = activeItem.currentX;
+
+        // set limits for window !!
+        if (activeItem.currentX > 1) {
+          activeItem.currentX = 1;
+        }
+
+        if (activeItem.currentX < -300){
+          activeItem.currentX = -300;
+          console.log("wind is blowing mercy away")
+        }
+
+        console.log(activeItem.currentX)
+
+        setTranslate(activeItem.currentX, 0, activeItem);
+      }
+    }
+
+    function setTranslate(xPos, yPos, el) {
+      el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+    }
+  </script>
+</body>
+
+</html>
