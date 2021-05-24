@@ -5,7 +5,7 @@
     position: fixed;
     left: 0vw;
     top: 0vh;
-    width: 30vh;
+    width: 40vh;
 }
 
 .layer1 {
@@ -143,8 +143,8 @@
 .trumpet {
     position: absolute;
     height: 10vh;
-    left: 17vh;
-    top: 14vh;
+    left: 20vh;
+    top: 20vh;
     animation: trumpet-animation 1.5s infinite ease-in-out;
 }
 
@@ -173,7 +173,7 @@
 
 /* EYES */
 #eye-img {
-    width: 30vh;
+    width:40vh;
     animation: eye-blink 10s ease-in-out infinite;
 }
 
@@ -191,7 +191,7 @@
 /* KNOT MOVE TO INTRO-START */
 .knotIntro {
     margin-left: 10vw !important;
-    margin-top: 40vh !important;
+    margin-top: 30vh !important;
 }
 
 /* KNOT ABOVE VALENTINO */
@@ -235,38 +235,41 @@
 /* ------ MAIN CHARACTER TEXT------------------------------ */
 
 #knot-talking-right {
-    
     position: fixed;
-    top: -20vh;
-    left: 30vh;
+    top: 0vh;
+    left: 30vw;
     transform-origin: left bottom;
     transform: scale(0);
     transition: transform 1s;
+    background-color: white;
 }
 
 #knot-talking-left {
     position: fixed;
-    top: -10vh;
-    left: -40vh;
-    width: 40vh;
+    top: 0vh;
+    left: -50vw;
     transform-origin: right bottom;
     transform: scale(0);
     transition: transform 1s;
+    background-color: white;
 }
 
 #speechbubble-big-right {
     opacity: 0;
+    display: none;
     transform-origin: left bottom;
     transform: scale(0);
-    width: 50vh;
+    /* width: 50vh; */
+    width: 50vw;
     transition: transform 1s;
 }
 
 #speechbubble-big-left {
+    display: none;
     opacity: 0;
     transform-origin: right bottom;
     transform: scale(0);
-    width: 50vh;
+    width: 50vw;
     transition: transform 1s;
 }
 
@@ -279,7 +282,7 @@
 .phrase-right {
     position: absolute;
     top: 0;
-    width: 40vh;
+    width: 40vw;
     max-height: 15vh;
     padding-top: 6vh;
     padding-left: 5vh;
@@ -289,7 +292,7 @@
 .phrase-left {
     position: absolute;
     top: 0;
-    width: 40vh;
+    width: 40vw;
     max-height: 15vh;
     padding-top: 6vh;
     padding-left: 5vh;
