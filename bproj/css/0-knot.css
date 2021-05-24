@@ -33,12 +33,11 @@
 
 
 /* ANIMATION BIG TEXTS */
-
 .huge-text {
     position: fixed;
     display: none;
-    font-family: sans-serif;
-    font-weight: bold;
+    font-family: 'Architects Daughter', cursive;
+    font-weight: bolder;
     text-align: center;
     font-size: 20vw;
     white-space: nowrap;

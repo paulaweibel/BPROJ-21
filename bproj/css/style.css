@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 @font-face {
   font-family: 'Providence';
@@ -50,14 +51,14 @@ body {
 /* BOLD FONT */
 b {
   font-size: 3vh;
-  /* font-weight: 700; */
+  font-weight: 700;
   line-height: 5vh;
 }
 
 /* NORMAL FONT */
 p {
-  font-size: 2vh;
-  /* font-weight: 400; */
+  font-size: 3vh;
+  font-weight: 400;
   line-height: 3vh;
 }
 
