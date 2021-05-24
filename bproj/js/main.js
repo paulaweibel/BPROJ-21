@@ -342,7 +342,7 @@ function animation(scrollPos) {
 
   // 3. horizontal scroll valentino  
   if (sLeft > 2.5 * window.innerWidth) {
-    
+
     character.valentino6.classList.add("valentinoMiddle");
     character.valentino5.classList.add("valentinoMiddle");
   } else {
@@ -470,7 +470,7 @@ domElement.body.addEventListener('click', function () {
 //BUTTONS ////////////////////////////////
 
 // SCENE 4 
-// "WOULD YOU LIKE TO BE MY ASSISTENT?"
+// "WOULD YOU LIKE TO BE MY ASSISTANT?"
 
 //// (NO)
 domElement.helpNo.addEventListener('mouseenter', function () {
@@ -587,6 +587,8 @@ function countToggle() {
 
     // trumpet!!!!
     setTimeout(() => {
+
+      document.querySelector("#wake-up-scream1").style.display = "block";
       variable.currentScene = 10;
       text.phrase10.style.display = "none";
       text.phrase11.style.display = "block";
@@ -602,9 +604,9 @@ function countToggle() {
 }
 
 
-
 // SCENE 11 CHANGE TO HORIZONTAL SCROLL
 function scene11() {
+  document.querySelector("#wake-up-scream1").style.display = "none";
   (function () {
 
     function scrollHorizontally(e) {
