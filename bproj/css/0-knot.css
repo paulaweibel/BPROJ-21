@@ -37,7 +37,7 @@
 .huge-text {
     position: fixed;
     display: none;
-    font-family: 'Helvetica Neue';
+    font-family: sans-serif;
     font-weight: bold;
     text-align: center;
     font-size: 20vw;
@@ -236,9 +236,10 @@
 /* ------ MAIN CHARACTER TEXT------------------------------ */
 
 #knot-talking-right {
+    
     position: fixed;
-    top: -10vh;
-    left: 20vh;
+    top: -20vh;
+    left: 30vh;
     transform-origin: left bottom;
     transform: scale(0);
     transition: transform 1s;
@@ -255,6 +256,7 @@
 }
 
 #speechbubble-big-right {
+    opacity: 0;
     transform-origin: left bottom;
     transform: scale(0);
     width: 50vh;
@@ -262,6 +264,7 @@
 }
 
 #speechbubble-big-left {
+    opacity: 0;
     transform-origin: right bottom;
     transform: scale(0);
     width: 50vh;
@@ -269,6 +272,7 @@
 }
 
 .bubbleGrow {
+    
     transform: scale(1) !important;
 }
 

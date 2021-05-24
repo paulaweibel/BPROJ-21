@@ -10,7 +10,7 @@ let variable = {
   toggleCount: 0,
   moveflag: false,
   visible: 1,
-  textspeed: 20,
+  textspeed: 30,
 }
 
 let domElement = {
@@ -71,9 +71,9 @@ let text = {
 // SIDE RELOAD /////////////////////////////////////////////////
 
 window.onload = function checkPosition() {
+  window.scrollTo(0, 0);
   variable.currentScene = 0;
   console.log("it should scroll to 0")
-  window.scrollTo(0, 0);
 }
 
 ////////////////////////////////////////////////////////////////

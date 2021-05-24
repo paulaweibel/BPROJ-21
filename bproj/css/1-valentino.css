@@ -253,7 +253,7 @@
 .cinematic {
     position: absolute;
     width: 100%;
-    background-color: black;
+    background-color: var(--schwarz);
     transition: height 0.2s;
 }
 
