@@ -3,6 +3,8 @@
 ////////////////////////////////////////////////////////////////
 //// GLOBAL VARIABLES //////////////////////////////////////////
 
+
+
 let variable = {
   currentScene: 0,
   toggleCount: 0,
@@ -587,7 +589,8 @@ function countToggle() {
 
     // trumpet!!!!
     setTimeout(() => {
-
+      document.querySelector(".alarmclock1").currentTime = 0;
+      document.querySelector(".alarmclock1").play();
       document.querySelector("#wake-up-scream1").style.display = "block";
       document.querySelector("#wake-up-scream2").style.display = "block";
       variable.currentScene = 10;
