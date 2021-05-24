@@ -145,11 +145,28 @@
 
 #valentino-5 {
     display: none;
+    animation: running-man 0.5s infinite ease-in-out;
 }
 
 #valentino-6 {
     transition: margin-left 3s;
     display: none;
+    animation: running-man 0.5s infinite ease-in-out;
+}
+
+@keyframes running-man {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+
+    }
 }
 
 
