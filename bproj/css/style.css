@@ -68,9 +68,9 @@ p {
 
 /* HOME BUTTON */
 
-#home-button{
+#home-button {
   position: fixed;
-  right:0;
+  right: 0;
   margin-top: -100px;
   margin-right: 1vh;
   max-width: 5vh;
@@ -78,9 +78,10 @@ p {
   transition: margin-top 0.5s;
 }
 
-.showHome{
+.showHome {
   margin-top: 1vh !important;
 }
+
 /* -------------------------------- ALL CONTENT -------------------------------- */
 
 #all {

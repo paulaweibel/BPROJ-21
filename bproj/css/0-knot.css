@@ -29,6 +29,103 @@
 }
 
 
+
+
+
+/* ANIMATION BIG TEXTS */
+
+#huge-text {
+    position: fixed;
+    font-family: 'Helvetica Neue';
+    font-weight: bold;
+    font-size: 220px;
+    width: 90vw;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.wake-up-scream1 {
+    top: 15vh;
+    animation: screaming-knot1 0.4s infinite ease-in-out;
+}
+
+.wake-up-scream2 {
+    bottom: 15vh;
+    animation: screaming-knot1 0.4s infinite ease-in-out;
+    animation-delay: 0.2s;
+}
+
+@keyframes screaming-knot1 {
+    0% {
+        transform: scale(1);
+        color: #fafafa;
+    }
+
+    50% {
+        transform: scale(1.1);
+        color: #0c0c0c;
+    }
+
+    100% {
+        transform: scale(1);
+        color: #fafafa;
+    }
+}
+
+/* .run-scream {
+    top: 40vh;
+    font-style: italic;
+    animation: screaming-knot2 0.1s 10 ease-in-out;
+}
+
+@keyframes screaming-knot2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(10px, 20px);
+    }
+
+    50% {
+        transform: translate(0, 0);
+    }
+
+    57% {
+        transform: translate(10px, -20px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.looser-scream {
+    top: 70vh;
+    animation: screaming-knot3 5s 10 ease-in-out;
+}
+
+@keyframes screaming-knot3 {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+} */
+
+
+
+
+
+
+
+
 #trumpet-container {
     display: none;
 }
@@ -55,8 +152,6 @@
     }
 
 }
-
-
 
 
 /* KNOT WIGGLE CONTAINER */
@@ -111,17 +206,17 @@
     margin-top: 20vh !important;
 }
 
-.knotValentinoRunStart{
+.knotValentinoRunStart {
     margin-left: 0vw !important;
     margin-top: 40vh !important;
 }
 
-.knotValentinoRunMiddle{
+.knotValentinoRunMiddle {
     margin-left: -50vh !important;
     margin-top: 40vh !important;
 }
 
-.knotValentinoRunEnd{
+.knotValentinoRunEnd {
     margin-left: 10vw !important;
     margin-top: 30vh !important;
 }
