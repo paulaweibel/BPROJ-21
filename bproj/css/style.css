@@ -19,6 +19,7 @@
 }
 
 body {
+  white-space: normal;
   font-family: 'Architects Daughter', cursive;
   /* font-family: 'Courier New', Courier, monospace; */
   /* font-family: 'Providence', cursive; */
@@ -236,11 +237,11 @@ p {
 /* ABOUT -------------------------------- */
 .about-menu {
   position: absolute;
-  right: 3rem;
+  left: calc(100vw - 7rem);
   margin-right: 1rem;
   top: 20px;
   width: 3rem;
-  text-align: right;
+  text-align: left;
   font-size: 1.5rem;
   color: grey;
   transition: opacity 1s, transform 0.1s;
