@@ -326,7 +326,7 @@ function animation(scrollPos) {
     scene.busOutside.classList = "";
     character.knot.classList.remove("knotValentinoRunMiddle");
   }
-  if (sLeft > 1 * window.innerWidth) {
+  if (sLeft > 0.4 * window.innerWidth) {
     scene.busOutside.classList.add("driveLeft");
 
   } else {
