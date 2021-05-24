@@ -193,14 +193,14 @@
 }
 
 #bus-stop {
-    top: 10vh;
-    max-height: 40%;
+    top: 20vh;
+    max-height: 30%;
     right: 20vh;
 }
 
 #lawri {
-    max-height: 40%;
-    top: 20vh;
+    max-height: 30%;
+    top: 25vh;
     right: 60vh;
 }
 
@@ -237,4 +237,49 @@
 
 .valentinoLeaves {
     margin-left: 80vw !important;
+}
+
+
+/* CINEMATIC EFFECT */
+#cinematic-effect {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.cinematic {
+    position: absolute;
+    width: 100%;
+    background-color: black;
+    transition: height 0.2s;
+}
+
+#cinematic-up {
+    top: 0;
+    height: 0vh;
+    animation: cinematic 2s ease-in calc(var(--scrollX) * -2s) paused;
+}
+
+#cinematic-down {
+    bottom: 0;
+    height: 0vh;
+    animation: cinematic 2s ease-in calc(var(--scrollX) * -2s) paused;
+}
+
+@keyframes cinematic {
+    0% {
+        height: 0;
+    }
+
+    74% {
+        height: 30vh;
+    }
+
+    75% {
+        height: 0;
+    }
+
 }

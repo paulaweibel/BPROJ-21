@@ -111,6 +111,21 @@
     margin-top: 20vh !important;
 }
 
+.knotValentinoRunStart{
+    margin-left: 0vw !important;
+    margin-top: 40vh !important;
+}
+
+.knotValentinoRunMiddle{
+    margin-left: -50vh !important;
+    margin-top: 40vh !important;
+}
+
+.knotValentinoRunEnd{
+    margin-left: 10vw !important;
+    margin-top: 30vh !important;
+}
+
 
 /* ------ MAIN CHARACTER TEXT------------------------------ */
 

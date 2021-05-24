@@ -21,6 +21,8 @@
     <!-- PROGRESS BAR ------------------------------>
     <div id="progress"></div>
 
+
+
     <!-- BACKGROUND --------------->
     <img onload="alarm()" id="light-texture" src="img/background.png">
 
@@ -149,6 +151,8 @@
                 <div class="knot-text-valentino">
                     <b id="phrase5" class="phrase phrase-right">Here we are, the first person of the day.</b>
                     <b id="phrase11" class="phrase phrase-right">WAKE UPPP <br>!!!!!!!!!!!!</b>
+                    <b id="phrase12" class="phrase phrase-right">RUUUN</b>
+                    <b id="phrase13" class="phrase phrase-right">Dang it, i missed him!</b>
                 </div>
             </div>
             <!-- SPEECHBUBBLES ON LEFT-->
@@ -174,6 +178,8 @@
         <img id="help-no" class="button help-button" src="img/objects-icons/no-icon.png">
     </div>
 
+
+
     <!-- FOREGROUND OBJECTS -->
     <img id="valentino-phone-screen" class="valentino-bed button" onclick="scene8()"
         src="img/1-valentino/white-phone-screen.png">
@@ -185,6 +191,16 @@
     <div id="one-hour-later">
         <b id="phrase10" class="phrase">one hour later</b>
     </div>
+
+    <div id="cinematic-effect">
+        <div id="cinematic-up" class="cinematic"></div>
+        <div id="cinematic-down" class="cinematic"></div>
+    </div>
+
+
+
+
+
 
 
     <!-- CHARACTERS ID-PAGES ----->
@@ -208,11 +224,14 @@
 
     <!-- NAVIGATE -->
     <div id="navigation">
-        (temporary navigation)<br>
+        <!-- (temporary navigation)<br> -->
         <a class="blu" onclick="goHome()">home</a>
         <a class="blu" onclick="goValentino()">valentino</a>
         <a class="blu" onclick="goLawrence()">lawrence</a>
     </div>
+
+    <!--HOME BUTTON -->
+    <img onclick="goHome()" id="home-button" src="img/knot-images/round-icon.png">
 
     <!-- ABOUT -------------------->
     <div id="about-container">

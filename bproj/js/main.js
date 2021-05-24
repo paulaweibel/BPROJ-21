@@ -17,6 +17,7 @@ let domElement = {
   titleBox: document.querySelector("#title-container"),
   titleButton: document.querySelector("#title-button-container"),
   scrollIcon: document.querySelector("#scroll-icon"),
+  homeButton: document.querySelector("#home-button"),
   about: document.querySelector("#about-content"),
   assets: document.querySelector("#asset-container"),
   knotTalkingRight: document.querySelector("#knot-talking-right"),
@@ -44,6 +45,7 @@ let scene = {
   whitePhoneScreen: document.querySelector("#valentino-phone-screen"),
   alarmToggles: document.querySelector("#valentino-toggles"),
   busOutside: document.querySelector("#bus-outside"),
+  cinematicEffect: document.querySelector("#cinematic-effect"),
 }
 
 let text = {
@@ -59,6 +61,8 @@ let text = {
   phrase9: document.querySelector("#phrase9"),
   phrase10: document.querySelector("#phrase10"),
   phrase11: document.querySelector("#phrase11"),
+  phrase12: document.querySelector("#phrase12"),
+  phrase13: document.querySelector("#phrase13"),
 }
 
 ////////////////////////////////////////////////////////////////
@@ -80,7 +84,8 @@ function goHome() {
 }
 
 function goValentino() {
-  window.scrollTo(0, 3700);
+  window.scrollTo(0, 10000);
+  variable.currentScene = 10;
 }
 
 function goLawrence() {
@@ -165,6 +170,11 @@ document.addEventListener('scroll', function (e) {
     ticking = true;
   }
 });
+
+// --SCROLLX HORIZONTAL CSS-VARIABLE
+window.addEventListener('scroll', () => {
+  document.body.style.setProperty('--scrollX', window.pageXOffset / (window.innerWidth + sLeft));
+}, true);
 
 ////////////////////////////////////////////////////////////////
 //SPOTLIGHT!!!//////////////////////////////////////////////////
@@ -254,11 +264,14 @@ domElement.titleButton.addEventListener('click', function () {
 // TRIGGERS ON SCROLL POSITIONS 
 
 function animation(scrollPos) {
+
+
   // ANIMATIONS BASED ON SCROLL POSITION
   if (scrollLocation < 100) {
     domElement.intro.style.display = "none";
     domElement.titleBox.classList.remove("titleUp");
     domElement.titleButton.classList.remove("ropeUp");
+    domElement.homeButton.classList.remove("showHome");
     character.knot.className = '';
     character.knot.classList.add("knotStart");
     domElement.knotTalkingRight.classList.remove("bubbleGrow");
@@ -272,6 +285,7 @@ function animation(scrollPos) {
     domElement.intro.style.display = "block";
     domElement.titleBox.classList.add("titleUp");
     domElement.titleButton.classList.add("ropeUp");
+    domElement.homeButton.classList.add("showHome");
     domElement.bubbleRight.classList.add("bubbleGrow");
     domElement.scrollIcon.classList.add("scroll-icon-after");
     character.knot.classList.add("knotIntro");
@@ -302,17 +316,20 @@ function animation(scrollPos) {
 
   // 1. horizontal scroll valentino  
   if (sLeft > 1) {
-    console.log("jetzt gehts los")
+    character.knot.classList.add("knotValentinoRunMiddle");
   } else {
     character.valentino6.style.display = "none";
     character.valentino6.classList = "valentino-run";
     character.valentino5.classList = "valentino-run";
     scene.busOutside.classList = "";
+    character.knot.classList.remove("knotValentinoRunMiddle");
   }
   if (sLeft > 1 * window.innerWidth) {
     scene.busOutside.classList.add("driveLeft");
+
   } else {
     scene.busOutside.classList = "";
+
   }
   // 2. horizontal scroll valentino  
   if (sLeft > 1.5 * window.innerWidth) {
@@ -325,21 +342,29 @@ function animation(scrollPos) {
 
   // 3. horizontal scroll valentino  
   if (sLeft > 2.5 * window.innerWidth) {
+    
     character.valentino6.classList.add("valentinoMiddle");
     character.valentino5.classList.add("valentinoMiddle");
   } else {
+
     character.valentino6.classList.remove("valentinoMiddle");
     character.valentino5.classList.remove("valentinoMiddle");
   }
 
   // 4. horizontal scroll valentino  
   if (sLeft > 2.8 * window.innerWidth) {
+    text.phrase12.display = "none";
+    text.phrase13.display = "block";
     character.valentino5.classList.add("valentinoLeaves");
     character.valentino6.classList.add("valentinoLeaves");
+    character.knot.classList.add("knotValentinoRunEnd");
     scene.busOutside.classList.add("driveAway");
   } else {
+    text.phrase12.display = "block";
+    text.phrase13.display = "none";
     character.valentino5.classList.remove("valentinoLeaves");
     character.valentino6.classList.remove("valentinoLeaves");
+    character.knot.classList.remove("knotValentinoRunEnd");
     scene.busOutside.classList.remove("driveAway");
   }
 
@@ -353,6 +378,7 @@ function animation(scrollPos) {
 // KNOT INTRO
 // SCENE 1 IS BY SCROLL (hello i'm knot)
 domElement.body.addEventListener('click', function () {
+
   // SCENE 2 you dont usally see me"
   if (variable.currentScene === 1) {
     text.phrase1.style.display = "none";
@@ -386,6 +412,9 @@ domElement.body.addEventListener('click', function () {
   // VALENTINO
   // SCENE 5 (Here we are, the first person of the day.)
   if (variable.currentScene === 5) {
+    text.phrase1.style.display = "none";
+    text.phrase2.style.display = "none";
+    text.phrase3.style.display = "none";
     text.phrase4.style.display = "none";
     text.phrase5.style.display = "block";
     domElement.assets.style.display = "block";
@@ -410,10 +439,14 @@ domElement.body.addEventListener('click', function () {
 
   // SCENE 10 run Valentino!! 
   if (variable.currentScene === 10) {
+    text.phrase11.style.display = "none";
     domElement.spotlight.style.display = "none";
-    character.knot.style.display = "none";
+    document.querySelector("#trumpet-container").style.display = "none";
+    character.knot.classList = "";
+    character.knot.classList.add("knotValentinoRunStart");
     character.valentino4.style.display = "none";
     character.valentino5.style.display = "block";
+    scene.cinematicEffect.style.display = "block";
     document.querySelector("#line-floor-valentino").style.display = "none";
     document.querySelector("#horizontal-scroll-container").style.display = "block";
     document.querySelector(".bus-container").style.display = "block";
@@ -421,12 +454,14 @@ domElement.body.addEventListener('click', function () {
     domElement.body.style.overflow = "hidden";
     domElement.body.style.overflowX = "hidden";
     domElement.body.style.overflowX = "visible";
+
+    // console.log(--scrollX);
     setTimeout(() => {
       variable.currentScene = 11;
+      // text.phrase12.style.display = "block";
       scene11();
     }, 200)
   }
-
 
   console.log("Scene: " + variable.currentScene + ", I am at: " + scrollY);
 });
@@ -566,9 +601,12 @@ function countToggle() {
   }
 }
 
+
+
 // SCENE 11 CHANGE TO HORIZONTAL SCROLL
 function scene11() {
   (function () {
+
     function scrollHorizontally(e) {
       e = window.event || e;
       var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));

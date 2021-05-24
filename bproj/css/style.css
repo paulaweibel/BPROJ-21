@@ -26,7 +26,6 @@ body {
   /* font-family: 'Coming Soon', cursive;  */
   /* font-family: 'Walter Turncoat', cursive;  */
   font-family: 'Providence', cursive;
-
   text-transform: uppercase;
   font-weight: 400;
   font-size: 16px;
@@ -53,7 +52,7 @@ body {
 
 /* BOLD FONT */
 b {
-  font-size: 4vh;
+  font-size: 3vh;
   font-weight: 700;
   line-height: 5vh;
 }
@@ -65,6 +64,23 @@ p {
   line-height: 3vh;
 }
 
+
+
+/* HOME BUTTON */
+
+#home-button{
+  position: fixed;
+  right:0;
+  margin-top: -100px;
+  margin-right: 1vh;
+  max-width: 5vh;
+  max-height: 5vh;
+  transition: margin-top 0.5s;
+}
+
+.showHome{
+  margin-top: 1vh !important;
+}
 /* -------------------------------- ALL CONTENT -------------------------------- */
 
 #all {
@@ -105,7 +121,7 @@ p {
 /* -------------------------------- SCRIBBLE BACKGROUND -------------------------------- */
 #light-texture {
   position: fixed;
-  opacity: 1;
+  opacity: 0.5;
   top: 0;
   left: 0;
   width: 1900px;
@@ -222,14 +238,14 @@ p {
 
 /* ABOUT -------------------------------- */
 .about-menu {
-  position: fixed;
-  right: 0;
-  margin-right: 30px;
+  position: absolute;
+  right: 3rem;
+  margin-right: 1rem;
   top: 20px;
   width: 3rem;
   text-align: right;
   font-size: 1.5rem;
-  color: var(--weiss);
+  color: grey;
   transition: opacity 1s, transform 0.1s;
 }
 
@@ -301,12 +317,12 @@ p {
   margin-bottom: -30vh;
   left: calc(23vw + 30vh);
   width: 15vh;
-  transition: margin-bottom 1s 0.5s ease, margin-left 0.4s, transform 0.2s;
+  transition: margin-bottom 1s 0.5s ease, margin-left 0.2s, transform 0.2s;
 }
 
 #help-no {
   left: calc(23vw + 50vh);
-  transition: margin-bottom 1s 0.5s ease, margin-left 0.4s, transform 0.2s, opacity 0.2s;
+  transition: margin-bottom 1s 0.5s ease, margin-left 0.4s, transform 0.2s, opacity 0.15s;
 }
 
 #help-no:hover {
