@@ -496,6 +496,12 @@ domElement.helpButtons.addEventListener('click', function () {
 
 // SCENE 7 (Valentino ID was clicked)
 function scene7() {
+
+  document.querySelector(".alarm-clock1").currentTime = 0;
+  document.querySelector(".alarm-clock1").play();
+  document.querySelector(".alarm-clock2").currentTime = 0;
+  document.querySelector(".alarm-clock2").play();
+
   text.phrase6.style.display = "none";
   text.phrase7.style.display = "block";
   scene.whitePhoneScreen.style.display = "block";
@@ -509,6 +515,12 @@ function scene7() {
 
 // SCENE 8 (white Phone was clicked) PLEASE DEACTIVATE THE OTHER ALARMS
 function scene8() {
+
+  document.querySelector(".alarm-clock1").currentTime = 0;
+  document.querySelector(".alarm-clock1").pause();
+  document.querySelector(".alarm-clock2").currentTime = 0;
+  document.querySelector(".alarm-clock2").pause();
+
   text.phrase6.style.display = "none";
   text.phrase7.style.display = "none";
   text.phrase8.style.display = "block";
@@ -528,18 +540,30 @@ function scene8() {
 // SCENE 9 (DEACTIVATING THE TOGGLES)
 function toggle1() {
   document.querySelector("#toggle1-off").classList.remove("toggle-off");
+  document.querySelector(".toggle-click").currentTime = 0;
+  document.querySelector(".toggle-click").play();
+  document.querySelector(".toggle-click").loop = false;
 }
 
 function toggle2() {
   document.querySelector("#toggle2-off").classList.remove("toggle-off");
+  document.querySelector(".toggle-click").currentTime = 0;
+  document.querySelector(".toggle-click").play();
+  document.querySelector(".toggle-click").loop = false;
 }
 
 function toggle3() {
   document.querySelector("#toggle3-off").classList.remove("toggle-off");
+  document.querySelector(".toggle-click").currentTime = 0;
+  document.querySelector(".toggle-click").play();
+  document.querySelector(".toggle-click").loop = false;
 }
 
 function toggle4() {
   document.querySelector("#toggle4-off").classList.remove("toggle-off");
+  document.querySelector(".toggle-click").currentTime = 0;
+  document.querySelector(".toggle-click").play();
+  document.querySelector(".toggle-click").loop = false;
 }
 
 // all toggles off? -> ANIMATED CHANGE TO SCENE 10
@@ -589,8 +613,8 @@ function countToggle() {
 
     // trumpet!!!!
     setTimeout(() => {
-      document.querySelector(".alarmclock1").currentTime = 0;
-      document.querySelector(".alarmclock1").play();
+      document.querySelector(".trumpet-sound").currentTime = 0;
+      document.querySelector(".trumpet-sound").play();
       document.querySelector("#wake-up-scream1").style.display = "block";
       document.querySelector("#wake-up-scream2").style.display = "block";
       variable.currentScene = 10;
@@ -610,6 +634,9 @@ function countToggle() {
 
 // SCENE 11 CHANGE TO HORIZONTAL SCROLL
 function scene11() {
+  document.querySelector(".trumpet-sound").currentTime = 0;
+  document.querySelector(".trumpet-sound").pause();
+
   document.querySelector("#wake-up-scream1").style.display = "none";
   document.querySelector("#wake-up-scream2").style.display = "none";
 
