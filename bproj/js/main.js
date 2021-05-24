@@ -589,6 +589,7 @@ function countToggle() {
     setTimeout(() => {
 
       document.querySelector("#wake-up-scream1").style.display = "block";
+      document.querySelector("#wake-up-scream2").style.display = "block";
       variable.currentScene = 10;
       text.phrase10.style.display = "none";
       text.phrase11.style.display = "block";
@@ -607,6 +608,8 @@ function countToggle() {
 // SCENE 11 CHANGE TO HORIZONTAL SCROLL
 function scene11() {
   document.querySelector("#wake-up-scream1").style.display = "none";
+  document.querySelector("#wake-up-scream2").style.display = "none";
+
   (function () {
 
     function scrollHorizontally(e) {

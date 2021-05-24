@@ -36,10 +36,9 @@
 
 .huge-text {
     position: fixed;
-    /* display: none; */
+    display: none;
     font-family: 'Helvetica Neue';
     font-weight: bold;
-    /* margin: 30px; */
     text-align: center;
     font-size: 20vw;
     white-space: nowrap;
@@ -63,7 +62,17 @@
         color: #fafafa;
     }
 
+    49% {
+        transform: scale(1);
+        color: #fafafa;
+    }
+
     50% {
+        transform: scale(1);
+        color: #0c0c0c;
+    }
+
+    99% {
         transform: scale(1);
         color: #0c0c0c;
     }
