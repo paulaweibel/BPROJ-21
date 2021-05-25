@@ -173,7 +173,7 @@
 
 /* EYES */
 #eye-img {
-    width:40vh;
+    width: 40vh;
     animation: eye-blink 10s ease-in-out infinite;
 }
 
@@ -274,7 +274,7 @@
 }
 
 .bubbleGrow {
-    
+
     transform: scale(1) !important;
 }
 

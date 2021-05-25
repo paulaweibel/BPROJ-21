@@ -53,6 +53,7 @@ let text = {
   phrase1: document.querySelector("#phrase1"),
   phrase2: document.querySelector("#phrase2"),
   phrase3: document.querySelector("#phrase3"),
+  phrase3b: document.querySelector("#phrase3b"),
   phrase4: document.querySelector("#phrase4"),
   phrase5: document.querySelector("#phrase5"),
   phrase6: document.querySelector("#phrase6"),
@@ -310,6 +311,7 @@ domElement.body.addEventListener('click', function () {
     text.phrase1.style.display = "none";
     text.phrase2.style.display = "block";
     text.phrase3.style.display = "none";
+    text.phrase3b.style.display = "none";
     text.phrase4.style.display = "none";
     text.phrase5.style.display = "none";
 
@@ -322,16 +324,31 @@ domElement.body.addEventListener('click', function () {
     text.phrase1.style.display = "none";
     text.phrase2.style.display = "none";
     text.phrase3.style.display = "block";
+    text.phrase3b.style.display = "none";
+    domElement.helpButtons.style.display = "block";
+    setTimeout(() => {
+      variable.currentScene = 3.1;
+    }, 500)
+  }
+  // SCENE 3b
+  if (variable.currentScene === 3.1) {
+    text.phrase1.style.display = "none";
+    text.phrase2.style.display = "none";
+    text.phrase3.style.display = "none";
+    text.phrase3b.style.display = "block";
     domElement.helpButtons.style.display = "block";
     setTimeout(() => {
       variable.currentScene = 3;
     }, 500)
   }
+
+
   // SCENE 4 (do you wanna help me?)
   if (variable.currentScene === 3) {
     text.phrase1.style.display = "none";
     text.phrase2.style.display = "none";
     text.phrase3.style.display = "none";
+    text.phrase3b.style.display = "none";
     phrase4.style.display = "block";
     domElement.helpYes.classList.add("helpUp");
     domElement.helpNo.classList.add("helpUp");
@@ -454,10 +471,7 @@ function scene8() {
     variable.currentScene = 9;
   }, 500)
   setTimeout(() => {
-    text.phrase8.style.opacity = "0";
-    domElement.knotTalkingLeft.classList.remove("bubbleGrow");
-    domElement.bubbleLeft.classList.remove("bubbleGrow");
-    character.knot.classList.add("knotValentinoDisappear");
+
   }, 2500)
 }
 
@@ -492,6 +506,10 @@ function toggle4() {
 
 // all toggles off? -> ANIMATED CHANGE TO SCENE 10
 function countToggle() {
+  text.phrase8.style.opacity = "0";
+  domElement.knotTalkingLeft.classList.remove("bubbleGrow");
+  domElement.bubbleLeft.classList.remove("bubbleGrow");
+  character.knot.classList.add("knotValentinoDisappear");
   variable.toggleCount = variable.toggleCount + 1;
   if (variable.toggleCount === 4) {
     text.phrase9.style.display = "block";
@@ -679,33 +697,39 @@ function hideId() {
 // TYPING ANIMATIONS FOR ALLL THE TEXTS: ///////////////////////
 
 
-
 new TypeIt("#phrase1", {
     startDelay: 1000,
-    strings: ["…"],
     cursor: false,
+    strings: ["Hello, I'm Knot!", "A stress causing ego"],
     speed: variable.textspeed,
     waitUntilVisible: true,
-  }).pause(5000)
-  .type("please click…")
+  })
   .go();
 
 new TypeIt("#phrase2", {
   cursor: false,
-  strings: ["…"],
+  strings: ["You don't usually see me, but I decided to make an exception this time."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase3", {
   cursor: false,
-  strings: ["…"],
+  strings: ["Stress has many shades.", "My job is to visit people from time to time and increase their stress level"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase3b", {
+  cursor: false,
+  strings: ["I know what you are thinking,", "but somehow I have to make a living...", "so please don't judge me!"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase4", {
   cursor: false,
+  strings: ["Would you like to be my assistant today?"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -713,6 +737,7 @@ new TypeIt("#phrase4", {
 new TypeIt("#phrase5", {
   startDelay: 1000,
   cursor: false,
+  strings: ["GREAT!", "Here we are, the first person of the day"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -720,25 +745,28 @@ new TypeIt("#phrase5", {
 new TypeIt("#phrase6", {
   startDelay: 1000,
   cursor: false,
+  strings: ["Let’s see what we have here..."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase7", {
   cursor: false,
-  strings: ["…"],
+  strings: ["What can we do for him?", "Mhhhh"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase8", {
   cursor: false,
+  strings: ["it's up to you, turn off the other alarms."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase9", {
   cursor: false,
+  strings: ["keep on sleeping, you still have plenty of time…"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -771,8 +799,8 @@ function goHome() {
 
 function goValentino() {
   variable.currentScene = 11;
-  domElement.assets.style.display="block";
-  character.valentino.style.display="block";
+  domElement.assets.style.display = "block";
+  character.valentino.style.display = "block";
   window.scrollTo(0, 10000);
   domElement.body.style.backgroundColor = "var(--weiss)";
   character.knot.classList.add("knotValentinoRunStart");
