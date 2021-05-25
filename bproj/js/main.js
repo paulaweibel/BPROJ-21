@@ -125,6 +125,33 @@ function handleFileComplete(event) {
   }
 }
 
+
+////////////////////////////////////////////////////////////////
+//// MOUSE STOPPED MOVING //////////////////////////////////////
+
+var mouseStartedMoving = false;
+var mouseMoved = false;
+const MINIMUM_MOUSE_MOVE_TIME = 100;
+
+setInterval(() => { 
+   if(!mouseMoved && mouseStartedMoving) {
+       //Mouse stopped moving
+       //Do CSS change
+       setTimeout(() => {
+        document.querySelector("#mouseMoved").classList.add("mousePaused");
+      }, 100000)
+       mouseStartedMoving = false;
+   }
+   mouseMoved = false;
+   
+}, MINIMUM_MOUSE_MOVE_TIME);
+
+body.onmousemove = function(ev){
+  mouseStartedMoving = true;
+  document.querySelector("#mouseMoved").classList.remove("mousePaused");
+  mouseMoved = true;
+}
+
 ////////////////////////////////////////////////////////////////
 ////EYES MAIN CHARACTER   //////////////////////////////////////
 

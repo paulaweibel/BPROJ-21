@@ -28,8 +28,16 @@
     animation: knot4 5s infinite ease-in-out;
 }
 
+#mouseMoved{
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 2s, opacity 2s;
+}
 
-
+.mousePaused{
+    opacity: 1 !important;
+    transform: scale(10) !important;
+}
 
 
 /* ANIMATION BIG TEXTS */
