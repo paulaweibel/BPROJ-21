@@ -700,7 +700,7 @@ function hideId() {
 new TypeIt("#phrase1", {
     startDelay: 1000,
     cursor: false,
-    strings: ["Hello, I'm Knot!", "A stress causing ego"],
+    strings: [""],
     speed: variable.textspeed,
     waitUntilVisible: true,
   })
