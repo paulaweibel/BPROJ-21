@@ -137,7 +137,7 @@ setInterval(() => {
     //Mouse stopped moving
     setTimeout(() => {
       document.querySelector("#mouseMoved").classList.add("mousePaused");
-    }, 3000000)
+    }, 2000)
     mouseStartedMoving = false;
   }
   mouseMoved = false;
@@ -380,7 +380,7 @@ function scene2() {
   }, 500)
 }
 
-function scene3a(){
+function scene3a() {
   text.phrase1.style.display = "none";
   text.phrase2.style.display = "none";
   text.phrase3.style.display = "none";
@@ -391,7 +391,7 @@ function scene3a(){
   }, 500)
 }
 
-function scene3(){
+function scene3() {
   text.phrase1.style.display = "none";
   text.phrase2.style.display = "none";
   text.phrase3.style.display = "none";
@@ -428,7 +428,7 @@ domElement.helpButtons.addEventListener('click', function () {
 });
 
 // SCENE 5; VALENTINO ENTER
-function scene5(){
+function scene5() {
   text.phrase4.style.display = "none";
   text.phrase5.style.display = "block";
   domElement.assets.style.display = "block";
@@ -438,7 +438,7 @@ function scene5(){
 }
 
 // Let’s see what we have here...
-function scene6(){
+function scene6() {
   text.phrase5.style.display = "none";
   //make valentino visible
   character.valentino.style.display = "block";
@@ -581,7 +581,7 @@ function countToggle() {
 }
 
 // VALENTINO RUN HORIZONTAL!!
-function scene10(){
+function scene10() {
   document.querySelector("#trumpet-container").style.display = "none";
   character.knot.classList = "";
   character.knot.classList.add("knotValentinoRunStart");

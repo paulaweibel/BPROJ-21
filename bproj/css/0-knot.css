@@ -28,15 +28,47 @@
     animation: knot4 5s infinite ease-in-out;
 }
 
-#mouseMoved{
-    opacity: 0;
-    transform: scale(0) rotate(0);
-    transition: transform 2s, opacity 2s;
+#mouseMoved {
+    opacity: 1;
+    transform: scale(0.5) rotate(0deg);
+    transition: 1s ease-out;
+    animation: ani1 1s 1 ease-in forwards;
 }
 
-.mousePaused{
+@keyframes ani1 {
+    0% {
+        background-color: #0c0c0c;
+    }
+
+    10% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+
+.mousePaused {
     opacity: 1 !important;
-    transform: scale(10) rotate(-50deg) !important;
+    transform: scale(8) rotate(120deg) !important;
+    transition: 5s ease-out !important;
+    animation: back-animation 5s 1 ease-in forwards !important;
+}
+
+@keyframes back-animation {
+    0% {
+        background-color: transparent;
+    }
+
+    80% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: #0c0c0c;
+    }
 }
 
 
