@@ -40,12 +40,15 @@ let character = {
   valentino5: document.querySelector("#valentino-5"),
   valentino6: document.querySelector("#valentino-6"),
   lawrence: document.querySelector("#lawrence"),
+  mercy: document.querySelector("#mercy"),
+  barbara: document.querySelector("#barbara"),
 }
 
 let scene = {
   whitePhoneScreen: document.querySelector("#valentino-phone-screen"),
   alarmToggles: document.querySelector("#valentino-toggles"),
   bus: document.querySelector("#bus"),
+  horizontalScrollContainer: document.querySelector("#horizontal-scroll-container"),
   cinematicEffect: document.querySelector("#cinematic-effect"),
 }
 
@@ -74,6 +77,27 @@ window.onload = function checkPosition() {
   domElement.body.style.overflow = "block";
   window.scrollTo(0, 0);
   variable.currentScene = 0;
+}
+
+////////////////////////////////////////////////////////////////
+//////// NAVIGATE //////////////////////////////////////////////
+
+function goHome() {
+  window.scrollTo(0, 0);
+  variable.currentScene = 0;
+  domElement.body.style.overflow = "hidden";
+  domElement.body.style.overflowX = "hidden";
+  domElement.body.style.overflowX = "hidden";
+  scene.cinematicEffect.style.display = "none";
+  domElement.assets.style.display = "none";
+  character.valentino.style.display = "none";
+  character.lawrence.style.display = "none";
+  character.mercy.style.display = "none";
+  character.barbara.style.display = "none";
+}
+
+function goValentino() {
+  console.log("go to valentino doesnt exist")
 }
 
 ////////////////////////////////////////////////////////////////
@@ -127,11 +151,9 @@ function handleFileComplete(event) {
 
 ////////////////////////////////////////////////////////////////
 //// MOUSE STOPPED MOVING //////////////////////////////////////
-
 var mouseStartedMoving = false;
 var mouseMoved = false;
 const MINIMUM_MOUSE_MOVE_TIME = 2000;
-
 setInterval(() => {
   if (!mouseMoved && mouseStartedMoving) {
     //Mouse stopped moving
@@ -145,7 +167,6 @@ setInterval(() => {
   }
   mouseMoved = false;
 }, MINIMUM_MOUSE_MOVE_TIME);
-
 //Mouse started moving
 body.onmousemove = function (ev) {
   mouseStartedMoving = true;
@@ -273,13 +294,15 @@ domElement.titleButton.addEventListener('click', function () {
 // STORY START ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 ////////////////////////////////
 // TRIGGERS ON SCROLL POSITIONS 
 
 function animation(scrollPos) {
   // ANIMATIONS BASED ON SCROLL POSITION
   if (scrollLocation < 100) {
+    domElement.assets.style.display = "none";
+    character.valentino.style.display = "none";
+    character.lawrence.style.display = "none";
     domElement.intro.style.display = "none";
     domElement.titleBox.classList.remove("titleUp");
     domElement.titleButton.classList.remove("ropeUp");
@@ -324,9 +347,8 @@ function animation(scrollPos) {
 }
 
 
-////////////////////////////////
-// GENERAL SCENE CHANGES
-
+//////////////////////////////////////////////////////
+// SCENES ////////////////////////////////////////////
 
 // TRIGGER THINGS WHEN BODY IS CLICKED
 domElement.body.addEventListener('click', function () {
@@ -355,12 +377,14 @@ domElement.body.addEventListener('click', function () {
   if (variable.currentScene === 10) {
     scene10();
   }
+  // SCENE 11 run Valentino!! 
+  if (variable.currentScene === 13) {
+    scene13();
+  }
   console.log("Scene: " + variable.currentScene + ", I am at: " + scrollY);
 });
 
-////////////////////////////////
-// SCENES ////////////////////////////////
-
+// SCENE 1: You don't usually see me, but I decided to make an exception this time.
 function scene1() {
   text.phrase1.style.display = "none";
   text.phrase2.style.display = "block";
@@ -373,17 +397,18 @@ function scene1() {
   }, 500)
 }
 
+// SCENE 2: Stress has many shades.", "My job is to visit people from time
 function scene2() {
   text.phrase1.style.display = "none";
   text.phrase2.style.display = "none";
   text.phrase3.style.display = "block";
-  text.phrase3b.style.display = "none";
   domElement.helpButtons.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 3.1;
   }, 500)
 }
 
+// SCENE 3A I know what you are thinking,", "but somehow I have
 function scene3a() {
   text.phrase1.style.display = "none";
   text.phrase2.style.display = "none";
@@ -395,6 +420,7 @@ function scene3a() {
   }, 500)
 }
 
+// SCENE 3 Would you like to be my assistant today?
 function scene3() {
   text.phrase1.style.display = "none";
   text.phrase2.style.display = "none";
@@ -408,8 +434,6 @@ function scene3() {
   }, 500)
 }
 
-
-// SCENE 4 // "WOULD YOU LIKE TO BE MY ASSISTANT?"
 //// (NO)
 domElement.helpNo.addEventListener('mouseenter', function () {
   domElement.helpYes.style.marginLeft = "20vh";
@@ -420,7 +444,6 @@ domElement.helpNo.addEventListener('mouseleave', function () {
 
 //// (YES)
 domElement.helpButtons.addEventListener('click', function () {
-  console.log("helpYes");
   domElement.intro.style.display = "none";
   domElement.helpButtons.style.display = "none";
   domElement.body.style.overflow = "hidden";
@@ -431,7 +454,7 @@ domElement.helpButtons.addEventListener('click', function () {
   variable.currentScene = 5;
 });
 
-// SCENE 5; VALENTINO ENTER
+// SCENE 5; GREAT!", "Here we are, the first person of the day
 function scene5() {
   text.phrase4.style.display = "none";
   text.phrase5.style.display = "block";
@@ -441,7 +464,7 @@ function scene5() {
   }, 500)
 }
 
-// Let’s see what we have here...
+// SCENE 6: Let’s see what we have here...
 function scene6() {
   text.phrase5.style.display = "none";
   //make valentino visible
@@ -456,7 +479,7 @@ function scene6() {
   }, 500)
 }
 
-// SCENE 7 (Valentino ID was clicked)
+// SCENE 7 (Valentino ID was clicked) What can we do for him?"
 function scene7() {
   document.querySelector(".alarm-clock1").currentTime = 0;
   document.querySelector(".alarm-clock1").play();
@@ -474,7 +497,7 @@ function scene7() {
   }, 500)
 }
 
-// SCENE 8 (white Phone was clicked) PLEASE DEACTIVATE THE OTHER ALARMS
+// SCENE 8 (white Phone was clicked) it's up to you, turn off the other alarms
 function scene8() {
   character.valentino2.style.display = "none";
   character.valentino3.style.display = "block";
@@ -536,7 +559,7 @@ function countToggle() {
     }, 500)
     character.knot.classList.add("knotValentinoAppear");
 
-    // speechbubble "sleep on"
+    // speechbubble "keep on sleeping, you still have plenty of time…"
     setTimeout(() => {
       domElement.bubbleLeft.style.display = "block";
       domElement.knotTalkingLeft.classList.add("bubbleGrow");
@@ -548,7 +571,6 @@ function countToggle() {
       domElement.knotTalkingLeft.classList.remove("bubbleGrow");
       domElement.bubbleLeft.classList.remove("bubbleGrow");
       character.knot.style.opacity = "0";
-      console.log("one hour later");
     }, 5000)
 
     // show one hour later
@@ -584,7 +606,7 @@ function countToggle() {
   }
 }
 
-// VALENTINO RUN HORIZONTAL!!
+// SCENE 10: VALENTINO RUN HORIZONTAL!!
 function scene10() {
   document.querySelector("#trumpet-container").style.display = "none";
   character.knot.classList = "";
@@ -593,23 +615,20 @@ function scene10() {
   character.valentino5.style.display = "block";
   scene.cinematicEffect.style.display = "block";
   document.querySelector("#line-floor-valentino").style.display = "none";
-  document.querySelector("#horizontal-scroll-container").style.display = "block";
+  scene.horizontalScrollContainer.style.display = "block";
   document.querySelector(".bus-container").style.display = "block";
   // horizontaler scroll
   domElement.body.style.overflow = "hidden";
   domElement.body.style.overflowX = "hidden";
   domElement.body.style.overflowX = "visible";
 
-  // console.log(--scrollX);
   setTimeout(() => {
     variable.currentScene = 11;
-    // text.phrase12.style.display = "block";
-    scene11();
+    horizontalValentino();
   }, 200)
 }
 
-// SCENE 11 CHANGE TO HORIZONTAL SCROLL
-function scene11() {
+function horizontalValentino() {
   document.querySelector(".trumpet-sound").currentTime = 0;
   document.querySelector(".trumpet-sound").pause();
 
@@ -621,7 +640,6 @@ function scene11() {
       runToBus();
       e = window.event || e;
       var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-      // console.log(delta);
       document.documentElement.scrollLeft -= (delta * 30); // Multiplied by 40
       document.body.scrollLeft -= (delta * 30); // Multiplied by 40
       e.preventDefault();
@@ -685,16 +703,34 @@ function runToBus() {
   }
 }
 
-// SCENE 12 GO TO LAWRENCE
+// SCENE 11 GO TO LAWRENCE
 function goLawrence() {
   domElement.assets.style.display = "block";
-  character.valentino.style.display = "none";
   character.lawrence.style.display = "block";
-  variable.currentScene = 20;
+  character.valentino.style.display = "none";
+  scene.horizontalScrollContainer.style.display = "none";
+  scene.cinematicEffect.style.display = "none";
+  variable.currentScene = 12;
+  character.knot.classList.add("knotLawrenceBusstop")
   domElement.body.style.backgroundColor = "var(--weiss)"
   domElement.body.style.height = "10000vh"
   window.scrollTo(0, 15000);
   idLawrence();
+}
+
+function scene12() {
+  text.phrase11.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 13;
+  }, 200)
+}
+
+function scene13() {
+  text.phrase11.style.display = "none";
+  text.phrase12.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 14;
+  }, 200)
 }
 
 
@@ -735,13 +771,12 @@ function hideId() {
 
 
 new TypeIt("#phrase1", {
-    startDelay: 1000,
-    cursor: false,
-    strings: [""],
-    speed: variable.textspeed,
-    waitUntilVisible: true,
-  })
-  .go();
+  startDelay: 1000,
+  cursor: false,
+  strings: [""],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go();
 
 new TypeIt("#phrase2", {
   cursor: false,
@@ -825,22 +860,3 @@ new TypeIt("#phrase11", {
 //   speed: variable.textspeed,
 //   waitUntilVisible: true,
 // }).go()
-
-////////////////////////////////////////////////////////////////
-//////// NAVIGATE //////////////////////////////////////////////
-
-function goHome() {
-  window.scrollTo(0, 0);
-  variable.currentScene = 0;
-  domElement.body.style.overflow = "hidden";
-  domElement.body.style.overflowX = "hidden";
-  domElement.body.style.overflowX = "hidden";
-  scene.cinematicEffect.style.display = "none";
-  domElement.assets.style.display = "none";
-  domElement.valentino.style.display = "none";
-  domElement.lawrence.style.display = "none";
-}
-
-function goValentino() {
-  console.log("go to valentino doesnt exist")
-}

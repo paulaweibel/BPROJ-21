@@ -9,49 +9,102 @@
 
 
 #lawrence-at-busstop-scroll {
+    /* position: fixed; */
     max-height: 30%;
     top: 25vh;
-    right: 60vh;
+    right: 30vw;
 }
 
 .lawrence-at-busstop {
-    /* position: absolute; */
+    position: fixed;
     max-height: 30%;
-    top: 15000px;
-    right: 60vh;
+    top: 25vh;
+    right: 30vw;
 }
 
 .lawrence-in-bus {
-    /* position: absolute; */
+    position: fixed;
     max-height: 50%;
     top: 25vh;
-    left:0;
+    left: 0;
 }
 
-#bus-outside{
-    position:fixed;
-    top: calc(50vh - 45vw);
-    left: 0;
-    width: 100%;
-} 
-
 .lawrence-walking-inside {
-    /* position: absolute; */
+    position: fixed;
     max-height: 30%;
     top: 25vh;
-    left:0;
+    left: 0;
 }
 
 .lawrence-fall {
-    /* position: absolute; */
+    position: fixed;
     max-height: 30%;
     top: 25vh;
-    left:0;
+    left: 0;
 }
 
 .lawrence-after-meeting {
-    /* position: absolute; */
+    position: fixed;
     max-height: 30%;
     top: 25vh;
-    left:0;
+    left: 0;
+}
+
+
+
+
+
+/* make lawrenci incisible */
+#lawrence-1 {
+    display: block;
+}
+
+#lawrence-2a {
+    display: none;
+}
+
+#lawrence-2b {
+    display: none;
+}
+
+#lawrence-2c {
+    display: none;
+}
+
+#lawrence-2d {
+    display: none;
+}
+
+#lawrence-3 {
+    display: none;
+}
+
+#lawrence-4a {
+    display: none;
+}
+
+#lawrence-4b {
+    display: none;
+}
+
+#lawrence-4c {
+    display: none;
+}
+
+#lawrence-4d {
+    display: none;
+}
+
+#lawrence-5{
+    display: none;
+}
+
+
+/* bus outside */
+#bus-outside {
+    display: none;
+    position: fixed;
+    top: calc(50vh - 45vw);
+    left: 0;
+    width: 100%;
 }

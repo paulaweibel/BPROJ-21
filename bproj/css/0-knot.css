@@ -232,7 +232,7 @@
 }
 
 .knotValentinoAppear {
-    margin-left: 50vw !important;
+    margin-left: 80vw !important;
     margin-top: 30vh !important;
 }
 
@@ -253,6 +253,11 @@
 
 .knotValentinoRunEnd {
     margin-left: 10vw !important;
+    margin-top: 30vh !important;
+}
+
+.knotLawrenceBusstop {
+    margin-left:10vw !important;
     margin-top: 30vh !important;
 }
 
