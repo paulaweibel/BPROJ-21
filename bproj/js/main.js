@@ -75,8 +75,6 @@ window.onload = function checkPosition() {
   variable.currentScene = 0;
 }
 
-
-
 ////////////////////////////////////////////////////////////////
 ///// LOADING BAR //////////////////////////////////////////////
 
@@ -131,22 +129,21 @@ function handleFileComplete(event) {
 
 var mouseStartedMoving = false;
 var mouseMoved = false;
-const MINIMUM_MOUSE_MOVE_TIME = 100;
+const MINIMUM_MOUSE_MOVE_TIME = 1000;
 
-setInterval(() => { 
-   if(!mouseMoved && mouseStartedMoving) {
-       //Mouse stopped moving
-       //Do CSS change
-       setTimeout(() => {
-        document.querySelector("#mouseMoved").classList.add("mousePaused");
-      }, 100000)
-       mouseStartedMoving = false;
-   }
-   mouseMoved = false;
-   
+setInterval(() => {
+  if (!mouseMoved && mouseStartedMoving) {
+    //Mouse stopped moving
+    setTimeout(() => {
+      document.querySelector("#mouseMoved").classList.add("mousePaused");
+    }, 3000000)
+    mouseStartedMoving = false;
+  }
+  mouseMoved = false;
 }, MINIMUM_MOUSE_MOVE_TIME);
 
-body.onmousemove = function(ev){
+//Mouse started moving
+body.onmousemove = function (ev) {
   mouseStartedMoving = true;
   document.querySelector("#mouseMoved").classList.remove("mousePaused");
   mouseMoved = true;
@@ -157,7 +154,7 @@ body.onmousemove = function(ev){
 
 const eyes = document.querySelector('.eyes');
 window.addEventListener('mousemove', (evt) => {
-  const x = -(window.innerWidth / 2 - evt.pageX) / 100;
+  const x = -(window.innerWidth / 2 - evt.pageX + sLeft) / 100;
   const y = -(window.innerHeight / 2 - evt.pageY + scrollLocation) / 100;
   eyes.style.transform = `translateY(${y}px) translateX(${x}px)`;
 });
@@ -607,24 +604,43 @@ function scene11() {
   document.querySelector("#wake-up-scream1").style.display = "none";
   document.querySelector("#wake-up-scream2").style.display = "none";
 
+  
 
-  function animation(scrollPos) {
+  (function () {
+
+    function scrollHorizontally(e) {
+      runToBus();
+      e = window.event || e;
+      var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+      // console.log(delta);
+      document.documentElement.scrollLeft -= (delta * 30); // Multiplied by 40
+      document.body.scrollLeft -= (delta * 30); // Multiplied by 40
+      e.preventDefault();
+    }
+    if (window.addEventListener) {
+      // IE9, Chrome, Safari, Opera
+      window.addEventListener("mousewheel", scrollHorizontally, false);
+      // Firefox
+      window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
+    } else {
+      // IE 6/7/8
+      window.attachEvent("onmousewheel", scrollHorizontally);
+    }
+  })();
+}
+
+function runToBus() {
+  // function animation(scrollPos) {
     // 1. horizontal scroll valentino  
     if (sLeft > 1) {
       character.knot.classList.add("knotValentinoRunMiddle");
+      scene.busOutside.classList.add("driveLeft");
     } else {
       character.valentino6.style.display = "none";
       character.valentino6.classList = "valentino-run";
       character.valentino5.classList = "valentino-run";
       scene.busOutside.classList = "";
       character.knot.classList.remove("knotValentinoRunMiddle");
-    }
-    if (sLeft > 0.4 * window.innerWidth) {
-      scene.busOutside.classList.add("driveLeft");
-
-    } else {
-      scene.busOutside.classList = "";
-
     }
     // 2. horizontal scroll valentino  
     if (sLeft > 1.5 * window.innerWidth) {
@@ -662,30 +678,8 @@ function scene11() {
       character.knot.classList.remove("knotValentinoRunEnd");
       scene.busOutside.classList.remove("driveAway");
     }
-  }
-  (function () {
-
-    function scrollHorizontally(e) {
-      e = window.event || e;
-      var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-      console.log(delta);
-      document.documentElement.scrollLeft -= (delta * 30); // Multiplied by 40
-      document.body.scrollLeft -= (delta * 30); // Multiplied by 40
-      e.preventDefault();
-    }
-    if (window.addEventListener) {
-      // IE9, Chrome, Safari, Opera
-      window.addEventListener("mousewheel", scrollHorizontally, false);
-      // Firefox
-      window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
-    } else {
-      // IE 6/7/8
-      window.attachEvent("onmousewheel", scrollHorizontally);
-    }
-  })();
+  // }
 }
-
-
 
 
 ////////////////////////////////////////////////////////////////
@@ -804,11 +798,11 @@ new TypeIt("#phrase10", {
   waitUntilVisible: true,
 }).go()
 
-new TypeIt("#phrase11", {
-  cursor: false,
-  speed: variable.textspeed,
-  waitUntilVisible: true,
-}).go()
+// new TypeIt("#phrase11", {
+//   cursor: false,
+//   speed: variable.textspeed,
+//   waitUntilVisible: true,
+// }).go()
 
 
 

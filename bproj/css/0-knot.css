@@ -30,13 +30,13 @@
 
 #mouseMoved{
     opacity: 0;
-    transform: scale(0);
+    transform: scale(0) rotate(0);
     transition: transform 2s, opacity 2s;
 }
 
 .mousePaused{
     opacity: 1 !important;
-    transform: scale(10) !important;
+    transform: scale(10) rotate(-50deg) !important;
 }
 
 
