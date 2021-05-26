@@ -1,0 +1,57 @@
+#lawrence {
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+
+#lawrence-at-busstop-scroll {
+    max-height: 30%;
+    top: 25vh;
+    right: 60vh;
+}
+
+.lawrence-at-busstop {
+    /* position: absolute; */
+    max-height: 30%;
+    top: 15000px;
+    right: 60vh;
+}
+
+.lawrence-in-bus {
+    /* position: absolute; */
+    max-height: 50%;
+    top: 25vh;
+    left:0;
+}
+
+#bus-outside{
+    position:fixed;
+    top: calc(50vh - 45vw);
+    left: 0;
+    width: 100%;
+} 
+
+.lawrence-walking-inside {
+    /* position: absolute; */
+    max-height: 30%;
+    top: 25vh;
+    left:0;
+}
+
+.lawrence-fall {
+    /* position: absolute; */
+    max-height: 30%;
+    top: 25vh;
+    left:0;
+}
+
+.lawrence-after-meeting {
+    /* position: absolute; */
+    max-height: 30%;
+    top: 25vh;
+    left:0;
+}

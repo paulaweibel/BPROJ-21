@@ -215,11 +215,7 @@
     right: 20vh;
 }
 
-#lawri {
-    max-height: 30%;
-    top: 25vh;
-    right: 60vh;
-}
+
 
 .bus-container {
     display: none;
@@ -231,7 +227,7 @@
     overflow: hidden;
 }
 
-#bus-outside {
+#bus{
     position: absolute;
     top: 0;
     left: 0;

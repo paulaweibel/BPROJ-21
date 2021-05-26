@@ -39,12 +39,13 @@ let character = {
   valentino4: document.querySelector("#valentino-4"),
   valentino5: document.querySelector("#valentino-5"),
   valentino6: document.querySelector("#valentino-6"),
+  lawrence: document.querySelector("#lawrence"),
 }
 
 let scene = {
   whitePhoneScreen: document.querySelector("#valentino-phone-screen"),
   alarmToggles: document.querySelector("#valentino-toggles"),
-  busOutside: document.querySelector("#bus-outside"),
+  bus: document.querySelector("#bus"),
   cinematicEffect: document.querySelector("#cinematic-effect"),
 }
 
@@ -298,11 +299,15 @@ function animation(scrollPos) {
     character.knot.classList.add("knotIntro");
     domElement.knotTalkingRight.classList.add("bubbleGrow");
     text.knotText.style.display = "block";
+  }
+
+  if (scrollLocation > 100 && scrollLocation < 2000) {
     variable.currentScene = 1;
   }
 
   // setting INTRO and SPEECHBUBBLE invisible while scrolling to Storystart
   if (scrollLocation > 4000) {
+    domElement.intro.style.display = "none";
     domElement.titleBox.style.display = "none";
     domElement.titleButton.style.display = "none";
     domElement.bubbleRight.classList.remove("bubbleGrow");
@@ -312,13 +317,6 @@ function animation(scrollPos) {
     domElement.titleButton.style.display = "block";
     domElement.bubbleRight.classList.add("bubbleGrow");
   }
-
-  // 10000PX, STORY ENTER, domElement.assets VISIBLE
-  if (scrollLocation <= 10000 && scrollLocation > 9500) {
-    domElement.assets.style.display = "block";
-  } else {
-    domElement.assets.style.display = "none";
-  }
 }
 
 
@@ -326,118 +324,88 @@ function animation(scrollPos) {
 // GENERAL SCENE CHANGES
 
 
-// KNOT INTRO
-// SCENE 1 IS BY SCROLL (hello i'm knot)
+// TRIGGER THINGS WHEN BODY IS CLICKED
 domElement.body.addEventListener('click', function () {
-
-  // SCENE 2 you dont usally see me"
+  //INTRO
   if (variable.currentScene === 1) {
-    text.phrase1.style.display = "none";
-    text.phrase2.style.display = "block";
-    text.phrase3.style.display = "none";
-    text.phrase3b.style.display = "none";
-    text.phrase4.style.display = "none";
-    text.phrase5.style.display = "none";
-
-    setTimeout(() => {
-      variable.currentScene = 2;
-    }, 500)
+    scene1();
   }
-  // SCENE 3 (it is my responsibility to…)
   if (variable.currentScene === 2) {
-    text.phrase1.style.display = "none";
-    text.phrase2.style.display = "none";
-    text.phrase3.style.display = "block";
-    text.phrase3b.style.display = "none";
-    domElement.helpButtons.style.display = "block";
-    setTimeout(() => {
-      variable.currentScene = 3.1;
-    }, 500)
+    scene2();
   }
-  // SCENE 3b
   if (variable.currentScene === 3.1) {
-    text.phrase1.style.display = "none";
-    text.phrase2.style.display = "none";
-    text.phrase3.style.display = "none";
-    text.phrase3b.style.display = "block";
-    domElement.helpButtons.style.display = "block";
-    setTimeout(() => {
-      variable.currentScene = 3;
-    }, 500)
+    scene3a();
   }
-
-
-  // SCENE 4 (do you wanna help me?)
   if (variable.currentScene === 3) {
-    text.phrase1.style.display = "none";
-    text.phrase2.style.display = "none";
-    text.phrase3.style.display = "none";
-    text.phrase3b.style.display = "none";
-    phrase4.style.display = "block";
-    domElement.helpYes.classList.add("helpUp");
-    domElement.helpNo.classList.add("helpUp");
-    setTimeout(() => {
-      variable.currentScene = 4;
-    }, 500)
+    scene3();
   }
   // VALENTINO
-  // SCENE 5 (Here we are, the first person of the day.)
   if (variable.currentScene === 5) {
-    text.phrase4.style.display = "none";
-    text.phrase5.style.display = "block";
-    domElement.assets.style.display = "block";
-    setTimeout(() => {
-      variable.currentScene = 6;
-    }, 500)
+    scene5();
   }
   // SCENE 6 (let’s see what we have here)
   if (variable.currentScene === 6) {
-    text.phrase5.style.display = "none";
-    //make valentino visible
-    character.valentino.style.display = "block";
-    character.knot.classList.add("knotValentinoObserve");
-    variable.moveflag = true;
-    setTimeout(() => {
-      text.phrase6.style.display = "block";
-      domElement.knotTalkingLeft.classList.add("bubbleGrow");
-      domElement.bubbleLeft.classList.add("bubbleGrow");
-      variable.currentScene = 7;
-    }, 500)
+    scene6();
   }
-
   // SCENE 10 run Valentino!! 
   if (variable.currentScene === 10) {
-    document.querySelector("#trumpet-container").style.display = "none";
-    character.knot.classList = "";
-    character.knot.classList.add("knotValentinoRunStart");
-    character.valentino4.style.display = "none";
-    character.valentino5.style.display = "block";
-    scene.cinematicEffect.style.display = "block";
-    document.querySelector("#line-floor-valentino").style.display = "none";
-    document.querySelector("#horizontal-scroll-container").style.display = "block";
-    document.querySelector(".bus-container").style.display = "block";
-    // horizontaler scroll
-    domElement.body.style.overflow = "hidden";
-    domElement.body.style.overflowX = "hidden";
-    domElement.body.style.overflowX = "visible";
-
-    // console.log(--scrollX);
-    setTimeout(() => {
-      variable.currentScene = 11;
-      // text.phrase12.style.display = "block";
-      scene11();
-    }, 200)
+    scene10();
   }
-
   console.log("Scene: " + variable.currentScene + ", I am at: " + scrollY);
 });
 
 ////////////////////////////////
-//BUTTONS ////////////////////////////////
+// SCENES ////////////////////////////////
 
-// SCENE 4 
-// "WOULD YOU LIKE TO BE MY ASSISTANT?"
+function scene1() {
+  text.phrase1.style.display = "none";
+  text.phrase2.style.display = "block";
+  text.phrase3.style.display = "none";
+  text.phrase3b.style.display = "none";
+  text.phrase4.style.display = "none";
+  text.phrase5.style.display = "none";
+  setTimeout(() => {
+    variable.currentScene = 2;
+  }, 500)
+}
 
+function scene2() {
+  text.phrase1.style.display = "none";
+  text.phrase2.style.display = "none";
+  text.phrase3.style.display = "block";
+  text.phrase3b.style.display = "none";
+  domElement.helpButtons.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 3.1;
+  }, 500)
+}
+
+function scene3a(){
+  text.phrase1.style.display = "none";
+  text.phrase2.style.display = "none";
+  text.phrase3.style.display = "none";
+  text.phrase3b.style.display = "block";
+  domElement.helpButtons.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 3;
+  }, 500)
+}
+
+function scene3(){
+  text.phrase1.style.display = "none";
+  text.phrase2.style.display = "none";
+  text.phrase3.style.display = "none";
+  text.phrase3b.style.display = "none";
+  phrase4.style.display = "block";
+  domElement.helpYes.classList.add("helpUp");
+  domElement.helpNo.classList.add("helpUp");
+  setTimeout(() => {
+    variable.currentScene = 4;
+  }, 500)
+}
+
+
+// SCENE 4 // "WOULD YOU LIKE TO BE MY ASSISTANT?"
 //// (NO)
 domElement.helpNo.addEventListener('mouseenter', function () {
   domElement.helpYes.style.marginLeft = "20vh";
@@ -454,9 +422,35 @@ domElement.helpButtons.addEventListener('click', function () {
   domElement.body.style.overflow = "hidden";
   domElement.body.style.height = "10000vh";
   window.scrollTo(0, 10000);
+  domElement.assets.style.display = "block";
   domElement.spotlight.style.display = "block";
   variable.currentScene = 5;
 });
+
+// SCENE 5; VALENTINO ENTER
+function scene5(){
+  text.phrase4.style.display = "none";
+  text.phrase5.style.display = "block";
+  domElement.assets.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 6;
+  }, 500)
+}
+
+// Let’s see what we have here...
+function scene6(){
+  text.phrase5.style.display = "none";
+  //make valentino visible
+  character.valentino.style.display = "block";
+  character.knot.classList.add("knotValentinoObserve");
+  variable.moveflag = true;
+  setTimeout(() => {
+    text.phrase6.style.display = "block";
+    domElement.knotTalkingLeft.classList.add("bubbleGrow");
+    domElement.bubbleLeft.classList.add("bubbleGrow");
+    variable.currentScene = 7;
+  }, 500)
+}
 
 // SCENE 7 (Valentino ID was clicked)
 function scene7() {
@@ -494,47 +488,37 @@ function scene8() {
   setTimeout(() => {
     variable.currentScene = 9;
   }, 500)
-  setTimeout(() => {
-
-  }, 2500)
 }
 
 // SCENE 9 (DEACTIVATING THE TOGGLES)
 function toggle1() {
   document.querySelector("#toggle1-off").classList.remove("toggle-off");
-  document.querySelector(".toggle-click").currentTime = 0;
-  document.querySelector(".toggle-click").play();
-  document.querySelector(".toggle-click").loop = false;
 }
 
 function toggle2() {
   document.querySelector("#toggle2-off").classList.remove("toggle-off");
-  document.querySelector(".toggle-click").currentTime = 0;
-  document.querySelector(".toggle-click").play();
-  document.querySelector(".toggle-click").loop = false;
 }
 
 function toggle3() {
   document.querySelector("#toggle3-off").classList.remove("toggle-off");
-  document.querySelector(".toggle-click").currentTime = 0;
-  document.querySelector(".toggle-click").play();
-  document.querySelector(".toggle-click").loop = false;
 }
 
 function toggle4() {
   document.querySelector("#toggle4-off").classList.remove("toggle-off");
+}
+
+// all toggles off? 
+function countToggle() {
+  //sound with every toggle & knot going away after first click
   document.querySelector(".toggle-click").currentTime = 0;
   document.querySelector(".toggle-click").play();
   document.querySelector(".toggle-click").loop = false;
-}
-
-// all toggles off? -> ANIMATED CHANGE TO SCENE 10
-function countToggle() {
   text.phrase8.style.opacity = "0";
   domElement.knotTalkingLeft.classList.remove("bubbleGrow");
   domElement.bubbleLeft.classList.remove("bubbleGrow");
   character.knot.classList.add("knotValentinoDisappear");
   variable.toggleCount = variable.toggleCount + 1;
+  //check if its finished:
   if (variable.toggleCount === 4) {
     text.phrase9.style.display = "block";
     scene.alarmToggles.style.display = "none";
@@ -596,6 +580,30 @@ function countToggle() {
   }
 }
 
+// VALENTINO RUN HORIZONTAL!!
+function scene10(){
+  document.querySelector("#trumpet-container").style.display = "none";
+  character.knot.classList = "";
+  character.knot.classList.add("knotValentinoRunStart");
+  character.valentino4.style.display = "none";
+  character.valentino5.style.display = "block";
+  scene.cinematicEffect.style.display = "block";
+  document.querySelector("#line-floor-valentino").style.display = "none";
+  document.querySelector("#horizontal-scroll-container").style.display = "block";
+  document.querySelector(".bus-container").style.display = "block";
+  // horizontaler scroll
+  domElement.body.style.overflow = "hidden";
+  domElement.body.style.overflowX = "hidden";
+  domElement.body.style.overflowX = "visible";
+
+  // console.log(--scrollX);
+  setTimeout(() => {
+    variable.currentScene = 11;
+    // text.phrase12.style.display = "block";
+    scene11();
+  }, 200)
+}
+
 // SCENE 11 CHANGE TO HORIZONTAL SCROLL
 function scene11() {
   document.querySelector(".trumpet-sound").currentTime = 0;
@@ -604,10 +612,7 @@ function scene11() {
   document.querySelector("#wake-up-scream1").style.display = "none";
   document.querySelector("#wake-up-scream2").style.display = "none";
 
-  
-
   (function () {
-
     function scrollHorizontally(e) {
       runToBus();
       e = window.event || e;
@@ -630,55 +635,62 @@ function scene11() {
 }
 
 function runToBus() {
-  // function animation(scrollPos) {
-    // 1. horizontal scroll valentino  
-    if (sLeft > 1) {
-      character.knot.classList.add("knotValentinoRunMiddle");
-      scene.busOutside.classList.add("driveLeft");
-    } else {
-      character.valentino6.style.display = "none";
-      character.valentino6.classList = "valentino-run";
-      character.valentino5.classList = "valentino-run";
-      scene.busOutside.classList = "";
-      character.knot.classList.remove("knotValentinoRunMiddle");
-    }
-    // 2. horizontal scroll valentino  
-    if (sLeft > 1.5 * window.innerWidth) {
-      character.valentino6.style.display = "block";
-      character.valentino5.style.opacity = "0";
-    } else {
-      character.valentino5.style.opacity = "1";
-      character.valentino6.style.display = "none";
-    }
+  // 1. horizontal scroll valentino  
+  if (sLeft > 1) {
+    character.knot.classList.add("knotValentinoRunMiddle");
+    scene.bus.classList.add("driveLeft");
+  } else {
+    character.valentino6.style.display = "none";
+    character.valentino6.classList = "valentino-run";
+    character.valentino5.classList = "valentino-run";
+    scene.bus.classList = "";
+    character.knot.classList.remove("knotValentinoRunMiddle");
+  }
+  // 2. horizontal scroll valentino  
+  if (sLeft > 1.5 * window.innerWidth) {
+    character.valentino6.style.display = "block";
+    character.valentino5.style.opacity = "0";
+  } else {
+    character.valentino5.style.opacity = "1";
+    character.valentino6.style.display = "none";
+  }
 
-    // 3. horizontal scroll valentino  
-    if (sLeft > 2.5 * window.innerWidth) {
+  // 3. horizontal scroll valentino  
+  if (sLeft > 2.5 * window.innerWidth) {
+    character.valentino6.classList.add("valentinoMiddle");
+    character.valentino5.classList.add("valentinoMiddle");
+  } else {
+    character.valentino6.classList.remove("valentinoMiddle");
+    character.valentino5.classList.remove("valentinoMiddle");
+  }
 
-      character.valentino6.classList.add("valentinoMiddle");
-      character.valentino5.classList.add("valentinoMiddle");
-    } else {
+  // 4. horizontal scroll valentino  
+  if (sLeft > 2.8 * window.innerWidth) {
+    text.phrase11.display = "block";
+    // text.phrase13.display = "block";
+    character.valentino5.classList.add("valentinoLeaves");
+    character.valentino6.classList.add("valentinoLeaves");
+    character.knot.classList.add("knotValentinoRunEnd");
+    scene.bus.classList.add("driveAway");
+  } else {
+    text.phrase11.display = "none";
+    character.valentino5.classList.remove("valentinoLeaves");
+    character.valentino6.classList.remove("valentinoLeaves");
+    character.knot.classList.remove("knotValentinoRunEnd");
+    scene.bus.classList.remove("driveAway");
+  }
+}
 
-      character.valentino6.classList.remove("valentinoMiddle");
-      character.valentino5.classList.remove("valentinoMiddle");
-    }
-
-    // 4. horizontal scroll valentino  
-    if (sLeft > 2.8 * window.innerWidth) {
-      text.phrase12.display = "none";
-      text.phrase13.display = "block";
-      character.valentino5.classList.add("valentinoLeaves");
-      character.valentino6.classList.add("valentinoLeaves");
-      character.knot.classList.add("knotValentinoRunEnd");
-      scene.busOutside.classList.add("driveAway");
-    } else {
-      text.phrase12.display = "block";
-      text.phrase13.display = "none";
-      character.valentino5.classList.remove("valentinoLeaves");
-      character.valentino6.classList.remove("valentinoLeaves");
-      character.knot.classList.remove("knotValentinoRunEnd");
-      scene.busOutside.classList.remove("driveAway");
-    }
-  // }
+// SCENE 12 GO TO LAWRENCE
+function goLawrence() {
+  domElement.assets.style.display = "block";
+  character.valentino.style.display = "none";
+  character.lawrence.style.display = "block";
+  variable.currentScene = 20;
+  domElement.body.style.backgroundColor = "var(--weiss)"
+  domElement.body.style.height = "10000vh"
+  window.scrollTo(0, 15000);
+  idLawrence();
 }
 
 
@@ -798,13 +810,17 @@ new TypeIt("#phrase10", {
   waitUntilVisible: true,
 }).go()
 
-// new TypeIt("#phrase11", {
+new TypeIt("#phrase11", {
+  cursor: false,
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+// new TypeIt("#phrase13", {
 //   cursor: false,
 //   speed: variable.textspeed,
 //   waitUntilVisible: true,
 // }).go()
-
-
 
 ////////////////////////////////////////////////////////////////
 //////// NAVIGATE //////////////////////////////////////////////
@@ -816,26 +832,11 @@ function goHome() {
   domElement.body.style.overflowX = "hidden";
   domElement.body.style.overflowX = "hidden";
   scene.cinematicEffect.style.display = "none";
+  domElement.assets.style.display = "none";
+  domElement.valentino.style.display = "none";
+  domElement.lawrence.style.display = "none";
 }
 
 function goValentino() {
-  variable.currentScene = 11;
-  domElement.assets.style.display = "block";
-  character.valentino.style.display = "block";
-  window.scrollTo(0, 10000);
-  domElement.body.style.backgroundColor = "var(--weiss)";
-  character.knot.classList.add("knotValentinoRunStart");
-  character.valentino5.style.display = "block";
-  scene.cinematicEffect.style.display = "block";
-  document.querySelector("#horizontal-scroll-container").style.display = "block";
-  document.querySelector(".bus-container").style.display = "block";
-  // horizontaler scroll
-  domElement.body.style.overflow = "hidden";
-  domElement.body.style.overflowX = "hidden";
-  domElement.body.style.overflowX = "visible";
-  scene11();
-}
-
-function goLawrence() {
-  window.scrollTo(0, 15000);
+  console.log("go to valentino doesnt exist")
 }
