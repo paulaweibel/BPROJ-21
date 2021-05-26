@@ -31,44 +31,29 @@
 #mouseMoved {
     opacity: 1;
     transform: scale(0.5) rotate(0deg);
-    transition: 1s ease-out;
-    animation: ani1 1s 1 ease-in forwards;
+    transition: 0.5s ease-out;
 }
-
-@keyframes ani1 {
-    0% {
-        background-color: #0c0c0c;
-    }
-
-    10% {
-        background-color: transparent;
-    }
-
-    100% {
-        background-color: transparent;
-    }
-}
-
 
 .mousePaused {
     opacity: 1 !important;
-    transform: scale(8) rotate(120deg) !important;
-    transition: 5s ease-out !important;
-    animation: back-animation 5s 1 ease-in forwards !important;
+    transform: scale(20) rotate(120deg) !important;
+    transition: 10s ease-out !important;
 }
 
-@keyframes back-animation {
-    0% {
-        background-color: transparent;
-    }
+#mouseTransparent {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    transition: 0.5s ease-out;
+}
 
-    80% {
-        background-color: transparent;
-    }
-
-    100% {
-        background-color: #0c0c0c;
-    }
+.mouseBlack {
+    position: fixed;
+    width: 100vw;
+    height: 50vh;
+    background: #0c0c0c !important;
+    transition: 2s ease !important;
 }
 
 

@@ -130,7 +130,7 @@ function handleFileComplete(event) {
 
 var mouseStartedMoving = false;
 var mouseMoved = false;
-const MINIMUM_MOUSE_MOVE_TIME = 1000;
+const MINIMUM_MOUSE_MOVE_TIME = 2000;
 
 setInterval(() => {
   if (!mouseMoved && mouseStartedMoving) {
@@ -138,6 +138,9 @@ setInterval(() => {
     setTimeout(() => {
       document.querySelector("#mouseMoved").classList.add("mousePaused");
     }, 2000)
+    setTimeout(() => {
+      document.querySelector("#mouseTransparent").classList.add("mouseBlack");
+    }, 8000)
     mouseStartedMoving = false;
   }
   mouseMoved = false;
@@ -147,6 +150,7 @@ setInterval(() => {
 body.onmousemove = function (ev) {
   mouseStartedMoving = true;
   document.querySelector("#mouseMoved").classList.remove("mousePaused");
+  document.querySelector("#mouseTransparent").classList.remove("mouseBlack");
   mouseMoved = true;
 }
 
