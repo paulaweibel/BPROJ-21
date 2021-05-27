@@ -345,7 +345,7 @@ function animation(scrollPos) {
     character.knot.className = '';
     character.knot.classList.add("knotStart");
     domElement.knotTalkingRight.classList.remove("bubbleGrow");
-    domElement.bubbleRight.classList.remove("bubbleGrow");
+    domElement.bubbleRight.classList = "";
     domElement.scrollIcon.classList.remove("scroll-icon-after");
     variable.currentScene = 0;
   }
@@ -356,7 +356,6 @@ function animation(scrollPos) {
     domElement.titleBox.classList.add("titleUp");
     domElement.titleButton.classList.add("ropeUp");
     domElement.homeButton.classList.add("showHome");
-    domElement.bubbleRight.classList.add("bubbleGrow");
     domElement.scrollIcon.classList.add("scroll-icon-after");
     character.knot.classList.add("knotIntro");
     domElement.knotTalkingRight.classList.add("bubbleGrow");
@@ -373,12 +372,10 @@ function animation(scrollPos) {
     domElement.intro.style.display = "none";
     domElement.titleBox.style.display = "none";
     domElement.titleButton.style.display = "none";
-    domElement.bubbleRight.classList.remove("bubbleGrow");
     domElement.helpButtons.style.display = "none";
   } else {
     domElement.titleBox.style.display = "block";
     domElement.titleButton.style.display = "block";
-    domElement.bubbleRight.classList.add("bubbleGrow");
   }
 }
 
@@ -554,7 +551,6 @@ function scene6() {
   setTimeout(() => {
     text.phrase6.style.display = "block";
     domElement.knotTalkingLeft.classList.add("bubbleGrow");
-    domElement.bubbleLeft.classList.add("bubbleGrow");
     variable.currentScene = 7;
   }, 500)
 }
@@ -622,7 +618,6 @@ function countToggle() {
   document.querySelector(".toggle-click").loop = false;
   text.phrase8.style.opacity = "0";
   domElement.knotTalkingLeft.classList.remove("bubbleGrow");
-  domElement.bubbleLeft.classList.remove("bubbleGrow");
   character.knot.classList.add("knotValentinoDisappear");
   variable.toggleCount = variable.toggleCount + 1;
   //check if its finished:
@@ -679,7 +674,6 @@ function countToggle() {
       document.querySelector("#one-hour-later").style.display = "none";
       domElement.spotlight.style.display = "none";
       domElement.knotTalkingRight.classList.add("bubbleGrow");
-      domElement.bubbleRight.classList.add("bubbleGrow");
       character.valentino4.style.display = "block";
       character.valentino3.style.display = "none";
     }, 8500)

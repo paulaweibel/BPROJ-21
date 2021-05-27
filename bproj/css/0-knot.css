@@ -287,7 +287,6 @@
     transform-origin: left bottom;
     transform: scale(0);
     transition: transform 1s;
-    background-color: white;
 }
 
 #knot-talking-left {
@@ -297,11 +296,9 @@
     transform-origin: right bottom;
     transform: scale(0);
     transition: transform 1s;
-    background-color: white;
 }
 
 #speechbubble-big-right {
-    opacity: 0;
     display: none;
     transform-origin: left bottom;
     transform: scale(0);
@@ -312,15 +309,13 @@
 
 #speechbubble-big-left {
     display: none;
-    opacity: 0;
     transform-origin: right bottom;
     transform: scale(0);
-    width: 50vw;
+    width: 25vw;
     transition: transform 1s;
 }
 
 .bubbleGrow {
-
     transform: scale(1) !important;
 }
 
@@ -363,6 +358,11 @@
 
 #phrase5 {
     color: var(--weiss);
+}
+
+#phrase9{
+    /* background-color: #fafafa; */
+    width: 20vw;
 }
 
 
