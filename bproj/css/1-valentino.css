@@ -23,6 +23,13 @@
     max-height: 45vh;
 }
 
+#line-floor-valentino{
+    position: fixed;
+    top:2vh;
+    max-height: 75vh;
+    left: 28vw;
+}
+
 /* INFO ICON */
 #valentino-info {
     position: absolute;
@@ -208,13 +215,6 @@
     top: calc(50vh - 4vw);
     width: calc(400vw - 170vh);
 }
-
-#bus-stop {
-    top: 20vh;
-    max-height: 30%;
-    right: 20vh;
-}
-
 
 
 .bus-container {

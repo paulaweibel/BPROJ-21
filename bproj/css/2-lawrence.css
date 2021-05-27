@@ -1,5 +1,15 @@
+/* INFO ICON LAWRENCE */
+#lawrence-info {
+    position: absolute;
+    height: 5vh;
+    top: calc(10000px + 18vh);
+    left: calc(400vw - 30vw - 7vh);
+}
+
+
+/* LAWRENCE */
 #lawrence {
-    /* display: none; */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -7,28 +17,75 @@
     height: 100vh;
 }
 
-
-#lawrence-at-busstop-scroll {
-    /* position: fixed; */
+/* SCENE WITH VALENTINO */
+#lawrence-at-busstop {
     max-height: 30%;
     top: 25vh;
     right: 30vw;
 }
 
-.lawrence-at-busstop {
+#bus-stop {
+    top: 20vh;
+    max-height: 30%;
+    right: 20vh;
+}
+
+/* SCENE AFTER VALENTINO (AFTER ID-CARD) */
+.lawrence-at-busstop-2 {
     position: fixed;
     max-height: 30%;
     top: 25vh;
     right: 30vw;
 }
 
+#bus-stop-2 {
+    position: fixed;
+    top: 20vh;
+    max-height: 30%;
+    right: 20vh;
+}
+
+/* INSIDE BUS */
 .lawrence-in-bus {
     position: fixed;
-    max-height: 50%;
+    max-height: 50vh;
     top: 25vh;
-    left: 0;
+    left: 40vw;
 }
 
+#bus-inside {
+    display: none;
+    position: fixed;
+    left: 10vw;
+    top: 25vh;
+    height: 50vh;
+}
+
+/* bus outside */
+#bus-outside {
+    display: none;
+    position: fixed;
+    top: calc(40vh - 45vw);
+    left: 0;
+    width: 100%;
+}
+
+.busOutsideAway {
+    display: none !important;
+}
+
+#motivational-quotes {
+    display: none;
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+}
+
+.motQuote {
+    height: 10vh;
+}
+
+/* LAWRENCE WALKING TO BUILDING */
 .lawrence-walking-inside {
     position: fixed;
     max-height: 30%;
@@ -36,13 +93,53 @@
     left: 0;
 }
 
+#office-building {
+    display: none;
+    position: fixed;
+    top: 0;
+    height: 50vh;
+}
+
+/* LAWRENCE FALLING BEFORE MEETING */
 .lawrence-fall {
     position: fixed;
     max-height: 30%;
     top: 25vh;
-    left: 0;
+    left: 50vw;
 }
 
+#knotLasso {
+    display: none;
+    position: fixed;
+    top: 20vh;
+    left: 20vh;
+    height: 20vw;
+    width: 100vh;
+}
+
+.knotLassoPath {
+    stroke: black;
+    stroke-width: 5px;
+    fill: none;
+    /* max-width: 100vw; */
+}
+
+#waiting-room-1 {
+    display: none;
+    position: fixed;
+    top: 0;
+    height: 50vh;
+}
+
+#waiting-room-2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    height: 50vh;
+}
+
+
+/* LAWRENCE AFTER MEETING */
 .lawrence-after-meeting {
     position: fixed;
     max-height: 30%;
@@ -51,10 +148,7 @@
 }
 
 
-
-
-
-/* make lawrenci incisible */
+/* make lawrenci invisible */
 #lawrence-1 {
     display: block;
 }
@@ -95,16 +189,6 @@
     display: none;
 }
 
-#lawrence-5{
+#lawrence-5 {
     display: none;
-}
-
-
-/* bus outside */
-#bus-outside {
-    display: none;
-    position: fixed;
-    top: calc(50vh - 45vw);
-    left: 0;
-    width: 100%;
 }

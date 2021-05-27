@@ -47,8 +47,7 @@
             <img id="house-valentino" class="horizontal-scroll-background" src="img/Locations/house-valentino.png">
             <img id="street-line" class="horizontal-scroll-background" src="img/1-valentino/line-street-valentino.png">
             <img id="bus-stop" class="horizontal-scroll-background" src="img/Locations/bus-stop.png">
-            <img id="lawrence-at-busstop-scroll" class="horizontal-scroll-background"
-                src="img/2-lawrence/1-lawrence.png">
+            <img id="lawrence-at-busstop" class="horizontal-scroll-background" src="img/2-lawrence/1-lawrence.png">
         </div>
 
 
@@ -61,10 +60,15 @@
         </div>
         <!-- <div id="run-scream" class="huge-text">
             RUN <br>
+        </div>-->
+        <div id="looser-scream-box" class="huge-text">
+            <div id="looser-scream">
+                <h1>YOU ARE GOING TO FAIL
+                    LOOOOSER
+                    YOU ARE NOT READY
+                    THERE IS NOTHING SPECIAL IN YOU</h1>
+            </div>
         </div>
-        <div id="looser-scream" class="huge-text">
-            LOOSER
-        </div> -->
 
         <!-- VALENTINO ASSETS -->
         <div id="valentino">
@@ -76,34 +80,40 @@
             <img id="valentino-info" class="id" onclick="idValentino()" src="img/objects-icons/info-icon.png">
             <div id="valentino-toggles">
                 <div id="toggle1">
-                    6:00
+                    6:40
                     <img class="toggle button" onclick="toggle1(); countToggle()" src="img/objects-icons/on.png">
                     <img id="toggle1-off" class="toggle button toggle-off" src="img/objects-icons/off.png">
                 </div>
                 <div id="toggle2">
-                    6:05
+                    6:45
                     <img class="toggle button" onclick="toggle2(); countToggle()" src="img/objects-icons/on.png">
                     <img id="toggle2-off" class="toggle button toggle-off" src="img/objects-icons/off.png">
                 </div>
                 <div id="toggle3">
-                    6:13
+                    6:50
                     <img class="toggle button" onclick="toggle3(); countToggle()" src="img/objects-icons/on.png">
                     <img id="toggle3-off" class="toggle button toggle-off" src="img/objects-icons/off.png">
                 </div>
                 <div id="toggle4">
-                    6:07
+                    6:55
                     <img class="toggle button" onclick="toggle4(); countToggle()" src="img/objects-icons/on.png">
                     <img id="toggle4-off" class="toggle button toggle-off" src="img/objects-icons/off.png">
                 </div>
             </div>
             <img id="valentino-5" class="valentino-run" src="img/1-valentino/valentino-run-1.png">
             <img id="valentino-6" class="valentino-run" src="img/1-valentino/valentino-run-2.png">
-            <div id="text-valentino"></div>
+            <div id="text-valentino">Shoot, how did I not hear the other alarm clocks? I'm so late, what will they think
+                of me in the hospital? Such a bad impression….</div>
         </div>
 
         <!-- LAWRENCE ASSETS -->
-        <div id="lawrence" onclick="idLawrence()">
-            <img id="lawrence-1" class="lawrence-at-busstop" src="img/2-lawrence/1-lawrence.png">
+        <div id="lawrence">
+            <img id="bus-stop-2" src="img/Locations/bus-stop.png">
+            <img id="bus-inside" src="img/Locations/bus-inside.png">
+            <img id="office-building" src="img/Locations/office-building.png">
+            <img id="waiting-room-1" src="img/Locations/waiting-room1.png">
+            <img id="waiting-room-2" src="img/Locations/waiting-room2.png">
+            <img id="lawrence-1" class="lawrence-at-busstop-2" src="img/2-lawrence/1-lawrence.png">
             <img id="lawrence-2a" class="lawrence-in-bus" src="img/2-lawrence/2-lawrence-bus1.png">
             <img id="lawrence-2b" class="lawrence-in-bus" src="img/2-lawrence/2-lawrence-bus2.png">
             <img id="lawrence-2c" class="lawrence-in-bus" src="img/2-lawrence/2-lawrence-bus3.png">
@@ -114,7 +124,14 @@
             <img id="lawrence-4c" class="lawrence-fall" src="img/2-lawrence/4-lawrence-before-meeting3.png">
             <img id="lawrence-4d" class="lawrence-fall" src="img/2-lawrence/4-lawrence-before-meeting4.png">
             <img id="lawrence-5" class="lawrence-after-meeting" src="img/2-lawrence/5-lawrence-sad-after-meeting.png">
-            <img id="bus-outside" src="img/Locations/bus-outside.png">
+            <div id="motivational-quotes">
+                <img id="motQuote-1" class="motQuote" onclick="motQuote1(); motCount()"
+                    src="img/objects-icons/yes-icon.png">
+                <img id="motQuote-2" class="motQuote" onclick="motQuote2(); motCount()"
+                    src="img/objects-icons/yes-icon.png">
+                <img id="motQuote-3" class="motQuote" onclick="motQuote3(); motCount()"
+                    src="img/objects-icons/yes-icon.png">
+            </div>
         </div>
 
         <!-- MERCY ASSETS (EMPTY) -->
@@ -126,16 +143,33 @@
         <div id="barbara" onclick="idBarbara()">
             <img id="barbara-1" class="asset id" src="">
         </div>
+
+        <!-- FOREGROUND OBJECTS -->
+
+        <!-- SPOTLIGHT ----------------->
+        <div id="spotlight" class="light"></div>
+        <!-- valentino phone -->
+        <img id="valentino-phone-screen" class="valentino-bed button" onclick="scene8()"
+            src="img/1-valentino/white-phone-screen.png">
+        <!-- bus -->
+        <div class="bus-container">
+            <img id="bus" src="img/Locations/bus.png">
+        </div>
+        <!-- nüt ------------->
+        <div id="storytext">
+            <!-- VALENTINO: SLEEPING -->
+        </div>
+        <!-- cinema effect -->
+        <div id="cinematic-effect">
+            <div id="cinematic-up" class="cinematic"></div>
+            <div id="cinematic-down" class="cinematic"></div>
+        </div>
+        <!-- info-icon-lawrence -->
+        <img id="lawrence-info" class="id" onclick="idLawrence()" src="img/objects-icons/info-icon.png">
     </div>
 
 
-    <!-- SPOTLIGHT ----------------->
-    <div id="spotlight" class="light"></div>
 
-    <!-- SPEECH BUBBLE PERSONS (kommt noch an anderen ort)------------->
-    <div id="storytext">
-        <!-- VALENTINO: SLEEPING -->
-    </div>
 
     <!-- BACKGROUND BECOMING DARKER ------------------->
     <div id="mouseTransparent"> </div>
@@ -147,6 +181,14 @@
         <img class="knot layer3" src="img/knot-images/knot3.png">
         <img class="knot layer4" src="img/knot-images/knot4.png">
         <img id="mouseMoved" class="knot" src="img/knot-images/background-knot.png">
+
+        <!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In  -->
+        <svg id="knotLasso" x="0px" y="0px" width="" height="" viewBox="0 0 561.9 205" xml:space="preserve">
+            <path class="knotLassoPath" d="M5,5c63,21.4,83.3,78.9,128.5,121.1c61.7,57.5,139.8,67.6,221.2,71.9c38.8,2,187.6,15.4,180.1-65
+c-2.4-25.4-77.2-41.7-77.2-45.3c0,32.4,97,67.4,98.6,60.7c8.5-33.8-70.1-88.2-103.6-80.4c-29.7,6.9,58.2,60.6,63.8,61.6
+c39.3,6.4,51.9-28.8,26.8-28.8"/>
+        </svg>
+
 
         <div class="knot eyes">
             <img id="eye-img" src="img/knot-images/eyes.png">
@@ -164,7 +206,8 @@
                 <!-- INTRO -->
                 <div id="intro" class="knot-text-intro">
                     <p id="phrase1" class="phrase phrase-right"> HELLO ! I AM KNOT. <br> A STRESS CAUSING EGO <br>
-                        <br> click ...
+                        <br>
+                        <click-text>click anywhere ...</click-text>
                     </p>
                     <p id="phrase2" class="phrase phrase-right"></p>
                     <p id="phrase3" class="phrase phrase-right"></p>
@@ -173,9 +216,14 @@
                 </div>
                 <div class="knot-text-valentino">
                     <p id="phrase5" class="phrase phrase-right"></p>
-                    <p id="phrase11" class="phrase phrase-right">Seems like I’ll have someone else to bother…</p>
-                    <!-- <p id="phrase12" class="phrase phrase-right">RUUUN</p> -->
-                    <!-- <p id="phrase13" class="phrase phrase-right">Dang it, i missed him!</p> -->
+                    <p id="phrase11" class="phrase phrase-right"></p>
+                    <p id="phrase12" class="phrase phrase-right"></p>
+                    <p id="phrase13" class="phrase phrase-right"></p>
+                    <p id="phrase14" class="phrase phrase-left"></p>
+                    <p id="phrase17" class="phrase phrase-right"></p>
+                    <p id="phrase18" class="phrase phrase-right"></p>
+                    <p id="phrase19" class="phrase phrase-right"></p>
+
                 </div>
             </div>
             <!-- SPEECHBUBBLES ON LEFT-->
@@ -187,13 +235,12 @@
                 <p id="phrase8" class="phrase phrase-left"></p>
                 <p id="phrase9" class="phrase phrase-left"></p>
                 <!-- SCENE 12 -->
-                <p id="phrase12" class="phrase phrase-left">It looks like this guy needs some stimulation.</p>
-                <p id="phrase13" class="phrase phrase-left">He is going to a job interview. He needs to earn money for his studies.</p>
+                <p id="phrase15" class="phrase phrase-right"></p>
+                <p id="phrase16" class="phrase phrase-right"></p>
             </div>
+
         </div>
     </div>
-
-
 
     <!------ BUTTONS ---------------->
     <div id="title-button-container">
@@ -205,34 +252,19 @@
         <img id="help-no" class="button help-button" src="img/objects-icons/no-icon.png">
     </div>
 
-
-
-    <!-- FOREGROUND OBJECTS -->
-    <img id="valentino-phone-screen" class="valentino-bed button" onclick="scene8()"
-        src="img/1-valentino/white-phone-screen.png">
-
-    <div class="bus-container">
-        <img id="bus" src="img/Locations/bus.png">
-    </div>
-
+    <!-- FOREGROUND TEXT -->
     <div id="one-hour-later">
-        <b id="phrase10" class="phrase">one hour later</b>
+        <p id="phrase10" class="phrase">one hour later</p>
     </div>
-
-    <div id="cinematic-effect">
-        <div id="cinematic-up" class="cinematic"></div>
-        <div id="cinematic-down" class="cinematic"></div>
-    </div>
-
+    <img id="bus-outside" src="img/Locations/bus-outside.png">
 
 
     <!-- CHARACTERS ID-PAGES ----->
-
     <div id="id-valentino" class="id-card id" onclick="hideId(); scene7()">
         <div class="id-blur bright"></div>
         <img class="id-picture" src="img/ID-Cards/ID-Valentino.png">
     </div>
-    <div id="id-lawrence" class="id-card id" onclick="hideId(); scene12()">
+    <div id="id-lawrence" class="id-card id" onclick="hideId(); goLawrence()">
         <div class="id-blur-bright"></div>
         <img class="id-picture" src="img/ID-Cards/ID-Lawrence.png">
     </div>
@@ -247,7 +279,6 @@
 
     <!-- NAVIGATE -->
     <div id="navigation">
-        <!-- (temporary navigation)<br> -->
         <a class="blu" onclick="goHome()">home</a>
         <!-- <a class="blu" onclick="goValentino()">valentino</a> -->
         <a class="blu" onclick="goLawrence()">lawrence</a>
@@ -284,7 +315,6 @@
     </div>
 
     <!-- AUDIO -->
-
     <audio src="sound/digital-alarm.mp3" loop class="alarm-clock1"></audio>
     <audio src="sound/phone-vibrate.mp3" loop class="alarm-clock2"></audio>
     <audio src="sound/switch-toggle.mp3" loop class="toggle-click"></audio>

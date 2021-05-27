@@ -6,6 +6,7 @@
 let variable = {
   currentScene: 0,
   toggleCount: 0,
+  motCount: 0,
   moveflag: false,
   visible: 1,
   textspeed: 30,
@@ -31,7 +32,10 @@ let domElement = {
 }
 
 let character = {
+  // knot
   knot: document.querySelector("#wiggle"),
+  knotLasso: document.querySelector("#knotLasso"),
+  // valentino
   valentino: document.querySelector("#valentino"),
   valentino1: document.querySelector("#valentino-1"),
   valentino2: document.querySelector("#valentino-2"),
@@ -39,7 +43,20 @@ let character = {
   valentino4: document.querySelector("#valentino-4"),
   valentino5: document.querySelector("#valentino-5"),
   valentino6: document.querySelector("#valentino-6"),
+  // lawrence
   lawrence: document.querySelector("#lawrence"),
+  lawrence1: document.querySelector("#lawrence-1"),
+  lawrence2a: document.querySelector("#lawrence-2a"),
+  lawrence2b: document.querySelector("#lawrence-2b"),
+  lawrence2c: document.querySelector("#lawrence-2c"),
+  lawrence2d: document.querySelector("#lawrence-2d"),
+  lawrence3: document.querySelector("#lawrence-3"),
+  lawrence4a: document.querySelector("#lawrence-4a"),
+  lawrence4b: document.querySelector("#lawrence-4b"),
+  lawrence4c: document.querySelector("#lawrence-4c"),
+  lawrence4d: document.querySelector("#lawrence-4d"),
+  lawrence5: document.querySelector("#lawrence-5"),
+  // mercy
   mercy: document.querySelector("#mercy"),
   barbara: document.querySelector("#barbara"),
 }
@@ -47,9 +64,15 @@ let character = {
 let scene = {
   whitePhoneScreen: document.querySelector("#valentino-phone-screen"),
   alarmToggles: document.querySelector("#valentino-toggles"),
-  bus: document.querySelector("#bus"),
   horizontalScrollContainer: document.querySelector("#horizontal-scroll-container"),
   cinematicEffect: document.querySelector("#cinematic-effect"),
+  bus: document.querySelector("#bus"),
+  busStop: document.querySelector("#bus-stop-2"),
+  busInside: document.querySelector("#bus-inside"),
+  busOutside: document.querySelector("#bus-outside"),
+  officeBuilding: document.querySelector("#office-building"),
+  waitingRoom1: document.querySelector("#waiting-room-1"),
+  waitingRoom2: document.querySelector("#waiting-room-2"),
 }
 
 let text = {
@@ -68,16 +91,21 @@ let text = {
   phrase11: document.querySelector("#phrase11"),
   phrase12: document.querySelector("#phrase12"),
   phrase13: document.querySelector("#phrase13"),
+  phrase14: document.querySelector("#phrase14"),
+  phrase15: document.querySelector("#phrase15"),
+  phrase16: document.querySelector("#phrase16"),
+  phrase17: document.querySelector("#phrase17"),
+  phrase18: document.querySelector("#phrase18"),
+  phrase19: document.querySelector("#phrase19"),
 }
 
 ////////////////////////////////////////////////////////////////
 // SIDE RELOAD /////////////////////////////////////////////////
 
-window.onload = function checkPosition() {
-  domElement.body.style.overflow = "block";
-  window.scrollTo(0, 0);
-  variable.currentScene = 0;
-}
+// window.onload = function checkPosition() {
+//   window.scrollTo(0, 0);
+//   // variable.currentScene = 0;
+// }
 
 ////////////////////////////////////////////////////////////////
 //////// NAVIGATE //////////////////////////////////////////////
@@ -87,7 +115,7 @@ function goHome() {
   variable.currentScene = 0;
   domElement.body.style.overflow = "hidden";
   domElement.body.style.overflowX = "hidden";
-  domElement.body.style.overflowX = "hidden";
+  domElement.body.style.overflowY = "hidden";
   scene.cinematicEffect.style.display = "none";
   domElement.assets.style.display = "none";
   character.valentino.style.display = "none";
@@ -151,6 +179,7 @@ function handleFileComplete(event) {
 
 ////////////////////////////////////////////////////////////////
 //// MOUSE STOPPED MOVING //////////////////////////////////////
+
 var mouseStartedMoving = false;
 var mouseMoved = false;
 const MINIMUM_MOUSE_MOVE_TIME = 2000;
@@ -158,11 +187,12 @@ setInterval(() => {
   if (!mouseMoved && mouseStartedMoving) {
     //Mouse stopped moving
     setTimeout(() => {
+      document.querySelector("#mouseTransparent").style.display = "block";
       document.querySelector("#mouseMoved").classList.add("mousePaused");
-    }, 2000)
+    }, 100000)
     setTimeout(() => {
       document.querySelector("#mouseTransparent").classList.add("mouseBlack");
-    }, 8000)
+    }, 110000)
     mouseStartedMoving = false;
   }
   mouseMoved = false;
@@ -171,7 +201,11 @@ setInterval(() => {
 body.onmousemove = function (ev) {
   mouseStartedMoving = true;
   document.querySelector("#mouseMoved").classList.remove("mousePaused");
+
   document.querySelector("#mouseTransparent").classList.remove("mouseBlack");
+  setTimeout(() => {
+    document.querySelector("#mouseTransparent").style.display = "none";
+  }, 1000)
   mouseMoved = true;
 }
 
@@ -194,7 +228,7 @@ let ticking = false;
 
 //updating scroll position
 document.addEventListener('scroll', function (e) {
-  localStorage.setItem("scrollMemory", scrollLocation);
+  // localStorage.setItem("scrollMemory", scrollLocation);
   scrollLocation = window.scrollY;
   sLeft = window.scrollX;
   if (!ticking) {
@@ -271,7 +305,7 @@ function hideAbout() {
 domElement.titleButton.addEventListener('click', function () {
   if (variable.visible === 1 || variable.visible === 3) {
     variable.visible = 0;
-    domElement.body.style.overflow = "visible";
+    domElement.body.style.overflowY = "visible";
     domElement.body.style.background = "#fafafa";
     document.querySelector("#title-dark").classList.add("titleBright");
     document.querySelector("#about-content").classList.add("whiteAbout");
@@ -280,7 +314,7 @@ domElement.titleButton.addEventListener('click', function () {
     character.knot.classList.add("knotTitle");
   } else {
     variable.visible = 3;
-    domElement.body.style.overflow = "hidden";
+    domElement.body.style.overflowY = "hidden";
     domElement.body.style.background = "#0c0c0c";
     document.querySelector("#title-dark").classList.remove("titleBright");
     document.querySelector("#about-content").classList.remove("whiteAbout");
@@ -300,6 +334,7 @@ domElement.titleButton.addEventListener('click', function () {
 function animation(scrollPos) {
   // ANIMATIONS BASED ON SCROLL POSITION
   if (scrollLocation < 100) {
+    text.phrase1.style.display = "none";
     domElement.assets.style.display = "none";
     character.valentino.style.display = "none";
     character.lawrence.style.display = "none";
@@ -329,6 +364,7 @@ function animation(scrollPos) {
   }
 
   if (scrollLocation > 100 && scrollLocation < 2000) {
+    text.phrase1.style.display = "block";
     variable.currentScene = 1;
   }
 
@@ -377,9 +413,53 @@ domElement.body.addEventListener('click', function () {
   if (variable.currentScene === 10) {
     scene10();
   }
-  // SCENE 11 run Valentino!! 
+  // SCENE 12 
+  if (variable.currentScene === 12) {
+    scene12();
+  }
+  // SCENE 13
   if (variable.currentScene === 13) {
     scene13();
+  }
+  // SCENE 14
+  if (variable.currentScene === 14) {
+    scene14();
+  }
+  // SCENE 15
+  if (variable.currentScene === 15) {
+    scene15();
+  }
+  // SCENE 16
+  if (variable.currentScene === 16) {
+    scene16();
+  }
+  // SCENE 17
+  if (variable.currentScene === 17) {
+    scene17();
+  }
+  // SCENE 19
+  if (variable.currentScene === 19) {
+    scene19();
+  }
+  // SCENE 20
+  if (variable.currentScene === 20) {
+    scene20();
+  }
+  // SCENE 21
+  if (variable.currentScene === 21) {
+    scene21();
+  }
+  // SCENE 22
+  if (variable.currentScene === 22) {
+    scene22();
+  }
+  // SCENE 23
+  if (variable.currentScene === 23) {
+    scene23();
+  }
+  // SCENE 22
+  if (variable.currentScene === 24) {
+    scene24();
   }
   console.log("Scene: " + variable.currentScene + ", I am at: " + scrollY);
 });
@@ -446,7 +526,7 @@ domElement.helpNo.addEventListener('mouseleave', function () {
 domElement.helpButtons.addEventListener('click', function () {
   domElement.intro.style.display = "none";
   domElement.helpButtons.style.display = "none";
-  domElement.body.style.overflow = "hidden";
+  domElement.body.style.overflowY = "hidden";
   domElement.body.style.height = "10000vh";
   window.scrollTo(0, 10000);
   domElement.assets.style.display = "block";
@@ -689,7 +769,6 @@ function runToBus() {
   // 4. horizontal scroll valentino  
   if (sLeft > 2.8 * window.innerWidth) {
     text.phrase11.display = "block";
-    // text.phrase13.display = "block";
     character.valentino5.classList.add("valentinoLeaves");
     character.valentino6.classList.add("valentinoLeaves");
     character.knot.classList.add("knotValentinoRunEnd");
@@ -703,35 +782,179 @@ function runToBus() {
   }
 }
 
-// SCENE 11 GO TO LAWRENCE
+// SCENE 11 (ID of LAWRENCE WAS OBSERVED) It looks like this guy needs some stimulation.
 function goLawrence() {
   domElement.assets.style.display = "block";
   character.lawrence.style.display = "block";
   character.valentino.style.display = "none";
   scene.horizontalScrollContainer.style.display = "none";
   scene.cinematicEffect.style.display = "none";
-  variable.currentScene = 12;
   character.knot.classList.add("knotLawrenceBusstop")
   domElement.body.style.backgroundColor = "var(--weiss)"
   domElement.body.style.height = "10000vh"
   window.scrollTo(0, 15000);
-  idLawrence();
+  text.phrase11.style.display = "none";
+  text.phrase12.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 12;
+  }, 200)
+  // stop horizontal scroll
+  domElement.body.style.overflow = "hidden";
+  domElement.body.style.overflowX = "hidden";
+  domElement.body.style.overflowY = "visible";
 }
 
+
+// SCENE 12 "He is going to a job interview."
 function scene12() {
-  text.phrase11.style.display = "block";
+  text.phrase13.style.display = "block";
+  text.phrase12.style.display = "none";
   setTimeout(() => {
     variable.currentScene = 13;
   }, 200)
 }
 
+// SCENE 13 change to bus
 function scene13() {
-  text.phrase11.style.display = "none";
-  text.phrase12.style.display = "block";
+  text.phrase13.style.display = "none";
+  scene.busInside.style.display = "block";
+  scene.busOutside.style.display = "block";
+  scene.busStop.style.display = "none";
+  character.lawrence2a.style.display = "block";
+  character.lawrence1.style.display = "none";
+  console.log("change to bus");
   setTimeout(() => {
     variable.currentScene = 14;
   }, 200)
 }
+
+// SCENE 14 "watch and learn"
+function scene14() {
+  domElement.knotTalkingLeft.classList.add("bubbleGrow");
+  scene.busOutside.classList.add("busOutsideAway");
+  text.phrase14.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 15;
+  }, 200)
+}
+
+// SCENE 15 "whisper"
+function scene15() {
+  text.phrase15.style.display = "block";
+  text.phrase14.style.display = "none";
+  character.lawrence2a.style.display="none";
+  character.lawrence2b.style.display="block";
+  character.knot.classList.add("knotLawrenceBus");
+  setTimeout(() => {
+    variable.currentScene = 16;
+  }, 200)
+}
+
+// SCENE 16 "whisper"
+function scene16() {
+  text.phrase16.style.display = "block";
+  text.phrase15.style.display = "none";
+  character.lawrence2b.style.display="none";
+  character.lawrence2c.style.display="block";
+  character.knot.classList.add("knotLawrenceBus");
+  setTimeout(() => {
+    variable.currentScene = 17;
+  }, 200)
+}
+
+// SCENE 17 motivational quotes
+function scene17() {
+  text.phrase17.style.display = "block";
+  text.phrase16.style.display = "none";
+  character.lawrence2c.style.display="none";
+  character.lawrence2d.style.display="block";
+  document.querySelector("#motivational-quotes").style.display = "block";
+  character.knot.classList.remove("knotLawrenceBus");
+  setTimeout(() => {
+    variable.currentScene = 18;
+  }, 200)
+}
+
+// SCENE 18
+function motQuote1() {
+  document.querySelector("#motQuote-1").style.display = "none";
+}
+
+function motQuote2() {
+  document.querySelector("#motQuote-2").style.display = "none";
+}
+
+function motQuote3() {
+  document.querySelector("#motQuote-3").style.display = "none";
+}
+
+function motCount() {
+  text.phrase17.style.display = "none";
+  variable.motCount = variable.motCount + 1;
+  if (variable.motCount === 3) {
+    text.phrase18.style.display = "block";
+    setTimeout(() => {
+      variable.currentScene = 19;
+    }, 200)
+  }
+}
+
+//SCENE 19 // LOOOOOOOSER TEXT BIG
+function scene19() {
+  text.phrase18.style.display = "none";
+  document.querySelector("#looser-scream-box").style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 20;
+  }, 200)
+}
+
+// SCENE 20 LAWRENCE WALKING TO BUILDING
+function scene20() {
+  document.querySelector("#looser-scream-box").style.display = "none";
+  character.lawrence3.style.display="block";
+  character.lawrence2d.style.display="none";
+  scene.busInside.style.display="none";
+  scene.officeBuilding.style.display="block";
+  setTimeout(() => {
+    variable.currentScene = 21;
+  }, 200)
+}
+
+function scene21() {
+  character.knotLasso.style.display="block";
+  character.lawrence3.style.display="none";
+  character.lawrence4a.style.display="block";
+  scene.officeBuilding.style.display="none";
+  scene.waitingRoom1.style.display="block";
+  setTimeout(() => {
+    variable.currentScene = 22;
+  }, 200)
+}
+
+function scene22() {
+  character.lawrence4a.style.display="none";
+  character.lawrence4b.style.display="block";
+  setTimeout(() => {
+    variable.currentScene = 23;
+  }, 200)
+}
+
+function scene23() {
+  character.lawrence4b.style.display="none";
+  character.lawrence4c.style.display="block";
+  setTimeout(() => {
+    variable.currentScene = 24;
+  }, 200)
+}
+
+function scene24() {
+  character.lawrence4c.style.display="none";
+  character.lawrence4d.style.display="block";
+  setTimeout(() => {
+    variable.currentScene = 25;
+  }, 200)
+}
+
 
 
 ////////////////////////////////////////////////////////////////
@@ -851,6 +1074,63 @@ new TypeIt("#phrase10", {
 
 new TypeIt("#phrase11", {
   cursor: false,
+  strings: ["Seems like I’ll have someone else to bother…"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase12", {
+  cursor: false,
+  strings: ["It looks like this guy needs some stimulation."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase13", {
+  cursor: false,
+  strings: ["He is going to a job interview.", "He needs to earn money for his studies."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase14", {
+  cursor: false,
+  strings: ["I know what to do… watch and learn (assistant)"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase15", {
+  cursor: false,
+  strings: ["It's time to get nervous now. You'll ruin everything at the interview."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase16", {
+  cursor: false,
+  strings: ["Why should they hire you? A poor student with no experience…"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase17", {
+  cursor: false,
+  strings: ["Assistant, let’s see what you have learned so far. Delete the three motivational quotes:"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase18", {
+  cursor: false,
+  strings: ["Good, I have my quotes now"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase19", {
+  cursor: false,
+  strings: ["…"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
