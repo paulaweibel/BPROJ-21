@@ -404,7 +404,7 @@ click-text {
   width: 100%;
   height: 100vh;
   background-color: var(--schwarz);
-  opacity: 0.8;
+  opacity: 0.95;
 }
 
 .id-blur-bright {
@@ -414,7 +414,7 @@ click-text {
   width: 100%;
   height: 100vh;
   background-color: var(--weiss);
-  opacity: 0.8;
+  opacity: 0.95;
 }
 
 #id-valentino {

@@ -34,6 +34,7 @@ let domElement = {
 let character = {
   // knot
   knot: document.querySelector("#wiggle"),
+  backgroundKnot: document.querySelector("#back-wiggle"),
   knotLasso: document.querySelector("#knotLasso"),
   // valentino
   valentino: document.querySelector("#valentino"),
@@ -84,9 +85,13 @@ let scene = {
   waitingRoom2: document.querySelector("#waiting-room-2"),
   clock0930: document.querySelector("#clock9-30"),
   clock11: document.querySelector("#clock11"),
+  windowMove: document.querySelector("#window-move"),
+  windowFix: document.querySelector("#window-fix"),
 }
 
 let text = {
+  // speechbubble
+  backWhisper: document.querySelector("#back-whisper"),
   // knot
   knotText: document.querySelector("#knot-text"),
   phrase1: document.querySelector("#phrase1"),
@@ -98,14 +103,14 @@ let text = {
   phrase6: document.querySelector("#phrase6"),
   phrase7: document.querySelector("#phrase7"),
   phrase8: document.querySelector("#phrase8"),
-  phrase9: document.querySelector("#phrase9"),
+  whisper1: document.querySelector("#whisper1"),
   phrase10: document.querySelector("#phrase10"),
   phrase11: document.querySelector("#phrase11"),
   phrase12: document.querySelector("#phrase12"),
   phrase13: document.querySelector("#phrase13"),
   phrase14: document.querySelector("#phrase14"),
-  phrase15: document.querySelector("#phrase15"),
-  phrase16: document.querySelector("#phrase16"),
+  whisper2: document.querySelector("#whisper2"),
+  whisper3: document.querySelector("#whisper3"),
   phrase17: document.querySelector("#phrase17"),
   phrase18: document.querySelector("#phrase18"),
   phrase19: document.querySelector("#phrase19"),
@@ -173,6 +178,8 @@ queue.on("complete", event => {
   //remove progress bar
   setTimeout(() => {
     progress.classList.add("fadeOut");
+    character.knot.style.opacity = "1";
+    window.scrollTo(0, 0);
   }, 500)
 })
 
@@ -337,6 +344,11 @@ domElement.titleButton.addEventListener('click', function () {
   }
 });
 
+//////// if small arrow is clicked:
+function scrollToIntro() {
+  window.scrollTo(0, 200)
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // STORY START ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -360,7 +372,7 @@ function animation(scrollPos) {
     domElement.knotTalkingRight.classList.remove("bubbleGrow");
     domElement.bubbleRight.classList = "";
     domElement.scrollIcon.classList.remove("scroll-icon-after");
-    document.querySelector("#navigation").style.display="block";
+    document.querySelector("#navigation").style.display = "block";
     variable.currentScene = 0;
   }
 
@@ -374,7 +386,7 @@ function animation(scrollPos) {
     character.knot.classList.add("knotIntro");
     domElement.knotTalkingRight.classList.add("bubbleGrow");
     text.knotText.style.display = "block";
-    document.querySelector("#navigation").style.display="none";
+    document.querySelector("#navigation").style.display = "none";
   }
 
   if (scrollLocation > 100 && scrollLocation < 2000) {
@@ -560,9 +572,9 @@ domElement.helpButtons.addEventListener('click', function () {
   goValentino();
 });
 
-function goValentino(){
+function goValentino() {
   domElement.intro.style.display = "none";
-  domElement.body.style.backgroundColor="var(--schwarz)";
+  domElement.body.style.backgroundColor = "var(--schwarz)";
   domElement.helpButtons.style.display = "none";
   domElement.body.style.overflowY = "hidden";
   domElement.body.style.height = "10000vh";
@@ -663,7 +675,7 @@ function countToggle() {
   variable.toggleCount = variable.toggleCount + 1;
   //check if its finished:
   if (variable.toggleCount === 4) {
-    text.phrase9.style.display = "block";
+    text.whisper1.style.display = "block";
     scene.alarmToggles.style.display = "none";
     scene.whitePhoneScreen.style.opacity = "0";
     character.valentino2.style.display = "none";
@@ -673,26 +685,26 @@ function countToggle() {
     setTimeout(() => {
       scene.whitePhoneScreen.style.display = "none";
     }, 500)
-    character.knot.classList.add("knotValentinoAppear");
+    character.backgroundKnot.classList.add("showWhisperKnotValentino");
+    text.backWhisper.classList.add("showWhisperKnotValentino");
 
     // speechbubble "keep on sleeping, you still have plenty of time…"
     setTimeout(() => {
-      domElement.bubbleRight.style.display = "block";
-      domElement.knotTalkingRight.classList.add("bubbleGrow");
-      domElement.bubbleRight.classList.add("bubbleGrow");
+      text.backWhisper.classList.add("showWhisperRight");
     }, 2000)
 
     // go to black
     setTimeout(() => {
-      domElement.knotTalkingRight.classList.remove("bubbleGrow");
-      domElement.bubbleRight.classList.remove("bubbleGrow");
+      text.backWhisper.classList.remove("showWhisperRight");
       character.knot.style.opacity = "0";
     }, 5000)
 
     // show one hour later
     setTimeout(() => {
       document.querySelector("#one-hour-later").style.display = "block";
-      text.phrase9.style.display = "none";
+      text.whisper1.style.display = "none";
+      text.backWhisper.classList.remove("showWhisperKnotValentino");
+      character.backgroundKnot.classList.remove("showWhisperKnotValentino");
       text.phrase10.style.display = "block";
     }, 5500)
 
@@ -713,7 +725,7 @@ function countToggle() {
       variable.currentScene = 9.5;
       text.phrase10.style.display = "none";
       document.querySelector("#one-hour-later").style.display = "none";
-      domElement.body.style.backgroundColor="var(--weiss)";
+      domElement.body.style.backgroundColor = "var(--weiss)";
       domElement.spotlight.style.display = "none";
       domElement.knotTalkingRight.classList.add("bubbleGrow");
       text.peopleTalk.classList.add("bubbleGrow");
@@ -835,7 +847,7 @@ function runToBus() {
 
 // SCENE 11 (ID of LAWRENCE WAS OBSERVED) It looks like this guy needs some stimulation.
 function goLawrence() {
-  domElement.body.style.backgroundColor="var(--weiss)";
+  domElement.body.style.backgroundColor = "var(--weiss)";
   domElement.assets.style.display = "block";
   character.lawrence.style.display = "block";
   character.valentino.style.display = "none";
@@ -892,7 +904,10 @@ function scene14() {
 
 // SCENE 15 "whisper"
 function scene15() {
-  text.phrase15.style.display = "block";
+  showWhisperLeft();
+  text.whisper2.style.display = "block";
+  character.backgroundKnot.classList.add("showWhisperKnotLawrence");
+  text.backWhisper.classList.add("showWhisperKnotLawrence");
   text.phrase14.style.display = "none";
   character.lawrence2a.style.display = "none";
   character.lawrence2b.style.display = "block";
@@ -902,10 +917,11 @@ function scene15() {
   }, 200)
 }
 
+
 // SCENE 16 "whisper 2"
 function scene16() {
-  text.phrase16.style.display = "block";
-  text.phrase15.style.display = "none";
+  text.whisper3.style.display = "block";
+  text.whisper2.style.display = "none";
   character.lawrence2b.style.display = "none";
   character.lawrence2c.style.display = "block";
   character.knot.classList.add("knotLawrenceBus");
@@ -916,11 +932,13 @@ function scene16() {
 
 // SCENE 17 motivational quotes
 function scene17() {
+  hideWhisperLeft();
   text.phrase17.style.display = "block";
-  text.phrase16.style.display = "none";
+  text.whisper3.style.display = "none";
   character.lawrence2c.style.display = "none";
   character.lawrence2d.style.display = "block";
   document.querySelector("#motivational-quotes").style.display = "block";
+  character.backgroundKnot.classList.remove("showWhisperKnotLawrence");
   character.knot.classList.remove("knotLawrenceBus");
   setTimeout(() => {
     variable.currentScene = 18;
@@ -981,7 +999,7 @@ function scene21() {
   character.lawrence4a.style.display = "block";
   scene.officeBuilding.style.display = "none";
   scene.waitingRoom1.style.display = "block";
-  scene.clock0930.style.display="block";
+  scene.clock0930.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 22;
   }, 200)
@@ -1020,8 +1038,8 @@ function scene24() {
 // SCENE 25 entering the office
 function scene25() {
   character.lawrence4d.style.display = "none";
-  character.mercy1b.style.display="none";
-  character.mercy2.style.display="block";
+  character.mercy1b.style.display = "none";
+  character.mercy2.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 26;
   }, 200)
@@ -1029,10 +1047,10 @@ function scene25() {
 
 // SCENE 26 knot waits on chair
 function scene26() {
-  character.mercy2.style.display="none";
+  character.mercy2.style.display = "none";
   character.knot.classList.add("knotWaitingChair");
-  scene.waitingRoom2.style.display="block";
-  scene.waitingRoom1.style.display="none";
+  scene.waitingRoom2.style.display = "block";
+  scene.waitingRoom1.style.display = "none";
   setTimeout(() => {
     variable.currentScene = 27;
   }, 200)
@@ -1040,10 +1058,10 @@ function scene26() {
 
 // SCENE 27 entering the office
 function scene27() {
-  character.mercy2.style.display="none";
+  character.mercy2.style.display = "none";
   character.knot.classList.add("knotWaitingChair");
-  scene.waitingRoom2.style.display="block";
-  scene.waitingRoom1.style.display="none";
+  scene.waitingRoom2.style.display = "block";
+  scene.waitingRoom1.style.display = "none";
   setTimeout(() => {
     variable.currentScene = 28;
   }, 200)
@@ -1054,17 +1072,17 @@ function scene28() {
 }
 
 
-
-
 /////////////
-function goMercy(){
-  domElement.body.style.backgroundColor="var(--weiss)";
+function goMercy() {
+  domElement.body.style.backgroundColor = "var(--weiss)";
   domElement.assets.style.display = "block";
   character.mercy.style.display = "block";
-  character.mercy1a.style.display="none";
-  character.mercy1b.style.display="none";
-  character.mercy2.style.display="none";
-  character.mercy3a.style.display="block";
+  character.mercy1a.style.display = "none";
+  character.mercy1b.style.display = "none";
+  character.mercy2.style.display = "none";
+  character.mercy3a.style.display = "block";
+  scene.windowFix.style.display = "block";
+  scene.windowMove.style.display = "block";
   character.valentino.style.display = "none";
   character.lawrence.style.display = "none";
   character.knot.classList.add("knotMercy")
@@ -1077,6 +1095,112 @@ function goMercy(){
   domElement.body.style.overflowY = "hidden";
 }
 
+
+////// drag mercy window
+
+var container = document.querySelector("#window-move");
+var activeItem = null;
+
+var active = false;
+
+container.addEventListener("touchstart", dragStart, false);
+container.addEventListener("touchend", dragEnd, false);
+container.addEventListener("touchmove", drag, false);
+
+container.addEventListener("mousedown", dragStart, false);
+container.addEventListener("mouseup", dragEnd, false);
+container.addEventListener("mousemove", drag, false);
+
+function dragStart(e) {
+
+  if (e.target !== e.currentTarget) {
+    active = true;
+
+    // this is the item we are interacting with
+    activeItem = e.target;
+
+    if (activeItem !== null) {
+      if (!activeItem.xOffset) {
+        activeItem.xOffset = 0;
+      }
+
+      if (e.type === "touchstart") {
+        activeItem.initialX = e.touches[0].clientX - activeItem.xOffset;
+      } else {
+        console.log("doing something!");
+        activeItem.initialX = e.clientX - activeItem.xOffset;
+      }
+    }
+  }
+}
+
+function dragEnd(e) {
+  if (activeItem !== null) {
+    activeItem.initialX = activeItem.currentX;
+  }
+
+  active = false;
+  activeItem = null;
+}
+
+function drag(e) {
+  if (active) {
+    e.preventDefault();
+    if (e.type === "touchmove") {
+      activeItem.currentX = e.touches[0].clientX - activeItem.initialX;
+    } else {
+      activeItem.currentX = e.clientX - activeItem.initialX;
+    }
+    activeItem.xOffset = activeItem.currentX;
+
+    // set limits for window !!
+    if (activeItem.currentX > 0 * window.innerHeight) {
+      activeItem.currentX = 0 * window.innerHeight;
+    }
+
+    if (activeItem.currentX < -0.22 * window.innerHeight) {
+      activeItem.currentX = -0.22 * window.innerHeight;
+      console.log("wind is blowing mercy away")
+    }
+
+    setTranslate(activeItem.currentX, 0, activeItem);
+  }
+}
+
+function setTranslate(xPos, yPos, el) {
+  el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+}
+
+///////////////////// bubble animations:
+
+function showWhisperLeft() {
+  document.querySelector("#whisper-bubbleL").style.display = "block";
+  document.querySelector("#whisper-bubbleR").style.display = "none";
+  text.backWhisper.classList.add("showWhisperLeft");
+}
+
+function showWhisperRight() {
+  document.querySelector("#whisper-bubbleR").style.display = "block";
+  document.querySelector("#whisper-bubbleL").style.display = "none";
+  text.backWhisper.classList.add("showWhisperRight");
+}
+
+function hideWhisperLeft() {
+  text.backWhisper.classList.remove("showWhisperLeft");
+  setTimeout(() => {
+    document.querySelector("#whisper-bubbleL").style.display = "none";
+    document.querySelector("#whisper-bubbleR").style.display = "none";
+  }, 10000)
+
+}
+
+function hideWhisperRight() {
+  text.backWhisper.classList.remove("showWhisperRight");
+  setTimeout(() => {
+    document.querySelector("#whisper-bubbleL").style.display = "none";
+    document.querySelector("#whisper-bubbleR").style.display = "none";
+  }, 10000)
+}
 
 ////////////////////////////////////////////////////////////////
 // ID's ////////////////////////////////////////////////////////
@@ -1180,7 +1304,7 @@ new TypeIt("#phrase8", {
   waitUntilVisible: true,
 }).go()
 
-new TypeIt("#phrase9", {
+new TypeIt("#whisper1", {
   cursor: false,
   strings: ["keep on sleeping, you still have plenty of time…"],
   speed: variable.textspeed,
@@ -1195,6 +1319,7 @@ new TypeIt("#valentino-talk1", {
 
 new TypeIt("#valentino-talk2", {
   cursor: false,
+  strings: ["I'm so late, what will they think of me in the hospital Such a bad impression…."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -1233,14 +1358,14 @@ new TypeIt("#phrase14", {
   waitUntilVisible: true,
 }).go()
 
-new TypeIt("#phrase15", {
+new TypeIt("#whisper2", {
   cursor: false,
   strings: ["It's time to get nervous now. You'll ruin everything at the interview."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
-new TypeIt("#phrase16", {
+new TypeIt("#whisper3", {
   cursor: false,
   strings: ["Why should they hire you? A poor student with no experience…"],
   speed: variable.textspeed,

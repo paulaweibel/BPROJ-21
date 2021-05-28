@@ -26,6 +26,37 @@
     left: 50vw;
 }
 
+#window-fix {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 5vh;
+    margin-left: 30vw;
+    height: 30vh;
+    touch-action: none;
+}
+
+#window-move {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 5vh;
+    margin-left: 30vw;
+    height: 30vh;
+    touch-action: none;
+}
+
+.window1 {
+    height: 30vh;
+    touch-action: none;
+    user-select: none;
+    position: relative;
+}
+
+.open-me {
+    position: relative;
+    left: 22vh;
+}
 
 /* make mercies invisible */
 #mercy-1a {

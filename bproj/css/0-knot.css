@@ -1,5 +1,72 @@
 /* --------------------------------------------------------------------------- */
 /* ----------------------------- MAIN CHARACTER ------------------------------ */
+/* knot behind people */
+#back-wiggle {
+    position: fixed;
+    animation: wiggle 5s infinite ease-in-out;
+    transition: margin 2s, opacity 0.4s, transform 1s;
+    margin-left: 150vw;
+}
+
+#back-eye-img {
+    width: 40vh;
+    animation: eye-blink 10s ease-in-out infinite;
+}
+
+#back-whisper {
+    position: fixed;
+    transform-origin: bottom LEFT;
+    transform: translate(30vh, 15vh) scale(0);
+    width: 45vh;
+    transition: margin 2s, opacity 0.4s;
+}
+
+.back-whisper-bubble {
+    position: absolute;
+    top: 0;
+    max-width: 100%;
+    transition: transform 1s;
+}
+
+.whisper-text {
+    display: none;
+    position: absolute;
+    top: 0;
+    margin: 5vh;
+    color: black;
+}
+
+.showWhisperRight {
+    transform-origin: bottom LEFT !important;
+    transform: translate(30vh, -15vh) scale(1) !important;
+}
+
+.showWhisperLeft {
+    transform-origin: bottom right !important;
+    transform: translate(-30vh, -15vh) scale(1) !important;
+}
+
+#whisper-bubbleL{
+    display: none;
+}
+
+/* positions for background knot's whispers to people */
+.hideWhipserKnot{
+    margin-left: 150vw !important;
+    margin-top: 30vh !important;
+}
+
+.showWhisperKnotValentino{
+    margin-left: 30vw !important;
+    margin-top: 20vh !important;
+}
+
+.showWhisperKnotLawrence{
+    margin-left: calc(40vw + 30vh) !important;
+    margin-top: 28vh !important;
+}
+
+
 /* KNOT CHARACTER */
 .knot {
     position: fixed;
@@ -206,6 +273,7 @@
 
 /* KNOT WIGGLE CONTAINER */
 #wiggle {
+    opacity: 0;
     position: fixed;
     animation: wiggle 5s infinite ease-in-out;
     transition: margin 2s, opacity 0.4s;
@@ -277,7 +345,7 @@
 }
 
 .knotLawrenceBus {
-    margin-left: 90vw !important;
+    margin-left: -90vw !important;
     margin-top: 30vh !important;
 }
 

@@ -33,14 +33,25 @@
             <img id="title-text" src="img/title/new-title-hidden-worries.png">
         </div>
         <!-- SCROLL ICON -------------------->
-        <div> <img id="scroll-icon" src="img/objects-icons/scroll-icon.png"> </div>
+        <img id="scroll-icon" class="button" onclick="scrollToIntro()" src="img/objects-icons/scroll-icon.png">
     </div>
-
 
 
 
     <!-- ASSETS -------------------->
     <div id="asset-container">
+
+        <!-- MAIN CHARACTER in the back ------------------->
+        <div id="back-wiggle" class="hideWhipserKnot">
+            <img class="knot layer1" src="img/knot-images/knot1.png">
+            <img class="knot layer2" src="img/knot-images/knot2.png">
+            <img class="knot layer3" src="img/knot-images/knot3.png">
+            <img class="knot layer4" src="img/knot-images/knot4.png">
+            <img class="knot" src="img/knot-images/background-knot.png">
+            <div class="knot eyes">
+                <img id="back-eye-img" src="img/knot-images/eyes.png">
+            </div>
+        </div>
 
         <!-- BACKGROUNDS -->
         <div id="horizontal-scroll-container">
@@ -76,7 +87,7 @@
             <img id="valentino-1" class="valentino-bed" src="img/1-valentino/valentino-bed-1.png">
             <img id="valentino-2" class="valentino-bed" src="img/1-valentino/valentino-bed-2.png">
             <img id="valentino-3" class="valentino-bed" src="img/1-valentino/valentino-bed-3.png">
-            <img id="valentino-4" class="valentino-bed button" src="img/1-valentino/valentino-bed-4.png">
+            <img id="valentino-4" class="valentino-bed" src="img/1-valentino/valentino-bed-4.png">
             <img id="valentino-info" class="id" onclick="idValentino()" src="img/objects-icons/info-icon.png">
             <div id="valentino-toggles">
                 <div id="toggle1">
@@ -102,7 +113,8 @@
             </div>
             <img id="valentino-5" class="valentino-run" src="img/1-valentino/valentino-run-1.png">
             <img id="valentino-6" class="valentino-run" src="img/1-valentino/valentino-run-2.png">
-            <div id="text-valentino">Shoot, how did I not hear the other alarm clocks? I'm so late, what will they think
+            <div id="text-valentino">Shoot, how did I not hear the other alarm clocks? I'm so late, what will they
+                think
                 of me in the hospital? Such a bad impression….</div>
         </div>
 
@@ -137,8 +149,8 @@
         </div>
 
         <!-- MERCY ASSETS (EMPTY) -->
-        <div id="mercy" onclick="idMercy()">
-            <img id="mercy-1a" class="mercy-welcoming" src="img/3-mercy/1-mercy-welcoming1.png">
+        <div id="mercy" >
+            <img id="mercy-1a" onclick="idMercy()" class="mercy-welcoming" src="img/3-mercy/1-mercy-welcoming1.png">
             <img id="mercy-1b" class="mercy-welcoming" src="img/3-mercy/1-mercy-welcoming2-wtf-face.png">
             <img id="mercy-2" class="mercy-entering" src="img/3-mercy/2-mercy-entering.png">
             <img id="mercy-3a" class="mercy-sitting" src="img/3-mercy/3-mercy-sitting1.png">
@@ -146,6 +158,12 @@
             <img id="mercy-3c" class="mercy-sitting" src="img/3-mercy/3-mercy-sitting3.png">
             <img id="mercy-3d" class="mercy-sitting" src="img/3-mercy/3-mercy-sitting4-mess.png">
             <img id="mercy-3e" class="mercy-sitting" src="img/3-mercy/3-mercy-sitting4.png">
+            <div id="window-fix">
+                <div><img class="window1" src="img/3-mercy/full-window.png"></div>
+            </div>
+            <div id="window-move">
+                <div class="open-me"><img class="window1" src="img/3-mercy/half-window.png"></div>
+            </div>
         </div>
 
         <!-- BARBARA ASSETS (EMPTY) -->
@@ -172,8 +190,18 @@
             <img id="people-talk-right" src="img/objects-icons/speechbubble-big-right.png">
             <img id="people-talk-left" src="img/objects-icons/speechbubble-big-left.png">
             <p id="valentino-talk1" class="all-people-talk">Shoot, how did I not hear the other alarm clocks?</p>
-            <p id="valentino-talk2" class="all-people-talk"> I'm so late, what will they think of me in the hospital?
-                Such a bad impression….</p>
+            <p id="valentino-talk2" class="all-people-talk"></p>
+        </div>
+
+        <!-- KNOT IN BACKGROUND IS SAYING STUFF-->
+        <div id="back-whisper" class="hideWhipserKnot">
+            <img id="whisper-bubbleL" class="back-whisper-bubble" src="img/objects-icons/speechbubble-big-left.png">
+            <img id="whisper-bubbleR" class="back-whisper-bubble" src="img/objects-icons/speechbubble-big-right.png">
+            <!-- VALENTINO keep on sleeping -->
+            <p id="whisper1" class="whisper-text"></p>
+            <!-- LAWRENCE bus whispers -->
+            <p id="whisper2" class="whisper-text"></p>
+            <p id="whisper3" class="whisper-text"></p>
         </div>
 
         <!-- cinema effect -->
@@ -183,7 +211,7 @@
         </div>
 
         <!-- info-icon-lawrence -->
-        <img id="lawrence-info" class="id" onclick="idLawrence()" src="img/objects-icons/info-icon.png">
+        <img id="lawrence-info" class="id button" onclick="idLawrence()" src="img/objects-icons/info-icon.png">
     </div>
 
 
@@ -253,9 +281,7 @@ c39.3,6.4,51.9-28.8,26.8-28.8" />
                 <p id="phrase7" class="phrase phrase-left textWhite"></p>
                 <p id="phrase8" class="phrase phrase-left textWhite"></p>
 
-                <!-- SCENE 12 -->
-                <p id="phrase15" class="phrase phrase-right"></p>
-                <p id="phrase16" class="phrase phrase-right"></p>
+
             </div>
 
         </div>
