@@ -89,7 +89,7 @@ click-text {
 #navigation {
   color: grey;
   position: fixed;
-  opacity: 0.5;
+  opacity: 1;
   bottom: 0;
   left: 0;
 }
@@ -261,7 +261,7 @@ click-text {
   left: 0;
   height: 85vh;
   width: 100%;
-  color: var(--white);
+  color: var(--weiss);
   background-color: var(--schwarz);
   transition: opacity 0.4s;
 }
@@ -438,23 +438,39 @@ click-text {
 /* ----------------------------------------------- */
 /* ------------ TEXT ----------------------------- */
 
-#storytext {
-  display: none;
+#people-talk {
+  display: block;
   position: fixed;
-  width: 500px;
-  left: calc(23vw + 30vh - 100PX);
-  top: calc(20vh - 50PX);
+  width: 50vh;
+  left: calc(30vw + 40vh);
+  bottom: 65vh;
   transform-origin: bottom left;
   transform: scale(0);
   transition: transform 0.5s;
 }
 
-
-/* stuff to put at the bottom */
-
-.textWhite {
-  color: var(--weiss) !important;
+#people-talk-right {
+  max-width: 100%;
 }
+
+#people-talk-left {
+  display: none;
+  position: absolute;
+  left: 0;
+  transform-origin: bottom right;
+  transform: scale(1);
+  max-width: 100%;
+}
+
+.all-people-talk {
+  position: absolute;
+  margin: 6vh;
+  top: 0;
+  color: var(--schwarz);
+  display: none;
+}
+
+
 
 /* ------------- OVERLAY FOR SMARTPHONE USERS -------------------- */
 #desktop-only {

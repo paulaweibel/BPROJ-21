@@ -1,0 +1,61 @@
+#mercy {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.mercy-welcoming {
+    position: absolute;
+    height: 40vh;
+    top: 32vh;
+    left: 25vh;
+}
+
+.mercy-entering {
+    position: absolute;
+    height: 40vh;
+    top: 32vh;
+    left: 30vh;
+}
+
+.mercy-sitting {
+    position: absolute;
+    height: 40vh;
+    top: 30vh;
+    left: 50vw;
+}
+
+
+/* make mercies invisible */
+#mercy-1a {
+    display: block;
+}
+
+#mercy-1b {
+    display: none;
+}
+
+#mercy-2 {
+    display: none;
+}
+
+#mercy-3a {
+    display: none;
+}
+
+#mercy-3b {
+    display: none;
+}
+
+#mercy-3c {
+    display: none;
+}
+
+#mercy-3d {
+    display: none;
+}
+
+#mercy-3e {
+    display: none;
+}

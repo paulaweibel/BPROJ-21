@@ -15,6 +15,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
+    /* background-color: rgba(200,0,0,0.8); */
 }
 
 /* SCENE WITH VALENTINO */
@@ -77,8 +78,8 @@
 #motivational-quotes {
     display: none;
     position: fixed;
-    top: 5vh;
-    left: 5vw;
+    top: 50vh;
+    left: 50vw;
 }
 
 .motQuote {
@@ -88,55 +89,84 @@
 /* LAWRENCE WALKING TO BUILDING */
 .lawrence-walking-inside {
     position: fixed;
-    max-height: 30%;
-    top: 25vh;
-    left: 0;
+    max-height: 40vh;
+    top: 50vh;
+    left: 50vw;
 }
 
 #office-building {
     display: none;
     position: fixed;
     top: 0;
-    height: 50vh;
+    right: 0;
+    height: 60vh;
 }
 
 /* LAWRENCE FALLING BEFORE MEETING */
-.lawrence-fall {
-    position: fixed;
-    max-height: 30%;
-    top: 25vh;
-    left: 50vw;
-}
-
-#knotLasso {
-    display: none;
-    position: fixed;
-    top: 20vh;
-    left: 20vh;
-    height: 20vw;
-    width: 100vh;
-}
-
-.knotLassoPath {
-    stroke: black;
-    stroke-width: 5px;
-    fill: none;
-    /* max-width: 100vw; */
-}
-
 #waiting-room-1 {
     display: none;
     position: fixed;
-    top: 0;
-    height: 50vh;
+    top: 20vh;
+    height: 55vh;
 }
 
 #waiting-room-2 {
     display: none;
     position: fixed;
-    top: 0;
-    height: 50vh;
+    top: 20vh;
+    height: 55vh;
 }
+
+/* CLOCK */
+.clock-waitingroom{
+    position: fixed;
+    top: 25vh;
+    left: 80vh;
+    height: 6vh;
+    display: none;
+}
+
+.lawrence-fall {
+    position: fixed;
+    max-height: 40%;
+    top: 35vh;
+    left: 60vw;
+}
+
+#lawrence-4c {
+    transform-origin: bottom;
+    transform: scale(0.65) translate(-20vw, 0);
+}
+
+#knotLasso {
+    display: none;
+    position: fixed;
+    top: 10vh;
+    left: 20vh;
+    height: calc(20vw - 3vh);
+    width: calc(50vw - 5vh);
+    /* background-color: red; */
+}
+
+.knotLassoPath {
+    stroke: var(--schwarz);
+    stroke-width: 0.5%;
+    stroke-linecap: round;
+    /* filter:drop-shadow(2px 2px 1px black); */
+    fill: none;
+    stroke-dasharray: 120vw;
+    stroke-dashoffset: 90vw;
+    transition: stroke-dashoffset 1s;
+}
+
+.knotLassoPath:hover {
+    stroke-dashoffset: 0vw;
+}
+
+.knotLassoCatch {
+    stroke-dashoffset: 0vw !important;
+}
+
 
 
 /* LAWRENCE AFTER MEETING */

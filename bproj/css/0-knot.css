@@ -108,10 +108,12 @@
     }
 }
 
-/* .run-scream {
+#run-scream {
+    display: none;
+    color: var(--schwarz);
     top: 40vh;
     font-style: italic;
-    animation: screaming-knot2 0.1s 10 ease-in-out;
+    animation: screaming-knot2 0.1s infinite ease-in-out;
 }
 
 @keyframes screaming-knot2 {
@@ -134,11 +136,12 @@
     100% {
         transform: translate(0, 0);
     }
-}*/
+}
 
 #looser-scream-box {
     display: none;
-    background-color: #0c0c0c50;
+    background-color: #0c0c0c80;
+    font-size: 20vh;
     position: fixed;
     top: 0;
     left: 0;
@@ -244,7 +247,7 @@
 }
 
 .knotValentinoAppear {
-    margin-left: 80vw !important;
+    margin-left: 20vw !important;
     margin-top: 30vh !important;
 }
 
@@ -270,11 +273,21 @@
 
 .knotLawrenceBusstop {
     margin-left: 10vw !important;
-    margin-top: 30vh !important;
+    margin-top: 5vh !important;
 }
 
 .knotLawrenceBus {
     margin-left: 90vw !important;
+    margin-top: 30vh !important;
+}
+
+.knotWaitingroom {
+    margin-left: -15vh !important;
+    margin-top: 30vh !important;
+}
+
+.knotWaitingChair {
+    margin-left: 65vh !important;
     margin-top: 30vh !important;
 }
 
@@ -303,7 +316,7 @@
     transform-origin: left bottom;
     transform: scale(0);
     /* width: 50vh; */
-    width: 50vw;
+    width: 30vw;
     transition: transform 1s;
 }
 
@@ -360,7 +373,7 @@
     color: var(--weiss);
 }
 
-#phrase9{
+#phrase9 {
     /* background-color: #fafafa; */
     width: 20vw;
 }
