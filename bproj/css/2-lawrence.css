@@ -51,28 +51,50 @@
     position: fixed;
     max-height: 50vh;
     top: 30vh;
-    left: 40vw;
+    left: calc(50vw - 40vh);
+    animation: bus-shake 2s 1s ease-in-out infinite;
 }
 
 #bus-inside {
     display: none;
     position: fixed;
-    left: 10vw;
+    left: calc(50vw - 30vh);
     top: 25vh;
     height: 50vh;
+    animation: bus-shake 2s 0.9s ease-in-out infinite;
 }
 
 /* bus outside */
 #bus-outside {
     display: none;
+    opacity: 1;
     position: fixed;
-    top: calc(40vh - 45vw);
-    left: 0;
-    width: 100%;
+    top: calc(50vh - 50vw);
+    left: -5vw;
+    width: 110%;
+    transition: all 1s;
+    animation: bus-shake 2s ease-in-out infinite;
+}
+
+@keyframes bus-shake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0, 1vh);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
 .busOutsideAway {
-    display: none !important;
+    top: calc(50vh - 240vw) !important;
+    left: -200vw !important;
+    width: 500% !important;
+    opacity: 0 !important;
 }
 
 #motivational-quotes {
@@ -118,7 +140,7 @@
 }
 
 /* CLOCK */
-.clock-waitingroom{
+.clock-waitingroom {
     position: fixed;
     top: 25vh;
     left: 80vh;
@@ -131,6 +153,11 @@
     max-height: 40%;
     top: 35vh;
     left: 60vw;
+    transition: transform 0.2s;
+}
+
+#lawrence-4a:hover {
+    transform: rotate(1deg);
 }
 
 #lawrence-4c {
@@ -141,30 +168,27 @@
 #knotLasso {
     display: none;
     position: fixed;
-    top: 10vh;
-    left: 20vh;
-    height: calc(20vw - 3vh);
-    width: calc(50vw - 5vh);
+    top: 65vh;
+    left: 30vw;
+    height: 5vw;
+    width: calc(30vw + 5vh);
     /* background-color: red; */
 }
 
 .knotLassoPath {
     stroke: var(--schwarz);
-    stroke-width: 0.5%;
+    stroke-width: 3%;
     stroke-linecap: round;
     /* filter:drop-shadow(2px 2px 1px black); */
     fill: none;
-    stroke-dasharray: 120vw;
-    stroke-dashoffset: 90vw;
+    stroke-dasharray: calc(35vw + 10vh);
+    stroke-dashoffset: 0;
+    /* stroke-dashoffset: calc(35vw + 10vh); */
     transition: stroke-dashoffset 1s;
 }
 
-.knotLassoPath:hover {
-    stroke-dashoffset: 0vw;
-}
-
 .knotLassoCatch {
-    stroke-dashoffset: 0vw !important;
+    stroke-dashoffset: 0;
 }
 
 

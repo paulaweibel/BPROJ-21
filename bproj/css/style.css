@@ -46,6 +46,10 @@ body {
   cursor: url('cursor2.png'), pointer;
 }
 
+.drag-cursor{
+  cursor: url('cursor3.png'), move;
+}
+
 .id {
   cursor: url('cursor2.png'), pointer;
 }

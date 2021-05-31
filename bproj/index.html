@@ -48,7 +48,7 @@
             <img class="knot layer3" src="img/knot-images/knot3.png">
             <img class="knot layer4" src="img/knot-images/knot4.png">
             <img class="knot" src="img/knot-images/background-knot.png">
-            <div class="knot eyes">
+            <div class="knot">
                 <img id="back-eye-img" src="img/knot-images/eyes.png">
             </div>
         </div>
@@ -59,6 +59,7 @@
             <img id="street-line" class="horizontal-scroll-background" src="img/1-valentino/line-street-valentino.png">
             <img id="bus-stop" class="horizontal-scroll-background" src="img/Locations/bus-stop.png">
             <img id="lawrence-at-busstop" class="horizontal-scroll-background" src="img/2-lawrence/1-lawrence.png">
+            <img id="horizontal-scroll-icon" src="img/objects-icons/scroll-icon-text.png">
         </div>
 
 
@@ -113,9 +114,7 @@
             </div>
             <img id="valentino-5" class="valentino-run" src="img/1-valentino/valentino-run-1.png">
             <img id="valentino-6" class="valentino-run" src="img/1-valentino/valentino-run-2.png">
-            <div id="text-valentino">Shoot, how did I not hear the other alarm clocks? I'm so late, what will they
-                think
-                of me in the hospital? Such a bad impression….</div>
+            <div id="text-valentino"></div>
         </div>
 
         <!-- LAWRENCE ASSETS -->
@@ -133,7 +132,7 @@
             <img id="lawrence-2c" class="lawrence-in-bus" src="img/2-lawrence/2-lawrence-bus3.png">
             <img id="lawrence-2d" class="lawrence-in-bus" src="img/2-lawrence/2-lawrence-bus4.png">
             <img id="lawrence-3" class="lawrence-walking-inside" src="img/2-lawrence/3-lawrence-walking-inside.png">
-            <img id="lawrence-4a" class="lawrence-fall" src="img/2-lawrence/4-lawrence-before-meeting1.png">
+            <img id="lawrence-4a" class="lawrence-fall button" src="img/2-lawrence/4-lawrence-before-meeting1.png">
             <img id="lawrence-4b" class="lawrence-fall" src="img/2-lawrence/4-lawrence-before-meeting2.png">
             <img id="lawrence-4c" class="lawrence-fall" src="img/2-lawrence/4-lawrence-before-meeting3.png">
             <img id="lawrence-4d" class="lawrence-fall" src="img/2-lawrence/4-lawrence-before-meeting4.png">
@@ -146,23 +145,28 @@
                 <img id="motQuote-3" class="motQuote" onclick="motQuote3(); motCount()"
                     src="img/objects-icons/yes-icon.png">
             </div>
+            <!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In  -->
+            <svg id="knotLasso" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 586 51" xml:space="preserve">
+                <path class="knotLassoPath button" d="M1 1C100.333 34.6667 356.2 84.3 585 13.5" />
+            </svg>
+
         </div>
 
         <!-- MERCY ASSETS (EMPTY) -->
-        <div id="mercy" >
+        <div id="mercy">
             <img id="mercy-1a" onclick="idMercy()" class="mercy-welcoming" src="img/3-mercy/1-mercy-welcoming1.png">
             <img id="mercy-1b" class="mercy-welcoming" src="img/3-mercy/1-mercy-welcoming2-wtf-face.png">
             <img id="mercy-2" class="mercy-entering" src="img/3-mercy/2-mercy-entering.png">
             <img id="mercy-3a" class="mercy-sitting" src="img/3-mercy/3-mercy-sitting1.png">
             <img id="mercy-3b" class="mercy-sitting" src="img/3-mercy/3-mercy-sitting2.png">
             <img id="mercy-3c" class="mercy-sitting" src="img/3-mercy/3-mercy-sitting3.png">
-            <img id="mercy-3d" class="mercy-sitting" src="img/3-mercy/3-mercy-sitting4-mess.png">
-            <img id="mercy-3e" class="mercy-sitting" src="img/3-mercy/3-mercy-sitting4.png">
+            <img id="mercy-3d" class="mercy-sitting" src="img/3-mercy/3-mercy-sitting4.png">
+            <img id="mercy-3d-mess" class="mercy-sitting" src="img/3-mercy/3-mercy-sitting4-mess.png">
             <div id="window-fix">
                 <div><img class="window1" src="img/3-mercy/full-window.png"></div>
             </div>
             <div id="window-move">
-                <div class="open-me button"><img class="window1" src="img/3-mercy/half-window.png"></div>
+                <div class="open-me drag-cursor"><img class="window1" src="img/3-mercy/half-window.png"></div>
             </div>
         </div>
 
@@ -191,6 +195,7 @@
             <img id="people-talk-left" src="img/objects-icons/speechbubble-big-left.png">
             <p id="valentino-talk1" class="all-people-talk">Shoot, how did I not hear the other alarm clocks?</p>
             <p id="valentino-talk2" class="all-people-talk"></p>
+            <p id="mercy-talk1" class="all-people-talk">Good morning</p>
         </div>
 
         <!-- KNOT IN BACKGROUND IS SAYING STUFF-->
@@ -208,6 +213,24 @@
         <div id="cinematic-effect">
             <div id="cinematic-up" class="cinematic"></div>
             <div id="cinematic-down" class="cinematic"></div>
+        </div>
+
+        <!-- SPEECHBUBBLES ON LEFT-->
+        <div id="knot-narration">
+            <p id="phrase5" class="phrase phrase-right"></p>
+            <p id="phrase9" class="phrase phrase-left"></p>
+            <p id="phrase11" class="phrase phrase-right"></p>
+            <p id="phrase12" class="phrase phrase-right"></p>
+            <p id="phrase13" class="phrase phrase-right"></p>
+            <p id="phrase14" class="phrase phrase-left"></p>
+            <p id="phrase17" class="phrase phrase-right"></p>
+            <p id="phrase18" class="phrase phrase-right"></p>
+            <p id="phrase19" class="phrase phrase-right"></p>        
+            <img id="speechbubble-big-left" src="img/objects-icons/speechbubble-big-left.png">
+            <!-- SCENE 1 -->
+            <p id="phrase6" class="phrase phrase-left textWhite"></p>
+            <p id="phrase7" class="phrase phrase-left textWhite"></p>
+            <p id="phrase8" class="phrase phrase-left textWhite"></p>
         </div>
 
         <!-- info-icon-lawrence -->
@@ -228,12 +251,7 @@
         <img class="knot layer4" src="img/knot-images/knot4.png">
         <img id="mouseMoved" class="knot" src="img/knot-images/background-knot.png">
 
-        <!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In  -->
-        <svg id="knotLasso" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 561.9 205" xml:space="preserve">
-            <path class="knotLassoPath button" d="M5,5c63,21.4,83.3,78.9,128.5,121.1c61.7,57.5,139.8,67.6,221.2,71.9c38.8,2,187.6,15.4,180.1-65
-c-2.4-25.4-77.2-41.7-77.2-45.3c0,32.4,97,67.4,98.6,60.7c8.5-33.8-70.1-88.2-103.6-80.4c-29.7,6.9,58.2,60.6,63.8,61.6
-c39.3,6.4,51.9-28.8,26.8-28.8" />
-        </svg>
+
 
 
         <div class="knot eyes">
@@ -251,39 +269,16 @@ c39.3,6.4,51.9-28.8,26.8-28.8" />
                 <img id="speechbubble-big-right" src="img/objects-icons/speechbubble-big-right.png">
                 <!-- INTRO -->
                 <div id="intro" class="knot-text-intro">
-                    <p id="phrase1" class="phrase phrase-right"> HELLO ! I AM KNOT. <br> A STRESS CAUSING EGO <br>
+                    <p id="phrase1" class="phrase phrase-intro"> HELLO ! I AM KNOT. <br> A STRESS CAUSING EGO <br>
                         <br>
                         <click-text>click anywhere ...</click-text>
                     </p>
-                    <p id="phrase2" class="phrase phrase-right"></p>
-                    <p id="phrase3" class="phrase phrase-right"></p>
-                    <p id="phrase3b" class="phrase phrase-right"></p>
-                    <p id="phrase4" class="phrase phrase-right"></p>
-                </div>
-                <div class="knot-text-valentino">
-                    <p id="phrase5" class="phrase phrase-right"></p>
-                    <p id="phrase9" class="phrase phrase-left"></p>
-                    <p id="phrase11" class="phrase phrase-right"></p>
-                    <p id="phrase12" class="phrase phrase-right"></p>
-                    <p id="phrase13" class="phrase phrase-right"></p>
-                    <p id="phrase14" class="phrase phrase-left"></p>
-                    <p id="phrase17" class="phrase phrase-right"></p>
-                    <p id="phrase18" class="phrase phrase-right"></p>
-                    <p id="phrase19" class="phrase phrase-right"></p>
-
+                    <p id="phrase2" class="phrase phrase-intro"></p>
+                    <p id="phrase3" class="phrase phrase-intro"></p>
+                    <p id="phrase3b" class="phrase phrase-intro"></p>
+                    <p id="phrase4" class="phrase phrase-intro"></p>
                 </div>
             </div>
-            <!-- SPEECHBUBBLES ON LEFT-->
-            <div id="knot-talking-left">
-                <img id="speechbubble-big-left" src="img/objects-icons/speechbubble-big-left.png">
-                <!-- SCENE 1 -->
-                <p id="phrase6" class="phrase phrase-left textWhite"></p>
-                <p id="phrase7" class="phrase phrase-left textWhite"></p>
-                <p id="phrase8" class="phrase phrase-left textWhite"></p>
-
-
-            </div>
-
         </div>
     </div>
 
@@ -329,10 +324,11 @@ c39.3,6.4,51.9-28.8,26.8-28.8" />
         <a class="blu" onclick="goValentino()">valentino</a>
         <a class="blu" onclick="goLawrence()">lawrence</a>
         <a class="blu" onclick="goMercy()">mercy</a>
+        <a href="https://dapper-familiar-tiglon.glitch.me" class="blu">callToAction</a>
     </div>
 
     <!--HOME BUTTON -->
-    <img onclick="goHome()" id="home-button" src="img/knot-images/round-icon.png">
+    <a href="."><img onclick="goHome()" id="home-button" src="img/knot-images/round-icon.png"></a>
 
     <!-- ABOUT -------------------->
     <div id="about-container">

@@ -10,6 +10,7 @@ let variable = {
   moveflag: false,
   visible: 1,
   textspeed: 30,
+  wind: 0,
 }
 
 let domElement = {
@@ -22,9 +23,7 @@ let domElement = {
   about: document.querySelector("#about-content"),
   assets: document.querySelector("#asset-container"),
   knotTalkingRight: document.querySelector("#knot-talking-right"),
-  bubbleRight: document.querySelector("#speechbubble-big-right"),
-  knotTalkingLeft: document.querySelector("#knot-talking-left"),
-  bubbleLeft: document.querySelector("#speechbubble-big-left"),
+  knotNarration: document.querySelector("#knot-narration"),
   helpYes: document.querySelector("#help-yes"),
   helpNo: document.querySelector("#help-no"),
   helpButtons: document.querySelector("#help-button"),
@@ -66,7 +65,7 @@ let character = {
   mercy3b: document.querySelector("#mercy-3b"),
   mercy3c: document.querySelector("#mercy-3c"),
   mercy3d: document.querySelector("#mercy-3d"),
-  mercy3e: document.querySelector("#mercy-3e"),
+  mercy3dMess: document.querySelector("#mercy-3d-mess"),
   // barbara
   barbara: document.querySelector("#barbara"),
 }
@@ -118,7 +117,7 @@ let text = {
   peopleTalk: document.querySelector("#people-talk"),
   valentinoTalk1: document.querySelector("#valentino-talk1"),
   valentinoTalk2: document.querySelector("#valentino-talk2"),
-
+  mercyTalk1: document.querySelector("#mercy-talk1"),
 }
 
 ////////////////////////////////////////////////////////////////
@@ -370,7 +369,6 @@ function animation(scrollPos) {
     character.knot.className = '';
     character.knot.classList.add("knotStart");
     domElement.knotTalkingRight.classList.remove("bubbleGrow");
-    domElement.bubbleRight.classList = "";
     domElement.scrollIcon.classList.remove("scroll-icon-after");
     document.querySelector("#navigation").style.display = "block";
     variable.currentScene = 0;
@@ -603,7 +601,7 @@ function scene6() {
   variable.moveflag = true;
   setTimeout(() => {
     text.phrase6.style.display = "block";
-    domElement.knotTalkingLeft.classList.add("bubbleGrow");
+    domElement.knotNarration.classList.add("bubbleGrow");
     variable.currentScene = 7;
   }, 500)
 }
@@ -670,7 +668,7 @@ function countToggle() {
   document.querySelector(".toggle-click").play();
   document.querySelector(".toggle-click").loop = false;
   text.phrase8.style.opacity = "0";
-  domElement.knotTalkingLeft.classList.remove("bubbleGrow");
+  domElement.knotNarration.classList.remove("bubbleGrow");
   character.knot.classList.add("knotValentinoDisappear");
   variable.toggleCount = variable.toggleCount + 1;
   //check if its finished:
@@ -894,12 +892,15 @@ function scene13() {
 
 // SCENE 14 "watch and learn"
 function scene14() {
-  domElement.knotTalkingLeft.classList.add("bubbleGrow");
+  domElement.knotNarration.classList.add("bubbleGrow");
   scene.busOutside.classList.add("busOutsideAway");
   text.phrase14.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 15;
   }, 200)
+  setTimeout(() => {
+    scene.busOutside.style.display = "none";
+  }, 2000)
 }
 
 // SCENE 15 "whisper"
@@ -963,52 +964,57 @@ function motCount() {
   variable.motCount = variable.motCount + 1;
   if (variable.motCount === 3) {
     text.phrase18.style.display = "block";
+    // scene 19
     setTimeout(() => {
-      variable.currentScene = 19;
-    }, 200)
+      text.phrase18.style.display = "none";
+      document.querySelector("#looser-scream-box").style.display = "block";
+      variable.currentScene = 20;
+    }, 2000)
   }
 }
 
 //SCENE 19 // LOOOOOOOSER TEXT BIG
 function scene19() {
-  text.phrase18.style.display = "none";
-  document.querySelector("#looser-scream-box").style.display = "block";
-  setTimeout(() => {
-    variable.currentScene = 20;
-  }, 200)
+  console.log("change to scene 20 automaticly")
 }
 
 // SCENE 20 LAWRENCE WALKING TO BUILDING
 function scene20() {
   document.querySelector("#looser-scream-box").style.display = "none";
-  character.lawrence3.style.display = "block";
   character.lawrence2d.style.display = "none";
   scene.busInside.style.display = "none";
-  scene.officeBuilding.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 21;
-  }, 200)
+    character.lawrence3.style.display = "block";
+    scene.officeBuilding.style.display = "block";
+  }, 1000)
+  setTimeout(() => {
+    character.mercy.style.display = "block";
+    text.peopleTalk.classList.add("bubbleGrow");
+    text.mercyTalk1.style.display = "block";
+    text.phrase19.style.display = "block";
+    character.knotLasso.style.display = "block";
+    character.knot.classList.add("knotWaitingroom");
+    character.lawrence3.style.display = "none";
+    character.lawrence4a.style.display = "block";
+    scene.officeBuilding.style.display = "none";
+    scene.waitingRoom1.style.display = "block";
+    scene.clock0930.style.display = "block";
+    variable.currentScene = 22;
+  }, 3000)
 }
 
 // SCENE 21 LAWRENCE WALKING TOWARD MERCY
 function scene21() {
-  character.mercy.style.display = "block";
-  character.knotLasso.style.display = "block";
-  character.knot.classList.add("knotWaitingroom");
-  character.lawrence3.style.display = "none";
-  character.lawrence4a.style.display = "block";
-  scene.officeBuilding.style.display = "none";
-  scene.waitingRoom1.style.display = "block";
-  scene.clock0930.style.display = "block";
-  setTimeout(() => {
-    variable.currentScene = 22;
-  }, 200)
+  console.log("change to 22 automaticly")
 }
 
 // SCENE 22 LAWRENCE START FALLING
 function scene22() {
   character.lawrence4a.style.display = "none";
   character.lawrence4b.style.display = "block";
+  text.phrase19.style.display = "none";
+  text.peopleTalk.classList.remove("bubbleGrow");
+  text.mercyTalk1.style.display = "none";
   setTimeout(() => {
     variable.currentScene = 23;
   }, 200)
@@ -1049,6 +1055,7 @@ function scene25() {
 function scene26() {
   character.mercy2.style.display = "none";
   character.knot.classList.add("knotWaitingChair");
+  eyes.style.display="None";
   scene.waitingRoom2.style.display = "block";
   scene.waitingRoom1.style.display = "none";
   setTimeout(() => {
@@ -1144,31 +1151,48 @@ function dragEnd(e) {
 }
 
 function drag(e) {
-  if (active) {
-    e.preventDefault();
-    if (e.type === "touchmove") {
-      activeItem.currentX = e.touches[0].clientX - activeItem.initialX;
-    } else {
-      activeItem.currentX = e.clientX - activeItem.initialX;
-    }
-    activeItem.xOffset = activeItem.currentX;
+  if (variable.wind === 0) {
+    if (active) {
+      e.preventDefault();
+      if (e.type === "touchmove") {
+        activeItem.currentX = e.touches[0].clientX - activeItem.initialX;
+      } else {
+        activeItem.currentX = e.clientX - activeItem.initialX;
+      }
+      activeItem.xOffset = activeItem.currentX;
 
-    // set limits for window !!
-    if (activeItem.currentX > 0 * window.innerHeight) {
-      activeItem.currentX = 0 * window.innerHeight;
-    }
+      // set limits for window !!
+      if (activeItem.currentX > 0 * window.innerHeight) {
+        activeItem.currentX = 0 * window.innerHeight;
+      }
 
-    if (activeItem.currentX < -0.22 * window.innerHeight) {
-      activeItem.currentX = -0.22 * window.innerHeight;
-      console.log("wind is blowing mercy away")
+      if (activeItem.currentX < -0.22 * window.innerHeight) {
+        activeItem.currentX = -0.22 * window.innerHeight;
+        mercyChaos();
+        variable.currentScene = 30;
+        variable.wind = 1;
+      }
+      setTranslate(activeItem.currentX, 0, activeItem);
     }
-
-    setTranslate(activeItem.currentX, 0, activeItem);
   }
 }
 
 function setTranslate(xPos, yPos, el) {
   el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+}
+
+
+// SCENE wind blowed
+function mercyChaos() {
+  character.mercy3c.style.display = "block";
+  character.mercy3a.style.display = "none";
+  scene.windowFix.style.display = "block";
+  scene.windowMove.style.display = "block";
+  character.knot.classList.add("knotMercy")
+  setTimeout(() => {
+    character.mercy3d.style.display = "block";
+    character.mercy3c.style.display = "none";
+  }, 1000)
 }
 
 ///////////////////// bubble animations:
@@ -1353,7 +1377,7 @@ new TypeIt("#phrase13", {
 
 new TypeIt("#phrase14", {
   cursor: false,
-  strings: ["I know what to do… watch and learn (assistant)"],
+  strings: ["I know what to do… watch and learn."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -1374,21 +1398,21 @@ new TypeIt("#whisper3", {
 
 new TypeIt("#phrase17", {
   cursor: false,
-  strings: ["Assistant, let’s see what you have learned so far. Delete the three motivational quotes:"],
+  strings: ["Assistant, let’s see what you have learned so far.", "Delete the three motivational thoughts:"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase18", {
   cursor: false,
-  strings: ["Good, I have my quotes now"],
+  strings: ["Good, I have my thoughts now"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase19", {
   cursor: false,
-  strings: ["…"],
+  strings: ["…take my hand"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
