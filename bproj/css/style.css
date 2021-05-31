@@ -22,13 +22,9 @@
 body {
   white-space: normal;
   font-family: 'Architects Daughter', cursive;
-  /* font-family: 'Courier New', Courier, monospace; */
-  /* font-family: 'Providence', cursive; */
   text-transform: uppercase;
-  /* font-weight: 400; */
   font-size: 16px;
   display: flex;
-  /* text-align: center; */
   background-color: var(--schwarz);
   color: var(--weiss);
   overflow: hidden;
@@ -102,7 +98,7 @@ click-text {
 /* -------------------------------- PROGRESS BAR -------------------------------- */
 #progress {
   height: 5px;
-  background: #fafafa;
+  background: var(--weiss);
   position: fixed;
   left: 25%;
   top: 50%;
@@ -451,6 +447,10 @@ click-text {
   transform-origin: bottom left;
   transform: scale(0);
   transition: transform 0.5s;
+}
+
+.mercy-goodmorning{
+  left: 35vh !important;
 }
 
 #people-talk-right {

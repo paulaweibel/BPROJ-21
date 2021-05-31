@@ -26,6 +26,18 @@
     left: 50vw;
 }
 
+.mercy-bar{
+    position: absolute;
+    height: 50vh;
+    top: 30vh;
+    left: 20vw;
+}
+
+#mercy-5c{
+    top: 20vh;
+    height: 60vh;
+}
+
 #window-fix {
     display: none;
     position: fixed;

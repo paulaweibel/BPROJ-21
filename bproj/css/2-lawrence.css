@@ -100,12 +100,13 @@
 #motivational-quotes {
     display: none;
     position: fixed;
-    top: 50vh;
-    left: 50vw;
+    top: 30vh;
+    left: 60vw;
+    width: 20vh;
 }
 
 .motQuote {
-    height: 10vh;
+    height: 15vh;
 }
 
 /* LAWRENCE WALKING TO BUILDING */

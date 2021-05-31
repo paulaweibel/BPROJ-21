@@ -346,7 +346,7 @@
 }
 
 .knotLawrenceBusstop {
-    margin-left: 20vw !important;
+    margin-left: 15vw !important;
     margin-top: 30vh !important;
 }
 
@@ -382,23 +382,6 @@
     left: 0vw;
     transform-origin: right bottom;
     transform: scale(1);
-    transition: transform 1s;
-}
-
-#speechbubble-big-right {
-    display: none;
-    transform-origin: left bottom;
-    transform: scale(0);
-    /* width: 50vh; */
-    width: 30vw;
-    transition: transform 1s;
-}
-
-#speechbubble-big-left {
-    display: none;
-    transform-origin: right bottom;
-    transform: scale(0);
-    width: 25vw;
     transition: transform 1s;
 }
 

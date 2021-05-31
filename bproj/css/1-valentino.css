@@ -221,7 +221,9 @@
     10%{
         margin-top: 35vh;
     }
-    
+    100%{
+        margin-top: 35vh;
+    }
 }
 
 #house-valentino {
@@ -229,9 +231,9 @@
 }
 
 #street-line {
-    left: 70vh;
+    left: 120vh;
     top: calc(50vh - 4vw);
-    width: calc(400vw - 170vh);
+    width: calc(400vw - 280vh);
 }
 
 

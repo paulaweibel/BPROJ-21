@@ -579,6 +579,8 @@ function goValentino() {
   window.scrollTo(0, 10000);
   domElement.assets.style.display = "block";
   domElement.spotlight.style.display = "block";
+  document.querySelector(".ambience-apartment").currentTime = 0;
+  document.querySelector(".ambience-apartment").play();
   variable.currentScene = 5;
 }
 
@@ -628,9 +630,7 @@ function scene7() {
 function scene8() {
   character.valentino2.style.display = "none";
   character.valentino3.style.display = "block";
-  document.querySelector(".alarm-clock1").currentTime = 0;
   document.querySelector(".alarm-clock1").pause();
-  document.querySelector(".alarm-clock2").currentTime = 0;
   document.querySelector(".alarm-clock2").pause();
 
   scene.whitePhoneScreen.style.animation = "none";
@@ -699,6 +699,7 @@ function countToggle() {
 
     // show one hour later
     setTimeout(() => {
+      document.querySelector(".ambience-apartment").pause();
       document.querySelector("#one-hour-later").style.display = "block";
       text.whisper1.style.display = "none";
       text.backWhisper.classList.remove("showWhisperKnotValentino");
@@ -745,8 +746,11 @@ function scene9a() {
 
 // SCENE 10: VALENTINO RUN HORIZONTAL!!
 function scene10() {
-  document.querySelector(".trumpet-sound").currentTime = 0;
-  document.querySelector(".trumpet-sound").pause()
+  document.querySelector(".trumpet-sound").pause();
+  console.log("wtf");
+
+  document.querySelector(".ambience-street-morning").currentTime = 0;
+  document.querySelector(".ambience-street-morning").play();
   document.querySelector("#wake-up-scream1").style.display = "none";
   document.querySelector("#wake-up-scream2").style.display = "none";
   document.querySelector("#run-scream").style.display = "block";
@@ -878,6 +882,9 @@ function scene12() {
 
 // SCENE 13 LAWRENCE IN BUS
 function scene13() {
+  document.querySelector(".ambience-street-morning").pause();
+  document.querySelector(".ambience-bus").currentTime = 0;
+  document.querySelector(".ambience-bus").play();
   text.phrase13.style.display = "none";
   scene.busInside.style.display = "block";
   scene.busOutside.style.display = "block";
@@ -968,6 +975,7 @@ function motCount() {
     setTimeout(() => {
       text.phrase18.style.display = "none";
       document.querySelector("#looser-scream-box").style.display = "block";
+      document.querySelector(".ambience-bus").pause();
       variable.currentScene = 20;
     }, 2000)
   }
@@ -990,6 +998,7 @@ function scene20() {
   setTimeout(() => {
     character.mercy.style.display = "block";
     text.peopleTalk.classList.add("bubbleGrow");
+    text.peopleTalk.classList.add("mercy-goodmorning");
     text.mercyTalk1.style.display = "block";
     text.phrase19.style.display = "block";
     character.knotLasso.style.display = "block";
@@ -1014,6 +1023,7 @@ function scene22() {
   character.lawrence4b.style.display = "block";
   text.phrase19.style.display = "none";
   text.peopleTalk.classList.remove("bubbleGrow");
+  text.peopleTalk.classList.remove("mercy-goodmorning");
   text.mercyTalk1.style.display = "none";
   setTimeout(() => {
     variable.currentScene = 23;
@@ -1055,7 +1065,9 @@ function scene25() {
 function scene26() {
   character.mercy2.style.display = "none";
   character.knot.classList.add("knotWaitingChair");
-  eyes.style.display="None";
+  document.querySelector(".door-close").currentTime = 0;
+  document.querySelector(".door-close").play();
+  eyes.style.display = "None";
   scene.waitingRoom2.style.display = "block";
   scene.waitingRoom1.style.display = "none";
   setTimeout(() => {
@@ -1067,6 +1079,7 @@ function scene26() {
 function scene27() {
   character.mercy2.style.display = "none";
   character.knot.classList.add("knotWaitingChair");
+  eyes.style.display = "block";
   scene.waitingRoom2.style.display = "block";
   scene.waitingRoom1.style.display = "none";
   setTimeout(() => {
