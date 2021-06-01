@@ -37,12 +37,18 @@ let character = {
   knotLasso: document.querySelector("#knotLasso"),
   // valentino
   valentino: document.querySelector("#valentino"),
-  valentino1: document.querySelector("#valentino-1"),
-  valentino2: document.querySelector("#valentino-2"),
+  valentino1a: document.querySelector("#valentino-1a"),
+  valentino1b: document.querySelector("#valentino-1b"),
+  valentino1c: document.querySelector("#valentino-1c"),
+  valentino1d: document.querySelector("#valentino-1d"),
+  valentino2a: document.querySelector("#valentino-2a"),
+  valentino2b: document.querySelector("#valentino-2b"),
   valentino3: document.querySelector("#valentino-3"),
   valentino4: document.querySelector("#valentino-4"),
   valentino5: document.querySelector("#valentino-5"),
   valentino6: document.querySelector("#valentino-6"),
+  valentino7a: document.querySelector("#valentino-7a"),
+  valentino7b: document.querySelector("#valentino-7b"),
   // lawrence
   lawrence: document.querySelector("#lawrence"),
   lawrence1: document.querySelector("#lawrence-1"),
@@ -86,6 +92,7 @@ let scene = {
   clock11: document.querySelector("#clock11"),
   windowMove: document.querySelector("#window-move"),
   windowFix: document.querySelector("#window-fix"),
+  nightTable: document.querySelector("#night-table"),
 }
 
 let text = {
@@ -249,8 +256,8 @@ body.onmousemove = function (ev) {
 
 const eyes = document.querySelector('.eyes');
 window.addEventListener('mousemove', (evt) => {
-  const x = -(window.innerWidth / 2 - evt.pageX + sLeft) / 100;
-  const y = -(window.innerHeight / 2 - evt.pageY + scrollLocation) / 100;
+  const x = -(window.innerWidth / 2 - evt.pageX + sLeft) / 60;
+  const y = -(window.innerHeight / 2 - evt.pageY + scrollLocation) / 60;
   eyes.style.transform = `translateY(${y}px) translateX(${x}px)`;
 });
 
@@ -634,8 +641,8 @@ function scene7() {
   text.phrase6.style.display = "none";
   text.phrase7.style.display = "block";
   scene.whitePhoneScreen.style.display = "block";
-  character.valentino2.style.display = "block";
-  character.valentino1.style.display = "none";
+  character.valentino1b.style.display = "block";
+  character.valentino1a.style.display = "none";
   document.querySelector("#valentino-info").style.display = "none";
   setTimeout(() => {
     variable.currentScene = 8;
@@ -644,8 +651,8 @@ function scene7() {
 
 // SCENE 8 (white Phone was clicked) it's up to you, turn off the other alarms
 function scene8() {
-  character.valentino2.style.display = "none";
-  character.valentino3.style.display = "block";
+  character.valentino1b.style.display = "none";
+  character.valentino1c.style.display = "block";
   document.querySelector(".alarm-clock1").pause();
   document.querySelector(".alarm-clock2").pause();
 
@@ -692,8 +699,8 @@ function countToggle() {
     text.whisper1.style.display = "block";
     scene.alarmToggles.style.display = "none";
     scene.whitePhoneScreen.style.opacity = "0";
-    character.valentino2.style.display = "none";
-    character.valentino3.style.display = "block";
+    character.valentino1b.style.display = "none";
+    character.valentino1c.style.display = "block";
 
     // smooth fade-out phonescreen
     setTimeout(() => {
@@ -745,8 +752,8 @@ function countToggle() {
       domElement.knotTalkingRight.classList.add("bubbleGrow");
       text.peopleTalk.classList.add("bubbleGrow");
       text.valentinoTalk1.style.display = "block";
-      character.valentino4.style.display = "block";
-      character.valentino3.style.display = "none";
+      character.valentino1d.style.display = "block";
+      character.valentino1c.style.display = "none";
     }, 8500)
   }
 }
@@ -776,8 +783,8 @@ function scene10() {
   document.querySelector("#trumpet-container").style.display = "none";
   character.knot.classList = "";
   character.knot.classList.add("knotValentinoRunStart");
-  character.valentino4.style.display = "none";
-  character.valentino5.style.display = "block";
+  character.valentino1d.style.display = "none";
+  character.valentino2a.style.display = "block";
   scene.cinematicEffect.style.display = "block";
   document.querySelector("#line-floor-valentino").style.display = "none";
   scene.horizontalScrollContainer.style.display = "block";
@@ -825,41 +832,41 @@ function runToBus() {
     character.knot.classList.add("knotValentinoRunMiddle");
     scene.bus.classList.add("driveLeft");
   } else {
-    character.valentino6.style.display = "none";
-    character.valentino6.classList = "valentino-run";
-    character.valentino5.classList = "valentino-run";
+    character.valentino2b.style.display = "none";
+    character.valentino2b.classList = "valentino-run";
+    character.valentino2a.classList = "valentino-run";
     scene.bus.classList = "";
     character.knot.classList.remove("knotValentinoRunMiddle");
   }
   // 2. horizontal scroll valentino  
   if (sLeft > 1.5 * window.innerWidth) {
-    character.valentino6.style.display = "block";
-    character.valentino5.style.opacity = "0";
+    character.valentino2b.style.display = "block";
+    character.valentino2a.style.opacity = "0";
   } else {
-    character.valentino5.style.opacity = "1";
-    character.valentino6.style.display = "none";
+    character.valentino2a.style.opacity = "1";
+    character.valentino2b.style.display = "none";
   }
 
   // 3. horizontal scroll valentino  
   if (sLeft > 2.5 * window.innerWidth) {
-    character.valentino6.classList.add("valentinoMiddle");
-    character.valentino5.classList.add("valentinoMiddle");
+    character.valentino2b.classList.add("valentinoMiddle");
+    character.valentino2a.classList.add("valentinoMiddle");
   } else {
-    character.valentino6.classList.remove("valentinoMiddle");
-    character.valentino5.classList.remove("valentinoMiddle");
+    character.valentino2b.classList.remove("valentinoMiddle");
+    character.valentino2a.classList.remove("valentinoMiddle");
   }
 
   // 4. horizontal scroll valentino  
   if (sLeft > 2.8 * window.innerWidth) {
     text.phrase11.style.display = "block";
-    character.valentino5.classList.add("valentinoLeaves");
-    character.valentino6.classList.add("valentinoLeaves");
+    character.valentino2a.classList.add("valentinoLeaves");
+    character.valentino2b.classList.add("valentinoLeaves");
     character.knot.classList.add("knotValentinoRunEnd");
     scene.bus.classList.add("driveAway");
   } else {
     text.phrase11.style.display = "none";
-    character.valentino5.classList.remove("valentinoLeaves");
-    character.valentino6.classList.remove("valentinoLeaves");
+    character.valentino2a.classList.remove("valentinoLeaves");
+    character.valentino2b.classList.remove("valentinoLeaves");
     character.knot.classList.remove("knotValentinoRunEnd");
     scene.bus.classList.remove("driveAway");
   }

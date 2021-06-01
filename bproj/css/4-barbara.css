@@ -1,18 +1,46 @@
 /* stuff to put at the bottom */
 
 .textWhite {
-    color: var(--weiss) !important;
-  }
+  color: var(--weiss) !important;
+}
 
 
-  #barbara{
-    display: none;
-    opacity: 1;
-  }
+#barbara {
+  display: none;
+  opacity: 1;
+}
 
-  .barbara-bar{
-    position: fixed;
-    top: 30vh;
-    right: 0;
-    height: 50vh;
-  }
+.barbara-bar {
+  position: fixed;
+  top: 35vh;
+  right: 0;
+  height: 50vh;
+}
+
+#bar-sign-container {
+  position: fixed;
+  left: 0vw;
+  top: 5vh;
+  height: 20vh;
+}
+
+.bar-sign {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.bar-sign-button {
+  position: absolute;
+  top: 2.5vh;
+  left: 5vh;
+  height: 6vh;
+}
+
+#happy-hour-gif {
+  position: absolute;
+  left: 12vh;
+  top: 2.5vh;
+  height: 15vh;
+}

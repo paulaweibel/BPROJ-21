@@ -131,15 +131,52 @@
     transition: margin-left 3s;
 }
 
+.valentino-bar {
+    position: fixed;
+    left: 50vw;
+    max-height: 45vh;
+}
+
+.valentino-empty-bed {
+    position: fixed;
+    top: 40vh;
+    max-height: 40vh;
+}
+
+.valentino-bed-above {
+    position: fixed;
+    top: 15vh;
+    left: calc(50vw - 20vh);
+    max-height: 70vh;
+}
 
 
 /* INVISIBLE VALENTINI ---------------------------------- */
-#valentino-1 {
+#valentino-1a {
     display: block;
 }
 
-#valentino-2 {
+#valentino-1b {
     display: none;
+}
+
+#valentino-1c {
+    display: none;
+}
+
+#valentino-1d {
+    display: none;
+}
+
+#valentino-2a {
+    display: none;
+    animation: running-man 0.5s infinite ease-in-out;
+}
+
+#valentino-2b {
+    transition: margin-left 3s;
+    display: none;
+    animation: running-man 0.5s infinite ease-in-out;
 }
 
 #valentino-3 {
@@ -152,14 +189,28 @@
 
 #valentino-5 {
     display: none;
-    animation: running-man 0.5s infinite ease-in-out;
 }
 
 #valentino-6 {
-    transition: margin-left 3s;
     display: none;
-    animation: running-man 0.5s infinite ease-in-out;
 }
+
+#valentino-7a {
+    display: none;
+}
+
+#valentino-7b {
+    display: none;
+}
+
+#night-table{
+    display: none;
+    position: fixed;
+    top: 20vh;
+    left: calc(50vw - 30vh);
+    max-height: 10vh;
+}
+
 
 @keyframes running-man {
     0% {
