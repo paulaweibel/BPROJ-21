@@ -588,7 +588,7 @@ domElement.helpButtons.addEventListener('click', function () {
 
 function goValentino() {
   domElement.intro.style.display = "none";
-  domElement.body.style.backgroundColor = "var(--weiss)";
+  domElement.body.style.backgroundColor = "var(--schwarz)";
   domElement.helpButtons.style.display = "none";
   domElement.body.style.overflowY = "hidden";
   domElement.body.style.height = "10000vh";
