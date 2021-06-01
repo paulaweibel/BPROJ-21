@@ -92,22 +92,22 @@
             <img id="valentino-info" class="id" onclick="idValentino()" src="img/objects-icons/info-icon.png">
             <div id="valentino-toggles">
                 <div id="toggle1">
-                    6:40
+                    <p>6:40</p>
                     <img class="toggle button" onclick="toggle1(); countToggle()" src="img/objects-icons/on.png">
                     <img id="toggle1-off" class="toggle button toggle-off" src="img/objects-icons/off.png">
                 </div>
                 <div id="toggle2">
-                    6:45
+                    <p>6:45</p>
                     <img class="toggle button" onclick="toggle2(); countToggle()" src="img/objects-icons/on.png">
                     <img id="toggle2-off" class="toggle button toggle-off" src="img/objects-icons/off.png">
                 </div>
                 <div id="toggle3">
-                    6:50
+                    <p>6:50</p>
                     <img class="toggle button" onclick="toggle3(); countToggle()" src="img/objects-icons/on.png">
                     <img id="toggle3-off" class="toggle button toggle-off" src="img/objects-icons/off.png">
                 </div>
                 <div id="toggle4">
-                    6:55
+                    <p>6:55</p>
                     <img class="toggle button" onclick="toggle4(); countToggle()" src="img/objects-icons/on.png">
                     <img id="toggle4-off" class="toggle button toggle-off" src="img/objects-icons/off.png">
                 </div>
@@ -138,23 +138,28 @@
             <img id="lawrence-4d" class="lawrence-fall" src="img/2-lawrence/4-lawrence-before-meeting4.png">
             <img id="lawrence-5" class="lawrence-after-meeting" src="img/2-lawrence/5-lawrence-sad-after-meeting.png">
             <div id="motivational-quotes">
-                <img id="motQuote-1" class="motQuote" onclick="motQuote1(); motCount()"
-                    src="img/motivational-quotes&post-its/motivational-quote1.png">
-                <img id="motQuote-2" class="motQuote" onclick="motQuote2(); motCount()"
-                src="img/motivational-quotes&post-its/motivational-quote2.png">
-                <img id="motQuote-3" class="motQuote" onclick="motQuote3(); motCount()"
-                src="img/motivational-quotes&post-its/motivational-quote3.png">
+                <div id="motQuote-1" class="motQuote">
+                    <img class="motImage" src="img/motivational-quotes&post-its/motivational-quote1.png">
+                    <div onclick="motQuote1(); motCount()" class="motivational-X-right button"></div>
+                </div>
+                <div id="motQuote-2" class="motQuote">
+                    <img class="motImage" src="img/motivational-quotes&post-its/motivational-quote2.png">
+                    <div onclick="motQuote2(); motCount()" class="motivational-X-left button"></div>
+                </div>
+                <div id="motQuote-3" class="motQuote">
+                    <img class="motImage" src="img/motivational-quotes&post-its/motivational-quote3.png">
+                    <div onclick="motQuote3(); motCount()" class="motivational-X-right button"></div>
+                </div>
             </div>
             <!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In  -->
             <svg id="knotLasso" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 586 51" xml:space="preserve">
                 <path class="knotLassoPath button" d="M1 1C100.333 34.6667 356.2 84.3 585 13.5" />
             </svg>
-
         </div>
 
         <!-- MERCY ASSETS (EMPTY) -->
         <div id="mercy">
-            <img id="mercy-1a" onclick="idMercy()" class="mercy-welcoming" src="img/3-mercy/1-mercy-welcoming1.png">
+            <img id="mercy-1a" class="mercy-welcoming" src="img/3-mercy/1-mercy-welcoming1.png">
             <img id="mercy-1b" class="mercy-welcoming" src="img/3-mercy/1-mercy-welcoming2-wtf-face.png">
             <img id="mercy-2" class="mercy-entering" src="img/3-mercy/2-mercy-entering.png">
             <img id="mercy-3a" class="mercy-sitting" src="img/3-mercy/3-mercy-sitting1.png">
@@ -166,8 +171,9 @@
                 <div><img class="window1" src="img/3-mercy/full-window.png"></div>
             </div>
             <div id="window-move">
-                <div class="open-me drag-cursor"><img class="window1" src="img/3-mercy/half-window.png"></div>
+                <div class="open-me"><img id="dragQueen" class="window1" src="img/3-mercy/half-window.png"></div>
             </div>
+            <img id="info-icon-mercy" class="button" onclick="idMercy()" src="img/objects-icons/info-icon.png">
             <img id="mercy-4" class="mercy-bar" src="img/3-mercy/4-mercy-walking.png">
             <img id="mercy-5a" class="mercy-bar" src="img/3-mercy/5-mercy-bar1.png">
             <img id="mercy-5b" class="mercy-bar" src="img/3-mercy/5-mercy-bar2.png">
@@ -176,7 +182,20 @@
 
         <!-- BARBARA ASSETS (EMPTY) -->
         <div id="barbara" onclick="idBarbara()">
-            <img id="barbara-1" class="asset id" src="">
+            <img id="barbara-1" class="barbara-bar" src="img/4-barbie/1-barbara.png">
+            <img id="barbara-2" class="barbara-bar" src="img/4-barbie/2-barbara-serving-snack-coffee.png">
+            <img id="barbara-3" class="barbara-bar" src="img/4-barbie/3-barbara-ups.png">
+            <img id="barbara-4" class="barbara-bar" src="img/4-barbie/4-barbara-sorry.png">
+            <img id="barbara-5" class="barbara-bar" src="img/4-barbie/5-barbara-cleaning.png">
+            <img id="barbara-6a" class="barbara-bar" src="img/4-barbie/6-barbara-on-phone1.png">
+            <img id="barbara-6b" class="barbara-bar" src="img/4-barbie/6-barbara-on-phone2.png">
+            <img id="barbara-7" class="barbara-bar" src="img/4-barbie/7-barbara-doing-stuff.png">
+            <img id="barbara-8" class="barbara-bar" src="img/4-barbie/8-barbara-surprised.png">
+            <img id="barbara-9" class="barbara-bar" src="img/4-barbie/9-barbara-tired.png">
+            <img id="barbara-10a" class="barbara-bar" src="img/4-barbie/10-barbara&valentino1.png">
+            <img id="barbara-10b" class="barbara-bar" src="img/4-barbie/10-barbara&valentino2.png">
+            <img id="barbara-10c" class="barbara-bar" src="img/4-barbie/10-barbara&valentino3.png">
+            <img id="barbara-10d" class="barbara-bar" src="img/4-barbie/10-barbara&valentino4.png">
         </div>
 
         <!-- FOREGROUND OBJECTS -->
@@ -197,9 +216,9 @@
         <div id="people-talk">
             <img id="people-talk-right" src="img/objects-icons/speechbubble-big-right.png">
             <img id="people-talk-left" src="img/objects-icons/speechbubble-big-left.png">
-            <p id="valentino-talk1" class="all-people-talk">Shoot, how did I not hear the other alarm clocks?</p>
+            <p id="valentino-talk1" class="all-people-talk"></p>
             <p id="valentino-talk2" class="all-people-talk"></p>
-            <p id="mercy-talk1" class="all-people-talk">Good morning</p>
+            <p id="mercy-talk1" class="all-people-talk"></p>
         </div>
 
         <!-- KNOT IN BACKGROUND IS SAYING STUFF-->
@@ -222,6 +241,10 @@
         <!-- SPEECHBUBBLES ON LEFT-->
         <div id="knot-narration">
             <p id="phrase5" class="phrase phrase-right"></p>
+            <!-- SCENE 1 -->
+            <p id="phrase6" class="phrase phrase-left textWhite"></p>
+            <p id="phrase7" class="phrase phrase-left textWhite"></p>
+            <p id="phrase8" class="phrase phrase-left textWhite"></p>
             <p id="phrase9" class="phrase phrase-left"></p>
             <p id="phrase11" class="phrase phrase-right"></p>
             <p id="phrase12" class="phrase phrase-right"></p>
@@ -229,11 +252,18 @@
             <p id="phrase14" class="phrase phrase-left"></p>
             <p id="phrase17" class="phrase phrase-right"></p>
             <p id="phrase18" class="phrase phrase-right"></p>
-            <p id="phrase19" class="phrase phrase-right"></p>        
-            <!-- SCENE 1 -->
-            <p id="phrase6" class="phrase phrase-left textWhite"></p>
-            <p id="phrase7" class="phrase phrase-left textWhite"></p>
-            <p id="phrase8" class="phrase phrase-left textWhite"></p>
+            <p id="phrase19" class="phrase phrase-right"></p>
+            <p id="phrase20" class="phrase phrase-right"></p>
+            <p id="phrase21" class="phrase phrase-right"></p>
+            <p id="phrase22" class="phrase phrase-right"></p>
+            <p id="phrase23" class="phrase phrase-right"></p>
+            <p id="phrase24" class="phrase phrase-right"></p>
+            <p id="phrase25" class="phrase phrase-right"></p>
+            <p id="phrase26" class="phrase phrase-right"></p>
+            <p id="phrase27" class="phrase phrase-right"></p>
+            <p id="phrase28" class="phrase phrase-right"></p>
+            <p id="phrase29" class="phrase phrase-right"></p>
+            <p id="phrase30" class="phrase phrase-right"></p>
         </div>
 
         <!-- info-icon-lawrence -->
@@ -253,15 +283,10 @@
         <img class="knot layer3" src="img/knot-images/knot3.png">
         <img class="knot layer4" src="img/knot-images/knot4.png">
         <img id="mouseMoved" class="knot" src="img/knot-images/background-knot.png">
-
-
-
-
         <div class="knot eyes">
             <img id="eye-img" src="img/knot-images/eyes.png">
         </div>
         <div id="trumpet-container">
-            <!-- <img class="trumpet" src="img/knot-images/trumpet.png"> -->
             <img class="trumpet" src="img/knot-images/trumpet2.png">
         </div>
 
@@ -295,9 +320,8 @@
     </div>
 
     <!-- FOREGROUND TEXT -->
-    <!-- FOREGROUND TEXT -->
     <div id="one-hour-later">
-        <p id="phrase10" class="phrase">one hour later</p>
+        <p id="phrase10" class="phrase"></p>
     </div>
     <img id="bus-outside" src="img/Locations/bus-outside.png">
 
@@ -311,8 +335,8 @@
         <div class="id-blur-bright"></div>
         <img class="id-picture" src="img/ID-Cards/ID-Lawrence.png">
     </div>
-    <div id="id-mercy" class="id-card id" onclick="hideId()">
-        <div class="id-blur"></div>
+    <div id="id-mercy" class="id-card id" onclick="hideId(); scene28()">
+        <div class="id-blur-bright"></div>
         <img class="id-picture" src="img/ID-Cards/ID-Mercy.png">
     </div>
     <div id="id-barbara" class="id-card id" onclick="hideId()">
@@ -326,6 +350,7 @@
         <a class="blu" onclick="goValentino()">valentino</a>
         <a class="blu" onclick="goLawrence()">lawrence</a>
         <a class="blu" onclick="goMercy()">mercy</a>
+        <a class="blu" onclick="goBarbara()">barbara</a>
         <a href="https://dapper-familiar-tiglon.glitch.me" class="blu">callToAction</a>
     </div>
 
@@ -367,10 +392,13 @@
 
     <audio src="sound/ambience-apartment.mp3" loop class="ambience-apartment"></audio>
     <audio src="sound/ambience-street-morning.mp3" loop class="ambience-street-morning"></audio>
+    <audio src="sound/ambience-street-afternoon.mp3" loop class="ambience-street-afternoon"></audio>
+    <audio src="sound/ambience-street-evening.mp3" loop class="ambience-street-evening"></audio>
     <audio src="sound/ambience-bus-inside.mp3" loop class="ambience-bus"></audio>
 
     <audio src="sound/door-close.mp3" class="door-close"></audio>
-    
+    <audio src="sound/delete-key.mp3" class="delete-key"></audio>
+
 
     <!-- NO MOBILE VERSION ------------------------------------------------------------->
     <!-- eyes: ⬮ ⬮ -->

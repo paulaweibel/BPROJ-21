@@ -3,3 +3,16 @@
 .textWhite {
     color: var(--weiss) !important;
   }
+
+
+  #barbara{
+    display: none;
+    opacity: 1;
+  }
+
+  .barbara-bar{
+    position: fixed;
+    top: 30vh;
+    right: 0;
+    height: 50vh;
+  }

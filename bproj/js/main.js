@@ -113,6 +113,17 @@ let text = {
   phrase17: document.querySelector("#phrase17"),
   phrase18: document.querySelector("#phrase18"),
   phrase19: document.querySelector("#phrase19"),
+  phrase20: document.querySelector("#phrase20"),
+  phrase21: document.querySelector("#phrase21"),
+  phrase22: document.querySelector("#phrase22"),
+  phrase23: document.querySelector("#phrase23"),
+  phrase24: document.querySelector("#phrase24"),
+  phrase25: document.querySelector("#phrase25"),
+  phrase26: document.querySelector("#phrase26"),
+  phrase27: document.querySelector("#phrase27"),
+  phrase28: document.querySelector("#phrase28"),
+  phrase29: document.querySelector("#phrase29"),
+  phrase30: document.querySelector("#phrase30"),
   // people
   peopleTalk: document.querySelector("#people-talk"),
   valentinoTalk1: document.querySelector("#valentino-talk1"),
@@ -183,7 +194,12 @@ queue.on("complete", event => {
 })
 
 queue.on("fileload", handleFileComplete);
-queue.loadFile("./img/background.png");
+queue.loadFile("./css/style.css");
+queue.loadFile("./css/0-knot.css");
+queue.loadFile("./js/main.js");
+queue.loadFile("./img/title/new-title-hidden-worries.png");
+queue.loadFile("./img/title/new-title-hi.png");
+queue.loadFile("./index.html");
 
 
 function handleFileComplete(event) {
@@ -472,7 +488,7 @@ domElement.body.addEventListener('click', function () {
   if (variable.currentScene === 20) {
     scene20();
   }
-  // SCENE 21
+  // SCENE 20
   if (variable.currentScene === 21) {
     scene21();
   }
@@ -500,9 +516,9 @@ domElement.body.addEventListener('click', function () {
   if (variable.currentScene === 27) {
     scene27();
   }
-  // SCENE 28
-  if (variable.currentScene === 28) {
-    scene28();
+  // SCENE 27
+  if (variable.currentScene === "goBarbara") {
+    goBarbara();
   }
   console.log("Scene: " + variable.currentScene + ", I am at: " + scrollY);
 });
@@ -572,7 +588,7 @@ domElement.helpButtons.addEventListener('click', function () {
 
 function goValentino() {
   domElement.intro.style.display = "none";
-  domElement.body.style.backgroundColor = "var(--schwarz)";
+  domElement.body.style.backgroundColor = "var(--weiss)";
   domElement.helpButtons.style.display = "none";
   domElement.body.style.overflowY = "hidden";
   domElement.body.style.height = "10000vh";
@@ -702,15 +718,15 @@ function countToggle() {
       document.querySelector(".ambience-apartment").pause();
       document.querySelector("#one-hour-later").style.display = "block";
       text.whisper1.style.display = "none";
+      domElement.spotlight.style.display = "none";
       text.backWhisper.classList.remove("showWhisperKnotValentino");
       character.backgroundKnot.classList.remove("showWhisperKnotValentino");
       text.phrase10.style.display = "block";
     }, 5500)
 
-    // hide one hour later
+
     setTimeout(() => {
       document.querySelector("#one-hour-later").style.opacity = "0";
-      document.querySelector("#trumpet-container").style.display = "block";
       character.knot.classList.add("knotTrumpet");
       character.knot.style.opacity = "1";
     }, 8000)
@@ -719,13 +735,12 @@ function countToggle() {
     setTimeout(() => {
       document.querySelector(".trumpet-sound").currentTime = 0;
       document.querySelector(".trumpet-sound").play();
+      document.querySelector("#one-hour-later").style.display = "none";
+      document.querySelector("#trumpet-container").style.display = "block";
       document.querySelector("#wake-up-scream1").style.display = "block";
       document.querySelector("#wake-up-scream2").style.display = "block";
       variable.currentScene = 9.5;
       text.phrase10.style.display = "none";
-      document.querySelector("#one-hour-later").style.display = "none";
-      domElement.body.style.backgroundColor = "var(--weiss)";
-      domElement.spotlight.style.display = "none";
       domElement.knotTalkingRight.classList.add("bubbleGrow");
       text.peopleTalk.classList.add("bubbleGrow");
       text.valentinoTalk1.style.display = "block";
@@ -902,9 +917,7 @@ function scene14() {
   domElement.knotNarration.classList.add("bubbleGrow");
   scene.busOutside.classList.add("busOutsideAway");
   text.phrase14.style.display = "block";
-  setTimeout(() => {
-    variable.currentScene = 15;
-  }, 200)
+  variable.currentScene = 15;
   setTimeout(() => {
     scene.busOutside.style.display = "none";
   }, 2000)
@@ -917,12 +930,12 @@ function scene15() {
   character.backgroundKnot.classList.add("showWhisperKnotLawrence");
   text.backWhisper.classList.add("showWhisperKnotLawrence");
   text.phrase14.style.display = "none";
-  character.lawrence2a.style.display = "none";
-  character.lawrence2b.style.display = "block";
   character.knot.classList.add("knotLawrenceBus");
   setTimeout(() => {
     variable.currentScene = 16;
-  }, 200)
+    character.lawrence2a.style.display = "none";
+    character.lawrence2b.style.display = "block";
+  }, 1000)
 }
 
 
@@ -945,12 +958,14 @@ function scene17() {
   text.whisper3.style.display = "none";
   character.lawrence2c.style.display = "none";
   character.lawrence2d.style.display = "block";
-  document.querySelector("#motivational-quotes").style.display = "block";
   character.backgroundKnot.classList.remove("showWhisperKnotLawrence");
   character.knot.classList.remove("knotLawrenceBus");
   setTimeout(() => {
     variable.currentScene = 18;
   }, 200)
+  setTimeout(() => {
+    document.querySelector("#motivational-quotes").style.display = "block";
+  }, 2000)
 }
 
 // SCENE 18
@@ -968,6 +983,8 @@ function motQuote3() {
 
 function motCount() {
   text.phrase17.style.display = "none";
+  document.querySelector(".delete-key").currentTime = 0;
+  document.querySelector(".delete-key").play();
   variable.motCount = variable.motCount + 1;
   if (variable.motCount === 3) {
     text.phrase18.style.display = "block";
@@ -989,13 +1006,20 @@ function scene19() {
 // SCENE 20 LAWRENCE WALKING TO BUILDING
 function scene20() {
   document.querySelector("#looser-scream-box").style.display = "none";
+  character.lawrence2a.style.display = "none";
+  character.lawrence2b.style.display = "none";
+  character.lawrence2c.style.display = "none";
   character.lawrence2d.style.display = "none";
   scene.busInside.style.display = "none";
   setTimeout(() => {
+    variable.currentScene = 0;
     character.lawrence3.style.display = "block";
     scene.officeBuilding.style.display = "block";
-  }, 1000)
+    document.querySelector(".ambience-street-afternoon").currentTime = 0;
+    document.querySelector(".ambience-street-afternoon").play();
+  }, 200)
   setTimeout(() => {
+    document.querySelector(".ambience-street-afternoon").pause();
     character.mercy.style.display = "block";
     text.peopleTalk.classList.add("bubbleGrow");
     text.peopleTalk.classList.add("mercy-goodmorning");
@@ -1008,61 +1032,57 @@ function scene20() {
     scene.officeBuilding.style.display = "none";
     scene.waitingRoom1.style.display = "block";
     scene.clock0930.style.display = "block";
-    variable.currentScene = 22;
+    variable.currentScene = 21;
   }, 3000)
 }
 
-// SCENE 21 LAWRENCE WALKING TOWARD MERCY
-function scene21() {
-  console.log("change to 22 automaticly")
-}
-
 // SCENE 22 LAWRENCE START FALLING
-function scene22() {
-  character.lawrence4a.style.display = "none";
-  character.lawrence4b.style.display = "block";
+function scene21() {
+  document.querySelector(".knotLassoPath").style.strokeDashoffset = "0";
   text.phrase19.style.display = "none";
   text.peopleTalk.classList.remove("bubbleGrow");
   text.peopleTalk.classList.remove("mercy-goodmorning");
   text.mercyTalk1.style.display = "none";
   setTimeout(() => {
+    variable.currentScene = 0;
+    character.lawrence4a.style.display = "none";
+    character.lawrence4b.style.display = "block";
+    document.querySelector(".knotLassoPath").style.strokeDashoffset = "calc(30vw + 30vh)";
+    character.knot.classList.add("knotWaitingroom-AfterLasso");
+  }, 1000)
+  setTimeout(() => {
+    character.mercy1a.style.display = "none";
+    character.mercy1b.style.display = "block";
+    character.lawrence4a.style.display = "none";
+    character.lawrence4b.style.display = "none";
+    character.lawrence4c.style.display = "block";
+    variable.currentScene = 22;
+  }, 2000)
+}
+
+
+// SCENE 24 LAWRENCE WALKING AFTER FALL
+function scene22() {
+  character.lawrence4c.style.display = "none";
+  character.lawrence4d.style.display = "block";
+  setTimeout(() => {
     variable.currentScene = 23;
   }, 200)
 }
 
-// SCENE 23 LAWRENCE ON FLOOR
+// SCENE 25 entering the office
 function scene23() {
-  character.knotLasso.style.display = "none";
-  character.mercy1a.style.display = "none";
-  character.mercy1b.style.display = "block";
-  character.lawrence4b.style.display = "none";
-  character.lawrence4c.style.display = "block";
+  character.lawrence4d.style.display = "none";
+  character.mercy1b.style.display = "none";
+  character.mercy2.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 24;
   }, 200)
 }
 
-// SCENE 24 LAWRENCE WALKING AFTER FALL
-function scene24() {
-  character.lawrence4c.style.display = "none";
-  character.lawrence4d.style.display = "block";
-  setTimeout(() => {
-    variable.currentScene = 25;
-  }, 200)
-}
-
-// SCENE 25 entering the office
-function scene25() {
-  character.lawrence4d.style.display = "none";
-  character.mercy1b.style.display = "none";
-  character.mercy2.style.display = "block";
-  setTimeout(() => {
-    variable.currentScene = 26;
-  }, 200)
-}
-
 // SCENE 26 knot waits on chair
-function scene26() {
+function scene24() {
+  text.phrase20.style.display = "block";
   character.mercy2.style.display = "none";
   character.knot.classList.add("knotWaitingChair");
   document.querySelector(".door-close").currentTime = 0;
@@ -1071,23 +1091,34 @@ function scene26() {
   scene.waitingRoom2.style.display = "block";
   scene.waitingRoom1.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 27;
+    variable.currentScene = 0;
   }, 200)
-}
-
-// SCENE 27 entering the office
-function scene27() {
-  character.mercy2.style.display = "none";
-  character.knot.classList.add("knotWaitingChair");
-  eyes.style.display = "block";
-  scene.waitingRoom2.style.display = "block";
-  scene.waitingRoom1.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 28;
-  }, 200)
+    document.querySelector("#one-hour-later").style.display = "block";
+    text.phrase20.style.display = "none";
+    text.phrase10.style.display = "block";
+    scene.clock0930.style.display = "none";
+    scene.clock11.style.display = "block";
+  }, 3000)
+  setTimeout(() => {
+    document.querySelector("#one-hour-later").style.display = "none";
+    text.phrase10.style.display = "none";
+  }, 5000)
+  setTimeout(() => {
+    scene.waitingRoom2.style.display = "none";
+    scene.waitingRoom1.style.display = "block";
+    character.lawrence5.style.display = "block";
+  }, 6000)
+  setTimeout(() => {
+    eyes.style.display = "block";
+    text.phrase21.style.display = "block";
+    variable.currentScene = 26;
+  }, 8000)
+
 }
 
-function scene28() {
+
+function scene26() {
   goMercy();
 }
 
@@ -1105,7 +1136,7 @@ function goMercy() {
   scene.windowMove.style.display = "block";
   character.valentino.style.display = "none";
   character.lawrence.style.display = "none";
-  character.knot.classList.add("knotMercy")
+  character.knot.classList.add("knotOfficeMercy");
   domElement.body.style.backgroundColor = "var(--weiss)"
   domElement.body.style.height = "10000vh"
   window.scrollTo(0, 20000);
@@ -1113,26 +1144,52 @@ function goMercy() {
   domElement.body.style.overflow = "hidden";
   domElement.body.style.overflowX = "hidden";
   domElement.body.style.overflowY = "hidden";
+  //
+  text.phrase21.style.display = "none";
+  setTimeout(() => {
+    variable.currentScene = 27;
+  }, 200)
+}
+
+function scene27() {
+  text.phrase22.style.display = "block";
+  character.mercy3a.style.display = "none";
+  character.mercy3b.style.display = "block";
+  setTimeout(() => {
+    document.querySelector("#info-icon-mercy").style.display = "block";
+  }, 1000)
+  setTimeout(() => {
+    variable.currentScene = 28;
+  }, 200)
+}
+
+function scene28() {
+  text.phrase22.style.display = "none";
+  document.querySelector("#info-icon-mercy").style.display = "none";
+  // to do list stuff here, nachher:
+  moveMercysWindow();
 }
 
 
-////// drag mercy window
-
+// DRAGGING MERCYS WINDOW
 var container = document.querySelector("#window-move");
 var activeItem = null;
-
 var active = false;
 
-container.addEventListener("touchstart", dragStart, false);
-container.addEventListener("touchend", dragEnd, false);
-container.addEventListener("touchmove", drag, false);
+function moveMercysWindow() {
+  text.phrase26.style.display = "block";
+  document.querySelector("#dragQueen").classList.add("drag-cursor");
 
-container.addEventListener("mousedown", dragStart, false);
-container.addEventListener("mouseup", dragEnd, false);
-container.addEventListener("mousemove", drag, false);
+  // drag window
+  container.addEventListener("touchstart", dragStart, false);
+  container.addEventListener("touchend", dragEnd, false);
+  container.addEventListener("touchmove", drag, false);
+  container.addEventListener("mousedown", dragStart, false);
+  container.addEventListener("mouseup", dragEnd, false);
+  container.addEventListener("mousemove", drag, false);
+}
 
 function dragStart(e) {
-
   if (e.target !== e.currentTarget) {
     active = true;
 
@@ -1197,16 +1254,45 @@ function setTranslate(xPos, yPos, el) {
 
 // SCENE wind blowed
 function mercyChaos() {
+  text.phrase26.style.display = "None";
+  document.querySelector("#dragQueen").classList.remove("drag-cursor");
   character.mercy3c.style.display = "block";
   character.mercy3a.style.display = "none";
+  character.mercy3b.style.display = "none";
   scene.windowFix.style.display = "block";
   scene.windowMove.style.display = "block";
   character.knot.classList.add("knotMercy")
   setTimeout(() => {
+    text.phrase27.style.display = "block";
     character.mercy3d.style.display = "block";
+    character.mercy3dMess.style.display = "block";
     character.mercy3c.style.display = "none";
   }, 1000)
+  setTimeout(() => {
+    variable.currentScene = "goBarbara";
+  }, 200)
 }
+
+///////////// BARBIE
+function goBarbara() {
+  domElement.body.style.backgroundColor = "var(--weiss)";
+  domElement.assets.style.display = "block";
+  character.barbara.style.display = "block";
+  character.valentino.style.display = "none";
+  character.lawrence.style.display = "none";
+  character.mercy.style.display = "none";
+  domElement.body.style.height = "10000vh"
+  window.scrollTo(0, 25000);
+  // stop horizontal scroll
+  domElement.body.style.overflow = "hidden";
+  domElement.body.style.overflowX = "hidden";
+  domElement.body.style.overflowY = "hidden";
+  //
+  text.phrase27.style.display = "none";
+}
+
+
+
 
 ///////////////////// bubble animations:
 
@@ -1350,6 +1436,7 @@ new TypeIt("#whisper1", {
 
 new TypeIt("#valentino-talk1", {
   cursor: false,
+  strings: ["Shoot, how did I not hear the other alarm clocks?"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -1363,6 +1450,7 @@ new TypeIt("#valentino-talk2", {
 
 new TypeIt("#phrase10", {
   cursor: false,
+  strings: ["one hour later"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -1425,7 +1513,70 @@ new TypeIt("#phrase18", {
 
 new TypeIt("#phrase19", {
   cursor: false,
-  strings: ["…take my hand"],
+  strings: ["Here, come on, give me a hand."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#mercy-talk1", {
+  cursor: false,
+  strings: ["Good morning!"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase20", {
+  cursor: false,
+  strings: ["Let’s leave him alone now, he is going to fail anyway."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase21", {
+  cursor: false,
+  strings: ["He will miserably be walking back to his house... I also swapped his exam dates in the calendar, hehehehehe. I'm done with him for today. Let’s enter the office. "],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase22", {
+  cursor: false,
+  strings: ["This person is way too organized at her job and she seems like a kind person. What could stress her out?"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase23", {
+  cursor: false,
+  strings: ["So far, she already had four job interviews, and the day is still long. Let's check her To-Do list."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase24", {
+  cursor: false,
+  strings: ["The manager does not seem overwhelmed by this daily schedule. It’s not easy to unsettle her. I will have to come up with some personal stuff. "],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase25", {
+  cursor: false,
+  strings: ["Think, think, think 💭"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase26", {
+  cursor: false,
+  strings: ["She’s distracted. Assistant, she needs some fresh air!"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase27", {
+  cursor: false,
+  strings: ["hehe, now I've got her into trouble."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()

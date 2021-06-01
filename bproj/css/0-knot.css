@@ -1,8 +1,5 @@
 /* --------------------------------------------------------------------------- */
 /* ----------------------------- MAIN CHARACTER ------------------------------ */
-/* HUGE TEXT */
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
 /* knot behind people */
 #back-wiggle {
@@ -127,7 +124,6 @@
     background: #0c0c0c !important;
     transition: 2s ease !important;
 }
-
 
 /* ANIMATION BIG TEXTS */
 .huge-text {
@@ -358,8 +354,18 @@
     margin-top: 40vh !important;
 }
 
+.knotWaitingroom-AfterLasso{
+    margin-left: -20vh !important;
+    margin-top: 30vh !important;
+}
+
 .knotWaitingChair {
     margin-left: 65vh !important;
+    margin-top: 30vh !important;
+}
+
+.knotOfficeMercy {
+    margin-left: 10vw !important;
     margin-top: 30vh !important;
 }
 

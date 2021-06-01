@@ -22,27 +22,32 @@
 .mercy-sitting {
     position: absolute;
     height: 40vh;
-    top: 30vh;
-    left: 50vw;
+    top: 50vh;
+    left: calc(50vw - 30vh);
 }
 
-.mercy-bar{
+#info-icon-mercy {
+    display: none;
+    position: fixed;
+    top: 45vh;
+    left: calc(50vw + 20vh);
+    height: 5vh;
+}
+
+.mercy-bar {
     position: absolute;
-    height: 50vh;
+    height: 40vh;
     top: 30vh;
     left: 20vw;
 }
 
-#mercy-5c{
-    top: 20vh;
-    height: 60vh;
-}
+
 
 #window-fix {
     display: none;
     position: fixed;
     width: 100%;
-    top: 5vh;
+    top: 20vh;
     margin-left: 30vw;
     height: 30vh;
     touch-action: none;
@@ -52,7 +57,7 @@
     display: none;
     position: fixed;
     width: 100%;
-    top: 5vh;
+    top: 20vh;
     margin-left: 30vw;
     height: 30vh;
     touch-action: none;
@@ -101,4 +106,24 @@
 
 #mercy-3d-mess {
     display: none;
+    height:15vh;
+    top: 85vh;
+}
+
+#mercy-4 {
+    display: none;
+}
+
+#mercy-5a {
+    display: none;
+}
+
+#mercy-5b {
+    display: none;
+}
+
+#mercy-5c {
+    display: none;
+    top: 25vh;
+    height: 50vh;
 }

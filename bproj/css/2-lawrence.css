@@ -96,6 +96,7 @@
     opacity: 0 !important;
 }
 
+/* MOTIVATIONAL QUOTES */
 #motivational-quotes {
     display: none;
     position: fixed;
@@ -105,7 +106,29 @@
 }
 
 .motQuote {
+    position: relative;
     height: 22vh;
+    width: 43vh;
+}
+
+.motImage {
+    height: 100%;
+}
+
+.motivational-X-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5vh;
+    height: 5vh;
+}
+
+.motivational-X-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5vh;
+    height: 5vh;
 }
 
 /* LAWRENCE WALKING TO BUILDING */
@@ -160,11 +183,6 @@
     transform: rotate(1deg);
 }
 
-#lawrence-4c {
-    transform-origin: bottom;
-    transform: scale(0.65) translate(-20vw, 0);
-}
-
 #knotLasso {
     display: none;
     position: fixed;
@@ -181,10 +199,10 @@
     stroke-linecap: round;
     /* filter:drop-shadow(2px 2px 1px black); */
     fill: none;
-    stroke-dasharray: calc(35vw + 10vh);
-    stroke-dashoffset: 0;
+    stroke-dasharray: calc(30vw + 30vh);
+    stroke-dashoffset: calc(30vw + 30vh);
     /* stroke-dashoffset: calc(35vw + 10vh); */
-    transition: stroke-dashoffset 1s;
+    transition: stroke-dashoffset 0.5s;
 }
 
 .knotLassoCatch {
@@ -196,9 +214,31 @@
 /* LAWRENCE AFTER MEETING */
 .lawrence-after-meeting {
     position: fixed;
-    max-height: 30%;
-    top: 25vh;
-    left: 0;
+    max-height: 40vh;
+    top: 40vh;
+    left: 40vh;
+    animation: lawrence-walk-of-shame 4s ease-in-out forwards;
+}
+
+@keyframes lawrence-walk-of-shame {
+    0% {
+        left: 40vh;
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    50% {
+        left: calc(40vh + 50vw);
+        opacity: 0;
+    }
+
+    100% {
+        left: calc(40vh + 50vw);
+        opacity: 0;
+    }
 }
 
 
@@ -231,12 +271,27 @@
     display: none;
 }
 
+/* falling lawrence */
 #lawrence-4b {
     display: none;
+    transform-origin: bottom;
+    animation: falling-lawrence 1.5s forwards ease-in-out;
+}
+
+@keyframes falling-lawrence {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(50deg);
+    }
 }
 
 #lawrence-4c {
     display: none;
+    transform-origin: bottom;
+    transform: scale(0.65) translate(0vh, 10vh);
 }
 
 #lawrence-4d {

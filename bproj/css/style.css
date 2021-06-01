@@ -1,17 +1,11 @@
 /* FONTS ---------------------------------- */
-
-@import url('https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap');
+/* standart font */
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Over+the+Rainbow&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
-@font-face {
-  font-family: 'Providence';
-  src: url('Providence-Sans.otf');
-}
+/* font huge text */
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
 
 /* GLOBAL COLORS */
 :root {
@@ -450,6 +444,7 @@ click-text {
 }
 
 .mercy-goodmorning{
+  top: 15vh;
   left: 35vh !important;
 }
 
