@@ -733,6 +733,7 @@ function countToggle() {
 
     // trumpet!!!!
     setTimeout(() => {
+      domElement.body.style.backgroundColor = "var(--weiss)";
       document.querySelector(".trumpet-sound").currentTime = 0;
       document.querySelector(".trumpet-sound").play();
       document.querySelector("#one-hour-later").style.display = "none";
@@ -761,6 +762,7 @@ function scene9a() {
 
 // SCENE 10: VALENTINO RUN HORIZONTAL!!
 function scene10() {
+  
   document.querySelector(".trumpet-sound").pause();
   console.log("wtf");
 
@@ -780,6 +782,7 @@ function scene10() {
   document.querySelector("#line-floor-valentino").style.display = "none";
   scene.horizontalScrollContainer.style.display = "block";
   document.querySelector(".bus-container").style.display = "block";
+  domElement.body.style.backgroundColor = "var(--weiss)";
   // horizontaler scroll
   domElement.body.style.overflow = "hidden";
   domElement.body.style.overflowX = "hidden";
