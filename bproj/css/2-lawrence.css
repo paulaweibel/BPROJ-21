@@ -195,7 +195,7 @@
 
 .knotLassoPath {
     stroke: var(--schwarz);
-    stroke-width: 3%;
+    stroke-width: 1%;
     stroke-linecap: round;
     /* filter:drop-shadow(2px 2px 1px black); */
     fill: none;
