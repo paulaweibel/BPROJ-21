@@ -1267,9 +1267,10 @@ function mercyChaos() {
     character.mercy3d.style.display = "block";
     character.mercy3dMess.style.display = "block";
     character.mercy3c.style.display = "none";
+    variable.currentScene = "goBarbara";
   }, 1000)
   setTimeout(() => {
-    variable.currentScene = "goBarbara";
+    variable.currentScene = 0;
   }, 200)
 }
 

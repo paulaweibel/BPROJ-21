@@ -83,8 +83,9 @@ click-text {
 #navigation {
   color: grey;
   position: fixed;
-  opacity: 1;
-  bottom: 0;
+  margin:10px;
+  opacity: 0.5;
+  top: 0;
   left: 0;
 }
 
