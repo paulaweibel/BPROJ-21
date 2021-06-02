@@ -177,6 +177,15 @@
     height: 55vh;
 }
 
+#door-div-waitingroom{
+    display: none;
+    position: fixed;
+    left: 28vh;
+    top: 25vh;
+    height: 43vh;
+    width: 25vh;
+}
+
 /* CLOCK */
 .clock-waitingroom {
     position: fixed;

@@ -9,8 +9,12 @@
 
 /* GLOBAL COLORS */
 :root {
-  --weiss: #FAFAFA;
-  --schwarz: #0C0C0C;
+  --weiss: #fafafa;
+  --schwarz: #0c0c0c;
+  --turkis: #4F9498;
+  --gelb: #F3DB79;
+  --orange: #E4734C;
+  --violet: #99316C;
 }
 
 body {
@@ -19,7 +23,7 @@ body {
   text-transform: uppercase;
   font-size: 16px;
   display: flex;
-  background-color: var(--schwarz);
+  background-color: var(--black);
   color: var(--weiss);
   overflow: hidden;
   overflow-y: hidden;

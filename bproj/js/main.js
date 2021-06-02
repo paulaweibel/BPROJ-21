@@ -72,8 +72,26 @@ let character = {
   mercy3c: document.querySelector("#mercy-3c"),
   mercy3d: document.querySelector("#mercy-3d"),
   mercy3dMess: document.querySelector("#mercy-3d-mess"),
+  mercy4: document.querySelector("#mercy-4"),
+  mercy5a: document.querySelector("#mercy-5a"),
+  mercy5b: document.querySelector("#mercy-5b"),
+  mercy5c: document.querySelector("#mercy-5c"),
   // barbara
   barbara: document.querySelector("#barbara"),
+  barbara1: document.querySelector("#barbara-1"),
+  barbara2: document.querySelector("#barbara-2"),
+  barbara3: document.querySelector("#barbara-3"),
+  barbara4: document.querySelector("#barbara-4"),
+  barbara5: document.querySelector("#barbara-5"),
+  barbara6a: document.querySelector("#barbara-6a"),
+  barbara6b: document.querySelector("#barbara-6b"),
+  barbara7: document.querySelector("#barbara-7"),
+  barbara8: document.querySelector("#barbara-8"),
+  barbara9: document.querySelector("#barbara-9"),
+  barbara10a: document.querySelector("#barbara-10a"),
+  barbara10b: document.querySelector("#barbara-10b"),
+  barbara10c: document.querySelector("#barbara-10c"),
+  barbara10d: document.querySelector("#barbara-10d"),
 }
 
 let scene = {
@@ -206,6 +224,13 @@ queue.loadFile("./css/0-knot.css");
 queue.loadFile("./js/main.js");
 queue.loadFile("./img/title/new-title-hidden-worries.png");
 queue.loadFile("./img/title/new-title-hi.png");
+queue.loadFile("./img/background.png");
+queue.loadFile("./img/knot-images/background-knot.png");
+queue.loadFile("./img/knot-images/knot1.png");
+queue.loadFile("./img/knot-images/knot2.png");
+queue.loadFile("./img/knot-images/knot3.png");
+queue.loadFile("./img/knot-images/knot4.png");
+queue.loadFile("./img/knot-images/eyes.png");
 queue.loadFile("./index.html");
 
 
@@ -348,7 +373,7 @@ domElement.titleButton.addEventListener('click', function () {
   if (variable.visible === 1 || variable.visible === 3) {
     variable.visible = 0;
     domElement.body.style.overflowY = "visible";
-    domElement.body.style.background = "#fafafa";
+    domElement.body.style.background = "var(--weiss)";
     document.querySelector("#title-dark").classList.add("titleBright");
     document.querySelector("#about-content").classList.add("whiteAbout");
     document.querySelector("#about-button").style.color = "var(--schwarz)";
@@ -357,7 +382,7 @@ domElement.titleButton.addEventListener('click', function () {
   } else {
     variable.visible = 3;
     domElement.body.style.overflowY = "hidden";
-    domElement.body.style.background = "#0c0c0c";
+    domElement.body.style.background = "var(--schwarz)";
     document.querySelector("#title-dark").classList.remove("titleBright");
     document.querySelector("#about-content").classList.remove("whiteAbout");
     document.querySelector("#about-button").style.color = "var(--weiss)"
@@ -516,9 +541,9 @@ domElement.body.addEventListener('click', function () {
     scene25();
   }
   // SCENE 26
-  if (variable.currentScene === 26) {
-    scene26();
-  }
+  // if (variable.currentScene === 26) {
+  //   scene26();
+  // }
   // SCENE 27
   if (variable.currentScene === 27) {
     scene27();
@@ -927,7 +952,9 @@ function scene14() {
   domElement.knotNarration.classList.add("bubbleGrow");
   scene.busOutside.classList.add("busOutsideAway");
   text.phrase14.style.display = "block";
-  variable.currentScene = 15;
+  setTimeout(() => {
+    variable.currentScene = 15;
+  }, 200)
   setTimeout(() => {
     scene.busOutside.style.display = "none";
   }, 2000)
@@ -1122,6 +1149,7 @@ function scene24() {
   setTimeout(() => {
     eyes.style.display = "block";
     text.phrase21.style.display = "block";
+    document.querySelector("#door-div-waitingroom").style.display = "block";
     variable.currentScene = 26;
   }, 8000)
 
@@ -1148,6 +1176,7 @@ function goMercy() {
   character.lawrence.style.display = "none";
   character.knot.classList.add("knotOfficeMercy");
   domElement.body.style.backgroundColor = "var(--weiss)"
+  document.querySelector("#door-div-waitingroom").style.display = "none";
   domElement.body.style.height = "10000vh"
   window.scrollTo(0, 20000);
   // stop horizontal scroll
@@ -1289,6 +1318,7 @@ function goBarbara() {
   domElement.body.style.backgroundColor = "var(--weiss)";
   domElement.assets.style.display = "block";
   character.barbara.style.display = "block";
+  character.barbara1.style.display = "block";
   character.valentino.style.display = "none";
   character.lawrence.style.display = "none";
   character.mercy.style.display = "none";

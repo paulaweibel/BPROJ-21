@@ -4,22 +4,29 @@
   color: var(--weiss) !important;
 }
 
-
 #barbara {
   display: none;
   opacity: 1;
 }
 
+#info-icon-barbara{
+  position: fixed;
+  top: 30vh;
+  right: 43.5vh;
+  height: 5vh;
+  animation: info-icon 2s infinite;
+}
+
 .barbara-bar {
   position: fixed;
   top: 35vh;
-  right: 0;
-  height: 50vh;
+  right: -10vh;
+  height: 45vh;
 }
 
 #bar-sign-container {
   position: fixed;
-  left: 0vw;
+  left: -2vh;
   top: 5vh;
   height: 20vh;
 }
@@ -43,4 +50,66 @@
   left: 12vh;
   top: 2.5vh;
   height: 15vh;
+}
+
+
+
+
+
+
+/* make barbies invisible */
+#barbara-1{
+  display: none;
+}
+
+#barbara-2{
+  display: none;
+}
+
+#barbara-3{
+  display: none;
+}
+
+#barbara-4{
+  display: none;
+}
+
+#barbara-5{
+  display: none;
+}
+
+#barbara-6a{
+  display: none;
+}
+
+#barbara-6b{
+  display: none;
+}
+
+#barbara-7{
+  display: none;
+}
+
+#barbara-8{
+  display: none;
+}
+
+#barbara-9{
+  display: none;
+}
+
+#barbara-10a{
+  display: none;
+}
+
+#barbara-10b{
+  display: none;
+}
+
+#barbara-10c{
+  display: none;
+}
+
+#barbara-10d{
+  display: none;
 }
