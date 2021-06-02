@@ -23,7 +23,7 @@ body {
   text-transform: uppercase;
   font-size: 16px;
   display: flex;
-  background-color: var(--black);
+  background-color: var(--schwarz);
   color: var(--weiss);
   overflow: hidden;
   overflow-y: hidden;
@@ -392,6 +392,20 @@ b {
   /* justify-content: center; */
 }
 
+#a-siesta-later {
+  display: none;
+  position: fixed;
+  top: 0;
+  padding-top: 40vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transition: opacity 0.5s;
+  background-color: var(--schwarz);
+  text-align: center;
+  /* justify-content: center; */
+}
+
 /* ----------------------------------------------- */
 /* IDS OF CHARACTERS ----------------------------- */
 
@@ -485,6 +499,37 @@ b {
   display: none;
 }
 
+
+/* CALL TO ACTION --------------------------------- */
+#call-to-action {
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+#glitch-stress-formular {
+  position: fixed;
+  top: 10vh;
+  left: 25vw;
+  width: 50vw;
+  height: 10vw;
+}
+
+#show-formular-button {
+  position: fixed;
+  left: 45vw;
+  top: 60vh;
+  width: 10vw;
+}
+
+#hide-formular-button {
+  position: fixed;
+  left: 45vw;
+  top: 70vh;
+  width: 10vw;
+}
 
 
 /* ------------- OVERLAY FOR SMARTPHONE USERS -------------------- */

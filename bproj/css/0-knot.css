@@ -373,8 +373,13 @@ h5 {
     margin-top: 30vh !important;
 }
 
+.knotOutsideOfficeBuilding{
+    margin-left: -10vh !important;
+    margin-top: 50vh !important;
+}
+
 .knotWaitingroom {
-    margin-left: 20vw !important;
+    margin-left: 30vw !important;
     margin-top: 40vh !important;
 }
 
@@ -390,6 +395,21 @@ h5 {
 
 .knotOfficeMercy {
     margin-left: 10vw !important;
+    margin-top: 30vh !important;
+}
+
+.knotOfficeLookingAround1{
+    margin-left: 50vw !important;
+    margin-top: 10vh !important;
+}
+
+.knotOfficeLookingAround2{
+    margin-left: 20vw !important;
+    margin-top: 10vh !important;
+}
+
+.knotOfficeStopLooking{
+    margin-left: 20vw !important;
     margin-top: 30vh !important;
 }
 

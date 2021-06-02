@@ -4,11 +4,21 @@
   color: var(--weiss) !important;
 }
 
+/* ALL BARBARA ASSETS */
 #barbara {
   display: none;
   opacity: 1;
 }
 
+/* ALL BARBARAS */
+.barbara-bar {
+  position: fixed;
+  top: 35vh;
+  right: -10vh;
+  height: 45vh;
+}
+
+/* INFO ICON */
 #info-icon-barbara{
   position: fixed;
   top: 30vh;
@@ -17,13 +27,30 @@
   animation: info-icon 2s infinite;
 }
 
-.barbara-bar {
+#bar-chairs{
   position: fixed;
-  top: 35vh;
-  right: -10vh;
-  height: 45vh;
+  top: 65vh;
+  right: 10vh;
+  height: 25vh;
 }
 
+#sandwich-bag{
+  position: fixed;
+  top: 46vh;
+  right: 50vh;
+  height: 10vh;
+}
+
+#coffee{
+  position: fixed;
+  top: 50vh;
+  right: 60vh;
+  height: 6vh;
+}
+
+
+
+/* HAPPY HOUR SIGN */
 #bar-sign-container {
   position: fixed;
   left: -2vh;
@@ -45,14 +72,18 @@
   height: 6vh;
 }
 
+
 #happy-hour-gif {
+  display: none;
   position: absolute;
   left: 12vh;
   top: 2.5vh;
   height: 15vh;
 }
 
-
+#sign-button-on{
+  display: none;
+}
 
 
 

@@ -30,7 +30,7 @@
     display: none;
     position: fixed;
     top: 45vh;
-    left: calc(50vw + 20vh);
+    left: calc(50vw + 27vh);
     height: 5vh;
     animation: info-icon 1.5s infinite ease-in-out;
 }
