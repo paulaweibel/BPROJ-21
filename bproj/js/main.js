@@ -590,6 +590,26 @@ domElement.body.addEventListener('click', function () {
   if (variable.currentScene === 27) {
     scene27();
   }
+  // SCENE 28
+  if (variable.currentScene === 28.1) {
+    scene28a();
+  }
+  // SCENE 29
+  if (variable.currentScene === 29) {
+    scene29();
+  }
+  // SCENE 30
+  if (variable.currentScene === 30) {
+    scene30();
+  }
+  // SCENE 31
+  if (variable.currentScene === 31) {
+    scene31();
+  }
+  // SCENE 32
+  if (variable.currentScene === 32) {
+    scene32();
+  }
   // SCENE 27
   if (variable.currentScene === "goBarbara") {
     goBarbara();
@@ -1282,11 +1302,45 @@ function scene27() {
   }, 200)
 }
 
-function scene28() {
-  character.mercy3a.style.display = "none";
-  character.mercy3b.style.display = "block";
+function scene28a() {
   text.phrase22.style.display = "none";
   document.querySelector("#info-icon-mercy").style.display = "none";
+  text.phrase23.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 29;
+  }, 200)
+}
+
+function scene29() {
+  text.phrase23.style.display = "none";
+  text.phrase24.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 30;
+  }, 200)
+}
+
+function scene30() {
+  text.phrase24.style.display = "none";
+  text.phrase25.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 31;
+  }, 200)
+
+}
+
+function scene31() {
+  character.mercy3a.style.display = "none";
+  character.mercy3b.style.display = "block";
+  text.phrase25.style.display = "none";
+  setTimeout(() => {
+    variable.currentScene = 32;
+  }, 200)
+}
+
+
+// change to draggable window
+function scene32() {
+  
   // to do list stuff here, nachher:
   moveMercysWindow();
 }
@@ -1382,7 +1436,7 @@ function mercyChaos() {
   character.mercy3b.style.display = "none";
   scene.windowFix.style.display = "block";
   scene.windowMove.style.display = "block";
-  character.knot.classList.add("knotMercy")
+  character.knot.classList.add("knotMercy");
   setTimeout(() => {
     text.phrase27.style.display = "block";
     character.mercy3d.style.display = "block";
@@ -1404,6 +1458,7 @@ function goBarbara() {
   character.valentino.style.display = "none";
   character.lawrence.style.display = "none";
   character.mercy.style.display = "none";
+  character.knot.classList.add("knotMercyBar1")
   domElement.body.style.height = "10000vh"
   window.scrollTo(0, 25000);
   // stop horizontal scroll
@@ -1413,8 +1468,6 @@ function goBarbara() {
   //
   text.phrase27.style.display = "none";
 }
-
-
 
 
 ///////////////////// bubble animations:
