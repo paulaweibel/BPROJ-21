@@ -40,7 +40,7 @@ body {
   cursor: url('cursor2.png'), pointer;
 }
 
-.drag-cursor{
+.drag-cursor {
   cursor: url('cursor3.png'), move;
 }
 
@@ -87,7 +87,7 @@ click-text {
 #navigation {
   color: grey;
   position: fixed;
-  margin:10px;
+  margin: 10px;
   opacity: 0.5;
   top: 0;
   left: 0;
@@ -241,6 +241,7 @@ click-text {
   margin-right: 1rem;
   top: 20px;
   width: 3rem;
+  /* text-align: center; */
   text-align: left;
   font-size: 1.5rem;
   color: grey;
@@ -255,6 +256,11 @@ click-text {
   display: none;
   position: fixed;
   padding-top: 15vh;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  background-color: green;
+  text-transform: none;
+  letter-spacing: 0.1rem;
   opacity: 0;
   top: 0;
   left: 0;
@@ -263,6 +269,11 @@ click-text {
   color: var(--weiss);
   background-color: var(--schwarz);
   transition: opacity 0.4s;
+}
+
+/* TITLES TEXT SIZE */
+b {
+  font-size: 5vh;
 }
 
 .whiteAbout {
@@ -448,7 +459,7 @@ click-text {
   transition: transform 0.5s;
 }
 
-.mercy-goodmorning{
+.mercy-goodmorning {
   top: 15vh;
   left: 35vh !important;
 }
