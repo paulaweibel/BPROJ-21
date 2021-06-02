@@ -94,6 +94,10 @@ let character = {
   barbara10d: document.querySelector("#barbara-10d"),
 }
 
+let gifs = {
+  sleep: document.querySelector("#sleep-gif"),
+}
+
 let scene = {
   whitePhoneScreen: document.querySelector("#valentino-phone-screen"),
   alarmToggles: document.querySelector("#valentino-toggles"),
@@ -794,7 +798,7 @@ function scene9a() {
 
 // SCENE 10: VALENTINO RUN HORIZONTAL!!
 function scene10() {
-  
+
   document.querySelector(".trumpet-sound").pause();
   console.log("wtf");
 
@@ -1119,6 +1123,7 @@ function scene23() {
 
 // SCENE 26 knot waits on chair
 function scene24() {
+  gifs.sleep.style.display = "block";
   text.phrase20.style.display = "block";
   character.mercy2.style.display = "none";
   character.knot.classList.add("knotWaitingChair");
@@ -1140,6 +1145,8 @@ function scene24() {
   setTimeout(() => {
     document.querySelector("#one-hour-later").style.display = "none";
     text.phrase10.style.display = "none";
+    gifs.sleep.style.display = "none";
+
   }, 5000)
   setTimeout(() => {
     scene.waitingRoom2.style.display = "none";

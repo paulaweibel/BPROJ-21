@@ -177,7 +177,7 @@
     height: 55vh;
 }
 
-#door-div-waitingroom{
+#door-div-waitingroom {
     display: none;
     position: fixed;
     left: 28vh;
@@ -231,6 +231,14 @@
 
 .knotLassoCatch {
     stroke-dashoffset: 0;
+}
+
+#sleep-gif {
+    position: fixed;
+    display: none;
+    height: 20vh;
+    top: 20vh;
+    left: 45vw;
 }
 
 
