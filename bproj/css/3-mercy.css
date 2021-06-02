@@ -32,6 +32,21 @@
     top: 45vh;
     left: calc(50vw + 20vh);
     height: 5vh;
+    animation: info-icon 1.5s infinite ease-in-out;
+}
+
+@keyframes info-icon {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0, 1vh);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
 .mercy-bar {
@@ -106,7 +121,7 @@
 
 #mercy-3d-mess {
     display: none;
-    height:15vh;
+    height: 15vh;
     top: 85vh;
 }
 
