@@ -61,8 +61,18 @@
     right: 20vh;
 }
 
+
+#music-gif {
+    position: fixed;
+    /* display: none; */
+    height: 10vh;
+    top: 15vh;
+    right: 27vw;
+}
+
 /* INSIDE BUS */
 .lawrence-in-bus {
+    display: none;
     position: fixed;
     max-height: 50vh;
     top: 30vh;

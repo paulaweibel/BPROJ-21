@@ -95,6 +95,7 @@ let character = {
 }
 
 let gifs = {
+  musicnotes: document.querySelector("#music-gif"),
   sleep: document.querySelector("#sleep-gif"),
 }
 
@@ -903,6 +904,7 @@ function runToBus() {
 
 // SCENE 11 (ID of LAWRENCE WAS OBSERVED) It looks like this guy needs some stimulation.
 function goLawrence() {
+  gifs.musicnotes.style.display = "block";
   domElement.body.style.backgroundColor = "var(--weiss)";
   domElement.assets.style.display = "block";
   character.lawrence.style.display = "block";
@@ -936,6 +938,7 @@ function scene12() {
 
 // SCENE 13 LAWRENCE IN BUS
 function scene13() {
+  gifs.musicnotes.style.display = "none";
   document.querySelector(".ambience-street-morning").pause();
   document.querySelector(".ambience-bus").currentTime = 0;
   document.querySelector(".ambience-bus").play();

@@ -23,9 +23,9 @@
     max-height: 45vh;
 }
 
-#line-floor-valentino{
+#line-floor-valentino {
     position: fixed;
-    top:2vh;
+    top: 2vh;
     max-height: 75vh;
     left: 28vw;
 }
@@ -203,7 +203,7 @@
     display: none;
 }
 
-#night-table{
+#night-table {
     display: none;
     position: fixed;
     top: 20vh;
@@ -257,7 +257,7 @@
     max-height: 50%;
 }
 
-#horizontal-scroll-icon{
+#horizontal-scroll-icon {
     position: fixed;
     left: 50vw;
     top: 80vh;
@@ -266,13 +266,15 @@
 }
 
 @keyframes scroll-icon {
-    0%{
-        margin-top:0;
+    0% {
+        margin-top: 0;
     }
-    10%{
+
+    10% {
         margin-top: 35vh;
     }
-    100%{
+
+    100% {
         margin-top: 35vh;
     }
 }
@@ -282,9 +284,10 @@
 }
 
 #street-line {
-    left: 120vh;
-    top: calc(50vh - 4vw);
-    width: calc(400vw - 280vh);
+    left: 160vh;
+    top: calc(50vh - 3vw);
+    width: calc(300vw - 280vh);
+    transform: scaley(0.6);
 }
 
 
@@ -298,7 +301,7 @@
     overflow: hidden;
 }
 
-#bus{
+#bus {
     position: absolute;
     top: 0;
     left: 0;
