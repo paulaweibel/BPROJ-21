@@ -3,6 +3,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
 }
 
 .mercy-welcoming {
@@ -51,12 +52,10 @@
 
 .mercy-bar {
     position: absolute;
-    height: 40vh;
-    top: 30vh;
-    left: 20vw;
+    height: 45vh;
+    top: 38vh;
+    right: 61vh;
 }
-
-
 
 #window-fix {
     display: none;
@@ -92,7 +91,7 @@
 
 /* make mercies invisible */
 #mercy-1a {
-    display: block;
+    display: none;
 }
 
 #mercy-1b {
@@ -122,11 +121,12 @@
 #mercy-3d-mess {
     display: none;
     height: 15vh;
-    top: 85vh;
+    top: 80vh;
 }
 
 #mercy-4 {
     display: none;
+    right: 80vw;
 }
 
 #mercy-5a {
@@ -139,6 +139,5 @@
 
 #mercy-5c {
     display: none;
-    top: 25vh;
-    height: 50vh;
+    right: 80vw;
 }

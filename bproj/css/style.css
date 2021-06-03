@@ -478,6 +478,16 @@ b {
   left: 35vh !important;
 }
 
+.bar-guest-talks {
+  top: 10vh !important;
+  left: calc(100vw - 65vh) !important;
+}
+
+.bar-talks{
+  top: 10vh !important;
+  left: calc(100vw - 105vh) !important;
+}
+
 #people-talk-right {
   max-width: 100%;
 }
@@ -486,6 +496,7 @@ b {
   display: none;
   position: absolute;
   left: 0;
+  top: 0;
   transform-origin: bottom right;
   transform: scale(1);
   max-width: 100%;

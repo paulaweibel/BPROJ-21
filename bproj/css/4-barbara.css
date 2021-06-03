@@ -20,6 +20,7 @@
 
 /* INFO ICON */
 #info-icon-barbara{
+  display: none;
   position: fixed;
   top: 30vh;
   right: 43.5vh;
@@ -35,6 +36,7 @@
 }
 
 #sandwich-bag{
+  display: none;
   position: fixed;
   top: 46vh;
   right: 50vh;
@@ -42,6 +44,7 @@
 }
 
 #coffee{
+  display: none;
   position: fixed;
   top: 50vh;
   right: 60vh;

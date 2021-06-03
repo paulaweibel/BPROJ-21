@@ -213,6 +213,7 @@
     top: 25vh;
     height: 43vh;
     width: 25vh;
+    transition: background-color 0.2s;
 }
 
 /* CLOCK */
@@ -239,7 +240,7 @@
 #knotLasso {
     display: none;
     position: fixed;
-    top: 65vh;
+    top: 68vh;
     left: 30vw;
     height: 5vw;
     width: calc(30vw + 5vh);
@@ -248,7 +249,7 @@
 
 .knotLassoPath {
     stroke: var(--schwarz);
-    stroke-width: 1%;
+    stroke-width: 2%;
     stroke-linecap: round;
     /* filter:drop-shadow(2px 2px 1px black); */
     fill: none;

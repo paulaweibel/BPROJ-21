@@ -63,7 +63,7 @@
 }
 
 .showWhisperKnotLawrence {
-    margin-left: calc(30vw + 30vh) !important;
+    margin-left: calc(50vw - 10vh) !important;
     margin-top: 28vh !important;
 }
 
@@ -207,8 +207,7 @@
 
 #looser-scream-box {
     display: none;
-    /* background-color: rgba(26, 26, 26, 0.99); */
-    background-color: #0c0c0c;
+    background-color: var(--schwarz);
     /* padding-top: 4vw; */
     position: fixed;
     top: 0;
@@ -216,7 +215,6 @@
     height: 100vh;
     white-space: nowrap;
     width: 100%;
-
 }
 
 h1 {
@@ -242,10 +240,11 @@ h5 {
 
 #looser-scream {
     white-space: normal;
-    color: #fafafa;
+    color: var(--weiss);
     animation: screaming-knot3 1s ease-in-out infinite;
 }
 
+/* BLINKING LOOSER TEXT ANIMATION */
 @keyframes screaming-knot3 {
     0% {
         opacity: 0;
@@ -260,11 +259,20 @@ h5 {
     }
 }
 
+/* SHAKING LOOSER TEXT ANIMATION */
+/* @keyframes screaming-knot3 {
+    0% {
+        transform: translate(0,0);
+    }
 
+    20% {
+        transform: translate(0,1vh);
+    }
 
-
-
-
+    100% {
+        transform: translate(0,0vh);
+    }
+} */
 
 
 #trumpet-container {
@@ -373,14 +381,14 @@ h5 {
     margin-top: 30vh !important;
 }
 
-.knotOutsideOfficeBuilding{
+.knotOutsideOfficeBuilding {
     margin-left: -10vh !important;
     margin-top: 50vh !important;
 }
 
 .knotWaitingroom {
-    margin-left: 30vw !important;
-    margin-top: 40vh !important;
+    margin-left: 20vw !important;
+    margin-top: 50vh !important;
 }
 
 .knotWaitingroom-AfterLasso {
@@ -398,24 +406,24 @@ h5 {
     margin-top: 30vh !important;
 }
 
-.knotOfficeLookingAround1{
+.knotOfficeLookingAround1 {
     margin-left: 50vw !important;
     margin-top: 10vh !important;
 }
 
-.knotOfficeLookingAround2{
+.knotOfficeLookingAround2 {
     margin-left: 20vw !important;
     margin-top: 10vh !important;
 }
 
-.knotOfficeStopLooking{
+.knotOfficeStopLooking {
     margin-left: 10vw !important;
     margin-top: 50vh !important;
 }
 
-.knotMercyBar1{
-    margin-left: -20vh !important;
-    margin-top: 40vh !important;
+.knotMercyBar1 {
+    margin-left: -15vh !important;
+    margin-top: -15vh !important;
 }
 
 /* ------ MAIN CHARACTER TEXT------------------------------ */

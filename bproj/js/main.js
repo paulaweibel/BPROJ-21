@@ -177,7 +177,23 @@ let text = {
   peopleTalk: document.querySelector("#people-talk"),
   valentinoTalk1: document.querySelector("#valentino-talk1"),
   valentinoTalk2: document.querySelector("#valentino-talk2"),
+  valentinoTalk3: document.querySelector("#valentino-talk3"),
+  valentinoTalk4: document.querySelector("#valentino-talk4"),
+  valentinoTalk5: document.querySelector("#valentino-talk5"),
+  //
   mercyTalk1: document.querySelector("#mercy-talk1"),
+  mercyTalk2: document.querySelector("#mercy-talk2"),
+  mercyTalk3: document.querySelector("#mercy-talk3"),
+  //
+  barbaraTalk1: document.querySelector("#barbara-talk1"),
+  barbaraTalk2: document.querySelector("#barbara-talk2"),
+  barbaraTalk3: document.querySelector("#barbara-talk3"),
+  barbaraTalk4: document.querySelector("#barbara-talk4"),
+  barbaraTalk5: document.querySelector("#barbara-talk5"),
+  barbaraTalk6: document.querySelector("#barbara-talk6"),
+  //
+  supervisorTalk1: document.querySelector("#supervisor-talk1"),
+  supervisorTalk2: document.querySelector("#supervisor-talk2"),
   // other texts
   aSiestaLater: document.querySelector("#a-siesta-later-phrase"),
 }
@@ -595,6 +611,10 @@ domElement.body.addEventListener('click', function () {
     scene25();
   }
   // SCENE 26a
+  if (variable.currentScene === 26) {
+    scene26Error();
+  }
+  // SCENE 26a
   if (variable.currentScene === 26.1) {
     scene26a();
   }
@@ -628,9 +648,73 @@ domElement.body.addEventListener('click', function () {
   }
   // SCENE 27
   if (variable.currentScene === "goBarbara") {
+    character.mercy3d.style.display = "none";
+    character.mercy3dMess.style.display = "none";
+    scene.windowFix.style.display = "none";
+    scene.windowMove.style.display = "none";
     goBarbara();
   }
 
+  // SCENE 35
+  if (variable.currentScene === 35) {
+    scene35();
+  }
+  // SCENE 36
+  if (variable.currentScene === 36) {
+    scene36();
+  }
+  // SCENE 37
+  if (variable.currentScene === 37) {
+    scene37();
+  }
+  // SCENE 38
+  if (variable.currentScene === 38) {
+    scene38();
+  }
+  // SCENE 39
+  if (variable.currentScene === 39) {
+    scene39();
+  }
+  // SCENE 40
+  if (variable.currentScene === 40) {
+    scene40();
+  }
+  // SCENE 41
+  if (variable.currentScene === 41) {
+    scene41();
+  }
+  // SCENE 42
+  if (variable.currentScene === 42) {
+    scene42();
+  }
+  // SCENE 43
+  if (variable.currentScene === 43) {
+    scene43();
+  }
+  // SCENE 44
+  if (variable.currentScene === 44) {
+    scene44();
+  }
+  // SCENE 46
+  if (variable.currentScene === 46) {
+    scene46();
+  }
+  // SCENE 47
+  if (variable.currentScene === 47) {
+    scene47();
+  }
+  // SCENE 48
+  if (variable.currentScene === 48) {
+    scene48();
+  }
+  // SCENE 49
+  if (variable.currentScene === 49) {
+    scene49();
+  }
+  // SCENE 50
+  if (variable.currentScene === 50) {
+    scene50();
+  }
 
   // CALL TO ACTION
   if (variable.currentScene === "callToAct") {
@@ -731,7 +815,9 @@ function scene6() {
   text.phrase5.style.display = "none";
   //make valentino visible
   character.valentino.style.display = "block";
+  character.valentino1a.style.display = "block";
   character.knot.classList.add("knotValentinoObserve");
+  document.querySelector("#valentino-info").style.display = "block";
   variable.moveflag = true;
   setTimeout(() => {
     text.phrase6.style.display = "block";
@@ -1121,6 +1207,7 @@ function motCount() {
   }
 }
 
+// looooooser
 function scene19() {
   gifs.nervous.style.display = "block";
   text.phrase18.style.display = "none";
@@ -1150,9 +1237,11 @@ function scene20() {
   }, 200)
 }
 
+// SCENE 20a Mercy saying hello
 function scene20a() {
   document.querySelector(".ambience-street-afternoon").pause();
   character.mercy.style.display = "block";
+  character.mercy1a.style.display = "block";
   text.peopleTalk.classList.add("bubbleGrow");
   text.peopleTalk.classList.add("mercy-goodmorning");
   text.mercyTalk1.style.display = "block";
@@ -1167,9 +1256,9 @@ function scene20a() {
   }, 200)
 }
 
+// SCENE 20b Knot_ give me a hand
 function scene20b() {
   text.peopleTalk.classList.remove("bubbleGrow");
-  text.peopleTalk.classList.remove("mercy-goodmorning");
   character.knot.classList.add("knotWaitingroom");
   text.mercyTalk1.style.display = "none";
   text.phrase19.style.display = "block";
@@ -1181,6 +1270,7 @@ function scene20b() {
 // SCENE 22 LAWRENCE START FALLING
 function scene21() {
   document.querySelector(".knotLassoPath").style.strokeDashoffset = "0";
+  text.peopleTalk.classList.remove("mercy-goodmorning");
   text.phrase19.style.display = "none";
   setTimeout(() => {
     gifs.falling.style.display = "block";
@@ -1238,9 +1328,10 @@ function scene24() {
   setTimeout(() => {
     gifs.sleep.style.display = "block";
     eyes.style.display = "None";
-  }, 500)
+  }, 2000)
 }
 
+// SCENE 24A - a siesta later
 function scene24a() {
   document.querySelector("#a-siesta-later").style.display = "block";
   text.phrase20.style.display = "none";
@@ -1256,6 +1347,7 @@ function scene24a() {
   }, 200)
 }
 
+// SCENE 24b Lawrence leaving the office
 function scene24b() {
   scene.waitingRoom2.style.display = "none";
   scene.waitingRoom1.style.display = "block";
@@ -1265,6 +1357,7 @@ function scene24b() {
   }, 200)
 }
 
+// SCENE 24c Knot is waking up
 function scene24c() {
   eyes.style.display = "block";
   gifs.sleep.style.display = "none";
@@ -1275,8 +1368,19 @@ function scene24c() {
   }, 200)
 }
 
+// change to mercy Office
 function scene26() {
+  character.lawrence5.style.display = "none";
+  document.querySelector("#door-div-waitingroom").style.display = "none";
   goMercy();
+}
+
+// (when user doesnt click on door)
+function scene26Error() {
+  document.querySelector("#door-div-waitingroom").style.backgroundColor = "var(--schwarz)";
+  setTimeout(() => {
+    document.querySelector("#door-div-waitingroom").style.backgroundColor = "transparent";
+  }, 200)
 }
 
 /////////////
@@ -1294,7 +1398,6 @@ function goMercy() {
   character.lawrence.style.display = "none";
   character.knot.classList.add("knotOfficeMercy");
   domElement.body.style.backgroundColor = "var(--weiss)"
-  document.querySelector("#door-div-waitingroom").style.display = "none";
   domElement.body.style.height = "10000vh"
   window.scrollTo(0, 20000);
   // stop horizontal scroll
@@ -1307,6 +1410,7 @@ function goMercy() {
     variable.currentScene = 26.1;
   }, 200)
 }
+
 
 function scene26a() {
   character.knot.classList.add("knotOfficeLookingAround1");
@@ -1356,7 +1460,6 @@ function scene30() {
   setTimeout(() => {
     variable.currentScene = 31;
   }, 200)
-
 }
 
 function scene31() {
@@ -1371,7 +1474,6 @@ function scene31() {
 
 // change to draggable window
 function scene32() {
-
   // to do list stuff here, nachher:
   moveMercysWindow();
 }
@@ -1385,8 +1487,7 @@ var active = false;
 function moveMercysWindow() {
   text.phrase26.style.display = "block";
   document.querySelector("#dragQueen").classList.add("drag-cursor");
-
-  // drag window
+  // drag window eventlisteners
   container.addEventListener("touchstart", dragStart, false);
   container.addEventListener("touchend", dragEnd, false);
   container.addEventListener("touchmove", drag, false);
@@ -1395,6 +1496,7 @@ function moveMercysWindow() {
   container.addEventListener("mousemove", drag, false);
 }
 
+// all the functions for dragging window
 function dragStart(e) {
   if (e.target !== e.currentTarget) {
     active = true;
@@ -1410,7 +1512,6 @@ function dragStart(e) {
       if (e.type === "touchstart") {
         activeItem.initialX = e.touches[0].clientX - activeItem.xOffset;
       } else {
-        console.log("doing something!");
         activeItem.initialX = e.clientX - activeItem.xOffset;
       }
     }
@@ -1457,8 +1558,7 @@ function setTranslate(xPos, yPos, el) {
   el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
 
-
-// SCENE wind blowed
+// SCENE MERCY CHAOS WIND
 function mercyChaos() {
   text.phrase26.style.display = "None";
   document.querySelector("#dragQueen").classList.remove("drag-cursor");
@@ -1486,9 +1586,10 @@ function goBarbara() {
   domElement.assets.style.display = "block";
   character.barbara.style.display = "block";
   character.barbara1.style.display = "block";
-  character.valentino.style.display = "none";
+  character.valentino.style.display = "block";
   character.lawrence.style.display = "none";
-  character.mercy.style.display = "none";
+  character.mercy.style.display = "block";
+  character.mercy4.style.display = "block";
   character.knot.classList.add("knotMercyBar1")
   domElement.body.style.height = "10000vh"
   window.scrollTo(0, 25000);
@@ -1498,8 +1599,208 @@ function goBarbara() {
   domElement.body.style.overflowY = "hidden";
   //
   text.phrase27.style.display = "none";
+  setTimeout(() => {
+    variable.currentScene = 35;
+  }, 200)
 }
 
+// can i get you something
+function scene35() {
+  barTalks();
+  character.mercy5a.style.display = "block";
+  character.mercy4.style.display = "none";
+  text.barbaraTalk1.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 36;
+  }, 200)
+}
+
+// hello can i have a sandwich
+function scene36() {
+  text.barbaraTalk1.style.display = "none";
+  text.mercyTalk2.style.display = "block";
+  barGuestTalks();
+  setTimeout(() => {
+    variable.currentScene = 37;
+  }, 200)
+}
+
+// sure
+function scene37() {
+  barTalks();
+  text.barbaraTalk2.style.display = "block";
+  text.mercyTalk2.style.display = "none";
+  setTimeout(() => {
+    variable.currentScene = 38;
+  }, 200)
+}
+
+// letz get her mad now / sandwich bag
+function scene38() {
+  noOneTalks();
+  character.barbara2.style.display = "block";
+  character.barbara1.style.display = "none";
+  document.querySelector("#sandwich-bag").style.display = "block";
+  text.barbaraTalk2.style.display = "none";
+  setTimeout(() => {
+    variable.currentScene = 39;
+  }, 200)
+}
+
+// GIVING COFFEE
+function scene39() {
+  text.phrase28.style.display = "block";
+  document.querySelector("#sandwich-bag").style.display = "block";
+  document.querySelector("#coffee").style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 40;
+  }, 200)
+}
+
+// spilling the tea
+function scene40() {
+  barTalks();
+  text.phrase28.style.display = "none";
+  text.barbaraTalk3.style.display = "block";
+  character.barbara2.style.display = "none";
+  character.barbara3.style.display = "block";
+  character.mercy5b.style.display = "block";
+  character.mercy5a.style.display = "none";
+  document.querySelector("#coffee").style.display = "none";
+  setTimeout(() => {
+    variable.currentScene = 41;
+  }, 200)
+}
+
+// barbara is deeply sorry!
+function scene41() {
+  barTalks();
+  text.barbaraTalk3.style.display = "none";
+  text.barbaraTalk4.style.display = "block";
+  character.barbara3.style.display = "none";
+  character.barbara4.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 42;
+  }, 200)
+}
+
+// mercy says "you ve done enough"
+function scene42() {
+  barGuestTalks();
+  text.barbaraTalk4.style.display = "none";
+  text.mercyTalk3.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 43;
+  }, 200)
+}
+
+// mercy walking away angrily
+function scene43() {
+  noOneTalks();
+  text.mercyTalk3.style.display = "none";
+  document.querySelector("#sandwich-bag").style.display = "none";
+  text.phrase29.style.display = "block";
+  character.barbara4.style.display = "none";
+  character.barbara5.style.display = "block";
+  character.mercy5c.style.display = "block";
+  character.mercy5b.style.display = "none";
+  setTimeout(() => {
+    variable.currentScene = 44;
+  }, 200)
+}
+
+// info icon barbara
+function scene44() {
+  text.phrase29.style.display = "none";
+  text.phrase30.style.display = "block";
+  document.querySelector("#info-icon-barbara").style.display="block";
+  character.mercy5c.style.display = "none";
+  setTimeout(() => {
+    variable.currentScene = 45;
+  }, 200)
+}
+
+// barbara ID was clicked
+function scene45a() {
+  text.phrase30.style.display = "none";
+  text.phrase31.style.display = "block";
+  document.querySelector("#info-icon-barbara").style.display="none";
+  setTimeout(() => {
+    variable.currentScene = 46;
+  }, 200)
+}
+
+// take call
+function scene46() {
+  text.phrase31.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 47;
+  }, 200)
+}
+
+//supervisor talk 1
+function scene47() {
+  text.phrase31.style.display = "none";
+  character.barbara5.style.display = "none";
+  character.barbara6a.style.display = "block";
+  barTalks();
+  text.supervisorTalk1.style.display="block";
+  setTimeout(() => {
+    variable.currentScene = 48;
+  }, 200)
+}
+
+//supervisor talk 2
+function scene48() {
+  character.barbara6b.style.display = "block";
+  character.barbara6a.style.display = "none";
+  text.supervisorTalk2.style.display="block";
+  text.supervisorTalk1.style.display="none";
+  setTimeout(() => {
+    variable.currentScene = 49;
+  }, 200)
+}
+
+//call end
+function scene49() {
+  text.supervisorTalk2.style.display="none";
+  text.barbaraTalk5.style.display="block";
+  setTimeout(() => {
+    variable.currentScene = 50;
+  }, 200)
+}
+//call end
+function scene50() {
+  noOneTalks();
+  text.barbaraTalk5.style.display="none";
+  character.barbara7.style.display = "block";
+  character.barbara6b.style.display = "none";
+  setTimeout(() => {
+    variable.currentScene = 50;
+  }, 200)
+}
+
+/// DIALOGUES AT THE BAR POSITIONING
+
+function barTalks() {
+  text.peopleTalk.classList = "bubbleGrow";
+  text.peopleTalk.classList.add("bar-talks");
+  document.querySelector("#people-talk-left").style.display = "block";
+  document.querySelector("#people-talk-right").style.display = "none";
+}
+
+function barGuestTalks() {
+  text.peopleTalk.classList = "bubbleGrow";
+  text.peopleTalk.classList.add("bar-guest-talks");
+  document.querySelector("#people-talk-left").style.display = "none";
+  document.querySelector("#people-talk-right").style.display = "block";
+}
+
+function noOneTalks() {
+  text.peopleTalk.classList = "";
+  document.querySelector("#people-talk-left").style.display = "none"
+  document.querySelector("#people-talk-right").style.display = "none"
+}
 
 ///////////////////// bubble animations:
 
@@ -1749,6 +2050,8 @@ new TypeIt("#phrase18", {
   waitUntilVisible: true,
 }).go()
 
+
+
 new TypeIt("#phrase19", {
   cursor: false,
   strings: ["Come on, give me a hand here."],
@@ -1828,6 +2131,26 @@ new TypeIt("#phrase27", {
 
 
 ///// mercy barbara talk bar
+new TypeIt("#barbara-talk1", {
+  cursor: false,
+  strings: ["Hi, what can I get you?"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#mercy-talk2", {
+  cursor: false,
+  strings: ["Hello, Can I have A Sandwich and a Tea to go please?"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#barbara-talk2", {
+  cursor: false,
+  strings: ["Sure!"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
 
 
 new TypeIt("#phrase28", {
@@ -1837,6 +2160,31 @@ new TypeIt("#phrase28", {
   waitUntilVisible: true,
 }).go()
 
+new TypeIt("#barbara-talk3", {
+  cursor: false,
+  strings: ["So, there you go, your coff….EHHHHH!"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+// COFFFEEEE SPIILLL!!!
+
+new TypeIt("#barbara-talk4", {
+  cursor: false,
+  strings: ["Oh I’m deeply sorry, I don’t know what happened, let me help you…"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#mercy-talk3", {
+  cursor: false,
+  strings: ["There's no need, you've done enough."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+
+// knot talking about barbara
 new TypeIt("#phrase29", {
   cursor: false,
   strings: ["Well, well, well, I pissed her off. ", "Mercy’s day is no longer as perfect as she thought."],
@@ -1860,6 +2208,27 @@ new TypeIt("#phrase31", {
 
 
 ///// call barbara supervisor
+new TypeIt("#supervisor-talk1", {
+  cursor: false,
+  strings: ["One more time and you can go spill drinks somewhere else!"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#supervisor-talk2", {
+  cursor: false,
+  strings: ["By the way, your colleague is sick and you will have to do a double shift, I hope you don't have better plans."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#barbara-talk5", {
+  cursor: false,
+  strings: ["Well, I actually…?"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
 
 new TypeIt("#phrase32", {
   cursor: false,
@@ -1894,6 +2263,26 @@ new TypeIt("#phrase35", {
 }).go()
 
 /// valentino at bar
+new TypeIt("#valentino-talk3", {
+  cursor: false,
+  strings: ["Hiiii! I just have a quick question… I broke my phone in a morning rush and I don't remember the bus numbers. Would you let me use your phone for a minute?"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#barbara-talk6", {
+  cursor: false,
+  strings: ["Yes I can do that, but normally customers come here for drinks and food. I’ll make an exception this time. "],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#valentino-talk4", {
+  cursor: false,
+  strings: ["That is really nice of you, thank you very much! "],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
 
 new TypeIt("#phrase36", {
   cursor: false,
@@ -1905,6 +2294,13 @@ new TypeIt("#phrase36", {
 new TypeIt("#phrase37", {
   cursor: false,
   strings: ["We should switch to Valentino, let’s go home with him!"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#valentino-talk5", {
+  cursor: false,
+  strings: ["Thanks again! I will come for a drink one of these days."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()

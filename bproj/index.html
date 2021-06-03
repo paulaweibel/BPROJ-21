@@ -21,8 +21,6 @@
     <!-- PROGRESS BAR ------------------------------>
     <div id="progress"></div>
 
-
-
     <!-- BACKGROUND --------------->
     <img onload="alarm()" id="light-texture" src="img/background.png">
 
@@ -35,8 +33,6 @@
         <!-- SCROLL ICON -------------------->
         <img id="scroll-icon" class="button" onclick="scrollToIntro()" src="img/objects-icons/scroll-icon.png">
     </div>
-
-
 
     <!-- ASSETS -------------------->
     <div id="asset-container">
@@ -99,7 +95,7 @@
                 <img id="sign-button-off" class="bar-sign-button" src="img/objects-icons/neon-sign/button-off.png">
                 <img id="happy-hour-gif" class="bar-sign" src="img/objects-icons/neon-sign/happy-hour-text.gif">
             </div>
-            <img id="info-icon-barbara" class="button" onclick="idBarbara()" src="img/objects-icons/info-icon.png">
+            <img id="info-icon-barbara" class="button" onclick="idBarbara(); scene45a()" src="img/objects-icons/info-icon.png">
         </div>
 
         <!-- VALENTINO ASSETS -->
@@ -145,8 +141,6 @@
             <img id="night-table" src="img/1-valentino/night-table.png">
             <div id="text-valentino"></div>
         </div>
-
-
 
         <!-- LAWRENCE ASSETS -->
         <div id="lawrence">
@@ -251,7 +245,20 @@
             <img id="people-talk-left" src="img/objects-icons/speechbubble-big-left.png">
             <p id="valentino-talk1" class="all-people-talk"></p>
             <p id="valentino-talk2" class="all-people-talk"></p>
+            <p id="valentino-talk3" class="all-people-talk"></p>
+            <p id="valentino-talk4" class="all-people-talk"></p>
+            <p id="valentino-talk5" class="all-people-talk"></p>
             <p id="mercy-talk1" class="all-people-talk"></p>
+            <p id="mercy-talk2" class="all-people-talk"></p>
+            <p id="mercy-talk3" class="all-people-talk"></p>
+            <p id="barbara-talk1" class="all-people-talk"></p>
+            <p id="barbara-talk2" class="all-people-talk"></p>
+            <p id="barbara-talk3" class="all-people-talk"></p>
+            <p id="barbara-talk4" class="all-people-talk"></p>
+            <p id="barbara-talk5" class="all-people-talk"></p>
+            <p id="barbara-talk6" class="all-people-talk"></p>
+            <p id="supervisor-talk1" class="all-people-talk"></p>
+            <p id="supervisor-talk2" class="all-people-talk"></p>
         </div>
 
         <!-- KNOT IN BACKGROUND IS SAYING STUFF-->
@@ -395,13 +402,13 @@
     <!-- STRESS FORMULAR (CALL TO ACTION) -->
     <div id="call-to-action">
         <div id="glitch-stress-formular" style="display: none;">
-            <div class="glitch-embed-wrap" style="position: absolute; height: 80vh; width: 100%;">
+            <!-- <div class="glitch-embed-wrap" style="position: absolute; height: 80vh; width: 100%;">
                 <iframe
                     src="https://glitch.com/embed/#!/embed/stressformular?path=server.js&previewSize=100&attributionHidden=true"
                     title="stressformular on Glitch" allow="geolocation; microphone; camera; midi; vr; encrypted-media"
                     style="height: 100%; width: 100%; border: 0;">
                 </iframe>
-            </div>
+            </div> -->
         </div>
         <img id="show-formular-button" class="button" onclick="showStressFormular()"
             src="img/objects-icons/yes-icon.png">
