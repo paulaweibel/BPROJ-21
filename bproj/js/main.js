@@ -97,6 +97,7 @@ let character = {
 }
 
 let gifs = {
+  running: document.querySelector("#running-gif"),
   musicnotes: document.querySelector("#music-gif"),
   sleep: document.querySelector("#sleep-gif"),
 }
@@ -686,10 +687,10 @@ function scene3() {
 
 //// (NO)
 domElement.helpNo.addEventListener('mouseenter', function () {
-  domElement.helpYes.style.marginLeft = "20vh";
+  domElement.helpYes.style.marginRight = "-25vh";
 });
 domElement.helpNo.addEventListener('mouseleave', function () {
-  domElement.helpYes.style.marginLeft = "0vh";
+  domElement.helpYes.style.marginRight = "0vh";
 });
 
 //// (YES)
@@ -886,6 +887,7 @@ function scene10() {
   character.valentino1d.style.display = "none";
   character.valentino2a.style.display = "block";
   scene.cinematicEffect.style.display = "block";
+  gifs.running.style.display = "block";
   scene.horizontalScrollContainer.style.display = "block";
   document.querySelector(".bus-container").style.display = "block";
   domElement.body.style.backgroundColor = "var(--weiss)";
@@ -934,6 +936,7 @@ function runToBus() {
     character.valentino2b.style.display = "none";
     character.valentino2b.classList = "valentino-run";
     character.valentino2a.classList = "valentino-run";
+    gifs.running.classList = "valentino-run";
     scene.bus.classList = "";
     character.knot.classList.remove("knotValentinoRunMiddle");
   }
@@ -950,9 +953,11 @@ function runToBus() {
   if (sLeft > 2.5 * window.innerWidth) {
     character.valentino2b.classList.add("valentinoMiddle");
     character.valentino2a.classList.add("valentinoMiddle");
+    gifs.running.classList.add("valentinoMiddle");
   } else {
     character.valentino2b.classList.remove("valentinoMiddle");
     character.valentino2a.classList.remove("valentinoMiddle");
+    gifs.running.classList.remove("valentinoMiddle");
   }
 
   // 4. horizontal scroll valentino  
@@ -960,12 +965,14 @@ function runToBus() {
     text.phrase11.style.display = "block";
     character.valentino2a.classList.add("valentinoLeaves");
     character.valentino2b.classList.add("valentinoLeaves");
+    gifs.running.classList.add("valentinoLeaves");
     character.knot.classList.add("knotValentinoRunEnd");
     scene.bus.classList.add("driveAway");
   } else {
     text.phrase11.style.display = "none";
     character.valentino2a.classList.remove("valentinoLeaves");
     character.valentino2b.classList.remove("valentinoLeaves");
+    gifs.running.classList.remove("valentinoLeaves");
     character.knot.classList.remove("knotValentinoRunEnd");
     scene.bus.classList.remove("driveAway");
   }
@@ -974,6 +981,7 @@ function runToBus() {
 // SCENE 11 (ID of LAWRENCE WAS OBSERVED) It looks like this guy needs some stimulation.
 function goLawrence() {
   gifs.musicnotes.style.display = "block";
+  gifs.running.style.display = "none";
   domElement.body.style.backgroundColor = "var(--weiss)";
   domElement.assets.style.display = "block";
   character.lawrence.style.display = "block";
@@ -1351,7 +1359,7 @@ function scene31() {
 
 // change to draggable window
 function scene32() {
-  
+
   // to do list stuff here, nachher:
   moveMercysWindow();
 }
@@ -1843,7 +1851,7 @@ new TypeIt("#phrase31", {
 
 new TypeIt("#phrase32", {
   cursor: false,
-  strings: ["I think she had something planned! Oops… ","Anyway, we deserve a break now, stressing others is stressful. Call me in a few hours! "],
+  strings: ["I think she had something planned! Oops… ", "Anyway, we deserve a break now, stressing others is stressful. Call me in a few hours! "],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()

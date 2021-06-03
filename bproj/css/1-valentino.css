@@ -83,12 +83,19 @@
     display: none;
 }
 
+.toggle-time-text {
+    color: var(--weiss);
+    /* TIME ON THE RIGHT */
+    /* transform: translate(9vh, 3.5vh) scale(0.8); */
+    transform: translate(1vh, -1vh) scale(0.8);
+    text-align: center;
+}
+
 .toggle {
     position: fixed;
     width: 9vh;
     transition: opacity 0.5s;
     animation: toggle 1s infinite;
-    color: var(--weiss);
 }
 
 /* single toggles position */
@@ -145,6 +152,17 @@
     top: 15vh;
     left: calc(50vw - 20vh);
     max-height: 70vh;
+}
+
+
+#running-gif {
+    position: fixed;
+    display: none;
+    height: 30vh;
+    top: 35vh;
+    margin-left: -40vw;
+    transform: translate(-7vw, 0);
+    transition: margin-left 3s;
 }
 
 
