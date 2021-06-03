@@ -85,38 +85,35 @@
 
 .toggle {
     position: fixed;
-    width: 7vh;
+    width: 9vh;
     transition: opacity 0.5s;
     animation: toggle 1s infinite;
+    color: var(--weiss);
 }
 
 /* single toggles position */
 #toggle1 {
     position: absolute;
-    top: -10vh;
+    top: -20vh;
     left: -10vh;
-    color: var(--schwarz);
 }
 
 #toggle2 {
     position: absolute;
     top: -15vh;
-    left: 40vh;
-    color: var(--schwarz);
+    left: 70vh;
 }
 
 #toggle3 {
     position: absolute;
     top: 10vh;
-    left: 0vh;
-    color: var(--schwarz);
+    left: -15vh;
 }
 
 #toggle4 {
     position: absolute;
-    top: 25vh;
-    left: -20vh;
-    color: var(--schwarz);
+    top: 40vh;
+    left: -30vh;
 }
 
 .toggle-off {
