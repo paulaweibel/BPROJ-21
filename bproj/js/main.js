@@ -153,10 +153,21 @@ let text = {
   phrase28: document.querySelector("#phrase28"),
   phrase29: document.querySelector("#phrase29"),
   phrase30: document.querySelector("#phrase30"),
+  phrase31: document.querySelector("#phrase31"),
+  phrase32: document.querySelector("#phrase32"),
+  phrase33: document.querySelector("#phrase33"),
+  phrase34: document.querySelector("#phrase34"),
+  phrase35: document.querySelector("#phrase35"),
+  phrase36: document.querySelector("#phrase36"),
+  phrase37: document.querySelector("#phrase37"),
+  phrase38: document.querySelector("#phrase38"),
+  phrase39: document.querySelector("#phrase39"),
+  phrase40: document.querySelector("#phrase40"),
   // knot whispers
   whisper1: document.querySelector("#whisper1"),
   whisper2: document.querySelector("#whisper2"),
   whisper3: document.querySelector("#whisper3"),
+  whisper4: document.querySelector("#whisper4"),
   // people
   peopleTalk: document.querySelector("#people-talk"),
   valentinoTalk1: document.querySelector("#valentino-talk1"),
@@ -1629,7 +1640,7 @@ new TypeIt("#phrase7", {
 
 new TypeIt("#phrase8", {
   cursor: false,
-  strings: ["it's up to you, turn off the other alarms."],
+  strings: ["I know! It's up to you, turn off the other alarms."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -1671,21 +1682,21 @@ new TypeIt("#phrase11", {
 
 new TypeIt("#phrase12", {
   cursor: false,
-  strings: ["It looks like this guy needs some stimulation."],
+  strings: ["I can smell potential here. Hehe!", "This guy needs some stimulation."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase13", {
   cursor: false,
-  strings: ["He is going to a job interview.", "He needs to earn money for his studies."],
+  strings: ["He is going to a job interview.", "He has to earn money for his studies."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase14", {
   cursor: false,
-  strings: ["I know what to do… watch and learn."],
+  strings: ["I know what to do…", "watch and learn, Assistant."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -1706,21 +1717,21 @@ new TypeIt("#whisper3", {
 
 new TypeIt("#phrase17", {
   cursor: false,
-  strings: ["Assistant, let’s see what you have learned so far.", "Delete the three motivational thoughts:"],
+  strings: ["Assistant, let’s see what you have learned so far.", "Delete the three motivational quotes:"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase18", {
   cursor: false,
-  strings: ["Good, I have my thoughts now"],
+  strings: ["Good!", "Now my quotes can be shown."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase19", {
   cursor: false,
-  strings: ["Here, come on, give me a hand."],
+  strings: ["Come on, give me a hand here."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -1762,7 +1773,7 @@ new TypeIt("#phrase22", {
 
 new TypeIt("#phrase23", {
   cursor: false,
-  strings: ["So far, she already had four job interviews, and the day is still long. Let's check her To-Do list."],
+  strings: ["So far, she had two job interviews. Let's check her To-Do list."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -1776,14 +1787,14 @@ new TypeIt("#phrase24", {
 
 new TypeIt("#phrase25", {
   cursor: false,
-  strings: ["Think, think, think 💭"],
+  strings: ["Think, think, think…"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase26", {
   cursor: false,
-  strings: ["She’s distracted. Assistant, she needs some fresh air!"],
+  strings: ["She’s distracted. It’s windy outside.", "Assistant, she needs some fresh air!"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -1791,6 +1802,118 @@ new TypeIt("#phrase26", {
 new TypeIt("#phrase27", {
   cursor: false,
   strings: ["hehe, now I've got her into trouble."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+
+///// mercy barbara talk bar
+
+
+new TypeIt("#phrase28", {
+  cursor: false,
+  strings: ["Let's get her mad now. "],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase29", {
+  cursor: false,
+  strings: ["Well, well, well, I pissed her off. ", "Mercy’s day is no longer as perfect as she thought."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase30", {
+  cursor: false,
+  strings: ["Who do we have here? Poor little thing, I think I already caused her some trouble."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase31", {
+  cursor: false,
+  strings: ["Maybe you did not notice earlier, but I moved the security camera to Barbara. The supervisor has seen the whole mess scene, for sure, he will call very soon."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+
+///// call barbara supervisor
+
+new TypeIt("#phrase32", {
+  cursor: false,
+  strings: ["I think she had something planned! Oops… ","Anyway, we deserve a break now, stressing others is stressful. Call me in a few hours! "],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+// siesta 3
+
+new TypeIt("#phrase33", {
+  cursor: false,
+  strings: ["Hello again! That was such a good nap!! "],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase34", {
+  cursor: false,
+  strings: ["Great idea! The bar will be sooo full. ", "You’re the best assistant I’ve had so far!"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+// adding many people to bar
+
+new TypeIt("#phrase35", {
+  cursor: false,
+  strings: ["Oh look who's back. Valentino, the sleeping beauty again! "],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+/// valentino at bar
+
+new TypeIt("#phrase36", {
+  cursor: false,
+  strings: ["Wait? What? Are we in a rom com now?"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase37", {
+  cursor: false,
+  strings: ["We should switch to Valentino, let’s go home with him!"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase38", {
+  cursor: false,
+  strings: ["Here we are, I noticed that the demotivational quotes worked pretty well. Make sure, Valentino minds all of them."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase39", {
+  cursor: false,
+  strings: ["Good, all these thoughts won’t let him sleep for a while. "],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+// (whisper)
+new TypeIt("#whisper4", {
+  cursor: false,
+  strings: ["Sweet dreams"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#phrase40", {
+  cursor: false,
+  strings: [""],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
