@@ -97,8 +97,12 @@ let character = {
 }
 
 let gifs = {
+  worried: document.querySelector("#worried-gif"),
   running: document.querySelector("#running-gif"),
   musicnotes: document.querySelector("#music-gif"),
+  nervous: document.querySelector("#nervous-gif"),
+  falling: document.querySelector("#falling-gif"),
+  floor: document.querySelector("#floor-gif"),
   sleep: document.querySelector("#sleep-gif"),
 }
 
@@ -854,6 +858,7 @@ function scene9a() {
 
   // trumpet!!!!
   setTimeout(() => {
+    gifs.worried.style.display = "block";
     document.querySelector(".trumpet-sound").currentTime = 0;
     document.querySelector(".trumpet-sound").play();
     document.querySelector("#one-hour-later").style.display = "none";
@@ -873,6 +878,7 @@ function scene9b() {
 // SCENE 10: VALENTINO RUN HORIZONTAL!!
 function scene10() {
   document.querySelector(".trumpet-sound").pause();
+  gifs.worried.style.display = "none";
   console.log("wtf");
   document.querySelector(".ambience-street-morning").currentTime = 0;
   document.querySelector(".ambience-street-morning").play();
@@ -1116,6 +1122,7 @@ function motCount() {
 }
 
 function scene19() {
+  gifs.nervous.style.display = "block";
   text.phrase18.style.display = "none";
   document.querySelector("#looser-scream-box").style.display = "block";
   document.querySelector(".ambience-bus").pause();
@@ -1126,6 +1133,7 @@ function scene19() {
 
 // SCENE 20 LAWRENCE WALKING TO BUILDING
 function scene20() {
+  gifs.nervous.style.display = "none";
   document.querySelector("#looser-scream-box").style.display = "none";
   character.lawrence2a.style.display = "none";
   character.lawrence2b.style.display = "none";
@@ -1175,6 +1183,7 @@ function scene21() {
   document.querySelector(".knotLassoPath").style.strokeDashoffset = "0";
   text.phrase19.style.display = "none";
   setTimeout(() => {
+    gifs.falling.style.display = "block";
     variable.currentScene = 0;
     character.lawrence4a.style.display = "none";
     character.lawrence4b.style.display = "block";
@@ -1182,18 +1191,21 @@ function scene21() {
     character.knot.classList.add("knotWaitingroom-AfterLasso");
   }, 1000)
   setTimeout(() => {
+    gifs.falling.style.display = "none";
+    gifs.floor.style.display = "block";
     character.mercy1a.style.display = "none";
     character.mercy1b.style.display = "block";
     character.lawrence4a.style.display = "none";
     character.lawrence4b.style.display = "none";
     character.lawrence4c.style.display = "block";
     variable.currentScene = 22;
-  }, 2000)
+  }, 3000)
 }
 
 
 // SCENE 24 LAWRENCE WALKING AFTER FALL
 function scene22() {
+  gifs.floor.style.display = "none";
   character.lawrence4c.style.display = "none";
   character.lawrence4d.style.display = "block";
   setTimeout(() => {
@@ -1588,7 +1600,7 @@ function hideId() {
 
 
 new TypeIt("#phrase1", {
-  startDelay: 1000,
+  startDelay: 900,
   cursor: false,
   strings: [""],
   speed: variable.textspeed,
@@ -1626,7 +1638,7 @@ new TypeIt("#phrase4", {
 new TypeIt("#phrase5", {
   startDelay: 1000,
   cursor: false,
-  strings: ["GREAT!", "Here we are, the first person of the day"],
+  strings: ["GREAT!", "Here we are", "the first person of the day"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()

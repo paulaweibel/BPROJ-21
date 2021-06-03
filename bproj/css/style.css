@@ -324,14 +324,12 @@ b {
   POSITION: FIXED;
   bottom: 0;
   margin-bottom: -30vh;
-  /* left: calc(23vw + 30vh); */
   right: 40vw;
   width: 15vh;
   transition: margin-bottom 1s 0.5s ease, margin-right 0.2s, transform 0.2s;
 }
 
 #help-no {
-  /* left: calc(23vw + 50vh); */
   right: calc(40vw - 25vh);
   transition: margin-bottom 1s 0.5s ease, margin-right 0.4s, transform 0.2s, opacity 0.15s;
 }

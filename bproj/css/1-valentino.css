@@ -127,6 +127,13 @@
     display: none;
 }
 
+#worried-gif {
+    position: fixed;
+    display: none;
+    left: calc(42vw - 10vh);
+    height: 20vh;
+    top: 16vh;
+}
 
 .valentino-run {
     position: fixed;
