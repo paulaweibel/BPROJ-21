@@ -79,16 +79,6 @@
 }
 
 
-#floor-gif {
-    position: fixed;
-    display: none;
-    height: 10vh;
-    top: 75vh;
-    left: 77vw;
-}
-
-
-
 /* INSIDE BUS */
 .lawrence-in-bus {
     display: none;
@@ -275,11 +265,12 @@
 }
 
 @keyframes gif-scale-up {
-    0%{
+    0% {
         opacity: 0;
         transform: scale(0);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: scale(1);
     }
@@ -349,7 +340,7 @@
 }
 
 /* falling lawrence */
-
+/* 
 #falling-gif {
     position: fixed;
     display: none;
@@ -366,7 +357,7 @@
     100%{
         opacity: 1;
     }
-}
+} */
 
 #lawrence-4b {
     display: none;

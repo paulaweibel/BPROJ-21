@@ -101,9 +101,10 @@ let gifs = {
   running: document.querySelector("#running-gif"),
   musicnotes: document.querySelector("#music-gif"),
   nervous: document.querySelector("#nervous-gif"),
-  falling: document.querySelector("#falling-gif"),
-  floor: document.querySelector("#floor-gif"),
   sleep: document.querySelector("#sleep-gif"),
+  drink: document.querySelector("#drink-gif"),
+  screamphone: document.querySelector("#screaming-phone-gif"),
+  wtf: document.querySelector("#wtf-gif"),
 }
 
 let scene = {
@@ -1273,7 +1274,6 @@ function scene21() {
   text.peopleTalk.classList.remove("mercy-goodmorning");
   text.phrase19.style.display = "none";
   setTimeout(() => {
-    gifs.falling.style.display = "block";
     variable.currentScene = 0;
     character.lawrence4a.style.display = "none";
     character.lawrence4b.style.display = "block";
@@ -1281,8 +1281,7 @@ function scene21() {
     character.knot.classList.add("knotWaitingroom-AfterLasso");
   }, 1000)
   setTimeout(() => {
-    gifs.falling.style.display = "none";
-    gifs.floor.style.display = "block";
+    wtf.worried.style.display = "block";
     character.mercy1a.style.display = "none";
     character.mercy1b.style.display = "block";
     character.lawrence4a.style.display = "none";
@@ -1295,7 +1294,7 @@ function scene21() {
 
 // SCENE 24 LAWRENCE WALKING AFTER FALL
 function scene22() {
-  gifs.floor.style.display = "none";
+  wtf.worried.style.display = "none";
   character.lawrence4c.style.display = "none";
   character.lawrence4d.style.display = "block";
   setTimeout(() => {
@@ -1657,9 +1656,10 @@ function scene39() {
   }, 200)
 }
 
-// spilling the tea
+// spilling the drink
 function scene40() {
   barTalks();
+  gifs.drink.style.display = "block";
   text.phrase28.style.display = "none";
   text.barbaraTalk3.style.display = "block";
   character.barbara2.style.display = "none";
@@ -1713,7 +1713,7 @@ function scene43() {
 function scene44() {
   text.phrase29.style.display = "none";
   text.phrase30.style.display = "block";
-  document.querySelector("#info-icon-barbara").style.display="block";
+  document.querySelector("#info-icon-barbara").style.display = "block";
   character.mercy5c.style.display = "none";
   setTimeout(() => {
     variable.currentScene = 45;
@@ -1724,7 +1724,7 @@ function scene44() {
 function scene45a() {
   text.phrase30.style.display = "none";
   text.phrase31.style.display = "block";
-  document.querySelector("#info-icon-barbara").style.display="none";
+  document.querySelector("#info-icon-barbara").style.display = "none";
   setTimeout(() => {
     variable.currentScene = 46;
   }, 200)
@@ -1744,7 +1744,7 @@ function scene47() {
   character.barbara5.style.display = "none";
   character.barbara6a.style.display = "block";
   barTalks();
-  text.supervisorTalk1.style.display="block";
+  text.supervisorTalk1.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 48;
   }, 200)
@@ -1752,10 +1752,11 @@ function scene47() {
 
 //supervisor talk 2
 function scene48() {
+  gifs.screamphone.style.display = "block";
   character.barbara6b.style.display = "block";
   character.barbara6a.style.display = "none";
-  text.supervisorTalk2.style.display="block";
-  text.supervisorTalk1.style.display="none";
+  text.supervisorTalk2.style.display = "block";
+  text.supervisorTalk1.style.display = "none";
   setTimeout(() => {
     variable.currentScene = 49;
   }, 200)
@@ -1763,16 +1764,18 @@ function scene48() {
 
 //call end
 function scene49() {
-  text.supervisorTalk2.style.display="none";
-  text.barbaraTalk5.style.display="block";
+  text.supervisorTalk2.style.display = "none";
+  text.barbaraTalk5.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 50;
   }, 200)
 }
 //call end
 function scene50() {
+  gifs.screamphone.style.display = "none";
+  gifs.drink.style.display = "none";
   noOneTalks();
-  text.barbaraTalk5.style.display="none";
+  text.barbaraTalk5.style.display = "none";
   character.barbara7.style.display = "block";
   character.barbara6b.style.display = "none";
   setTimeout(() => {

@@ -19,7 +19,7 @@
 }
 
 /* INFO ICON */
-#info-icon-barbara{
+#info-icon-barbara {
   display: none;
   position: fixed;
   top: 30vh;
@@ -28,14 +28,14 @@
   animation: info-icon 2s infinite;
 }
 
-#bar-chairs{
+#bar-chairs {
   position: fixed;
   top: 65vh;
   right: 10vh;
   height: 25vh;
 }
 
-#sandwich-bag{
+#sandwich-bag {
   display: none;
   position: fixed;
   top: 46vh;
@@ -43,14 +43,31 @@
   height: 10vh;
 }
 
-#coffee{
-  display: none;
+#coffee {
+  /* display: none; */
   position: fixed;
   top: 50vh;
   right: 60vh;
   height: 6vh;
 }
 
+
+#drink-gif {
+  position: fixed;
+  display: none;
+  height: 15vh;
+  top: 47.5vh;
+  right: 53vh;
+}
+
+#screaming-phone-gif {
+  position: fixed;
+  display: none;
+  height: 8vh;
+  top: 38vh;
+  right: 34vh;
+  transform: rotate(-60deg);
+}
 
 
 /* HAPPY HOUR SIGN */
@@ -84,7 +101,7 @@
   height: 15vh;
 }
 
-#sign-button-on{
+#sign-button-on {
   display: none;
 }
 
@@ -92,58 +109,58 @@
 
 
 /* make barbies invisible */
-#barbara-1{
+#barbara-1 {
   display: none;
 }
 
-#barbara-2{
+#barbara-2 {
   display: none;
 }
 
-#barbara-3{
+#barbara-3 {
   display: none;
 }
 
-#barbara-4{
+#barbara-4 {
   display: none;
 }
 
-#barbara-5{
+#barbara-5 {
   display: none;
 }
 
-#barbara-6a{
+#barbara-6a {
   display: none;
 }
 
-#barbara-6b{
+#barbara-6b {
   display: none;
 }
 
-#barbara-7{
+#barbara-7 {
   display: none;
 }
 
-#barbara-8{
+#barbara-8 {
   display: none;
 }
 
-#barbara-9{
+#barbara-9 {
   display: none;
 }
 
-#barbara-10a{
+#barbara-10a {
   display: none;
 }
 
-#barbara-10b{
+#barbara-10b {
   display: none;
 }
 
-#barbara-10c{
+#barbara-10c {
   display: none;
 }
 
-#barbara-10d{
+#barbara-10d {
   display: none;
 }

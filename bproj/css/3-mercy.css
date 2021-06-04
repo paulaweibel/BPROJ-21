@@ -13,6 +13,15 @@
     left: 25vh;
 }
 
+
+#wtf-gif {
+    position: absolute;
+    display: none;
+    height: 15vh;
+    top: 18vh;
+    left: 23vh;
+}
+
 .mercy-entering {
     position: absolute;
     height: 40vh;
