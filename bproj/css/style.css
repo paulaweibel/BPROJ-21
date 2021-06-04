@@ -483,7 +483,7 @@ b {
   left: calc(100vw - 65vh) !important;
 }
 
-.bar-talks{
+.bar-talks {
   top: 10vh !important;
   left: calc(100vw - 105vh) !important;
 }
@@ -546,17 +546,17 @@ b {
 /* ------------- OVERLAY FOR SMARTPHONE USERS -------------------- */
 #desktop-only {
   display: none;
+  position: fixed;
+  text-align: center;
+  padding-top: 40vh;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--schwarz);
+  color: var(--weiss);
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (orientation: portrait) {
   #desktop-only {
     display: block;
-    position: fixed;
-    text-align: center;
-    padding-top: 40vh;
-    height: 100vh;
-    width: 100%;
-    background-color: var(--schwarz);
-    color: var(--weiss);
   }
 }
