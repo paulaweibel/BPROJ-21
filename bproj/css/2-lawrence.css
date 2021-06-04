@@ -269,7 +269,22 @@
     height: 20vh;
     top: 20vh;
     left: 80vh;
+    opacity: 0;
+    transform-origin: bottom left;
+    animation: gif-scale-up 1s forwards;
 }
+
+@keyframes gif-scale-up {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 
 
 
@@ -341,6 +356,16 @@
     height: 30vh;
     top: 28vh;
     left: 70vw;
+    animation: gif-fade-in 1s forwards;
+}
+
+@keyframes gif-fade-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 #lawrence-4b {
