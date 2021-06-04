@@ -555,7 +555,7 @@ b {
   color: var(--weiss);
 }
 
-@media only screen and (orientation: portrait) {
+@media screen and (max-width: 600px) {
   #desktop-only {
     display: block;
   }
