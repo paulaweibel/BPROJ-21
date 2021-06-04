@@ -555,7 +555,7 @@ b {
   color: var(--weiss);
 }
 
-@media screen and (orientation: landscape) {
+@media (orientation: landscape) {
   #desktop-only {
     display: none;
   }

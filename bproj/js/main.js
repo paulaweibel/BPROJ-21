@@ -234,14 +234,14 @@ function alarm() {
 }
 
 //PRELOAD JS
-let progress = document.getElementById("progress");
-let startPage = document.getElementById("start-page");
-let hi = document.querySelector("#title-button");
+var progress = document.getElementById("progress");
+var startPage = document.querySelector("#start-page");
+var hi = document.querySelector("#title-button");
 
 var queue = new createjs.LoadQueue(false);
 
 queue.on("progress", event => {
-  let progress = Math.floor(event.progress * 50);
+  var progress = Math.floor(event.progress * 50);
   this.progress.style.width = progress + "%";
   if (progress == 50) {
     console.log("all done");
@@ -294,7 +294,7 @@ function handleFileComplete(event) {
 
 var mouseStartedMoving = false;
 var mouseMoved = false;
-const MINIMUM_MOUSE_MOVE_TIME = 2000;
+var MINIMUM_MOUSE_MOVE_TIME = 2000;
 setInterval(() => {
   if (!mouseMoved && mouseStartedMoving) {
     //Mouse stopped moving
@@ -324,7 +324,7 @@ body.onmousemove = function (ev) {
 ////////////////////////////////////////////////////////////////
 ////EYES MAIN CHARACTER   //////////////////////////////////////
 
-const eyes = document.querySelector('.eyes');
+var eyes = document.querySelector('.eyes');
 window.addEventListener('mousemove', (evt) => {
   const x = -(window.innerWidth / 2 - evt.pageX + sLeft) / 60;
   const y = -(window.innerHeight / 2 - evt.pageY + scrollLocation) / 60;
@@ -334,9 +334,9 @@ window.addEventListener('mousemove', (evt) => {
 ////////////////////////////////////////////////////////////////
 // SCROLL MEMORY ///////////////////////////////////////////////
 
-let scrollLocation = 0;
-let sLeft = 0;
-let ticking = false;
+var scrollLocation = 0;
+var sLeft = 0;
+var ticking = false;
 
 //updating scroll position
 document.addEventListener('scroll', function (e) {
