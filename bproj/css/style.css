@@ -545,7 +545,7 @@ b {
 
 /* ------------- OVERLAY FOR SMARTPHONE USERS -------------------- */
 #desktop-only {
-  display: none;
+  display: block;
   position: fixed;
   text-align: center;
   padding-top: 40vh;
@@ -555,8 +555,8 @@ b {
   color: var(--weiss);
 }
 
-@media only screen and (orientation: portrait) {
+@media screen and (orientation: landscape) {
   #desktop-only {
-    display: block;
+    display: none;
   }
 }
