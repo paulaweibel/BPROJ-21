@@ -417,6 +417,16 @@ function hideAbout() {
 
 // CHANGE BETWEEN BLACK AND WHITE TITLE
 domElement.titleButton.addEventListener('click', function () {
+
+  // AUDIO
+  document.querySelector(".user-clicking-sound").currentTime = 0;
+  document.querySelector(".user-clicking-sound").play();
+  document.querySelector(".user-clicking-sound").loop = false;
+  document.querySelector(".user-clicking-sound").volume = 0.1;
+  // document.querySelector(".user-clicking-sound").animate = 10;
+  // document.querySelector(".user-clicking-sound").animate = 10000;
+
+
   if (variable.visible === 1 || variable.visible === 3) {
     variable.visible = 0;
     domElement.body.style.overflowY = "visible";
@@ -761,6 +771,13 @@ domElement.body.addEventListener('click', function () {
 
 // SCENE 1: You don't usually see me, but I decided to make an exception this time.
 function scene1() {
+
+  document.querySelector(".type-3sec").currentTime = 0;
+  document.querySelector(".type-3sec").play();
+  document.querySelector(".type-3sec").loop = false;
+  document.querySelector(".type-3sec").volume = 0.5;
+  document.querySelector(".type-3sec").playbackRate = 1.2;
+
   text.phrase1.style.display = "none";
   text.phrase2.style.display = "block";
   text.phrase3.style.display = "none";
@@ -774,6 +791,14 @@ function scene1() {
 
 // SCENE 2: Stress has many shades.", "My job is to visit people from time
 function scene2() {
+  document.querySelector(".type-3sec").pause();
+
+  document.querySelector(".type-4sec").currentTime = 0;
+  document.querySelector(".type-4sec").play();
+  document.querySelector(".type-4sec").loop = false;
+  document.querySelector(".type-4sec").volume = 0.5;
+  document.querySelector(".type-4sec").playbackRate = 0.9;
+
   text.phrase1.style.display = "none";
   text.phrase2.style.display = "none";
   text.phrase3.style.display = "block";
@@ -785,6 +810,15 @@ function scene2() {
 
 // SCENE 3A I know what you are thinking,", "but somehow I have
 function scene3a() {
+  document.querySelector(".type-4sec").pause();
+
+  document.querySelector(".type-5sec").currentTime = 0;
+  document.querySelector(".type-5sec").play();
+  document.querySelector(".type-5sec").loop = false;
+  document.querySelector(".type-5sec").volume = 0.5;
+  document.querySelector(".type-5sec").playbackRate = 1.05;
+
+
   text.phrase1.style.display = "none";
   text.phrase2.style.display = "none";
   text.phrase3.style.display = "none";
@@ -797,6 +831,15 @@ function scene3a() {
 
 // SCENE 3 Would you like to be my assistant today?
 function scene3() {
+  document.querySelector(".type-5sec").pause();
+
+  document.querySelector(".type-2sec").currentTime = 0;
+  document.querySelector(".type-2sec").play();
+  document.querySelector(".type-2sec").loop = false;
+  document.querySelector(".type-2sec").volume = 0.5;
+  document.querySelector(".type-2sec").playbackRate = 1.1;
+
+
   text.phrase1.style.display = "none";
   text.phrase2.style.display = "none";
   text.phrase3.style.display = "none";
@@ -810,6 +853,8 @@ function scene3() {
 }
 
 //// (NO)
+document.querySelector(".type-2sec").pause();
+
 domElement.helpNo.addEventListener('mouseenter', function () {
   domElement.helpYes.style.marginRight = "-25vh";
 });
@@ -820,6 +865,10 @@ domElement.helpNo.addEventListener('mouseleave', function () {
 //// (YES)
 domElement.helpButtons.addEventListener('click', function () {
   goValentino();
+  document.querySelector(".yes-no-click").currentTime = 0;
+  document.querySelector(".yes-no-click").play();
+  document.querySelector(".yes-no-click").loop = false;
+  document.querySelector(".yes-no-click").volume = 0.5;
 });
 
 function goValentino() {
@@ -831,8 +880,12 @@ function goValentino() {
   window.scrollTo(0, 10000);
   domElement.assets.style.display = "block";
   domElement.spotlight.style.display = "block";
-  document.querySelector(".ambience-apartment").currentTime = 0;
-  document.querySelector(".ambience-apartment").play();
+  document.querySelector(".ambience-apartment1").currentTime = 0;
+  document.querySelector(".ambience-apartment1").play();
+  document.querySelector(".ambience-apartment1").volume = 0.3;
+  document.querySelector(".ambience-apartment2").currentTime = 0;
+  document.querySelector(".ambience-apartment2").play();
+  document.querySelector(".ambience-apartment2").volume = 0.5;
   variable.currentScene = 5;
 }
 
@@ -856,14 +909,22 @@ function scene6() {
   document.querySelector("#valentino-info").style.display = "block";
   variable.moveflag = true;
   setTimeout(() => {
+
     text.phrase6.style.display = "block";
     domElement.knotNarration.classList.add("bubbleGrow");
     variable.currentScene = 7;
   }, 500)
 }
 
+
 // SCENE 7 (Valentino ID was clicked) What can we do for him?"
 function scene7() {
+
+  // INFO CLICK
+  // document.querySelector(".info-icon-sound").currentTime = 0;
+  // document.querySelector(".info-icon-sound").play();
+  // document.querySelector(".info-icon-sound").loop = false;
+  // document.querySelector(".info-icon-sound").volume = 0.5;
   document.querySelector(".alarm-clock1").currentTime = 0;
   document.querySelector(".alarm-clock1").play();
   document.querySelector(".alarm-clock2").currentTime = 0;
@@ -953,7 +1014,8 @@ function scene9a() {
   character.knot.style.opacity = "0";
   // show one hour later
   setTimeout(() => {
-    document.querySelector(".ambience-apartment").pause();
+    document.querySelector(".ambience-apartment1").pause();
+    document.querySelector(".ambience-apartment2").pause();
     document.querySelector("#one-hour-later").style.display = "block";
     text.whisper1.style.display = "none";
     domElement.spotlight.style.display = "none";
@@ -1927,7 +1989,7 @@ function scene80() {
 function scene81() {
   character.knot.classList.add("knotLastScene");
   text.phrase38.style.display = "none";
-  scene.valentinoPostIt.style.display="block";
+  scene.valentinoPostIt.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 82;
   }, 200)
@@ -1938,17 +2000,17 @@ function scene81() {
 function scene82() {
   character.valentino7b.style.display = "block";
   character.valentino7a.style.display = "none";
-  scene.valentinoPostIt.style.display="none";
+  scene.valentinoPostIt.style.display = "none";
   character.knot.classList.remove("knotLastScene");
-  text.phrase39.style.display="block";
+  text.phrase39.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 83;
   }, 200)
 }
 
 function scene83() {
-  text.phrase39.style.display="none";
-  text.phrase40.style.display="block";
+  text.phrase39.style.display = "none";
+  text.phrase40.style.display = "block";
   setTimeout(() => {
     variable.currentScene = "goToEnd";
   }, 200)
@@ -2169,14 +2231,14 @@ new TypeIt("#phrase6", {
 
 new TypeIt("#phrase7", {
   cursor: false,
-  strings: ["What can we do for him?", "Mhhhh"],
+  strings: ["What can we do for him?", "...Mhhhh..."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase8", {
   cursor: false,
-  strings: ["I know! It's up to you, turn off the other alarms."],
+  strings: ["I know...assistant! Do me a favour, turn off all other alarms."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
