@@ -59,6 +59,120 @@
     }
 }
 
+
+/* TO DO LIST */
+#todo-mercy-box {
+    display: none;
+    position: absolute;
+    top: 12vh;
+    left: calc(30vw + 65vh);
+    width: 38vh;
+}
+
+.todo-mercy {
+    position: relative;
+    height: 10vh;
+    transition: transform 0.8s ease;
+}
+
+#list-title {
+    height: 15vh;
+    margin-left: 8vh;
+    margin-right: 9vh;
+}
+
+.list-title-floor {
+    transform: translate(5vw, 60vh) rotate(50deg) !important;
+}
+
+.todo1-floor {
+    transform: translate(-1vw, 50vh) rotate(30deg) !important;
+}
+
+.todo2-floor {
+    transform: translate(2vw, 50vh) rotate(-20deg) !important;
+}
+
+.todo3-floor {
+    transform: translate(0, 50vh) rotate(10deg) !important;
+}
+
+.todo4-floor {
+    transform: translate(2vw, 40vh) rotate(-90deg) !important;
+}
+
+.todo5-floor {
+    transform: translate(5vw, 40vh) rotate(-30deg) !important;
+}
+
+.todo6-floor {
+    transform: translate(5vh, 40vh) rotate(90deg) !important;
+}
+
+.todo7-floor {
+    transform: translate(2vh, 30vh) rotate(50deg) !important;
+}
+
+/* MAIL NOTIFICATIONS */
+#mail-mercy-box {
+    display: none;
+    position: absolute;
+    top: 5vh;
+    left: calc(30vw + 47vh);
+    width: 10vh;
+}
+
+.mail-mercy {
+    position: relative;
+    height: 12vh;
+    transition: transform 1s ease;
+}
+
+#mail1 {
+    display: none;
+    transition: transform 1s ease;
+}
+
+.mail1-floor {
+    transform: translate(0, 22vh) rotate(20deg) !important;
+}
+
+#mail2 {
+    display: none;
+}
+
+.mail2-floor {
+    transform: translate(3vw, 35vh) rotate(-30deg) !important;
+}
+
+#mail3 {
+    display: none;
+    transition: transform 0.7s ease;
+}
+
+.mail3-floor {
+    transform: translate(2vw, 47vh) rotate(20deg) !important;
+}
+
+#mail4 {
+    display: none;
+}
+
+.mail4-floor {
+    transform: translate(3vw, 58vh) rotate(5deg) !important;
+}
+
+#mail5 {
+    display: none;
+    transition: transform 0.7s ease;
+}
+
+.mail5-floor {
+    transform: translate(1vw, 70vh) rotate(-180deg) !important;
+}
+
+
+/* BAR SCENE  */
 .mercy-bar {
     position: absolute;
     height: 45vh;

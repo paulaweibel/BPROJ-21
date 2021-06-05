@@ -31,6 +31,11 @@ body {
   height: 200vh;
 }
 
+/* stop image selection */
+img{
+  user-select: none;
+}
+
 /* MOUSE CURSORS ------- */
 #body {
   cursor: url('cursor1.png'), auto;

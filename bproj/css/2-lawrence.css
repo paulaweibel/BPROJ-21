@@ -22,6 +22,7 @@
 }
 
 
+
 /* LAWRENCE */
 #lawrence {
     display: none;
@@ -46,6 +47,12 @@
     right: 20vh;
 }
 
+#music-gif {
+    top: 20vh;
+    right: 27vw;
+    max-height: 10%;
+}
+
 /* SCENE AFTER VALENTINO (AFTER ID-CARD) */
 .lawrence-at-busstop-2 {
     position: fixed;
@@ -62,15 +69,13 @@
 }
 
 
-#music-gif {
+#music-gif-2 {
     position: fixed;
     display: none;
     height: 10vh;
     top: 15vh;
     right: 27vw;
     max-height: 30%;
-
-
 }
 
 #nervous-gif {

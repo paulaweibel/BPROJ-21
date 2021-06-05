@@ -100,6 +100,7 @@ let gifs = {
   worried: document.querySelector("#worried-gif"),
   running: document.querySelector("#running-gif"),
   musicnotes: document.querySelector("#music-gif"),
+  musicnotes2: document.querySelector("#music-gif-2"),
   nervous: document.querySelector("#nervous-gif"),
   sleep: document.querySelector("#sleep-gif"),
   drink: document.querySelector("#drink-gif"),
@@ -124,6 +125,8 @@ let scene = {
   clock11: document.querySelector("#clock11"),
   windowMove: document.querySelector("#window-move"),
   windowFix: document.querySelector("#window-fix"),
+  todoMercy: document.querySelector("#todo-mercy-box"),
+  mailMercy: document.querySelector("#mail-mercy-box"),
   valentinoPostIt: document.querySelector("#all-valentino-post-it"),
   nightTable: document.querySelector("#night-table"),
 }
@@ -657,6 +660,7 @@ domElement.body.addEventListener('click', function () {
   // SCENE 32
   if (variable.currentScene === 32) {
     scene32();
+
   }
   // SCENE 27
   if (variable.currentScene === "goBarbara") {
@@ -881,11 +885,11 @@ function goValentino() {
   domElement.assets.style.display = "block";
   domElement.spotlight.style.display = "block";
   document.querySelector(".ambience-apartment1").currentTime = 0;
-  document.querySelector(".ambience-apartment1").play();
   document.querySelector(".ambience-apartment1").volume = 0.3;
+  document.querySelector(".ambience-apartment1").play();
   document.querySelector(".ambience-apartment2").currentTime = 0;
-  document.querySelector(".ambience-apartment2").play();
   document.querySelector(".ambience-apartment2").volume = 0.5;
+  document.querySelector(".ambience-apartment2").play();
   variable.currentScene = 5;
 }
 
@@ -909,7 +913,6 @@ function scene6() {
   document.querySelector("#valentino-info").style.display = "block";
   variable.moveflag = true;
   setTimeout(() => {
-
     text.phrase6.style.display = "block";
     domElement.knotNarration.classList.add("bubbleGrow");
     variable.currentScene = 7;
@@ -919,12 +922,6 @@ function scene6() {
 
 // SCENE 7 (Valentino ID was clicked) What can we do for him?"
 function scene7() {
-
-  // INFO CLICK
-  // document.querySelector(".info-icon-sound").currentTime = 0;
-  // document.querySelector(".info-icon-sound").play();
-  // document.querySelector(".info-icon-sound").loop = false;
-  // document.querySelector(".info-icon-sound").volume = 0.5;
   document.querySelector(".alarm-clock1").currentTime = 0;
   document.querySelector(".alarm-clock1").play();
   document.querySelector(".alarm-clock2").currentTime = 0;
@@ -1158,6 +1155,11 @@ function runToBus() {
     gifs.running.classList.add("valentinoLeaves");
     character.knot.classList.add("knotValentinoRunEnd");
     scene.bus.classList.add("driveAway");
+    document.querySelector(".lawrence-music-headphones").currentTime = 0;
+    document.querySelector(".lawrence-music-headphones").play();
+    document.querySelector(".lawrence-music-headphones").loop = false;
+    document.querySelector(".lawrence-music-headphones").volume = 0.5;
+    gifs.musicnotes.style.display = "block";
   } else {
     text.phrase11.style.display = "none";
     character.valentino2a.classList.remove("valentinoLeaves");
@@ -1170,11 +1172,10 @@ function runToBus() {
 
 // SCENE 11 (ID of LAWRENCE WAS OBSERVED) It looks like this guy needs some stimulation.
 function goLawrence() {
-  document.querySelector(".lawrence-music-headphones").currentTime = 0;
   document.querySelector(".lawrence-music-headphones").play();
   document.querySelector(".lawrence-music-headphones").loop = false;
   document.querySelector(".lawrence-music-headphones").volume = 0.5;
-  gifs.musicnotes.style.display = "block";
+  gifs.musicnotes2.style.display = "block";
   gifs.running.style.display = "none";
   domElement.body.style.backgroundColor = "var(--weiss)";
   domElement.assets.style.display = "block";
@@ -1209,7 +1210,7 @@ function scene12() {
 
 // SCENE 13 LAWRENCE IN BUS
 function scene13() {
-  gifs.musicnotes.style.display = "none";
+  gifs.musicnotes2.style.display = "none";
   document.querySelector(".ambience-street-morning").pause();
   document.querySelector(".ambience-bus").currentTime = 0;
   document.querySelector(".ambience-bus").play();
@@ -1240,9 +1241,9 @@ function scene14() {
 
 // SCENE 15 "whisper"
 function scene15() {
-  document.querySelector(".lawrence-music-headphones").pause();
   showWhisperLeft();
   text.whisper2.style.display = "block";
+  document.querySelector(".lawrence-music-headphones").volume = 0;
   character.backgroundKnot.classList.add("showWhisperKnotLawrence");
   text.backWhisper.classList.add("showWhisperKnotLawrence");
   text.phrase14.style.display = "none";
@@ -1281,6 +1282,7 @@ function scene17() {
   }, 200)
   setTimeout(() => {
     document.querySelector("#motivational-quotes").style.display = "block";
+    document.querySelector(".lawrence-music-headphones").volume = 0.1;
   }, 2000)
 }
 
@@ -1304,6 +1306,7 @@ function motCount() {
   variable.motCount = variable.motCount + 1;
   if (variable.motCount === 3) {
     text.phrase18.style.display = "block";
+    document.querySelector(".lawrence-music-headphones").pause();
     setTimeout(() => {
       variable.currentScene = 19;
     }, 200)
@@ -1512,7 +1515,7 @@ function goMercy() {
   }, 200)
 }
 
-
+// knot flying around
 function scene26a() {
   character.knot.classList.add("knotOfficeLookingAround1");
   setTimeout(() => {
@@ -1527,6 +1530,7 @@ function scene26b() {
   }, 200)
 }
 
+// looks like organized person
 function scene27() {
   character.knot.classList.add("knotOfficeStopLooking");
   text.phrase22.style.display = "block";
@@ -1538,6 +1542,7 @@ function scene27() {
   }, 200)
 }
 
+// lets check her to do list
 function scene28a() {
   text.phrase22.style.display = "none";
   document.querySelector("#info-icon-mercy").style.display = "none";
@@ -1547,29 +1552,47 @@ function scene28a() {
   }, 200)
 }
 
+// i have to come up with some personal stuff
 function scene29() {
   text.phrase23.style.display = "none";
   text.phrase24.style.display = "block";
+  scene.todoMercy.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 30;
   }, 200)
 }
 
+// show first mail
 function scene30() {
   text.phrase24.style.display = "none";
-  text.phrase25.style.display = "block";
+  // text.phrase25.style.display = "block";
+  document.querySelector("#mail1").style.display = "block"
+  scene.mailMercy.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 31;
   }, 200)
 }
 
+// mail spam
 function scene31() {
+  text.phrase25.style.display = "none";
   character.mercy3a.style.display = "none";
   character.mercy3b.style.display = "block";
-  text.phrase25.style.display = "none";
+  document.querySelector("#mail2").style.display = "block"
   setTimeout(() => {
     variable.currentScene = 32;
   }, 200)
+  setTimeout(() => {
+    document.querySelector("#mail3").style.display = "block"
+  }, 500)
+  setTimeout(() => {
+    document.querySelector("#mail4").style.display = "block"
+  }, 1000)
+  setTimeout(() => {
+    document.querySelector("#mail5").style.display = "block"
+    text.phrase26.style.display = "block";
+    moveMercysWindow();
+  }, 1500)
 }
 
 
@@ -1586,7 +1609,7 @@ var activeItem = null;
 var active = false;
 
 function moveMercysWindow() {
-  text.phrase26.style.display = "block";
+  
   document.querySelector("#dragQueen").classList.add("drag-cursor");
   // drag window eventlisteners
   container.addEventListener("touchstart", dragStart, false);
@@ -1669,12 +1692,26 @@ function mercyChaos() {
   scene.windowFix.style.display = "block";
   scene.windowMove.style.display = "block";
   character.knot.classList.add("knotMercy");
+  document.querySelector("#mail1").classList.add("mail1-floor");
+  document.querySelector("#mail2").classList.add("mail2-floor");
+  document.querySelector("#mail3").classList.add("mail3-floor");
+  document.querySelector("#mail4").classList.add("mail4-floor");
+  document.querySelector("#mail5").classList.add("mail5-floor");
+  document.querySelector("#list-title").classList.add("list-title-floor");
+  document.querySelector("#todo1").classList.add("todo1-floor");
+  document.querySelector("#todo2").classList.add("todo2-floor");
+  document.querySelector("#todo3").classList.add("todo3-floor");
+  document.querySelector("#todo4").classList.add("todo4-floor");
+  document.querySelector("#todo5").classList.add("todo5-floor");
+  document.querySelector("#todo6").classList.add("todo6-floor");
+  document.querySelector("#todo7").classList.add("todo7-floor");
   setTimeout(() => {
     text.phrase27.style.display = "block";
     character.mercy3d.style.display = "block";
     character.mercy3dMess.style.display = "block";
     character.mercy3c.style.display = "none";
     variable.currentScene = "goBarbara";
+
   }, 1000)
   setTimeout(() => {
     variable.currentScene = 0;
@@ -1700,6 +1737,8 @@ function goBarbara() {
   domElement.body.style.overflowY = "hidden";
   //
   text.phrase27.style.display = "none";
+  scene.mailMercy.style.display = "none";
+  scene.todoMercy.style.display = "none";
   setTimeout(() => {
     variable.currentScene = 35;
   }, 200)
@@ -2151,21 +2190,37 @@ function hideStressFormular() {
 
 function idValentino() {
   document.querySelector("#id-valentino").style.display = "block";
+  document.querySelector(".info-icon-sound").currentTime = 0;
+  document.querySelector(".info-icon-sound").volume = 0.5;
+  document.querySelector(".info-icon-sound").play();
+  document.querySelector(".info-icon-sound").loop = false;
   console.log("ID VALENTINO")
 }
 
 function idLawrence() {
   document.querySelector("#id-lawrence").style.display = "block";
+  document.querySelector(".info-icon-sound").currentTime = 0;
+  document.querySelector(".info-icon-sound").volume = 0.5;
+  document.querySelector(".info-icon-sound").play();
+  document.querySelector(".info-icon-sound").loop = false;
   console.log("ID Lawrence")
 }
 
 function idMercy() {
   document.querySelector("#id-mercy").style.display = "block";
+  document.querySelector(".info-icon-sound").currentTime = 0;
+  document.querySelector(".info-icon-sound").volume = 0.5;
+  document.querySelector(".info-icon-sound").play();
+  document.querySelector(".info-icon-sound").loop = false;
   console.log("ID Mercy")
 }
 
 function idBarbara() {
   document.querySelector("#id-barbara").style.display = "block";
+  document.querySelector(".info-icon-sound").currentTime = 0;
+  document.querySelector(".info-icon-sound").volume = 0.5;
+  document.querySelector(".info-icon-sound").play();
+  document.querySelector(".info-icon-sound").loop = false;
   console.log("ID Barbara")
 }
 
@@ -2174,6 +2229,9 @@ function hideId() {
   document.querySelector("#id-lawrence").style.display = "none";
   document.querySelector("#id-mercy").style.display = "none";
   document.querySelector("#id-barbara").style.display = "none";
+  document.querySelector(".delete-key").currentTime = 0;
+  document.querySelector(".delete-key").volume = 0.2;
+  document.querySelector(".delete-key").play();
   console.log("hide ID")
 }
 
@@ -2378,7 +2436,7 @@ new TypeIt("#phrase22", {
 
 new TypeIt("#phrase23", {
   cursor: false,
-  strings: ["So far, she had two job interviews. Let's check her To-Do list."],
+  strings: ["So far, she had two job interviews.", " Let's check her To-Do list."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
