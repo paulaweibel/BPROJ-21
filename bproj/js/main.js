@@ -101,6 +101,7 @@ let gifs = {
   running: document.querySelector("#running-gif"),
   musicnotes: document.querySelector("#music-gif"),
   musicnotes2: document.querySelector("#music-gif-2"),
+  musicnotes3: document.querySelector("#music-gif-3"),
   nervous: document.querySelector("#nervous-gif"),
   sleep: document.querySelector("#sleep-gif"),
   drink: document.querySelector("#drink-gif"),
@@ -1211,6 +1212,7 @@ function scene12() {
 // SCENE 13 LAWRENCE IN BUS
 function scene13() {
   gifs.musicnotes2.style.display = "none";
+  gifs.musicnotes3.style.display = "block";
   document.querySelector(".ambience-street-morning").pause();
   document.querySelector(".ambience-bus").currentTime = 0;
   document.querySelector(".ambience-bus").play();
@@ -1252,6 +1254,7 @@ function scene15() {
     variable.currentScene = 16;
     character.lawrence2a.style.display = "none";
     character.lawrence2b.style.display = "block";
+    gifs.musicnotes3.style.display = "none";
   }, 1000)
 }
 
@@ -1609,7 +1612,7 @@ var activeItem = null;
 var active = false;
 
 function moveMercysWindow() {
-  
+
   document.querySelector("#dragQueen").classList.add("drag-cursor");
   // drag window eventlisteners
   container.addEventListener("touchstart", dragStart, false);
@@ -2322,7 +2325,7 @@ new TypeIt("#valentino-talk1", {
 
 new TypeIt("#valentino-talk2", {
   cursor: false,
-  strings: ["I'm so late, what will they think of me in the hospital Such a bad impression…."],
+  strings: ["I'm so late, what will they think of me in the hospital?? Such a bad impression…."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()

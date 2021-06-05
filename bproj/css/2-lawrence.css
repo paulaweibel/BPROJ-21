@@ -78,6 +78,14 @@
     max-height: 30%;
 }
 
+#music-gif-3 {
+    position: fixed;
+    display: none;
+    height: 10vh;
+    top: 30vh;
+    left: calc(50vw - 10vh);
+}
+
 #nervous-gif {
     position: fixed;
     display: none;
