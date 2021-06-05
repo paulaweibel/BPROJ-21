@@ -38,17 +38,24 @@
 #sandwich-bag {
   display: none;
   position: fixed;
-  top: 46vh;
-  right: 50vh;
+  top: 42vh;
+  right: 55vh;
   height: 10vh;
+  transition: all 1s;
+}
+
+.sandwich-bag-floor{
+  top: 72vh !important;
+  right: 65vh !important;
 }
 
 #coffee {
-  /* display: none; */
+  display: none;
   position: fixed;
-  top: 50vh;
+  top: 42vh;
   right: 60vh;
   height: 6vh;
+  animation: please-click-on-coffee 1s infinite;
 }
 
 
@@ -69,6 +76,15 @@
   transform: rotate(-60deg);
 }
 
+/* SMALL SHAKE */
+@keyframes please-click-on-coffee {
+  0%{
+    transform: rotate(0)
+  }
+  50%{
+    transform: rotate(-10deg)
+  }
+}
 
 /* HAPPY HOUR SIGN */
 #bar-sign-container {
@@ -105,7 +121,31 @@
   display: none;
 }
 
+#sign-button-on {
+  /* display: none; */
+}
 
+.sign-button-off-blink{
+  animation: sign-button-off-blink 1s infinite;
+}
+
+@keyframes sign-button-off-blink {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+}
+
+#happy-hour-button{
+  display: none;
+  position: fixed;
+  top: 7.5vh;
+  left: 3vh;
+  width: 6vh;
+  height: 6vH;
+}
 
 
 /* make barbies invisible */

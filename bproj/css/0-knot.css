@@ -422,8 +422,29 @@ h5 {
 }
 
 .knotMercyBar1 {
-    margin-left: -15vh !important;
-    margin-top: -15vh !important;
+    margin-left: 10vh !important;
+    margin-top: -5vh !important;
+
+}
+
+.knotBarAway {
+    margin-left: -50vh !important;
+    margin-top: 10vh !important;
+}
+
+.knotBarSiesta {
+    margin-left: calc(100vw - 60vh) !important;
+    margin-top: 35vh !important;
+}
+
+.knotBarHappyHour {
+    margin-left: 10vw !important;
+    margin-top: 35vh !important;
+}
+
+.knotLastScene {
+    margin-left: 30vh !important;
+    margin-top: 150vh !important;
 }
 
 /* ------ MAIN CHARACTER TEXT------------------------------ */
@@ -477,6 +498,11 @@ h5 {
     padding-top: 6vh;
     padding-left: 20vw;
     color: var(--schwarz);
+}
+
+.phrase-bar {
+    width: calc(60vw - 30vh) !important;
+    padding-left: calc(30vh + 20vw) !important;
 }
 
 

@@ -234,6 +234,19 @@
     max-height: 10vh;
 }
 
+#all-valentino-post-it{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.valentino-post-it{
+    height: 20vh;
+}
+
 
 @keyframes running-man {
     0% {

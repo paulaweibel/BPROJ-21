@@ -403,7 +403,19 @@ b {
   transition: opacity 0.5s;
   background-color: var(--schwarz);
   text-align: center;
-  /* justify-content: center; */
+}
+
+#siesta-time {
+  display: none;
+  position: fixed;
+  top: 0;
+  padding-top: 40vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transition: opacity 0.5s;
+  background-color: var(--schwarz);
+  text-align: center;
 }
 
 /* ----------------------------------------------- */
@@ -463,9 +475,11 @@ b {
 /* ------------ TEXT ----------------------------- */
 
 #people-talk {
-  display: block;
+  display: flex;
+  align-items: center;
   position: fixed;
   width: 50vh;
+  height: 23.5vh;
   left: calc(30vw + 40vh);
   bottom: 65vh;
   transform-origin: bottom left;
@@ -488,8 +502,14 @@ b {
   left: calc(100vw - 105vh) !important;
 }
 
+.angry-mercy-talks {
+  top: 10vh !important;
+  left: calc(100vw - 90vw) !important;
+}
+
 #people-talk-right {
   max-width: 100%;
+  position: absolute;
 }
 
 #people-talk-left {
@@ -503,7 +523,7 @@ b {
 }
 
 .all-people-talk {
-  position: absolute;
+  position: relative;
   margin: 6vh;
   top: 0;
   color: var(--schwarz);
@@ -522,10 +542,9 @@ b {
 
 #glitch-stress-formular {
   position: fixed;
-  top: 10vh;
-  left: 25vw;
-  width: 50vw;
-  height: 10vw;
+  top: 0;
+  left: 0vw;
+  width: 100vw;
 }
 
 #show-formular-button {
