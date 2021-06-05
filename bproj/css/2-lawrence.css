@@ -64,10 +64,13 @@
 
 #music-gif {
     position: fixed;
-    /* display: none; */
+    display: none;
     height: 10vh;
     top: 15vh;
     right: 27vw;
+    max-height: 30%;
+
+
 }
 
 #nervous-gif {

@@ -1170,6 +1170,10 @@ function runToBus() {
 
 // SCENE 11 (ID of LAWRENCE WAS OBSERVED) It looks like this guy needs some stimulation.
 function goLawrence() {
+  document.querySelector(".lawrence-music-headphones").currentTime = 0;
+  document.querySelector(".lawrence-music-headphones").play();
+  document.querySelector(".lawrence-music-headphones").loop = false;
+  document.querySelector(".lawrence-music-headphones").volume = 0.5;
   gifs.musicnotes.style.display = "block";
   gifs.running.style.display = "none";
   domElement.body.style.backgroundColor = "var(--weiss)";
@@ -1236,6 +1240,7 @@ function scene14() {
 
 // SCENE 15 "whisper"
 function scene15() {
+  document.querySelector(".lawrence-music-headphones").pause();
   showWhisperLeft();
   text.whisper2.style.display = "block";
   character.backgroundKnot.classList.add("showWhisperKnotLawrence");
