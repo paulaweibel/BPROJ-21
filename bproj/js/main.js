@@ -130,6 +130,17 @@ let scene = {
   mailMercy: document.querySelector("#mail-mercy-box"),
   valentinoPostIt: document.querySelector("#all-valentino-post-it"),
   nightTable: document.querySelector("#night-table"),
+  // happy hour
+  guest1: document.querySelector("#guest1"),
+  guest2: document.querySelector("#guest2"),
+  guest3: document.querySelector("#guest3"),
+  guest4: document.querySelector("#guest4"),
+  guest5: document.querySelector("#guest5"),
+  guest6: document.querySelector("#guest6"),
+  guest7: document.querySelector("#guest7"),
+  guest8: document.querySelector("#guest8"),
+  guest9: document.querySelector("#guest9"),
+  guest10: document.querySelector("#guest10"),
 }
 
 let text = {
@@ -744,6 +755,41 @@ domElement.body.addEventListener('click', function () {
     scene56();
   }
 
+  // HAPPY HOUR
+  if (variable.currentScene === 57) {
+    scene57();
+  }
+  if (variable.currentScene === 58) {
+    scene58();
+  }
+  if (variable.currentScene === 59) {
+    scene59();
+  }
+  if (variable.currentScene === 60) {
+    scene60();
+  }
+  if (variable.currentScene === 61) {
+    scene61();
+  }
+  if (variable.currentScene === 62) {
+    scene62();
+  }
+  if (variable.currentScene === 63) {
+    scene63();
+  }
+  if (variable.currentScene === 64) {
+    scene64();
+  }
+  if (variable.currentScene === 65) {
+    scene65();
+  }
+  if (variable.currentScene === 66) {
+    scene66();
+  }
+  if (variable.currentScene === 68) {
+    scene67();
+  }
+
 
 
   // LAST SCENE
@@ -1184,7 +1230,8 @@ function goLawrence() {
   character.valentino.style.display = "none";
   scene.horizontalScrollContainer.style.display = "none";
   scene.cinematicEffect.style.display = "none";
-  character.knot.classList.add("knotLawrenceBusstop")
+  character.knot.classList.add("knotLawrenceBusstop");
+  character.valentino2a.style.display = "none";
   domElement.body.style.backgroundColor = "var(--weiss)"
   domElement.body.style.height = "10000vh"
   window.scrollTo(0, 15000);
@@ -1995,6 +2042,84 @@ function scene54() {
   setTimeout(() => {
     variable.currentScene = 55;
   }, 200)
+}
+
+// HAPPY HOUR GUESTS
+function scene55() {
+  text.phrase34.style.display = "none";
+  scene.guest1.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 56;
+  }, 200)
+}
+
+function scene56() {
+  scene.guest4.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 57;
+  }, 200)
+}
+
+function scene57() {
+  scene.guest3.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 58;
+  }, 200)
+}
+
+function scene58() {
+  scene.guest7.style.display = "block";
+  character.barbara7.style.display = "none";
+  character.barbara8.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 59;
+  }, 200)
+}
+
+function scene59() {
+  scene.guest5.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 60;
+  }, 200)
+}
+
+function scene60() {
+  scene.guest6.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 61;
+  }, 200)
+}
+
+function scene61() {
+  scene.guest9.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 62;
+  }, 200)
+}
+
+function scene62() {
+  scene.guest8.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 63;
+  }, 200)
+}
+
+function scene63() {
+  scene.guest10.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 64;
+  }, 200)
+}
+
+function scene64() {
+  scene.guest2.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = 65;
+  }, 200)
+  setTimeout(() => {
+    character.barbara8.style.display = "none";
+    character.barbara9.style.display = "block";
+  }, 9500)
 }
 
 

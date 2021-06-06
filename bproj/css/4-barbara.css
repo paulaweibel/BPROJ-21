@@ -147,6 +147,101 @@
   height: 6vH;
 }
 
+#happy-hour-guests{
+  position: fixed;
+  width: 100%;
+}
+
+.happy-hour-guest{
+  position: absolute;
+  top: 37vh;
+  right: 0vh;
+  height: 55vh;
+  opacity: 1;
+  transform: translate(150vh,0);
+  animation: guest-fade-out 10s forwards, guest-slide-in 1s forwards;
+}
+
+.guest-wiggle{
+  height: 55vh;
+  opacity: 1;
+  animation: guest-wiggle 2s infinite;
+}
+
+@keyframes guest-fade-out {
+  0%{
+    opacity: 1;
+  }
+  95%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes guest-slide-in {
+  0%{
+    transform: translate(150vh,0);
+  }
+  100%{
+    transform: translate(0,0);
+  }
+}
+
+@keyframes guest-wiggle {
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(-3deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+
+#guest1{
+  display: none;
+  margin-right: 25vh;
+}
+
+#guest2{
+  display: none;
+  margin-right: 34vh;
+}
+#guest3{
+  display: none;
+  margin-right: 2vh;
+}
+#guest4{
+  display: none;
+  margin-right: 30vh;
+}
+#guest5{
+  display: none;
+  margin-right: 44vh;
+}
+#guest6{
+  display: none;
+  margin-right: 50vh;
+}
+#guest7{
+  display: none;
+  margin-right: -3vh;
+}
+#guest8{
+  display: none;
+  margin-right: 40vh;
+}
+#guest9{
+  display: none;
+  margin-right: 60vh;
+}
+#guest10{
+  display: none;
+  margin-right: 15vh;
+}
 
 /* make barbies invisible */
 #barbara-1 {
