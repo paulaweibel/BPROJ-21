@@ -23,7 +23,7 @@ let domElement = {
   intro: document.querySelector("#intro"),
   titleBox: document.querySelector("#title-container"),
   titleButton: document.querySelector("#title-button-container"),
-  scrollIcon: document.querySelector("#scroll-icon"),
+  // scrollIcon: document.querySelector("#scroll-icon"),
   homeButton: document.querySelector("#home-button"),
   about: document.querySelector("#about-content"),
   assets: document.querySelector("#asset-container"),
@@ -282,6 +282,7 @@ queue.on("complete", event => {
     progress.classList.add("fadeOut");
     character.knot.style.opacity = "1";
     window.scrollTo(0, 0);
+    ux.scroll.style.display="block";
   }, 500)
 })
 
@@ -496,7 +497,7 @@ function animation(scrollPos) {
     character.knot.className = '';
     character.knot.classList.add("knotStart");
     domElement.knotTalkingRight.classList.remove("bubbleGrow");
-    domElement.scrollIcon.classList.remove("scroll-icon-after");
+    // domElement.scrollIcon.classList.remove("scroll-icon-after");
     document.querySelector("#navigation").style.display = "block";
     variable.currentScene = 0;
   }
@@ -507,7 +508,7 @@ function animation(scrollPos) {
     domElement.titleBox.classList.add("titleUp");
     domElement.titleButton.classList.add("ropeUp");
     domElement.homeButton.classList.add("showHome");
-    domElement.scrollIcon.classList.add("scroll-icon-after");
+    // domElement.scrollIcon.classList.add("scroll-icon-after");
     character.knot.classList.add("knotIntro");
     domElement.knotTalkingRight.classList.add("bubbleGrow");
     text.knotText.style.display = "block";

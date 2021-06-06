@@ -179,8 +179,9 @@ click-text {
 
 /* SCROLL ARROW */
 #scroll-icon {
+  display: none;
   position: fixed;
-  opacity: 1;
+  opacity: 0;
   bottom: 5vh;
   left: 48vw;
   width: 3vh;
@@ -326,6 +327,7 @@ h7 {
 
 #orientation-help {
   position: fixed;
+  text-align: center;
   bottom: 0;
   right: 0;
   margin: 5vh;
@@ -338,9 +340,13 @@ h7 {
 }
 
 #scroll-help {
+  position: absolute;
   display: none;
-  opacity: 0;
-  animation: help-fade-in 1s 1s forwards;
+  opacity: 1;
+  right: calc(50vw - 15vh);
+  white-space: nowrap;
+  /* animation: help-fade-in 1s 1s forwards; */
+  animation: scroll-help 1.5s infinite ease-in-out;
 }
 
 #stuck-help {
@@ -355,6 +361,20 @@ h7 {
   }
   100%{
     opacity: 1;
+  }
+}
+
+@keyframes scroll-help {
+  0% {
+    bottom: 5vh;
+  }
+
+  50% {
+    bottom: 6vh;
+  }
+
+  100% {
+    bottom: 5vh;
   }
 }
 /* -------------------------------- BUTTONS -------------------------------- */
