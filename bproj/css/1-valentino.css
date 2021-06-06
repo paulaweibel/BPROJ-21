@@ -1,15 +1,6 @@
 /* ------------------------------------------------------------------------------------------ */
 /* VALENTINO  ------------------------------------------------------------------------------- */
 
-#text-valentino {
-    cursor: pointer;
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0vw;
-    width: 40vh;
-}
-
 /* VALENTINO STORY */
 #valentino {
     display: none;

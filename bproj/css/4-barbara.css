@@ -1,9 +1,3 @@
-/* stuff to put at the bottom */
-
-.textWhite {
-  color: var(--weiss) !important;
-}
-
 /* ALL BARBARA ASSETS */
 #barbara {
   display: none;
@@ -44,7 +38,7 @@
   transition: all 1s;
 }
 
-.sandwich-bag-floor{
+.sandwich-bag-floor {
   top: 72vh !important;
   right: 65vh !important;
 }
@@ -78,10 +72,11 @@
 
 /* SMALL SHAKE */
 @keyframes please-click-on-coffee {
-  0%{
+  0% {
     transform: rotate(0)
   }
-  50%{
+
+  50% {
     transform: rotate(-10deg)
   }
 }
@@ -108,7 +103,6 @@
   height: 6vh;
 }
 
-
 #happy-hour-gif {
   display: none;
   position: absolute;
@@ -125,20 +119,21 @@
   /* display: none; */
 }
 
-.sign-button-off-blink{
+.sign-button-off-blink {
   animation: sign-button-off-blink 1s infinite;
 }
 
 @keyframes sign-button-off-blink {
-  0%{
+  0% {
     transform: scale(1);
   }
-  50%{
+
+  50% {
     transform: scale(1.2);
   }
 }
 
-#happy-hour-button{
+#happy-hour-button {
   display: none;
   position: fixed;
   top: 7.5vh;
@@ -147,98 +142,117 @@
   height: 6vH;
 }
 
-#happy-hour-guests{
+/* GUEST PEOPLE CONTAINER */
+#happy-hour-guests {
   position: fixed;
   width: 100%;
 }
 
-.happy-hour-guest{
+.happy-hour-guest {
   position: absolute;
   top: 37vh;
   right: 0vh;
   height: 55vh;
   opacity: 1;
-  transform: translate(150vh,0);
+  transform: translate(150vh, 0);
   animation: guest-fade-out 10s forwards, guest-slide-in 1s forwards;
 }
 
-.guest-wiggle{
+/* HAPPY HOUR GUEST */
+.guest-wiggle {
   height: 55vh;
   opacity: 1;
   animation: guest-wiggle 2s infinite;
 }
 
+/* ENTERING FROM THE RIGHT */
+@keyframes guest-slide-in {
+  0% {
+    transform: translate(150vh, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* DISAPPEAR AFTER 10s */
 @keyframes guest-fade-out {
-  0%{
+  0% {
     opacity: 1;
   }
-  95%{
+
+  95% {
     opacity: 1;
   }
-  100%{
+
+  100% {
     opacity: 0;
   }
 }
 
-@keyframes guest-slide-in {
-  0%{
-    transform: translate(150vh,0);
-  }
-  100%{
-    transform: translate(0,0);
-  }
-}
-
+/* CONSTANT WIGGLE OF GUESTS */
 @keyframes guest-wiggle {
-  0%{
+  0% {
     transform: rotate(0deg);
   }
-  50%{
+
+  50% {
     transform: rotate(-3deg);
   }
-  100%{
+
+  100% {
     transform: rotate(0deg);
   }
 }
 
-#guest1{
+/* ALL HAPPY HOUR GUESTS */
+#guest1 {
   display: none;
   margin-right: 25vh;
 }
 
-#guest2{
+#guest2 {
   display: none;
   margin-right: 34vh;
 }
-#guest3{
+
+#guest3 {
   display: none;
   margin-right: 2vh;
 }
-#guest4{
+
+#guest4 {
   display: none;
   margin-right: 30vh;
 }
-#guest5{
+
+#guest5 {
   display: none;
   margin-right: 44vh;
 }
-#guest6{
+
+#guest6 {
   display: none;
   margin-right: 50vh;
 }
-#guest7{
+
+#guest7 {
   display: none;
   margin-right: -3vh;
 }
-#guest8{
+
+#guest8 {
   display: none;
   margin-right: 40vh;
 }
-#guest9{
+
+#guest9 {
   display: none;
   margin-right: 60vh;
 }
-#guest10{
+
+#guest10 {
   display: none;
   margin-right: 15vh;
 }
@@ -298,4 +312,12 @@
 
 #barbara-10d {
   display: none;
+}
+
+
+
+
+/* stuff to put at the bottom */
+.textWhite {
+  color: var(--weiss) !important;
 }

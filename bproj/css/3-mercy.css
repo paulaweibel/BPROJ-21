@@ -1,3 +1,4 @@
+/* mercy box */
 #mercy {
     display: none;
     position: fixed;
@@ -6,13 +7,13 @@
     width: 100%;
 }
 
+/* mercy at door */
 .mercy-welcoming {
     position: absolute;
     height: 40vh;
     top: 32vh;
     left: 25vh;
 }
-
 
 #wtf-gif {
     position: absolute;
@@ -29,6 +30,7 @@
     left: 30vh;
 }
 
+/* mercy at desk */
 .mercy-sitting {
     position: absolute;
     height: 40vh;
@@ -58,7 +60,6 @@
         transform: translate(0, 0);
     }
 }
-
 
 /* TO DO LIST */
 #todo-mercy-box {
@@ -171,15 +172,6 @@
     transform: translate(1vw, 70vh) rotate(-180deg) !important;
 }
 
-
-/* BAR SCENE  */
-.mercy-bar {
-    position: absolute;
-    height: 45vh;
-    top: 38vh;
-    right: 61vh;
-}
-
 #window-fix {
     display: none;
     position: fixed;
@@ -210,6 +202,14 @@
 .open-me {
     position: relative;
     left: 22vh;
+}
+
+/* BAR SCENE  */
+.mercy-bar {
+    position: absolute;
+    height: 45vh;
+    top: 38vh;
+    right: 61vh;
 }
 
 /* make mercies invisible */
