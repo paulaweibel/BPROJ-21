@@ -487,6 +487,7 @@ function animation(scrollPos) {
     text.phrase4.style.display = "none";
     text.phrase5.style.display = "none";
     ux.click.style.display = "none";
+    ux.scroll.style.display = "block";
     domElement.assets.style.display = "none";
     character.valentino.style.display = "none";
     character.lawrence.style.display = "none";
@@ -520,6 +521,7 @@ function animation(scrollPos) {
     text.phrase1.style.display = "block";
     variable.currentScene = 1;
     ux.click.style.display = "block";
+    ux.scroll.style.display = "none";
   }
 
   // setting INTRO and SPEECHBUBBLE invisible while scrolling to Storystart
@@ -934,6 +936,7 @@ domElement.helpButtons.addEventListener('click', function () {
 });
 
 function goValentino() {
+  ux.scroll.style.display = "none";
   domElement.intro.style.display = "none";
   domElement.body.style.backgroundColor = "var(--schwarz)";
   domElement.helpButtons.style.display = "none";
@@ -1245,6 +1248,7 @@ function runToBus() {
 
 // SCENE 11 (ID of LAWRENCE WAS OBSERVED) It looks like this guy needs some stimulation.
 function goLawrence() {
+  ux.scroll.style.display = "none";
   ux.click.style.display = "block";
   document.querySelector(".lawrence-music-headphones").play();
   document.querySelector(".lawrence-music-headphones").loop = false;
@@ -1586,6 +1590,7 @@ function scene26Error() {
 
 /////////////
 function goMercy() {
+  ux.scroll.style.display = "none";
   ux.click.style.display = "block";
   domElement.body.style.backgroundColor = "var(--weiss)";
   domElement.assets.style.display = "block";
@@ -1829,6 +1834,7 @@ function mercyChaos() {
 
 ///////////// BARBIE
 function goBarbara() {
+  ux.scroll.style.display = "none";
   ux.click.style.display = "block";
   domElement.body.style.backgroundColor = "var(--weiss)";
   domElement.assets.style.display = "block";
@@ -1929,6 +1935,7 @@ function scene40() {
 
 // actually spilling the tea
 function scene40a() {
+  ux.click.style.display = "block";
   document.querySelector("#sandwich-bag").classList.add("sandwich-bag-floor");
   document.querySelector(".coffee-spill").currentTime = 0;
   document.querySelector(".coffee-spill").play();
@@ -1994,6 +2001,7 @@ function scene43() {
 
 // info icon barbara
 function scene44() {
+  ux.click.style.display = "none";
   text.phrase29.style.display = "none";
   text.phrase30.style.display = "block";
   document.querySelector("#info-icon-barbara").style.display = "block";
@@ -2005,6 +2013,7 @@ function scene44() {
 
 // barbara ID was clicked
 function scene45a() {
+  ux.click.style.display = "block";
   text.phrase30.style.display = "none";
   document.querySelector("#info-icon-barbara").style.display = "none";
   setTimeout(() => {
@@ -2203,6 +2212,7 @@ function scene64() {
 
 /// VALENTINO: LAST SCENE OF STORY
 function goValentinoEnd() {
+  ux.scroll.style.display = "none";
   domElement.intro.style.display = "none";
   domElement.body.style.backgroundColor = "var(--weiss)";
   domElement.helpButtons.style.display = "none";
