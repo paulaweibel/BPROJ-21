@@ -1075,6 +1075,13 @@ function countToggle() {
 }
 
 function scene9a() {
+
+  document.querySelector(".countdown").currentTime = 0;
+  document.querySelector(".countdown").play();
+  document.querySelector(".countdown").loop = true;
+  document.querySelector(".countdown").volume = 1;
+
+
   ux.click.style.display = "none";
   text.backWhisper.classList.remove("showWhisperRight");
   character.knot.style.opacity = "0";
@@ -1189,7 +1196,6 @@ function horizontalValentino() {
 function runToBus() {
   // 1. horizontal scroll valentino  
   if (sLeft > 1) {
-    document.querySelector("#run-scream").style.display = "none";
     character.knot.classList.add("knotValentinoRunMiddle");
     scene.bus.classList.add("driveLeft");
   } else {
@@ -1202,6 +1208,7 @@ function runToBus() {
   }
   // 2. horizontal scroll valentino  
   if (sLeft > 1.5 * window.innerWidth) {
+    document.querySelector("#run-scream").style.display = "none";
     character.valentino2b.style.display = "block";
     character.valentino2a.style.opacity = "0";
   } else {
@@ -1233,6 +1240,7 @@ function runToBus() {
     document.querySelector(".lawrence-music-headphones").play();
     document.querySelector(".lawrence-music-headphones").loop = false;
     document.querySelector(".lawrence-music-headphones").volume = 0.5;
+    document.querySelector(".countdown").pause();
     gifs.musicnotes.style.display = "block";
     ux.scroll.style.display = "none";
   } else {
@@ -2033,7 +2041,7 @@ function scene46() {
 function scene47() {
   document.querySelector(".yelling1").currentTime = 0;
   document.querySelector(".yelling1").play();
-  document.querySelector(".yelling1").loop = true;
+  document.querySelector(".yelling1").loop = false;
   document.querySelector(".yelling1").volume = 1;
 
   text.phrase31.style.display = "none";
@@ -2068,7 +2076,12 @@ function scene48() {
 
 //call end
 function scene49() {
+  gifs.screamphone.style.display = "none";
   document.querySelector(".yelling2").pause();
+  document.querySelector(".endedcall").currentTime = 0;
+  document.querySelector(".endedcall").play();
+  document.querySelector(".endedcall").loop = true;
+  document.querySelector(".endedcall").volume = 1;
   text.supervisorTalk2.style.display = "none";
   text.barbaraTalk5.style.display = "block";
   setTimeout(() => {
@@ -2078,7 +2091,7 @@ function scene49() {
 
 //call end
 function scene50() {
-  gifs.screamphone.style.display = "none";
+  document.querySelector(".endedcall").pause();
   gifs.drink.style.display = "none";
   noOneTalks();
   text.barbaraTalk5.style.display = "none";
