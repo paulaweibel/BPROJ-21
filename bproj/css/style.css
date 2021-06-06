@@ -31,6 +31,7 @@ body {
   height: 200vh;
 }
 
+
 /* MOUSE CURSORS ------- */
 #body {
   cursor: url('cursor1.png'), auto;
@@ -280,7 +281,7 @@ h6 {
 }
 
 /* ABOUT (SMALL TEXT) */
-h7{
+h7 {
   font-size: 1.3vw;
   line-height: 2vw;
   text-transform: none;
@@ -373,7 +374,7 @@ h7{
 }
 
 /* stop image selection */
-img{
+img {
   user-select: none;
 }
 

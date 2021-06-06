@@ -438,9 +438,6 @@ domElement.titleButton.addEventListener('click', function () {
   document.querySelector(".user-clicking-sound").play();
   document.querySelector(".user-clicking-sound").loop = false;
   document.querySelector(".user-clicking-sound").volume = 0.1;
-  // document.querySelector(".user-clicking-sound").animate = 10;
-  // document.querySelector(".user-clicking-sound").animate = 10000;
-
 
   if (variable.visible === 1 || variable.visible === 3) {
     variable.visible = 0;
@@ -1365,6 +1362,18 @@ function motCount() {
 
 // looooooser
 function scene19() {
+
+  document.querySelector(".sound-quote1").currentTime = 0;
+  document.querySelector(".sound-quote1").play();
+  document.querySelector(".sound-quote1").loop = true;
+  document.querySelector(".sound-quote1").volume = 1;
+  document.querySelector(".sound-quote1").playbackRate = 1.5;
+
+  document.querySelector(".sound-quote2").currentTime = 0;
+  document.querySelector(".sound-quote2").play();
+  document.querySelector(".sound-quote2").loop = true;
+  document.querySelector(".sound-quote2").volume = 0.3;
+
   gifs.nervous.style.display = "block";
   text.phrase18.style.display = "none";
   document.querySelector("#looser-scream-box").style.display = "block";
@@ -1376,6 +1385,8 @@ function scene19() {
 
 // SCENE 20 LAWRENCE WALKING TO BUILDING
 function scene20() {
+  document.querySelector(".sound-quote1").pause();
+  document.querySelector(".sound-quote2").pause();
   gifs.nervous.style.display = "none";
   document.querySelector("#looser-scream-box").style.display = "none";
   character.lawrence2a.style.display = "none";
@@ -1729,11 +1740,18 @@ function drag(e) {
 }
 
 function setTranslate(xPos, yPos, el) {
+
+  document.querySelector(".wind").currentTime = 0;
+  document.querySelector(".wind").play();
+  document.querySelector(".wind").loop = false;
+  document.querySelector(".wind").volume = 1;
   el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
 
 // SCENE MERCY CHAOS WIND
 function mercyChaos() {
+
+  document.querySelector(".wind").pause();
   text.phrase26.style.display = "None";
   document.querySelector("#dragQueen").classList.remove("drag-cursor");
   character.mercy3c.style.display = "block";
@@ -1857,7 +1875,7 @@ function scene39() {
 // before spilling the tea
 function scene40() {
   text.phrase28.style.display = "block";
-  document.querySelector("#sandwich-bag").classList.add("sandwich-bag-floor");
+  document.querySelector("#sandwich-bag").classList.add("sandwich-bag-holding");
   setTimeout(() => {
     variable.currentScene = 40.1;
   }, 200)
@@ -1868,6 +1886,12 @@ function scene40() {
 
 // actually spilling the tea
 function scene40a() {
+  document.querySelector("#sandwich-bag").classList.add("sandwich-bag-floor");
+  document.querySelector(".coffee-spill").currentTime = 0;
+  document.querySelector(".coffee-spill").play();
+  document.querySelector(".coffee-spill").loop = false;
+  document.querySelector(".coffee-spill").volume = 1;
+
   barTalks();
   text.barbaraTalk3a.style.display = "block";
   text.phrase28.style.display = "none";
@@ -1887,6 +1911,7 @@ function scene40a() {
 
 // barbara is deeply sorry!
 function scene41() {
+  document.querySelector(".coffee-spill").pause();
   barTalks();
   normalTalkingBubble();
   text.barbaraTalk3a.style.display = "none";
@@ -1938,7 +1963,6 @@ function scene44() {
 // barbara ID was clicked
 function scene45a() {
   text.phrase30.style.display = "none";
-  gifs.drink.style.display = "none";
   document.querySelector("#info-icon-barbara").style.display = "none";
   setTimeout(() => {
     variable.currentScene = 46;
@@ -2010,6 +2034,7 @@ function scene51() {
 
 // hello again
 function scene52() {
+  gifs.drink.style.display = "none";
   text.phrase32.style.display = "none";
   document.querySelector("#siesta-time").style.display = "block";
   text.siestaTime.style.display = "block";
@@ -2814,3 +2839,175 @@ new TypeIt("#phrase40", {
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
+
+
+//WHEN RIGHT CLICK, DISABLE OPTIONS (EXAMPLE: SAVE IMAGE AS... ETC)
+
+var message = 'Your message here.';
+
+function disableClick(e) {
+  var message = 'I AM WORKING HERE, DO NOT STEAL MY STUFF';
+  if (document.all) {
+    if (((event.button == 2) || (event.button == 3)) && ((event.srcElement.tagName == "IMG") || (event.srcElement.getAttribute("type").toUpperCase() == "IMAGE"))) {
+      if (event.srcElement.oncontextmenu) {
+        event.srcElement.oncontextmenu = function (event) {
+          if (event.preventDefault) {
+            event.preventDefault();
+          };
+          if (event.stopPropagation) {
+            event.stopPropagation();
+          };
+          if (event.returnValue) {
+            event.returnValue = false;
+          };
+        };
+      } else {
+
+        if (event.srcElement.addEventListener) {
+          event.srcElement.addEventListener("contextmenu", function (event) {
+              if (event.preventDefault) {
+                event.preventDefault();
+              };
+              if (event.stopPropagation) {
+                event.stopPropagation();
+              };
+              if (event.returnValue) {
+                event.returnValue = false;
+              };
+            }
+
+          );
+        } else if (event.srcElement.attachEvent) {
+          event.srcElement.attachEvent("contextmenu", function (event) {
+              if (event.preventDefault) {
+                event.preventDefault();
+              };
+              if (event.stopPropagation) {
+                event.stopPropagation();
+              };
+              if (event.returnValue) {
+                event.returnValue = false;
+              };
+            }
+
+          );
+        };
+
+      };
+
+      alert(message);
+      return false;
+    };
+  } else if (document.layers)
+
+  {
+    if ((e.which == 2) || (e.which == 3)) {
+
+      if (e.target.oncontextmenu) {
+        e.target.oncontextmenu = function (e) {
+          if (e.preventDefault) {
+            e.preventDefault();
+          };
+          if (e.stopPropagation) {
+            e.stopPropagation();
+          };
+          if (e.returnValue) {
+            e.returnValue = false;
+          };
+        };
+      } else {
+
+        if (e.target.addEventListener) {
+          e.target.addEventListener("contextmenu", function (e) {
+              if (e.preventDefault) {
+                e.preventDefault();
+              };
+              if (e.stopPropagation) {
+                e.stopPropagation();
+              };
+              if (e.returnValue) {
+                e.returnValue = false;
+              };
+            }
+
+          );
+        };
+
+
+      };
+
+
+      alert(message);
+      return false;
+    };
+  } else if (document.getElementById)
+
+  {
+    if (((e.which == 2) || (e.which == 3)) && ((e.target.tagName == "IMG") || (e.target.getAttribute("type") && e.target.getAttribute("type").toUpperCase() == "IMAGE"))) {
+
+      if (e.target.oncontextmenu) {
+        e.target.oncontextmenu = function (e) {
+          if (e.preventDefault) {
+            e.preventDefault();
+          };
+          if (e.stopPropagation) {
+            e.stopPropagation();
+          };
+          if (e.returnValue) {
+            e.returnValue = false;
+          };
+        };
+      } else {
+
+        if (e.target.addEventListener) {
+          e.target.addEventListener("contextmenu", function (e) {
+              if (e.preventDefault) {
+                e.preventDefault();
+              };
+              if (e.stopPropagation) {
+                e.stopPropagation();
+              };
+              if (e.returnValue) {
+                e.returnValue = false;
+              };
+            }
+
+          );
+        };
+
+
+      };
+
+
+      alert(message);
+      return false;
+
+    };
+  };
+
+};
+
+function associateImages() {
+  for (i = 0; i < document.images.length; i++) {
+    document.images[i].onmousedown = disableClick;
+  };
+
+};
+
+if (document.all) {
+  if (document.onmouseup) {
+    document.onmouseup = disableClick;
+  } else {
+    window.onmouseup = disableClick;
+  };
+
+} else if (document.getElementById) {
+  if (document.onmousedown) {
+    document.onmousedown = disableClick;
+  } else {
+    window.onmousedown = disableClick;
+  };
+
+} else if (document.layers) {
+  associateImages();
+};

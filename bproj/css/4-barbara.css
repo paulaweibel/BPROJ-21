@@ -16,10 +16,10 @@
 #info-icon-barbara {
   display: none;
   position: fixed;
-  top: 30vh;
-  right: 43.5vh;
+  top: 28vh;
+  right: 44vh;
   height: 5vh;
-  animation: info-icon 2s infinite;
+  animation: info-icon 1.5s infinite ease-in-out;
 }
 
 #bar-chairs {
@@ -38,9 +38,14 @@
   transition: all 1s;
 }
 
+.sandwich-bag-holding {
+  top: 53vh !important;
+  right: 60vh !important;
+}
+
 .sandwich-bag-floor {
-  top: 72vh !important;
-  right: 65vh !important;
+  top: 71vh !important;
+  right: 64vh !important;
 }
 
 #coffee {
@@ -106,10 +111,35 @@
 #happy-hour-gif {
   display: none;
   position: absolute;
-  left: 12vh;
-  top: 2.5vh;
-  height: 15vh;
+  left: 13vh;
+  top: 2vh;
+  height: 16vh;
+  animation: neon-turn-on 1s forwards step-end;
 }
+
+@keyframes neon-turn-on {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
 
 #sign-button-on {
   display: none;

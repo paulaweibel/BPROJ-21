@@ -25,7 +25,7 @@
 #valentino-info {
     display: none;
     position: absolute;
-    top: 9vh;
+    top: 7vh;
     left: 20vh;
     height: 5vh;
     width: 5vh;
@@ -225,7 +225,7 @@
     max-height: 10vh;
 }
 
-#all-valentino-post-it{
+#all-valentino-post-it {
     display: none;
     position: fixed;
     top: 0;
@@ -234,7 +234,7 @@
     height: 100vh;
 }
 
-.valentino-post-it{
+.valentino-post-it {
     height: 20vh;
 }
 

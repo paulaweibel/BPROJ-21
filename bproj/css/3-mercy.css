@@ -41,7 +41,7 @@
 #info-icon-mercy {
     display: none;
     position: fixed;
-    top: 45vh;
+    top: 43vh;
     left: calc(50vw + 27vh);
     height: 5vh;
     animation: info-icon 1.5s infinite ease-in-out;
