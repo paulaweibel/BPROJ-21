@@ -2393,6 +2393,7 @@ function hideWhisperRight() {
 ///// CALL TO ACTION
 
 function goCallToAction() {
+  ux.scroll.style.display = "none";
   domElement.body.style.height = "10000vh";
   window.scrollTo(0, 30000);
   variable.currentScene = 1000;
