@@ -282,7 +282,7 @@ queue.on("complete", event => {
     progress.classList.add("fadeOut");
     character.knot.style.opacity = "1";
     window.scrollTo(0, 0);
-    ux.scroll.style.display="block";
+    ux.scroll.style.display = "block";
   }, 500)
 })
 
@@ -486,7 +486,7 @@ function animation(scrollPos) {
     text.phrase3.style.display = "none";
     text.phrase4.style.display = "none";
     text.phrase5.style.display = "none";
-    ux.click.style.display="none";
+    ux.click.style.display = "none";
     domElement.assets.style.display = "none";
     character.valentino.style.display = "none";
     character.lawrence.style.display = "none";
@@ -503,7 +503,7 @@ function animation(scrollPos) {
   }
 
   // 100 PX, "HELLO I'M STRESS KNOT" (MOVE KNOT, ADD SPEECHBUBBLE, REMOVE SCROLL ARROW)
-  if (scrollLocation > 100 ) {
+  if (scrollLocation > 100) {
     domElement.intro.style.display = "block";
     domElement.titleBox.classList.add("titleUp");
     domElement.titleButton.classList.add("ropeUp");
@@ -513,13 +513,13 @@ function animation(scrollPos) {
     domElement.knotTalkingRight.classList.add("bubbleGrow");
     text.knotText.style.display = "block";
     document.querySelector("#navigation").style.display = "none";
-    
+
   }
 
   if (scrollLocation > 100 && scrollLocation < 2000 && variable.currentScene === 0) {
     text.phrase1.style.display = "block";
     variable.currentScene = 1;
-    ux.click.style.display="block";
+    ux.click.style.display = "block";
   }
 
   // setting INTRO and SPEECHBUBBLE invisible while scrolling to Storystart
@@ -848,7 +848,7 @@ function scene1() {
     variable.currentScene = 2;
   }, 500)
   setTimeout(() => {
-    
+
   }, 500)
 }
 
@@ -879,7 +879,7 @@ function scene3a() {
   document.querySelector(".type-5sec").play();
   document.querySelector(".type-5sec").loop = false;
   document.querySelector(".type-5sec").volume = 0.5;
-  document.querySelector(".type-5sec").playbackRate = 1.05; 
+  document.querySelector(".type-5sec").playbackRate = 1.05;
   text.phrase1.style.display = "none";
   text.phrase2.style.display = "none";
   text.phrase3.style.display = "none";
@@ -892,7 +892,7 @@ function scene3a() {
 
 // SCENE 3 Would you like to be my assistant today?
 function scene3() {
-  ux.click.style.display="none";
+  ux.click.style.display = "none";
   document.querySelector(".type-5sec").pause();
 
   document.querySelector(".type-2sec").currentTime = 0;
@@ -954,7 +954,7 @@ function goValentino() {
 
 // SCENE 5; GREAT!", "Here we are, the first person of the day
 function scene5() {
-  ux.click.style.display="block";
+  ux.click.style.display = "block";
   ux.click.classList = "whiteText";
   text.phrase4.style.display = "none";
   text.phrase5.style.display = "block";
@@ -966,7 +966,7 @@ function scene5() {
 
 // SCENE 6: Let’s see what we have here...
 function scene6() {
-  ux.click.style.display="none";
+  ux.click.style.display = "none";
   text.phrase5.style.display = "none";
   //make valentino visible
   character.valentino.style.display = "block";
@@ -1066,13 +1066,13 @@ function countToggle() {
     // speechbubble "keep on sleeping, you still have plenty of time…"
     setTimeout(() => {
       text.backWhisper.classList.add("showWhisperRight");
-      ux.click.style.display="block";
+      ux.click.style.display = "block";
     }, 2000)
   }
 }
 
 function scene9a() {
-  ux.click.style.display="none";
+  ux.click.style.display = "none";
   text.backWhisper.classList.remove("showWhisperRight");
   character.knot.style.opacity = "0";
   // show one hour later
@@ -1110,8 +1110,8 @@ function scene9a() {
     document.querySelector(".trumpet-sound").play();
     document.querySelector("#one-hour-later").style.display = "none";
     variable.currentScene = 9.5;
-    ux.click.style.display="block";
-    ux.click.classList="textBlack";
+    ux.click.style.display = "block";
+    ux.click.classList = "textBlack";
   }, 3500)
 }
 
@@ -1126,8 +1126,8 @@ function scene9b() {
 
 // SCENE 10: VALENTINO RUN HORIZONTAL!!
 function scene10() {
-  ux.click.style.display="none";
-  ux.scroll.style.display="block";
+  ux.click.style.display = "none";
+  ux.scroll.style.display = "block";
   document.querySelector(".trumpet-sound").pause();
   gifs.worried.style.display = "none";
   console.log("wtf");
@@ -1231,7 +1231,7 @@ function runToBus() {
     document.querySelector(".lawrence-music-headphones").loop = false;
     document.querySelector(".lawrence-music-headphones").volume = 0.5;
     gifs.musicnotes.style.display = "block";
-    ux.scroll.style.display="none";
+    ux.scroll.style.display = "none";
   } else {
     text.phrase11.style.display = "none";
     character.valentino2a.classList.remove("valentinoLeaves");
@@ -1239,13 +1239,13 @@ function runToBus() {
     gifs.running.classList.remove("valentinoLeaves");
     character.knot.classList.remove("knotValentinoRunEnd");
     scene.bus.classList.remove("driveAway");
-    ux.scroll.style.display="block";
+    ux.scroll.style.display = "block";
   }
 }
 
 // SCENE 11 (ID of LAWRENCE WAS OBSERVED) It looks like this guy needs some stimulation.
 function goLawrence() {
-  ux.click.style.display="block";
+  ux.click.style.display = "block";
   document.querySelector(".lawrence-music-headphones").play();
   document.querySelector(".lawrence-music-headphones").loop = false;
   document.querySelector(".lawrence-music-headphones").volume = 0.5;
@@ -1348,7 +1348,7 @@ function scene16() {
 // SCENE 17 motivational quotes
 function scene17() {
   hideWhisperLeft();
-  ux.click.style.display="none";
+  ux.click.style.display = "none";
   text.phrase17.style.display = "block";
   text.whisper3.style.display = "none";
   character.lawrence2c.style.display = "none";
@@ -1384,7 +1384,7 @@ function motCount() {
   variable.motCount = variable.motCount + 1;
   if (variable.motCount === 3) {
     text.phrase18.style.display = "block";
-    ux.click.style.display="block";
+    ux.click.style.display = "block";
     document.querySelector(".lawrence-music-headphones").pause();
     setTimeout(() => {
       variable.currentScene = 19;
@@ -1406,8 +1406,8 @@ function scene19() {
   document.querySelector(".sound-quote2").loop = true;
   document.querySelector(".sound-quote2").volume = 0.3;
 
-  ux.click.style.display="block";
-  ux.click.classList="textWhite";
+  ux.click.style.display = "block";
+  ux.click.classList = "textWhite";
   gifs.nervous.style.display = "block";
   text.phrase18.style.display = "none";
   document.querySelector("#looser-scream-box").style.display = "block";
@@ -1421,7 +1421,7 @@ function scene19() {
 function scene20() {
   document.querySelector(".sound-quote1").pause();
   document.querySelector(".sound-quote2").pause();
-  ux.click.classList="textBlack";
+  ux.click.classList = "textBlack";
   gifs.nervous.style.display = "none";
   document.querySelector("#looser-scream-box").style.display = "none";
   character.lawrence2a.style.display = "none";
@@ -1559,7 +1559,7 @@ function scene24b() {
 
 // SCENE 24c Knot is waking up
 function scene24c() {
-  ux.click.style.display="none";
+  ux.click.style.display = "none";
   eyes.style.display = "block";
   gifs.sleep.style.display = "none";
   text.phrase21.style.display = "block";
@@ -1586,7 +1586,7 @@ function scene26Error() {
 
 /////////////
 function goMercy() {
-  ux.click.style.display="block";
+  ux.click.style.display = "block";
   domElement.body.style.backgroundColor = "var(--weiss)";
   domElement.assets.style.display = "block";
   character.mercy.style.display = "block";
@@ -1630,7 +1630,7 @@ function scene26b() {
 
 // looks like organized person
 function scene27() {
-  ux.click.style.display="none";
+  ux.click.style.display = "none";
   character.knot.classList.add("knotOfficeStopLooking");
   text.phrase22.style.display = "block";
   setTimeout(() => {
@@ -1643,7 +1643,7 @@ function scene27() {
 
 // lets check her to do list
 function scene28a() {
-  ux.click.style.display="block";
+  ux.click.style.display = "block";
   text.phrase22.style.display = "none";
   document.querySelector("#info-icon-mercy").style.display = "none";
   text.phrase23.style.display = "block";
@@ -1689,7 +1689,7 @@ function scene31() {
     document.querySelector("#mail4").style.display = "block"
   }, 1000)
   setTimeout(() => {
-    ux.click.style.display="none";
+    ux.click.style.display = "none";
     document.querySelector("#mail5").style.display = "block"
     text.phrase26.style.display = "block";
     moveMercysWindow();
@@ -1785,6 +1785,7 @@ function setTranslate(xPos, yPos, el) {
   document.querySelector(".wind").play();
   document.querySelector(".wind").loop = false;
   document.querySelector(".wind").volume = 1;
+
   el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
 
@@ -1792,7 +1793,7 @@ function setTranslate(xPos, yPos, el) {
 function mercyChaos() {
 
   document.querySelector(".wind").pause();
-  ux.click.style.display="block";
+  ux.click.style.display = "block";
   text.phrase26.style.display = "None";
   document.querySelector("#dragQueen").classList.remove("drag-cursor");
   character.mercy3c.style.display = "block";
@@ -1828,7 +1829,7 @@ function mercyChaos() {
 
 ///////////// BARBIE
 function goBarbara() {
-  ux.click.style.display="block";
+  ux.click.style.display = "block";
   domElement.body.style.backgroundColor = "var(--weiss)";
   domElement.assets.style.display = "block";
   character.barbara.style.display = "block";
@@ -1915,7 +1916,7 @@ function scene39() {
 
 // before spilling the tea
 function scene40() {
-  ux.click.style.display="none";
+  ux.click.style.display = "none";
   text.phrase28.style.display = "block";
   document.querySelector("#sandwich-bag").classList.add("sandwich-bag-holding");
   setTimeout(() => {
@@ -2099,6 +2100,16 @@ function scene53() {
 
 // button happy hour was clicked
 function scene54() {
+  document.querySelector(".neonlight1").currentTime = 0;
+  document.querySelector(".neonlight1").play();
+  document.querySelector(".neonlight1").loop = false;
+  document.querySelector(".neonlight1").volume = 1;
+
+  document.querySelector(".neonlight2").currentTime = 0;
+  document.querySelector(".neonlight2").play();
+  document.querySelector(".neonlight2").loop = false;
+  document.querySelector(".neonlight2").volume = 0.5;
+
   document.querySelector("#happy-hour-button").style.display = "none";
   document.querySelector("#sign-button-on").style.display = "block";
   document.querySelector("#sign-button-off").style.display = "none";

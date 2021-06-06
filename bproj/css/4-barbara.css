@@ -114,7 +114,7 @@
   left: 13vh;
   top: 2vh;
   height: 16vh;
-  animation: neon-turn-on 1s forwards step-end;
+  animation: neon-turn-on 1.2s forwards step-end;
 }
 
 @keyframes neon-turn-on {
