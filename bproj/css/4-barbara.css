@@ -351,3 +351,7 @@
 .textWhite {
   color: var(--weiss) !important;
 }
+
+.textBlack {
+  color: var(--schwarz) !important;
+}

@@ -285,6 +285,7 @@
 }
 
 #horizontal-scroll-icon {
+    display: none;
     position: fixed;
     left: 50vw;
     top: 80vh;

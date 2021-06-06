@@ -322,7 +322,41 @@ h7 {
   pointer-events: none;
 }
 
+/* -------------------------------- ORIENTATION -------------------------------- */
 
+#orientation-help {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 5vh;
+}
+
+#click-help {
+  display: none;
+  opacity: 0;
+  animation: help-fade-in 1s 1s forwards;
+}
+
+#scroll-help {
+  display: none;
+  opacity: 0;
+  animation: help-fade-in 1s 1s forwards;
+}
+
+#stuck-help {
+  display: none;
+  opacity: 0;
+  animation: help-fade-in 1s 1s forwards;
+}
+
+@keyframes help-fade-in {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 /* -------------------------------- BUTTONS -------------------------------- */
 
 /* INTRO: YES & NO, BUTTON CONTAINER */
