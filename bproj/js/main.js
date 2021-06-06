@@ -2031,6 +2031,11 @@ function scene46() {
 
 //supervisor talk 1
 function scene47() {
+  document.querySelector(".yelling1").currentTime = 0;
+  document.querySelector(".yelling1").play();
+  document.querySelector(".yelling1").loop = true;
+  document.querySelector(".yelling1").volume = 1;
+
   text.phrase31.style.display = "none";
   character.barbara5.style.display = "none";
   character.barbara6a.style.display = "block";
@@ -2043,6 +2048,14 @@ function scene47() {
 
 //supervisor talk 2
 function scene48() {
+
+  document.querySelector(".yelling1").pause();
+
+  document.querySelector(".yelling2").currentTime = 0;
+  document.querySelector(".yelling2").play();
+  document.querySelector(".yelling2").loop = true;
+  document.querySelector(".yelling2").volume = 1;
+
   gifs.screamphone.style.display = "block";
   character.barbara6b.style.display = "block";
   character.barbara6a.style.display = "none";
@@ -2055,6 +2068,7 @@ function scene48() {
 
 //call end
 function scene49() {
+  document.querySelector(".yelling2").pause();
   text.supervisorTalk2.style.display = "none";
   text.barbaraTalk5.style.display = "block";
   setTimeout(() => {
@@ -2212,7 +2226,7 @@ function scene64() {
 }
 
 
-function goValentinoBar(){
+function goValentinoBar() {
   console.log("yeah")
 }
 
@@ -2770,7 +2784,7 @@ new TypeIt("#phrase30", {
 
 new TypeIt("#phrase31", {
   cursor: false,
-  strings: ["Maybe you did not notice earlier, but I moved the security camera to Barbara. The supervisor has seen the whole mess scene, for sure, he will call very soon."],
+  strings: ["Maybe you did not notice earlier, but I moved the security camera to Barbara", "The supervisor has seen the whole mess scene I am sure he will call very soon."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
