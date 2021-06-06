@@ -2084,7 +2084,7 @@ function scene51() {
   }, 200)
 }
 
-// hello again
+// siesta time
 function scene52() {
   gifs.drink.style.display = "none";
   text.phrase32.style.display = "none";
@@ -2095,8 +2095,9 @@ function scene52() {
   }, 200)
 }
 
-// we deserve a break now.!
+//  HELLLO AGAIN
 function scene53() {
+  ux.click.style.display = "none";
   document.querySelector("#siesta-time").style.display = "none";
   document.querySelector("#happy-hour-button").style.display = "block";
   document.querySelector("#sign-button-off").classList.add("sign-button-off-blink");
@@ -2109,6 +2110,7 @@ function scene53() {
 
 // button happy hour was clicked
 function scene54() {
+  ux.click.style.display = "block";
   document.querySelector(".neonlight1").currentTime = 0;
   document.querySelector(".neonlight1").play();
   document.querySelector(".neonlight1").loop = false;
@@ -2207,6 +2209,11 @@ function scene64() {
     character.barbara8.style.display = "none";
     character.barbara9.style.display = "block";
   }, 9500)
+}
+
+
+function goValentinoBar(){
+  console.log("yeah")
 }
 
 
