@@ -13,7 +13,9 @@
     <link rel="stylesheet" type="text/css" href="./css/2-lawrence.css">
     <link rel="stylesheet" type="text/css" href="./css/3-mercy.css">
     <link rel="stylesheet" type="text/css" href="./css/4-barbara.css">
+    <link rel="stylesheet" type="text/css" href="./css/5-calltoaction.css">
     <link rel="icon" href="img/knot-images/iconic.png">
+    <script src="./js/jquery.min.js"></script>
     <script src="./js/typeit.min.js"></script>
     <script src="./js/preloadjs.min.js"></script>
 </head>
@@ -297,6 +299,7 @@
         <div id="people-talk">
             <img id="people-talk-right" src="img/objects-icons/speechbubble-big-right.png">
             <img id="people-talk-left" src="img/objects-icons/speechbubble-big-left.png">
+            <img id="people-talk-angry" src="img/objects-icons/speechbubble-angry.png">
             <p id="valentino-talk1" class="all-people-talk"></p>
             <p id="valentino-talk2" class="all-people-talk"></p>
             <p id="valentino-talk3" class="all-people-talk"></p>
@@ -313,8 +316,8 @@
             <p id="barbara-talk4" class="all-people-talk"></p>
             <p id="barbara-talk5" class="all-people-talk"></p>
             <p id="barbara-talk6" class="all-people-talk"></p>
-            <p id="supervisor-talk1" class="all-people-talk"></p>
-            <p id="supervisor-talk2" class="all-people-talk"></p>
+            <p id="supervisor-talk1" class="supervisor-people-talk"></p>
+            <p id="supervisor-talk2" class="supervisor-people-talk"></p>
         </div>
 
         <!-- KNOT IN BACKGROUND WHISPERS -->
@@ -452,13 +455,7 @@
         <img class="id-picture" src="img/ID-Cards/ID-Barbara.png">
     </div>
 
-    <!-- STRESS FORMULAR (CALL TO ACTION) -->
-    <div id="call-to-action">
-        <div id="glitch-stress-formular" style="display: none;">
-        </div>
-        <div id="show-formular-button" class="button whiteAbout" onclick="showStressFormular()">add a comment</div>
-        <div id="hide-formular-button" class="button whiteAbout" onclick="hideStressFormular()">go back</div>
-    </div>
+    
 
     <!-- NAVIGATE -->
     <div id="navigation">
@@ -469,9 +466,6 @@
         <a class="button" onclick="goValentinoEnd()">last-scene</a>
         <a class="button" onclick="goCallToAction()">callToAction</a>
     </div>
-
-    <!--HOME BUTTON -->
-    <a href="."><img onclick="goHome()" id="home-button" src="img/knot-images/iconic.png"></a>
 
     <!-- ABOUT -------------------->
     <div id="about-container">
@@ -496,6 +490,23 @@
             MUSIC FROM:<br>
         </h7>
     </div>
+
+    <!-- STRESS FORMULAR (CALL TO ACTION) -->
+    <div id="call-to-action" STYLE="DISPLAY: NONE;">
+        <div id="call-to-action-scrollY">
+            <div class="comment-grid">
+                <!-- HIER WERDEN DATEN AUS "IN.CSV HINZUGEFÜGT" --->
+            </div>
+            <div id="glitch-stress-formular" style="display: none;">
+            </div>
+            <div id="show-formular-button" class="button whiteAbout" onclick="showStressFormular()">add a comment</div>
+            <div id="hide-formular-button" class="button whiteAbout" onclick="hideStressFormular()">go back</div>
+        </div>
+    </div>
+
+
+    <!--HOME BUTTON -->
+    <a href="."><img onclick="goHome()" id="home-button" src="img/knot-images/iconic.png"></a>
 
     <!-- ORIENTATION -->
     <div id="orientation-help">

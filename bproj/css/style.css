@@ -570,9 +570,20 @@ img {
   left: calc(100vw - 90vw) !important;
 }
 
+.angry-supervisor-talks {
+  left: calc(100vw - 97vh) !important;
+}
+
 #people-talk-right {
   max-width: 100%;
   position: absolute;
+}
+
+#people-talk-angry {
+  display:none;
+  max-width: 100%;
+  position: absolute;
+  left: 20vh;
 }
 
 #people-talk-left {
@@ -593,36 +604,15 @@ img {
   display: none;
 }
 
-
-/* CALL TO ACTION --------------------------------- */
-#call-to-action {
+.supervisor-people-talk {
+  position: relative;
+  margin: 8vh;
+  top: -5vh;
+  color: var(--schwarz);
+  left: 23vh;
   display: none;
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: 100%;
 }
 
-#glitch-stress-formular {
-  position: fixed;
-  top: 0;
-  left: 0vw;
-  width: 100vw;
-}
-
-#show-formular-button {
-  position: fixed;
-  left: 45vw;
-  top: 5vh;
-  width: 10vw;
-}
-
-#hide-formular-button {
-  position: fixed;
-  left: 45vw;
-  top: 70vh;
-  width: 10vw;
-}
 
 
 /* ------------- OVERLAY FOR SMARTPHONE USERS -------------------- */

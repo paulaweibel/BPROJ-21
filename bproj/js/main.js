@@ -282,6 +282,7 @@ queue.on("complete", event => {
   setTimeout(() => {
     progress.classList.add("fadeOut");
     character.knot.style.opacity = "1";
+    domElement.body.style.height="100vh";
     window.scrollTo(0, 0);
     ux.scroll.style.display = "block";
   }, 500)
@@ -449,6 +450,7 @@ domElement.titleButton.addEventListener('click', function () {
   if (variable.visible === 1 || variable.visible === 3) {
     variable.visible = 0;
     domElement.body.style.overflowY = "visible";
+    domElement.body.style.height="200vh";
     domElement.body.style.background = "var(--weiss)";
     document.querySelector("#title-dark").classList.add("titleBright");
     document.querySelector("#about-content").classList.add("whiteAbout");
@@ -459,6 +461,7 @@ domElement.titleButton.addEventListener('click', function () {
     variable.visible = 3;
     domElement.body.style.overflowY = "hidden";
     domElement.body.style.background = "var(--schwarz)";
+    domElement.body.style.height="100vh";
     document.querySelector("#title-dark").classList.remove("titleBright");
     document.querySelector("#about-content").classList.remove("whiteAbout");
     document.querySelector("#about-button").style.color = "var(--weiss)"
@@ -2075,6 +2078,9 @@ function scene47() {
   character.barbara6a.style.display = "block";
   barTalks();
   text.supervisorTalk1.style.display = "block";
+  document.querySelector("#people-talk-left").style.display = "none";
+  document.querySelector("#people-talk-right").style.display = "none";
+  document.querySelector("#people-talk-angry").style.display = "block";
   setTimeout(() => {
     variable.currentScene = 48;
   }, 200)
@@ -2090,6 +2096,7 @@ function scene48() {
   document.querySelector(".yelling2").loop = true;
   document.querySelector(".yelling2").volume = 1;
 
+  text.peopleTalk.classList.add("angry-supervisor-talks");
   gifs.screamphone.style.display = "block";
   character.barbara6b.style.display = "block";
   character.barbara6a.style.display = "none";
@@ -2102,6 +2109,9 @@ function scene48() {
 
 //call end
 function scene49() {
+  text.peopleTalk.classList.remove("angry-supervisor-talks");
+  document.querySelector("#people-talk-left").style.display = "block";
+  document.querySelector("#people-talk-angry").style.display = "none";
   gifs.screamphone.style.display = "none";
   document.querySelector(".yelling2").pause();
   document.querySelector(".endedcall").currentTime = 0;
@@ -2424,10 +2434,10 @@ function goCallToAction() {
   window.scrollTo(0, 30000);
   variable.currentScene = 1000;
   domElement.intro.style.display = "none";
-  domElement.body.style.background = "var(--weiss)";
-  domElement.body.style.overflow = "hidden";
-  domElement.body.style.overflowX = "hidden";
-  domElement.body.style.overflowY = "hidden";
+  domElement.body.style.background = "var(--schwarz)";
+  domElement.body.style.overflow = "auto";
+  domElement.body.style.overflowX = "auto";
+  domElement.body.style.overflowY = "auto";
   scene.cinematicEffect.style.display = "none";
   domElement.assets.style.display = "none";
   character.valentino.style.display = "none";
@@ -2436,6 +2446,10 @@ function goCallToAction() {
   character.barbara.style.display = "none";
   domElement.callToAction.style.display = "block";
   prepareFormular();
+  addCommentsToHTML();
+  setTimeout(() => {
+    variable.currentScene = 1000;
+  }, 200)
 }
 
 
@@ -2443,7 +2457,7 @@ function goCallToAction() {
 function prepareFormular() {
   var glitchdiv = document.createElement("div");
   glitchdiv.setAttribute("class", "glitch-embed-wrap");
-  glitchdiv.setAttribute("style", "position: absolute; height: 100vh; width: 100%;");
+  glitchdiv.setAttribute("style", "position: absolute; height: 80vh; width: 700px;");
   var ifrm = document.createElement("iframe");
   ifrm.setAttribute("src", "https://glitch.com/embed/#!/embed/stressformular?path=server.js&previewSize=100&attributionHidden=true");
   ifrm.setAttribute("title", "stressformular on Glitch");
@@ -2454,13 +2468,72 @@ function prepareFormular() {
   glitchdiv.appendChild(ifrm);
 }
 
+
+
+////////////// ADD STUFF FROM IN.CSV
+function addCommentsToHTML() {
+  if (variable.currentScene === 1000) {
+    $.ajax({
+      url: "in.csv",
+      dataType: "text"
+    }).done(successFunction);
+
+    function successFunction(data) {
+      var allRows = data.split(/\r?\n|\r/);
+      var table = "<table>";
+      for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+        countLetters = Object.keys(table).length;
+        if (singleRow === 0) {
+          table += "<thead>";
+          table += "<tr>";
+        } else {
+          table += "<tr>";
+        }
+        var rowCells = allRows[singleRow].split("%");
+        for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+          if (singleRow === 0) {
+            console.log("woa");
+          } else {
+            table += '<div class="comment" id="comment';
+            table += singleRow;
+            table += '">';
+            table += rowCells[rowCell];
+            table += "</div>";
+            // console.log(Object.keys(table).length - countLetters)
+            console.log(singleRow);
+          }
+        }
+        if (singleRow === 0) {
+          table += "</tr>";
+          table += "</thead>";
+          table += "<tbody>";
+        } else {
+          table += "</tr>";
+        }
+      }
+      table += "</tbody>";
+      table += "</table>";
+      $(".comment-grid").append(table);
+    }
+  }
+}
+
+
+
+
 function showStressFormular() {
   domElement.glitchStressFormular.style.display = "block";
+  document.querySelector("#show-formular-button").style.display = "none";
+  document.querySelector("#hide-formular-button").style.display = "block";
 }
 
 function hideStressFormular() {
   domElement.glitchStressFormular.style.display = "none";
+  document.querySelector("#show-formular-button").style.display = "block";
+  document.querySelector("#hide-formular-button").style.display = "none";
 }
+
+
 
 ////////////////////////////////////////////////////////////////
 // ID's ////////////////////////////////////////////////////////
@@ -2840,7 +2913,7 @@ new TypeIt("#supervisor-talk1", {
 
 new TypeIt("#supervisor-talk2", {
   cursor: false,
-  strings: ["By the way, your colleague is sick and you will have to do a double shift, I hope you don't have better plans."],
+  strings: ["Also, your colleague is sick. You will have to do a double shift, I hope you don't have better plans."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
