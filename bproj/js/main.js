@@ -113,7 +113,8 @@ let gifs = {
   happyHour: document.querySelector("#happy-hour-gif"),
   screamphone: document.querySelector("#screaming-phone-gif"),
   wtf: document.querySelector("#wtf-gif"),
-  needbreak: document.querySelector("#overwhelmed-gif"),
+  arrowdrag: document.querySelector("#drag-gif"),
+  scribble: document.querySelector("#scribble-gif"),
 }
 
 let scene = {
@@ -1595,6 +1596,9 @@ function scene24a() {
 
 // SCENE 24b Lawrence leaving the office
 function scene24b() {
+
+  document.querySelector(".door-open").currentTime = 0;
+  document.querySelector(".door-open").play();
   scene.waitingRoom2.style.display = "none";
   scene.waitingRoom1.style.display = "block";
   character.lawrence5.style.display = "block";
@@ -1757,6 +1761,7 @@ function scene31() {
     ux.click.style.display = "none";
     document.querySelector("#mail5").style.display = "block"
     text.phrase26.style.display = "block";
+    gifs.arrowdrag.style.display = "block";
     moveMercysWindow();
   }, 1500)
 }
@@ -1856,8 +1861,8 @@ function setTranslate(xPos, yPos, el) {
 
 // SCENE MERCY CHAOS WIND
 function mercyChaos() {
+  gifs.arrowdrag.style.display = "none";
   document.querySelector(".mail-notification2").pause();
-  gifs.needbreak.style.display = "block";
 
   document.querySelector(".wind").pause();
   ux.click.style.display = "block";
@@ -1896,12 +1901,12 @@ function mercyChaos() {
 
 ///////////// BARBIE
 function goBarbara() {
+  document.querySelector(".waiting-room-sound").pause();
   text.peopleTalk.style.display = "flex";
   document.querySelector(".beat1").currentTime = 0;
   document.querySelector(".beat1").play();
   document.querySelector(".beat1").loop = true;
   document.querySelector(".beat1").volume = 0.2;
-  gifs.needbreak.style.display = "none";
   ux.scroll.style.display = "none";
   ux.click.style.display = "block";
   domElement.body.style.backgroundColor = "var(--weiss)";
@@ -2049,6 +2054,7 @@ function scene42() {
   character.barbara4.style.display = "none";
   character.barbara5.style.display = "block";
   character.mercy5c.style.display = "block";
+  gifs.scribble.style.display = "block";
   character.mercy5b.style.display = "none";
   document.querySelector("#sandwich-bag").style.display = "none";
   setTimeout(() => {
@@ -2061,6 +2067,7 @@ function scene43() {
   noOneTalks();
   text.mercyTalk3.style.display = "none";
   character.mercy5c.classList.add("mercy-5c-away");
+  gifs.scribble.classList.add("mercy-5c-away");
   character.knot.classList.remove("knotBarAway")
   text.phrase29.style.display = "block";
   setTimeout(() => {
@@ -2075,6 +2082,7 @@ function scene44() {
   text.phrase30.style.display = "block";
   document.querySelector("#info-icon-barbara").style.display = "block";
   character.mercy5c.style.display = "none";
+  gifs.scribble.style.display = "none";
   setTimeout(() => {
     variable.currentScene = 45;
   }, 200)
@@ -2159,12 +2167,8 @@ function scene49() {
 
 //call end
 function scene50() {
-  document.querySelector(".endedcall").pause();
-  gifs.drink.style.display = "none";
   noOneTalks();
   text.barbaraTalk5.style.display = "none";
-  character.barbara7.style.display = "block";
-  character.barbara6b.style.display = "none";
   setTimeout(() => {
     variable.currentScene = 51;
   }, 200)
@@ -2172,6 +2176,7 @@ function scene50() {
 
 // we deserve a break now.!
 function scene51() {
+  document.querySelector(".endedcall").pause();
   text.phrase32.style.display = "block";
   character.knot.classList.add("knotBarSiesta");
   setTimeout(() => {
@@ -2182,6 +2187,7 @@ function scene51() {
 // siesta time
 function scene52() {
   gifs.drink.style.display = "none";
+  character.barbara6b.style.display = "none";
   text.phrase32.style.display = "none";
   document.querySelector("#siesta-time").style.display = "block";
   text.siestaTime.style.display = "block";
@@ -2192,6 +2198,7 @@ function scene52() {
 
 //  HELLLO AGAIN
 function scene53() {
+  character.barbara7.style.display = "block";
   ux.click.style.display = "none";
   document.querySelector("#siesta-time").style.display = "none";
   document.querySelector("#happy-hour-button").style.display = "block";

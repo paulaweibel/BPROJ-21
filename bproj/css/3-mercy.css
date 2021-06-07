@@ -83,31 +83,31 @@
 }
 
 .list-title-floor {
-    transform: translate(5vw, 60vh) rotate(50deg) !important;
+    transform: translate(5vw, 54vh) rotate(50deg) !important;
 }
 
 .todo1-floor {
-    transform: translate(-1vw, 50vh) rotate(30deg) !important;
+    transform: translate(-1vw, 47vh) rotate(30deg) !important;
 }
 
 .todo2-floor {
-    transform: translate(2vw, 50vh) rotate(-20deg) !important;
+    transform: translate(2vw, 46vh) rotate(-20deg) !important;
 }
 
 .todo3-floor {
-    transform: translate(0, 50vh) rotate(10deg) !important;
+    transform: translate(0, 47vh) rotate(10deg) !important;
 }
 
 .todo4-floor {
-    transform: translate(2vw, 40vh) rotate(-90deg) !important;
+    transform: translate(2vw, 36vh) rotate(-90deg) !important;
 }
 
 .todo5-floor {
-    transform: translate(5vw, 40vh) rotate(-30deg) !important;
+    transform: translate(5vw, 39vh) rotate(-30deg) !important;
 }
 
 .todo6-floor {
-    transform: translate(5vh, 40vh) rotate(90deg) !important;
+    transform: translate(5vh, 38vh) rotate(90deg) !important;
 }
 
 .todo7-floor {
@@ -160,7 +160,7 @@
 }
 
 .mail4-floor {
-    transform: translate(3vw, 58vh) rotate(5deg) !important;
+    transform: translate(3vw, 55vh) rotate(5deg) !important;
 }
 
 #mail5 {
@@ -169,7 +169,7 @@
 }
 
 .mail5-floor {
-    transform: translate(1vw, 70vh) rotate(-180deg) !important;
+    transform: translate(1vw, 60vh) rotate(-180deg) !important;
 }
 
 #window-fix {
@@ -204,12 +204,13 @@
     left: 22vh;
 }
 
-#overwhelmed-gif {
+#drag-gif {
     position: fixed;
     display: none;
-    height: 12vh;
-    top: 50vh;
-    left: calc(50vw - 15vh);
+    top: 15vh;
+    margin-left: 33vw;
+    height: 3vh;
+
 }
 
 /* BAR SCENE  */
@@ -253,6 +254,7 @@
     display: none;
     height: 15vh;
     top: 80vh;
+    transform: translate(-20vh, 0);
 }
 
 #mercy-4 {
@@ -270,10 +272,18 @@
 
 #mercy-5c {
     display: none;
-    right: 65vh;
-    transition: transform 1s;
+    right: 75vh;
+    transition: transform 2s ease-out;
 }
 
-.mercy-5c-away{
-    transform: translate(-100vw,0) !important;
+#scribble-gif {
+    display: none;
+    height: 18vh;
+    top: 20vh;
+    right: 83vh;
+    transition: transform 2s ease-out;
+}
+
+.mercy-5c-away {
+    transform: translate(-100vw, 0) !important;
 }
