@@ -1518,6 +1518,10 @@ function scene21() {
     character.lawrence4b.style.display = "block";
     document.querySelector(".knotLassoPath").style.strokeDashoffset = "calc(30vw + 30vh)";
     character.knot.classList.add("knotWaitingroom-AfterLasso");
+    document.querySelector(".lasso2").currentTime = 0;
+    document.querySelector(".lasso2").play();
+    document.querySelector(".lasso2").loop = false;
+    document.querySelector(".lasso2").volume = 1;
   }, 1000)
   setTimeout(() => {
     gifs.wtf.style.display = "block";
