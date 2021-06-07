@@ -2127,9 +2127,13 @@ function scene46() {
 
 // take call
 function scene46a() {
+  document.querySelector(".ringtone").currentTime = 0;
+  document.querySelector(".ringtone").play();
+  document.querySelector(".ringtone").loop = true;
+  document.querySelector(".yelling1").volume = 1;
   text.phrase31.style.display = "none";
-  ux.click.style.display="none";
-  domElement.callIcon.style.display="block";
+  ux.click.style.display = "none";
+  domElement.callIcon.style.display = "block";
   character.knot.classList.add("knotBarAway");
   setTimeout(() => {
     variable.currentScene = 46.2;
@@ -2138,8 +2142,9 @@ function scene46a() {
 
 //supervisor talk 1
 function scene47() {
-  ux.click.style.display="block";
-  domElement.callIcon.style.display="none";
+  document.querySelector(".ringtone").pause();
+  ux.click.style.display = "block";
+  domElement.callIcon.style.display = "none";
   document.querySelector(".yelling1").currentTime = 0;
   document.querySelector(".yelling1").play();
   document.querySelector(".yelling1").loop = false;
@@ -2265,7 +2270,7 @@ function scene54() {
 
 // HAPPY HOUR GUESTS
 function scene55() {
-  ux.click.style.display="none";
+  ux.click.style.display = "none";
   character.knot.classList = "knotValentinoBarHidden";
   text.phrase34.style.display = "none";
   scene.guest1.style.display = "block";
@@ -2292,6 +2297,7 @@ function scene55() {
     scene.guest9.style.display = "block";
   }, 1500)
   setTimeout(() => {
+    document.querySelector(".beat1").pause();
     scene.guest10.style.display = "block";
     scene.guest11.style.display = "block";
   }, 1800)
@@ -2340,7 +2346,7 @@ function scene55() {
     character.barbara9.style.display = "block";
     character.knot.classList = "knotValentinoBar";
     text.phrase35.style.display = "block";
-    ux.click.style.display="block";
+    ux.click.style.display = "block";
   }, 9500)
   setTimeout(() => {
     variable.currentScene = 56;
@@ -2467,28 +2473,32 @@ function scene81() {
 }
 
 // VALENTINO POST ITS CLICKED
-function countPostit(){
+function countPostit() {
   variable.postitCount = variable.postitCount + 1;
-  if(variable.postitCount === 5){
+  if (variable.postitCount === 5) {
     setTimeout(() => {
       scene82();
     }, 1500)
   }
 }
 
-function postit1(){
+function postit1() {
   document.querySelector("#val-post1").classList.add("endPositionPostIt")
 }
-function postit2(){
+
+function postit2() {
   document.querySelector("#val-post2").classList.add("endPositionPostIt")
 }
-function postit3(){
+
+function postit3() {
   document.querySelector("#val-post3").classList.add("endPositionPostIt")
 }
-function postit4(){
+
+function postit4() {
   document.querySelector("#val-post4").classList.add("endPositionPostIt")
 }
-function postit5(){
+
+function postit5() {
   document.querySelector("#val-post5").classList.add("endPositionPostIt")
 }
 
