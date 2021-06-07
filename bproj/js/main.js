@@ -1437,12 +1437,19 @@ function scene19() {
 
 // SCENE 20 LAWRENCE WALKING TO BUILDING
 function scene20() {
+
+  document.querySelector(".waiting-room-sound").currentTime = 0;
+  document.querySelector(".waiting-room-sound").play();
+  document.querySelector(".waiting-room-sound").loop = true;
+  document.querySelector(".waiting-room-sound").volume = 1;
+
+
   ux.click.style.display = "none";
   document.querySelector(".sound-quote1").pause();
   document.querySelector(".sound-quote2").pause();
   ux.click.classList = "textBlack";
-  document.querySelector("#outside-the-office").style.display="block";
-  text.outsideTheOffice.style.display ="block";
+  document.querySelector("#outside-the-office").style.display = "block";
+  text.outsideTheOffice.style.display = "block";
   gifs.nervous.style.display = "none";
   document.querySelector("#looser-scream-box").style.display = "none";
   character.lawrence2a.style.display = "none";
@@ -1453,8 +1460,6 @@ function scene20() {
   character.lawrence3.style.display = "none";
   character.knot.classList.add("knotOutsideOfficeBuilding");
   scene.officeBuilding.style.display = "none";
-  document.querySelector(".ambience-street-afternoon").currentTime = 0;
-  document.querySelector(".ambience-street-afternoon").play();
   variable.currentScene = 20.2;
   setTimeout(() => {
     scene20a();
@@ -1464,9 +1469,8 @@ function scene20() {
 // SCENE 20a Mercy saying hello
 function scene20a() {
   ux.click.style.display = "block";
-  document.querySelector("#outside-the-office").style.display="none";
-  text.outsideTheOffice.style.display ="none";
-  document.querySelector(".ambience-street-afternoon").pause();
+  document.querySelector("#outside-the-office").style.display = "none";
+  text.outsideTheOffice.style.display = "none";
   character.mercy.style.display = "block";
   character.mercy1a.style.display = "block";
   text.peopleTalk.style.display = "block";
@@ -1499,6 +1503,11 @@ function scene20b() {
 
 // SCENE 22 LAWRENCE START FALLING
 function scene21() {
+  document.querySelector(".lasso").currentTime = 0;
+  document.querySelector(".lasso").play();
+  document.querySelector(".lasso").loop = false;
+  document.querySelector(".lasso").volume = 1;
+
   document.querySelector(".knotLassoPath").style.strokeDashoffset = "0";
   text.peopleTalk.classList.remove("mercy-goodmorning");
   text.phrase19.style.display = "none";
@@ -1517,6 +1526,10 @@ function scene21() {
     character.lawrence4b.style.display = "none";
     character.lawrence4c.style.display = "block";
     variable.currentScene = 22;
+    document.querySelector(".lawrence-ground").currentTime = 0;
+    document.querySelector(".lawrence-ground").play();
+    document.querySelector(".lawrence-ground").loop = false;
+    document.querySelector(".lawrence-groundd").volume = 1;
   }, 3000)
 }
 

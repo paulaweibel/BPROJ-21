@@ -301,7 +301,7 @@
     max-height: 40vh;
     top: 40vh;
     left: 40vh;
-    animation: lawrence-walk-of-shame 4s ease-in-out forwards;
+    animation: lawrence-walk-of-shame 10s ease-in-out forwards;
 }
 
 @keyframes lawrence-walk-of-shame {
