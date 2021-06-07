@@ -239,16 +239,41 @@
 }
 
 .valentino-post-it {
+    position: absolute;
     height: 20vh;
+    transition: all 1s, opacity 0.5s 1s;
 }
 
-#val-post1{
-    background-color: red;
+#val-post1 {
+    top: 0;
+    left: calc(50vw - 7vh);
 }
 
-.endPositionPostIt{
+#val-post2 {
+    top: 40vh;
+    left: 10vw;
+}
+
+#val-post3 {
+    top: 50vh;
+    left: 80vw;
+}
+
+#val-post4 {
+    top: 80vh;
+    left: 20vw;
+}
+
+#val-post5 {
+    top: 70vh;
+    left: 50vw;
+}
+
+.endPositionPostIt {
     top: 15vh !important;
     left: calc(50vw - 7vh) !important;
+    opacity: 0 !important;
+    transform: scale(0.5);
 }
 
 

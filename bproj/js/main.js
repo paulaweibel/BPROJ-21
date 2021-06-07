@@ -34,6 +34,7 @@ let domElement = {
   helpNo: document.querySelector("#help-no"),
   helpButtons: document.querySelector("#help-button"),
   spotlight: document.querySelector("#spotlight"),
+  callIcon: document.querySelector("#call-icon-container"),
   callToAction: document.querySelector("#call-to-action"),
   glitchStressFormular: document.querySelector("#glitch-stress-formular"),
 }
@@ -149,6 +150,26 @@ let scene = {
   guest8: document.querySelector("#guest8"),
   guest9: document.querySelector("#guest9"),
   guest10: document.querySelector("#guest10"),
+  guest11: document.querySelector("#guest11"),
+  guest12: document.querySelector("#guest12"),
+  guest13: document.querySelector("#guest13"),
+  guest14: document.querySelector("#guest14"),
+  guest15: document.querySelector("#guest15"),
+  guest16: document.querySelector("#guest16"),
+  guest17: document.querySelector("#guest17"),
+  guest18: document.querySelector("#guest18"),
+  guest19: document.querySelector("#guest19"),
+  guest20: document.querySelector("#guest20"),
+  guest21: document.querySelector("#guest21"),
+  guest22: document.querySelector("#guest22"),
+  guest23: document.querySelector("#guest23"),
+  guest24: document.querySelector("#guest24"),
+  guest25: document.querySelector("#guest25"),
+  guest26: document.querySelector("#guest26"),
+  guest27: document.querySelector("#guest27"),
+  guest28: document.querySelector("#guest28"),
+  guest29: document.querySelector("#guest29"),
+  guest30: document.querySelector("#guest30"),
 }
 
 let text = {
@@ -740,9 +761,9 @@ domElement.body.addEventListener('click', function () {
     scene44();
   }
   // COFFEE SPILL
-  // if (variable.currentScene === 46) {
-  //   scene46();
-  // }
+  if (variable.currentScene === 46.1) {
+    scene46a();
+  }
   if (variable.currentScene === 47) {
     scene47();
   }
@@ -2096,16 +2117,29 @@ function scene45a() {
   }, 200)
 }
 
-// take call
+
 function scene46() {
   text.phrase31.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 47;
+    variable.currentScene = 46.1;
+  }, 200)
+}
+
+// take call
+function scene46a() {
+  text.phrase31.style.display = "none";
+  ux.click.style.display="none";
+  domElement.callIcon.style.display="block";
+  character.knot.classList.add("knotBarAway");
+  setTimeout(() => {
+    variable.currentScene = 46.2;
   }, 200)
 }
 
 //supervisor talk 1
 function scene47() {
+  ux.click.style.display="block";
+  domElement.callIcon.style.display="none";
   document.querySelector(".yelling1").currentTime = 0;
   document.querySelector(".yelling1").play();
   document.querySelector(".yelling1").loop = false;
@@ -2231,52 +2265,86 @@ function scene54() {
 
 // HAPPY HOUR GUESTS
 function scene55() {
-  ux.click.style.display = "none";
+  ux.click.style.display="none";
+  character.knot.classList = "knotValentinoBarHidden";
   text.phrase34.style.display = "none";
   scene.guest1.style.display = "block";
   variable.currentScene = 55.7;
+  // HAPPY HOUR GUESTS
   setTimeout(() => {
-    scene.guest4.style.display = "block";
+    scene.guest2.style.display = "block";
   }, 300)
   setTimeout(() => {
     scene.guest3.style.display = "block";
   }, 600)
   setTimeout(() => {
-    scene.guest7.style.display = "block";
+    scene.guest4.style.display = "block";
     character.barbara7.style.display = "none";
     character.barbara8.style.display = "block";
   }, 900)
   setTimeout(() => {
     scene.guest5.style.display = "block";
+    scene.guest6.style.display = "block";
   }, 1200)
   setTimeout(() => {
-    scene.guest6.style.display = "block";
+    scene.guest7.style.display = "block";
+    scene.guest8.style.display = "block";
+    scene.guest9.style.display = "block";
   }, 1500)
   setTimeout(() => {
-    scene.guest9.style.display = "block";
+    scene.guest10.style.display = "block";
+    scene.guest11.style.display = "block";
   }, 1800)
   setTimeout(() => {
-    scene.guest8.style.display = "block";
+    scene.guest12.style.display = "block";
+    scene.guest13.style.display = "block";
   }, 2100)
   setTimeout(() => {
-    scene.guest10.style.display = "block";
+    scene.guest14.style.display = "block";
+    scene.guest15.style.display = "block";
   }, 2400)
   setTimeout(() => {
-    scene.guest2.style.display = "block";
+    scene.guest16.style.display = "block";
+    scene.guest17.style.display = "block";
   }, 2700)
   setTimeout(() => {
+    scene.guest18.style.display = "block";
+    scene.guest19.style.display = "block";
+  }, 3000)
+  setTimeout(() => {
+    scene.guest20.style.display = "block";
+    scene.guest21.style.display = "block";
+    scene.guest22.style.display = "block";
+  }, 3300)
+  setTimeout(() => {
+    scene.guest23.style.display = "block";
+    scene.guest24.style.display = "block";
+    scene.guest25.style.display = "block";
+  }, 3600)
+  setTimeout(() => {
+    scene.guest26.style.display = "block";
+    scene.guest27.style.display = "block";
+    scene.guest28.style.display = "block";
+  }, 3900)
+  setTimeout(() => {
+    scene.guest29.style.display = "block";
+    scene.guest30.style.display = "block";
+  }, 4200)
+  setTimeout(() => {
     character.valentino3.style.display = "block";
-  }, 3700)
+  }, 4000)
+
+  // ALL GUESTS HAPPY HOUR GONE
   setTimeout(() => {
     character.barbara8.style.display = "none";
     character.barbara9.style.display = "block";
     character.knot.classList = "knotValentinoBar";
     text.phrase35.style.display = "block";
-    ux.click.style.display = "block";
-  }, 7700)
+    ux.click.style.display="block";
+  }, 9500)
   setTimeout(() => {
     variable.currentScene = 56;
-  }, 8200)
+  }, 9700)
 }
 
 function scene56() {
@@ -2394,8 +2462,34 @@ function scene81() {
   text.phrase38.style.display = "none";
   scene.valentinoPostIt.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 82;
+    variable.currentScene = 81.1;
   }, 200)
+}
+
+// VALENTINO POST ITS CLICKED
+function countPostit(){
+  variable.postitCount = variable.postitCount + 1;
+  if(variable.postitCount === 5){
+    setTimeout(() => {
+      scene82();
+    }, 1500)
+  }
+}
+
+function postit1(){
+  document.querySelector("#val-post1").classList.add("endPositionPostIt")
+}
+function postit2(){
+  document.querySelector("#val-post2").classList.add("endPositionPostIt")
+}
+function postit3(){
+  document.querySelector("#val-post3").classList.add("endPositionPostIt")
+}
+function postit4(){
+  document.querySelector("#val-post4").classList.add("endPositionPostIt")
+}
+function postit5(){
+  document.querySelector("#val-post5").classList.add("endPositionPostIt")
 }
 
 
@@ -2403,7 +2497,6 @@ function scene81() {
 function scene82() {
   character.valentino7b.style.display = "block";
   character.valentino7a.style.display = "none";
-  scene.valentinoPostIt.style.display = "none";
   character.knot.classList.remove("knotLastScene");
   text.phrase39.style.display = "block";
   setTimeout(() => {
@@ -2412,6 +2505,7 @@ function scene82() {
 }
 
 function scene83() {
+  scene.valentinoPostIt.style.display = "none";
   text.phrase39.style.display = "none";
   text.phrase40.style.display = "block";
   setTimeout(() => {

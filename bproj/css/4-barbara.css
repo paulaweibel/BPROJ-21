@@ -57,13 +57,32 @@
   animation: please-click-on-coffee 1s infinite;
 }
 
-
 #drink-gif {
   position: fixed;
   display: none;
   height: 15vh;
   top: 47.5vh;
   right: 53vh;
+}
+
+#call-icon-container{
+  position: fixed;
+  display: none;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-left: auto;
+  right: 34vh;
+  background-color: rgba(250,250,250,0.95)
+  
+}
+
+#call-icon{
+  height: 30vh;
+  margin-left: calc(50vw - 15vh);
+  margin-top: 35vh;
+  transform: rotate(-120deg);
 }
 
 #screaming-phone-gif {
@@ -180,17 +199,17 @@
 
 .happy-hour-guest {
   position: absolute;
-  top: 32vh;
+  top: 5vh;
   right: 0vh;
   height: 55vh;
   opacity: 1;
   transform: translate(150vh, 0);
-  animation: guest-fade-out 5s forwards, guest-slide-in 2s forwards;
+  animation: guest-fade-out 6s forwards, guest-slide-in 2s forwards;
 }
 
 /* HAPPY HOUR GUEST */
 .guest-wiggle {
-  height: 60vh;
+  height: 95vh;
   opacity: 1;
   animation: guest-wiggle 2s forwards;
 }
@@ -280,6 +299,106 @@
 #guest10 {
   display: none;
   margin-right: 15vh;
+}
+
+#guest11 {
+  display: none;
+  margin-right: 10vw;
+}
+
+#guest12 {
+  display: none;
+  margin-right: 20vw;
+}
+
+#guest13 {
+  display: none;
+  margin-right: -20vw;
+}
+
+#guest14 {
+  display: none;
+  margin-right: 40vw;
+}
+
+#guest15 {
+  display: none;
+  margin-right: -10vw;
+}
+
+#guest16 {
+  display: none;
+  margin-right: 60vw;
+}
+
+#guest17 {
+  display: none;
+  margin-right: 70vw;
+}
+
+#guest18 {
+  display: none;
+  margin-right: 80vw;
+}
+
+#guest19 {
+  display: none;
+  margin-right: 90vw;
+}
+
+#guest20 {
+  display: none;
+  margin-right: 95vw;
+}
+
+#guest21 {
+  display: none;
+  margin-right: 40vh;
+}
+
+#guest22 {
+  display: none;
+  margin-right: 55vh;
+}
+
+#guest23 {
+  display: none;
+  margin-right: 100vh;
+}
+
+#guest24 {
+  display: none;
+  margin-right: -15vw;
+}
+
+#guest25 {
+  display: none;
+  margin-right: 120vh;
+}
+
+#guest26 {
+  display: none;
+  margin-right: -40vw;
+}
+
+#guest27 {
+  display: none;
+  margin-right: 76vw;
+}
+
+#guest28 {
+  display: none;
+  margin-right: -30vw;
+}
+
+#guest29 {
+  display: none;
+  margin-right: 50vw;
+}
+
+#guest30 {
+  display: none;
+  margin-right: 80vh;
 }
 
 /* make barbies invisible */

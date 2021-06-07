@@ -272,6 +272,7 @@ click-text {
   height: 13vw;
   margin-bottom: 2vw;
 }
+
 h2 {
   font-size: 5vw;
   max-width: 76vw;
@@ -363,10 +364,11 @@ h7 {
 }
 
 @keyframes help-fade-in {
-  0%{
+  0% {
     opacity: 0;
   }
-  100%{
+
+  100% {
     opacity: 1;
   }
 }
@@ -384,6 +386,7 @@ h7 {
     bottom: 4vh;
   }
 }
+
 /* -------------------------------- BUTTONS -------------------------------- */
 
 /* INTRO: YES & NO, BUTTON CONTAINER */
@@ -494,7 +497,7 @@ img {
   text-align: center;
 }
 
-#outside-the-office{
+#outside-the-office {
   display: none;
   position: fixed;
   top: 0;
@@ -576,10 +579,18 @@ img {
 }
 
 /* (good morning text) */
-#mercy-talk1{
+#mercy-talk1 {
   text-align: center;
   transform: translate(10vh, 0vh);
   width: 17vh;
+}
+
+#barbara-talk3 {
+  transform: translate(0vh, 3vh);
+}
+
+#barbara-talk3a {
+  transform: translate(0vh, 3vh);
 }
 
 .bar-guest-talks {
@@ -613,7 +624,7 @@ img {
 }
 
 #people-talk-angry {
-  display:none;
+  display: none;
   max-width: 90%;
   position: absolute;
   left: 23vh;
