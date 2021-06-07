@@ -469,7 +469,7 @@ domElement.titleButton.addEventListener('click', function () {
   document.querySelector(".user-clicking-sound").currentTime = 0;
   document.querySelector(".user-clicking-sound").play();
   document.querySelector(".user-clicking-sound").loop = false;
-  document.querySelector(".user-clicking-sound").volume = 0.1;
+  document.querySelector(".user-clicking-sound").volume = 0.25;
 
   if (variable.visible === 1 || variable.visible === 3) {
     variable.visible = 0;
@@ -968,6 +968,7 @@ domElement.helpButtons.addEventListener('click', function () {
 });
 
 function goValentino() {
+  document.querySelector(".yes-no-click").pause();
   ux.scroll.style.display = "none";
   domElement.intro.style.display = "none";
   domElement.body.style.backgroundColor = "var(--schwarz)";
@@ -978,10 +979,10 @@ function goValentino() {
   domElement.assets.style.display = "block";
   domElement.spotlight.style.display = "block";
   document.querySelector(".ambience-apartment1").currentTime = 0;
-  document.querySelector(".ambience-apartment1").volume = 0.3;
+  document.querySelector(".ambience-apartment1").volume = 0.2;
   document.querySelector(".ambience-apartment1").play();
   document.querySelector(".ambience-apartment2").currentTime = 0;
-  document.querySelector(".ambience-apartment2").volume = 0.5;
+  document.querySelector(".ambience-apartment2").volume = 0.4;
   document.querySelector(".ambience-apartment2").play();
   variable.currentScene = 4.5;
   scene5();
@@ -1021,8 +1022,11 @@ function scene6() {
 function scene7() {
   document.querySelector(".alarm-clock1").currentTime = 0;
   document.querySelector(".alarm-clock1").play();
+  document.querySelector(".alarm-clock1").volume = 0.5;
+
   document.querySelector(".alarm-clock2").currentTime = 0;
   document.querySelector(".alarm-clock2").play();
+  document.querySelector(".alarm-clock2").volume = 0.5;
 
   text.phrase6.style.display = "none";
   text.phrase7.style.display = "block";
@@ -1038,6 +1042,10 @@ function scene7() {
 // SCENE 8 (white Phone was clicked) it's up to you, turn off the other alarms
 function scene8() {
   if (variable.currentScene === 8) {
+    document.querySelector(".toggle-click").currentTime = 0;
+    document.querySelector(".toggle-click").play();
+    document.querySelector(".toggle-click").loop = false;
+    document.querySelector(".toggle-click").volume = 0.75;
     character.valentino1b.style.display = "none";
     character.valentino1c.style.display = "block";
     document.querySelector(".alarm-clock1").pause();
@@ -1078,6 +1086,7 @@ function countToggle() {
   document.querySelector(".toggle-click").currentTime = 0;
   document.querySelector(".toggle-click").play();
   document.querySelector(".toggle-click").loop = false;
+  document.querySelector(".toggle-click").volume = 0.75;
   text.phrase8.style.opacity = "0";
   domElement.knotNarration.classList.remove("bubbleGrow");
   character.knot.classList.add("knotValentinoDisappear");
@@ -1111,7 +1120,7 @@ function scene9a() {
   document.querySelector(".countdown").currentTime = 0;
   document.querySelector(".countdown").play();
   document.querySelector(".countdown").loop = true;
-  document.querySelector(".countdown").volume = 1;
+  document.querySelector(".countdown").volume = 0.5;
 
 
   ux.click.style.display = "none";
@@ -1150,6 +1159,7 @@ function scene9a() {
     gifs.worried.style.display = "block";
     document.querySelector(".trumpet-sound").currentTime = 0;
     document.querySelector(".trumpet-sound").play();
+    document.querySelector(".trumpet-sound").volume = 0.4;
     document.querySelector("#one-hour-later").style.display = "none";
     variable.currentScene = 9.5;
     ux.click.style.display = "block";
@@ -1175,6 +1185,7 @@ function scene10() {
   console.log("wtf");
   document.querySelector(".ambience-street-morning").currentTime = 0;
   document.querySelector(".ambience-street-morning").play();
+  document.querySelector(".ambience-street-morning").volume = 0.4;
   document.querySelector("#wake-up-scream1").style.display = "none";
   document.querySelector("#wake-up-scream2").style.display = "none";
   document.querySelector("#run-scream").style.display = "block";
@@ -1263,16 +1274,16 @@ function runToBus() {
 
   // 4. horizontal scroll valentino  
   if (sLeft > 2.8 * window.innerWidth) {
+    document.querySelector(".lawrence-music-headphones").currentTime = 0;
+    document.querySelector(".lawrence-music-headphones").play();
+    document.querySelector(".lawrence-music-headphones").loop = false;
+    document.querySelector(".lawrence-music-headphones").volume = 0.5;
     text.phrase11.style.display = "block";
     character.valentino2a.classList.add("valentinoLeaves");
     character.valentino2b.classList.add("valentinoLeaves");
     gifs.running.classList.add("valentinoLeaves");
     character.knot.classList.add("knotValentinoRunEnd");
     scene.bus.classList.add("driveAway");
-    document.querySelector(".lawrence-music-headphones").currentTime = 0;
-    document.querySelector(".lawrence-music-headphones").play();
-    document.querySelector(".lawrence-music-headphones").loop = false;
-    document.querySelector(".lawrence-music-headphones").volume = 0.5;
     document.querySelector(".countdown").pause();
     gifs.musicnotes.style.display = "block";
     ux.scroll.style.display = "none";
@@ -1364,6 +1375,7 @@ function scene14() {
 function scene15() {
   showWhisperLeft();
   text.whisper2.style.display = "block";
+  document.querySelector(".lawrence-music-headphones").pause();
   document.querySelector(".lawrence-music-headphones").volume = 0;
   character.backgroundKnot.classList.add("showWhisperKnotLawrence");
   text.backWhisper.classList.add("showWhisperKnotLawrence");
@@ -1746,7 +1758,6 @@ function scene30() {
   document.querySelector(".clicking-keyboard-mercy").currentTime = 0;
   document.querySelector(".clicking-keyboard-mercy").play();
 
-
   text.phrase24.style.display = "none";
   // text.phrase25.style.display = "block";
   document.querySelector("#mail1").style.display = "block"
@@ -1872,10 +1883,10 @@ function drag(e) {
 
 function setTranslate(xPos, yPos, el) {
 
-  document.querySelector(".wind").currentTime = 0;
-  document.querySelector(".wind").play();
-  document.querySelector(".wind").loop = false;
-  document.querySelector(".wind").volume = 1;
+  document.querySelector(".wind-sound").currentTime = 0;
+  document.querySelector(".wind-sound").play();
+  document.querySelector(".wind-sound").loop = false;
+  document.querySelector(".wind-sound").volume = 1;
 
   el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
