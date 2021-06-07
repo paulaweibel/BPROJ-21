@@ -270,5 +270,10 @@
 
 #mercy-5c {
     display: none;
-    right: 80vw;
+    right: 65vh;
+    transition: transform 1s;
+}
+
+.mercy-5c-away{
+    transform: translate(-100vw,0) !important;
 }

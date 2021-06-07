@@ -487,6 +487,19 @@ img {
   text-align: center;
 }
 
+#outside-the-office{
+  display: none;
+  position: fixed;
+  top: 0;
+  padding-top: 40vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transition: opacity 0.5s;
+  background-color: var(--weiss);
+  text-align: center;
+}
+
 /* ----------------------------------------------- */
 /* IDS OF CHARACTERS ----------------------------- */
 
@@ -552,7 +565,13 @@ img {
 
 .mercy-goodmorning {
   top: 15vh;
-  left: 35vh !important;
+  left: 25vh !important;
+}
+
+#mercy-talk1{
+  text-align: center;
+  transform: translate(10vh, 3.5vh);
+    width: 17vh;
 }
 
 .bar-guest-talks {
@@ -567,8 +586,9 @@ img {
 
 .angry-mercy-talks {
   top: 10vh !important;
-  left: calc(100vw - 90vw) !important;
+  left: calc(100vw - 85vh) !important;
 }
+
 
 .angry-supervisor-talks {
   left: calc(100vw - 97vh) !important;

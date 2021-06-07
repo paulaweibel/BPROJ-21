@@ -223,6 +223,7 @@ let text = {
   // other texts
   aSiestaLater: document.querySelector("#a-siesta-later-phrase"),
   siestaTime: document.querySelector("#siesta-time-phrase"),
+  outsideTheOffice: document.querySelector("#outside-the-office-phrase"),
 }
 
 ////////////////////////////////////////////////////////////////
@@ -282,7 +283,7 @@ queue.on("complete", event => {
   setTimeout(() => {
     progress.classList.add("fadeOut");
     character.knot.style.opacity = "1";
-    domElement.body.style.height="100vh";
+    domElement.body.style.height = "100vh";
     window.scrollTo(0, 0);
     ux.scroll.style.display = "block";
   }, 500)
@@ -450,7 +451,7 @@ domElement.titleButton.addEventListener('click', function () {
   if (variable.visible === 1 || variable.visible === 3) {
     variable.visible = 0;
     domElement.body.style.overflowY = "visible";
-    domElement.body.style.height="200vh";
+    domElement.body.style.height = "200vh";
     domElement.body.style.background = "var(--weiss)";
     document.querySelector("#title-dark").classList.add("titleBright");
     document.querySelector("#about-content").classList.add("whiteAbout");
@@ -461,7 +462,7 @@ domElement.titleButton.addEventListener('click', function () {
     variable.visible = 3;
     domElement.body.style.overflowY = "hidden";
     domElement.body.style.background = "var(--schwarz)";
-    domElement.body.style.height="100vh";
+    domElement.body.style.height = "100vh";
     document.querySelector("#title-dark").classList.remove("titleBright");
     document.querySelector("#about-content").classList.remove("whiteAbout");
     document.querySelector("#about-button").style.color = "var(--weiss)"
@@ -1151,6 +1152,7 @@ function scene10() {
   document.querySelector("#wake-up-scream2").style.display = "none";
   document.querySelector("#run-scream").style.display = "block";
   text.valentinoTalk2.style.display = "none";
+  text.peopleTalk.style.display = "none";
   text.peopleTalk.classList.remove("bubbleGrow");
   document.querySelector("#trumpet-container").style.display = "none";
   character.knot.classList = "";
@@ -1435,9 +1437,12 @@ function scene19() {
 
 // SCENE 20 LAWRENCE WALKING TO BUILDING
 function scene20() {
+  ux.click.style.display = "none";
   document.querySelector(".sound-quote1").pause();
   document.querySelector(".sound-quote2").pause();
   ux.click.classList = "textBlack";
+  document.querySelector("#outside-the-office").style.display="block";
+  text.outsideTheOffice.style.display ="block";
   gifs.nervous.style.display = "none";
   document.querySelector("#looser-scream-box").style.display = "none";
   character.lawrence2a.style.display = "none";
@@ -1445,21 +1450,27 @@ function scene20() {
   character.lawrence2c.style.display = "none";
   character.lawrence2d.style.display = "none";
   scene.busInside.style.display = "none";
-  character.lawrence3.style.display = "block";
+  character.lawrence3.style.display = "none";
   character.knot.classList.add("knotOutsideOfficeBuilding");
-  scene.officeBuilding.style.display = "block";
+  scene.officeBuilding.style.display = "none";
   document.querySelector(".ambience-street-afternoon").currentTime = 0;
   document.querySelector(".ambience-street-afternoon").play();
+  variable.currentScene = 20.2;
   setTimeout(() => {
-    variable.currentScene = 20.1;
-  }, 200)
+    scene20a();
+  }, 3000)
 }
 
 // SCENE 20a Mercy saying hello
 function scene20a() {
+  ux.click.style.display = "block";
+  document.querySelector("#outside-the-office").style.display="none";
+  text.outsideTheOffice.style.display ="none";
   document.querySelector(".ambience-street-afternoon").pause();
   character.mercy.style.display = "block";
   character.mercy1a.style.display = "block";
+  text.peopleTalk.style.display = "block";
+  extraSmallTalkingBubble();
   text.peopleTalk.classList.add("bubbleGrow");
   text.peopleTalk.classList.add("mercy-goodmorning");
   text.mercyTalk1.style.display = "block";
@@ -1476,6 +1487,7 @@ function scene20a() {
 
 // SCENE 20b Knot_ give me a hand
 function scene20b() {
+  text.peopleTalk.style.display = "none";
   text.peopleTalk.classList.remove("bubbleGrow");
   character.knot.classList.add("knotWaitingroom");
   text.mercyTalk1.style.display = "none";
@@ -2029,6 +2041,7 @@ function scene42() {
 function scene43() {
   noOneTalks();
   text.mercyTalk3.style.display = "none";
+  character.mercy5c.classList.add("mercy-5c-away");
   character.knot.classList.remove("knotBarAway")
   text.phrase29.style.display = "block";
   setTimeout(() => {
@@ -2739,7 +2752,12 @@ new TypeIt("#phrase18", {
   waitUntilVisible: true,
 }).go()
 
-
+new TypeIt("#outside-the-office-phrase", {
+  cursor: false,
+  strings: ["Arrived at the office."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
 
 new TypeIt("#phrase19", {
   cursor: false,
@@ -3039,171 +3057,171 @@ new TypeIt("#phrase40", {
 
 //WHEN RIGHT CLICK, DISABLE OPTIONS (EXAMPLE: SAVE IMAGE AS... ETC)
 
-var message = 'Your message here.';
+// var message = 'Your message here.';
 
-function disableClick(e) {
-  var message = 'I AM WORKING HERE, DO NOT STEAL MY STUFF';
-  if (document.all) {
-    if (((event.button == 2) || (event.button == 3)) && ((event.srcElement.tagName == "IMG") || (event.srcElement.getAttribute("type").toUpperCase() == "IMAGE"))) {
-      if (event.srcElement.oncontextmenu) {
-        event.srcElement.oncontextmenu = function (event) {
-          if (event.preventDefault) {
-            event.preventDefault();
-          };
-          if (event.stopPropagation) {
-            event.stopPropagation();
-          };
-          if (event.returnValue) {
-            event.returnValue = false;
-          };
-        };
-      } else {
+// function disableClick(e) {
+//   var message = 'I AM WORKING HERE, DO NOT STEAL MY STUFF';
+//   if (document.all) {
+//     if (((event.button == 2) || (event.button == 3)) && ((event.srcElement.tagName == "IMG") || (event.srcElement.getAttribute("type").toUpperCase() == "IMAGE"))) {
+//       if (event.srcElement.oncontextmenu) {
+//         event.srcElement.oncontextmenu = function (event) {
+//           if (event.preventDefault) {
+//             event.preventDefault();
+//           };
+//           if (event.stopPropagation) {
+//             event.stopPropagation();
+//           };
+//           if (event.returnValue) {
+//             event.returnValue = false;
+//           };
+//         };
+//       } else {
 
-        if (event.srcElement.addEventListener) {
-          event.srcElement.addEventListener("contextmenu", function (event) {
-              if (event.preventDefault) {
-                event.preventDefault();
-              };
-              if (event.stopPropagation) {
-                event.stopPropagation();
-              };
-              if (event.returnValue) {
-                event.returnValue = false;
-              };
-            }
+//         if (event.srcElement.addEventListener) {
+//           event.srcElement.addEventListener("contextmenu", function (event) {
+//               if (event.preventDefault) {
+//                 event.preventDefault();
+//               };
+//               if (event.stopPropagation) {
+//                 event.stopPropagation();
+//               };
+//               if (event.returnValue) {
+//                 event.returnValue = false;
+//               };
+//             }
 
-          );
-        } else if (event.srcElement.attachEvent) {
-          event.srcElement.attachEvent("contextmenu", function (event) {
-              if (event.preventDefault) {
-                event.preventDefault();
-              };
-              if (event.stopPropagation) {
-                event.stopPropagation();
-              };
-              if (event.returnValue) {
-                event.returnValue = false;
-              };
-            }
+//           );
+//         } else if (event.srcElement.attachEvent) {
+//           event.srcElement.attachEvent("contextmenu", function (event) {
+//               if (event.preventDefault) {
+//                 event.preventDefault();
+//               };
+//               if (event.stopPropagation) {
+//                 event.stopPropagation();
+//               };
+//               if (event.returnValue) {
+//                 event.returnValue = false;
+//               };
+//             }
 
-          );
-        };
+//           );
+//         };
 
-      };
+//       };
 
-      alert(message);
-      return false;
-    };
-  } else if (document.layers)
+//       alert(message);
+//       return false;
+//     };
+//   } else if (document.layers)
 
-  {
-    if ((e.which == 2) || (e.which == 3)) {
+//   {
+//     if ((e.which == 2) || (e.which == 3)) {
 
-      if (e.target.oncontextmenu) {
-        e.target.oncontextmenu = function (e) {
-          if (e.preventDefault) {
-            e.preventDefault();
-          };
-          if (e.stopPropagation) {
-            e.stopPropagation();
-          };
-          if (e.returnValue) {
-            e.returnValue = false;
-          };
-        };
-      } else {
+//       if (e.target.oncontextmenu) {
+//         e.target.oncontextmenu = function (e) {
+//           if (e.preventDefault) {
+//             e.preventDefault();
+//           };
+//           if (e.stopPropagation) {
+//             e.stopPropagation();
+//           };
+//           if (e.returnValue) {
+//             e.returnValue = false;
+//           };
+//         };
+//       } else {
 
-        if (e.target.addEventListener) {
-          e.target.addEventListener("contextmenu", function (e) {
-              if (e.preventDefault) {
-                e.preventDefault();
-              };
-              if (e.stopPropagation) {
-                e.stopPropagation();
-              };
-              if (e.returnValue) {
-                e.returnValue = false;
-              };
-            }
+//         if (e.target.addEventListener) {
+//           e.target.addEventListener("contextmenu", function (e) {
+//               if (e.preventDefault) {
+//                 e.preventDefault();
+//               };
+//               if (e.stopPropagation) {
+//                 e.stopPropagation();
+//               };
+//               if (e.returnValue) {
+//                 e.returnValue = false;
+//               };
+//             }
 
-          );
-        };
-
-
-      };
+//           );
+//         };
 
 
-      alert(message);
-      return false;
-    };
-  } else if (document.getElementById)
-
-  {
-    if (((e.which == 2) || (e.which == 3)) && ((e.target.tagName == "IMG") || (e.target.getAttribute("type") && e.target.getAttribute("type").toUpperCase() == "IMAGE"))) {
-
-      if (e.target.oncontextmenu) {
-        e.target.oncontextmenu = function (e) {
-          if (e.preventDefault) {
-            e.preventDefault();
-          };
-          if (e.stopPropagation) {
-            e.stopPropagation();
-          };
-          if (e.returnValue) {
-            e.returnValue = false;
-          };
-        };
-      } else {
-
-        if (e.target.addEventListener) {
-          e.target.addEventListener("contextmenu", function (e) {
-              if (e.preventDefault) {
-                e.preventDefault();
-              };
-              if (e.stopPropagation) {
-                e.stopPropagation();
-              };
-              if (e.returnValue) {
-                e.returnValue = false;
-              };
-            }
-
-          );
-        };
+//       };
 
 
-      };
+//       alert(message);
+//       return false;
+//     };
+//   } else if (document.getElementById)
+
+//   {
+//     if (((e.which == 2) || (e.which == 3)) && ((e.target.tagName == "IMG") || (e.target.getAttribute("type") && e.target.getAttribute("type").toUpperCase() == "IMAGE"))) {
+
+//       if (e.target.oncontextmenu) {
+//         e.target.oncontextmenu = function (e) {
+//           if (e.preventDefault) {
+//             e.preventDefault();
+//           };
+//           if (e.stopPropagation) {
+//             e.stopPropagation();
+//           };
+//           if (e.returnValue) {
+//             e.returnValue = false;
+//           };
+//         };
+//       } else {
+
+//         if (e.target.addEventListener) {
+//           e.target.addEventListener("contextmenu", function (e) {
+//               if (e.preventDefault) {
+//                 e.preventDefault();
+//               };
+//               if (e.stopPropagation) {
+//                 e.stopPropagation();
+//               };
+//               if (e.returnValue) {
+//                 e.returnValue = false;
+//               };
+//             }
+
+//           );
+//         };
 
 
-      alert(message);
-      return false;
+//       };
 
-    };
-  };
 
-};
+//       alert(message);
+//       return false;
 
-function associateImages() {
-  for (i = 0; i < document.images.length; i++) {
-    document.images[i].onmousedown = disableClick;
-  };
+//     };
+//   };
 
-};
+// };
 
-if (document.all) {
-  if (document.onmouseup) {
-    document.onmouseup = disableClick;
-  } else {
-    window.onmouseup = disableClick;
-  };
+// function associateImages() {
+//   for (i = 0; i < document.images.length; i++) {
+//     document.images[i].onmousedown = disableClick;
+//   };
 
-} else if (document.getElementById) {
-  if (document.onmousedown) {
-    document.onmousedown = disableClick;
-  } else {
-    window.onmousedown = disableClick;
-  };
+// };
 
-} else if (document.layers) {
-  associateImages();
-};
+// if (document.all) {
+//   if (document.onmouseup) {
+//     document.onmouseup = disableClick;
+//   } else {
+//     window.onmouseup = disableClick;
+//   };
+
+// } else if (document.getElementById) {
+//   if (document.onmousedown) {
+//     document.onmousedown = disableClick;
+//   } else {
+//     window.onmousedown = disableClick;
+//   };
+
+// } else if (document.layers) {
+//   associateImages();
+// };

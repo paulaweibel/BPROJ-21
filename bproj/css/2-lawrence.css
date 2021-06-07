@@ -315,13 +315,11 @@
     }
 
     50% {
-        left: calc(40vh + 50vw);
-        opacity: 0;
+        left: 150vw;
     }
 
     100% {
-        left: calc(40vh + 50vw);
-        opacity: 0;
+        left: 150vw;
     }
 }
 
