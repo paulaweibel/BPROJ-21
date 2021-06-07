@@ -233,7 +233,7 @@
 
 .lawrence-fall {
     position: fixed;
-    max-height: 40%;
+    max-height: 45%;
     top: 35vh;
     left: 60vw;
     transition: transform 0.2s;
@@ -298,7 +298,7 @@
 /* LAWRENCE AFTER MEETING */
 .lawrence-after-meeting {
     position: fixed;
-    max-height: 40vh;
+    max-height: 45vh;
     top: 40vh;
     left: 40vh;
     animation: lawrence-walk-of-shame 10s ease-in-out forwards;

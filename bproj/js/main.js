@@ -1623,6 +1623,8 @@ function scene26() {
 
 // (when user doesnt click on door)
 function scene26Error() {
+  document.querySelector(".door-enter").currentTime = 0;
+  document.querySelector(".door-enter").play();
   document.querySelector("#door-div-waitingroom").style.backgroundColor = "var(--schwarz)";
   setTimeout(() => {
     document.querySelector("#door-div-waitingroom").style.backgroundColor = "transparent";
@@ -1888,6 +1890,12 @@ function mercyChaos() {
     character.mercy3dMess.style.display = "block";
     character.mercy3c.style.display = "none";
     variable.currentScene = "goBarbara";
+    document.querySelector(".face-hit").currentTime = 0;
+    document.querySelector(".face-hit").play();
+    document.querySelector(".face-hit").volume = 1;
+    document.querySelector(".face-hit2").currentTime = 0;
+    document.querySelector(".face-hit2").play();
+    document.querySelector(".face-hit2").volume = 1;
   }, 1000)
   setTimeout(() => {
     variable.currentScene = 0;
@@ -1896,6 +1904,8 @@ function mercyChaos() {
 
 ///////////// BARBIE
 function goBarbara() {
+  document.querySelector(".face-hit").pause();
+  document.querySelector(".face-hit2").pause();
   document.querySelector(".waiting-room-sound").pause();
   text.peopleTalk.style.display = "flex";
   document.querySelector(".beat1").currentTime = 0;
@@ -2142,10 +2152,6 @@ function scene49() {
   document.querySelector("#people-talk-angry").style.display = "none";
   gifs.screamphone.style.display = "none";
   document.querySelector(".yelling2").pause();
-  document.querySelector(".endedcall").currentTime = 0;
-  document.querySelector(".endedcall").play();
-  document.querySelector(".endedcall").loop = true;
-  document.querySelector(".endedcall").volume = 1;
   text.supervisorTalk2.style.display = "none";
   text.barbaraTalk5.style.display = "block";
   setTimeout(() => {
@@ -2156,6 +2162,10 @@ function scene49() {
 // 
 function scene50() {
   noOneTalks();
+  document.querySelector(".endedcall").currentTime = 0;
+  document.querySelector(".endedcall").play();
+  document.querySelector(".endedcall").loop = true;
+  document.querySelector(".endedcall").volume = 1;
   text.barbaraTalk5.style.display = "none";
   text.phrase32.style.display = "block";
   character.knot.classList.add("knotBarSiesta");
@@ -2221,7 +2231,7 @@ function scene54() {
 
 // HAPPY HOUR GUESTS
 function scene55() {
-  ux.click.style.display="none";
+  ux.click.style.display = "none";
   text.phrase34.style.display = "none";
   scene.guest1.style.display = "block";
   variable.currentScene = 55.7;
@@ -2262,7 +2272,7 @@ function scene55() {
     character.barbara9.style.display = "block";
     character.knot.classList = "knotValentinoBar";
     text.phrase35.style.display = "block";
-    ux.click.style.display="block";
+    ux.click.style.display = "block";
   }, 7700)
   setTimeout(() => {
     variable.currentScene = 56;
@@ -2371,7 +2381,7 @@ function scene80() {
   text.valentinoTalk6.style.display = "none";
   character.valentino7a.style.display = "block";
   character.valentino6.style.display = "none";
-  scene.nightTable.style.display="block";
+  scene.nightTable.style.display = "block";
   character.knot.classList.remove("knotLastScene");
   text.phrase38.style.display = "block";
   setTimeout(() => {
@@ -2676,7 +2686,7 @@ new TypeIt("#phrase2", {
 
 new TypeIt("#phrase3", {
   cursor: false,
-  strings: ["Stress has many shades.", "My job is to visit people from time to time and increase their stress level"],
+  strings: ["Stress has many shades.", "My job is to visit people from time to time and increase their stress level."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -2698,7 +2708,7 @@ new TypeIt("#phrase4", {
 new TypeIt("#phrase5", {
   startDelay: 1000,
   cursor: false,
-  strings: ["GREAT!", "Here we are", "the first person of the day"],
+  strings: ["GREAT!", "Here we are...", "the first person of the day."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -2720,28 +2730,28 @@ new TypeIt("#phrase7", {
 
 new TypeIt("#phrase8", {
   cursor: false,
-  strings: ["I know...assistant! Do me a favour, turn off all other alarms."],
+  strings: ["I know... assistant! Do me a favour, turn off the other alarms."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#whisper1", {
   cursor: false,
-  strings: ["keep on sleeping, you still have plenty of time…"],
+  strings: ["keep on sleeping, you still have plenty of time."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#valentino-talk1", {
   cursor: false,
-  strings: ["Shoot, how did I not hear the other alarm clocks?"],
+  strings: ["Nooo, how did I not hear the other alarm clocks?"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#valentino-talk2", {
   cursor: false,
-  strings: ["I'm so late, what will they think of me in the hospital?? Such a bad impression…."],
+  strings: ["I'm so late, what will they think of me in the hospital? Such a bad impression…."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -2755,21 +2765,21 @@ new TypeIt("#phrase10", {
 
 new TypeIt("#phrase11", {
   cursor: false,
-  strings: ["Seems like I’ll have someone else to bother…"],
+  strings: ["Seems like we will have someone else to bother."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase12", {
   cursor: false,
-  strings: ["I can smell potential here. Hehe!", "This guy needs some stimulation."],
+  strings: ["I can smell potential here. Hehehe!", "This guy needs some stimulation."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase13", {
   cursor: false,
-  strings: ["He is going to a job interview.", "He has to earn money for his studies."],
+  strings: ["He is going to a job interview. He has to earn money for his studies."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -2839,14 +2849,14 @@ new TypeIt("#phrase20", {
 
 new TypeIt("#a-siesta-later-phrase", {
   cursor: false,
-  strings: ["a siesta later"],
+  strings: ["after the nap"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase21", {
   cursor: false,
-  strings: ["He will miserably be walking back to his house... I also swapped his exam dates in the calendar, hehehehehe. I'm done with him for today. Let’s enter the office. "],
+  strings: ["He will miserably be walking back to his house... ", "I also swapped his exam dates in the calendar, hehehehehe. ", "I'm done with him for today. Let’s enter the office. "],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -2860,14 +2870,14 @@ new TypeIt("#phrase22", {
 
 new TypeIt("#phrase23", {
   cursor: false,
-  strings: ["So far, she had two job interviews.", " Let's check her To-Do list."],
+  strings: [" Let's check her To-Do list.", "So far, she had two job interviews."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase24", {
   cursor: false,
-  strings: ["She does not seem overwhelmed by this daily schedule. It’s not easy to unsettle her. I will have to come up with some personal stuff. "],
+  strings: ["She does not seem overwhelmed by this schedule. It’s not easy to unsettle her.", "I will have to come up with some personal stuff."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -2881,14 +2891,14 @@ new TypeIt("#phrase25", {
 
 new TypeIt("#phrase26", {
   cursor: false,
-  strings: ["She’s distracted. It’s windy outside.", "Assistant, she needs some fresh air!"],
+  strings: ["She’s distracted. It’s windy outside.", "Assistant, I think she needs some fresh air!"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase27", {
   cursor: false,
-  strings: ["hehe, now I've got her into trouble."],
+  strings: ["hehe, now we have got her into trouble."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -2904,7 +2914,7 @@ new TypeIt("#barbara-talk1", {
 
 new TypeIt("#mercy-talk2", {
   cursor: false,
-  strings: ["Hello, Can I have A Sandwich and a Tea to go please?"],
+  strings: ["Hello, Can I have a cup of tea and a sandwich to-go please?"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -2919,7 +2929,7 @@ new TypeIt("#barbara-talk2", {
 
 new TypeIt("#phrase28", {
   cursor: false,
-  strings: ["Let's get her mad now. "],
+  strings: ["Let’s upset her!"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -2942,7 +2952,7 @@ new TypeIt("#barbara-talk3a", {
 
 new TypeIt("#barbara-talk4", {
   cursor: false,
-  strings: ["Oh I’m deeply sorry, I don’t know what happened, let me help you…"],
+  strings: ["Ohhh I’m so sorry, I don’t know what happened, let me help you…"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -2958,21 +2968,21 @@ new TypeIt("#mercy-talk3", {
 // knot talking about barbara
 new TypeIt("#phrase29", {
   cursor: false,
-  strings: ["Well, well, well, I pissed her off. ", "Mercy’s day is no longer as perfect as she thought."],
+  strings: ["Well, well, well, we pissed her off. ", "Mercy’s day is no longer as perfect as she thought."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase30", {
   cursor: false,
-  strings: ["Who do we have here? Poor little thing, I think I already caused her some trouble."],
+  strings: ["Who do we have here? Poor little thing, I think we already caused her some trouble."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase31", {
   cursor: false,
-  strings: ["Maybe you did not notice earlier, but I moved the security camera to Barbara", "The supervisor has seen the whole mess scene I am sure he will call very soon."],
+  strings: ["Maybe you did not notice earlier, but I moved the security camera to Barbara", "The supervisor has seen the whole mess scene... I am sure he will call very soon."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -2988,7 +2998,7 @@ new TypeIt("#supervisor-talk1", {
 
 new TypeIt("#supervisor-talk2", {
   cursor: false,
-  strings: ["Also, your colleague is sick. You will have to do a double shift, I hope you don't have better plans."],
+  strings: ["and: your colleague is sick and you'll have to do a double shift. I hope you don't have better plans."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3003,7 +3013,7 @@ new TypeIt("#barbara-talk5", {
 
 new TypeIt("#phrase32", {
   cursor: false,
-  strings: ["I think she had something planned!", "Anyway, we deserve a break now, stressing others is stressful. Call me in a few hours! "],
+  strings: ["I think she had something planned... Ops!", "Anyway, we deserve a break now, stressing others is stressful. Call me in a few hours! "],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3011,21 +3021,21 @@ new TypeIt("#phrase32", {
 // siesta 3
 new TypeIt("#siesta-time-phrase", {
   cursor: false,
-  strings: ["enjoy the siesta time"],
+  strings: ["enjoying the siesta"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase33", {
   cursor: false,
-  strings: ["Hello again! That was such a good nap!! "],
+  strings: ["Hello again! That was such a good nap!"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase34", {
   cursor: false,
-  strings: ["Great idea! The bar will be sooo full. ", "You’re the best assistant I’ve had so far!"],
+  strings: ["Happy hour, cheap drinks... The bar will be sooo full.", "That's a great idea!"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3034,7 +3044,7 @@ new TypeIt("#phrase34", {
 
 new TypeIt("#phrase35", {
   cursor: false,
-  strings: ["Oh look who's back. Valentino, the sleeping beauty again! "],
+  strings: ["Oh look who's back again...", "Valentino, the sleeping beauty! "],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3042,7 +3052,7 @@ new TypeIt("#phrase35", {
 /// valentino at bar
 new TypeIt("#valentino-talk3", {
   cursor: false,
-  strings: ["Hii ! Quick question…","I broke my phone in a rush. Would you let me use your phone to check the bus number?"],
+  strings: ["Hii ! Quick question…", "I broke my phone in a rush. Would you let me use your phone to check the bus number to go home?"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3056,21 +3066,21 @@ new TypeIt("#barbara-talk6", {
 
 new TypeIt("#valentino-talk4", {
   cursor: false,
-  strings: ["That is really nice of you, thank you very much! "],
+  strings: ["That's really nice of you, thank you very much! "],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase36", {
   cursor: false,
-  strings: ["Wait? What? Are we in a rom com now?"],
+  strings: ["Wait? What? Are we in a Romcom now?"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase37", {
   cursor: false,
-  strings: ["We should switch to Valentino, let’s go home with him!"],
+  strings: ["We should switch back to Valentino, let’s follow him!"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3084,21 +3094,23 @@ new TypeIt("#valentino-talk5", {
 
 new TypeIt("#valentino-talk6", {
   cursor: false,
-  strings: ["That was a long day. I'm going straight to bed."],
+  strings: ["ufff...That was a long day. I'm going straight to bed."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase38", {
   cursor: false,
-  strings: ["Here we are, I noticed that the demotivational quotes worked pretty well. Make sure, Valentino minds all of them."],
+  strings: ["soooo, the demotivational quotes worked pretty well with Lawrence. Make sure, Valentino noticed all of them."
+
+  ],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase39", {
   cursor: false,
-  strings: ["Good, all these thoughts won’t let him sleep for a while. "],
+  strings: ["Good, these thoughts won’t let him sleep for a while. "],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
