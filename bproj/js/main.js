@@ -1743,6 +1743,9 @@ function scene30() {
   document.querySelector(".mail-notification1").loop = false;
   document.querySelector(".mail-notification1").volume = 1;
 
+  document.querySelector(".clicking-keyboard-mercy").currentTime = 0;
+  document.querySelector(".clicking-keyboard-mercy").play();
+
 
   text.phrase24.style.display = "none";
   // text.phrase25.style.display = "block";
