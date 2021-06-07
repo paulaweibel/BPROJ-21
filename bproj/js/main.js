@@ -113,6 +113,7 @@ let gifs = {
   happyHour: document.querySelector("#happy-hour-gif"),
   screamphone: document.querySelector("#screaming-phone-gif"),
   wtf: document.querySelector("#wtf-gif"),
+  needbreak: document.querySelector("#overwhelmed-gif"),
 }
 
 let scene = {
@@ -1598,6 +1599,10 @@ function scene26Error() {
 
 /////////////
 function goMercy() {
+  document.querySelector(".typing-mercy").currentTime = 0;
+  document.querySelector(".typing-mercy").play();
+  document.querySelector(".typing-mercy").loop = true;
+  document.querySelector(".typing-mercy").volume = 1;
   ux.scroll.style.display = "none";
   ux.click.style.display = "block";
   domElement.body.style.backgroundColor = "var(--weiss)";
@@ -1677,6 +1682,13 @@ function scene29() {
 
 // show first mail
 function scene30() {
+
+  document.querySelector(".mail-notification1").currentTime = 0;
+  document.querySelector(".mail-notification1").play();
+  document.querySelector(".mail-notification1").loop = false;
+  document.querySelector(".mail-notification1").volume = 1;
+
+
   text.phrase24.style.display = "none";
   // text.phrase25.style.display = "block";
   document.querySelector("#mail1").style.display = "block"
@@ -1688,6 +1700,13 @@ function scene30() {
 
 // mail spam
 function scene31() {
+  document.querySelector(".typing-mercy").pause();
+  document.querySelector(".mail-notification1").pause();
+  document.querySelector(".mail-notification2").currentTime = 0;
+  document.querySelector(".mail-notification2").play();
+  document.querySelector(".mail-notification2").loop = true;
+  document.querySelector(".mail-notification2").volume = 1;
+  text.phrase24.style.display = "none";
   text.phrase25.style.display = "none";
   character.mercy3a.style.display = "none";
   character.mercy3b.style.display = "block";
@@ -1804,6 +1823,8 @@ function setTranslate(xPos, yPos, el) {
 
 // SCENE MERCY CHAOS WIND
 function mercyChaos() {
+  document.querySelector(".mail-notification2").pause();
+  gifs.needbreak.style.display = "block";
 
   document.querySelector(".wind").pause();
   ux.click.style.display = "block";
@@ -1842,6 +1863,11 @@ function mercyChaos() {
 
 ///////////// BARBIE
 function goBarbara() {
+  document.querySelector(".beat1").currentTime = 0;
+  document.querySelector(".beat1").play();
+  document.querySelector(".beat1").loop = true;
+  document.querySelector(".beat1").volume = 0.2;
+  gifs.needbreak.style.display = "none";
   ux.scroll.style.display = "none";
   ux.click.style.display = "block";
   domElement.body.style.backgroundColor = "var(--weiss)";
@@ -2693,7 +2719,7 @@ new TypeIt("#phrase23", {
 
 new TypeIt("#phrase24", {
   cursor: false,
-  strings: ["The manager does not seem overwhelmed by this daily schedule. It’s not easy to unsettle her. I will have to come up with some personal stuff. "],
+  strings: ["She does not seem overwhelmed by this daily schedule. It’s not easy to unsettle her. I will have to come up with some personal stuff. "],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()

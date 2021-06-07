@@ -35,14 +35,14 @@
     position: absolute;
     height: 40vh;
     top: 50vh;
-    left: calc(50vw - 30vh);
+    left: calc(40vw - 30vh);
 }
 
 #info-icon-mercy {
     display: none;
     position: fixed;
     top: 43vh;
-    left: calc(50vw + 27vh);
+    left: calc(40vw + 27vh);
     height: 5vh;
     animation: info-icon 1.5s infinite ease-in-out;
 }
@@ -65,8 +65,8 @@
 #todo-mercy-box {
     display: none;
     position: absolute;
-    top: 12vh;
-    left: calc(30vw + 65vh);
+    top: 20vh;
+    left: calc(35vw + 65vh);
     width: 38vh;
 }
 
@@ -118,8 +118,8 @@
 #mail-mercy-box {
     display: none;
     position: absolute;
-    top: 5vh;
-    left: calc(30vw + 47vh);
+    top: 15vh;
+    left: calc(25vw + 40vh);
     width: 10vh;
 }
 
@@ -135,7 +135,7 @@
 }
 
 .mail1-floor {
-    transform: translate(0, 22vh) rotate(20deg) !important;
+    transform: translate(0, 12vh) rotate(20deg) !important;
 }
 
 #mail2 {
@@ -143,7 +143,7 @@
 }
 
 .mail2-floor {
-    transform: translate(3vw, 35vh) rotate(-30deg) !important;
+    transform: translate(3vw, 25vh) rotate(-30deg) !important;
 }
 
 #mail3 {
@@ -152,7 +152,7 @@
 }
 
 .mail3-floor {
-    transform: translate(2vw, 47vh) rotate(20deg) !important;
+    transform: translate(2vw, 37vh) rotate(20deg) !important;
 }
 
 #mail4 {
@@ -177,7 +177,7 @@
     position: fixed;
     width: 100%;
     top: 20vh;
-    margin-left: 30vw;
+    margin-left: 15vw;
     height: 30vh;
     touch-action: none;
 }
@@ -187,7 +187,7 @@
     position: fixed;
     width: 100%;
     top: 20vh;
-    margin-left: 30vw;
+    margin-left: 15vw;
     height: 30vh;
     touch-action: none;
 }
@@ -202,6 +202,14 @@
 .open-me {
     position: relative;
     left: 22vh;
+}
+
+#overwhelmed-gif {
+    position: fixed;
+    display: none;
+    height: 12vh;
+    top: 50vh;
+    left: calc(50vw - 15vh);
 }
 
 /* BAR SCENE  */
