@@ -469,7 +469,7 @@ domElement.titleButton.addEventListener('click', function () {
   document.querySelector(".user-clicking-sound").currentTime = 0;
   document.querySelector(".user-clicking-sound").play();
   document.querySelector(".user-clicking-sound").loop = false;
-  document.querySelector(".user-clicking-sound").volume = 0.25;
+  document.querySelector(".user-clicking-sound").volume = 0.6;
 
   if (variable.visible === 1 || variable.visible === 3) {
     variable.visible = 0;
@@ -1277,7 +1277,7 @@ function runToBus() {
     document.querySelector(".lawrence-music-headphones").currentTime = 0;
     document.querySelector(".lawrence-music-headphones").play();
     document.querySelector(".lawrence-music-headphones").loop = false;
-    document.querySelector(".lawrence-music-headphones").volume = 0.5;
+    document.querySelector(".lawrence-music-headphones").volume = 0.4;
     text.phrase11.style.display = "block";
     character.valentino2a.classList.add("valentinoLeaves");
     character.valentino2b.classList.add("valentinoLeaves");
@@ -2739,7 +2739,7 @@ function hideStressFormular() {
 function idValentino() {
   document.querySelector("#id-valentino").style.display = "block";
   document.querySelector(".info-icon-sound").currentTime = 0;
-  document.querySelector(".info-icon-sound").volume = 0.5;
+  document.querySelector(".info-icon-sound").volume = 0.75;
   document.querySelector(".info-icon-sound").play();
   document.querySelector(".info-icon-sound").loop = false;
   console.log("ID VALENTINO")
@@ -2748,7 +2748,7 @@ function idValentino() {
 function idLawrence() {
   document.querySelector("#id-lawrence").style.display = "block";
   document.querySelector(".info-icon-sound").currentTime = 0;
-  document.querySelector(".info-icon-sound").volume = 0.5;
+  document.querySelector(".info-icon-sound").volume = 0.75;
   document.querySelector(".info-icon-sound").play();
   document.querySelector(".info-icon-sound").loop = false;
   console.log("ID Lawrence")
@@ -2757,7 +2757,7 @@ function idLawrence() {
 function idMercy() {
   document.querySelector("#id-mercy").style.display = "block";
   document.querySelector(".info-icon-sound").currentTime = 0;
-  document.querySelector(".info-icon-sound").volume = 0.5;
+  document.querySelector(".info-icon-sound").volume = 0.75;
   document.querySelector(".info-icon-sound").play();
   document.querySelector(".info-icon-sound").loop = false;
   console.log("ID Mercy")
@@ -2766,7 +2766,7 @@ function idMercy() {
 function idBarbara() {
   document.querySelector("#id-barbara").style.display = "block";
   document.querySelector(".info-icon-sound").currentTime = 0;
-  document.querySelector(".info-icon-sound").volume = 0.5;
+  document.querySelector(".info-icon-sound").volume = 0.75;
   document.querySelector(".info-icon-sound").play();
   document.querySelector(".info-icon-sound").loop = false;
   console.log("ID Barbara")
