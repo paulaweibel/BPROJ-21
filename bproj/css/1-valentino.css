@@ -136,8 +136,9 @@
 
 .valentino-bar {
     position: fixed;
-    left: 50vw;
-    max-height: 45vh;
+    top: 31vh;
+    left: calc(100vw - 87vh);
+    max-height: 52vh;
 }
 
 .valentino-empty-bed {
@@ -203,6 +204,7 @@
 
 #valentino-5 {
     display: none;
+    left: calc(100vw - 100vh);
 }
 
 #valentino-6 {
@@ -225,6 +227,8 @@
     max-height: 10vh;
 }
 
+
+/* POST-ITS */
 #all-valentino-post-it {
     display: none;
     position: fixed;
@@ -236,6 +240,15 @@
 
 .valentino-post-it {
     height: 20vh;
+}
+
+#val-post1{
+    background-color: red;
+}
+
+.endPositionPostIt{
+    top: 15vh !important;
+    left: calc(50vw - 7vh) !important;
 }
 
 

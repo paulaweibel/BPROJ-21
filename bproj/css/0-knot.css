@@ -382,7 +382,7 @@ h5 {
 }
 
 .knotOutsideOfficeBuilding {
-    margin-left: -10vh !important;
+    margin-left: calc(100vw - 30vh) !important;
     margin-top: 50vh !important;
 }
 
@@ -424,7 +424,6 @@ h5 {
 .knotMercyBar1 {
     margin-left: 10vh !important;
     margin-top: -5vh !important;
-
 }
 
 .knotBarAway {
@@ -440,6 +439,16 @@ h5 {
 .knotBarHappyHour {
     margin-left: 10vw !important;
     margin-top: 35vh !important;
+}
+
+.knotValentinoBar {
+    margin-left: calc(100vw - 40vh) !important;
+    margin-top: -10vh !important;
+}
+
+.knotValentinoBarHidden {
+    margin-left: calc(100vw + 50vh) !important;
+    margin-top: -20vh !important;
 }
 
 .knotLastScene {
