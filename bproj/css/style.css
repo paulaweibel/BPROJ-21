@@ -568,10 +568,11 @@ img {
   left: 25vh !important;
 }
 
+/* (good morning text) */
 #mercy-talk1{
   text-align: center;
-  transform: translate(10vh, 3.5vh);
-    width: 17vh;
+  transform: translate(10vh, 0vh);
+  width: 17vh;
 }
 
 .bar-guest-talks {
@@ -591,7 +592,7 @@ img {
 
 
 .angry-supervisor-talks {
-  left: calc(100vw - 97vh) !important;
+  left: calc(100vw - 99vh) !important;
 }
 
 #people-talk-right {
@@ -601,9 +602,10 @@ img {
 
 #people-talk-angry {
   display:none;
-  max-width: 100%;
+  max-width: 90%;
   position: absolute;
-  left: 20vh;
+  left: 23vh;
+  transform: translate(0vh, -2vh);
 }
 
 #people-talk-left {
@@ -627,7 +629,7 @@ img {
 .supervisor-people-talk {
   position: relative;
   margin: 8vh;
-  top: -5vh;
+  top: -7vh;
   color: var(--schwarz);
   left: 23vh;
   display: none;

@@ -1460,7 +1460,7 @@ function scene20() {
   character.lawrence3.style.display = "none";
   character.knot.classList.add("knotOutsideOfficeBuilding");
   scene.officeBuilding.style.display = "none";
-  variable.currentScene = 20.2;
+  variable.currentScene = 20.4;
   setTimeout(() => {
     scene20a();
   }, 3000)
@@ -1473,7 +1473,7 @@ function scene20a() {
   text.outsideTheOffice.style.display = "none";
   character.mercy.style.display = "block";
   character.mercy1a.style.display = "block";
-  text.peopleTalk.style.display = "block";
+  text.peopleTalk.style.display = "flex";
   extraSmallTalkingBubble();
   text.peopleTalk.classList.add("bubbleGrow");
   text.peopleTalk.classList.add("mercy-goodmorning");
@@ -1491,8 +1491,9 @@ function scene20a() {
 
 // SCENE 20b Knot_ give me a hand
 function scene20b() {
-  text.peopleTalk.style.display = "none";
+  ux.click.style.display = "none";
   text.peopleTalk.classList.remove("bubbleGrow");
+  text.peopleTalk.style.display = "none";
   character.knot.classList.add("knotWaitingroom");
   text.mercyTalk1.style.display = "none";
   text.phrase19.style.display = "block";
@@ -1530,6 +1531,7 @@ function scene21() {
     document.querySelector(".lawrence-ground").play();
     document.querySelector(".lawrence-ground").loop = false;
     document.querySelector(".lawrence-groundd").volume = 1;
+    ux.click.style.display = "block";
   }, 3000)
 }
 
@@ -1579,13 +1581,12 @@ function scene24a() {
   text.aSiestaLater.style.display = "block";
   scene.clock0930.style.display = "none";
   scene.clock11.style.display = "block";
+  variable.currentScene = 24.9;
   setTimeout(() => {
     document.querySelector("#a-siesta-later").style.display = "none";
     text.aSiestaLater.style.display = "none";
-  }, 2000)
-  setTimeout(() => {
     variable.currentScene = 24.2;
-  }, 200)
+  }, 2000)
 }
 
 // SCENE 24b Lawrence leaving the office
@@ -1891,6 +1892,7 @@ function mercyChaos() {
 
 ///////////// BARBIE
 function goBarbara() {
+  text.peopleTalk.style.display = "flex";
   document.querySelector(".beat1").currentTime = 0;
   document.querySelector(".beat1").play();
   document.querySelector(".beat1").loop = true;
