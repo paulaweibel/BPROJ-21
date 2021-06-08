@@ -8,6 +8,7 @@ let variable = {
   toggleCount: 0,
   motCount: 0,
   postitCount: 0,
+  backgroundFade: -0.5,
   moveflag: false,
   visible: 1,
   textspeed: 30,
@@ -467,6 +468,16 @@ function hideAbout() {
   }, 400)
 }
 
+function showNavigation() {
+  document.querySelector("#navigation-points").style.display="block";
+  document.querySelector("#navigation-button").style.display="none";
+}
+
+function hideNavigation() {
+  document.querySelector("#navigation-points").style.display="none";
+  document.querySelector("#navigation-button").style.display="block";
+}
+
 ////////////////////////////////
 //// TITLE /////////////////////
 
@@ -535,7 +546,7 @@ function animation(scrollPos) {
     character.knot.classList.add("knotStart");
     domElement.knotTalkingRight.classList.remove("bubbleGrow");
     // domElement.scrollIcon.classList.remove("scroll-icon-after");
-    document.querySelector("#navigation").style.display = "block";
+    document.querySelector("#navigation-button").style.display = "block";
     variable.currentScene = 0;
   }
 
@@ -549,7 +560,7 @@ function animation(scrollPos) {
     character.knot.classList.add("knotIntro");
     domElement.knotTalkingRight.classList.add("bubbleGrow");
     text.knotText.style.display = "block";
-    document.querySelector("#navigation").style.display = "none";
+    document.querySelector("#navigation-button").style.display = "none";
 
   }
 
@@ -999,6 +1010,7 @@ domElement.helpButtons.addEventListener('click', function () {
 });
 
 function goValentino() {
+  document.querySelector("#navigation-points").style.display="none";
   document.querySelector(".yes-no-click").pause();
   ux.scroll.style.display = "none";
   domElement.intro.style.display = "none";
@@ -1335,6 +1347,7 @@ function runToBus() {
 function goLawrence() {
   ux.scroll.style.display = "none";
   ux.click.style.display = "block";
+  document.querySelector("#navigation-points").style.display="none";
   document.querySelector(".lawrence-music-headphones").play();
   document.querySelector(".lawrence-music-headphones").loop = false;
   document.querySelector(".lawrence-music-headphones").volume = 0.5;
@@ -1710,6 +1723,7 @@ function scene26Error() {
 
 /////////////
 function goMercy() {
+  document.querySelector("#navigation-points").style.display="none";
   document.querySelector(".typing-mercy").currentTime = 0;
   document.querySelector(".typing-mercy").play();
   document.querySelector(".typing-mercy").loop = true;
@@ -1996,6 +2010,7 @@ function scene34() {
 
 ///////////// BARBIE
 function goBarbara() {
+  document.querySelector("#navigation-points").style.display="none";
   text.peopleTalk.style.display = "none";
   noOneTalks();
   document.querySelector(".face-hit").pause();
@@ -2436,13 +2451,13 @@ function scene55() {
   }, 4200)
   setTimeout(() => {
     character.valentino3.style.display = "block";
-  }, 4000)
+    character.barbara8.style.display = "none";
+    character.barbara4.style.display = "block";
+  }, 4600)
   setTimeout(() => {
     ux.click.classList = "textWhite";
     variable.currentScene = 55.1;
     ux.click.style.display = "block";
-    character.barbara8.style.display = "none";
-    character.barbara4.style.display = "block";
   }, 9700)
 }
 
@@ -2554,6 +2569,7 @@ function goValentinoEnd() {
   document.querySelector(".french-sound").play();
   document.querySelector(".french-sound").loop = false;
   document.querySelector(".french-sound").volume = 0.3;
+  document.querySelector("#navigation-points").style.display="none";
   ux.click.style.display = "none";
   ux.scroll.style.display = "none";
   domElement.intro.style.display = "none";
@@ -2607,6 +2623,9 @@ function scene81() {
 // VALENTINO POST ITS CLICKED
 function countPostit() {
   variable.postitCount = variable.postitCount + 1;
+  variable.backgroundFade = variable.backgroundFade + 0.3;
+  domElement.body.style.backgroundColor = "rgba(12, 12, 12," + variable.backgroundFade + ")";
+  console.log(domElement.body.style.backgroundColor);
   if (variable.postitCount === 5) {
     setTimeout(() => {
       scene82();
@@ -2658,6 +2677,9 @@ function postit5() {
 
 // after post its on right position
 function scene82() {
+  ux.click.classList = "textWhite";
+  ux.click.style.display = "block";
+  domElement.body.style.backgroundColor = "#0c0c0c";
   document.querySelector(".post-it-sound").pause();
   character.valentino7b.style.display = "block";
   character.valentino7a.style.display = "none";
@@ -2674,13 +2696,30 @@ function scene83() {
   text.phrase39.style.display = "none";
   text.phrase40.style.display = "block";
   setTimeout(() => {
+    variable.currentScene = 84;
+  }, 200)
+}
+
+// VALENTINO IS SPINNNNNING
+function scene84() {
+  ux.click.style.display = "none";
+  character.knot.classList = "knotGone";
+  character.valentino7b.classList.add("valentino-spinning");
+  text.phrase40.style.display = "none";
+  setTimeout(() => {
     variable.currentScene = "outro1";
   }, 200)
+  setTimeout(() => {
+    ux.click.classList = "textBlack";
+    ux.click.style.display = "block";
+  }, 1000)
 }
 
 // OUTRO: thank you, you were best assistant ever
 function outro1() {
   document.querySelector(".french-sound").pause();
+  ux.click.classList = "textWhite";
+  ux.click.style.display = "none";
   domElement.assets.style.display = "none";
   character.valentino.style.display = "none";
   character.lawrence.style.display = "none";
@@ -2693,6 +2732,7 @@ function outro1() {
   text.outro1.style.display = "block";
   setTimeout(() => {
     variable.currentScene = "outro2";
+    ux.click.style.display = "block";
   }, 200)
 }
 
@@ -2709,10 +2749,13 @@ function outro2() {
 function outro3() {
   document.querySelector("#knot-outro").style.display = "flex";
   document.querySelector("#knot-outro").style.backgroundColor = "rgba(12,12,12,0.95)";
+  document.querySelector("#navigation-points").style.display="none";
   character.knot.classList = "knotOutro2";
   text.outro3.style.display = "block";
   text.outro2.style.display = "none";
   variable.currentScene = 1000;
+  ux.click.classList="textWhite";
+  ux.click.style.display = "block";
   ux.scroll.style.display = "none";
   domElement.intro.style.display = "none";
   domElement.body.style.background = "var(--schwarz)";

@@ -210,19 +210,19 @@
 
 .happy-hour-guest {
   position: absolute;
-  top: 5vh;
+  top: 32vh;
   right: 0vh;
   height: 55vh;
   opacity: 1;
   transform: translate(150vh, 0);
-  animation: guest-fade-out 6s forwards, guest-slide-in 2s forwards;
+  animation: guest-fade-out 1s infinite, guest-slide-in 2s forwards;
 }
 
 /* HAPPY HOUR GUEST */
 .guest-wiggle {
-  height: 95vh;
+  height: 60vh;
   opacity: 1;
-  animation: guest-wiggle 2s forward;
+  animation: guest-wiggle 2s forwards;
   /* animation: guest-wiggle 2s infinite; */
 }
 
@@ -238,19 +238,22 @@
 }
 
 /* DISAPPEAR AFTER 10s */
-/* @keyframes guest-fade-out {
+@keyframes guest-fade-out {
   0% {
-    opacity: 1;
+    padding-top: 0px;
+    padding-right: 0vh;
   }
 
-  95% {
-    opacity: 1;
+  50% {
+    /* padding-top: 1vh; */
+    padding-right: 0.5vw;
   }
 
   100% {
-    opacity: 0;
+    padding-top: 0px;
+    padding-right: 0vh;
   }
-} */
+}
 
 /* CONSTANT WIGGLE OF GUESTS */
 @keyframes guest-wiggle {
@@ -396,7 +399,7 @@
 
 #guest27 {
   display: none;
-  margin-right: 76vw;
+  margin-right: 136vh;
 }
 
 #guest28 {

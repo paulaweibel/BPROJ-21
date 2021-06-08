@@ -227,6 +227,20 @@
     display: none;
 }
 
+/* LAST SCENE VALENTINO ANIMATION */
+.valentino-spinning{
+    animation: valentino-spins 2s infinite;
+}
+
+@keyframes valentino-spins {
+    0%{
+        transform: rotate(0)
+    }
+    50%{
+        transform: rotate(20deg)
+    }
+}
+
 #night-table {
     display: none;
     position: fixed;

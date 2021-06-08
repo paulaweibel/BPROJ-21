@@ -423,8 +423,8 @@
             <p id="phrase36" class="phrase phrase-right phrase-bar"></p>
             <p id="phrase37" class="phrase phrase-right phrase-bar"></p>
             <p id="phrase38" class="phrase phrase-right"></p>
-            <p id="phrase39" class="phrase phrase-right"></p>
-            <p id="phrase40" class="phrase phrase-right"></p>
+            <p id="phrase39" class="phrase phrase-right textWhite"></p>
+            <p id="phrase40" class="phrase phrase-right textWhite"></p>
         </div>
 
         <img id="lawrence-info" class="id button" onclick="idLawrence()" src="img/objects-icons/info-icon.png">
@@ -534,7 +534,11 @@
 
 
     <!-- NAVIGATE -->
-    <div id="navigation">
+    <div id="navigation-button">
+        <p class="button" onclick="showNavigation()">Jump To</p>
+    </div>
+    <div id="navigation-points">
+        <p class="button" onclick="hideNavigation()">Back</p>
         <a class="button" onclick="goValentino()">valentino</a>
         <a class="button" onclick="goLawrence()">lawrence</a>
         <a class="button" onclick="goMercy()">mercy</a>

@@ -29,6 +29,7 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
   height: 200vh;
+  transition: background-color 0.2s;
 }
 
 
@@ -85,11 +86,21 @@ click-text {
   opacity: 0;
 }
 
-#navigation {
-  color: grey;
+#navigation-button {
+  color: var(--schwarz);
   position: fixed;
   margin: 10px;
-  opacity: 0.5;
+  opacity: 1;
+  top: 0;
+  left: 0;
+}
+
+#navigation-points {
+  display:none;
+  color: var(--schwarz);
+  position: fixed;
+  margin: 10px;
+  opacity: 1;
   top: 0;
   left: 0;
 }
