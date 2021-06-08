@@ -1905,7 +1905,7 @@ function mercyChaos() {
   gifs.arrowdrag.style.display = "none";
   document.querySelector(".mail-notification2").pause();
 
-  document.querySelector(".wind").pause();
+  document.querySelector(".wind-sound").pause();
   ux.click.style.display = "block";
   text.phrase26.style.display = "None";
   document.querySelector("#dragQueen").classList.remove("drag-cursor");
@@ -1950,9 +1950,14 @@ function mercyChaos() {
 function goBarbara() {
   document.querySelector(".face-hit").pause();
   document.querySelector(".face-hit2").pause();
+
+  document.querySelector(".bar-ambience-chill").currentTime = 0;
+  document.querySelector(".bar-ambience-chill").play();
+  document.querySelector(".bar-ambience-chill").loop = true;
+  document.querySelector(".bar-ambience-chill").volume = 0.1;
+
   document.querySelector(".waiting-room-sound").pause();
   text.peopleTalk.style.display = "flex";
-  bar - ambience2
   ux.scroll.style.display = "none";
   ux.click.style.display = "block";
   domElement.body.style.backgroundColor = "var(--weiss)";
@@ -2052,7 +2057,7 @@ function scene40a() {
   document.querySelector(".coffee-spill").currentTime = 0;
   document.querySelector(".coffee-spill").play();
   document.querySelector(".coffee-spill").loop = false;
-  document.querySelector(".coffee-spill").volume = 0.5;
+  document.querySelector(".coffee-spill").volume = 0.7;
 
   barTalks();
   text.barbaraTalk3a.style.display = "block";
@@ -2235,7 +2240,12 @@ function scene50() {
 
 // siesta time
 function scene52() {
+  document.querySelector(".siesta-sound").currentTime = 0;
+  document.querySelector(".siesta-sound").play();
+  document.querySelector(".siesta-sound").loop = true;
+  document.querySelector(".siesta-sound").volume = 0.5;
   document.querySelector(".endedcall").pause();
+  document.querySelector(".bar-ambience-chill").pause();
   gifs.drink.style.display = "none";
   character.barbara6b.style.display = "none";
   text.phrase32.style.display = "none";
@@ -2251,6 +2261,9 @@ function scene52() {
 //  HELLLO AGAIN
 function scene53() {
   character.barbara7.style.display = "block";
+  document.querySelector(".siesta-sound").pause();
+  document.querySelector(".bar-ambience-chill").play();
+
   ux.click.style.display = "none";
   document.querySelector("#siesta-time").style.display = "none";
   document.querySelector("#happy-hour-button").style.display = "block";
@@ -2310,10 +2323,11 @@ function scene55() {
     character.barbara8.style.display = "block";
   }, 900)
   setTimeout(() => {
-    document.querySelector(".bar-ambience2").currentTime = 0;
-    document.querySelector(".bar-ambience2").play();
-    document.querySelector(".bar-ambience2").loop = false;
-    document.querySelector(".bar-ambience2").volume = 0.5;
+    document.querySelector(".bar-ambience-chill").pause();
+    document.querySelector(".bar-ambience-full1").currentTime = 0;
+    document.querySelector(".bar-ambience-full1").play();
+    document.querySelector(".bar-ambience-full1").loop = false;
+    document.querySelector(".bar-ambience-full1").volume = 0.5;
     scene.guest5.style.display = "block";
     scene.guest6.style.display = "block";
   }, 1200)
@@ -2333,7 +2347,6 @@ function scene55() {
   setTimeout(() => {
     scene.guest14.style.display = "block";
     scene.guest15.style.display = "block";
-    document.querySelector(".bar-ambience1").pause();
   }, 2400)
   setTimeout(() => {
     scene.guest16.style.display = "block";
@@ -2368,7 +2381,7 @@ function scene55() {
 
   // ALL GUESTS HAPPY HOUR GONE
   setTimeout(() => {
-    document.querySelector(".bar-ambience2").pause();
+    document.querySelector(".bar-ambience-full1").pause();
     character.barbara8.style.display = "none";
     character.barbara9.style.display = "block";
     character.knot.classList = "knotValentinoBar";
