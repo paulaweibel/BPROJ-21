@@ -2700,28 +2700,13 @@ function scene83() {
   }, 200)
 }
 
-// VALENTINO DISAPPEARS TRANSITION
-function scene84() {
-  character.valentino7b.classList.add("valentino-transition3");
-  ux.click.style.display = "none";
-  character.knot.classList = "knotGone";
-  text.phrase40.style.display = "none";
-  setTimeout(() => {
-    variable.currentScene = "outro1";
-  }, 200)
-  setTimeout(() => {
-    ux.click.classList = "textBlack";
-    ux.click.style.display = "block";
-  }, 1000)
-}
-
 // Initial volume of 0.20
 // Make sure it's a multiple of 0.05
 var vol = 0.30;
 var interval = 500; // 200ms interval
 
-// OUTRO: thank you, you were best assistant ever
-function outro1() {
+// VALENTINO DISAPPEARS TRANSITION
+function scene84() {
   // FRENCH FADE OUT SONG
   var fadeout = setInterval(
     function () {
@@ -2736,6 +2721,21 @@ function outro1() {
         clearInterval(fadeout);
       }
     }, interval);
+  character.valentino7b.classList.add("valentino-transition3");
+  ux.click.style.display = "none";
+  character.knot.classList = "knotGone";
+  text.phrase40.style.display = "none";
+  setTimeout(() => {
+    variable.currentScene = "outro1";
+  }, 200)
+  setTimeout(() => {
+    ux.click.classList = "textBlack";
+    ux.click.style.display = "block";
+  }, 1000)
+}
+
+// OUTRO: thank you, you were best assistant ever
+function outro1() {
   // document.querySelector(".french-sound").pause();
   ux.click.classList = "textWhite";
   ux.click.style.display = "none";
