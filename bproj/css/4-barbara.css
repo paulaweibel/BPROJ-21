@@ -171,7 +171,6 @@
   }
 }
 
-
 #sign-button-on {
   display: none;
 }
@@ -223,13 +222,14 @@
 .guest-wiggle {
   height: 95vh;
   opacity: 1;
-  animation: guest-wiggle 2s infinite;
+  animation: guest-wiggle 2s forward;
+  /* animation: guest-wiggle 2s infinite; */
 }
 
 /* ENTERING FROM THE RIGHT */
 @keyframes guest-slide-in {
   0% {
-    transform: scale(10) rotate(-3deg) translate(-150vh, 0);
+    transform: translate(-150vh, 0);
   }
 
   100% {
@@ -237,8 +237,8 @@
   }
 }
 
-/* GUEST DON'T DISAPPER AT ALL */
-@keyframes guest-fade-out {
+/* DISAPPEAR AFTER 10s */
+/* @keyframes guest-fade-out {
   0% {
     opacity: 1;
   }
@@ -248,18 +248,18 @@
   }
 
   100% {
-    opacity: 1;
+    opacity: 0;
   }
-}
+} */
 
 /* CONSTANT WIGGLE OF GUESTS */
 @keyframes guest-wiggle {
   0% {
-    transform: rotate(0deg);
+    transform: scale(10) rotate(-3deg) translate(-12vh, 0);
   }
 
-  50% {
-    transform: rotate(2deg);
+  100% {
+    transform: rotate(0deg);
   }
 }
 
@@ -470,8 +470,6 @@
 #barbara-10d {
   display: none;
 }
-
-
 
 
 /* stuff to put at the bottom */

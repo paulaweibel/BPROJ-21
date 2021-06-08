@@ -2341,6 +2341,11 @@ function scene54() {
 
 // HAPPY HOUR GUESTS
 function scene55() {
+  document.querySelector(".bar-ambience-full1").currentTime = 0;
+  document.querySelector(".bar-ambience-full1").play();
+  document.querySelector(".bar-ambience-full1").loop = true;
+  document.querySelector(".bar-ambience-full1").volume = 0.5;
+  document.querySelector(".bar-ambience-chill").pause();
   document.querySelector(".neonlight1").pause();
   document.querySelector(".neonlight2").pause();
   ux.click.style.display = "none";
@@ -2350,6 +2355,7 @@ function scene55() {
   variable.currentScene = 55.7;
   // HAPPY HOUR GUESTS
   setTimeout(() => {
+
     scene.guest2.style.display = "block";
   }, 300)
   setTimeout(() => {
@@ -2361,11 +2367,6 @@ function scene55() {
     character.barbara8.style.display = "block";
   }, 900)
   setTimeout(() => {
-    document.querySelector(".bar-ambience-chill").pause();
-    document.querySelector(".bar-ambience-full1").currentTime = 0;
-    document.querySelector(".bar-ambience-full1").play();
-    document.querySelector(".bar-ambience-full1").loop = false;
-    document.querySelector(".bar-ambience-full1").volume = 0.5;
     scene.guest5.style.display = "block";
     scene.guest6.style.display = "block";
   }, 1200)
@@ -2400,6 +2401,10 @@ function scene55() {
     scene.guest22.style.display = "block";
   }, 3300)
   setTimeout(() => {
+    document.querySelector(".bar-ambience-full2").currentTime = 0;
+    document.querySelector(".bar-ambience-full2").play();
+    document.querySelector(".bar-ambience-full2").loop = true;
+    document.querySelector(".bar-ambience-full2").volume = 0.5;
     scene.guest23.style.display = "block";
     scene.guest24.style.display = "block";
     scene.guest25.style.display = "block";
@@ -2420,7 +2425,6 @@ function scene55() {
     ux.click.classList = "textWhite";
     variable.currentScene = 55.1;
     ux.click.style.display = "block";
-    document.querySelector(".bar-ambience-full1").pause();
     character.barbara8.style.display = "none";
     character.barbara9.style.display = "block";
   }, 9700)
@@ -2440,6 +2444,8 @@ function scene55a() {
 
 // look whos back!!
 function scene55b() {
+  document.querySelector(".bar-ambience-full1").pause();
+  document.querySelector(".bar-ambience-full2").pause();
   ux.click.style.display = "none";
   ux.click.classList = "textBlack";
   document.querySelector("#a-happy-hour-later").style.display = "none";
