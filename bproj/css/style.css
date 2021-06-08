@@ -96,7 +96,7 @@ click-text {
 }
 
 #navigation-points {
-  display:none;
+  display: none;
   color: var(--schwarz);
   position: fixed;
   margin: 10px;
@@ -280,7 +280,7 @@ click-text {
 
 /* ABOUT TITLE: HIDDEN WORRIES */
 #about-title {
-  height: 13vw;
+  height: 9vw;
   margin-bottom: 2vw;
 }
 

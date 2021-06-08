@@ -141,7 +141,6 @@ let scene = {
   todoMercy: document.querySelector("#todo-mercy-box"),
   mailMercy: document.querySelector("#mail-mercy-box"),
   valentinoPostIt: document.querySelector("#all-valentino-post-it"),
-  nightTable: document.querySelector("#night-table"),
   // happy hour
   guest1: document.querySelector("#guest1"),
   guest2: document.querySelector("#guest2"),
@@ -2450,7 +2449,6 @@ function scene55() {
     scene.guest30.style.display = "block";
   }, 4200)
   setTimeout(() => {
-    character.valentino3.style.display = "block";
     character.barbara8.style.display = "none";
     character.barbara4.style.display = "block";
   }, 4600)
@@ -2463,6 +2461,7 @@ function scene55() {
 
 // click to see transistion "a happy hour later"
 function scene55a() {
+  character.valentino3.style.display = "block";
   character.barbara4.style.display = "none";
   character.barbara9.style.display = "block";
   ux.click.style.display = "none";
@@ -2602,7 +2601,6 @@ function scene80() {
   text.valentinoTalk6.style.display = "none";
   character.valentino7a.style.display = "block";
   character.valentino6.style.display = "none";
-  scene.nightTable.style.display = "block";
   character.knot.classList.remove("knotLastScene");
   text.phrase38.style.display = "block";
   setTimeout(() => {
@@ -2677,6 +2675,7 @@ function postit5() {
 
 // after post its on right position
 function scene82() {
+  character.valentino7b.classList.add("valentino-transition1");
   ux.click.classList = "textWhite";
   ux.click.style.display = "block";
   domElement.body.style.backgroundColor = "#0c0c0c";
@@ -2692,6 +2691,7 @@ function scene82() {
 }
 
 function scene83() {
+  character.valentino7b.classList.add("valentino-transition2");
   scene.valentinoPostIt.style.display = "none";
   text.phrase39.style.display = "none";
   text.phrase40.style.display = "block";
@@ -2700,11 +2700,11 @@ function scene83() {
   }, 200)
 }
 
-// VALENTINO IS SPINNNNNING
+// VALENTINO DISAPPEARS TRANSITION
 function scene84() {
+  character.valentino7b.classList.add("valentino-transition3");
   ux.click.style.display = "none";
   character.knot.classList = "knotGone";
-  character.valentino7b.classList.add("valentino-spinning");
   text.phrase40.style.display = "none";
   setTimeout(() => {
     variable.currentScene = "outro1";
