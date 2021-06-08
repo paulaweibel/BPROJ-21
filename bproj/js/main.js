@@ -118,6 +118,7 @@ let gifs = {
   wtf: document.querySelector("#wtf-gif"),
   arrowdrag: document.querySelector("#drag-gif"),
   scribble: document.querySelector("#scribble-gif"),
+  dreaming: document.querySelector("#sweet-dreams-gif"),
 }
 
 let scene = {
@@ -2234,7 +2235,7 @@ function scene48() {
   document.querySelector(".yelling2").currentTime = 0;
   document.querySelector(".yelling2").play();
   document.querySelector(".yelling2").loop = true;
-  document.querySelector(".yelling2").volume = 1;
+  document.querySelector(".yelling2").volume = 0.5;
 
   text.peopleTalk.classList.add("angry-supervisor-talks");
   gifs.screamphone.style.display = "block";
@@ -2331,7 +2332,6 @@ function scene54() {
   document.querySelector("#sign-button-off").style.display = "none";
   gifs.happyHour.style.display = "block";
   character.knot.classList.add("knotBarHappyHour");
-
   text.phrase33.style.display = "none";
   text.phrase34.style.display = "block";
   setTimeout(() => {
@@ -2415,6 +2415,10 @@ function scene55() {
     scene.guest28.style.display = "block";
   }, 3900)
   setTimeout(() => {
+    document.querySelector(".bar-ambience-late").currentTime = 0;
+    document.querySelector(".bar-ambience-late").play();
+    document.querySelector(".bar-ambience-late").loop = true;
+    document.querySelector(".bar-ambience-late").volume = 0.1;
     scene.guest29.style.display = "block";
     scene.guest30.style.display = "block";
   }, 4200)
@@ -2433,6 +2437,7 @@ function scene55() {
 // click to see transistion "a happy hour later"
 function scene55a() {
   ux.click.style.display = "none";
+  gifs.happyHour.style.display = "none";
   document.querySelector("#a-happy-hour-later").style.display = "Block";
   text.aHappyHourLater.style.display = "block";
   document.querySelector("#happy-hour-guests").style.display = "none";
@@ -2444,6 +2449,10 @@ function scene55a() {
 
 // look whos back!!
 function scene55b() {
+  document.querySelector(".french-sound").currentTime = 0;
+  document.querySelector(".french-sound").play();
+  document.querySelector(".french-sound").loop = true;
+  document.querySelector(".french-sound").volume = 0.3;
   document.querySelector(".bar-ambience-full1").pause();
   document.querySelector(".bar-ambience-full2").pause();
   ux.click.style.display = "none";
@@ -2515,6 +2524,7 @@ function scene60() {
 }
 
 function scene61() {
+  document.querySelector(".bar-ambience-late").pause();
   barGuestTalks();
   text.valentinoTalk5.style.display = "block";
   text.phrase37.style.display = "none";
@@ -2558,6 +2568,7 @@ function goValentinoEnd() {
 
 function scene80() {
   noOneTalks();
+  gifs.dreaming.style.display = "block";
   text.valentinoTalk6.style.display = "none";
   character.valentino7a.style.display = "block";
   character.valentino6.style.display = "none";
@@ -2591,27 +2602,49 @@ function countPostit() {
 
 function postit1() {
   document.querySelector("#val-post1").classList.add("endPositionPostIt")
+  document.querySelector(".post-it-sound").currentTime = 0;
+  document.querySelector(".post-it-sound").play();
+  document.querySelector(".post-it-sound").loop = false;
+  document.querySelector(".post-it-sound").volume = 0.4;
 }
 
 function postit2() {
   document.querySelector("#val-post2").classList.add("endPositionPostIt")
+  document.querySelector(".post-it-sound").currentTime = 0;
+  document.querySelector(".post-it-sound").play();
+  document.querySelector(".post-it-sound").loop = false;
+  document.querySelector(".post-it-sound").volume = 0.4;
 }
 
 function postit3() {
+  gifs.dreaming.style.display = "none";
   document.querySelector("#val-post3").classList.add("endPositionPostIt")
+  document.querySelector(".post-it-sound").currentTime = 0;
+  document.querySelector(".post-it-sound").play();
+  document.querySelector(".post-it-sound").loop = false;
+  document.querySelector(".post-it-sound").volume = 0.4;
 }
 
 function postit4() {
   document.querySelector("#val-post4").classList.add("endPositionPostIt")
+  document.querySelector(".post-it-sound").currentTime = 0;
+  document.querySelector(".post-it-sound").play();
+  document.querySelector(".post-it-sound").loop = false;
+  document.querySelector(".post-it-sound").volume = 0.4;
 }
 
 function postit5() {
   document.querySelector("#val-post5").classList.add("endPositionPostIt")
+  document.querySelector(".post-it-sound").currentTime = 0;
+  document.querySelector(".post-it-sound").play();
+  document.querySelector(".post-it-sound").loop = false;
+  document.querySelector(".post-it-sound").volume = 0.4;
 }
 
 
 // after post its on right position
 function scene82() {
+  document.querySelector(".post-it-sound").pause();
   character.valentino7b.style.display = "block";
   character.valentino7a.style.display = "none";
   character.knot.classList.remove("knotLastScene");
@@ -2623,6 +2656,7 @@ function scene82() {
 }
 
 function scene83() {
+  document.querySelector(".french-sound").pause();
   scene.valentinoPostIt.style.display = "none";
   text.phrase39.style.display = "none";
   text.phrase40.style.display = "block";
@@ -3367,7 +3401,7 @@ new TypeIt("#valentino-talk4", {
 
 new TypeIt("#phrase36", {
   cursor: false,
-  strings: ["Wait? What? Are we in a Romcom now?"],
+  strings: ["Wait? What? Are we in a romantic comedy now?"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
