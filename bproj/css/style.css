@@ -68,16 +68,16 @@ click-text {
 
 #home-button {
   position: fixed;
-  right: 0;
+  left: 0;
   margin-top: -100px;
-  margin-right: 1vh;
+  margin-left: 1.5rem;
   max-width: 5vh;
   max-height: 5vh;
   transition: margin-top 0.5s;
 }
 
 .showHome {
-  margin-top: 1vh !important;
+  margin-top: 10px !important;
 }
 
 /* -------------------------------- ALL CONTENT -------------------------------- */
@@ -348,7 +348,7 @@ h7 {
   text-align: center;
   bottom: 0;
   right: 0;
-  margin: 5vh;
+  margin: 6.5vh;
 }
 
 #click-help {
@@ -357,6 +357,7 @@ h7 {
   opacity: 0;
   white-space: nowrap;
   right: calc(50vw - 15vh);
+  right: -33vh;
   animation: help-fade-in 1s 2s forwards;
 }
 
@@ -388,15 +389,15 @@ h7 {
 
 @keyframes scroll-help {
   0% {
-    bottom: 4vh;
+    bottom: 0vh;
   }
 
   50% {
-    bottom: 5vh;
+    bottom: 1vh;
   }
 
   100% {
-    bottom: 4vh;
+    bottom: 0vh;
   }
 }
 

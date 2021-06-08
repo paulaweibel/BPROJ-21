@@ -358,10 +358,10 @@ setInterval(() => {
     setTimeout(() => {
       // document.querySelector("#mouseTransparent").style.display = "block";
       document.querySelector("#mouseMoved").classList.add("mousePaused");
-    }, 300000)
+    }, 30000)
     setTimeout(() => {
       // document.querySelector("#mouseTransparent").classList.add("mouseBlack");
-    }, 300000)
+    }, 30000)
     mouseStartedMoving = false;
   }
   mouseMoved = false;
