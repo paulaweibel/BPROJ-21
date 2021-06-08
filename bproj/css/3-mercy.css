@@ -259,8 +259,19 @@
 
 #mercy-4 {
     display: none;
-    right: 80vw;
+    animation: walking 2.5s forwards ease-out;
 }
+
+@keyframes walking {
+    0% {
+        right: 120vw;
+    }
+
+    100% {
+        right: 61vw;
+    }
+}
+
 
 #mercy-5a {
     display: none;

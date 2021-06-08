@@ -1806,25 +1806,37 @@ function scene31() {
   document.querySelector(".clicking-keyboard-mercy").pause();
   document.querySelector(".typing-mercy").pause();
   document.querySelector(".mail-notification1").pause();
-  document.querySelector(".mail-notification2").currentTime = 0;
-  document.querySelector(".mail-notification2").play();
-  document.querySelector(".mail-notification2").loop = true;
-  document.querySelector(".mail-notification2").volume = 0.5;
   text.phrase24.style.display = "none";
   text.phrase25.style.display = "none";
   character.mercy3a.style.display = "none";
   character.mercy3b.style.display = "block";
   document.querySelector("#mail2").style.display = "block"
   setTimeout(() => {
+    document.querySelector(".mail-notification2").currentTime = 0;
+    document.querySelector(".mail-notification2").play();
+    document.querySelector(".mail-notification2").loop = false;
+    document.querySelector(".mail-notification2").volume = 0.5;
     variable.currentScene = 32;
   }, 200)
   setTimeout(() => {
+    document.querySelector(".mail-notification3").currentTime = 0;
+    document.querySelector(".mail-notification3").play();
+    document.querySelector(".mail-notification3").loop = false;
+    document.querySelector(".mail-notification3").volume = 0.5;
     document.querySelector("#mail3").style.display = "block"
   }, 500)
   setTimeout(() => {
+    document.querySelector(".mail-notification4").currentTime = 0;
+    document.querySelector(".mail-notification4").play();
+    document.querySelector(".mail-notification4").loop = false;
+    document.querySelector(".mail-notification4").volume = 0.5;
     document.querySelector("#mail4").style.display = "block"
   }, 1000)
   setTimeout(() => {
+    document.querySelector(".mail-notification5").currentTime = 0;
+    document.querySelector(".mail-notification5").play();
+    document.querySelector(".mail-notification5").loop = false;
+    document.querySelector(".mail-notification5").volume = 0.5;
     ux.click.style.display = "none";
     document.querySelector("#mail5").style.display = "block"
     text.phrase26.style.display = "block";
@@ -1930,7 +1942,6 @@ function setTranslate(xPos, yPos, el) {
 function mercyChaos() {
   document.querySelector(".wind-sound").pause();
   gifs.arrowdrag.style.display = "none";
-  document.querySelector(".mail-notification2").pause();
 
   document.querySelector(".wind-sound").pause();
   ux.click.style.display = "block";
@@ -2419,7 +2430,7 @@ function scene55() {
     document.querySelector(".bar-ambience-late").currentTime = 0;
     document.querySelector(".bar-ambience-late").play();
     document.querySelector(".bar-ambience-late").loop = true;
-    document.querySelector(".bar-ambience-late").volume = 0.1;
+    document.querySelector(".bar-ambience-late").volume = 0.05;
     scene.guest29.style.display = "block";
     scene.guest30.style.display = "block";
   }, 4200)
@@ -2452,10 +2463,6 @@ function scene55a() {
 
 // look whos back!!
 function scene55b() {
-  document.querySelector(".french-sound").currentTime = 0;
-  document.querySelector(".french-sound").play();
-  document.querySelector(".french-sound").loop = true;
-  document.querySelector(".french-sound").volume = 0.3;
   document.querySelector(".bar-ambience-full1").pause();
   document.querySelector(".bar-ambience-full2").pause();
   ux.click.style.display = "none";
@@ -2543,6 +2550,10 @@ function scene61() {
 
 /// VALENTINO: LAST SCENE OF STORY
 function goValentinoEnd() {
+  document.querySelector(".french-sound").currentTime = 0;
+  document.querySelector(".french-sound").play();
+  document.querySelector(".french-sound").loop = false;
+  document.querySelector(".french-sound").volume = 0.3;
   ux.click.style.display = "none";
   ux.scroll.style.display = "none";
   domElement.intro.style.display = "none";
@@ -2608,7 +2619,7 @@ function postit1() {
   document.querySelector(".post-it-sound").currentTime = 0;
   document.querySelector(".post-it-sound").play();
   document.querySelector(".post-it-sound").loop = false;
-  document.querySelector(".post-it-sound").volume = 0.4;
+  document.querySelector(".post-it-sound").volume = 0.2;
 }
 
 function postit2() {
@@ -2616,7 +2627,7 @@ function postit2() {
   document.querySelector(".post-it-sound").currentTime = 0;
   document.querySelector(".post-it-sound").play();
   document.querySelector(".post-it-sound").loop = false;
-  document.querySelector(".post-it-sound").volume = 0.4;
+  document.querySelector(".post-it-sound").volume = 0.2;
 }
 
 function postit3() {
@@ -2625,7 +2636,7 @@ function postit3() {
   document.querySelector(".post-it-sound").currentTime = 0;
   document.querySelector(".post-it-sound").play();
   document.querySelector(".post-it-sound").loop = false;
-  document.querySelector(".post-it-sound").volume = 0.4;
+  document.querySelector(".post-it-sound").volume = 0.2;
 }
 
 function postit4() {
@@ -2633,7 +2644,7 @@ function postit4() {
   document.querySelector(".post-it-sound").currentTime = 0;
   document.querySelector(".post-it-sound").play();
   document.querySelector(".post-it-sound").loop = false;
-  document.querySelector(".post-it-sound").volume = 0.4;
+  document.querySelector(".post-it-sound").volume = 0.2;
 }
 
 function postit5() {
@@ -2641,7 +2652,7 @@ function postit5() {
   document.querySelector(".post-it-sound").currentTime = 0;
   document.querySelector(".post-it-sound").play();
   document.querySelector(".post-it-sound").loop = false;
-  document.querySelector(".post-it-sound").volume = 0.4;
+  document.querySelector(".post-it-sound").volume = 0.2;
 }
 
 
@@ -2659,7 +2670,6 @@ function scene82() {
 }
 
 function scene83() {
-  document.querySelector(".french-sound").pause();
   scene.valentinoPostIt.style.display = "none";
   text.phrase39.style.display = "none";
   text.phrase40.style.display = "block";
@@ -2670,6 +2680,7 @@ function scene83() {
 
 // OUTRO: thank you, you were best assistant ever
 function outro1() {
+  document.querySelector(".french-sound").pause();
   domElement.assets.style.display = "none";
   character.valentino.style.display = "none";
   character.lawrence.style.display = "none";
