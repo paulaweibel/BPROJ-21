@@ -2621,10 +2621,14 @@ function scene81() {
 // VALENTINO POST ITS CLICKED
 function countPostit() {
   variable.postitCount = variable.postitCount + 1;
-  variable.backgroundFade = variable.backgroundFade + 0.3;
-  domElement.body.style.backgroundColor = "rgba(12, 12, 12," + variable.backgroundFade + ")";
-  console.log(domElement.body.style.backgroundColor);
+  if (variable.postitCount < 5) {
+    domElement.body.style.backgroundColor = "#0c0c0c";
+    setTimeout(() => {
+      domElement.body.style.backgroundColor = "#fafafa";
+    }, 200)
+  }
   if (variable.postitCount === 5) {
+    domElement.body.style.backgroundColor = "#0c0c0c";
     setTimeout(() => {
       scene82();
     }, 1500)
@@ -2732,6 +2736,9 @@ function scene84() {
     ux.click.classList = "textBlack";
     ux.click.style.display = "block";
   }, 1000)
+  setTimeout(() => {
+    outro1();
+  }, 3000)
 }
 
 // OUTRO: thank you, you were best assistant ever
@@ -3531,7 +3538,7 @@ new TypeIt("#phrase40", {
 
 new TypeIt("#outro1", {
   cursor: false,
-  strings: ["So, we are finished for the day.  You’re the best assistant I’ve had so far! "],
+  strings: ["So, we are finished for the day.","You’re the best assistant I’ve had so far! "],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3545,7 +3552,7 @@ new TypeIt("#outro2", {
 
 new TypeIt("#outro3", {
   cursor: false,
-  strings: ["The assistants can exchange and I can learn new things about stress. Don’t hesitate with completing a form too!"],
+  strings: ["The assistants can exchange and I can learn new things about stress."," Don’t hesitate with completing a form too!"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
