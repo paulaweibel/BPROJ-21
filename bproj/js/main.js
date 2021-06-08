@@ -1338,6 +1338,7 @@ function goLawrence() {
   document.querySelector(".lawrence-music-headphones").play();
   document.querySelector(".lawrence-music-headphones").loop = false;
   document.querySelector(".lawrence-music-headphones").volume = 0.5;
+  gifs.running.style.display = "none";
   gifs.musicnotes2.style.display = "block";
   gifs.running.style.display = "none";
   domElement.body.style.backgroundColor = "var(--weiss)";
@@ -2430,12 +2431,14 @@ function scene55() {
     variable.currentScene = 55.1;
     ux.click.style.display = "block";
     character.barbara8.style.display = "none";
-    character.barbara9.style.display = "block";
+    character.barbara4.style.display = "block";
   }, 9700)
 }
 
 // click to see transistion "a happy hour later"
 function scene55a() {
+  character.barbara4.style.display = "none";
+  character.barbara9.style.display = "block";
   ux.click.style.display = "none";
   gifs.happyHour.style.display = "none";
   document.querySelector("#a-happy-hour-later").style.display = "Block";
