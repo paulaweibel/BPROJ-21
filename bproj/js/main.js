@@ -3538,21 +3538,21 @@ new TypeIt("#phrase40", {
 
 new TypeIt("#outro1", {
   cursor: false,
-  strings: ["So, we are finished for the day.","You’re the best assistant I’ve had so far! "],
+  strings: ["So, we are done for today.", "You are the best assistant I've ever had."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#outro2", {
   cursor: false,
-  strings: ["I always have the assistants fill out a small document."],
+  strings: ["I always have the assistants fill out a small form. ", "The purpose is to understand the factors that create stress in people and how they react. So I can improve my stress-producing tactics."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#outro3", {
   cursor: false,
-  strings: ["The assistants can exchange and I can learn new things about stress."," Don’t hesitate with completing a form too!"],
+  strings: ["Feel free to fill it out too.", "You can also scroll down to see the answers of the other stress-assistants and maybe identify yourself with some situations."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
