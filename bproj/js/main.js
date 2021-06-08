@@ -469,13 +469,13 @@ function hideAbout() {
 }
 
 function showNavigation() {
-  document.querySelector("#navigation-points").style.display="block";
-  document.querySelector("#navigation-button").style.display="none";
+  document.querySelector("#navigation-points").style.display = "block";
+  document.querySelector("#navigation-button").style.display = "none";
 }
 
 function hideNavigation() {
-  document.querySelector("#navigation-points").style.display="none";
-  document.querySelector("#navigation-button").style.display="block";
+  document.querySelector("#navigation-points").style.display = "none";
+  document.querySelector("#navigation-button").style.display = "block";
 }
 
 ////////////////////////////////
@@ -1010,7 +1010,7 @@ domElement.helpButtons.addEventListener('click', function () {
 });
 
 function goValentino() {
-  document.querySelector("#navigation-points").style.display="none";
+  document.querySelector("#navigation-points").style.display = "none";
   document.querySelector(".yes-no-click").pause();
   ux.scroll.style.display = "none";
   domElement.intro.style.display = "none";
@@ -1347,7 +1347,7 @@ function runToBus() {
 function goLawrence() {
   ux.scroll.style.display = "none";
   ux.click.style.display = "block";
-  document.querySelector("#navigation-points").style.display="none";
+  document.querySelector("#navigation-points").style.display = "none";
   document.querySelector(".lawrence-music-headphones").play();
   document.querySelector(".lawrence-music-headphones").loop = false;
   document.querySelector(".lawrence-music-headphones").volume = 0.5;
@@ -1723,7 +1723,7 @@ function scene26Error() {
 
 /////////////
 function goMercy() {
-  document.querySelector("#navigation-points").style.display="none";
+  document.querySelector("#navigation-points").style.display = "none";
   document.querySelector(".typing-mercy").currentTime = 0;
   document.querySelector(".typing-mercy").play();
   document.querySelector(".typing-mercy").loop = true;
@@ -2010,7 +2010,7 @@ function scene34() {
 
 ///////////// BARBIE
 function goBarbara() {
-  document.querySelector("#navigation-points").style.display="none";
+  document.querySelector("#navigation-points").style.display = "none";
   text.peopleTalk.style.display = "none";
   noOneTalks();
   document.querySelector(".face-hit").pause();
@@ -2569,7 +2569,7 @@ function goValentinoEnd() {
   document.querySelector(".french-sound").play();
   document.querySelector(".french-sound").loop = false;
   document.querySelector(".french-sound").volume = 0.3;
-  document.querySelector("#navigation-points").style.display="none";
+  document.querySelector("#navigation-points").style.display = "none";
   ux.click.style.display = "none";
   ux.scroll.style.display = "none";
   domElement.intro.style.display = "none";
@@ -2715,9 +2715,28 @@ function scene84() {
   }, 1000)
 }
 
+// Initial volume of 0.20
+// Make sure it's a multiple of 0.05
+var vol = 0.30;
+var interval = 500; // 200ms interval
+
 // OUTRO: thank you, you were best assistant ever
 function outro1() {
-  document.querySelector(".french-sound").pause();
+  // FRENCH FADE OUT SONG
+  var fadeout = setInterval(
+    function () {
+      // Reduce volume by 0.05 as long as it is above 0
+      // This works as long as you start with a multiple of 0.05!
+      if (vol > 0) {
+        vol -= 0.05;
+        document.querySelector(".french-sound").volume = vol;
+
+      } else {
+        // Stop the setInterval when 0 is reached
+        clearInterval(fadeout);
+      }
+    }, interval);
+  // document.querySelector(".french-sound").pause();
   ux.click.classList = "textWhite";
   ux.click.style.display = "none";
   domElement.assets.style.display = "none";
@@ -2749,12 +2768,12 @@ function outro2() {
 function outro3() {
   document.querySelector("#knot-outro").style.display = "flex";
   document.querySelector("#knot-outro").style.backgroundColor = "rgba(12,12,12,0.95)";
-  document.querySelector("#navigation-points").style.display="none";
+  document.querySelector("#navigation-points").style.display = "none";
   character.knot.classList = "knotOutro2";
   text.outro3.style.display = "block";
   text.outro2.style.display = "none";
   variable.currentScene = 1000;
-  ux.click.classList="textWhite";
+  ux.click.classList = "textWhite";
   ux.click.style.display = "block";
   ux.scroll.style.display = "none";
   domElement.intro.style.display = "none";
