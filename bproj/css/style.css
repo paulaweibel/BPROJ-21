@@ -271,7 +271,7 @@ click-text {
   height: 100vh;
   width: 100%;
   padding-left: 12vw;
-  padding-top: calc(50vh - 24vw);
+  padding-top: calc(50vh - 18vw);
   letter-spacing: 0.1rem;
   color: var(--weiss);
   background-color: var(--schwarz);
@@ -284,6 +284,10 @@ click-text {
   margin-bottom: 2vw;
 }
 
+a{
+  color: white;
+}
+
 h2 {
   font-size: 5vw;
   max-width: 76vw;
@@ -291,8 +295,8 @@ h2 {
 
 /* ABOUT (NORMAL TEXT) */
 h6 {
-  font-size: 2.1vw;
-  line-height: 3.2vw;
+  font-size: 1.3vw;
+  line-height: 2vw;
   max-width: 76vw;
   text-transform: none;
 }
