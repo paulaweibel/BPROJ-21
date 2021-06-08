@@ -469,7 +469,7 @@ domElement.titleButton.addEventListener('click', function () {
   document.querySelector(".user-clicking-sound").currentTime = 0;
   document.querySelector(".user-clicking-sound").play();
   document.querySelector(".user-clicking-sound").loop = false;
-  document.querySelector(".user-clicking-sound").volume = 0.6;
+  document.querySelector(".user-clicking-sound").volume = 0.5;
 
   if (variable.visible === 1 || variable.visible === 3) {
     variable.visible = 0;
@@ -1346,6 +1346,7 @@ function scene13() {
   document.querySelector(".ambience-street-morning").pause();
   document.querySelector(".ambience-bus").currentTime = 0;
   document.querySelector(".ambience-bus").play();
+  document.querySelector(".ambience-bus").volume = 0.3;
   text.phrase13.style.display = "none";
   scene.busInside.style.display = "block";
   scene.busOutside.style.display = "block";
@@ -1438,6 +1439,8 @@ function motCount() {
   text.phrase17.style.display = "none";
   document.querySelector(".delete-key").currentTime = 0;
   document.querySelector(".delete-key").play();
+  document.querySelector(".delete-key").volume = 0.5;
+
   variable.motCount = variable.motCount + 1;
   if (variable.motCount === 3) {
     text.phrase18.style.display = "block";
@@ -1454,7 +1457,7 @@ function scene19() {
   document.querySelector(".sound-quote1").currentTime = 0;
   document.querySelector(".sound-quote1").play();
   document.querySelector(".sound-quote1").loop = true;
-  document.querySelector(".sound-quote1").volume = 1;
+  document.querySelector(".sound-quote1").volume = 0.4;
   document.querySelector(".sound-quote1").playbackRate = 1.5;
 
   document.querySelector(".sound-quote2").currentTime = 0;
@@ -1478,7 +1481,7 @@ function scene20() {
   document.querySelector(".waiting-room-sound").currentTime = 0;
   document.querySelector(".waiting-room-sound").play();
   document.querySelector(".waiting-room-sound").loop = true;
-  document.querySelector(".waiting-room-sound").volume = 1;
+  document.querySelector(".waiting-room-sound").volume = 0.35;
   ux.click.style.display = "none";
   ux.click.classList = "textBlack";
   document.querySelector(".sound-quote1").pause();
@@ -1542,7 +1545,7 @@ function scene21() {
   document.querySelector(".lasso").currentTime = 0;
   document.querySelector(".lasso").play();
   document.querySelector(".lasso").loop = false;
-  document.querySelector(".lasso").volume = 1;
+  document.querySelector(".lasso").volume = 0.5;
 
   document.querySelector(".knotLassoPath").style.strokeDashoffset = "0";
   text.peopleTalk.classList.remove("mercy-goodmorning");
@@ -1556,7 +1559,7 @@ function scene21() {
     document.querySelector(".lasso2").currentTime = 0;
     document.querySelector(".lasso2").play();
     document.querySelector(".lasso2").loop = false;
-    document.querySelector(".lasso2").volume = 1;
+    document.querySelector(".lasso2").volume = 0.5;
   }, 1000)
   setTimeout(() => {
     gifs.wtf.style.display = "block";
@@ -1569,7 +1572,7 @@ function scene21() {
     document.querySelector(".lawrence-ground").currentTime = 0;
     document.querySelector(".lawrence-ground").play();
     document.querySelector(".lawrence-ground").loop = false;
-    document.querySelector(".lawrence-ground").volume = 1;
+    document.querySelector(".lawrence-ground").volume = 0.5;
     ux.click.style.display = "block";
   }, 3000)
 }
@@ -1597,6 +1600,7 @@ function scene23() {
     character.mercy2.style.display = "none";
     document.querySelector(".door-close").currentTime = 0;
     document.querySelector(".door-close").play();
+    document.querySelector(".door-close").volume = 0.5;
     scene.waitingRoom2.style.display = "block";
     scene.waitingRoom1.style.display = "none";
   }, 200)
@@ -1627,6 +1631,7 @@ function scene24b() {
 
   document.querySelector(".door-open").currentTime = 0;
   document.querySelector(".door-open").play();
+  document.querySelector(".door-open").volume = 0.5;
   scene.waitingRoom2.style.display = "none";
   scene.waitingRoom1.style.display = "block";
   character.lawrence5.style.display = "block";
@@ -1658,6 +1663,7 @@ function scene26() {
 function scene26Error() {
   document.querySelector(".door-enter").currentTime = 0;
   document.querySelector(".door-enter").play();
+  document.querySelector(".door-enter").volume = 0.5;
   document.querySelector("#door-div-waitingroom").style.backgroundColor = "var(--schwarz)";
   setTimeout(() => {
     document.querySelector("#door-div-waitingroom").style.backgroundColor = "transparent";
@@ -1669,7 +1675,7 @@ function goMercy() {
   document.querySelector(".typing-mercy").currentTime = 0;
   document.querySelector(".typing-mercy").play();
   document.querySelector(".typing-mercy").loop = true;
-  document.querySelector(".typing-mercy").volume = 1;
+  document.querySelector(".typing-mercy").volume = 0.1;
   ux.scroll.style.display = "none";
   ux.click.style.display = "block";
   domElement.body.style.backgroundColor = "var(--weiss)";
@@ -1753,10 +1759,11 @@ function scene30() {
   document.querySelector(".mail-notification1").currentTime = 0;
   document.querySelector(".mail-notification1").play();
   document.querySelector(".mail-notification1").loop = false;
-  document.querySelector(".mail-notification1").volume = 1;
+  document.querySelector(".mail-notification1").volume = 0.5;
 
   document.querySelector(".clicking-keyboard-mercy").currentTime = 0;
   document.querySelector(".clicking-keyboard-mercy").play();
+  document.querySelector(".clicking-keyboard-mercy").volume = 0.6;
 
   text.phrase24.style.display = "none";
   // text.phrase25.style.display = "block";
@@ -1769,12 +1776,13 @@ function scene30() {
 
 // mail spam
 function scene31() {
+  document.querySelector(".clicking-keyboard-mercy").pause();
   document.querySelector(".typing-mercy").pause();
   document.querySelector(".mail-notification1").pause();
   document.querySelector(".mail-notification2").currentTime = 0;
   document.querySelector(".mail-notification2").play();
   document.querySelector(".mail-notification2").loop = true;
-  document.querySelector(".mail-notification2").volume = 1;
+  document.querySelector(".mail-notification2").volume = 0.5;
   text.phrase24.style.display = "none";
   text.phrase25.style.display = "none";
   character.mercy3a.style.display = "none";
@@ -1886,13 +1894,14 @@ function setTranslate(xPos, yPos, el) {
   document.querySelector(".wind-sound").currentTime = 0;
   document.querySelector(".wind-sound").play();
   document.querySelector(".wind-sound").loop = false;
-  document.querySelector(".wind-sound").volume = 1;
+  document.querySelector(".wind-sound").volume = 0.5;
 
   el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
 
 // SCENE MERCY CHAOS WIND
 function mercyChaos() {
+  document.querySelector(".wind-sound").pause();
   gifs.arrowdrag.style.display = "none";
   document.querySelector(".mail-notification2").pause();
 
@@ -1927,10 +1936,10 @@ function mercyChaos() {
     variable.currentScene = "goBarbara";
     document.querySelector(".face-hit").currentTime = 0;
     document.querySelector(".face-hit").play();
-    document.querySelector(".face-hit").volume = 1;
+    document.querySelector(".face-hit").volume = 0.7;
     document.querySelector(".face-hit2").currentTime = 0;
     document.querySelector(".face-hit2").play();
-    document.querySelector(".face-hit2").volume = 1;
+    document.querySelector(".face-hit2").volume = 0.6;
   }, 1000)
   setTimeout(() => {
     variable.currentScene = 0;
@@ -1943,10 +1952,7 @@ function goBarbara() {
   document.querySelector(".face-hit2").pause();
   document.querySelector(".waiting-room-sound").pause();
   text.peopleTalk.style.display = "flex";
-  document.querySelector(".beat1").currentTime = 0;
-  document.querySelector(".beat1").play();
-  document.querySelector(".beat1").loop = true;
-  document.querySelector(".beat1").volume = 0.2;
+  bar - ambience2
   ux.scroll.style.display = "none";
   ux.click.style.display = "block";
   domElement.body.style.backgroundColor = "var(--weiss)";
@@ -2046,7 +2052,7 @@ function scene40a() {
   document.querySelector(".coffee-spill").currentTime = 0;
   document.querySelector(".coffee-spill").play();
   document.querySelector(".coffee-spill").loop = false;
-  document.querySelector(".coffee-spill").volume = 1;
+  document.querySelector(".coffee-spill").volume = 0.5;
 
   barTalks();
   text.barbaraTalk3a.style.display = "block";
@@ -2144,7 +2150,7 @@ function scene46a() {
   document.querySelector(".ringtone").currentTime = 0;
   document.querySelector(".ringtone").play();
   document.querySelector(".ringtone").loop = true;
-  document.querySelector(".yelling1").volume = 1;
+  document.querySelector(".ringtone").volume = 0.5;
   text.phrase31.style.display = "none";
   ux.click.style.display = "none";
   domElement.callIcon.style.display = "block";
@@ -2162,7 +2168,7 @@ function scene47() {
   document.querySelector(".yelling1").currentTime = 0;
   document.querySelector(".yelling1").play();
   document.querySelector(".yelling1").loop = false;
-  document.querySelector(".yelling1").volume = 1;
+  document.querySelector(".yelling1").volume = 0.5;
 
   text.phrase31.style.display = "none";
   character.barbara5.style.display = "none";
@@ -2218,7 +2224,7 @@ function scene50() {
   document.querySelector(".endedcall").currentTime = 0;
   document.querySelector(".endedcall").play();
   document.querySelector(".endedcall").loop = true;
-  document.querySelector(".endedcall").volume = 1;
+  document.querySelector(".endedcall").volume = 0.5;
   text.barbaraTalk5.style.display = "none";
   text.phrase32.style.display = "block";
   character.knot.classList.add("knotBarSiesta");
@@ -2262,7 +2268,7 @@ function scene54() {
   document.querySelector(".neonlight1").currentTime = 0;
   document.querySelector(".neonlight1").play();
   document.querySelector(".neonlight1").loop = false;
-  document.querySelector(".neonlight1").volume = 1;
+  document.querySelector(".neonlight1").volume = 0.6;
 
   document.querySelector(".neonlight2").currentTime = 0;
   document.querySelector(".neonlight2").play();
@@ -2284,6 +2290,8 @@ function scene54() {
 
 // HAPPY HOUR GUESTS
 function scene55() {
+  document.querySelector(".neonlight1").pause();
+  document.querySelector(".neonlight2").pause();
   ux.click.style.display = "none";
   character.knot.classList = "knotValentinoBarHidden";
   text.phrase34.style.display = "none";
@@ -2302,6 +2310,10 @@ function scene55() {
     character.barbara8.style.display = "block";
   }, 900)
   setTimeout(() => {
+    document.querySelector(".bar-ambience2").currentTime = 0;
+    document.querySelector(".bar-ambience2").play();
+    document.querySelector(".bar-ambience2").loop = false;
+    document.querySelector(".bar-ambience2").volume = 0.5;
     scene.guest5.style.display = "block";
     scene.guest6.style.display = "block";
   }, 1200)
@@ -2311,7 +2323,6 @@ function scene55() {
     scene.guest9.style.display = "block";
   }, 1500)
   setTimeout(() => {
-    document.querySelector(".beat1").pause();
     scene.guest10.style.display = "block";
     scene.guest11.style.display = "block";
   }, 1800)
@@ -2322,6 +2333,7 @@ function scene55() {
   setTimeout(() => {
     scene.guest14.style.display = "block";
     scene.guest15.style.display = "block";
+    document.querySelector(".bar-ambience1").pause();
   }, 2400)
   setTimeout(() => {
     scene.guest16.style.display = "block";
@@ -2356,6 +2368,7 @@ function scene55() {
 
   // ALL GUESTS HAPPY HOUR GONE
   setTimeout(() => {
+    document.querySelector(".bar-ambience2").pause();
     character.barbara8.style.display = "none";
     character.barbara9.style.display = "block";
     character.knot.classList = "knotValentinoBar";
@@ -2739,7 +2752,7 @@ function hideStressFormular() {
 function idValentino() {
   document.querySelector("#id-valentino").style.display = "block";
   document.querySelector(".info-icon-sound").currentTime = 0;
-  document.querySelector(".info-icon-sound").volume = 0.75;
+  document.querySelector(".info-icon-sound").volume = 0.6;
   document.querySelector(".info-icon-sound").play();
   document.querySelector(".info-icon-sound").loop = false;
   console.log("ID VALENTINO")
@@ -2748,7 +2761,7 @@ function idValentino() {
 function idLawrence() {
   document.querySelector("#id-lawrence").style.display = "block";
   document.querySelector(".info-icon-sound").currentTime = 0;
-  document.querySelector(".info-icon-sound").volume = 0.75;
+  document.querySelector(".info-icon-sound").volume = 0.7;
   document.querySelector(".info-icon-sound").play();
   document.querySelector(".info-icon-sound").loop = false;
   console.log("ID Lawrence")
@@ -2757,7 +2770,7 @@ function idLawrence() {
 function idMercy() {
   document.querySelector("#id-mercy").style.display = "block";
   document.querySelector(".info-icon-sound").currentTime = 0;
-  document.querySelector(".info-icon-sound").volume = 0.75;
+  document.querySelector(".info-icon-sound").volume = 0.6;
   document.querySelector(".info-icon-sound").play();
   document.querySelector(".info-icon-sound").loop = false;
   console.log("ID Mercy")
@@ -2766,7 +2779,7 @@ function idMercy() {
 function idBarbara() {
   document.querySelector("#id-barbara").style.display = "block";
   document.querySelector(".info-icon-sound").currentTime = 0;
-  document.querySelector(".info-icon-sound").volume = 0.75;
+  document.querySelector(".info-icon-sound").volume = 0.7;
   document.querySelector(".info-icon-sound").play();
   document.querySelector(".info-icon-sound").loop = false;
   console.log("ID Barbara")
@@ -2778,7 +2791,7 @@ function hideId() {
   document.querySelector("#id-mercy").style.display = "none";
   document.querySelector("#id-barbara").style.display = "none";
   document.querySelector(".delete-key").currentTime = 0;
-  document.querySelector(".delete-key").volume = 0.2;
+  document.querySelector(".delete-key").volume = 0.5;
   document.querySelector(".delete-key").play();
   console.log("hide ID")
 }
