@@ -293,6 +293,15 @@
 }
 
 
+#enter-office-gif{
+    position: fixed;
+    display: none;
+    height: 7vh;
+    top: 65vh;
+    left: 33vh;
+    transform: scaleY(0.7) rotate(90deg);
+}
+
 
 
 /* LAWRENCE AFTER MEETING */

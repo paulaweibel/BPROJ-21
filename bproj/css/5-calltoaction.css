@@ -2,9 +2,9 @@
 #call-to-action {
     display: none;
     position: absolute;
-    top: 30000px;
+    top: 3000px;
     width: 100%;
-    height: 200vh;
+    height: 100vh;
     background-color: var(--schwarz);
 }
 

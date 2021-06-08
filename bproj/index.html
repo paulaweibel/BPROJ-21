@@ -150,6 +150,12 @@
             <img id="barbara-10d" class="barbara-bar" src="img/4-barbie/10-barbara&valentino4.png">
             <img id="bar-chairs" class="barbara-bar" src="img/4-barbie/bar-chairs.png">
             <img id="sandwich-bag" class="barbara-bar" src="img/4-barbie/sandwich-bag.png">
+            <div id="bar-sign-container">
+                <img class="bar-sign" src="img/objects-icons/happy-hour/signboard2.png">
+                <img id="sign-button-on" class="bar-sign-button" src="img/objects-icons/happy-hour/button-on.png">
+                <img id="sign-button-off" class="bar-sign-button" src="img/objects-icons/happy-hour/button-off.png">
+                <img id="happy-hour-gif" class="bar-sign" src="img/objects-icons/happy-hour/happy-hour-text.gif">
+            </div>
             <div id="happy-hour-guests">
                 <div id="guest1" class="happy-hour-guest"><img class="guest-wiggle"
                         src="img/objects-icons/happy-hour/guest1.png"></div>
@@ -212,12 +218,6 @@
                 <div id="guest30" class="happy-hour-guest"><img class="guest-wiggle"
                         src="img/objects-icons/happy-hour/guest10.png"></div>
             </div>
-            <div id="bar-sign-container">
-                <img class="bar-sign" src="img/objects-icons/happy-hour/signboard2.png">
-                <img id="sign-button-on" class="bar-sign-button" src="img/objects-icons/happy-hour/button-on.png">
-                <img id="sign-button-off" class="bar-sign-button" src="img/objects-icons/happy-hour/button-off.png">
-                <img id="happy-hour-gif" class="bar-sign" src="img/objects-icons/happy-hour/happy-hour-text.gif">
-            </div>
             <img id="info-icon-barbara" class="button" onclick="idBarbara(); scene45a()"
                 src="img/objects-icons/info-icon.png">
             <div id="call-icon-container">
@@ -242,6 +242,7 @@
             <img id="office-building" src="img/Locations/office-building.png">
             <img id="waiting-room-1" src="img/Locations/waiting-room1.png">
             <img id="waiting-room-2" src="img/Locations/waiting-room2.png">
+            <img id="enter-office-gif" src="img/gifs-animations /drag-drop.gif">
             <div id="door-div-waitingroom" class="button" onclick="goMercy()"></div>
             <img id="clock9-30" class="clock-waitingroom" src="img/objects-icons/clock9-30.png">
             <img id="clock11" class="clock-waitingroom" src="img/objects-icons/clock11.png">
@@ -353,6 +354,7 @@
             <p id="valentino-talk5" class="all-people-talk"></p>
             <p id="valentino-talk6" class="all-people-talk"></p>
             <p id="mercy-talk1" class="all-people-talk"></p>
+            <p id="mercy-talk1a" class="all-people-talk"></p>
             <p id="mercy-talk2" class="all-people-talk"></p>
             <p id="mercy-talk3" class="all-people-talk"></p>
             <p id="barbara-talk1" class="all-people-talk"></p>
@@ -404,7 +406,10 @@
             <p id="phrase23" class="phrase phrase-right"></p>
             <p id="phrase24" class="phrase phrase-right"></p>
             <p id="phrase25" class="phrase phrase-right"></p>
-            <p id="phrase26" class="phrase phrase-right"></p>
+            <p id="phrase26" class="phrase phrase-right">
+                She’s distracted. It’s windy outside. Assistant, I think she needs some fresh air!<br>
+                <click-text>(drag the window)</click-text>
+            </p>
             <p id="phrase27" class="phrase phrase-right"></p>
             <p id="phrase28" class="phrase phrase-right phrase-bar"></p>
             <p id="phrase29" class="phrase phrase-right phrase-bar"></p>
@@ -427,6 +432,24 @@
 
     <!-- BACKGROUND BECOMING DARKER ------------------->
     <div id="mouseTransparent">move your mouse</div>
+
+    <!-- STRESS FORMULAR (CALL TO ACTION) -->
+    <div id="call-to-action" STYLE="DISPLAY: NONE;">
+        <div id="call-to-action-scrollY">
+            <div class="comment-grid">
+                <!-- HIER WERDEN DATEN AUS "IN.CSV HINZUGEFÜGT" --->
+            </div>
+            <div id="glitch-stress-formular" style="display: none;">
+            </div>
+            <div id="show-formular-button" class="button whiteAbout" onclick="showStressFormular()">add a comment</div>
+            <div id="hide-formular-button" class="button whiteAbout" onclick="hideStressFormular()">go back</div>
+        </div>
+    </div>
+    <div id="knot-outro">
+        <p id="outro1" class="phrase textWhite phrase-outro"></p>
+        <p id="outro2" class="phrase textWhite phrase-outro"></p>
+        <p id="outro3" class="phrase textWhite phrase-outro"></p>
+    </div>
 
     <!-- MAIN CHARACTER KNOT ------------------->
     <div id="wiggle" class="knotStart">
@@ -483,6 +506,9 @@
     <div id="outside-the-office">
         <p id="outside-the-office-phrase" class="phrase textBlack"></p>
     </div>
+    <div id="a-happy-hour-later">
+        <p id="a-happy-hour-later-phrase" class="phrase"></p>
+    </div>
     <img id="bus-outside" src="img/Locations/bus-outside.png">
 
 
@@ -513,7 +539,7 @@
         <a class="button" onclick="goMercy()">mercy</a>
         <a class="button" onclick="goBarbara()">barbara</a>
         <a class="button" onclick="goValentinoEnd()">last-scene</a>
-        <a class="button" onclick="goCallToAction()">callToAction</a>
+        <a class="button" onclick="outro3()">callToAction</a>
     </div>
 
     <!-- ABOUT -------------------->
@@ -544,18 +570,7 @@
         </h7>
     </div>
 
-    <!-- STRESS FORMULAR (CALL TO ACTION) -->
-    <div id="call-to-action" STYLE="DISPLAY: NONE;">
-        <div id="call-to-action-scrollY">
-            <div class="comment-grid">
-                <!-- HIER WERDEN DATEN AUS "IN.CSV HINZUGEFÜGT" --->
-            </div>
-            <div id="glitch-stress-formular" style="display: none;">
-            </div>
-            <div id="show-formular-button" class="button whiteAbout" onclick="showStressFormular()">add a comment</div>
-            <div id="hide-formular-button" class="button whiteAbout" onclick="hideStressFormular()">go back</div>
-        </div>
-    </div>
+
 
 
     <!--HOME BUTTON -->

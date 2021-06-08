@@ -111,6 +111,7 @@ let gifs = {
   musicnotes3: document.querySelector("#music-gif-3"),
   nervous: document.querySelector("#nervous-gif"),
   sleep: document.querySelector("#sleep-gif"),
+  enterOffice: document.querySelector("#enter-office-gif"),
   drink: document.querySelector("#drink-gif"),
   happyHour: document.querySelector("#happy-hour-gif"),
   screamphone: document.querySelector("#screaming-phone-gif"),
@@ -220,6 +221,10 @@ let text = {
   whisper2: document.querySelector("#whisper2"),
   whisper3: document.querySelector("#whisper3"),
   whisper4: document.querySelector("#whisper4"),
+  // outro
+  outro1: document.querySelector("#outro1"),
+  outro2: document.querySelector("#outro2"),
+  outro3: document.querySelector("#outro3"),
   // people
   peopleTalk: document.querySelector("#people-talk"),
   valentinoTalk1: document.querySelector("#valentino-talk1"),
@@ -230,6 +235,7 @@ let text = {
   valentinoTalk6: document.querySelector("#valentino-talk6"),
   //
   mercyTalk1: document.querySelector("#mercy-talk1"),
+  mercyTalk1a: document.querySelector("#mercy-talk1a"),
   mercyTalk2: document.querySelector("#mercy-talk2"),
   mercyTalk3: document.querySelector("#mercy-talk3"),
   //
@@ -247,6 +253,7 @@ let text = {
   aSiestaLater: document.querySelector("#a-siesta-later-phrase"),
   siestaTime: document.querySelector("#siesta-time-phrase"),
   outsideTheOffice: document.querySelector("#outside-the-office-phrase"),
+  aHappyHourLater: document.querySelector("#a-happy-hour-later-phrase"),
 }
 
 ////////////////////////////////////////////////////////////////
@@ -348,11 +355,11 @@ setInterval(() => {
   if (!mouseMoved && mouseStartedMoving) {
     //Mouse stopped moving
     setTimeout(() => {
-      document.querySelector("#mouseTransparent").style.display = "block";
+      // document.querySelector("#mouseTransparent").style.display = "block";
       document.querySelector("#mouseMoved").classList.add("mousePaused");
     }, 300000)
     setTimeout(() => {
-      document.querySelector("#mouseTransparent").classList.add("mouseBlack");
+      // document.querySelector("#mouseTransparent").classList.add("mouseBlack");
     }, 300000)
     mouseStartedMoving = false;
   }
@@ -363,9 +370,9 @@ body.onmousemove = function (ev) {
   mouseStartedMoving = true;
   document.querySelector("#mouseMoved").classList.remove("mousePaused");
 
-  document.querySelector("#mouseTransparent").classList.remove("mouseBlack");
+  // document.querySelector("#mouseTransparent").classList.remove("mouseBlack");
   setTimeout(() => {
-    document.querySelector("#mouseTransparent").style.display = "none";
+    // document.querySelector("#mouseTransparent").style.display = "none";
   }, 1000)
   mouseMoved = true;
 }
@@ -712,7 +719,10 @@ domElement.body.addEventListener('click', function () {
   // SCENE 32
   if (variable.currentScene === 32) {
     scene32();
-
+  }
+  // SCENE 32
+  if (variable.currentScene === 34) {
+    scene34();
   }
   // SCENE 27
   if (variable.currentScene === "goBarbara") {
@@ -791,6 +801,12 @@ domElement.body.addEventListener('click', function () {
   if (variable.currentScene === 55) {
     scene55();
   }
+  if (variable.currentScene === 55.1) {
+    scene55a();
+  }
+  if (variable.currentScene === 55.2) {
+    scene55b();
+  }
   if (variable.currentScene === 56) {
     scene56();
   }
@@ -847,6 +863,20 @@ domElement.body.addEventListener('click', function () {
   }
   if (variable.currentScene === 84) {
     scene84();
+  }
+
+  if (variable.currentScene === "outro1") {
+    outro1();
+  }
+  if (variable.currentScene === "outro2") {
+    outro2();
+  }
+  if (variable.currentScene === "outro3") {
+    outro3();
+  }
+
+  if (variable.currentScene === 1001) {
+    sceneFinish();
   }
 
   // LAST SCENE
@@ -1242,6 +1272,7 @@ function runToBus() {
   if (sLeft > 1) {
     character.knot.classList.add("knotValentinoRunMiddle");
     scene.bus.classList.add("driveLeft");
+    ux.scroll.classList = "textWhite";
   } else {
     character.valentino2b.style.display = "none";
     character.valentino2b.classList = "valentino-run";
@@ -1249,6 +1280,7 @@ function runToBus() {
     gifs.running.classList = "valentino-run";
     scene.bus.classList = "";
     character.knot.classList.remove("knotValentinoRunMiddle");
+    ux.scroll.classList = "textBlack";
   }
   // 2. horizontal scroll valentino  
   if (sLeft > 1.5 * window.innerWidth) {
@@ -1650,10 +1682,14 @@ function scene24c() {
   setTimeout(() => {
     variable.currentScene = 26;
   }, 200)
+  setTimeout(() => {
+    gifs.enterOffice.style.display = "block";
+  }, 1500)
 }
 
 // change to mercy Office
 function scene26() {
+  gifs.enterOffice.style.display = "none";
   character.lawrence5.style.display = "none";
   document.querySelector("#door-div-waitingroom").style.display = "none";
   goMercy();
@@ -1706,30 +1742,19 @@ function goMercy() {
 
 // knot flying around
 function scene26a() {
-  character.knot.classList.add("knotOfficeLookingAround1");
-  setTimeout(() => {
-    variable.currentScene = 26.2;
-  }, 200)
-}
-
-function scene26b() {
-  character.knot.classList.add("knotOfficeLookingAround2");
-  setTimeout(() => {
-    variable.currentScene = 27;
-  }, 200)
-}
-
-// looks like organized person
-function scene27() {
   ux.click.style.display = "none";
-  character.knot.classList.add("knotOfficeStopLooking");
-  text.phrase22.style.display = "block";
+  character.knot.classList.add("knotOfficeLookingAround1");
+  variable.currentScene = 28;
   setTimeout(() => {
-    document.querySelector("#info-icon-mercy").style.display = "block";
+    character.knot.classList.add("knotOfficeLookingAround2");
   }, 1000)
   setTimeout(() => {
-    variable.currentScene = 28;
-  }, 200)
+    text.phrase22.style.display = "block";
+    character.knot.classList.add("knotOfficeStopLooking");
+  }, 2000)
+  setTimeout(() => {
+    document.querySelector("#info-icon-mercy").style.display = "block";
+  }, 3000)
 }
 
 // lets check her to do list
@@ -1881,7 +1906,7 @@ function drag(e) {
       if (activeItem.currentX < -0.22 * window.innerHeight) {
         activeItem.currentX = -0.22 * window.innerHeight;
         mercyChaos();
-        variable.currentScene = 30;
+        variable.currentScene = 33;
         variable.wind = 1;
       }
       setTranslate(activeItem.currentX, 0, activeItem);
@@ -1904,7 +1929,6 @@ function mercyChaos() {
   document.querySelector(".wind-sound").pause();
   gifs.arrowdrag.style.display = "none";
   document.querySelector(".mail-notification2").pause();
-
   document.querySelector(".wind").pause();
   ux.click.style.display = "block";
   text.phrase26.style.display = "None";
@@ -1933,7 +1957,8 @@ function mercyChaos() {
     character.mercy3d.style.display = "block";
     character.mercy3dMess.style.display = "block";
     character.mercy3c.style.display = "none";
-    variable.currentScene = "goBarbara";
+    ux.click.style.display = "block";
+    variable.currentScene = 34;
     document.querySelector(".face-hit").currentTime = 0;
     document.querySelector(".face-hit").play();
     document.querySelector(".face-hit").volume = 0.7;
@@ -1941,13 +1966,24 @@ function mercyChaos() {
     document.querySelector(".face-hit2").play();
     document.querySelector(".face-hit2").volume = 0.6;
   }, 1000)
+}
+
+// i need a break
+function scene34() {
+  officeMercyTalks();
+  extraSmallTalkingBubble();
+  text.phrase27.style.display = "none";
+  text.mercyTalk1a.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 0;
+    variable.currentScene = "goBarbara";
   }, 200)
 }
 
+
 ///////////// BARBIE
 function goBarbara() {
+  text.peopleTalk.style.display = "none";
+  noOneTalks();
   document.querySelector(".face-hit").pause();
   document.querySelector(".face-hit2").pause();
   document.querySelector(".waiting-room-sound").pause();
@@ -1971,10 +2007,11 @@ function goBarbara() {
   domElement.body.style.overflowX = "hidden";
   domElement.body.style.overflowY = "hidden";
   //
-  text.phrase27.style.display = "none";
+  text.mercyTalk1a.style.display = "none";
   scene.mailMercy.style.display = "none";
   scene.todoMercy.style.display = "none";
   setTimeout(() => {
+    text.peopleTalk.style.display = "flex";
     variable.currentScene = 35;
   }, 200)
 }
@@ -2365,19 +2402,39 @@ function scene55() {
   setTimeout(() => {
     character.valentino3.style.display = "block";
   }, 4000)
-
-  // ALL GUESTS HAPPY HOUR GONE
   setTimeout(() => {
     document.querySelector(".bar-ambience2").pause();
+    ux.click.classList = "textWhite";
+    variable.currentScene = 55.1;
+    ux.click.style.display = "block";
     character.barbara8.style.display = "none";
     character.barbara9.style.display = "block";
-    character.knot.classList = "knotValentinoBar";
-    text.phrase35.style.display = "block";
+  }, 9700)
+}
+
+// click to see transistion "a happy hour later"
+function scene55a() {
+  ux.click.style.display = "none";
+  document.querySelector("#a-happy-hour-later").style.display = "Block";
+  text.aHappyHourLater.style.display = "block";
+  document.querySelector("#happy-hour-guests").style.display = "none";
+  setTimeout(() => {
+    variable.currentScene = 55.2;
     ux.click.style.display = "block";
-  }, 9500)
+  }, 200)
+}
+
+// look whos back!!
+function scene55b() {
+  ux.click.style.display = "none";
+  ux.click.classList = "textBlack";
+  document.querySelector("#a-happy-hour-later").style.display = "none";
+  character.knot.classList = "knotValentinoBar";
+  text.phrase35.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 56;
-  }, 9700)
+    ux.click.style.display = "block";
+  }, 200)
 }
 
 function scene56() {
@@ -2453,6 +2510,7 @@ function scene61() {
 
 /// VALENTINO: LAST SCENE OF STORY
 function goValentinoEnd() {
+  ux.click.style.display = "none";
   ux.scroll.style.display = "none";
   domElement.intro.style.display = "none";
   domElement.body.style.backgroundColor = "var(--weiss)";
@@ -2474,6 +2532,7 @@ function goValentinoEnd() {
   text.valentinoTalk6.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 80;
+    ux.click.style.display = "block";
   }, 200)
 }
 
@@ -2494,6 +2553,7 @@ function scene81() {
   character.knot.classList.add("knotLastScene");
   text.phrase38.style.display = "none";
   scene.valentinoPostIt.style.display = "block";
+  ux.click.style.display = "none";
   setTimeout(() => {
     variable.currentScene = 81.1;
   }, 200)
@@ -2536,6 +2596,7 @@ function scene82() {
   character.valentino7a.style.display = "none";
   character.knot.classList.remove("knotLastScene");
   text.phrase39.style.display = "block";
+  ux.click.style.display = "block";
   setTimeout(() => {
     variable.currentScene = 83;
   }, 200)
@@ -2546,10 +2607,72 @@ function scene83() {
   text.phrase39.style.display = "none";
   text.phrase40.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = "goToEnd";
+    variable.currentScene = "outro1";
   }, 200)
 }
 
+// OUTRO: thank you, you were best assistant ever
+function outro1() {
+  domElement.assets.style.display = "none";
+  character.valentino.style.display = "none";
+  character.lawrence.style.display = "none";
+  character.mercy.style.display = "none";
+  character.barbara.style.display = "none";
+  // knot outro
+  character.knot.classList = "knotOutro";
+  text.phrase40.style.display = "none";
+  document.querySelector("#knot-outro").style.display = "flex";
+  text.outro1.style.display = "block";
+  setTimeout(() => {
+    variable.currentScene = "outro2";
+  }, 200)
+}
+
+// OUTRO: at the end of the day i always let...
+function outro2() {
+  text.outro2.style.display = "block";
+  text.outro1.style.display = "none";
+  setTimeout(() => {
+    variable.currentScene = "outro3";
+  }, 200)
+}
+
+// OUTRO CALL TO ACTION - dont hesistate to fill in
+function outro3() {
+  document.querySelector("#knot-outro").style.display = "flex";
+  document.querySelector("#knot-outro").style.backgroundColor = "rgba(12,12,12,0.95)";
+  character.knot.classList = "knotOutro2";
+  text.outro3.style.display = "block";
+  text.outro2.style.display = "none";
+  variable.currentScene = 1000;
+  ux.scroll.style.display = "none";
+  domElement.intro.style.display = "none";
+  domElement.body.style.background = "var(--schwarz)";
+  domElement.body.style.overflow = "auto";
+  domElement.body.style.overflowX = "auto";
+  domElement.body.style.overflowY = "auto";
+  scene.cinematicEffect.style.display = "none";
+  domElement.assets.style.display = "none";
+  character.valentino.style.display = "none";
+  character.lawrence.style.display = "none";
+  character.mercy.style.display = "none";
+  character.barbara.style.display = "none";
+  domElement.callToAction.style.display = "block";
+  prepareFormular();
+  addCommentsToHTML();
+  domElement.body.style.height = "";
+  window.scrollTo(0, 3000);
+  setTimeout(() => {
+    variable.currentScene = 1001;
+  }, 200)
+}
+
+// CALL TO ACTION
+function sceneFinish() {
+  character.knot.classList = "knotGone";
+  document.querySelector("#knot-outro").style.display = "none";
+  text.outro1.style.display = "none";
+}
 
 
 /// DIALOGUES AT THE BAR POSITIONING
@@ -2571,6 +2694,13 @@ function tiredValentinoTalks() {
 function barGuestTalks() {
   text.peopleTalk.classList = "bubbleGrow";
   text.peopleTalk.classList.add("bar-guest-talks");
+  document.querySelector("#people-talk-left").style.display = "none";
+  document.querySelector("#people-talk-right").style.display = "block";
+}
+
+function officeMercyTalks() {
+  text.peopleTalk.classList = "bubbleGrow";
+  text.peopleTalk.classList.add("office-mercy-talks");
   document.querySelector("#people-talk-left").style.display = "none";
   document.querySelector("#people-talk-right").style.display = "block";
 }
@@ -2639,29 +2769,29 @@ function hideWhisperRight() {
 //////////////////////
 ///// CALL TO ACTION
 
-function goCallToAction() {
-  ux.scroll.style.display = "none";
-  domElement.body.style.height = "10000vh";
-  window.scrollTo(0, 30000);
-  variable.currentScene = 1000;
-  domElement.intro.style.display = "none";
-  domElement.body.style.background = "var(--schwarz)";
-  domElement.body.style.overflow = "auto";
-  domElement.body.style.overflowX = "auto";
-  domElement.body.style.overflowY = "auto";
-  scene.cinematicEffect.style.display = "none";
-  domElement.assets.style.display = "none";
-  character.valentino.style.display = "none";
-  character.lawrence.style.display = "none";
-  character.mercy.style.display = "none";
-  character.barbara.style.display = "none";
-  domElement.callToAction.style.display = "block";
-  prepareFormular();
-  addCommentsToHTML();
-  setTimeout(() => {
-    variable.currentScene = 1000;
-  }, 200)
-}
+// function goCallToAction() {
+//   variable.currentScene = 1000;
+//   ux.scroll.style.display = "none";
+//   domElement.intro.style.display = "none";
+//   domElement.body.style.background = "var(--schwarz)";
+//   domElement.body.style.overflow = "auto";
+//   domElement.body.style.overflowX = "auto";
+//   domElement.body.style.overflowY = "auto";
+//   scene.cinematicEffect.style.display = "none";
+//   domElement.assets.style.display = "none";
+//   character.valentino.style.display = "none";
+//   character.lawrence.style.display = "none";
+//   character.mercy.style.display = "none";
+//   character.barbara.style.display = "none";
+//   domElement.callToAction.style.display = "block";
+//   prepareFormular();
+//   addCommentsToHTML();
+//   domElement.body.style.height = "";
+//   window.scrollTo(0, 3000);
+//   setTimeout(() => {
+//     variable.currentScene = 1000;
+//   }, 200)
+// }
 
 
 // PREPARE GLITCH FORMULAR AS SOON AS CALL TO ACTION IS CLICKED
@@ -2987,7 +3117,7 @@ new TypeIt("#a-siesta-later-phrase", {
 
 new TypeIt("#phrase21", {
   cursor: false,
-  strings: ["He will miserably be walking back to his house... ", "I also swapped his exam dates in the calendar, hehehehehe. ", "I'm done with him for today. Let’s enter the office. "],
+  strings: ["He will be walking back to his house miserably... ", "I also swapped his exam dates in the calendar, hehehehehe. ", "I'm done with him for today. Let’s enter the office. "],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3022,7 +3152,6 @@ new TypeIt("#phrase25", {
 
 new TypeIt("#phrase26", {
   cursor: false,
-  strings: ["She’s distracted. It’s windy outside.", "Assistant, I think she needs some fresh air!"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3030,6 +3159,13 @@ new TypeIt("#phrase26", {
 new TypeIt("#phrase27", {
   cursor: false,
   strings: ["hehe, now we have got her into trouble."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#mercy-talk1a", {
+  cursor: false,
+  strings: ["I need a break!"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3144,7 +3280,7 @@ new TypeIt("#barbara-talk5", {
 
 new TypeIt("#phrase32", {
   cursor: false,
-  strings: ["I think she had something planned... Ops!", "Anyway, we deserve a break now, stressing others is stressful. Call me in a few hours! "],
+  strings: ["I think she had something planned... Oops!", "Anyway, we deserve a break now, stressing others is stressful. Call me in a few hours! "],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3167,6 +3303,13 @@ new TypeIt("#phrase33", {
 new TypeIt("#phrase34", {
   cursor: false,
   strings: ["Happy hour, cheap drinks... The bar will be sooo full.", "That's a great idea!"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#a-happy-hour-later-phrase", {
+  cursor: false,
+  strings: ["A happy hour later"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3250,6 +3393,29 @@ new TypeIt("#phrase39", {
 new TypeIt("#phrase40", {
   cursor: false,
   strings: ["Sweet dreams"],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+
+
+new TypeIt("#outro1", {
+  cursor: false,
+  strings: ["So, we are finished for the day.  You’re the best assistant I’ve had so far! "],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#outro2", {
+  cursor: false,
+  strings: ["I always have the assistants fill out a small document."],
+  speed: variable.textspeed,
+  waitUntilVisible: true,
+}).go()
+
+new TypeIt("#outro3", {
+  cursor: false,
+  strings: ["The assistants can exchange and I can learn new things about stress. Don’t hesitate with completing a form too!"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
