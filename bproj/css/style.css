@@ -97,11 +97,29 @@ click-text {
 
 #navigation-points {
   display: none;
-  color: var(--schwarz);
+  
+  /* background-color: var(--schwarz); */
   position: fixed;
   opacity: 1;
-  top: 20px;
-  left: 1.5rem;
+  padding-top: 20px;
+  padding-left: 1.5rem;
+  width: 18vh;
+  height: 100vh;
+  /* background-color: red; */
+}
+.nav-chapter{
+  color: var(--schwarz);
+  font-size: 2vh;
+  line-height: 2rem;
+  left: 7rem;
+}
+.nav-hover{
+  transition: transform 0.2s;
+  /* text-decoration: underline; */
+}
+
+.nav-hover:hover{
+  transform: translate(10px,0)
 }
 
 

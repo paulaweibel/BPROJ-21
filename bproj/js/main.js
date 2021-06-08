@@ -13,6 +13,7 @@ let variable = {
   visible: 1,
   textspeed: 30,
   wind: 0,
+  userHasBeenAtEnd: 0,
 }
 
 let ux = {
@@ -563,7 +564,7 @@ function animation(scrollPos) {
 
   }
 
-  if (scrollLocation > 100 && scrollLocation < 2000 && variable.currentScene === 0) {
+  if (scrollLocation > 100 && scrollLocation < 2000 && variable.currentScene === 0 && variable.userHasBeenAtEnd === 0) {
     text.phrase1.style.display = "block";
     variable.currentScene = 1;
     ux.click.style.display = "block";
@@ -571,7 +572,7 @@ function animation(scrollPos) {
   }
 
   // setting INTRO and SPEECHBUBBLE invisible while scrolling to Storystart
-  if (scrollLocation > 4000) {
+  if (scrollLocation > 4000 && variable.userHasBeenAtEnd === 0) {
     domElement.intro.style.display = "none";
     domElement.titleBox.style.display = "none";
     domElement.titleButton.style.display = "none";
@@ -907,7 +908,6 @@ domElement.body.addEventListener('click', function () {
 
 // SCENE 1: You don't usually see me, but I decided to make an exception this time.
 function scene1() {
-
   document.querySelector(".type-3sec").currentTime = 0;
   document.querySelector(".type-3sec").play();
   document.querySelector(".type-3sec").loop = false;
@@ -2475,10 +2475,29 @@ function scene55a() {
   }, 200)
 }
 
+// Initial volume of 0.20
+// Make sure it's a multiple of 0.05
+var happyHourVol = 0.50;
+var happyHourInterval = 500; // 200ms interval
+
 // look whos back!!
 function scene55b() {
-  document.querySelector(".bar-ambience-full1").pause();
-  document.querySelector(".bar-ambience-full2").pause();
+  // FRENCH FADE OUT SONG
+  var happyHourFadeout = setInterval(
+    function () {
+      // Reduce volume by 0.05 as long as it is above 0
+      // This works as long as you start with a multiple of 0.05!
+      if (happyHourVol > 0.05) {
+        happyHourVol -= 0.05;
+        document.querySelector(".bar-ambience-full1").volume = happyHourVol;
+        document.querySelector(".bar-ambience-full2").volume = happyHourVol;
+      } else {
+        // Stop the setInterval when 0 is reached
+        clearInterval(happyHourFadeout);
+        document.querySelector(".bar-ambience-full1").pause();
+        document.querySelector(".bar-ambience-full2").pause();
+      }
+    }, happyHourInterval);
   ux.click.style.display = "none";
   ux.click.classList = "textBlack";
   document.querySelector("#a-happy-hour-later").style.display = "none";
@@ -2716,7 +2735,7 @@ function scene84() {
     function () {
       // Reduce volume by 0.05 as long as it is above 0
       // This works as long as you start with a multiple of 0.05!
-      if (vol > 0) {
+      if (vol > 0.05) {
         vol -= 0.05;
         document.querySelector(".french-sound").volume = vol;
 
@@ -2773,6 +2792,7 @@ function outro2() {
 
 // OUTRO CALL TO ACTION - dont hesistate to fill in
 function outro3() {
+  variable.userHasBeenAtEnd = 1;
   document.querySelector("#knot-outro").style.display = "flex";
   document.querySelector("#knot-outro").style.backgroundColor = "rgba(12,12,12,0.95)";
   document.querySelector("#navigation-points").style.display = "none";
@@ -2786,7 +2806,7 @@ function outro3() {
   domElement.intro.style.display = "none";
   domElement.body.style.background = "var(--schwarz)";
   domElement.body.style.overflow = "auto";
-  domElement.body.style.overflowX = "auto";
+  domElement.body.style.overflowX = "hidden";
   domElement.body.style.overflowY = "auto";
   scene.cinematicEffect.style.display = "none";
   domElement.assets.style.display = "none";
@@ -2797,6 +2817,7 @@ function outro3() {
   domElement.callToAction.style.display = "block";
   prepareFormular();
   addCommentsToHTML();
+  showStressFormular();
   domElement.body.style.height = "";
   window.scrollTo(0, 3000);
   setTimeout(() => {
@@ -2806,6 +2827,7 @@ function outro3() {
 
 // CALL TO ACTION
 function sceneFinish() {
+  ux.click.style.display = "none";
   character.knot.classList = "knotGone";
   document.querySelector("#knot-outro").style.display = "none";
   text.outro1.style.display = "none";
@@ -3002,12 +3024,12 @@ function addCommentsToHTML() {
 function showStressFormular() {
   domElement.glitchStressFormular.style.display = "block";
   document.querySelector("#show-formular-button").style.display = "none";
-  document.querySelector("#hide-formular-button").style.display = "block";
+  document.querySelector("#hide-formular-button").style.display = "none";
 }
 
 function hideStressFormular() {
   domElement.glitchStressFormular.style.display = "none";
-  document.querySelector("#show-formular-button").style.display = "block";
+  document.querySelector("#show-formular-button").style.display = "none";
   document.querySelector("#hide-formular-button").style.display = "none";
 }
 

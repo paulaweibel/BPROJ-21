@@ -10,14 +10,25 @@
 
 /* GLITCH ----------- */
 #glitch-stress-formular {
-    position: fixed;
+    position: absolute;
     top: 0;
     padding-top: 10vh;
     padding-left: calc(50vw - 350px);
     padding-right: calc(50vw + 350px);
-    background-color: rgba(26, 26, 26, 0.95);
+    /* background-color: rgba(26, 26, 26, 0.95); */
     width: 50vw;
-    height: 100vw;
+    height: 100vh;
+}
+
+#hide-glitch-stuff{
+    position: absolute;
+    top: 85vh;
+    left: calc(50vw - 349px);
+    height: 48px;
+    width: 695px;
+    opacity: 0.9;
+    border-radius: 0.5vh;
+    background-color: var(--schwarz);
 }
 
 #show-formular-button {
@@ -40,11 +51,31 @@
 }
 
 /* ANSWERS GRID!! ----------- */
-.comment-grid {
+#comment-title1{
     position: relative;
-    margin-top: 20vh;
+    left: 0;
+    font-size: 5vh;
+    width: 100%;
+    margin-top: 110vh;
     margin-left: 10vw;
     margin-right: 10vw;
+}
+
+#comment-title2{
+    position: relative;
+    width: 100%;
+    left: 0;
+    font-size: 3vh;
+    margin-top: 5vh;
+    margin-left: 10vw;
+}
+
+.comment-grid {
+    position: relative;
+    margin-top: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding-bottom: 10px;
     /* GRID TEMPLATE */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -65,7 +96,19 @@ b {
     font-size: 3vh;
 }
 
-#comment8 {
+#comment1 {
     grid-row-start: 1;
     grid-row-end: 3;
+    background-color: #99316C;
+    color: var(--weiss);
+}
+
+
+#comment-footer{
+    position: relative;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    margin-top: 10vh;
+    height:3vh;
 }
