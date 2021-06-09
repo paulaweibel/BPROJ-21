@@ -135,16 +135,8 @@ b {
     height: auto;
     width: 100%;
     text-align: center;
-    margin-top: 30vh;
-    height: 10vh;
-}
-
-#footer-icon {
-    position: absolute;
-    left: calc(50vw - 2.5vh);
+    margin-top: 10vh;
     height: 5vh;
-    margin-top: 2.5vh;
-    margin-bottom: 5vh;
 }
 
 

@@ -574,12 +574,12 @@ function animation(scrollPos) {
     ux.scroll.style.display = "none";
   }
 
-  if (scrollLocation < 35 && variable.userHasBeenAtEnd === 1) {
+  if (scrollLocation < 105 && variable.userHasBeenAtEnd === 1) {
     domElement.homeButton.classList.add("showHome");
     domElement.titleButton.style.display = "none";
   }
 
-  if (scrollLocation > 40 && variable.userHasBeenAtEnd === 1) {
+  if (scrollLocation > 110 && variable.userHasBeenAtEnd === 1) {
     domElement.homeButton.classList.add("showHome");
     domElement.titleButton.style.display = "none";
     character.knot.classList = "knotGone";
