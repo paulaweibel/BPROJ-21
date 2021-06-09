@@ -1,13 +1,16 @@
 # Hidden Worries 
-A web story about the daily routine of a stress-producer-worker/employee. 
+A web story about the daily routine of Knot, a a professional stress-maker. 👀
+ <br />
+Who knows... Maybe you can recognize yourself in some of the characters! 👨🏾‍⚕️🧑🏻‍💻👩🏼‍💼🙆🏽‍♀️
  <br />
  <br />
-![shot](cover-image/cover-page1.png)
+![shot](cover-image/cover-title.png)
 
-*👉 [to the temporary story](https://bproj.netlify.app)*
+*👉 [to the web story](https://bproj.netlify.app)*
 
 Bachelor Project • Digital Ideation • Hochschule Luzern <br />
 
-Project by: 
+Credits
+<br />
 [Paula Weibel](https://github.com/paulaweibel) & [Giada Rastelli](https://github.com/giadarastelli) ✌️
 
