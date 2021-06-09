@@ -38,6 +38,10 @@ body {
   cursor: url('cursor1.png'), auto;
 }
 
+a{
+  cursor: url('cursor2.png'), pointer;
+}
+
 .button:hover {
   cursor: url('cursor2.png'), pointer;
 }
@@ -103,14 +107,14 @@ click-text {
   opacity: 1;
   padding-top: 20px;
   padding-left: 1.5rem;
-  width: 18vh;
+  width: 30vh;
   height: 100vh;
   /* background-color: red; */
 }
 .nav-chapter{
   color: var(--schwarz);
   font-size: 2vh;
-  line-height: 2rem;
+  /* line-height: 2rem; */
   left: 7rem;
 }
 .nav-hover{
@@ -375,7 +379,6 @@ h7 {
   opacity: 0;
   white-space: nowrap;
   right: calc(50vw - 15vh);
-  right: -33vh;
   animation: help-fade-in 1s 2s forwards;
 }
 
@@ -389,9 +392,13 @@ h7 {
   animation: scroll-help 1.5s infinite ease-in-out, help-fade-in 1s 1s forwards;
 }
 
-#stuck-help {
+#move-help {
+  position: absolute;
   display: none;
   opacity: 0;
+  white-space: nowrap;
+  right: calc(50vw - 15vh);
+  background-color: var(--schwarz);
   animation: help-fade-in 1s 1s forwards;
 }
 
@@ -723,15 +730,23 @@ img {
 #desktop-only {
   display: none;
   position: fixed;
+  height: 100vh;
+  width: 90%;
   text-align: center;
   padding-top: 40vh;
-  height: 100vh;
-  width: 100%;
+  padding-left: 5vw;
+  margin-right: 10px;
   background-color: var(--schwarz);
   color: var(--weiss);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px){
+  #desktop-only {
+    display: block;
+  }
+}
+
+@media (orientation: portrait) {
   #desktop-only {
     display: block;
   }

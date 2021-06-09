@@ -19,6 +19,7 @@ let variable = {
 let ux = {
   click: document.querySelector("#click-help"),
   scroll: document.querySelector("#scroll-help"),
+  move: document.querySelector("#move-help"),
 }
 
 let domElement = {
@@ -336,7 +337,6 @@ queue.loadFile("./img/knot-images/knot4.png");
 queue.loadFile("./img/knot-images/eyes.png");
 queue.loadFile("./index.html");
 
-
 function handleFileComplete(event) {
   var item = event.item;
   var type = item.type;
@@ -346,22 +346,19 @@ function handleFileComplete(event) {
   }
 }
 
-
 ////////////////////////////////////////////////////////////////
 //// MOUSE STOPPED MOVING //////////////////////////////////////
 
 var mouseStartedMoving = false;
 var mouseMoved = false;
 var MINIMUM_MOUSE_MOVE_TIME = 2000;
+
 setInterval(() => {
   if (!mouseMoved && mouseStartedMoving) {
     //Mouse stopped moving
     setTimeout(() => {
-      // document.querySelector("#mouseTransparent").style.display = "block";
       document.querySelector("#mouseMoved").classList.add("mousePaused");
-    }, 30000)
-    setTimeout(() => {
-      // document.querySelector("#mouseTransparent").classList.add("mouseBlack");
+      ux.move.style.display = "block";
     }, 30000)
     mouseStartedMoving = false;
   }
@@ -371,11 +368,7 @@ setInterval(() => {
 body.onmousemove = function (ev) {
   mouseStartedMoving = true;
   document.querySelector("#mouseMoved").classList.remove("mousePaused");
-
-  // document.querySelector("#mouseTransparent").classList.remove("mouseBlack");
-  setTimeout(() => {
-    // document.querySelector("#mouseTransparent").style.display = "none";
-  }, 1000)
+  ux.move.style.display = "none";
   mouseMoved = true;
 }
 
@@ -550,6 +543,8 @@ function animation(scrollPos) {
     variable.currentScene = 0;
   }
 
+  
+
   // 100 PX, "HELLO I'M STRESS KNOT" (MOVE KNOT, ADD SPEECHBUBBLE, REMOVE SCROLL ARROW)
   if (scrollLocation > 100) {
     domElement.intro.style.display = "block";
@@ -569,6 +564,11 @@ function animation(scrollPos) {
     variable.currentScene = 1;
     ux.click.style.display = "block";
     ux.scroll.style.display = "none";
+  }
+
+  if (scrollLocation < 100 && variable.userHasBeenAtEnd === 1) {
+    domElement.homeButton.classList.add("showHome");
+    character.knot.classList = "knotOutro";
   }
 
   // setting INTRO and SPEECHBUBBLE invisible while scrolling to Storystart
@@ -2785,31 +2785,22 @@ function outro1() {
 function outro2() {
   text.outro2.style.display = "block";
   text.outro1.style.display = "none";
-  setTimeout(() => {
-    variable.currentScene = "outro3";
-  }, 200)
-}
-
-// OUTRO CALL TO ACTION - dont hesistate to fill in
-function outro3() {
   variable.userHasBeenAtEnd = 1;
+  document.querySelector("#start-again").style.display = "block";
   document.querySelector("#knot-outro").style.display = "flex";
-  document.querySelector("#knot-outro").style.backgroundColor = "rgba(12,12,12,0.95)";
   document.querySelector("#navigation-points").style.display = "none";
-  character.knot.classList = "knotOutro2";
-  text.outro3.style.display = "block";
-  text.outro2.style.display = "none";
   variable.currentScene = 1000;
   ux.click.classList = "textWhite";
   ux.click.style.display = "block";
   ux.scroll.style.display = "none";
   domElement.intro.style.display = "none";
   domElement.body.style.background = "var(--schwarz)";
-  domElement.body.style.overflow = "auto";
+  domElement.body.style.overflow = "hidden";
   domElement.body.style.overflowX = "hidden";
-  domElement.body.style.overflowY = "auto";
+  domElement.body.style.overflowY = "hidden";
   scene.cinematicEffect.style.display = "none";
   domElement.assets.style.display = "none";
+  character.knot.classList = "knotOutro";
   character.valentino.style.display = "none";
   character.lawrence.style.display = "none";
   character.mercy.style.display = "none";
@@ -2821,16 +2812,27 @@ function outro3() {
   domElement.body.style.height = "";
   window.scrollTo(0, 3000);
   setTimeout(() => {
-    variable.currentScene = 1001;
+    variable.currentScene = "outro3";
   }, 200)
+}
+
+// OUTRO CALL TO ACTION - dont hesistate to fill in
+function outro3() {
+  domElement.body.style.overflow = "auto";
+  domElement.body.style.overflowX = "hidden";
+  domElement.body.style.overflowY = "auto";
+  character.knot.classList = "knotGone";
+  document.querySelector("#knot-outro").style.backgroundColor = "rgba(12,12,12,0.8)";
+  text.outro3.style.display = "block";
+  text.outro2.style.display = "none";
+  text.outro1.style.display = "none";
+  ux.click.style.display = "none";
+  document.querySelector("#knot-outro").style.display = "none";
 }
 
 // CALL TO ACTION
 function sceneFinish() {
-  ux.click.style.display = "none";
-  character.knot.classList = "knotGone";
-  document.querySelector("#knot-outro").style.display = "none";
-  text.outro1.style.display = "none";
+  
 }
 
 
@@ -2957,7 +2959,7 @@ function hideWhisperRight() {
 function prepareFormular() {
   var glitchdiv = document.createElement("div");
   glitchdiv.setAttribute("class", "glitch-embed-wrap");
-  glitchdiv.setAttribute("style", "position: absolute; height: 80vh; width: 700px;");
+  glitchdiv.setAttribute("style", "position: absolute; height: 80vh; width: 45vw;");
   var ifrm = document.createElement("iframe");
   ifrm.setAttribute("src", "https://glitch.com/embed/#!/embed/stressformular?path=server.js&previewSize=100&attributionHidden=true");
   ifrm.setAttribute("title", "stressformular on Glitch");
@@ -3567,14 +3569,14 @@ new TypeIt("#outro1", {
 
 new TypeIt("#outro2", {
   cursor: false,
-  strings: ["I always have the assistants fill out a small form. ", "The purpose is to understand the factors that create stress in people and how they react. So I can improve my stress-producing tactics."],
+  strings: ["I always have the assistants fill out a small form. ", "The purpose is to understand the factors that create stress in people and how they react. ", "So I can improve my stress-producing tactics."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
+// (im html bei "call-to-action")
 new TypeIt("#outro3", {
   cursor: false,
-  strings: ["Feel free to fill it out too.", "You can also scroll down to see the answers of the other stress-assistants and maybe identify yourself with some situations."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()

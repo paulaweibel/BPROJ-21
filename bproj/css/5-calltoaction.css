@@ -13,22 +13,29 @@
     position: absolute;
     top: 0;
     padding-top: 10vh;
-    padding-left: calc(50vw - 350px);
+    padding-left: 10vw;
     padding-right: calc(50vw + 350px);
     /* background-color: rgba(26, 26, 26, 0.95); */
-    width: 50vw;
+    width: 40vw;
     height: 100vh;
 }
 
-#hide-glitch-stuff{
+#hide-glitch-stuff {
     position: absolute;
-    top: 85vh;
-    left: calc(50vw - 349px);
+    top: calc(90vh - 50px);
+    left: calc(10vw + 1px);
     height: 48px;
-    width: 695px;
+    width: calc(45vw - 5px);
     opacity: 0.9;
     border-radius: 0.5vh;
     background-color: var(--schwarz);
+}
+
+#outro3 {
+    position: absolute;
+    left: 40vw;
+    width: 30vw;
+    top: 40vh;
 }
 
 #show-formular-button {
@@ -51,19 +58,19 @@
 }
 
 /* ANSWERS GRID!! ----------- */
-#comment-title1{
+#comment-title1 {
     position: relative;
     left: 0;
     font-size: 5vh;
-    width: 100%;
+    width: 80%;
     margin-top: 110vh;
     margin-left: 10vw;
     margin-right: 10vw;
 }
 
-#comment-title2{
+#comment-title2 {
     position: relative;
-    width: 100%;
+    width: 80%;
     left: 0;
     font-size: 3vh;
     margin-top: 5vh;
@@ -85,6 +92,8 @@
 
 .comment {
     position: relative;
+    line-height:4vh;
+    font-family: 'Lilita One';
     font-size: 2vh;
     padding: 3vh;
     color: var(--schwarz);
@@ -92,23 +101,46 @@
 }
 
 b {
+    font-family: 'architects daughter';
+    line-height:1vh;
     text-align: left !important;
     font-size: 3vh;
 }
 
 #comment1 {
-    grid-row-start: 1;
+    grid-row-start: 2;
     grid-row-end: 3;
-    background-color: #99316C;
+    grid-column: 2;
+    background-color: #0c0c0c;
     color: var(--weiss);
 }
 
-
-#comment-footer{
+#comment-footer {
     position: relative;
     height: auto;
     width: 100%;
     text-align: center;
-    margin-top: 10vh;
-    height:3vh;
+    margin-top: 30vh;
+    height: 10vh;
+}
+
+#footer-icon {
+    position: absolute;
+    left: calc(50vw - 2.5vh);
+    height: 5vh;
+    margin-top: 2.5vh;
+    margin-bottom: 5vh;
+}
+
+
+#start-again {
+    position: absolute;
+    top: 0;
+    padding-top: 2500px;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    background-color: var(--schwarz);
+    font-size: 3vh;
+    text-decoration: none !important;
 }

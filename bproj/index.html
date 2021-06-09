@@ -433,17 +433,26 @@
     </div>
 
     <!-- BACKGROUND BECOMING DARKER ------------------->
-    <div id="mouseTransparent">move your mouse</div>
+    <!-- <div id="mouseTransparent">move your mouse</div> -->
 
     <!-- STRESS FORMULAR (CALL TO ACTION) -->
     <div id="call-to-action" STYLE="DISPLAY: NONE;">
         <div id="call-to-action-scrollY">
+            <p id="outro3" class="phrase textWhite phrase-outro">Feel free to fill it out too!
+                <br><br>
+                You can also scroll down to see the answers of the other stress-assistants.
+            </p>
             <div id="comment-title1">Previous Assistants answers</div>
-            <div id="comment-title2">Knot tries to get smarter and smarter. <br> What causes and stops stress? </div>
+            <div id="comment-title2">Maybe you can identify yourself with some situations. The answers were checked by
+                Knot and his assistants and then displayed on
+                this platform. </div>
             <div class="comment-grid">
                 <!-- HIER WERDEN DATEN AUS "IN.CSV HINZUGEFÜGT" --->
             </div>
-            <div id="comment-footer">hiddenworries.ch</div>
+            <div id="comment-footer">
+                <!-- <a href="."><img id="footer-icon" onclick="goHome()" src="img/knot-images/iconic.png"></a> -->
+                hiddenworries.ch
+            </div>
             <div id="glitch-stress-formular" style="display: none;">
             </div>
             <div id="hide-glitch-stuff"></div>
@@ -455,7 +464,6 @@
     <div id="knot-outro">
         <p id="outro1" class="phrase textWhite phrase-outro"></p>
         <p id="outro2" class="phrase textWhite phrase-outro"></p>
-        <p id="outro3" class="phrase textWhite phrase-outro"></p>
     </div>
 
     <!-- MAIN CHARACTER KNOT ------------------->
@@ -545,12 +553,12 @@
     </div>
     <div id="navigation-points">
         <p class="button textBlack" onclick="hideNavigation()">Jump To</p> <br>
-        <p class="nav-hover nav-chapter button textBlack" onclick="goValentino()">Chapter 1 valentino</p><br>
-        <p class="nav-hover nav-chapter button textBlack" onclick="goLawrence()">Chapter 2 lawrence</p><br>
-        <p class="nav-hover nav-chapter button textBlack" onclick="goMercy()">Chapter 3 MERCY</p><br>
-        <p class="nav-hover nav-chapter button textBlack" onclick="goBarbara()">Chapter 4 BARBARA</p><br>
+        <p class="nav-hover nav-chapter button textBlack" onclick="goValentino()">Chapter 1 valentino</p>
+        <p class="nav-hover nav-chapter button textBlack" onclick="goLawrence()">Chapter 2 lawrence</p>
+        <p class="nav-hover nav-chapter button textBlack" onclick="goMercy()">Chapter 3 MERCY</p>
+        <p class="nav-hover nav-chapter button textBlack" onclick="goBarbara()">Chapter 4 BARBARA</p>
         <p class="nav-hover nav-chapter button textBlack" onclick="goValentinoEnd()">Chapter 5 VALENTINO</p><br>
-        <p class="nav-hover textBlack button" onclick="outro3()">FEEDBACK</p>
+        <p class="nav-hover textBlack button" onclick="outro2()">FEEDBACK</p>
     </div>
 
     <!-- ABOUT -------------------->
@@ -574,11 +582,16 @@
         <h7>
             CREDITS<br>
             Giada Rastelli & Paula Weibel<br><br>
-            SOUND<br> 
+            SOUND<br>
             Sound effects and music obtained from: zapsplat.com <br>
             (Lawrence's Song) Frozen Egg by Lame Drivers from: freemusicarchive.com
         </h7>
     </div>
+
+    <div id="start-again" class="phrase">
+        <a href=".">go back to story</a>
+    </div>
+
     <!--HOME BUTTON -->
     <a href="."><img onclick="goHome()" id="home-button" src="img/knot-images/iconic.png"></a>
 
@@ -586,7 +599,7 @@
     <div id="orientation-help">
         <click-text id="click-help" class="textBlack"> click anywhere </click-text>
         <click-text id="scroll-help" class="textBlack"> scroll down </click-text>
-        <click-text id="stuck-help" class="textBlack">move your mouse</click-text>
+        <click-text id="move-help" class="textWhite">move your mouse</click-text>
     </div>
 
     <!-- AUDIO -->
@@ -670,9 +683,9 @@
     <!-- NO MOBILE VERSION ------------------------------------------------------------->
     <!-- eyes: ⬮ ⬮ -->
     <div id="desktop-only">
-        <p>Hello mobile user! <br> <br> This project is designed for desktop. Some parts will not work as intended. <br> <br> Rotate your device if you want to try it anyway. ⟳</p>
+        <p>Hello mobile user! <br> <br> This project is designed for desktop. Some parts will not work as intended. <br>
+            <br> Rotate your device if you want to try it anyway. ⟳</p>
     </div>
-
     <script src="./js/main.js"></script>
 </body>
 
