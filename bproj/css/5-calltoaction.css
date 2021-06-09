@@ -92,28 +92,28 @@
 
 .comment {
     position: relative;
-    line-height:3.5vh;
+    line-height: 3.7vh;
     font-family: 'Lilita One';
     font-size: 2vh;
     padding: 3vh;
     color: var(--schwarz);
     background-color: var(--weiss);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 b {
     font-family: 'architects daughter';
-    line-height: 1vh;
+    line-height: 3vh;
     text-align: left !important;
-    font-size: 2vh;
+    font-size: 2.5vh;
 }
 
-.name{
+.name {
     position: absolute;
     color: #c4c4c4;
     font-family: 'lilita one';
     text-align: right;
-    line-height:2vh;
+    line-height: 2vh;
     width: 85%;
     height: auto;
     right: 0;
@@ -161,6 +161,6 @@ b {
     text-decoration: none !important;
 }
 
-a{
+a {
     text-decoration: none;
 }
