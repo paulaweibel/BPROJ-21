@@ -308,19 +308,26 @@ queue.on("progress", event => {
 queue.on("complete", event => {
   //show eyes
   startPage.classList.add("fadeIn");
-  //show hi after 3500 ms
   setTimeout(() => {
-    hi.classList.remove("hi-animation");
-  }, 1500)
+    document.querySelector("#pre-info").style.opacity = 1;
+  }, 1000)
   //remove progress bar
   setTimeout(() => {
     progress.classList.add("fadeOut");
-    character.knot.style.opacity = "1";
-    domElement.body.style.height = "100vh";
     window.scrollTo(0, 0);
-    ux.scroll.style.display = "block";
   }, 500)
 })
+
+function startWebsite() {
+  document.querySelector("#pre-info").style.display="none";
+  character.knot.style.opacity = "1";
+  domElement.body.style.height = "100vh";
+  window.scrollTo(0, 0);
+  ux.scroll.style.display = "block";
+  setTimeout(() => {
+    hi.classList.remove("hi-animation");
+  }, 1500)
+}
 
 queue.on("fileload", handleFileComplete);
 queue.loadFile("./css/style.css");
@@ -2819,10 +2826,10 @@ function outro2() {
   showStressFormular();
   domElement.body.style.height = "";
   window.scrollTo(0, 100);
-  domElement.titleButton.style.display="none";
+  domElement.titleButton.style.display = "none";
   setTimeout(() => {
     variable.currentScene = "outro3";
-    domElement.titleButton.style.display="none";
+    domElement.titleButton.style.display = "none";
   }, 200)
 }
 
@@ -2831,7 +2838,7 @@ function outro3() {
   domElement.body.style.overflow = "auto";
   domElement.body.style.overflowX = "hidden";
   domElement.body.style.overflowY = "auto";
-  domElement.titleButton.style.display="none";
+  domElement.titleButton.style.display = "none";
   character.knot.classList = "knotOutro2";
   document.querySelector("#knot-outro").style.backgroundColor = "rgba(12,12,12,0.8)";
   text.outro3.style.display = "block";
