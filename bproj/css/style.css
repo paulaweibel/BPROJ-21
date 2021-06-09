@@ -287,7 +287,7 @@ click-text {
 /* ABOUT -------------------------------- */
 .about-menu {
   position: absolute;
-  left: calc(100vw - 8rem);
+  left: calc(100vw - 14vh);
   top: 20px;
   width: 3rem;
   text-align: left;
@@ -753,7 +753,7 @@ img {
   text-align: center;
   padding-top: 40vh;
   padding-left: 5vw;
-  margin-right: 10px;
+  padding-right: 5vw;
   background-color: var(--schwarz);
   color: var(--weiss);
 }

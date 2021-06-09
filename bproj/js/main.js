@@ -1,9 +1,4 @@
-// HIDDEN WORRIES OF JAVASCRIPT
-
-////////////////////////////////////////////////////////////////
-//// GLOBAL VARIABLES //////////////////////////////////////////
-
-let variable = {
+let myvariable = {
   currentScene: 0,
   toggleCount: 0,
   motCount: 0,
@@ -27,7 +22,6 @@ let domElement = {
   intro: document.querySelector("#intro"),
   titleBox: document.querySelector("#title-container"),
   titleButton: document.querySelector("#title-button-container"),
-  // scrollIcon: document.querySelector("#scroll-icon"),
   homeButton: document.querySelector("#home-button"),
   about: document.querySelector("#about-content"),
   assets: document.querySelector("#asset-container"),
@@ -264,7 +258,7 @@ let text = {
 
 // window.onload = function checkPosition() {
 //   window.scrollTo(0, 0);
-//   // variable.currentScene = 0;
+//   // myvariable.currentScene = 0;
 // }
 
 ////////////////////////////////////////////////////////////////
@@ -272,7 +266,7 @@ let text = {
 
 function goHome() {
   window.scrollTo(0, 0);
-  variable.currentScene = 0;
+  myvariable.currentScene = 0;
   domElement.body.style.overflow = "hidden";
   domElement.body.style.overflowX = "hidden";
   domElement.body.style.overflowY = "hidden";
@@ -319,7 +313,7 @@ queue.on("complete", event => {
 })
 
 function startWebsite() {
-  document.querySelector("#pre-info").style.display="none";
+  document.querySelector("#pre-info").style.display = "none";
   character.knot.style.opacity = "1";
   domElement.body.style.height = "100vh";
   window.scrollTo(0, 0);
@@ -335,7 +329,6 @@ queue.loadFile("./css/0-knot.css");
 queue.loadFile("./js/main.js");
 queue.loadFile("./img/title/new-title-hidden-worries.png");
 queue.loadFile("./img/title/new-title-hi.png");
-queue.loadFile("./img/background.png");
 queue.loadFile("./img/knot-images/background-knot.png");
 queue.loadFile("./img/knot-images/knot1.png");
 queue.loadFile("./img/knot-images/knot2.png");
@@ -358,15 +351,13 @@ function handleFileComplete(event) {
 
 var mouseStartedMoving = false;
 var mouseMoved = false;
-var MINIMUM_MOUSE_MOVE_TIME = 2000;
+var MINIMUM_MOUSE_MOVE_TIME = 30000;
 
 setInterval(() => {
   if (!mouseMoved && mouseStartedMoving) {
     //Mouse stopped moving
-    setTimeout(() => {
-      document.querySelector("#mouseMoved").classList.add("mousePaused");
-      ux.move.style.display = "block";
-    }, 30000)
+    document.querySelector("#mouseMoved").classList.add("mousePaused");
+    ux.move.style.display = "block";
     mouseStartedMoving = false;
   }
   mouseMoved = false;
@@ -410,7 +401,7 @@ document.addEventListener('scroll', function (e) {
   }
 });
 
-// --SCROLLX HORIZONTAL CSS-VARIABLE
+// --SCROLLX HORIZONTAL CSS-myvariable
 window.addEventListener('scroll', () => {
   document.body.style.setProperty('--scrollX', window.pageXOffset / (window.innerWidth + sLeft));
 }, true);
@@ -419,7 +410,7 @@ window.addEventListener('scroll', () => {
 //SPOTLIGHT!!!//////////////////////////////////////////////////
 
 window.addEventListener("mousemove", (e) => {
-  if (variable.moveflag == true) {
+  if (myvariable.moveflag == true) {
     spotlightMove(e);
   }
 });
@@ -492,8 +483,8 @@ domElement.titleButton.addEventListener('click', function () {
   document.querySelector(".user-clicking-sound").loop = false;
   document.querySelector(".user-clicking-sound").volume = 0.5;
 
-  if (variable.visible === 1 || variable.visible === 3) {
-    variable.visible = 0;
+  if (myvariable.visible === 1 || myvariable.visible === 3) {
+    myvariable.visible = 0;
     domElement.body.style.overflowY = "visible";
     domElement.body.style.height = "200vh";
     domElement.body.style.background = "var(--weiss)";
@@ -503,7 +494,7 @@ domElement.titleButton.addEventListener('click', function () {
     // domElement.about.style.color = "var(--schwarz)";
     character.knot.classList.add("knotTitle");
   } else {
-    variable.visible = 3;
+    myvariable.visible = 3;
     domElement.body.style.overflowY = "hidden";
     domElement.body.style.background = "var(--schwarz)";
     domElement.body.style.height = "100vh";
@@ -529,7 +520,7 @@ function scrollToIntro() {
 
 function animation(scrollPos) {
   // ANIMATIONS BASED ON SCROLL POSITION
-  if (scrollLocation < 100 && variable.userHasBeenAtEnd === 0) {
+  if (scrollLocation < 100 && myvariable.userHasBeenAtEnd === 0) {
     text.phrase1.style.display = "none";
     text.phrase2.style.display = "none";
     text.phrase3.style.display = "none";
@@ -549,12 +540,12 @@ function animation(scrollPos) {
     domElement.knotTalkingRight.classList.remove("bubbleGrow");
     // domElement.scrollIcon.classList.remove("scroll-icon-after");
     document.querySelector("#navigation-button").style.display = "block";
-    variable.currentScene = 0;
+    myvariable.currentScene = 0;
   }
 
 
   // 100 PX, "HELLO I'M STRESS KNOT" (MOVE KNOT, ADD SPEECHBUBBLE, REMOVE SCROLL ARROW)
-  if (scrollLocation > 100 && variable.userHasBeenAtEnd === 0) {
+  if (scrollLocation > 100 && myvariable.userHasBeenAtEnd === 0) {
     domElement.intro.style.display = "block";
     domElement.titleBox.classList.add("titleUp");
     domElement.titleButton.classList.add("ropeUp");
@@ -567,26 +558,26 @@ function animation(scrollPos) {
     document.querySelector("#navigation-button").style.display = "none";
   }
 
-  if (scrollLocation > 100 && scrollLocation < 2000 && variable.currentScene === 0 && variable.userHasBeenAtEnd === 0) {
+  if (scrollLocation > 100 && scrollLocation < 2000 && myvariable.currentScene === 0 && myvariable.userHasBeenAtEnd === 0) {
     text.phrase1.style.display = "block";
-    variable.currentScene = 1;
+    myvariable.currentScene = 1;
     ux.click.style.display = "block";
     ux.scroll.style.display = "none";
   }
 
-  if (scrollLocation < 105 && variable.userHasBeenAtEnd === 1) {
+  if (scrollLocation < 105 && myvariable.userHasBeenAtEnd === 1) {
     domElement.homeButton.classList.add("showHome");
     domElement.titleButton.style.display = "none";
   }
 
-  if (scrollLocation > 110 && variable.userHasBeenAtEnd === 1) {
+  if (scrollLocation > 110 && myvariable.userHasBeenAtEnd === 1) {
     domElement.homeButton.classList.add("showHome");
     domElement.titleButton.style.display = "none";
     character.knot.classList = "knotGone";
   }
 
   // setting INTRO and SPEECHBUBBLE invisible while scrolling to Storystart
-  if (scrollLocation > 4000 && variable.userHasBeenAtEnd === 0) {
+  if (scrollLocation > 4000 && myvariable.userHasBeenAtEnd === 0) {
     domElement.intro.style.display = "none";
     domElement.titleBox.style.display = "none";
     domElement.titleButton.style.display = "none";
@@ -604,154 +595,154 @@ function animation(scrollPos) {
 // TRIGGER THINGS WHEN BODY IS CLICKED
 domElement.body.addEventListener('click', function () {
   //INTRO
-  if (variable.currentScene === 1) {
+  if (myvariable.currentScene === 1) {
     scene1();
   }
-  if (variable.currentScene === 2) {
+  if (myvariable.currentScene === 2) {
     scene2();
   }
-  if (variable.currentScene === 3.1) {
+  if (myvariable.currentScene === 3.1) {
     scene3a();
   }
-  if (variable.currentScene === 3) {
+  if (myvariable.currentScene === 3) {
     scene3();
   }
   // VALENTINO
-  if (variable.currentScene === 5) {
+  if (myvariable.currentScene === 5) {
     scene5();
   }
   // SCENE 6 (let’s see what we have here)
-  if (variable.currentScene === 6) {
+  if (myvariable.currentScene === 6) {
     scene6();
   }
 
   // VALENTINO one hour later...
-  if (variable.currentScene === 9.1) {
+  if (myvariable.currentScene === 9.1) {
     scene9a();
   }
   // BED second sentence valentino
-  if (variable.currentScene === 9.5) {
+  if (myvariable.currentScene === 9.5) {
     scene9b();
   }
 
   // SCENE 10 run Valentino!! 
-  if (variable.currentScene === 10) {
+  if (myvariable.currentScene === 10) {
     scene10();
   }
   // SCENE 12 
-  if (variable.currentScene === 12) {
+  if (myvariable.currentScene === 12) {
     scene12();
   }
   // SCENE 13
-  if (variable.currentScene === 13) {
+  if (myvariable.currentScene === 13) {
     scene13();
   }
   // SCENE 14
-  if (variable.currentScene === 14) {
+  if (myvariable.currentScene === 14) {
     scene14();
   }
   // SCENE 15
-  if (variable.currentScene === 15) {
+  if (myvariable.currentScene === 15) {
     scene15();
   }
   // SCENE 16
-  if (variable.currentScene === 16) {
+  if (myvariable.currentScene === 16) {
     scene16();
   }
   // SCENE 17
-  if (variable.currentScene === 17) {
+  if (myvariable.currentScene === 17) {
     scene17();
   }
   // SCENE 19
-  if (variable.currentScene === 19) {
+  if (myvariable.currentScene === 19) {
     scene19();
   }
   // SCENE 20
-  if (variable.currentScene === 20) {
+  if (myvariable.currentScene === 20) {
     scene20();
   }
   // SCENE 20a
-  if (variable.currentScene === 20.1) {
+  if (myvariable.currentScene === 20.1) {
     scene20a();
   }
   // SCENE 20b
-  if (variable.currentScene === 20.2) {
+  if (myvariable.currentScene === 20.2) {
     scene20b();
   }
   // SCENE 21
-  if (variable.currentScene === 21) {
+  if (myvariable.currentScene === 21) {
     scene21();
   }
   // SCENE 22
-  if (variable.currentScene === 22) {
+  if (myvariable.currentScene === 22) {
     scene22();
   }
   // SCENE 23
-  if (variable.currentScene === 23) {
+  if (myvariable.currentScene === 23) {
     scene23();
   }
   // SCENE 24
-  if (variable.currentScene === 24) {
+  if (myvariable.currentScene === 24) {
     scene24();
   }
   // SCENE 24a
-  if (variable.currentScene === 24.1) {
+  if (myvariable.currentScene === 24.1) {
     scene24a();
   }
   // SCENE 24b
-  if (variable.currentScene === 24.2) {
+  if (myvariable.currentScene === 24.2) {
     scene24b();
   }
   // SCENE 24b
-  if (variable.currentScene === 24.3) {
+  if (myvariable.currentScene === 24.3) {
     scene24c();
   }
   // SCENE 25
-  if (variable.currentScene === 25) {
+  if (myvariable.currentScene === 25) {
     scene25();
   }
   // SCENE 26a
-  if (variable.currentScene === 26) {
+  if (myvariable.currentScene === 26) {
     scene26Error();
   }
   // SCENE 26a
-  if (variable.currentScene === 26.1) {
+  if (myvariable.currentScene === 26.1) {
     scene26a();
   }
   // SCENE 26b
-  if (variable.currentScene === 26.2) {
+  if (myvariable.currentScene === 26.2) {
     scene26b();
   }
   // SCENE 27
-  if (variable.currentScene === 27) {
+  if (myvariable.currentScene === 27) {
     scene27();
   }
   // SCENE 28
-  if (variable.currentScene === 28.1) {
+  if (myvariable.currentScene === 28.1) {
     scene28a();
   }
   // SCENE 29
-  if (variable.currentScene === 29) {
+  if (myvariable.currentScene === 29) {
     scene29();
   }
   // SCENE 30
-  if (variable.currentScene === 30) {
+  if (myvariable.currentScene === 30) {
     scene30();
   }
   // SCENE 31
-  if (variable.currentScene === 31) {
+  if (myvariable.currentScene === 31) {
     scene31();
   }
   // SCENE 32
-  if (variable.currentScene === 32) {
+  if (myvariable.currentScene === 32) {
     scene32();
   }
   // SCENE 32
-  if (variable.currentScene === 34) {
+  if (myvariable.currentScene === 34) {
     scene34();
   }
   // SCENE 27
-  if (variable.currentScene === "goBarbara") {
+  if (myvariable.currentScene === "goBarbara") {
     character.mercy3d.style.display = "none";
     character.mercy3dMess.style.display = "none";
     scene.windowFix.style.display = "none";
@@ -760,164 +751,164 @@ domElement.body.addEventListener('click', function () {
   }
 
   // SCENE 35
-  if (variable.currentScene === 35) {
+  if (myvariable.currentScene === 35) {
     scene35();
   }
   // SCENE 36
-  if (variable.currentScene === 36) {
+  if (myvariable.currentScene === 36) {
     scene36();
   }
   // SCENE 37
-  if (variable.currentScene === 37) {
+  if (myvariable.currentScene === 37) {
     scene37();
   }
   // SCENE 38
-  if (variable.currentScene === 38) {
+  if (myvariable.currentScene === 38) {
     scene38();
   }
   // SCENE 39
-  if (variable.currentScene === 39) {
+  if (myvariable.currentScene === 39) {
     scene39();
   }
   // SCENE 40
-  if (variable.currentScene === 40) {
+  if (myvariable.currentScene === 40) {
     scene40();
   }
   // SCENE 41
-  if (variable.currentScene === 41) {
+  if (myvariable.currentScene === 41) {
     scene41();
   }
-  if (variable.currentScene === 42) {
+  if (myvariable.currentScene === 42) {
     scene42();
   }
-  if (variable.currentScene === 43) {
+  if (myvariable.currentScene === 43) {
     scene43();
   }
-  if (variable.currentScene === 44) {
+  if (myvariable.currentScene === 44) {
     scene44();
   }
   // COFFEE SPILL
-  if (variable.currentScene === 46.1) {
+  if (myvariable.currentScene === 46.1) {
     scene46a();
   }
-  if (variable.currentScene === 47) {
+  if (myvariable.currentScene === 47) {
     scene47();
   }
-  if (variable.currentScene === 48) {
+  if (myvariable.currentScene === 48) {
     scene48();
   }
-  if (variable.currentScene === 49) {
+  if (myvariable.currentScene === 49) {
     scene49();
   }
-  if (variable.currentScene === 50) {
+  if (myvariable.currentScene === 50) {
     scene50();
   }
-  if (variable.currentScene === 51) {
+  if (myvariable.currentScene === 51) {
     scene51();
   }
-  if (variable.currentScene === 52) {
+  if (myvariable.currentScene === 52) {
     scene52();
   }
-  if (variable.currentScene === 53) {
+  if (myvariable.currentScene === 53) {
     scene53();
   }
-  if (variable.currentScene === 54) {
+  if (myvariable.currentScene === 54) {
     scene54();
   }
-  if (variable.currentScene === 55) {
+  if (myvariable.currentScene === 55) {
     scene55();
   }
-  if (variable.currentScene === 55.1) {
+  if (myvariable.currentScene === 55.1) {
     scene55a();
   }
-  if (variable.currentScene === 55.2) {
+  if (myvariable.currentScene === 55.2) {
     scene55b();
   }
-  if (variable.currentScene === 56) {
+  if (myvariable.currentScene === 56) {
     scene56();
   }
 
   // HAPPY HOUR
-  if (variable.currentScene === 57) {
+  if (myvariable.currentScene === 57) {
     scene57();
   }
-  if (variable.currentScene === 58) {
+  if (myvariable.currentScene === 58) {
     scene58();
   }
-  if (variable.currentScene === 59) {
+  if (myvariable.currentScene === 59) {
     scene59();
   }
-  if (variable.currentScene === 60) {
+  if (myvariable.currentScene === 60) {
     scene60();
   }
-  if (variable.currentScene === 61) {
+  if (myvariable.currentScene === 61) {
     scene61();
   }
-  if (variable.currentScene === 62) {
+  if (myvariable.currentScene === 62) {
     scene62();
   }
-  if (variable.currentScene === 63) {
+  if (myvariable.currentScene === 63) {
     scene63();
   }
-  if (variable.currentScene === 64) {
+  if (myvariable.currentScene === 64) {
     scene64();
   }
-  if (variable.currentScene === 65) {
+  if (myvariable.currentScene === 65) {
     scene65();
   }
-  if (variable.currentScene === 66) {
+  if (myvariable.currentScene === 66) {
     scene66();
   }
-  if (variable.currentScene === 68) {
+  if (myvariable.currentScene === 68) {
     scene67();
   }
 
 
 
   // LAST SCENE
-  if (variable.currentScene === 80) {
+  if (myvariable.currentScene === 80) {
     scene80();
   }
-  if (variable.currentScene === 81) {
+  if (myvariable.currentScene === 81) {
     scene81();
   }
-  if (variable.currentScene === 82) {
+  if (myvariable.currentScene === 82) {
     scene82();
   }
-  if (variable.currentScene === 83) {
+  if (myvariable.currentScene === 83) {
     scene83();
   }
-  if (variable.currentScene === 84) {
+  if (myvariable.currentScene === 84) {
     scene84();
   }
 
-  if (variable.currentScene === "outro1") {
+  if (myvariable.currentScene === "outro1") {
     outro1();
   }
-  if (variable.currentScene === "outro2") {
+  if (myvariable.currentScene === "outro2") {
     outro2();
   }
-  if (variable.currentScene === "outro3") {
+  if (myvariable.currentScene === "outro3") {
     outro3();
   }
 
-  if (variable.currentScene === 1001) {
+  if (myvariable.currentScene === 1001) {
     sceneFinish();
   }
 
   // LAST SCENE
-  if (variable.currentScene === "goValentinoEnd") {
+  if (myvariable.currentScene === "goValentinoEnd") {
     goValentinoEnd();
   }
   // CALL TO ACTION
-  if (variable.currentScene === "goToEnd") {
+  if (myvariable.currentScene === "goToEnd") {
     goCallToAction();
   }
   // CALL TO ACTION
-  if (variable.currentScene === "callToAct") {
+  if (myvariable.currentScene === "callToAct") {
     hideStressFormular();
   }
-  console.log("Scene: " + variable.currentScene + ", I am at: " + scrollY);
+  console.log("Scene: " + myvariable.currentScene + ", I am at: " + scrollY);
 });
 
 // SCENE 1: You don't usually see me, but I decided to make an exception this time.
@@ -934,7 +925,7 @@ function scene1() {
   text.phrase4.style.display = "none";
   text.phrase5.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 2;
+    myvariable.currentScene = 2;
   }, 500)
   setTimeout(() => {
 
@@ -956,7 +947,7 @@ function scene2() {
   text.phrase3.style.display = "block";
   domElement.helpButtons.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 3.1;
+    myvariable.currentScene = 3.1;
   }, 500)
 }
 
@@ -975,7 +966,7 @@ function scene3a() {
   text.phrase3b.style.display = "block";
   domElement.helpButtons.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 3;
+    myvariable.currentScene = 3;
   }, 500)
 }
 
@@ -999,7 +990,7 @@ function scene3() {
   domElement.helpYes.classList.add("helpUp");
   domElement.helpNo.classList.add("helpUp");
   setTimeout(() => {
-    variable.currentScene = 4;
+    myvariable.currentScene = 4;
   }, 500)
 }
 
@@ -1040,7 +1031,7 @@ function goValentino() {
   document.querySelector(".ambience-apartment2").currentTime = 0;
   document.querySelector(".ambience-apartment2").volume = 0.4;
   document.querySelector(".ambience-apartment2").play();
-  variable.currentScene = 4.5;
+  myvariable.currentScene = 4.5;
   scene5();
 }
 
@@ -1052,7 +1043,7 @@ function scene5() {
   text.phrase5.style.display = "block";
   domElement.assets.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 6;
+    myvariable.currentScene = 6;
   }, 500)
 }
 
@@ -1065,11 +1056,11 @@ function scene6() {
   character.valentino1a.style.display = "block";
   character.knot.classList.add("knotValentinoObserve");
   document.querySelector("#valentino-info").style.display = "block";
-  variable.moveflag = true;
+  myvariable.moveflag = true;
   setTimeout(() => {
     text.phrase6.style.display = "block";
     domElement.knotNarration.classList.add("bubbleGrow");
-    variable.currentScene = 7;
+    myvariable.currentScene = 7;
   }, 500)
 }
 
@@ -1091,13 +1082,13 @@ function scene7() {
   character.valentino1a.style.display = "none";
   document.querySelector("#valentino-info").style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 8;
+    myvariable.currentScene = 8;
   }, 500)
 }
 
 // SCENE 8 (white Phone was clicked) it's up to you, turn off the other alarms
 function scene8() {
-  if (variable.currentScene === 8) {
+  if (myvariable.currentScene === 8) {
     document.querySelector(".toggle-click").currentTime = 0;
     document.querySelector(".toggle-click").play();
     document.querySelector(".toggle-click").loop = false;
@@ -1112,9 +1103,9 @@ function scene8() {
     text.phrase7.style.display = "none";
     text.phrase8.style.display = "block";
     scene.alarmToggles.style.display = "block";
-    variable.toggleCount = 0;
+    myvariable.toggleCount = 0;
     setTimeout(() => {
-      variable.currentScene = 9;
+      myvariable.currentScene = 9;
     }, 500)
   }
 }
@@ -1146,9 +1137,9 @@ function countToggle() {
   text.phrase8.style.opacity = "0";
   domElement.knotNarration.classList.remove("bubbleGrow");
   character.knot.classList.add("knotValentinoDisappear");
-  variable.toggleCount = variable.toggleCount + 1;
+  myvariable.toggleCount = myvariable.toggleCount + 1;
   //check if its finished:
-  if (variable.toggleCount === 4) {
+  if (myvariable.toggleCount === 4) {
     text.whisper1.style.display = "block";
     scene.alarmToggles.style.display = "none";
     scene.whitePhoneScreen.style.opacity = "0";
@@ -1158,7 +1149,7 @@ function countToggle() {
     // smooth fade-out phonescreen
     setTimeout(() => {
       scene.whitePhoneScreen.style.display = "none";
-      variable.currentScene = 9.1;
+      myvariable.currentScene = 9.1;
     }, 500)
     character.backgroundKnot.classList.add("showWhisperKnotValentino");
     text.backWhisper.classList.add("showWhisperKnotValentino");
@@ -1217,7 +1208,7 @@ function scene9a() {
     document.querySelector(".trumpet-sound").play();
     document.querySelector(".trumpet-sound").volume = 0.4;
     document.querySelector("#one-hour-later").style.display = "none";
-    variable.currentScene = 9.5;
+    myvariable.currentScene = 9.5;
     ux.click.style.display = "block";
     ux.click.classList = "textBlack";
   }, 3500)
@@ -1228,7 +1219,7 @@ function scene9b() {
   text.valentinoTalk1.style.display = "none";
   text.valentinoTalk2.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 10;
+    myvariable.currentScene = 10;
   }, 200)
 }
 
@@ -1264,33 +1255,28 @@ function scene10() {
   domElement.body.style.overflowX = "visible";
 
   setTimeout(() => {
-    variable.currentScene = 11;
+    myvariable.currentScene = 11;
     horizontalValentino();
   }, 200)
 }
 
 function horizontalValentino() {
-  if (variable.currentScene = 11) {
-    (function () {
-      function scrollHorizontally(e) {
-        runToBus();
-        e = window.event || e;
-        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-        document.documentElement.scrollLeft -= (delta * 30); // Multiplied by 40
-        document.body.scrollLeft -= (delta * 30); // Multiplied by 40
-        e.preventDefault();
-      }
-      if (window.addEventListener) {
-        // IE9, Chrome, Safari, Opera
-        window.addEventListener("mousewheel", scrollHorizontally, false);
-        // Firefox
-        window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
-      } else {
-        // IE 6/7/8
-        window.attachEvent("onmousewheel", scrollHorizontally);
-      }
-    })();
+  if (window.addEventListener && myvariable.currentScene == 11) {
+    // IE9, Chrome, Safari, Opera
+    window.addEventListener("mousewheel", scrollHorizontally, false);
+    // Firefox
+    window.addEventListener("DOMMouseScroll", scrollHorizontally, false);
   }
+}
+
+
+function scrollHorizontally(e) {
+  runToBus();
+  e = window.event || e;
+  var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+  document.documentElement.scrollLeft -= (delta * 30); // Multiplied by 40
+  document.body.scrollLeft -= (delta * 30); // Multiplied by 40
+  e.preventDefault();
 }
 
 function runToBus() {
@@ -1358,6 +1344,8 @@ function runToBus() {
 
 // SCENE 11 (ID of LAWRENCE WAS OBSERVED) It looks like this guy needs some stimulation.
 function goLawrence() {
+  window.removeEventListener("mousewheel", scrollHorizontally);
+  console.log("passt!");
   ux.scroll.style.display = "none";
   ux.click.style.display = "block";
   document.querySelector("#navigation-points").style.display = "none";
@@ -1381,7 +1369,7 @@ function goLawrence() {
   text.phrase11.style.display = "none";
   text.phrase12.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 12;
+    myvariable.currentScene = 12;
   }, 200)
   // stop horizontal scroll
   domElement.body.style.overflow = "hidden";
@@ -1395,7 +1383,7 @@ function scene12() {
   text.phrase13.style.display = "block";
   text.phrase12.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 13;
+    myvariable.currentScene = 13;
   }, 200)
 }
 
@@ -1415,7 +1403,7 @@ function scene13() {
   character.lawrence1.style.display = "none";
   console.log("change to bus");
   setTimeout(() => {
-    variable.currentScene = 14;
+    myvariable.currentScene = 14;
   }, 200)
 }
 
@@ -1425,7 +1413,7 @@ function scene14() {
   scene.busOutside.classList.add("busOutsideAway");
   text.phrase14.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 15;
+    myvariable.currentScene = 15;
   }, 200)
   setTimeout(() => {
     scene.busOutside.style.display = "none";
@@ -1443,7 +1431,7 @@ function scene15() {
   text.phrase14.style.display = "none";
   character.knot.classList.add("knotLawrenceBus");
   setTimeout(() => {
-    variable.currentScene = 16;
+    myvariable.currentScene = 16;
     character.lawrence2a.style.display = "none";
     character.lawrence2b.style.display = "block";
     gifs.musicnotes3.style.display = "none";
@@ -1459,7 +1447,7 @@ function scene16() {
   character.lawrence2c.style.display = "block";
   character.knot.classList.add("knotLawrenceBus");
   setTimeout(() => {
-    variable.currentScene = 17;
+    myvariable.currentScene = 17;
   }, 200)
 }
 
@@ -1474,7 +1462,7 @@ function scene17() {
   character.backgroundKnot.classList.remove("showWhisperKnotLawrence");
   character.knot.classList.remove("knotLawrenceBus");
   setTimeout(() => {
-    variable.currentScene = 18;
+    myvariable.currentScene = 18;
   }, 200)
   setTimeout(() => {
     document.querySelector("#motivational-quotes").style.display = "block";
@@ -1501,13 +1489,13 @@ function motCount() {
   document.querySelector(".delete-key").play();
   document.querySelector(".delete-key").volume = 0.5;
 
-  variable.motCount = variable.motCount + 1;
-  if (variable.motCount === 3) {
+  myvariable.motCount = myvariable.motCount + 1;
+  if (myvariable.motCount === 3) {
     text.phrase18.style.display = "block";
     ux.click.style.display = "block";
     document.querySelector(".lawrence-music-headphones").pause();
     setTimeout(() => {
-      variable.currentScene = 19;
+      myvariable.currentScene = 19;
     }, 200)
   }
 }
@@ -1531,7 +1519,7 @@ function scene19() {
   document.querySelector("#looser-scream-box").style.display = "block";
   document.querySelector(".ambience-bus").pause();
   setTimeout(() => {
-    variable.currentScene = 20;
+    myvariable.currentScene = 20;
     ux.click.style.display = "block";
   }, 200)
 }
@@ -1558,7 +1546,7 @@ function scene20() {
   character.lawrence3.style.display = "none";
   character.knot.classList.add("knotOutsideOfficeBuilding");
   scene.officeBuilding.style.display = "none";
-  variable.currentScene = 20.4;
+  myvariable.currentScene = 20.4;
   setTimeout(() => {
     scene20a();
   }, 2500)
@@ -1583,7 +1571,7 @@ function scene20a() {
   scene.waitingRoom1.style.display = "block";
   scene.clock0930.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 20.2;
+    myvariable.currentScene = 20.2;
   }, 200)
 }
 
@@ -1596,7 +1584,7 @@ function scene20b() {
   text.mercyTalk1.style.display = "none";
   text.phrase19.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 21;
+    myvariable.currentScene = 21;
   }, 200)
 }
 
@@ -1611,7 +1599,7 @@ function scene21() {
   text.peopleTalk.classList.remove("mercy-goodmorning");
   text.phrase19.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 0;
+    myvariable.currentScene = 0;
     character.lawrence4a.style.display = "none";
     character.lawrence4b.style.display = "block";
     document.querySelector(".knotLassoPath").style.strokeDashoffset = "calc(30vw + 30vh)";
@@ -1628,7 +1616,7 @@ function scene21() {
     character.lawrence4a.style.display = "none";
     character.lawrence4b.style.display = "none";
     character.lawrence4c.style.display = "block";
-    variable.currentScene = 22;
+    myvariable.currentScene = 22;
     document.querySelector(".lawrence-ground").currentTime = 0;
     document.querySelector(".lawrence-ground").play();
     document.querySelector(".lawrence-ground").loop = false;
@@ -1644,7 +1632,7 @@ function scene22() {
   character.lawrence4c.style.display = "none";
   character.lawrence4d.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 23;
+    myvariable.currentScene = 23;
   }, 200)
 }
 
@@ -1653,7 +1641,7 @@ function scene23() {
   character.lawrence4d.style.display = "none";
   character.mercy1b.style.display = "none";
   character.mercy2.style.display = "block";
-  variable.currentScene = 24.7;
+  myvariable.currentScene = 24.7;
   character.knot.classList.add("knotWaitingChair");
   setTimeout(() => {
     text.phrase20.style.display = "block";
@@ -1667,7 +1655,7 @@ function scene23() {
   setTimeout(() => {
     gifs.sleep.style.display = "block";
     eyes.style.display = "None";
-    variable.currentScene = 24.1;
+    myvariable.currentScene = 24.1;
   }, 2500)
 }
 
@@ -1678,11 +1666,11 @@ function scene24a() {
   text.aSiestaLater.style.display = "block";
   scene.clock0930.style.display = "none";
   scene.clock11.style.display = "block";
-  variable.currentScene = 24.9;
+  myvariable.currentScene = 24.9;
   setTimeout(() => {
     document.querySelector("#a-siesta-later").style.display = "none";
     text.aSiestaLater.style.display = "none";
-    variable.currentScene = 24.2;
+    myvariable.currentScene = 24.2;
   }, 2000)
 }
 
@@ -1696,7 +1684,7 @@ function scene24b() {
   scene.waitingRoom1.style.display = "block";
   character.lawrence5.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 24.3;
+    myvariable.currentScene = 24.3;
   }, 200)
 }
 
@@ -1708,7 +1696,7 @@ function scene24c() {
   text.phrase21.style.display = "block";
   document.querySelector("#door-div-waitingroom").style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 26;
+    myvariable.currentScene = 26;
   }, 200)
   setTimeout(() => {
     gifs.enterOffice.style.display = "block";
@@ -1765,7 +1753,7 @@ function goMercy() {
   //
   text.phrase21.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 26.1;
+    myvariable.currentScene = 26.1;
   }, 200)
 }
 
@@ -1773,7 +1761,7 @@ function goMercy() {
 function scene26a() {
   ux.click.style.display = "none";
   character.knot.classList.add("knotOfficeLookingAround1");
-  variable.currentScene = 28;
+  myvariable.currentScene = 28;
   setTimeout(() => {
     character.knot.classList.add("knotOfficeLookingAround2");
   }, 1000)
@@ -1793,7 +1781,7 @@ function scene28a() {
   document.querySelector("#info-icon-mercy").style.display = "none";
   text.phrase23.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 29;
+    myvariable.currentScene = 29;
   }, 200)
 }
 
@@ -1803,7 +1791,7 @@ function scene29() {
   text.phrase24.style.display = "block";
   scene.todoMercy.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 30;
+    myvariable.currentScene = 30;
   }, 200)
 }
 
@@ -1824,7 +1812,7 @@ function scene30() {
   document.querySelector("#mail1").style.display = "block"
   scene.mailMercy.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 31;
+    myvariable.currentScene = 31;
   }, 200)
 }
 
@@ -1843,7 +1831,7 @@ function scene31() {
     document.querySelector(".mail-notification2").play();
     document.querySelector(".mail-notification2").loop = false;
     document.querySelector(".mail-notification2").volume = 0.5;
-    variable.currentScene = 32;
+    myvariable.currentScene = 32;
   }, 200)
   setTimeout(() => {
     document.querySelector(".mail-notification3").currentTime = 0;
@@ -1929,7 +1917,7 @@ function dragEnd(e) {
 }
 
 function drag(e) {
-  if (variable.wind === 0) {
+  if (myvariable.wind === 0) {
     if (active) {
       e.preventDefault();
       if (e.type === "touchmove") {
@@ -1947,8 +1935,8 @@ function drag(e) {
       if (activeItem.currentX < -0.22 * window.innerHeight) {
         activeItem.currentX = -0.22 * window.innerHeight;
         mercyChaos();
-        variable.currentScene = 33;
-        variable.wind = 1;
+        myvariable.currentScene = 33;
+        myvariable.wind = 1;
       }
       setTranslate(activeItem.currentX, 0, activeItem);
     }
@@ -1999,7 +1987,7 @@ function mercyChaos() {
     character.mercy3dMess.style.display = "block";
     character.mercy3c.style.display = "none";
     ux.click.style.display = "block";
-    variable.currentScene = 34;
+    myvariable.currentScene = 34;
     document.querySelector(".face-hit").currentTime = 0;
     document.querySelector(".face-hit").play();
     document.querySelector(".face-hit").volume = 0.7;
@@ -2016,7 +2004,7 @@ function scene34() {
   text.phrase27.style.display = "none";
   text.mercyTalk1a.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = "goBarbara";
+    myvariable.currentScene = "goBarbara";
   }, 200)
 }
 
@@ -2059,7 +2047,7 @@ function goBarbara() {
   scene.todoMercy.style.display = "none";
   setTimeout(() => {
     text.peopleTalk.style.display = "flex";
-    variable.currentScene = 35;
+    myvariable.currentScene = 35;
   }, 200)
 }
 
@@ -2071,7 +2059,7 @@ function scene35() {
   character.mercy4.style.display = "none";
   text.barbaraTalk1.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 36;
+    myvariable.currentScene = 36;
   }, 200)
 }
 
@@ -2082,7 +2070,7 @@ function scene36() {
   text.mercyTalk2.style.display = "block";
   barGuestTalks();
   setTimeout(() => {
-    variable.currentScene = 37;
+    myvariable.currentScene = 37;
   }, 200)
 }
 
@@ -2094,7 +2082,7 @@ function scene37() {
   text.barbaraTalk2.style.transform = "translate(24vh, 7vh)";
   text.mercyTalk2.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 38;
+    myvariable.currentScene = 38;
   }, 200)
 }
 
@@ -2108,7 +2096,7 @@ function scene38() {
   character.barbara1.style.display = "none";
   document.querySelector("#sandwich-bag").style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 39;
+    myvariable.currentScene = 39;
   }, 200)
 }
 
@@ -2122,7 +2110,7 @@ function scene39() {
   text.phrase28.style.display = "block";
   document.querySelector("#sandwich-bag").classList.add("sandwich-bag-holding");
   setTimeout(() => {
-    variable.currentScene = 40.1;
+    myvariable.currentScene = 40.1;
   }, 200)
   setTimeout(() => {
     document.querySelector("#coffee").style.display = "block";
@@ -2147,7 +2135,7 @@ function scene40a() {
   character.mercy5b.style.display = "block";
   character.mercy5a.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 41;
+    myvariable.currentScene = 41;
   }, 200)
   setTimeout(() => {
     character.barbara2.style.display = "none";
@@ -2165,7 +2153,7 @@ function scene41() {
   character.barbara3.style.display = "none";
   character.barbara4.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 42;
+    myvariable.currentScene = 42;
   }, 200)
 }
 
@@ -2181,7 +2169,7 @@ function scene42() {
   character.mercy5b.style.display = "none";
   document.querySelector("#sandwich-bag").style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 43;
+    myvariable.currentScene = 43;
   }, 200)
 }
 
@@ -2194,7 +2182,7 @@ function scene43() {
   character.knot.classList.remove("knotBarAway")
   text.phrase29.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 44;
+    myvariable.currentScene = 44;
   }, 200)
 }
 
@@ -2207,7 +2195,7 @@ function scene44() {
   character.mercy5c.style.display = "none";
   gifs.scribble.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 45;
+    myvariable.currentScene = 45;
   }, 200)
 }
 
@@ -2217,7 +2205,7 @@ function scene45a() {
   text.phrase30.style.display = "none";
   document.querySelector("#info-icon-barbara").style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 46;
+    myvariable.currentScene = 46;
   }, 200)
 }
 
@@ -2225,7 +2213,7 @@ function scene45a() {
 function scene46() {
   text.phrase31.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 46.1;
+    myvariable.currentScene = 46.1;
   }, 200)
 }
 
@@ -2240,7 +2228,7 @@ function scene46a() {
   domElement.callIcon.style.display = "block";
   character.knot.classList.add("knotBarAway");
   setTimeout(() => {
-    variable.currentScene = 46.2;
+    myvariable.currentScene = 46.2;
   }, 200)
 }
 
@@ -2263,7 +2251,7 @@ function scene47() {
   document.querySelector("#people-talk-right").style.display = "none";
   document.querySelector("#people-talk-angry").style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 48;
+    myvariable.currentScene = 48;
   }, 200)
 }
 
@@ -2284,7 +2272,7 @@ function scene48() {
   text.supervisorTalk2.style.display = "block";
   text.supervisorTalk1.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 49;
+    myvariable.currentScene = 49;
   }, 200)
 }
 
@@ -2298,7 +2286,7 @@ function scene49() {
   text.supervisorTalk2.style.display = "none";
   text.barbaraTalk5.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 50;
+    myvariable.currentScene = 50;
   }, 200)
 }
 
@@ -2313,7 +2301,7 @@ function scene50() {
   text.phrase32.style.display = "block";
   character.knot.classList.add("knotBarSiesta");
   setTimeout(() => {
-    variable.currentScene = 52;
+    myvariable.currentScene = 52;
   }, 200)
 }
 
@@ -2333,7 +2321,7 @@ function scene52() {
   character.barbara7.style.display = "block";
   character.barbara6b.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 53;
+    myvariable.currentScene = 53;
   }, 200)
 }
 
@@ -2350,7 +2338,7 @@ function scene53() {
   text.siestaTime.style.display = "none";
   text.phrase33.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 53.1;
+    myvariable.currentScene = 53.1;
   }, 200)
 }
 
@@ -2375,7 +2363,7 @@ function scene54() {
   text.phrase33.style.display = "none";
   text.phrase34.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 55;
+    myvariable.currentScene = 55;
   }, 200)
 }
 
@@ -2392,7 +2380,7 @@ function scene55() {
   character.knot.classList = "knotValentinoBarHidden";
   text.phrase34.style.display = "none";
   scene.guest1.style.display = "block";
-  variable.currentScene = 55.7;
+  myvariable.currentScene = 55.7;
   // HAPPY HOUR GUESTS
   setTimeout(() => {
 
@@ -2468,7 +2456,7 @@ function scene55() {
   }, 4600)
   setTimeout(() => {
     ux.click.classList = "textWhite";
-    variable.currentScene = 55.1;
+    myvariable.currentScene = 55.1;
     ux.click.style.display = "block";
   }, 9700)
 }
@@ -2484,7 +2472,7 @@ function scene55a() {
   text.aHappyHourLater.style.display = "block";
   document.querySelector("#happy-hour-guests").style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 55.2;
+    myvariable.currentScene = 55.2;
     ux.click.style.display = "block";
   }, 200)
 }
@@ -2518,7 +2506,7 @@ function scene55b() {
   character.knot.classList = "knotValentinoBar";
   text.phrase35.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 56;
+    myvariable.currentScene = 56;
     ux.click.style.display = "block";
   }, 200)
 }
@@ -2532,7 +2520,7 @@ function scene56() {
   barGuestTalks();
   text.valentinoTalk3.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 57;
+    myvariable.currentScene = 57;
   }, 200)
 }
 
@@ -2543,7 +2531,7 @@ function scene57() {
   text.valentinoTalk3.style.display = "none";
   text.barbaraTalk6.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 58;
+    myvariable.currentScene = 58;
   }, 200)
 }
 
@@ -2556,7 +2544,7 @@ function scene58() {
   text.valentinoTalk4.style.display = "block";
   text.barbaraTalk6.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 59;
+    myvariable.currentScene = 59;
   }, 200)
 }
 
@@ -2567,7 +2555,7 @@ function scene59() {
   text.valentinoTalk4.style.display = "none";
   text.phrase36.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 60;
+    myvariable.currentScene = 60;
   }, 200)
 }
 
@@ -2576,7 +2564,7 @@ function scene60() {
   text.phrase36.style.display = "none";
   text.phrase37.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 61;
+    myvariable.currentScene = 61;
   }, 200)
 }
 
@@ -2591,7 +2579,7 @@ function scene61() {
   character.barbara10c.style.display = "none";
   character.barbara10d.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = "goValentinoEnd";
+    myvariable.currentScene = "goValentinoEnd";
   }, 200)
 }
 
@@ -2623,7 +2611,7 @@ function goValentinoEnd() {
   text.valentinoTalk5.style.display = "none";
   text.valentinoTalk6.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 80;
+    myvariable.currentScene = 80;
     ux.click.style.display = "block";
   }, 200)
 }
@@ -2637,7 +2625,7 @@ function scene80() {
   character.knot.classList.remove("knotLastScene");
   text.phrase38.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 81;
+    myvariable.currentScene = 81;
   }, 200)
 }
 
@@ -2647,20 +2635,20 @@ function scene81() {
   scene.valentinoPostIt.style.display = "block";
   ux.click.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = 81.1;
+    myvariable.currentScene = 81.1;
   }, 200)
 }
 
 // VALENTINO POST ITS CLICKED
 function countPostit() {
-  variable.postitCount = variable.postitCount + 1;
-  if (variable.postitCount < 5) {
+  myvariable.postitCount = myvariable.postitCount + 1;
+  if (myvariable.postitCount < 5) {
     domElement.body.style.backgroundColor = "#0c0c0c";
     setTimeout(() => {
       domElement.body.style.backgroundColor = "#fafafa";
     }, 200)
   }
-  if (variable.postitCount === 5) {
+  if (myvariable.postitCount === 5) {
     domElement.body.style.backgroundColor = "#0c0c0c";
     setTimeout(() => {
       scene82();
@@ -2723,7 +2711,7 @@ function scene82() {
   text.phrase39.style.display = "block";
   ux.click.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 83;
+    myvariable.currentScene = 83;
   }, 200)
 }
 
@@ -2733,7 +2721,7 @@ function scene83() {
   text.phrase39.style.display = "none";
   text.phrase40.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = 84;
+    myvariable.currentScene = 84;
   }, 200)
 }
 
@@ -2763,7 +2751,7 @@ function scene84() {
   character.knot.classList = "knotGone";
   text.phrase40.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = "outro1";
+    myvariable.currentScene = "outro1";
   }, 200)
   setTimeout(() => {
     ux.click.classList = "textBlack";
@@ -2790,7 +2778,7 @@ function outro1() {
   document.querySelector("#knot-outro").style.display = "flex";
   text.outro1.style.display = "block";
   setTimeout(() => {
-    variable.currentScene = "outro2";
+    myvariable.currentScene = "outro2";
     ux.click.style.display = "block";
   }, 200)
 }
@@ -2799,12 +2787,12 @@ function outro1() {
 function outro2() {
   text.outro2.style.display = "block";
   text.outro1.style.display = "none";
-  variable.userHasBeenAtEnd = 1;
+  myvariable.userHasBeenAtEnd = 1;
   document.querySelector("#start-again").style.display = "block";
   document.querySelector("#knot-outro").style.display = "flex";
   document.querySelector("#navigation-points").style.display = "none";
   domElement.titleButton.style.display = "none";
-  variable.currentScene = 1000;
+  myvariable.currentScene = 1000;
   ux.click.classList = "textWhite";
   ux.click.style.display = "block";
   ux.scroll.style.display = "none";
@@ -2828,7 +2816,7 @@ function outro2() {
   window.scrollTo(0, 100);
   domElement.titleButton.style.display = "none";
   setTimeout(() => {
-    variable.currentScene = "outro3";
+    myvariable.currentScene = "outro3";
     domElement.titleButton.style.display = "none";
   }, 200)
 }
@@ -2949,7 +2937,7 @@ function hideWhisperRight() {
 ///// CALL TO ACTION
 
 // function goCallToAction() {
-//   variable.currentScene = 1000;
+//   myvariable.currentScene = 1000;
 //   ux.scroll.style.display = "none";
 //   domElement.intro.style.display = "none";
 //   domElement.body.style.background = "var(--schwarz)";
@@ -2968,7 +2956,7 @@ function hideWhisperRight() {
 //   domElement.body.style.height = "";
 //   window.scrollTo(0, 3000);
 //   setTimeout(() => {
-//     variable.currentScene = 1000;
+//     myvariable.currentScene = 1000;
 //   }, 200)
 // }
 
@@ -2992,7 +2980,7 @@ function prepareFormular() {
 
 ////////////// ADD STUFF FROM IN.CSV
 function addCommentsToHTML() {
-  if (variable.currentScene === 1000) {
+  if (myvariable.currentScene === 1000) {
     $.ajax({
       url: "in.csv",
       dataType: "text"
@@ -3113,35 +3101,35 @@ new TypeIt("#phrase1", {
   startDelay: 900,
   cursor: false,
   strings: [""],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go();
 
 new TypeIt("#phrase2", {
   cursor: false,
   strings: ["You don't usually see me, but I decided to make an exception this time."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase3", {
   cursor: false,
   strings: ["Stress has many shades.", "My job is to visit people from time to time and increase their stress level."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase3b", {
   cursor: false,
   strings: ["I know what you are thinking,", "but somehow I have to make a living...", "so please don't judge me!"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase4", {
   cursor: false,
   strings: ["Would you like to be my assistant today?"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3149,7 +3137,7 @@ new TypeIt("#phrase5", {
   startDelay: 1000,
   cursor: false,
   strings: ["GREAT!", "Here we are...", "the first person of the day."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3157,195 +3145,195 @@ new TypeIt("#phrase6", {
   startDelay: 1000,
   cursor: false,
   strings: ["Let’s see what we have here..."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase7", {
   cursor: false,
   strings: ["What can we do for him?", "...Mhhhh..."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase8", {
   cursor: false,
   strings: ["I know... assistant! Do me a favour, turn off the other alarms."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#whisper1", {
   cursor: false,
   strings: ["keep on sleeping, you still have plenty of time."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#valentino-talk1", {
   cursor: false,
   strings: ["Nooo, how did I not hear the other alarm clocks?"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#valentino-talk2", {
   cursor: false,
   strings: ["I'm so late, what will they think of me in the hospital? Such a bad impression…."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase10", {
   cursor: false,
   strings: ["one hour later"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase11", {
   cursor: false,
   strings: ["Seems like we will have someone else to bother."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase12", {
   cursor: false,
   strings: ["I can smell potential here. Hehehe!", "This guy needs some stimulation."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase13", {
   cursor: false,
   strings: ["He is going to a job interview. He has to earn money for his studies."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase14", {
   cursor: false,
   strings: ["I know what to do…", "watch and learn, Assistant."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#whisper2", {
   cursor: false,
   strings: ["It's time to get nervous now. You'll ruin everything at the interview."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#whisper3", {
   cursor: false,
   strings: ["Why should they hire you? A poor student with no experience…"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase17", {
   cursor: false,
   strings: ["Assistant, let’s see what you have learned so far.", "Delete the three motivational quotes:"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase18", {
   cursor: false,
   strings: ["Good!", "Now my quotes can be shown."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#outside-the-office-phrase", {
   cursor: false,
   strings: ["Arrived at the office."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase19", {
   cursor: false,
   strings: ["Come on, give me a hand here."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#mercy-talk1", {
   cursor: false,
   strings: ["Good morning!"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase20", {
   cursor: false,
   strings: ["Let’s leave him alone now, he is going to fail anyway."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#a-siesta-later-phrase", {
   cursor: false,
   strings: ["after the nap"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase21", {
   cursor: false,
   strings: ["He will be walking back to his house miserably... ", "I also swapped his exam dates in the calendar, hehehehehe. ", "I'm done with him for today. Let’s enter the office. "],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase22", {
   cursor: false,
   strings: ["This person is way too organized at her job and she seems like a kind person. What could stress her out?"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase23", {
   cursor: false,
   strings: [" Let's check her To-Do list.", "So far, she had two job interviews."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase24", {
   cursor: false,
   strings: ["She does not seem overwhelmed by this schedule. It’s not easy to unsettle her.", "I will have to come up with some personal stuff."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase25", {
   cursor: false,
   strings: ["Think, think, think…"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase26", {
   cursor: false,
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase27", {
   cursor: false,
   strings: ["hehe, now we have got her into trouble."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#mercy-talk1a", {
   cursor: false,
   strings: ["I need a break!"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3354,21 +3342,21 @@ new TypeIt("#mercy-talk1a", {
 new TypeIt("#barbara-talk1", {
   cursor: false,
   strings: ["Hi, what can I get you?"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#mercy-talk2", {
   cursor: false,
   strings: ["Hello, Can I have a cup of tea and a sandwich to-go please?"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#barbara-talk2", {
   cursor: false,
   strings: ["Sure!"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3376,21 +3364,21 @@ new TypeIt("#barbara-talk2", {
 new TypeIt("#phrase28", {
   cursor: false,
   strings: ["Let’s upset her!"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#barbara-talk3", {
   cursor: false,
   strings: ["So, there you go..."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#barbara-talk3a", {
   cursor: false,
   strings: ["and your coff...eeEHHHHH!"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3399,14 +3387,14 @@ new TypeIt("#barbara-talk3a", {
 new TypeIt("#barbara-talk4", {
   cursor: false,
   strings: ["Ohhh I’m so sorry, I don’t know what happened, let me help you…"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#mercy-talk3", {
   cursor: false,
   strings: ["There's no need, you've done enough."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3415,21 +3403,21 @@ new TypeIt("#mercy-talk3", {
 new TypeIt("#phrase29", {
   cursor: false,
   strings: ["Well, well, well, we pissed her off. ", "Mercy’s day is no longer as perfect as she thought."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase30", {
   cursor: false,
   strings: ["Who do we have here? Poor little thing, I think we already caused her some trouble."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase31", {
   cursor: false,
   strings: ["Maybe you did not notice earlier, but I moved the security camera to Barbara", "The supervisor has seen the whole mess scene... I am sure he will call very soon."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3438,21 +3426,21 @@ new TypeIt("#phrase31", {
 new TypeIt("#supervisor-talk1", {
   cursor: false,
   strings: ["One more time and you can go spill drinks somewhere else!"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#supervisor-talk2", {
   cursor: false,
   strings: ["and: your colleague is sick and you'll have to do a double shift. I hope you don't have better plans."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#barbara-talk5", {
   cursor: false,
   strings: ["Well, I actually…?"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3460,7 +3448,7 @@ new TypeIt("#barbara-talk5", {
 new TypeIt("#phrase32", {
   cursor: false,
   strings: ["I think she had something planned... Oops!", "Anyway, we deserve a break now, stressing others is stressful. Call me in a few hours! "],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3468,28 +3456,28 @@ new TypeIt("#phrase32", {
 new TypeIt("#siesta-time-phrase", {
   cursor: false,
   strings: ["enjoying the afternoon siesta"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase33", {
   cursor: false,
   strings: ["Hello again! That was such a good nap!"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase34", {
   cursor: false,
   strings: ["Happy hour, cheap drinks... The bar will be sooo full.", "That's a great idea!"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#a-happy-hour-later-phrase", {
   cursor: false,
   strings: ["A happy hour later"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3498,7 +3486,7 @@ new TypeIt("#a-happy-hour-later-phrase", {
 new TypeIt("#phrase35", {
   cursor: false,
   strings: ["Oh look who's back again...", "Valentino, the sleeping beauty! "],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3506,49 +3494,49 @@ new TypeIt("#phrase35", {
 new TypeIt("#valentino-talk3", {
   cursor: false,
   strings: ["Hii ! Quick question…", "I broke my phone in a rush. Would you let me use your phone to check the bus number to go home?"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#barbara-talk6", {
   cursor: false,
   strings: ["Yes I can do that, but normally customers come here for drinks and food. I’ll make an exception this time. "],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#valentino-talk4", {
   cursor: false,
   strings: ["That's really nice of you, thank you very much! "],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase36", {
   cursor: false,
   strings: ["Wait? What? Are we in a romantic comedy now?"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase37", {
   cursor: false,
   strings: ["We should switch back to Valentino, let’s follow him!"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#valentino-talk5", {
   cursor: false,
   strings: ["Thanks again! I will come for a drink one of these days."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#valentino-talk6", {
   cursor: false,
   strings: ["ufff...That was a long day. I'm going straight to bed."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3557,14 +3545,14 @@ new TypeIt("#phrase38", {
   strings: ["soooo, the demotivational quotes worked pretty well with Lawrence. Make sure, Valentino noticed all of them."
 
   ],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase39", {
   cursor: false,
   strings: ["Good, these thoughts won’t let him sleep for a while. "],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3572,7 +3560,7 @@ new TypeIt("#phrase39", {
 new TypeIt("#phrase40", {
   cursor: false,
   strings: ["Sweet dreams"],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
@@ -3581,21 +3569,21 @@ new TypeIt("#phrase40", {
 new TypeIt("#outro1", {
   cursor: false,
   strings: ["So, we are done for today.", "You are the best assistant I've ever had."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#outro2", {
   cursor: false,
   strings: ["I always have the assistants fill out a small form. ", "The purpose is to understand the factors that create stress in people and how they react. ", "So I can improve my stress-producing tactics."],
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 // (im html bei "call-to-action")
 new TypeIt("#outro3", {
   cursor: false,
-  speed: variable.textspeed,
+  speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
