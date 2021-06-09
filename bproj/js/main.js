@@ -3284,7 +3284,7 @@ new TypeIt("#a-siesta-later-phrase", {
 
 new TypeIt("#phrase21", {
   cursor: false,
-  strings: ["He will be walking back to his house miserably... ", "I also swapped his exam dates in the calendar, hehehehehe. ", "I'm done with him for today. Let’s enter the office. "],
+  strings: ["He will be walking back to his house miserably... ", "I also swapped his exam dates in the calendar, hehehehehe. I'm done with him for today. Let’s enter the office. "],
   speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3542,7 +3542,7 @@ new TypeIt("#valentino-talk6", {
 
 new TypeIt("#phrase38", {
   cursor: false,
-  strings: ["soooo, the demotivational quotes worked pretty well with Lawrence. Make sure, Valentino noticed all of them."
+  strings: ["soooo, the demotivational quotes worked pretty well with Lawrence. Make sure, Valentino notices all of them."
 
   ],
   speed: myvariable.textspeed,
