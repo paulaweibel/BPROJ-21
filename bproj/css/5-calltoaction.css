@@ -92,7 +92,7 @@
 
 .comment {
     position: relative;
-    line-height:4vh;
+    line-height:3.5vh;
     font-family: 'Lilita One';
     font-size: 2vh;
     padding: 3vh;
@@ -103,18 +103,22 @@
 
 b {
     font-family: 'architects daughter';
-    line-height:1vh;
+    line-height: 1vh;
     text-align: left !important;
-    font-size: 3vh;
+    font-size: 2vh;
 }
 
 .name{
+    position: absolute;
     color: #c4c4c4;
     font-family: 'lilita one';
     text-align: right;
-    line-height:1vh;
-    width: 100%;
+    line-height:2vh;
+    width: 85%;
+    height: auto;
     right: 0;
+    bottom: 0;
+    padding: 3vh;
     font-size: 2vh;
 }
 
