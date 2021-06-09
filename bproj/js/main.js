@@ -543,7 +543,7 @@ function animation(scrollPos) {
     variable.currentScene = 0;
   }
 
-  
+
 
   // 100 PX, "HELLO I'M STRESS KNOT" (MOVE KNOT, ADD SPEECHBUBBLE, REMOVE SCROLL ARROW)
   if (scrollLocation > 100) {
@@ -2832,7 +2832,7 @@ function outro3() {
 
 // CALL TO ACTION
 function sceneFinish() {
-  
+
 }
 
 
@@ -3364,14 +3364,14 @@ new TypeIt("#phrase28", {
 
 new TypeIt("#barbara-talk3", {
   cursor: false,
-  strings: ["So, there you go"],
+  strings: ["So, there you go..."],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#barbara-talk3a", {
   cursor: false,
-  strings: ["your coff…eeEHHHHH!"],
+  strings: ["and your coff...eeEHHHHH!"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3449,7 +3449,7 @@ new TypeIt("#phrase32", {
 // siesta 3
 new TypeIt("#siesta-time-phrase", {
   cursor: false,
-  strings: ["enjoying the siesta"],
+  strings: ["enjoying the afternoon siesta"],
   speed: variable.textspeed,
   waitUntilVisible: true,
 }).go()
