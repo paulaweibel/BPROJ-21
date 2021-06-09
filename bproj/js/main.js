@@ -440,6 +440,7 @@ function showAbout() {
   // set overlaying objects invisible
   domElement.titleButton.style.opacity = "0";
   domElement.titleBox.style.opacity = "0";
+  domElement.body.style.overflowY = "hidden";
   character.knot.style.opacity = "0";
   //smooth fade-in
   domElement.about.style.display = "block";
@@ -452,6 +453,7 @@ function showAbout() {
 function hideAbout() {
   // smooth fade-out
   domElement.about.classList.remove("showAbout");
+  domElement.body.style.overflowY = "visible";
   setTimeout(() => {
     domElement.about.style.display = "none";
     // set overlaying objects visible
@@ -520,7 +522,7 @@ function scrollToIntro() {
 
 function animation(scrollPos) {
   // ANIMATIONS BASED ON SCROLL POSITION
-  if (scrollLocation < 100) {
+  if (scrollLocation < 100 && variable.userHasBeenAtEnd === 0) {
     text.phrase1.style.display = "none";
     text.phrase2.style.display = "none";
     text.phrase3.style.display = "none";
@@ -544,9 +546,8 @@ function animation(scrollPos) {
   }
 
 
-
   // 100 PX, "HELLO I'M STRESS KNOT" (MOVE KNOT, ADD SPEECHBUBBLE, REMOVE SCROLL ARROW)
-  if (scrollLocation > 100) {
+  if (scrollLocation > 100 && variable.userHasBeenAtEnd === 0) {
     domElement.intro.style.display = "block";
     domElement.titleBox.classList.add("titleUp");
     domElement.titleButton.classList.add("ropeUp");
@@ -555,8 +556,8 @@ function animation(scrollPos) {
     character.knot.classList.add("knotIntro");
     domElement.knotTalkingRight.classList.add("bubbleGrow");
     text.knotText.style.display = "block";
+    document.querySelector("#navigation-points").style.display = "none";
     document.querySelector("#navigation-button").style.display = "none";
-
   }
 
   if (scrollLocation > 100 && scrollLocation < 2000 && variable.currentScene === 0 && variable.userHasBeenAtEnd === 0) {
@@ -566,9 +567,15 @@ function animation(scrollPos) {
     ux.scroll.style.display = "none";
   }
 
-  if (scrollLocation < 100 && variable.userHasBeenAtEnd === 1) {
+  if (scrollLocation < 35 && variable.userHasBeenAtEnd === 1) {
     domElement.homeButton.classList.add("showHome");
-    character.knot.classList = "knotOutro";
+    domElement.titleButton.style.display = "none";
+  }
+
+  if (scrollLocation > 40 && variable.userHasBeenAtEnd === 1) {
+    domElement.homeButton.classList.add("showHome");
+    domElement.titleButton.style.display = "none";
+    character.knot.classList = "knotGone";
   }
 
   // setting INTRO and SPEECHBUBBLE invisible while scrolling to Storystart
@@ -2789,6 +2796,7 @@ function outro2() {
   document.querySelector("#start-again").style.display = "block";
   document.querySelector("#knot-outro").style.display = "flex";
   document.querySelector("#navigation-points").style.display = "none";
+  domElement.titleButton.style.display = "none";
   variable.currentScene = 1000;
   ux.click.classList = "textWhite";
   ux.click.style.display = "block";
@@ -2810,9 +2818,11 @@ function outro2() {
   addCommentsToHTML();
   showStressFormular();
   domElement.body.style.height = "";
-  window.scrollTo(0, 3000);
+  window.scrollTo(0, 100);
+  domElement.titleButton.style.display="none";
   setTimeout(() => {
     variable.currentScene = "outro3";
+    domElement.titleButton.style.display="none";
   }, 200)
 }
 
@@ -2821,7 +2831,8 @@ function outro3() {
   domElement.body.style.overflow = "auto";
   domElement.body.style.overflowX = "hidden";
   domElement.body.style.overflowY = "auto";
-  character.knot.classList = "knotGone";
+  domElement.titleButton.style.display="none";
+  character.knot.classList = "knotOutro2";
   document.querySelector("#knot-outro").style.backgroundColor = "rgba(12,12,12,0.8)";
   text.outro3.style.display = "block";
   text.outro2.style.display = "none";

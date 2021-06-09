@@ -2,9 +2,9 @@
 #call-to-action {
     display: none;
     position: absolute;
-    top: 3000px;
+    top: 100px;
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-color: var(--schwarz);
 }
 
@@ -87,7 +87,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-auto-rows: auto;
-    grid-gap: 1vw;
+    grid-gap: 3vh;
 }
 
 .comment {
@@ -98,6 +98,7 @@
     padding: 3vh;
     color: var(--schwarz);
     background-color: var(--weiss);
+    border-radius: 10px;
 }
 
 b {
@@ -105,6 +106,16 @@ b {
     line-height:1vh;
     text-align: left !important;
     font-size: 3vh;
+}
+
+.name{
+    color: #c4c4c4;
+    font-family: 'lilita one';
+    text-align: right;
+    line-height:1vh;
+    width: 100%;
+    right: 0;
+    font-size: 2vh;
 }
 
 #comment1 {
@@ -135,12 +146,17 @@ b {
 
 #start-again {
     position: absolute;
-    top: 0;
-    padding-top: 2500px;
+    top: 1.5vh;
+    padding-top: 10px;
+    left: 10vh;
     height: auto;
     width: 100%;
-    text-align: center;
+    text-align: left;
     background-color: var(--schwarz);
-    font-size: 3vh;
+    font-size: 2vh;
     text-decoration: none !important;
+}
+
+a{
+    text-decoration: none;
 }
