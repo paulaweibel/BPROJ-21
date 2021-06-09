@@ -207,8 +207,8 @@
 #drag-gif {
     position: fixed;
     display: none;
-    top: 15vh;
-    margin-left: 33vw;
+    top: 33vh;
+    margin-left: calc(15vw + 30vh);
     height: 3vh;
 
 }
