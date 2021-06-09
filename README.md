@@ -1,5 +1,5 @@
 # Hidden Worries 
-A web story about the daily routine of Knot, a a professional stress-maker. 👀
+A web story about the daily routine of Knot, a professional stress-maker. 👀
  <br />
 Who knows... Maybe you can recognize yourself in some of the characters! 👨🏾‍⚕️🧑🏻‍💻👩🏼‍💼🙆🏽‍♀️
  <br />
