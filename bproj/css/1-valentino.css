@@ -434,6 +434,14 @@
     margin-left: 80vw !important;
 }
 
+#valentino-clock{
+    display: none;
+    position: fixed;
+    top: 20vh;
+    left: calc(30vw + 35vh);
+    height: 7vh;
+}
+
 
 /* CINEMATIC EFFECT */
 #cinematic-effect {

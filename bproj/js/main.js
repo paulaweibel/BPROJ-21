@@ -2590,6 +2590,7 @@ function goValentinoEnd() {
   document.querySelector(".french-sound").loop = false;
   document.querySelector(".french-sound").volume = 0.3;
   document.querySelector("#navigation-points").style.display = "none";
+  document.querySelector("#valentino-clock").style.display = "block";
   ux.click.style.display = "none";
   ux.scroll.style.display = "none";
   domElement.intro.style.display = "none";
@@ -2618,6 +2619,7 @@ function goValentinoEnd() {
 
 function scene80() {
   noOneTalks();
+  document.querySelector("#valentino-clock").style.display = "none";
   gifs.dreaming.style.display = "block";
   text.valentinoTalk6.style.display = "none";
   character.valentino7a.style.display = "block";
