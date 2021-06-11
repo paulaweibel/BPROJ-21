@@ -2312,7 +2312,6 @@ function scene52() {
   document.querySelector(".siesta-sound").loop = true;
   document.querySelector(".siesta-sound").volume = 0.5;
   document.querySelector(".endedcall").pause();
-  document.querySelector(".bar-ambience-chill").pause();
   gifs.drink.style.display = "none";
   character.barbara6b.style.display = "none";
   text.phrase32.style.display = "none";
@@ -2320,6 +2319,7 @@ function scene52() {
   text.siestaTime.style.display = "block";
   character.barbara7.style.display = "block";
   character.barbara6b.style.display = "none";
+  document.querySelector(".bar-ambience-chill").pause();
   setTimeout(() => {
     myvariable.currentScene = 53;
   }, 200)
@@ -2328,9 +2328,8 @@ function scene52() {
 //  HELLLO AGAIN
 function scene53() {
   character.barbara7.style.display = "block";
-  document.querySelector(".siesta-sound").pause();
   document.querySelector(".bar-ambience-chill").play();
-
+  document.querySelector(".siesta-sound").pause();
   ux.click.style.display = "none";
   document.querySelector("#siesta-time").style.display = "none";
   document.querySelector("#happy-hour-button").style.display = "block";
@@ -2480,7 +2479,7 @@ function scene55a() {
 // Initial volume of 0.20
 // Make sure it's a multiple of 0.05
 var happyHourVol = 0.50;
-var happyHourInterval = 500; // 200ms interval
+var happyHourInterval = 100; // 200ms interval
 
 // look whos back!!
 function scene55b() {
@@ -2569,7 +2568,6 @@ function scene60() {
 }
 
 function scene61() {
-  document.querySelector(".bar-ambience-late").pause();
   barGuestTalks();
   text.valentinoTalk5.style.display = "block";
   text.phrase37.style.display = "none";
@@ -2585,6 +2583,7 @@ function scene61() {
 
 /// VALENTINO: LAST SCENE OF STORY
 function goValentinoEnd() {
+  document.querySelector(".bar-ambience-late").pause();
   document.querySelector(".french-sound").currentTime = 0;
   document.querySelector(".french-sound").play();
   document.querySelector(".french-sound").loop = false;
@@ -3495,7 +3494,7 @@ new TypeIt("#phrase35", {
 /// valentino at bar
 new TypeIt("#valentino-talk3", {
   cursor: false,
-  strings: ["Hii ! Quick question…", "I broke my phone in a rush. Would you let me use your phone to check the bus number to go home?"],
+  strings: ["Hii ! Quick question… I broke my phone in a rush. Would you let me use your phone to check the bus number to go home?"],
   speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
