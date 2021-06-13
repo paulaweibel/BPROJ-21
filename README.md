@@ -6,7 +6,7 @@ Who knows... Maybe you can recognize yourself in some of the characters! 👨�
  <br />
 ![shot](cover-image/cover-title.png)
 
-*👉 [to the web story](https://bproj.netlify.app)*
+*👉 [to the web story](https://hiddenworries.ch)*
 
 Bachelor Project • Digital Ideation • Hochschule Luzern <br />
 
