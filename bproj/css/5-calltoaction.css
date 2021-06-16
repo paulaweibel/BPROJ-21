@@ -85,7 +85,8 @@
     padding-bottom: 10px;
     /* GRID TEMPLATE */
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(3, calc(26vw - 3vh));
     grid-auto-rows: auto;
     grid-gap: 3vh;
 }

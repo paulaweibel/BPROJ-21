@@ -1069,11 +1069,11 @@ function scene6() {
 function scene7() {
   document.querySelector(".alarm-clock1").currentTime = 0;
   document.querySelector(".alarm-clock1").play();
-  document.querySelector(".alarm-clock1").volume = 0.5;
+  document.querySelector(".alarm-clock1").volume = 0.2;
 
   document.querySelector(".alarm-clock2").currentTime = 0;
   document.querySelector(".alarm-clock2").play();
-  document.querySelector(".alarm-clock2").volume = 0.5;
+  document.querySelector(".alarm-clock2").volume = 0.4;
 
   text.phrase6.style.display = "none";
   text.phrase7.style.display = "block";
@@ -1999,6 +1999,8 @@ function mercyChaos() {
 
 // i need a break
 function scene34() {
+  text.peopleTalk.style.display = "flex";
+  text.peopleTalk.classList.add("bubbleGrow");
   officeMercyTalks();
   extraSmallTalkingBubble();
   text.phrase27.style.display = "none";
