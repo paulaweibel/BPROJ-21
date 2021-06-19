@@ -3351,7 +3351,7 @@ new TypeIt("#barbara-talk1", {
 
 new TypeIt("#mercy-talk2", {
   cursor: false,
-  strings: ["Hello, Can I have a cup of tea and a sandwich to-go please?"],
+  strings: ["Hello, Can I get a coffee and a sandwich to go, please?"],
   speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
