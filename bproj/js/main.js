@@ -3124,7 +3124,7 @@ new TypeIt("#phrase3", {
 
 new TypeIt("#phrase3b", {
   cursor: false,
-  strings: ["I know what you are thinking,", "but somehow I have to make a living...", "so please don't judge me!"],
+  strings: ["I know what you are thinking,", "but somehow I have to make a living...", "so, please, don't judge me!"],
   speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3182,7 +3182,7 @@ new TypeIt("#valentino-talk1", {
 
 new TypeIt("#valentino-talk2", {
   cursor: false,
-  strings: ["I'm so late, what will they think of me in the hospital? Such a bad impression…."],
+  strings: ["I'm late, what will they think of me at the hospital? Such a bad impression…."],
   speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3196,14 +3196,14 @@ new TypeIt("#phrase10", {
 
 new TypeIt("#phrase11", {
   cursor: false,
-  strings: ["Seems like we will have someone else to bother."],
+  strings: ["Seems like we have someone else to bother."],
   speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
 
 new TypeIt("#phrase12", {
   cursor: false,
-  strings: ["I can smell potential here. Hehehe!", "This guy needs some stimulation."],
+  strings: ["I see potential here. Hehehe!", "This guy needs some stimulation."],
   speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3224,7 +3224,7 @@ new TypeIt("#phrase14", {
 
 new TypeIt("#whisper2", {
   cursor: false,
-  strings: ["It's time to get nervous now. You'll ruin everything at the interview."],
+  strings: ["It's time to get nervous now. You'll ruin the entire interview."],
   speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3328,7 +3328,7 @@ new TypeIt("#phrase26", {
 
 new TypeIt("#phrase27", {
   cursor: false,
-  strings: ["hehe, now we have got her into trouble."],
+  strings: ["hehe, now we have gotten her into trouble."],
   speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3479,7 +3479,7 @@ new TypeIt("#phrase34", {
 
 new TypeIt("#a-happy-hour-later-phrase", {
   cursor: false,
-  strings: ["A happy hour later"],
+  strings: ["One happy hour later"],
   speed: myvariable.textspeed,
   waitUntilVisible: true,
 }).go()
@@ -3545,7 +3545,7 @@ new TypeIt("#valentino-talk6", {
 
 new TypeIt("#phrase38", {
   cursor: false,
-  strings: ["soooo, the demotivational quotes worked pretty well with Lawrence. Make sure, Valentino notices all of them."
+  strings: ["soooo, the demotivational quotes worked pretty well on Lawrence. Make sure, Valentino notices all of them."
 
   ],
   speed: myvariable.textspeed,
