@@ -2970,7 +2970,7 @@ function prepareFormular() {
   glitchdiv.setAttribute("class", "glitch-embed-wrap");
   glitchdiv.setAttribute("style", "position: absolute; height: 80vh; width: 45vw;");
   var ifrm = document.createElement("iframe");
-  ifrm.setAttribute("src", "https://glitch.com/embed/#!/embed/stressformular?path=server.js&previewSize=100&attributionHidden=true");
+  ifrm.setAttribute("src", "https://glitch.com/embed/#!/embed/stressform?path=public/in.csv&previewSize=100&attributionHidden=true");
   ifrm.setAttribute("title", "stressformular on Glitch");
   ifrm.setAttribute("allow", "geolocation; microphone; camera; midi; vr; encrypted-media");
   ifrm.style.width = "100%";
