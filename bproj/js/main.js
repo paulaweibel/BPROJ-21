@@ -279,6 +279,14 @@ function goHome() {
   domElement.callToAction.style.display = "none";
 }
 
+function youSure(){
+  document.querySelector("#you-sure").style.display="block";
+}
+
+function notSure(){
+  document.querySelector("#you-sure").style.display="none";
+}
+
 
 
 ////////////////////////////////////////////////////////////////

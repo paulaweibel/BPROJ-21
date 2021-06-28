@@ -589,104 +589,113 @@
 
     <div id="start-again" class="phrase">
         <a href=".">
-            < go back to the story</a> </div> <!--HOME BUTTON -->
-                <a href="."><img onclick="goHome()" id="home-button" src="img/knot-images/iconic.png"></a>
+            « go back to the story
+        </a>
+    </div>
+    <!--HOME BUTTON -->
+    <a><img onclick="youSure()" id="home-button" src="img/knot-images/iconic.png"></a>
 
-                <!-- ORIENTATION -->
-                <div id="orientation-help">
-                    <click-text id="click-help" class="textBlack"> click anywhere </click-text>
-                    <click-text id="scroll-help" class="textBlack"> scroll down </click-text>
-                    <click-text id="move-help" class="textWhite">move your mouse</click-text>
-                </div>
+    <div id="you-sure">
+        <p id="you-sure-question">
+            do you really want to go back to the start?<br><br><br>
+            <a href="." style="margin-right:3vh;">yes</a>
+            <a onclick="notSure()">no</a>
+        </p>
+    </div>
 
-                <!-- AUDIO -->
-                <!-- OVERALL -->
-                <audio src="sound/general-sounds/swoosh-click.mp3" loop class="user-clicking-sound"></audio>
-                <audio src="sound/general-sounds/info-icon.mp3" loop class="info-icon-sound"></audio>
-                <audio src="sound/general-sounds/bottle-open-click.mp3" loop class="yes-no-click"></audio>
+    <!-- ORIENTATION -->
+    <div id="orientation-help">
+        <click-text id="click-help" class="textBlack"> click anywhere </click-text>
+        <click-text id="scroll-help" class="textBlack"> scroll down </click-text>
+        <click-text id="move-help" class="textWhite">move your mouse</click-text>
+    </div>
 
-                <audio src="sound/typewriter/typewriter-1-sec.mp3" loop class="type-1sec"></audio>
-                <audio src="sound/typewriter/typewriter-2-sec.mp3" loop class="type-2sec"></audio>
-                <audio src="sound/typewriter/typewriter-3-sec.mp3" loop class="type-3sec"></audio>
-                <audio src="sound/typewriter/typewriter-4-sec.mp3" loop class="type-4sec"></audio>
-                <audio src="sound/typewriter/typewriter-5-sec.mp3" loop class="type-5sec"></audio>
+    <!-- AUDIO -->
+    <!-- OVERALL -->
+    <audio src="sound/general-sounds/swoosh-click.mp3" loop class="user-clicking-sound"></audio>
+    <audio src="sound/general-sounds/info-icon.mp3" loop class="info-icon-sound"></audio>
+    <audio src="sound/general-sounds/bottle-open-click.mp3" loop class="yes-no-click"></audio>
 
-                <!-- VALENTINO SCENE -->
-                <audio src="sound/valentino-scenes-morning/digital-alarm.mp3" loop class="alarm-clock1"></audio>
-                <audio src="sound/valentino-scenes-morning/phone-vibrate.mp3" loop class="alarm-clock2"></audio>
-                <audio src="sound/valentino-scenes-morning/switch-toggle.mp3" loop class="toggle-click"></audio>
-                <audio src="sound/valentino-scenes-morning/airhorn.mp3" loop class="trumpet-sound"></audio>
-                <audio src="sound/valentino-scenes-morning/clock-ticking.mp3" loop class="countdown"></audio>
+    <audio src="sound/typewriter/typewriter-1-sec.mp3" loop class="type-1sec"></audio>
+    <audio src="sound/typewriter/typewriter-2-sec.mp3" loop class="type-2sec"></audio>
+    <audio src="sound/typewriter/typewriter-3-sec.mp3" loop class="type-3sec"></audio>
+    <audio src="sound/typewriter/typewriter-4-sec.mp3" loop class="type-4sec"></audio>
+    <audio src="sound/typewriter/typewriter-5-sec.mp3" loop class="type-5sec"></audio>
 
-                <audio src="sound/valentino-scenes-morning/ambience-apartment.mp3" loop
-                    class="ambience-apartment1"></audio>
-                <audio src="sound/valentino-scenes-morning/morning-birds.mp3" loop class="ambience-apartment2"></audio>
+    <!-- VALENTINO SCENE -->
+    <audio src="sound/valentino-scenes-morning/digital-alarm.mp3" loop class="alarm-clock1"></audio>
+    <audio src="sound/valentino-scenes-morning/phone-vibrate.mp3" loop class="alarm-clock2"></audio>
+    <audio src="sound/valentino-scenes-morning/switch-toggle.mp3" loop class="toggle-click"></audio>
+    <audio src="sound/valentino-scenes-morning/airhorn.mp3" loop class="trumpet-sound"></audio>
+    <audio src="sound/valentino-scenes-morning/clock-ticking.mp3" loop class="countdown"></audio>
 
-                <audio src="sound/valentino-scenes-morning/ambience-street-morning.mp3" loop
-                    class="ambience-street-morning"></audio>
-                <audio src="sound/valentino-scenes-morning/ambience-street-afternoon.mp3" loop
-                    class="ambience-street-afternoon"></audio>
-                <audio src="sound/valentino-scenes-morning/ambience-street-evening.mp3" loop
-                    class="ambience-street-evening"></audio>
+    <audio src="sound/valentino-scenes-morning/ambience-apartment.mp3" loop class="ambience-apartment1"></audio>
+    <audio src="sound/valentino-scenes-morning/morning-birds.mp3" loop class="ambience-apartment2"></audio>
 
-                <!-- LAWRENCE SCENE -->
-                <audio src="sound/lawrence-scenes/01-Frozen-Egg-Compressed.mp3" loop
-                    class="lawrence-music-headphones"></audio>
-                <audio src="sound/general-sounds/swoosh-click.mp3" class="delete-key"></audio>
-                <audio src="sound/lawrence-scenes/ambience-bus-inside.mp3" loop class="ambience-bus"></audio>
-                <audio src="sound/lawrence-scenes/demotivational-quotes1.mp3" loop class="sound-quote1"></audio>
-                <audio src="sound/lawrence-scenes/demotivational-quotes2.mp3" loop class="sound-quote2"></audio>
-                <audio src="sound/lawrence-scenes/ambience-waiting-room.mp3" loop class="waiting-room-sound"></audio>
-                <audio src="sound/lawrence-scenes/lasso.mp3" loop class="lasso"></audio>
-                <audio src="sound/lawrence-scenes/lasso2.mp3" loop class="lasso2"></audio>
-                <audio src="sound/lawrence-scenes/person-falling.mp3" loop class="lawrence-ground"></audio>
+    <audio src="sound/valentino-scenes-morning/ambience-street-morning.mp3" loop
+        class="ambience-street-morning"></audio>
+    <audio src="sound/valentino-scenes-morning/ambience-street-afternoon.mp3" loop
+        class="ambience-street-afternoon"></audio>
+    <audio src="sound/valentino-scenes-morning/ambience-street-evening.mp3" loop
+        class="ambience-street-evening"></audio>
 
-                <!-- MERCY SCENE -->
-                <audio src="sound/mercy-scene/door-close.mp3" class="door-close"></audio>
-                <audio src="sound/mercy-scene/door-open.mp3" class="door-open"></audio>
-                <audio src="sound/mercy-scene/enter-sound.mp3" class="door-enter"></audio>
-                <audio src="sound/mercy-scene/mercy-typing.mp3" class="typing-mercy"></audio>
-                <audio src="sound/mercy-scene/mouse-click.mp3" class="clicking-keyboard-mercy"></audio>
-                <audio src="sound/mercy-scene/mail-notification.mp3" class="mail-notification1"></audio>
-                <audio src="sound/mercy-scene/mail-notification.mp3" class="mail-notification2"></audio>
-                <audio src="sound/mercy-scene/mail-notification.mp3" class="mail-notification3"></audio>
-                <audio src="sound/mercy-scene/mail-notification.mp3" class="mail-notification4"></audio>
-                <audio src="sound/mercy-scene/mail-notification.mp3" class="mail-notification5"></audio>
-                <audio src="sound/mercy-scene/wind-short2.mp3" class="wind-sound"></audio>
-                <audio src="sound/mercy-scene/swoosh-wind.mp3" class="wind-sound2"></audio>
-                <audio src="sound/mercy-scene/face-hitting-keyboard.mp3" class="face-hit"></audio>
-                <audio src="sound/mercy-scene/face-hitting-keyboard2.mp3" class="face-hit2"></audio>
+    <!-- LAWRENCE SCENE -->
+    <audio src="sound/lawrence-scenes/01-Frozen-Egg-Compressed.mp3" loop class="lawrence-music-headphones"></audio>
+    <audio src="sound/general-sounds/swoosh-click.mp3" class="delete-key"></audio>
+    <audio src="sound/lawrence-scenes/ambience-bus-inside.mp3" loop class="ambience-bus"></audio>
+    <audio src="sound/lawrence-scenes/demotivational-quotes1.mp3" loop class="sound-quote1"></audio>
+    <audio src="sound/lawrence-scenes/demotivational-quotes2.mp3" loop class="sound-quote2"></audio>
+    <audio src="sound/lawrence-scenes/ambience-waiting-room.mp3" loop class="waiting-room-sound"></audio>
+    <audio src="sound/lawrence-scenes/lasso.mp3" loop class="lasso"></audio>
+    <audio src="sound/lawrence-scenes/lasso2.mp3" loop class="lasso2"></audio>
+    <audio src="sound/lawrence-scenes/person-falling.mp3" loop class="lawrence-ground"></audio>
 
-                <!-- BARBARA SCENE -->
-                <audio src="sound/barbara-scene/bar-ambience-chill.mp3" class="bar-ambience-chill"></audio>
-                <audio src="sound/barbara-scene/coffee-spill.mp3" class="coffee-spill"></audio>
-                <audio src="sound/barbara-scene/light-switch.mp3" class="neonlight1"></audio>
-                <audio src="sound/barbara-scene/buzz-neon.mp3" class="neonlight2"></audio>
-                <audio src="sound/barbara-scene/boss-bla-bla1.mp3" class="yelling1"></audio>
-                <audio src="sound/barbara-scene/boss-bla-bla2.mp3" class="yelling2"></audio>
-                <audio src="sound/barbara-scene/ringtone.mp3" class="ringtone"></audio>
-                <audio src="sound/barbara-scene/call-ended.mp3" class="endedcall"></audio>
-                <audio src="sound/barbara-scene/loading-siesta.mp3" class="siesta-sound"></audio>
-                <audio src="sound/barbara-scene/bar-ambience-full1.mp3" class="bar-ambience-full1"></audio>
-                <audio src="sound/barbara-scene/bar-ambience-full2.mp3" class="bar-ambience-full2"></audio>
-                <audio src="sound/barbara-scene/bar-abience-people-talking.mp3" class="bar-ambience-talking"></audio>
-                <!-- to add -->
-                <audio src="sound/barbara-scene/bar-abience-people-talking.mp3" class="bar-ambience-late"></audio>
+    <!-- MERCY SCENE -->
+    <audio src="sound/mercy-scene/door-close.mp3" class="door-close"></audio>
+    <audio src="sound/mercy-scene/door-open.mp3" class="door-open"></audio>
+    <audio src="sound/mercy-scene/enter-sound.mp3" class="door-enter"></audio>
+    <audio src="sound/mercy-scene/mercy-typing.mp3" class="typing-mercy"></audio>
+    <audio src="sound/mercy-scene/mouse-click.mp3" class="clicking-keyboard-mercy"></audio>
+    <audio src="sound/mercy-scene/mail-notification.mp3" class="mail-notification1"></audio>
+    <audio src="sound/mercy-scene/mail-notification.mp3" class="mail-notification2"></audio>
+    <audio src="sound/mercy-scene/mail-notification.mp3" class="mail-notification3"></audio>
+    <audio src="sound/mercy-scene/mail-notification.mp3" class="mail-notification4"></audio>
+    <audio src="sound/mercy-scene/mail-notification.mp3" class="mail-notification5"></audio>
+    <audio src="sound/mercy-scene/wind-short2.mp3" class="wind-sound"></audio>
+    <audio src="sound/mercy-scene/swoosh-wind.mp3" class="wind-sound2"></audio>
+    <audio src="sound/mercy-scene/face-hitting-keyboard.mp3" class="face-hit"></audio>
+    <audio src="sound/mercy-scene/face-hitting-keyboard2.mp3" class="face-hit2"></audio>
 
-
-                <!-- VALENTINO LAST SCENE -->
-                <audio src="sound/valentino-scenes-evening/french-music.mp3" class="french-sound"></audio>
-                <audio src="sound/valentino-scenes-evening/throwing-post-its.mp3" class="post-it-sound"></audio>
+    <!-- BARBARA SCENE -->
+    <audio src="sound/barbara-scene/bar-ambience-chill.mp3" class="bar-ambience-chill"></audio>
+    <audio src="sound/barbara-scene/coffee-spill.mp3" class="coffee-spill"></audio>
+    <audio src="sound/barbara-scene/light-switch.mp3" class="neonlight1"></audio>
+    <audio src="sound/barbara-scene/buzz-neon.mp3" class="neonlight2"></audio>
+    <audio src="sound/barbara-scene/boss-bla-bla1.mp3" class="yelling1"></audio>
+    <audio src="sound/barbara-scene/boss-bla-bla2.mp3" class="yelling2"></audio>
+    <audio src="sound/barbara-scene/ringtone.mp3" class="ringtone"></audio>
+    <audio src="sound/barbara-scene/call-ended.mp3" class="endedcall"></audio>
+    <audio src="sound/barbara-scene/loading-siesta.mp3" class="siesta-sound"></audio>
+    <audio src="sound/barbara-scene/bar-ambience-full1.mp3" class="bar-ambience-full1"></audio>
+    <audio src="sound/barbara-scene/bar-ambience-full2.mp3" class="bar-ambience-full2"></audio>
+    <audio src="sound/barbara-scene/bar-abience-people-talking.mp3" class="bar-ambience-talking"></audio>
+    <!-- to add -->
+    <audio src="sound/barbara-scene/bar-abience-people-talking.mp3" class="bar-ambience-late"></audio>
 
 
-                <!-- NO MOBILE VERSION ------------------------------------------------------------->
-                <!-- eyes: ⬮ ⬮ -->
-                <div id="desktop-only">
-                    <p>Hello mobile user! <br> <br> This project is designed for desktop. Some parts will not work as
-                        intended. <br>
-                        <br> Rotate your device if you want to try it anyway. ⟳</p>
-                </div>
-                <script src="./js/main.js"></script>
+    <!-- VALENTINO LAST SCENE -->
+    <audio src="sound/valentino-scenes-evening/french-music.mp3" class="french-sound"></audio>
+    <audio src="sound/valentino-scenes-evening/throwing-post-its.mp3" class="post-it-sound"></audio>
+
+
+    <!-- NO MOBILE VERSION ------------------------------------------------------------->
+    <!-- eyes: ⬮ ⬮ -->
+    <div id="desktop-only">
+        <p>Hello mobile user! <br> <br> This project is designed for desktop. Some parts will not work as
+            intended. <br>
+            <br> Rotate your device if you want to try it anyway. ⟳</p>
+    </div>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
