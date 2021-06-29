@@ -6,7 +6,7 @@ let myvariable = {
   backgroundFade: -0.5,
   moveflag: false,
   visible: 1,
-  textspeed: 30,
+  textspeed: 20,
   wind: 0,
   userHasBeenAtEnd: 0,
 }
@@ -604,7 +604,9 @@ function animation(scrollPos) {
 domElement.body.addEventListener('click', function () {
   //INTRO
   if (myvariable.currentScene === 1) {
-    scene1();
+    if (typeit1.is('completed') === true){
+      scene1();
+    }
   }
   if (myvariable.currentScene === 2) {
     scene2();
@@ -3108,7 +3110,7 @@ function hideId() {
 ////////////////////////////////////////////////////////////////
 // TYPING ANIMATIONS FOR ALLL THE TEXTS: ///////////////////////
 
-new TypeIt("#phrase1", {
+let typeit1 = new TypeIt("#phrase1", {
   startDelay: 900,
   cursor: false,
   strings: [""],
