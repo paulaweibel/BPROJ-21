@@ -303,7 +303,7 @@ queue.on("progress", event => {
   var progress = Math.floor(event.progress * 50);
   this.progress.style.width = progress + "%";
   if (progress == 50) {
-    console.log("all done");
+    //console.log("all done");
   }
 })
 
@@ -918,7 +918,7 @@ domElement.body.addEventListener('click', function () {
   if (myvariable.currentScene === "callToAct") {
     hideStressFormular();
   }
-  console.log("Scene: " + myvariable.currentScene + ", I am at: " + scrollY);
+  //console.log("Scene: " + myvariable.currentScene + ", I am at: " + scrollY);
 });
 
 // SCENE 1: You don't usually see me, but I decided to make an exception this time.
@@ -1239,7 +1239,7 @@ function scene10() {
   ux.scroll.style.display = "block";
   document.querySelector(".trumpet-sound").pause();
   gifs.worried.style.display = "none";
-  console.log("wtf");
+  ////console.log("wtf");
   document.querySelector(".ambience-street-morning").currentTime = 0;
   document.querySelector(".ambience-street-morning").play();
   document.querySelector(".ambience-street-morning").volume = 0.4;
@@ -1355,7 +1355,7 @@ function runToBus() {
 // SCENE 11 (ID of LAWRENCE WAS OBSERVED) It looks like this guy needs some stimulation.
 function goLawrence() {
   window.removeEventListener("mousewheel", scrollHorizontally);
-  console.log("passt!");
+  //console.log("passt!");
   ux.scroll.style.display = "none";
   ux.click.style.display = "block";
   document.querySelector("#navigation-points").style.display = "none";
@@ -1411,7 +1411,7 @@ function scene13() {
   scene.busStop.style.display = "none";
   character.lawrence2a.style.display = "block";
   character.lawrence1.style.display = "none";
-  console.log("change to bus");
+  //console.log("change to bus");
   setTimeout(() => {
     myvariable.currentScene = 14;
   }, 200)
@@ -3013,15 +3013,15 @@ function addCommentsToHTML() {
         var rowCells = allRows[singleRow].split("%");
         for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
           if (singleRow === 0) {
-            console.log("woa");
+            //console.log("woa");
           } else {
             table += '<div class="comment" id="comment';
             table += singleRow;
             table += '">';
             table += rowCells[rowCell];
             table += "</div>";
-            // console.log(Object.keys(table).length - countLetters)
-            console.log(singleRow);
+            // //console.log(Object.keys(table).length - countLetters)
+            //console.log(singleRow);
           }
         }
         if (singleRow === 0) {
@@ -3065,7 +3065,7 @@ function idValentino() {
   document.querySelector(".info-icon-sound").volume = 0.6;
   document.querySelector(".info-icon-sound").play();
   document.querySelector(".info-icon-sound").loop = false;
-  console.log("ID VALENTINO")
+  //console.log("ID VALENTINO")
 }
 
 function idLawrence() {
@@ -3074,7 +3074,7 @@ function idLawrence() {
   document.querySelector(".info-icon-sound").volume = 0.7;
   document.querySelector(".info-icon-sound").play();
   document.querySelector(".info-icon-sound").loop = false;
-  console.log("ID Lawrence")
+  //console.log("ID Lawrence")
 }
 
 function idMercy() {
@@ -3083,7 +3083,7 @@ function idMercy() {
   document.querySelector(".info-icon-sound").volume = 0.6;
   document.querySelector(".info-icon-sound").play();
   document.querySelector(".info-icon-sound").loop = false;
-  console.log("ID Mercy")
+  //console.log("ID Mercy")
 }
 
 function idBarbara() {
@@ -3092,7 +3092,7 @@ function idBarbara() {
   document.querySelector(".info-icon-sound").volume = 0.7;
   document.querySelector(".info-icon-sound").play();
   document.querySelector(".info-icon-sound").loop = false;
-  console.log("ID Barbara")
+  //console.log("ID Barbara")
 }
 
 function hideId() {
@@ -3103,7 +3103,7 @@ function hideId() {
   document.querySelector(".delete-key").currentTime = 0;
   document.querySelector(".delete-key").volume = 0.5;
   document.querySelector(".delete-key").play();
-  console.log("hide ID")
+  //console.log("hide ID")
 }
 
 
