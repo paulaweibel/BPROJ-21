@@ -124,6 +124,9 @@ b {
 }
 
 #comment1 {
+    grid-row-start: 10;
+    grid-row-end: 11;
+    grid-column: 2;
     background-color: #0c0c0c;
     color: var(--weiss);
 }
